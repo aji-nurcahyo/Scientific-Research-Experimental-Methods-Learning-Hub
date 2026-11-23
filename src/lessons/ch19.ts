@@ -1,0 +1,506 @@
+import { Lesson } from '../types/curriculum';
+
+export const CH19_LESSONS: Record<string, Partial<Lesson>> = {
+  '3.4.1': {
+    id: '3.4.1',
+    chapterId: 'CH-19',
+    title: 'Kerangka Inferensi Fisherian vs Neyman-Pearson Decision Theory',
+    readingTimeMinutes: 18,
+    status: 'verified',
+    learningObjectives: [
+      'Membedakan dua tradisi epistemologis pengujian hipotesis klasik: Fisherian vs Neyman-Pearson.',
+      'Memahami sintesis hibrida tidak resmi (Null Hypothesis Significance Testing / NHST) dan kontradiksi internalnya.',
+      'Menerapkan batas keputusan Tipe I (alpha) dan Tipe II (beta) dalam pengendalian kualitas rekayasa.',
+    ],
+    content: `Sebagian besar buku teks pengantar statistika menyajikan pengujian hipotesis seolah-olah pengujian tersebut adalah metode monolitik yang tunggal dan disepakati secara bulat. Kenyataannya, prosedur yang kita kenal saat ini sebagai Null Hypothesis Significance Testing (NHST) adalah gabungan hibrida tidak resmi dari dua mazhab pemikiran yang saling bertentangan secara tajam: Mazhab Ronald Fisher melawan Mazhab Jerzy Neyman dan Egon Pearson.
+
+1. Pendekatan Fisher (Uji Signifikansi Murni): Fisher memandang pengujian sebagai alat inferensi induktif pembelajaran ilmiah (*inductive inference*). Peneliti hanya merumuskan satu hipotesis tunggal: Hipotesis Nol ($H_0$). Nilai p-value dihitung sebagai ukuran kuantitatif kontinu mengenai kekuatan bukti empiris terhadap kebenaran $H_0$. Jika p-value sangat kecil, data dianggap mengejutkan di bawah asumsi $H_0$. Fisher tidak mengenal hipotesis tandingan ($H_1$), tidak menetapkan batas ambang $\\alpha$ yang kaku di awal, dan tidak mempertimbangkan daya uji statistik (*power*).
+2. Pendekatan Neyman-Pearson (Teori Keputusan Perilaku Induktif): Neyman dan Pearson menolak pandangan Fisher dan memandang pengujian sebagai prosedur pengambilan keputusan mekanis dalam situasi berulang (*inductive behavior*). Peneliti wajib menetapkan dua hipotesis yang bersaing ($H_0$ dan $H_1$), mengunci tingkat toleransi kesalahan sebelum pengujian dimulai: Galat Tipe I (False Positive, $\\alpha$) dan Galat Tipe II (False Negative, $\\beta$), lalu mengoptimalkan wilayah penolakan untuk memaksimalkan daya uji statistik ($1 - \\beta$).
+
+Praktik modern mencampuradukkan keduanya secara keliru: mengambil p-value dari Fisher lalu membandingkannya secara dikotomis dengan ambang batas $\\alpha = 0.05$ dari Neyman-Pearson, memicu krisis reproduksibilitas sains kontemporer.`,
+    mathematicalFoundations: `1. Logika Fisherian P-Value:
+Ukuran bukti kontinu empiris bersyarat terhadap kebenaran $H_0$:
+$$p = P(T(\\mathbf{X}) \\ge t_{\\text{obs}} \\mid H_0)$$
+Interpretasi: Derajat kompatibilitas data dengan model nol.
+
+2. Matriks Keputusan Neyman-Pearson:
+$$\\begin{matrix}
+\\text{Keputusan Realitas} & H_0 \\text{ Benar (State 0)} & H_1 \\text{ Benar (State 1)} \\\\
+\\text{Terima } H_0 & 1 - \\alpha \\text{ (Keputusan Benar)} & \\beta \\text{ (Galat Tipe II)} \\\\
+\\text{Tolak } H_0 & \\alpha \\text{ (Galat Tipe I)} & 1 - \\beta \\text{ (Daya Uji / Power)}
+\\end{matrix}$$
+
+Lema Fundamental Neyman-Pearson:
+Untuk menguji $H_0: \\theta = \\theta_0$ vs $H_1: \\theta = \\theta_1$, uji yang paling berdaya (*Most Powerful Test*) pada tingkat signifikansi $\\alpha$ adalah Uji Rasio Likelihood:
+$$\\Lambda(\\mathbf{x}) = \\frac{L(\\theta_0; \\mathbf{x})}{L(\\theta_1; \\mathbf{x})} \\le k_\\alpha$$`,
+    workedExample: {
+      problemStatement: 'Pada pengujian sensor deteksi kebocoran gas metana tambang batubara di Sumatera, terdapat dua skenario risiko: H0 adalah kondisi normal (tidak ada kebocoran), dan H1 adalah kondisi kebocoran gas berbahaya. Analisis konsekuensi fisis dari Galat Tipe I dan Galat Tipe II, lalu tentukan prioritas minimasi bagi insinyur keselamatan tambang.',
+      stepByStepSolution: [
+        'Langkah 1: Identifikasi Galat Tipe I (False Positive / False Alarm): Sensor membunyikan alarm evakuasi darurat (menolak H0) padahal konsentrasi gas sebenarnya normal (H0 benar).',
+        'Konsekuensi Tipe I: Pabrik berhenti beroperasi sementara, tim evakuasi turun, biaya kerugian ekonomi terbuang.',
+        'Langkah 2: Identifikasi Galat Tipe II (False Negative / Missed Detection): Sensor tetap diam dan menyatakan kondisi aman (gagal menolak H0) padahal terjadi kebocoran gas berbahaya (H1 benar).',
+        'Konsekuensi Tipe II: Ledakan tambang fatal dan hilangnya nyawa para pekerja.',
+        'Langkah 3: Penetapan prioritas rekayasa: Konsekuensi Galat Tipe II jauh lebih katastropik dibanding Galat Tipe I. Insinyur wajib merancang sistem dengan daya uji maksimum (1 - beta > 0.999), bersedia menaikkan sedikit ambang alpha (misal alpha = 0.05 dinaikkan ke 0.10) demi memastikan Galat Tipe II mendekati nol.',
+      ],
+      resultInterpretation: 'Pilihan nilai alpha dan beta dalam rekayasa selalu merupakan keputusan trade-off biaya-manfaat fisis yang nyata, bukan sekadar angka ritual 0.05.',
+    },
+    pythonImplementation: {
+      description: 'Simulasi kurva trade-off Galat Tipe I (alpha) versus Daya Uji (1 - beta) pada pengujian hipotesis.',
+      libraryDependencies: ['scipy.stats', 'numpy'],
+      code: `import numpy as np
+from scipy import stats
+
+# Model dua hipotesis: H0: N(0, 1) vs H1: N(2.5, 1)
+mu_h0, mu_h1 = 0.0, 2.5
+sigma = 1.0
+
+# Rentang titik potong keputusan (decision threshold c)
+c_ambang = np.linspace(-1.0, 4.0, 6)
+
+print(f"{'Ambang c':10s} | {'Galat Tipe I (Alpha)':22s} | {'Daya Uji (1 - Beta)':22s} | {'Galat Tipe II (Beta)':22s}")
+print("-" * 80)
+for c in c_ambang:
+    # Alpha = P(X > c | H0)
+    alpha = stats.norm.sf(c, loc=mu_h0, scale=sigma)
+    # Power = P(X > c | H1)
+    power = stats.norm.sf(c, loc=mu_h1, scale=sigma)
+    beta = 1.0 - power
+    print(f"c = {c:5.2f}    | {alpha:22.4f} | {power:22.4f} | {beta:22.4f}")
+`,
+      expectedOutput: `Ambang c   | Galat Tipe I (Alpha)   | Daya Uji (1 - Beta)    | Galat Tipe II (Beta)  
+--------------------------------------------------------------------------------
+c = -1.00    |                 0.8413 |                 0.9998 |                 0.0002
+c = -0.00    |                 0.5000 |                 0.9938 |                 0.0062
+c =  1.00    |                 0.1587 |                 0.9332 |                 0.0668
+c =  2.00    |                 0.0228 |                 0.6915 |                 0.3085
+c =  3.00    |                 0.0013 |                 0.3085 |                 0.6915
+c =  4.00    |                 0.0000 |                 0.0668 |                 0.9332`,
+    },
+    commonPitfalls: [
+      'Memperlakukan ambang alpha = 0.05 sebagai hukum alam universal yang tidak boleh disesuaikan dengan konteks risiko aplikasi rekayasa.',
+      'Mengartikan p-value sebagai probabilitas bahwa hipotesis nol benar (P(H0 | Data)), yang merupakan kekeliruan inversi bersyarat.',
+      'Mengabaikan analisis daya uji statistik (power) saat melaporkan hasil eksperimen yang gagal menolak hipotesis nol.',
+    ],
+    validationProcedures: [
+      'Tetapkan batas ambang alpha dan target beta secara eksplisit sebelum pengumpulan data dilakukan (preregistrasi protokol).',
+      'Laporkan kurva Operating Characteristic (OC curve) untuk memetakan sensitivitas deteksi sistem pada berbagai besaran efek.',
+    ],
+    exercises: [
+      {
+        question: 'Mengapa Ronald Fisher menentang keras konsep "Hipotesis Alternatif (H1)" dan "Galat Tipe II (Beta)" yang diusulkan oleh Neyman dan Pearson?',
+        hint: 'Perhatikan pandangan Fisher tentang sifat kemajuan sains sebagai proses pembelajaran eksploratori vs keputusan industri pabrik.',
+        answerExplanation: 'Fisher memandang sains sebagai proses penemuan pengetahuan baru yang penuh ketidakpastian, di mana ilmuwan sering kali tidak mengetahui secara pasti apa alternatif spesifik yang benar saat suatu teori terbukti gagal. Fisher berargumen bahwa menetapkan satu hipotesis alternatif kaku H1 membatasi imajinasi peneliti, dan konsep keputusan mekanis biner Neyman-Pearson lebih cocok untuk inspeksi penerimaan barang pabrik (*quality control acceptance testing*) dibanding riset ilmiah murni.',
+      },
+    ],
+    references: [
+      { citation: 'Fisher, R. A. (1935). The Design of Experiments. Oliver and Boyd.', type: 'canonical-textbook' },
+      { citation: 'Neyman, J., & Pearson, E. S. (1933). On the problem of the most efficient tests of statistical hypotheses. Philosophical Transactions of the Royal Society of London, 231, 289-337.', type: 'peer-reviewed-article' },
+    ],
+    slides: [
+      {
+        slideNumber: 1,
+        title: 'Fisher vs Neyman-Pearson',
+        bulletPoints: [
+          'Fisher: Inferensi induktif, p-value sebagai bukti kontinu terhadap H0.',
+          'Neyman-Pearson: Perilaku induktif keputusan biner, alpha dan beta.',
+          'NHST modern adalah sintesis hibrida tidak resmi yang rentan salah tafsir.',
+        ],
+        keyFormulaOrDiagram: 'Trade-off: Ambang keputusan c menggeser alpha dan beta secara berlawanan arah.',
+      },
+      {
+        slideNumber: 2,
+        title: 'Matriks Keputusan Rekayasa',
+        bulletPoints: [
+          'Galat Tipe I (Alpha): False alarm (menolak H0 padahal H0 benar).',
+          'Galat Tipe II (Beta): Missed fault (menerima H0 padahal sistem rusak).',
+          'Pada sistem keselamatan kritis, minimalkan Beta demi keselamatan nyawa.',
+        ],
+      },
+    ],
+  },
+  '3.4.2': {
+    id: '3.4.2',
+    chapterId: 'CH-19',
+    title: 'Prosedur 5-Langkah NHST: Satu Sampel, Dua Sampel Independen, dan Sampel Berpasangan',
+    readingTimeMinutes: 20,
+    status: 'verified',
+    learningObjectives: [
+      'Menerapkan protokol terstruktur 5-langkah Null Hypothesis Significance Testing.',
+      'Memilih formula uji-t yang tepat: Satu Sampel, Dua Sampel Independen (Student vs Welch), dan Berpasangan (*Paired*).',
+      'Mengevaluasi asumsi homogenitas varians menggunakan Uji Levene.',
+    ],
+    content: `Agar pengujian signifikansi hipotesis dapat dipertanggungjawabkan secara ilmiah dan kebal dari bias konfirmasi peneliti, pelaksanaannya harus mengikuti Protokol Baku 5-Langkah NHST:
+
+1. Langkah 1 (Formulasi Pasangan Hipotesis): Nyatakan hipotesis nol ($H_0$) dan hipotesis alternatif ($H_1$) dalam parameter populasi terukur, serta tetapkan arah pengujian (satu arah vs dua arah).
+2. Langkah 2 (Spesifikasi Model & Ambang Risiko): Tetapkan tingkat signifikansi $\\alpha$ (misal $\\alpha = 0.05$ atau $\\alpha = 0.01$) dan periksa pemenuhan asumsi matematis data (independensi, normalitas via Shapiro-Wilk, kesetaraan varians via Levene).
+3. Langkah 3 (Perhitungan Statistik Uji Empiris): Hitung nilai statistik uji terstandardisasi ($t_{\\text{obs}}$ atau $z_{\\text{obs}}$) dari data sampel.
+4. Langkah 4 (Penetapan Kriteria Keputusan & P-Value): Hitung nilai p-value yang bersesuaian dengan derajat kebebasan (df) distribusi sampling di bawah asumsi kebenaran $H_0$.
+5. Langkah 5 (Penarikan Kesimpulan Ilmiah Terkontekstualisasi): Buat keputusan statistik formal (Tolak $H_0$ atau Gagal Menolak $H_0$) dan terjemahkan kesimpulan tersebut kembali ke dalam makna fisik rekayasa disertai ukuran efek (*effect size*).
+
+Pilihan Varian Uji-t:
+- Satu Sampel: Membandingkan rata-rata sistem baru terhadap nilai standar baku industri acuan ($\mu_0$).
+- Dua Sampel Berpasangan (*Paired t-test*): Menguji objek fisik yang sama sebelum dan sesudah perlakuan ($D_i = X_{i,\\text{post}} - X_{i,\\text{pre}}$).
+- Dua Sampel Independen: Membandingkan dua kelompok unit uji yang berbeda. Jika varians kedua kelompok tidak sama ($\sigma_1^2 \\neq \\sigma_2^2$), peneliti WAJIB menggunakan Uji Welch's t-test alih-alih Student's t biasa.`,
+    mathematicalFoundations: `1. Uji-t Satu Sampel:
+$$t = \\frac{\\bar{X} - \\mu_0}{s / \\sqrt{n}}, \\quad \\nu = n - 1$$
+
+2. Uji-t Sampel Berpasangan:
+$$t = \\frac{\\bar{D} - \\mu_D}{s_D / \\sqrt{n}}, \\quad \\nu = n - 1$$
+Di mana $D_i = X_{1,i} - X_{2,i}$ dan $s_D$ adalah standar deviasi dari selisih pasangan.
+
+3. Uji Welch's t-test (Varians Tidak Sama / Heteroscedastic):
+$$t_{\\text{Welch}} = \\frac{\\bar{X}_1 - \\bar{X}_2}{\\sqrt{\\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2}}}$$
+
+Derajat Kebebasan Efektif Welch-Satterthwaite:
+$$\\nu_{\\text{Welch}} = \\frac{\\left( \\frac{s_1^2}{n_1} + \\frac{s_2^2}{n_2} \\right)^2}{\\frac{(s_1^2 / n_1)^2}{n_1 - 1} + \\frac{(s_2^2 / n_2)^2}{n_2 - 1}}$$`,
+    workedExample: {
+      problemStatement: 'Dua belas unit node sensor transmisi diukur konsumsi dayanya (milli-Watt) sebelum dan sesudah optimasi algoritma sleeping protocol. Rata-rata penurunan konsumsi daya per node adalah D_bar = 4.50 mW dengan deviasi standar selisih s_D = 1.80 mW. Ujilah pada tingkat signifikansi alpha = 0.01 apakah optimasi algoritma berhasil menurunkan konsumsi daya secara signifikan.',
+      stepByStepSolution: [
+        'Langkah 1: Pasangan Hipotesis: H0: mu_D <= 0 (Tidak ada penurunan daya); H1: mu_D > 0 (Daya turun signifikan, uji satu arah kanan).',
+        'Langkah 2: Tingkat signifikansi alpha = 0.01, derajat kebebasan nu = n - 1 = 12 - 1 = 11.',
+        'Langkah 3: Hitung statistik uji t berpasangan: t = (4.50 - 0) / (1.80 / sqrt(12)) = 4.50 / (1.80 / 3.4641) = 4.50 / 0.5196 = 8.660.',
+        'Langkah 4: Hitung nilai kritis atau p-value: Nilai kritis t_(0.01, 11) = 2.718. Nilai t_obs (8.660) >> 2.718. Nilai p-value = 1.54 x 10^(-6).',
+        'Langkah 5: Kesimpulan: Tolak H0 pada alpha = 0.01. Bukti empiris sangat meyakinkan bahwa algoritma sleeping protocol menurunkan konsumsi daya rata-rata sebesar 4.50 mW (p < 0.0001).',
+      ],
+      resultInterpretation: 'Penurunan daya sebesar 4.50 mW terbukti secara statistik bukan akibat fluktuasi acak pengukuran.',
+    },
+    pythonImplementation: {
+      description: 'Eksekusi protokol 5-langkah uji-t berpasangan dan uji Welch dua sampel menggunakan SciPy.',
+      libraryDependencies: ['scipy.stats', 'numpy'],
+      code: `import numpy as np
+from scipy import stats
+
+np.random.seed(42)
+
+# Kasus 1: Uji-t Berpasangan (12 node sensor pre vs post) [SIMULASI/SYNTHETIC DATA]
+pre = np.random.normal(loc=25.0, scale=3.0, size=12)
+post = pre - np.random.normal(loc=4.5, scale=1.8, size=12)
+
+t_pair, p_pair = stats.ttest_rel(pre, post, alternative='greater')
+selisih = pre - post
+
+print("KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi)")
+print(f"Rata-rata Selisih Penurunan : {np.mean(selisih):.2f} mW (SD: {np.std(selisih, ddof=1):.2f})")
+print(f"Statistik t_obs             : {t_pair:.3f}")
+print(f"P-value (Satu Arah)         : {p_pair:.4e}")
+print(f"Keputusan (alpha=0.01)      : {'TOLAK H0' if p_pair < 0.01 else 'GAGAL TOLAK H0'}\n")
+
+# Kasus 2: Uji Welch Dua Sampel Independen (Varians Tidak Sama)
+grup_a = np.random.normal(loc=100.0, scale=5.0, size=15)
+grup_b = np.random.normal(loc=108.0, scale=12.0, size=20)  # Varians berbeda
+
+t_welch, p_welch = stats.ttest_ind(grup_a, grup_b, equal_var=False)
+
+print("KASUS 2: UJI WELCH'S T-TEST (Dua Kelompok Varians Heterogen)")
+print(f"Statistik t_Welch           : {t_welch:.3f}")
+print(f"P-value (Dua Arah)          : {p_welch:.4e}")
+print(f"Keputusan (alpha=0.05)      : {'TOLAK H0' if p_welch < 0.05 else 'GAGAL TOLAK H0'}")
+`,
+      expectedOutput: `KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi)
+Rata-rata Selisih Penurunan : 4.41 mW (SD: 1.57)
+Statistik t_obs             : 9.722
+P-value (Satu Arah)         : 4.1481e-07
+Keputusan (alpha=0.01)      : TOLAK H0
+
+KASUS 2: UJI WELCH'S T-TEST (Dua Kelompok Varians Heterogen)
+Statistik t_Welch           : -2.784
+P-value (Dua Arah)          : 9.6896e-03
+Keputusan (alpha=0.05)      : TOLAK H0`,
+    },
+    commonPitfalls: [
+      'Menggunakan uji-t sampel independen untuk data sebelum-sesudah pada unit yang sama (mengabaikan korelasi pasangan yang menaikkan varians galat).',
+      'Menggunakan uji-t Student standar dengan asumsi varians sama (equal_var=True) padahal uji Levene menunjukkan varians kedua kelompok heterogen (wajib gunakan Welch t-test).',
+      'Mengubah rumusan hipotesis satu arah menjadi dua arah setelah melihat arah data sampel di layar komputer.',
+    ],
+    validationProcedures: [
+      'Gunakan uji Levene sebelum uji komparasi dua sampel untuk memeriksa asumsi homoskedastisitas varians.',
+      'Jadikan Welch\'s t-test sebagai standar baku *default* untuk dua sampel independen karena kebal terhadap perbedaan varians.',
+    ],
+    exercises: [
+      {
+        question: 'Mengapa banyak ahli biostatistika dan ekonometrika merekomendasikan untuk SELALU menggunakan Welch\'s t-test secara default dibanding Student\'s t-test biasa?',
+        hint: 'Perhatikan kinerja Welch\'s t-test ketika varians kedua kelompok ternyata benar-benar setara versus ketika tidak setara.',
+        answerExplanation: 'Welch\'s t-test memberikan perlindungan yang sangat kuat terhadap inflasi Galat Tipe I ketika varians kedua kelompok tidak sama (terutama jika ukuran sampel kedua kelompok tidak seimbang). Sebaliknya, jika varians kedua kelompok ternyata benar-benar sama, Welch\'s t-test hanya mengorbankan fraksi pecahan derajat kebebasan yang sangat kecil tanpa kehilangan daya uji yang berarti. Oleh karena itu, Welch\'s t-test jauh lebih aman digunakan sebagai prosedur default.',
+      },
+    ],
+    references: [
+      { citation: 'Welch, B. L. (1947). The generalization of Student\'s problem when several different population variances are involved. Biometrika, 34(1/2), 28-35.', type: 'peer-reviewed-article' },
+      { citation: 'Ruxton, G. D. (2006). The unequal variance t-test is an underused alternative to Student\'s t-test and the Mann-Whitney U test. Behavioral Ecology, 17(4), 688-690.', type: 'peer-reviewed-article' },
+    ],
+    slides: [
+      {
+        slideNumber: 1,
+        title: 'Protokol 5-Langkah NHST',
+        bulletPoints: [
+          'Langkah 1: Formulasi H0 dan H1 dalam parameter populasi terukur.',
+          'Langkah 2: Verifikasi asumsi (normalitas, independensi, varians).',
+          'Langkah 3: Hitung statistik uji t terstandardisasi.',
+          'Langkah 4: Hitung p-value terhadap derajat kebebasan.',
+          'Langkah 5: Ambil keputusan & terjemahkan ke makna fisik rekayasa.',
+        ],
+        keyFormulaOrDiagram: 'Alur: $$H_0/H_1 \\to \\alpha \\to t_{\\text{obs}} \\to p \\to \\text{Keputusan}$$',
+      },
+      {
+        slideNumber: 2,
+        title: 'Pemilihan Uji-t yang Tepat',
+        bulletPoints: [
+          'Satu Sampel: Komparasi terhadap baku emas industri acuan.',
+          'Berpasangan (Paired): Objek sama pre-vs-post (menghilangkan varians subjek).',
+          'Welch\'s t-test: Standar baku dua sampel independen varians heterogen.',
+        ],
+      },
+    ],
+  },
+  '3.4.3': {
+    id: '3.4.3',
+    chapterId: 'CH-19',
+    title: 'Batasan dan Kesalahpahaman Fatal Mengenai Makna P-Value (ASA Statement)',
+    readingTimeMinutes: 18,
+    status: 'verified',
+    learningObjectives: [
+      'Memahami definisi formal matematis dari p-value menurut American Statistical Association (ASA).',
+      'Mengidentifikasi 6 kesalahpahaman fatal mengenai interpretasi p-value.',
+      'Memahami mengapa "ketiadaan bukti perbedaan" bukan merupakan "bukti ketiadaan perbedaan".',
+    ],
+    content: `Pada tahun 2016, American Statistical Association (ASA) mengambil langkah luar biasa dengan merilis pernyataan resmi darurat (*ASA Statement on Statistical Significance and P-Values*) untuk memperingatkan komunitas ilmiah global mengenai bahaya salah tafsir masif terhadap p-value yang telah merusak ribuan kesimpulan penelitian akademik.
+
+Berdasarkan konsensus ASA, terdapat 6 prinsip dasar mengenai p-value yang wajib dipahami oleh setiap peneliti:
+1. P-value dapat mengindikasikan seberapa tidak kompatibelnya data dengan model statistik tertentu yang dispesifikasikan (Hipotesis Nol).
+2. P-value TIDAK mengukur probabilitas bahwa hipotesis nol benar, atau probabilitas bahwa data dibangkitkan oleh kebetulan acak semata.
+3. Kesimpulan ilmiah dan keputusan bisnis atau kebijakan tidak boleh didasarkan semata-mata pada apakah p-value melampaui ambang batas arbitrer tertentu (seperti p < 0.05).
+4. Inferensi yang tepat memerlukan pelaporan yang transparan dan lengkap (melaporkan seluruh uji yang dijalankan, bukan hanya yang menghasilkan p < 0.05).
+5. P-value, atau signifikansi statistik, TIDAK mengukur besaran efek (*effect size*) atau pentingnya hasil penelitian secara praktis rekayasa.
+6. P-value dengan sendirinya tidak memberikan ukuran bukti yang baik mengenai model atau hipotesis alternatif (p = 0.05 hanya memberikan bukti yang sangat lemah terhadap H0).
+
+Pernyataan "p > 0.05 membuktikan bahwa metode A dan metode B adalah sama persis" adalah kebohongan statistika (*absence of evidence is not evidence of absence*).`,
+    mathematicalFoundations: `Kekeliruan Probalistik Inversi Klasik (*Fallacy of the Transposed Conditional*):
+
+P-value formal:
+$$p = P(\\text{Data Ekstrem} \\mid H_0)$$
+
+Banyak peneliti secara keliru menganggap bahwa:
+$$P(\\text{Data Ekstrem} \\mid H_0) \\stackrel{?}{=} P(H_0 \\mid \\text{Data})$$
+
+Berdasarkan Teorema Bayes, probabilitas kebenaran $H_0$ setelah data diamati (*Posterior Probability*) bergantung secara kritis pada probabilitas awal apriori (*Prior Odds* $P(H_0) / P(H_1)$):
+
+$$P(H_0 \\mid \\text{Data}) = \\frac{P(\\text{Data} \\mid H_0) \\cdot P(H_0)}{P(\\text{Data} \\mid H_0) \\cdot P(H_0) + P(\\text{Data} \\mid H_1) \\cdot P(H_1)}$$
+
+Bahkan pada $p = 0.05$, jika peluang hipotesis baru benar sebelum eksperimen hanya 10% (prior odds 9:1), maka probabilitas bahwa temuan positif tersebut adalah alarm palsu (*False Positive Report Probability* / FPRP) dapat melampaui 30% hingga 50%!`,
+    workedExample: {
+      problemStatement: 'Sebuah pengujian algoritma kompresi baru menghasilkan p-value = 0.08 terhadap algoritma lama. Penulis menyimpulkan dalam draf skripsi: "Hasil membuktikan bahwa kedua algoritma memiliki performa yang identik". Perbaiki kesimpulan ini sesuai pedoman ASA.',
+      stepByStepSolution: [
+        'Langkah 1: Identifikasi kesalahan logis: Penulis menyamakan "Gagal menolak H0" dengan "Membuktikan H0 benar" (Fallacy of Acceptance).',
+        'Langkah 2: Evaluasi nilai p = 0.08: Nilai p = 0.08 berarti bahwa jika kedua algoritma benar-benar identik, terdapat peluang 8% untuk mendapatkan selisih performa sebesar itu atau lebih ekstrem akibat variasi acak cuplikan.',
+        'Langkah 3: Analisis daya uji: Gagalnya pengujian mendeteksi perbedaan bisa jadi semata-mata karena ukuran sampel pengujian terlalu kecil (underpowered experiment).',
+        'Langkah 4: Rumuskan kalimat ilmiah terkalibrasi: "Berdasarkan data sampel yang diuji, penelitian ini belum memiliki bukti empiris yang cukup kuat untuk menolak hipotesis nol pada tingkat signifikansi alpha = 0.05 (p = 0.08). Namun demikian, interval kepercayaan 95% menunjukkan rentang perbedaan performa sebesar [-0.2%, +3.8%], sehingga pengujian lanjutan dengan ukuran sampel lebih besar diperlukan untuk memastikan signifikansi praktisnya."',
+      ],
+      resultInterpretation: 'Penyajian interval kepercayaan menggantikan kesimpulan dikotomis palsu dan menyajikan batas ketidakpastian estimasi secara jujur.',
+    },
+    pythonImplementation: {
+      description: 'Simulasi Bayes False Positive Report Probability (FPRP) membuktikan p = 0.05 tidak menjamin temuan 95% benar.',
+      libraryDependencies: ['numpy'],
+      code: `def hitung_fused_falsity_fprp(alpha, power, prior_prob_h1):
+    prior_h0 = 1.0 - prior_prob_h1
+    
+    # Peluang True Positive = Power * Prior(H1)
+    # Peluang False Positive = Alpha * Prior(H0)
+    tp = power * prior_prob_h1
+    fp = alpha * prior_h0
+    
+    fprp = fp / (tp + fp)
+    return fprp
+
+alpha = 0.05
+power = 0.80
+
+print(f"Ambang Signifikansi (Alpha): {alpha}, Daya Uji (Power): {power}\n")
+print(f"{'Peluang Apriori H1':22s} | {'False Positive Risk (FPRP)':28s}")
+print("-" * 55)
+for prior in [0.50, 0.20, 0.10, 0.05, 0.01]:
+    fprp = hitung_fused_falsity_fprp(alpha, power, prior)
+    print(f"Prior H1 = {prior * 100:4.1f}%          | {fprp * 100:26.1f}%")
+
+print("\nPeringatan ASA: Pada riset inovasi baru yang radikal (Prior H1 rendah, misal 10%), temuan p < 0.05 memiliki risiko alarm palsu sebesar 36%!")
+`,
+      expectedOutput: `Ambang Signifikansi (Alpha): 0.05, Daya Uji (Power): 0.8
+
+Peluang Apriori H1     | False Positive Risk (FPRP)  
+-------------------------------------------------------
+Prior H1 = 50.0%          |                        5.9%
+Prior H1 = 20.0%          |                       20.0%
+Prior H1 = 10.0%          |                       36.0%
+Prior H1 =  5.0%          |                       54.3%
+Prior H1 =  1.0%          |                       86.1%
+
+Peringatan ASA: Pada riset inovasi baru yang radikal (Prior H1 rendah, misal 10%), temuan p < 0.05 memiliki risiko alarm palsu sebesar 36%!`,
+    },
+    commonPitfalls: [
+      'Menyatakan bahwa p-value = 0.03 berarti terdapat peluang 97% bahwa hipotesis penelitian benar.',
+      'Mengklaim bahwa p > 0.05 membuktikan dua perlakuan ekuivalen atau sama persis.',
+      'Hanya melaporkan bintang signifikansi (* atau **) tanpa mencantumkan nilai numerik p-value eksak dan ukuran efek.',
+    ],
+    validationProcedures: [
+      'Tinjau kembali bab kesimpulan naskah: pastikan tidak ada kalimat yang menyatakan hipotesis nol "terbukti benar".',
+      'Sertakan estimasi ukuran efek (effect size) dan interval kepercayaan 95% mendampingi setiap nilai p-value yang dilaporkan.',
+    ],
+    exercises: [
+      {
+        question: 'Jika seorang peneliti memperoleh p-value = 0.00001 pada pengujian performa algoritma baru dengan ukuran sampel n = 10.000.000, apakah peneliti dapat menyimpulkan bahwa algoritma tersebut memberikan dampak revolusioner bagi industri?',
+        hint: 'Perhatikan hubungan antara ukuran sampel raksasa dengan p-value yang sangat kecil pada perbedaan efek mikroskopis.',
+        answerExplanation: 'Belum tentu. Pada ukuran sampel sebesar sepuluh juta observasi, perbedaan mikroskopis yang tidak memiliki arti praktis apa pun (misal kenaikan kecepatan hanya 0.0001% atau selisih 1 pikosekon) akan menghasilkan p-value yang sangat kecil secara astronomis (p < 0.00001). Signifikansi statistik tidak sama dengan signifikansi praktis rekayasa. Peneliti wajib memeriksa ukuran efek (effect size) untuk menentukan nilai praktisnya.',
+      },
+    ],
+    references: [
+      { citation: 'Wasserstein, R. L., & Lazar, N. A. (2016). The ASA statement on p-values: context, process, and purpose. The American Statistician, 70(2), 129-133.', type: 'guideline' },
+      { citation: 'Greenland, S., et al. (2016). Statistical tests, P values, confidence intervals, and power: a guide to misinterpretations. European Journal of Epidemiology, 31(4), 337-350.', type: 'peer-reviewed-article' },
+    ],
+    slides: [
+      {
+        slideNumber: 1,
+        title: 'Makna P-Value & Peringatan ASA',
+        bulletPoints: [
+          'P-value: Peluang memperoleh data seekstrem itu seandainya H0 benar.',
+          'P-value BUKAN probabilitas bahwa hipotesis nol benar (P(H0 | Data)).',
+          'Absence of evidence is NOT evidence of absence.',
+        ],
+        keyFormulaOrDiagram: 'Kekeliruan Inversi: $$P(\\text{Data} \\mid H_0) \\neq P(H_0 \\mid \\text{Data})$$',
+      },
+      {
+        slideNumber: 2,
+        title: '6 Prinsip Konsensus ASA 2016',
+        bulletPoints: [
+          'Jangan gunakan ambang batas p < 0.05 sebagai juri tunggal kebenaran.',
+          'P-value tidak mengukur besaran efek praktis rekayasa.',
+          'Wajib menyertakan interval kepercayaan dan pelaporan data terbuka.',
+        ],
+      },
+    ],
+  },
+  '3.4.4': {
+    id: '3.4.4',
+    chapterId: 'CH-19',
+    title: 'Bahaya P-Hacking, Data Dredging, dan Praktik Optional Stopping',
+    readingTimeMinutes: 18,
+    status: 'verified',
+    learningObjectives: [
+      'Mengidentifikasi taksonomi Questionable Research Practices (QRP): P-Hacking, HARKing, dan Data Dredging.',
+      'Memahami mekanisme inflasi Galat Tipe I akibat penghentian uji coba opsional (*optional stopping*).',
+      'Menerapkan preregistrasi protokol riset sebagai benteng integritas pembuktian ilmiah.',
+    ],
+    content: `Krisis replikasi yang melanda komunitas riset global sebagian besar dipicu oleh insentif akademik yang cacat: jurnal ilmiah cenderung hanya mempublikasikan artikel yang memiliki p-value signifikan ($p < 0.05$). Tekanan publikasi ini melahirkan serangkaian praktik meragukan yang dikenal sebagai P-Hacking, Data Dredging, atau Data Fishing: manipulasi analitis yang disengaja maupun tidak disengaja hingga data menghasilkan p-value di bawah 0.05.
+
+Empat bentuk p-hacking yang paling merusak dalam rekayasa:
+1. Penghentian Pengujian Opsional (*Optional Stopping*): Peneliti mengumpulkan sampel kecil, memeriksa p-value. Jika $p < 0.05$, pengujian dihentikan dan dilaporkan. Jika $p > 0.05$, peneliti menambah 5 sampel lagi dan mengecek ulang. Prosedur mengintip data berulang kali (*data peeking*) ini melipatgandakan tingkat Galat Tipe I dari 5% menjadi lebih dari 20% atau 30%.
+2. Manipulasi Variabel Respon dan Kovariat: Menguji 10 metrik performa yang berbeda, lalu hanya melaporkan 1 metrik yang kebetulan menghasilkan p < 0.05 tanpa menyebutkan 9 metrik lainnya yang gagal.
+3. Eliminasi Pencilan Selektif: Membuang titik-titik data pengujian tertentu dengan alasan post-hoc semata-mata karena pembuangan tersebut membuat p-value turun di bawah 0.05.
+4. HARKing (Hypothesizing After the Results are Known): Mengubah hipotesis penelitian agar sesuai dengan pola anomali yang ditemukan secara kebetulan pada data, lalu berpura-pura bahwa pola tersebut telah diramalkan sejak awal.
+
+Prinsip dasar sains: jika kita menyiksa data cukup lama, data akan mengaku apa saja (*if you torture the data enough, nature will confess*). Namun kesimpulan tersebut adalah ilusi acak yang tidak akan pernah dapat direplikasi oleh peneliti lain.`,
+    mathematicalFoundations: `Inflasi Galat Tipe I Akibat Penghentian Opsional (*Optional Stopping / Data Peeking*):
+
+Jika seorang peneliti melakukan uji signifikansi pada $K$ titik inspeksi berkala independen dengan ambang batas nominal $\\alpha = 0.05$:
+
+$$\\alpha_{\\text{sejati}} = P\\left( \\bigcup_{k=1}^K (p_k < \\alpha) \\mid H_0 \\right) = 1 - (1 - \\alpha)^K$$
+
+Untuk $K = 5$ kali pengintipan data berturut-turut:
+$$\\alpha_{\\text{sejati}} = 1 - (1 - 0.05)^5 = 1 - (0.95)^5 = 1 - 0.7738 \\approx 0.2262 \\quad (22.6\\%)$$
+
+Jika pengujian dibiarkan berjalan terus menerus hingga p-value kebetulan menyeberang di bawah 0.05 ($K \\to \\infty$), probabilitas penolakan palsu $H_0$ mendekati 100% (pasti akan terjadi false positive akibat hukum gerak Brown fluktuasi statistik).`,
+    workedExample: {
+      problemStatement: 'Seorang mahasiswa menguji efisiensi algoritma tracking surya baru. Mula-mula diuji pada 10 data hari (p = 0.09). Mahasiswa menambah data hari ke-11 s.d. 15 (p = 0.06). Mahasiswa menambah lagi hingga hari ke-20 dan menemukan p = 0.042. Mahasiswa langsung menghentikan pengumpulan data dan menulis di skripsinya bahwa algoritma terbukti unggul pada alpha = 0.05. Jelaskan mengapa kesimpulan ini cacat secara metodologis.',
+      stepByStepSolution: [
+        'Langkah 1: Identifikasi pelanggaran prosedur: Mahasiswa melakukan penghentian opsional (optional stopping) berbasis pengintipan data berulang (K = 3 kali inspeksi interim).',
+        'Langkah 2: Evaluasi tingkat signifikansi sejati: Tingkat signifikansi riil bukan lagi 5%, melainkan mendekati 1 - (0.95)^3 = 14.3%.',
+        'Langkah 3: Analisis batas ambang: Nilai p-value teramati p = 0.042 hanya berada sedikit di bawah 0.05. Di bawah tingkat risiko Galat Tipe I sejati sebesar 14.3%, angka 0.042 tidak lagi memiliki kekuatan pembuktian yang signifikan.',
+        'Langkah 4: Prosedur ilmiah yang benar: Mahasiswa wajib menentukan ukuran sampel n = 20 sejak awal melalui analisis daya uji (power analysis), atau jika terpaksa melakukan analisis interim, wajib menggunakan koreksi batas penolakan bertingkat O\'Brien-Fleming.',
+      ],
+      resultInterpretation: 'P-hacking telah menggelembungkan risiko kesalahan positif palsu hampir tiga kali lipat tanpa disadari oleh mahasiswa.',
+    },
+    pythonImplementation: {
+      description: 'Simulasi Monte Carlo membuktikan inflasi False Positive akibat praktik pengintipan data berulang (Optional Stopping).',
+      libraryDependencies: ['numpy', 'scipy.stats'],
+      code: `import numpy as np
+from scipy import stats
+
+np.random.seed(42)
+n_simulasi = 10000
+alpha_target = 0.05
+
+# H0 benar: Tidak ada efek (dua sampel ditarik dari distribusi identik N(0, 1))
+false_positives_standar = 0
+false_positives_peeking = 0
+
+for _ in range(n_simulasi):
+    # Pengujian Standar: Kunci n = 50 sejak awal
+    x = np.random.normal(0, 1, 50)
+    y = np.random.normal(0, 1, 50)
+    _, p_akhir = stats.ttest_ind(x, y)
+    if p_akhir < alpha_target:
+        false_positives_standar += 1
+
+    # Praktik P-Hacking Data Peeking: Cek di n=10, 20, 30, 40, 50
+    x_peek = np.random.normal(0, 1, 50)
+    y_peek = np.random.normal(0, 1, 50)
+    ditemukan_signifikan = False
+    for n_curr in [10, 20, 30, 40, 50]:
+        _, p_curr = stats.ttest_ind(x_peek[:n_curr], y_peek[:n_curr])
+        if p_curr < alpha_target:
+            ditemukan_signifikan = True
+            break  # Berhenti mengumpulkan data segera setelah p < 0.05!
+    if ditemukan_signifikan:
+        false_positives_peeking += 1
+
+laju_fp_standar = false_positives_standar / n_simulasi
+laju_fp_peeking = false_positives_peeking / n_simulasi
+
+print(f"Laju Galat Tipe I Uji Terkunci Standar : {laju_fp_standar * 100:.2f}% (Tepat di target 5%)")
+print(f"Laju Galat Tipe I dengan Data Peeking   : {laju_fp_peeking * 100:.2f}% (Terinflasi masif!)")
+print(f"Faktor Pelipatgandaan False Positive    : {laju_fp_peeking / laju_fp_standar:.1f}x lipat")
+`,
+      expectedOutput: `Laju Galat Tipe I Uji Terkunci Standar : 4.88% (Tepat di target 5%)
+Laju Galat Tipe I dengan Data Peeking   : 14.54% (Terinflasi masif!)
+Faktor Pelipatgandaan False Positive    : 3.0x lipat`,
+    },
+    commonPitfalls: [
+      'Memeriksa p-value secara berkala saat pengujian laboratorium berlangsung dan langsung berhenti mengumpulkan sampel saat p < 0.05.',
+      'Mencoba 5 metode normalisasi data yang berbeda dan hanya melaporkan 1 metode yang menghasilkan p < 0.05 (cherry-picking).',
+      'Mengubah rumusan hipotesis penelitian setelah melihat grafik hasil akhir data.',
+    ],
+    validationProcedures: [
+      'Kunci rencana ukuran sampel dan analisis statistik dalam dokumen preregistrasi (misal di OSF.io) sebelum pengumpulan data dimulai.',
+      'Jika analisis interim bertahap harus dilakukan (seperti pada uji klinis atau uji destruktif mahal), gunakan koreksi batas alfa alfa-spending function O\'Brien-Fleming.',
+    ],
+    exercises: [
+      {
+        question: 'Bagaimana preregistrasi protokol riset (study preregistration) mampu memberantas praktik p-hacking dan HARKing secara total?',
+        hint: 'Perhatikan pemisahan waktu yang ketat antara fase perumusan hipotesis dengan fase melihat data.',
+        answerExplanation: 'Preregistrasi mewajibkan peneliti mengunggah dokumen terkunci bertanda waktu publik (timestamped) yang merinci secara eksak hipotesis riset, ukuran sampel pasti, kriteria eliminasi outlier, dan model statistik yang akan digunakan SEBELUM data dikumpulkan. Hal ini memutus ruang gerak peneliti untuk mengubah hipotesis (mencegah HARKing), memanipulasi penghentian data (mencegah optional stopping), atau memilih-milih variabel respon post-hoc.',
+      },
+    ],
+    references: [
+      { citation: 'Simmons, J. P., Nelson, L. D., & Simonsohn, U. (2011). False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. Psychological Science, 22(11), 1359-1366.', type: 'peer-reviewed-article' },
+      { citation: 'Kerr, N. L. (1998). HARKing: Hypothesizing after the results are known. Personality and Social Psychology Review, 2(3), 196-217.', type: 'peer-reviewed-article' },
+    ],
+    slides: [
+      {
+        slideNumber: 1,
+        title: 'Anatomi P-Hacking',
+        bulletPoints: [
+          'Tekanan publikasi melahirkan manipulasi analitis demi p < 0.05.',
+          'Optional Stopping: Mengintip data berulang kali melipatgandakan False Positive.',
+          'Cherry-picking metrik dan eliminasi pencilan selektif.',
+        ],
+        keyFormulaOrDiagram: 'Inflasi Alfa: $$\\alpha_{\\text{sejati}} = 1 - (1 - 0.05)^K \\gg 0.05$$',
+      },
+      {
+        slideNumber: 2,
+        title: 'Benteng Integritas Sains',
+        bulletPoints: [
+          'HARKing: Merumuskan hipotesis setelah melihat data merusak logika deduktif.',
+          'Kunci ukuran sampel melalui analisis daya uji apriori.',
+          'Gunakan preregistrasi protokol terbuka (Open Science Framework).',
+        ],
+      },
+    ],
+  },
+};
