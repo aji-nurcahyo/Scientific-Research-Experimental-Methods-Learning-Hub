@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Chapter } from '../types/curriculum';
 import { ContentStatusBadge } from './ContentStatusBadge';
 import { Breadcrumbs } from './Breadcrumbs';
-import { Sparkles, ArrowRight, CheckCircle2, BookOpen } from 'lucide-react';
+import { SlidesModal } from './SlidesModal';
+import { Sparkles, ArrowRight, CheckCircle2, BookOpen, Presentation, Download, Printer } from 'lucide-react';
 import { isLessonCompleted } from '../utils/progressTracker';
-import { getEffectiveChapterStatus, getEnrichedLesson } from '../data/lessonRegistry';
+import { getEffectiveChapterStatus, getEnrichedLesson, getChapterSlides } from '../data/lessonRegistry';
+import { exportChapterToPPTX } from '../utils/pptxExport';
 
 interface ChapterOverviewProps {
   chapter: Chapter;
@@ -20,6 +22,27 @@ export const ChapterOverview: React.FC<ChapterOverviewProps> = ({
   onNavigateHome,
 }) => {
   const effectiveStatus = getEffectiveChapterStatus(chapter);
+  const [isSlidesOpen, setIsSlidesOpen] = useState(false);
+  const [isExporting, setIsExporting] = useState(false);
+
+  const chapterSlides = getChapterSlides(chapter);
+
+  const handleExportPPTX = async () => {
+    setIsExporting(true);
+    try {
+      await exportChapterToPPTX({
+        chapterId: chapter.id,
+        chapterTitle: chapter.title,
+        subtitle: chapter.overview,
+        slides: chapterSlides,
+      });
+    } catch (err) {
+      console.error('Failed to export PPTX:', err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
+
   const breadcrumbItems = [
     { label: 'Beranda', onClick: onNavigateHome },
     { label: `Level ${chapter.levelId}` },
@@ -50,6 +73,41 @@ export const ChapterOverview: React.FC<ChapterOverviewProps> = ({
         <p style={{ fontSize: '1.1rem', color: '#4b5563', lineHeight: 1.6 }}>
           {chapter.overview}
         </p>
+
+        {/* Action Controls for Slides, PPTX, PDF */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap', marginTop: '1.25rem' }} className="no-print">
+          {chapterSlides.length > 0 && (
+            <button
+              className="btn btn-primary"
+              onClick={() => setIsSlidesOpen(true)}
+              style={{ fontSize: '0.85rem' }}
+            >
+              <Presentation size={15} />
+              Buka Slide Bab ({chapterSlides.length} Slide)
+            </button>
+          )}
+
+          {chapterSlides.length > 0 && (
+            <button
+              className="btn"
+              onClick={handleExportPPTX}
+              disabled={isExporting}
+              style={{ fontSize: '0.85rem' }}
+            >
+              <Download size={15} color="#0f3d59" />
+              {isExporting ? 'Mengekspor PPTX...' : 'Unduh PPTX Lengkap'}
+            </button>
+          )}
+
+          <button
+            className="btn"
+            onClick={() => window.print()}
+            style={{ fontSize: '0.85rem' }}
+          >
+            <Printer size={15} />
+            Cetak / Ekspor PDF
+          </button>
+        </div>
 
         {/* Prerequisites & Competency Mappings */}
         <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', marginTop: '1.25rem', padding: '1rem 1.25rem', backgroundColor: '#f8fafc', borderRadius: '6px', border: '1px solid #e2e8f0', fontSize: '0.86rem' }}>
@@ -160,6 +218,16 @@ export const ChapterOverview: React.FC<ChapterOverviewProps> = ({
           })}
         </div>
       </section>
+      {/* Chapter Slides Modal */}
+      {chapterSlides.length > 0 && (
+        <SlidesModal
+          isOpen={isSlidesOpen}
+          onClose={() => setIsSlidesOpen(false)}
+          chapterTitle={`${chapter.id}: ${chapter.title}`}
+          lessonTitle={`Slide Perkuliahan Lengkap (${chapterSlides.length} Slide)`}
+          slides={chapterSlides}
+        />
+      )}
     </div>
   );
 };

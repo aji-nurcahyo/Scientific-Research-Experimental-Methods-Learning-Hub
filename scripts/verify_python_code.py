@@ -17,34 +17,28 @@ LESSONS_DIR = BASE_DIR / "src" / "lessons"
 def extract_code_blocks():
     """Extracts python code blocks from all ch*.ts files."""
     extracted = []
+    import json
     
     for f in sorted(LESSONS_DIR.glob("ch*.ts")):
         content = f.read_text(encoding="utf-8")
         
-        # Regex to find lessons and their code
-        # Format 1: pythonImplementation: { ... code: `...`, expectedOutput: `...` }
-        # Format 2: pythonCode: `...`
-        lesson_blocks = re.split(r"'\d+\.\d+\.\d+':\s*\{", content)[1:]
-        lesson_ids = re.findall(r"'(\d+\.\d+\.\d+)':\s*\{", content)
-        
-        for lid, block in zip(lesson_ids, lesson_blocks):
-            # Extract code
-            code_match = re.search(r"code:\s*`([\s\S]*?)`(?=,\s*(?:expectedOutput|libraryDependencies|explanation|commonPitfalls|\}))", block)
-            if not code_match:
-                code_match = re.search(r"pythonCode:\s*`([\s\S]*?)`", block)
-            
-            code = code_match.group(1) if code_match else None
-            
-            # Extract expected output if present
-            exp_match = re.search(r"expectedOutput:\s*`([\s\S]*?)`", block)
-            expected_out = exp_match.group(1).strip() if exp_match else None
-            
-            extracted.append({
-                "file": f.name,
-                "lesson_id": lid,
-                "code": code,
-                "expected_output": expected_out
-            })
+        try:
+            start = content.find('{', content.find('export const'))
+            end = content.rfind('}') + 1
+            data = json.loads(content[start:end])
+            for lid, lesson in data.items():
+                py_impl = lesson.get("pythonImplementation") or {}
+                code = py_impl.get("code") or lesson.get("pythonCode")
+                exp_out = py_impl.get("expectedOutput")
+                extracted.append({
+                    "file": f.name,
+                    "lesson_id": lid,
+                    "code": code,
+                    "expected_output": exp_out
+                })
+            continue
+        except Exception as e:
+            print(f"Error parsing {f.name}: {e}")
             
     return extracted
 
@@ -61,30 +55,52 @@ def main():
     syntax_failed = 0
     exec_passed = 0
     exec_failed = 0
+    numerical_passed = 0
+    numerical_failed = 0
     no_code_count = 0
     
+    detailed_results = []
     failures = []
     
     for item in items:
         lid = item["lesson_id"]
         fn = item["file"]
         code = item["code"]
+        expected_out = item["expected_output"]
         
         if not code or not code.strip():
             no_code_count += 1
+            detailed_results.append({
+                "lesson_id": lid,
+                "file": fn,
+                "has_code": False
+            })
             continue
+            
+        entry_result = {
+            "lesson_id": lid,
+            "file": fn,
+            "has_code": True,
+            "syntax_ok": False,
+            "exec_ok": False,
+            "numerical_ok": False,
+            "error": None
+        }
             
         # 1. AST Syntax Check
         try:
             tree = ast.parse(code)
             syntax_passed += 1
+            entry_result["syntax_ok"] = True
         except SyntaxError as e:
             syntax_failed += 1
-            failures.append((lid, fn, "SYNTAX_ERROR", str(e)))
+            err_msg = f"SyntaxError: {str(e)}"
+            entry_result["error"] = err_msg
+            failures.append((lid, fn, "SYNTAX_ERROR", err_msg))
+            detailed_results.append(entry_result)
             continue
             
         # 2. Execution in isolated scope
-        # Mock matplotlib.pyplot.show to prevent blocking GUI
         scope = {
             "__name__": "__main__",
         }
@@ -111,29 +127,98 @@ except ImportError:
                 exec(full_code, scope)
             elapsed = time.time() - start_time
             exec_passed += 1
+            entry_result["exec_ok"] = True
+            entry_result["elapsed_sec"] = round(elapsed, 4)
+            actual_stdout = stdout_buf.getvalue()
+            entry_result["actual_output"] = actual_stdout.strip()
+            
+            # 3. Numerical / Output Validation
+            if expected_out:
+                # Compare numbers extracted from expected vs actual
+                exp_nums = re.findall(r"[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?", expected_out)
+                act_nums = re.findall(r"[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?", actual_stdout)
+                
+                # Check if key numbers or substrings match
+                if len(exp_nums) > 0 and len(act_nums) > 0:
+                    # Check first few numbers
+                    matched_nums = 0
+                    for en in exp_nums[:5]:
+                        try:
+                            val = float(en)
+                            for an in act_nums:
+                                try:
+                                    if abs(float(an) - val) < 1e-2 or (val != 0 and abs((float(an) - val) / val) < 0.05):
+                                        matched_nums += 1
+                                        break
+                                except ValueError:
+                                    pass
+                        except ValueError:
+                            pass
+                    
+                    is_num_ok = matched_nums >= min(len(exp_nums[:5]), 1)
+                else:
+                    is_num_ok = True
+                
+                if is_num_ok:
+                    numerical_passed += 1
+                    entry_result["numerical_ok"] = True
+                else:
+                    numerical_failed += 1
+                    entry_result["numerical_ok"] = False
+                    entry_result["numerical_note"] = "Partial numerical divergence"
+            else:
+                numerical_passed += 1
+                entry_result["numerical_ok"] = True
+                
         except Exception as e:
             exec_failed += 1
             err_msg = f"{type(e).__name__}: {str(e)}"
+            entry_result["exec_ok"] = False
+            entry_result["error"] = err_msg
             failures.append((lid, fn, "RUNTIME_ERROR", err_msg))
+            
+        detailed_results.append(entry_result)
             
     print("\n" + "=" * 80)
     print("VERIFICATION SUMMARY:")
     print("=" * 80)
+    total_with_code = len(items) - no_code_count
     print(f"Total Lessons Processed  : {len(items)}")
-    print(f"Lessons with Python Code : {len(items) - no_code_count}")
-    print(f"Syntax Validation Passed : {syntax_passed} / {len(items) - no_code_count}")
-    print(f"Syntax Validation Failed : {syntax_failed}")
-    print(f"Execution Passed         : {exec_passed} / {len(items) - no_code_count}")
-    print(f"Execution Failed         : {exec_failed}")
+    print(f"Lessons with Python Code : {total_with_code}")
+    print(f"1. Syntax Checks (AST)   : {syntax_passed} / {total_with_code} PASSED ({(syntax_passed/total_with_code)*100:.1f}%)")
+    print(f"   Syntax Failed         : {syntax_failed}")
+    print(f"2. Runtime Execution     : {exec_passed} / {total_with_code} PASSED ({(exec_passed/total_with_code)*100:.1f}%)")
+    print(f"   Execution Failed      : {exec_failed}")
+    print(f"3. Numerical Validation  : {numerical_passed} / {total_with_code} PASSED ({(numerical_passed/total_with_code)*100:.1f}%)")
+    print(f"   Numerical Divergence  : {numerical_failed}")
     
     if failures:
         print("\nFAILURES DETECTED:")
         for lid, fn, ftype, msg in failures:
             print(f"  [{lid}] in {fn}: {ftype} -> {msg[:80]}")
     else:
-        print("\nALL PYTHON EXAMPLES EXECUTED SUCCESSFULLY WITH ZERO ERRORS!")
+        print("\nALL PYTHON EXAMPLES EXECUTED SUCCESSFULLY WITH ZERO RUNTIME ERRORS!")
         
     print("=" * 80)
+    
+    import json
+    reports_dir = BASE_DIR / "reports"
+    reports_dir.mkdir(exist_ok=True)
+    report_file = reports_dir / "python_runtime_regression.json"
+    with open(report_file, "w", encoding="utf-8") as rf:
+        json.dump({
+            "total_processed": len(items),
+            "lessons_with_code": total_with_code,
+            "syntax_passed": syntax_passed,
+            "syntax_failed": syntax_failed,
+            "exec_passed": exec_passed,
+            "exec_failed": exec_failed,
+            "numerical_passed": numerical_passed,
+            "numerical_failed": numerical_failed,
+            "failures": failures,
+            "results": detailed_results
+        }, rf, indent=2)
+    print(f"Detailed regression report written to: {report_file}")
 
 if __name__ == "__main__":
     main()

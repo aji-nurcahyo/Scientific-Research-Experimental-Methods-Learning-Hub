@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Presentation } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Presentation, Download } from 'lucide-react';
 import { MathRenderer } from './MathRenderer';
+import { exportChapterToPPTX } from '../utils/pptxExport';
 
 interface SlideData {
   slideNumber: number;
@@ -25,6 +26,7 @@ export const SlidesModal: React.FC<SlidesModalProps> = ({
   slides,
 }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [isExporting, setIsExporting] = useState(false);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -44,6 +46,23 @@ export const SlidesModal: React.FC<SlidesModalProps> = ({
   if (!isOpen || slides.length === 0) return null;
 
   const currentSlide = slides[currentSlideIndex];
+
+  const handleExportPPTX = async () => {
+    setIsExporting(true);
+    try {
+      const chId = chapterTitle.split(':')[0].trim();
+      await exportChapterToPPTX({
+        chapterId: chId,
+        chapterTitle: chapterTitle.replace(/^CH-\d+:\s*/, ''),
+        subtitle: lessonTitle,
+        slides,
+      });
+    } catch (err) {
+      console.error('Failed to export PPTX:', err);
+    } finally {
+      setIsExporting(false);
+    }
+  };
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -71,12 +90,31 @@ export const SlidesModal: React.FC<SlidesModalProps> = ({
               {chapterTitle} &bull; {lessonTitle}
             </span>
           </div>
-          <button
-            onClick={onClose}
-            style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '0.2rem' }}
-          >
-            <X size={20} />
-          </button>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <button
+              onClick={handleExportPPTX}
+              disabled={isExporting}
+              className="btn"
+              style={{
+                fontSize: '0.78rem',
+                padding: '0.25rem 0.65rem',
+                backgroundColor: '#1e293b',
+                color: '#38bdf8',
+                borderColor: '#334155',
+                gap: '0.35rem',
+              }}
+              title="Unduh slide ini dalam format Microsoft PowerPoint (.pptx) yang dapat diedit"
+            >
+              <Download size={14} />
+              {isExporting ? 'Mengekspor...' : 'Unduh PPTX'}
+            </button>
+            <button
+              onClick={onClose}
+              style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', padding: '0.2rem' }}
+            >
+              <X size={20} />
+            </button>
+          </div>
         </div>
 
         {/* Slide Body */}

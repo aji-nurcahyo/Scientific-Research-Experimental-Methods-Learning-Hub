@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Lesson, Chapter } from '../types/curriculum';
 import { ContentStatusBadge } from './ContentStatusBadge';
-import { MathRenderer } from './MathRenderer';
+import { MarkdownRenderer } from './MarkdownRenderer';
 import { Breadcrumbs } from './Breadcrumbs';
 import { SlidesModal } from './SlidesModal';
 import { isLessonCompleted, toggleLessonCompletion } from '../utils/progressTracker';
@@ -130,7 +130,7 @@ export const LessonView: React.FC<LessonViewProps> = ({
           <ul style={{ paddingLeft: '1.25rem', fontSize: '0.92rem', color: '#334155', lineHeight: 1.7 }}>
             {lesson.learningObjectives.map((obj, i) => (
               <li key={i} style={{ marginBottom: '0.25rem' }}>
-                <MathRenderer content={obj} />
+                <MarkdownRenderer content={obj} />
               </li>
             ))}
           </ul>
@@ -140,8 +140,8 @@ export const LessonView: React.FC<LessonViewProps> = ({
       {/* 2. Conceptual Foundation / Main Content */}
       <section className="academic-prose" style={{ marginTop: '1.75rem' }}>
         <h2>1. Fondasi Konseptual & Landasan Teori</h2>
-        <div style={{ whiteSpace: 'pre-line' }}>
-          <MathRenderer content={lesson.content} />
+        <div>
+          <MarkdownRenderer content={lesson.content} />
         </div>
       </section>
 
@@ -153,7 +153,7 @@ export const LessonView: React.FC<LessonViewProps> = ({
             Berikut adalah penurunan matematis formal, notasi terstandarisasi, dan definisi variabel:
           </p>
           <div style={{ backgroundColor: '#ffffff', padding: '1.25rem 1.75rem', borderRadius: '6px', border: '1px solid #e5e7eb', margin: '1.25rem 0', boxShadow: '0 1px 2px rgba(0,0,0,0.03)' }}>
-            <MathRenderer content={lesson.mathematicalFoundations} />
+            <MarkdownRenderer content={lesson.mathematicalFoundations} />
           </div>
         </section>
       )}
@@ -166,9 +166,9 @@ export const LessonView: React.FC<LessonViewProps> = ({
             <div style={{ fontWeight: 700, color: '#92400e', marginBottom: '0.4rem', fontSize: '0.95rem' }}>
               Studi Kasus / Masalah:
             </div>
-            <p style={{ fontSize: '0.95rem', color: '#1f2937' }}>
-              <MathRenderer content={lesson.workedExample.problemStatement} />
-            </p>
+            <div style={{ fontSize: '0.95rem', color: '#1f2937', marginBottom: '0.75rem' }}>
+              <MarkdownRenderer content={lesson.workedExample.problemStatement} />
+            </div>
 
             <div style={{ fontWeight: 700, color: '#1f2937', marginTop: '1rem', marginBottom: '0.5rem', fontSize: '0.92rem' }}>
               Penyelesaian Langkah demi Langkah:
@@ -176,13 +176,13 @@ export const LessonView: React.FC<LessonViewProps> = ({
             <ol style={{ paddingLeft: '1.25rem', fontSize: '0.92rem', color: '#374151', lineHeight: 1.75 }}>
               {lesson.workedExample.stepByStepSolution.map((step, idx) => (
                 <li key={idx} style={{ marginBottom: '0.4rem' }}>
-                  <MathRenderer content={step} />
+                  <MarkdownRenderer content={step} />
                 </li>
               ))}
             </ol>
 
             <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '0.75rem', marginTop: '1rem', fontSize: '0.92rem', color: '#065f46', fontWeight: 500 }}>
-              <strong>Interpretasi Hasil:</strong> <MathRenderer content={lesson.workedExample.resultInterpretation} />
+              <strong>Interpretasi Hasil:</strong> <MarkdownRenderer content={lesson.workedExample.resultInterpretation} />
             </div>
           </div>
         </section>
@@ -247,7 +247,7 @@ export const LessonView: React.FC<LessonViewProps> = ({
             <ul style={{ paddingLeft: '1.25rem', fontSize: '0.92rem', color: '#78350f', lineHeight: 1.7 }}>
               {lesson.commonPitfalls.map((pitfall, idx) => (
                 <li key={idx} style={{ marginBottom: '0.35rem' }}>
-                  <MathRenderer content={pitfall} />
+                  <MarkdownRenderer content={pitfall} />
                 </li>
               ))}
             </ul>
@@ -262,7 +262,7 @@ export const LessonView: React.FC<LessonViewProps> = ({
           <ul style={{ paddingLeft: '1.25rem', fontSize: '0.94rem', color: '#374151', lineHeight: 1.75 }}>
             {lesson.validationProcedures.map((proc, idx) => (
               <li key={idx} style={{ marginBottom: '0.4rem' }}>
-                <MathRenderer content={proc} />
+                <MarkdownRenderer content={proc} />
               </li>
             ))}
           </ul>
@@ -278,13 +278,13 @@ export const LessonView: React.FC<LessonViewProps> = ({
               <div style={{ fontWeight: 600, color: '#0f3d59', fontSize: '0.95rem', marginBottom: '0.4rem' }}>
                 Latihan {idx + 1}:
               </div>
-              <p style={{ fontSize: '0.92rem', color: '#1f2937' }}>
-                <MathRenderer content={ex.question} />
-              </p>
+              <div style={{ fontSize: '0.92rem', color: '#1f2937', marginBottom: '0.5rem' }}>
+                <MarkdownRenderer content={ex.question} />
+              </div>
 
               {ex.hint && (
                 <div style={{ fontSize: '0.85rem', color: '#6b7280', margin: '0.5rem 0', fontStyle: 'italic' }}>
-                  Petunjuk: <MathRenderer content={ex.hint} />
+                  Petunjuk: <MarkdownRenderer content={ex.hint} />
                 </div>
               )}
 
@@ -299,7 +299,7 @@ export const LessonView: React.FC<LessonViewProps> = ({
 
               {revealedAnswers[idx] && (
                 <div style={{ marginTop: '0.75rem', padding: '0.85rem', backgroundColor: '#f0fdf4', borderRadius: '4px', border: '1px solid #bbf7d0', fontSize: '0.9rem', color: '#14532d' }}>
-                  <strong>Pembahasan Ilmiah:</strong> <MathRenderer content={ex.answerExplanation} />
+                  <strong>Pembahasan Ilmiah:</strong> <MarkdownRenderer content={ex.answerExplanation} />
                 </div>
               )}
             </div>

@@ -1,0 +1,50 @@
+[
+  {
+    "level": "Beginner (Epistemology & Logic)",
+    "lesson_id": "1.1.1",
+    "title": "Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi",
+    "filename": "Lesson_1.1.1_Scientific_Foundations.pdf",
+    "size_bytes": 612365,
+    "katex_count": 11,
+    "code_blocks": 2,
+    "tables": 0,
+    "callouts": 3,
+    "status": "PASS"
+  },
+  {
+    "level": "Statistical Analysis & Inference",
+    "lesson_id": "3.1.1",
+    "title": "Uji t Dua Sampel Independen & Asumsi Homogenitas",
+    "filename": "Lesson_3.1.1_Statistical_Inference.pdf",
+    "size_bytes": 548226,
+    "katex_count": 9,
+    "code_blocks": 2,
+    "tables": 0,
+    "callouts": 3,
+    "status": "PASS"
+  },
+  {
+    "level": "Advanced Mathematical Modeling",
+    "lesson_id": "4.1.1",
+    "title": "Regresi Linear Berganda OLS & Matriks Kovarian",
+    "filename": "Lesson_4.1.1_Regression_Modeling.pdf",
+    "size_bytes": 603954,
+    "katex_count": 23,
+    "code_blocks": 2,
+    "tables": 0,
+    "callouts": 3,
+    "status": "PASS"
+  },
+  {
+    "level": "Research Capstone & Open Science",
+    "lesson_id": "7.4.4",
+    "title": "Paket Reproduktibilitas & Standar Artefak ACM",
+    "filename": "Lesson_7.4.4_Research_Capstone.pdf",
+    "size_bytes": 552843,
+    "katex_count": 8,
+    "code_blocks": 2,
+    "tables": 0,
+    "callouts": 3,
+    "status": "PASS"
+  }
+]

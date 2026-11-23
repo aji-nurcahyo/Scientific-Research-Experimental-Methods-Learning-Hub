@@ -106,3 +106,21 @@ export function getEffectiveChapterStatus(chapter: Chapter): ContentStatus {
   if (VERIFIED_CHAPTER_IDS.has(chapter.id)) return 'verified';
   return chapter.status || 'planned';
 }
+
+export function getChapterSlides(chapter: Chapter): { slideNumber: number; title: string; bulletPoints: string[]; keyFormulaOrDiagram?: string }[] {
+  let slideNum = 1;
+  const allSlides: { slideNumber: number; title: string; bulletPoints: string[]; keyFormulaOrDiagram?: string }[] = [];
+  for (const baseLesson of chapter.lessons) {
+    const enriched = getEnrichedLesson(baseLesson);
+    if (enriched.slides && enriched.slides.length > 0) {
+      for (const s of enriched.slides) {
+        allSlides.push({
+          ...s,
+          slideNumber: slideNum++,
+          title: `[Lesson ${enriched.id}] ${s.title}`,
+        });
+      }
+    }
+  }
+  return allSlides;
+}

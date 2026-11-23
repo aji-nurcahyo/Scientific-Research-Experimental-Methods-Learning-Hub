@@ -1,516 +1,631 @@
 import { Lesson } from '../types/curriculum';
 
 export const CH20_LESSONS: Record<string, Partial<Lesson>> = {
-  '3.5.1': {
-    id: '3.5.1',
-    chapterId: 'CH-20',
-    title: 'Interval Kepercayaan (Frequentist Confidence Intervals): Makna Frekuensi Jangka Panjang',
-    readingTimeMinutes: 18,
-    status: 'verified',
-    learningObjectives: [
-      'Memahami definisi filosofis frekuensi jangka panjang dari Interval Kepercayaan (Confidence Intervals).',
-      'Mencegah kekeliruan interpretasi Bayesian (CI bukan probabilitas parameter berada di dalam rentang angka tertentu).',
-      'Menghitung interval kepercayaan eksak untuk rata-rata, selisih rata-rata, dan proporsi.',
+  "3.5.1": {
+    "id": "3.5.1",
+    "chapterId": "CH-20",
+    "title": "Interval Kepercayaan (Frequentist Confidence Intervals): Makna Frekuensi Jangka Panjang",
+    "readingTimeMinutes": 18,
+    "status": "verified",
+    "learningObjectives": [
+      "Memahami definisi filosofis frekuensi jangka panjang dari Interval Kepercayaan (Confidence Intervals).",
+      "Mencegah kekeliruan interpretasi Bayesian (CI bukan probabilitas parameter berada di dalam rentang angka tertentu).",
+      "Menghitung interval kepercayaan eksak untuk rata-rata, selisih rata-rata, dan proporsi."
     ],
-    content: `Gerakan reformasi metodologi statistik modern mendesak para ilmuwan untuk meninggalkan ketergantungan buta pada nilai p-value dan beralih ke Pendekatan Berbasis Estimasi (*Estimation-based Statistics*). Inti dari pendekatan ini adalah penyajian Interval Kepercayaan (*Confidence Intervals* / CI).
-
-Namun, konsep Interval Kepercayaan dalam mazhab Frekuentis (*Frequentist*) adalah salah satu konsep yang paling sering disalahpahami dalam sains. Mayoritas mahasiswa dan peneliti secara keliru menganggap bahwa "Interval Kepercayaan 95% [10.2, 14.8] berarti terdapat peluang 95% bahwa parameter sejati $\\mu$ berada di antara 10.2 dan 14.8". Pernyataan ini secara matematis SALAH.
-
-Dalam paradigma Frekuentis, parameter populasi sejati $\\mu$ adalah konstanta fisik tetap yang tidak acak (*fixed, non-random constant*). Karena $\\mu$ adalah angka tetap, maka $\\mu$ berada di dalam interval tersebut (probabilitas = 1) atau tidak berada di dalamnya (probabilitas = 0). Yang bersifat acak adalah batas interval $[L_n, U_n]$ yang dihitung dari sampel acak yang berfluktuasi.
-
-Makna sejati dari Tingkat Kepercayaan 95%:
-Jika sebuah eksperimen diulang sebanyak 100 kali secara independen di bawah kondisi identik, dan dari masing-masing eksperimen dihitung interval kepercayaan 95%-nya, maka sekitar 95 dari 100 rentang interval tersebut dijamin mencakup nilai parameter sejati $\\mu$, sedangkan 5 interval lainnya akan meleset total. CI mengukur keandalan prosedur pengukuran jangka panjang, bukan probabilitas parameter dari satu sampel tunggal.`,
-    mathematicalFoundations: `1. Definisi Probabilitas Cakupan Frekuentis Jangka Panjang:
-Diberikan batas bawah acak $L(\\mathbf{X})$ dan batas atas acak $U(\\mathbf{X})$:
-
-$$P(L(\\mathbf{X}) \\le \\mu \\le U(\\mathbf{X})) = 1 - \\alpha$$
-
-Setelah data dikumpulkan dan angka dihitung (misal $[10.2, 14.8]$):
-$$P(10.2 \\le \\mu \\le 14.8) \\in \\{0, 1\\} \\quad (\\text{Bukan lagi } 0.95)$$
-
-2. Formulasi Interval Kepercayaan Rata-rata Normal (Varians Tidak Diketahui):
-$$\\text{CI}_{1-\\alpha} = \\left[ \\bar{X} - t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}}, \\;\\; \\bar{X} + t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\right]$$
-
-Lebar Margin of Error ($ME$):
-$$ME = t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}}$$
-Lebar interval mencerminkan presisi inferensial: semakin sempit interval pada tingkat kepercayaan yang sama, semakin tinggi kepastian estimasi peneliti.`,
-    workedExample: {
-      problemStatement: 'Pada pengujian efisiensi konversi daya modul inverter fotovoltaik (n = 16 sampel), diperoleh rata-rata bar{X} = 94.50% dengan standar deviasi s = 1.20%. Hitung Interval Kepercayaan 95% untuk rata-rata efisiensi populasi inverter dan berikan interpretasi ilmiah yang benar.',
-      stepByStepSolution: [
-        'Langkah 1: Tentukan derajat kebebasan: nu = n - 1 = 16 - 1 = 15.',
-        'Langkah 2: Cari nilai kritis t-Student untuk alpha = 0.05 dua arah: t_(0.025, 15) = 2.131.',
-        'Langkah 3: Hitung Standar Error: SE = s / sqrt(n) = 1.20 / sqrt(16) = 1.20 / 4 = 0.30%.',
-        'Langkah 4: Hitung Margin of Error: ME = t * SE = 2.131 * 0.30% = 0.6393%.',
-        'Langkah 5: Hitung batas interval: L = 94.50 - 0.64 = 93.86%; U = 94.50 + 0.64 = 95.14%.',
+    "content": "Gerakan reformasi metodologi statistik modern mendesak para ilmuwan untuk meninggalkan ketergantungan buta pada nilai p-value dan beralih ke Pendekatan Berbasis Estimasi (*Estimation-based Statistics*). Inti dari pendekatan ini adalah penyajian Interval Kepercayaan (*Confidence Intervals* / CI).\n\nNamun, konsep Interval Kepercayaan dalam mazhab Frekuentis (*Frequentist*) adalah salah satu konsep yang paling sering disalahpahami dalam sains. Mayoritas mahasiswa dan peneliti secara keliru menganggap bahwa \"Interval Kepercayaan 95% [10.2, 14.8] berarti terdapat peluang 95% bahwa parameter sejati $\\mu$ berada di antara 10.2 dan 14.8\". Pernyataan ini secara matematis SALAH.\n\nDalam paradigma Frekuentis, parameter populasi sejati $\\mu$ adalah konstanta fisik tetap yang tidak acak (*fixed, non-random constant*). Karena $\\mu$ adalah angka tetap, maka $\\mu$ berada di dalam interval tersebut (probabilitas = 1) atau tidak berada di dalamnya (probabilitas = 0). Yang bersifat acak adalah batas interval $[L_n, U_n]$ yang dihitung dari sampel acak yang berfluktuasi.\n\nMakna sejati dari Tingkat Kepercayaan 95%:\nJika sebuah eksperimen diulang sebanyak 100 kali secara independen di bawah kondisi identik, dan dari masing-masing eksperimen dihitung interval kepercayaan 95%-nya, maka sekitar 95 dari 100 rentang interval tersebut dijamin mencakup nilai parameter sejati $\\mu$, sedangkan 5 interval lainnya akan meleset total. CI mengukur keandalan prosedur pengukuran jangka panjang, bukan probabilitas parameter dari satu sampel tunggal.",
+    "mathematicalFoundations": "1. Definisi Probabilitas Cakupan Frekuentis Jangka Panjang:\nDiberikan batas bawah acak $L(\\mathbf{X})$ dan batas atas acak $U(\\mathbf{X})$:\n\n$$P(L(\\mathbf{X}) \\le \\mu \\le U(\\mathbf{X})) = 1 - \\alpha$$\n\nSetelah data dikumpulkan dan angka dihitung (misal $[10.2, 14.8]$):\n$$P(10.2 \\le \\mu \\le 14.8) \\in \\{0, 1\\} \\quad (\\text{Bukan lagi } 0.95)$$\n\n2. Formulasi Interval Kepercayaan Rata-rata Normal (Varians Tidak Diketahui):\n$$\\text{CI}_{1-\\alpha} = \\left[ \\bar{X} - t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}}, \\;\\; \\bar{X} + t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}} \\right]$$\n\nLebar Margin of Error ($ME$):\n$$ME = t_{\\alpha/2, \\, n-1} \\frac{s}{\\sqrt{n}}$$\nLebar interval mencerminkan presisi inferensial: semakin sempit interval pada tingkat kepercayaan yang sama, semakin tinggi kepastian estimasi peneliti.",
+    "workedExample": {
+      "problemStatement": "Pada pengujian efisiensi konversi daya modul inverter fotovoltaik (n = 16 sampel), diperoleh rata-rata bar{X} = 94.50% dengan standar deviasi s = 1.20%. Hitung Interval Kepercayaan 95% untuk rata-rata efisiensi populasi inverter dan berikan interpretasi ilmiah yang benar.",
+      "stepByStepSolution": [
+        "Langkah 1: Tentukan derajat kebebasan: nu = n - 1 = 16 - 1 = 15.",
+        "Langkah 2: Cari nilai kritis t-Student untuk alpha = 0.05 dua arah: t_(0.025, 15) = 2.131.",
+        "Langkah 3: Hitung Standar Error: SE = s / sqrt(n) = 1.20 / sqrt(16) = 1.20 / 4 = 0.30%.",
+        "Langkah 4: Hitung Margin of Error: ME = t * SE = 2.131 * 0.30% = 0.6393%.",
+        "Langkah 5: Hitung batas interval: L = 94.50 - 0.64 = 93.86%; U = 94.50 + 0.64 = 95.14%."
       ],
-      resultInterpretation: 'Interval Kepercayaan 95% efisiensi inverter adalah [93.86%, 95.14%]. Prosedur inferensi ini memiliki keandalan jangka panjang 95% dalam menangkap rata-rata efisiensi sejati modul surya tersebut.',
+      "resultInterpretation": "Interval Kepercayaan 95% efisiensi inverter adalah [93.86%, 95.14%]. Prosedur inferensi ini memiliki keandalan jangka panjang 95% dalam menangkap rata-rata efisiensi sejati modul surya tersebut."
     },
-    pythonImplementation: {
-      description: 'Simulasi Monte Carlo membuktikan makna frekuensi jangka panjang: 95 dari 100 interval mencakup parameter sejati.',
-      libraryDependencies: ['numpy', 'scipy.stats'],
-      code: `import numpy as np
-from scipy import stats
-
-np.random.seed(42)
-mu_sejati = 100.0
-sigma_sejati = 15.0
-n_sampel = 25
-n_eksperimen = 100
-alpha = 0.05
-
-t_kritis = stats.t.ppf(1 - alpha/2, df=n_sampel - 1)
-interval_berhasil = 0
-
-for _ in range(n_eksperimen):
-    sampel = np.random.normal(loc=mu_sejati, scale=sigma_sejati, size=n_sampel)
-    x_bar = np.mean(sampel)
-    se = np.std(sampel, ddof=1) / np.sqrt(n_sampel)
-    batas_bawah = x_bar - t_kritis * se
-    batas_atas = x_bar + t_kritis * se
-    
-    if batas_bawah <= mu_sejati <= batas_atas:
-        interval_berhasil += 1
-
-persentase_cakupan = (interval_berhasil / n_eksperimen) * 100
-
-print(f"Total Eksperimen Independen Dijalankan : {n_eksperimen}")
-print(f"Jumlah Interval yang Mencakup Nilai Sejati Mu ({mu_sejati}): {interval_berhasil}")
-print(f"Persentase Cakupan Empiris Jangka Panjang: {persentase_cakupan:.1f}% (Target: 95.0%)")
-print("Kesimpulan: CI merefleksikan keandalan prosedur sampling berulang, bukan probabilitas parameter tunggal.")
-`,
-      expectedOutput: `Total Eksperimen Independen Dijalankan : 100
-Jumlah Interval yang Mencakup Nilai Sejati Mu (100.0): 95
-Persentase Cakupan Empiris Jangka Panjang: 95.0% (Target: 95.0%)
-Kesimpulan: CI merefleksikan keandalan prosedur sampling berulang, bukan probabilitas parameter tunggal.`,
-    },
-    commonPitfalls: [
-      'Menyatakan bahwa terdapat probabilitas 95% bahwa parameter populasi berada di dalam rentang angka numerik yang telah dihitung.',
-      'Mengabaikan fakta bahwa jika ukuran sampel sangat kecil dan data menceng, persentase cakupan sejati CI bisa jauh di bawah 95%.',
-      'Menyimpulkan dua kelompok berbeda secara signifikan hanya karena interval kepercayaan masing-masing kelompok tidak saling tumpang tindih (*overlap fallacy*).',
-    ],
-    validationProcedures: [
-      'Gunakan metode Bootstrap Confidence Interval (BCa Bootstrap) jika data melanggar asumsi normalitas secara moderat.',
-      'Sajikan interval kepercayaan untuk selisih rata-rata (Difference CI) saat membandingkan dua perlakuan, bukan hanya menyandingkan dua CI individual.',
-    ],
-    exercises: [
-      {
-        question: 'Dua kelompok perlakuan masing-masing memiliki CI 95%: Kelompok A [10, 16] dan Kelompok B [14, 20]. Apakah tumpang tindihnya kedua rentang interval (rentang 14 s.d. 16) membuktikan bahwa kedua kelompok tidak berbeda secara signifikan pada alpha = 0.05?',
-        hint: 'Perhatikan bahwa standar error selisih dua kelompok lebih kecil dari penjumlahan standar error masing-masing kelompok.',
-        answerExplanation: 'Belum tentu. Uji tumpang tindih interval individual (*eyeball test*) sangat konservatif. Dua kelompok yang interval kepercayaan 95%-nya sedikit bertumpang tindih tetap dapat memiliki selisih rata-rata yang berbeda secara signifikan (p < 0.05) pada uji-t dua sampel formal. Cara yang benar adalah menghitung Interval Kepercayaan 95% dari SELISIH kedua rata-rata (mu_A - mu_B) dan memeriksa apakah angka nol tercakup di dalamnya.',
-      },
-    ],
-    references: [
-      { citation: 'Neyman, J. (1937). Outline of a theory of statistical estimation based on the classical theory of probability. Philosophical Transactions of the Royal Society of London, 236, 333-380.', type: 'peer-reviewed-article' },
-      { citation: 'Morey, R. D., et al. (2016). The fallacy of placing confidence in confidence intervals. Psychonomic Bulletin & Review, 23(1), 103-123.', type: 'peer-reviewed-article' },
-    ],
-    slides: [
-      {
-        slideNumber: 1,
-        title: 'Makna Frekuentis Interval Kepercayaan',
-        bulletPoints: [
-          'Parameter sejati mu adalah konstanta tetap (bukan variabel acak).',
-          'Yang acak adalah batas interval [L, U] yang bergantung pada sampel.',
-          'Cakupan 95%: 95 dari 100 prosedur eksperimen menangkap parameter sejati.',
-        ],
-        keyFormulaOrDiagram: '$$P(L(\\mathbf{X}) \\le \\mu \\le U(\\mathbf{X})) = 0.95$$',
-      },
-      {
-        slideNumber: 2,
-        title: 'Lebar Interval & Presisi',
-        bulletPoints: [
-          'Lebar CI = 2 * Margin of Error (ME).',
-          'Interval sempit mencerminkan presisi inferensi yang tinggi.',
-          'Gunakan CI selisih rata-rata untuk komparasi dua perlakuan secara sahih.',
-        ],
-      },
-    ],
-  },
-  '3.5.2': {
-    id: '3.5.2',
-    chapterId: 'CH-20',
-    title: 'Standarisasi Ukuran Efek: Cohens d, Hedges g, Glasss Delta, dan Rasio Odds',
-    readingTimeMinutes: 20,
-    status: 'verified',
-    learningObjectives: [
-      'Menghitung dan membedakan metrik standarisasi ukuran efek: Cohen\'s d, Hedges\' g, dan Glass\'s Delta.',
-      'Menerapkan koreksi bias ukuran sampel kecil Hedges pada Cohen\'s d.',
-      'Menginterpretasikan besaran efek kuantitatif menurut panduan substantif rekayasa Jacob Cohen.',
-    ],
-    content: `Ukuran Efek (*Effect Size*) adalah besaran kuantitatif dari fenomena fisis atau dampak perlakuan yang sedang diteliti, yang dinyatakan bebas dari pengaruh ukuran sampel. Berbeda dengan p-value yang secara artifisial dapat dibuat sangat kecil hanya dengan memperbesar jumlah sampel ($n \\to \\infty$), ukuran efek memberikan estimasi obyektif mengenai seberapa besar perbaikan atau perubahan yang sebenarnya dihasilkan oleh metode baru.
-
-Keluarga Metrik Ukuran Efek Komparasi Dua Kelompok:
-1. Cohen's d (Jacob Cohen, 1988): Mengukur selisih antara dua rata-rata kelompok yang dinormalisasi terhadap standar deviasi gabungan (*pooled standard deviation*). Namun, Cohen\'s d memiliki sedikit bias positif pada sampel kecil ($n < 20$).
-2. Hedges\' g (Larry Hedges, 1981): Memodifikasi Cohen\'s d dengan mengalikan faktor koreksi eksak berbasis fungsi Gamma untuk menghilangkan bias sampel kecil. Hedges\' g adalah estimator tak bias terbaik untuk ukuran efek standar.
-3. Glass\'s Delta ($\\Delta$): Menggunakan standar deviasi kelompok kontrol murni sebagai pembagi normalisasi, bukan standar deviasi gabungan. Sangat dianjurkan jika perlakuan eksperimen mengubah variabilitas kelompok perlakuan secara ekstrem sehingga varians kedua kelompok tidak homogen.
-4. Odds Ratio (OR) & Risk Ratio (RR): Ukuran efek standar untuk variabel luaran biner kategorikal (misal: probabilitas kegagalan sistem lolos vs gagal).`,
-    mathematicalFoundations: `1. Formulasi Cohen's $d$:
-$$d = \\frac{\\bar{X}_1 - \\bar{X}_2}{s_{\\text{pooled}}}$$
-Di mana varians gabungan berbobot:
-$$s_{\\text{pooled}} = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$
-
-2. Koreksi Tak Bias Hedges' $g$:
-$$g = J(n_1 + n_2 - 2) \\cdot d \\approx \\left( 1 - \\frac{3}{4(n_1 + n_2) - 9} \\right) \\cdot d$$
-
-3. Glass's Delta ($\\Delta$):
-$$\\Delta = \\frac{\\bar{X}_{\\text{perlakuan}} - \\bar{X}_{\\text{kontrol}}}{s_{\\text{kontrol}}}$$
-
-Acuan Besaran Cohen:
-- $|d| \\approx 0.20$ : Efek Kecil (*Small*)
-- $|d| \\approx 0.50$ : Efek Sedang (*Medium*)
-- $|d| \\ge 0.80$ : Efek Besar (*Large*)`,
-    workedExample: {
-      problemStatement: 'Dua kelompok pengujian kekuatan tarik sambungan las gesek (n1 = 8 sampel metode baru, n2 = 8 sampel metode lama). Metode baru: bar{X}1 = 520 MPa, s1 = 25 MPa. Metode lama: bar{X}2 = 490 MPa, s2 = 25 MPa. Hitung Cohen\'s d dan Hedges\' g untuk mengevaluasi besaran efek peningkatan kekuatan las tersebut.',
-      stepByStepSolution: [
-        'Langkah 1: Hitung selisih rata-rata: Delta bar{X} = 520 - 490 = 30 MPa.',
-        'Langkah 2: Karena s1 = s2 = 25 MPa, maka s_pooled = 25 MPa.',
-        'Langkah 3: Hitung Cohen\'s d: d = 30 / 25 = 1.20 (Efek sangat besar).',
-        'Langkah 4: Hitung faktor koreksi Hedges J(14) untuk n1 + n2 = 16: J = 1 - 3 / (4*16 - 9) = 1 - 3 / (64 - 9) = 1 - 3 / 55 = 1 - 0.0545 = 0.9455.',
-        'Langkah 5: Hitung Hedges\' g tak bias: g = 0.9455 * 1.20 = 1.135.',
+    "pythonImplementation": {
+      "description": "Simulasi Monte Carlo membuktikan makna frekuensi jangka panjang: 95 dari 100 interval mencakup parameter sejati.",
+      "libraryDependencies": [
+        "numpy",
+        "scipy.stats"
       ],
-      resultInterpretation: 'Peningkatan kekuatan las sebesar 30 MPa merepresentasikan ukuran efek Hedges g = 1.135 (> 0.80), membuktikan inovasi pengelasan baru memberikan perbaikan mekanis substansial yang sangat bermakna.',
+      "code": "import numpy as np\nfrom scipy import stats\n\nnp.random.seed(42)\nmu_sejati = 100.0\nsigma_sejati = 15.0\nn_sampel = 25\nn_eksperimen = 100\nalpha = 0.05\n\nt_kritis = stats.t.ppf(1 - alpha/2, df=n_sampel - 1)\ninterval_berhasil = 0\n\nfor _ in range(n_eksperimen):\n    sampel = np.random.normal(loc=mu_sejati, scale=sigma_sejati, size=n_sampel)\n    x_bar = np.mean(sampel)\n    se = np.std(sampel, ddof=1) / np.sqrt(n_sampel)\n    batas_bawah = x_bar - t_kritis * se\n    batas_atas = x_bar + t_kritis * se\n    \n    if batas_bawah <= mu_sejati <= batas_atas:\n        interval_berhasil += 1\n\npersentase_cakupan = (interval_berhasil / n_eksperimen) * 100\n\nprint(f\"Total Eksperimen Independen Dijalankan : {n_eksperimen}\")\nprint(f\"Jumlah Interval yang Mencakup Nilai Sejati Mu ({mu_sejati}): {interval_berhasil}\")\nprint(f\"Persentase Cakupan Empiris Jangka Panjang: {persentase_cakupan:.1f}% (Target: 95.0%)\")\nprint(\"Kesimpulan: CI merefleksikan keandalan prosedur sampling berulang, bukan probabilitas parameter tunggal.\")\n",
+      "expectedOutput": "Total Eksperimen Independen Dijalankan : 100\nJumlah Interval yang Mencakup Nilai Sejati Mu (100.0): 95\nPersentase Cakupan Empiris Jangka Panjang: 95.0% (Target: 95.0%)\nKesimpulan: CI merefleksikan keandalan prosedur sampling berulang, bukan probabilitas parameter tunggal."
     },
-    pythonImplementation: {
-      description: 'Komputasi Cohen\'s d, Hedges\' g, dan interval kepercayaan 95% ukuran efek.',
-      libraryDependencies: ['numpy'],
-      code: `import numpy as np
-
-# Data dua kelompok perlakuan [SIMULASI/SYNTHETIC DATA]
-grup_baru = np.array([518, 525, 515, 530, 522, 510, 528, 512], dtype=float)
-grup_lama = np.array([488, 495, 490, 485, 492, 498, 486, 486], dtype=float)
-
-n1, n2 = len(grup_baru), len(grup_lama)
-m1, m2 = np.mean(grup_baru), np.mean(grup_lama)
-s1, s2 = np.std(grup_baru, ddof=1), np.std(grup_lama, ddof=1)
-
-# Varians pooled dan Cohen's d
-s_pooled = np.sqrt(((n1 - 1)*s1**2 + (n2 - 1)*s2**2) / (n1 + n2 - 2))
-d = (m1 - m2) / s_pooled
-
-# Faktor koreksi Hedges
-faktor_j = 1.0 - (3.0 / (4.0 * (n1 + n2) - 9.0))
-g = faktor_j * d
-
-# Standar error dari d
-se_d = np.sqrt((n1 + n2)/(n1 * n2) + (d**2)/(2 * (n1 + n2)))
-ci_d = [d - 1.96 * se_d, d + 1.96 * se_d]
-
-print(f"Rata-rata Grup Baru : {m1:.2f} MPa (s = {s1:.2f})")
-print(f"Rata-rata Grup Lama : {m2:.2f} MPa (s = {s2:.2f})")
-print(f"Standar Deviasi Pooled : {s_pooled:.2f} MPa")
-print("-" * 50)
-print(f"Cohen's d (Bias Sampel Kecil) : {d:.3f}")
-print(f"Hedges' g (Terkoreksi Tak Bias) : {g:.3f}")
-print(f"95% CI untuk Ukuran Efek d     : [{ci_d[0]:.3f}, {ci_d[1]:.3f}]")
-`,
-      expectedOutput: `Rata-rata Grup Baru : 520.00 MPa (s = 7.15)
-Rata-rata Grup Lama : 490.00 MPa (s = 4.87)
-Standar Deviasi Pooled : 6.13 MPa
---------------------------------------------------
-Cohen's d (Bias Sampel Kecil) : 4.896
-Hedges' g (Terkoreksi Tak Bias) : 4.629
-95% CI untuk Ukuran Efek d     : [3.109, 6.682]`,
-    },
-    commonPitfalls: [
-      'Hanya melaporkan persentase perbaikan relatif (misal "naik 20%") tanpa menyertakan ukuran efek standar yang dinormalisasi varians.',
-      'Menggunakan deviasi standar gabungan pada kasus di mana perlakuan baru melipatgandakan varians kelompok secara masif (wajib gunakan Glass\'s Delta).',
-      'Mengabaikan koreksi Hedges pada penelitian bersampel kecil (n per grup < 20).',
+    "commonPitfalls": [
+      "Menyatakan bahwa terdapat probabilitas 95% bahwa parameter populasi berada di dalam rentang angka numerik yang telah dihitung.",
+      "Mengabaikan fakta bahwa jika ukuran sampel sangat kecil dan data menceng, persentase cakupan sejati CI bisa jauh di bawah 95%.",
+      "Menyimpulkan dua kelompok berbeda secara signifikan hanya karena interval kepercayaan masing-masing kelompok tidak saling tumpang tindih (*overlap fallacy*)."
     ],
-    validationProcedures: [
-      'Sertakan interval kepercayaan untuk ukuran efek (misal 95% CI of Cohen\'s d) untuk memperlihatkan ketidakpastian estimasi besaran efek.',
-      'Bandingkan nilai d dengan standar konvensi domain rekayasa terkait (benchmark meta-analisis literatur).',
+    "validationProcedures": [
+      "Gunakan metode Bootstrap Confidence Interval (BCa Bootstrap) jika data melanggar asumsi normalitas secara moderat.",
+      "Sajikan interval kepercayaan untuk selisih rata-rata (Difference CI) saat membandingkan dua perlakuan, bukan hanya menyandingkan dua CI individual."
     ],
-    exercises: [
+    "exercises": [
       {
-        question: 'Kapan seorang peneliti wajib menggunakan Glass\'s Delta alih-alih Cohen\'s d atau Hedges\' g dalam membandingkan dua kelompok?',
-        hint: 'Perhatikan kondisi di mana perlakuan baru mempengaruhi variabilitas kelompok eksperimen secara ekstrem.',
-        answerExplanation: 'Glass\'s Delta wajib digunakan ketika perlakuan eksperimen secara fundamental mengubah variabilitas (homoskedastisitas) kelompok perlakuan dibandingkan kelompok kontrol (misalnya perlakuan kimiawi baru membuat beberapa benda uji menjadi sangat seragam sementara yang lain sangat bervariasi). Dalam kondisi varians heterogen tersebut, menggabungkan kedua varians (pooled) tidak lagi valid, sehingga deviasi standar kelompok kontrol murni dijadikan sebagai satu-satunya tolok ukur pembagi normalisasi.',
+        "question": "Dua kelompok perlakuan masing-masing memiliki CI 95%: Kelompok A [10, 16] dan Kelompok B [14, 20]. Apakah tumpang tindihnya kedua rentang interval (rentang 14 s.d. 16) membuktikan bahwa kedua kelompok tidak berbeda secara signifikan pada alpha = 0.05?",
+        "hint": "Perhatikan bahwa standar error selisih dua kelompok lebih kecil dari penjumlahan standar error masing-masing kelompok.",
+        "answerExplanation": "Belum tentu. Uji tumpang tindih interval individual (*eyeball test*) sangat konservatif. Dua kelompok yang interval kepercayaan 95%-nya sedikit bertumpang tindih tetap dapat memiliki selisih rata-rata yang berbeda secara signifikan (p < 0.05) pada uji-t dua sampel formal. Cara yang benar adalah menghitung Interval Kepercayaan 95% dari SELISIH kedua rata-rata (mu_A - mu_B) dan memeriksa apakah angka nol tercakup di dalamnya."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Neyman, J. (1937). Outline of a theory of statistical estimation based on the classical theory of probability. Philosophical Transactions of the Royal Society of London, 236, 333-380.",
+        "type": "peer-reviewed-article"
       },
-    ],
-    references: [
-      { citation: 'Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Lawrence Erlbaum Associates.', type: 'canonical-textbook' },
-      { citation: 'Hedges, L. V. (1981). Distribution theory for Glass\'s estimator of effect size and related estimators. Journal of Educational Statistics, 6(2), 107-128.', type: 'peer-reviewed-article' },
-    ],
-    slides: [
       {
-        slideNumber: 1,
-        title: 'Standarisasi Ukuran Efek',
-        bulletPoints: [
-          'Ukuran efek mengukur besaran fisis fenomena bebas dari ukuran sampel n.',
-          'P-value dapat dibuat sangat kecil hanya dengan memperbesar n.',
-          'Cohen\'s d menstandarisasi selisih rata-rata terhadap pooled SD.',
+        "citation": "Morey, R. D., et al. (2016). The fallacy of placing confidence in confidence intervals. Psychonomic Bulletin & Review, 23(1), 103-123.",
+        "type": "peer-reviewed-article"
+      }
+    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Interval Kepercayaan (Frequentist Confidence Intervals)...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.5.1.",
+          "Capaian: Memahami definisi filosofis frekuensi jangka panjang dari Interval Kepercayaan (Confidence Intervals).",
+          "Capaian: Mencegah kekeliruan interpretasi Bayesian (CI bukan probabilitas parameter berada di dalam rentang angka terte...",
+          "Capaian: Menghitung interval kepercayaan eksak untuk rata-rata, selisih rata-rata, dan proporsi."
         ],
-        keyFormulaOrDiagram: '$$d = \\frac{\\bar{X}_1 - \\bar{X}_2}{s_{\\text{pooled}}}, \\quad g \\approx \\left(1 - \\frac{3}{4N - 9}\\right) d$$',
+        "keyFormulaOrDiagram": "$$P(L(\\mathbf{X}) \\le \\mu \\le U(\\mathbf{X})) = 1 - \\alpha$$"
       },
       {
-        slideNumber: 2,
-        title: 'Taksonomi Metrik Efek',
-        bulletPoints: [
-          'Hedges\' g: Standar emas tak bias untuk sampel kecil (n < 20).',
-          'Glass\'s Delta: Digunakan saat varians kedua kelompok heterogen masif.',
-          'Ambang batas interpretasi Cohen: 0.2 (Kecil), 0.5 (Sedang), 0.8 (Besar).',
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Interval Kepercayaan (Frequentist Confidence Intervals)...",
+        "bulletPoints": [
+          "Gerakan reformasi metodologi statistik modern mendesak para ilmuwan untuk meninggalkan ketergantungan buta pada nilai p-value...",
+          "Namun, konsep Interval Kepercayaan dalam mazhab Frekuentis (*Frequentist*) adalah salah satu konsep yang paling sering disala...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
         ],
+        "keyFormulaOrDiagram": "Dalam paradigma Frekuentis, parameter populasi sejati $\\mu$ adalah konstanta fisik tetap y..."
       },
-    ],
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Dalam paradigma Frekuentis, parameter populasi sejati $\\mu$ adalah konstanta fisik tetap yang tidak acak (*fixed, non-random...",
+          "Makna sejati dari Tingkat Kepercayaan 95%: Jika sebuah eksperimen diulang sebanyak 100 kali secara independen di bawah kondis...",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "1. Definisi Probabilitas Cakupan Frekuentis Jangka Panjang:",
+          "Diberikan batas bawah acak $L(\\mathbf{X})$ dan batas atas acak $U(\\mathbf{X})$:",
+          "Setelah data dikumpulkan dan angka dihitung (misal $[10.2, 14.8]$):"
+        ],
+        "keyFormulaOrDiagram": "$$P(L(\\mathbf{X}) \\le \\mu \\le U(\\mathbf{X})) = 1 - \\alpha$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Pada pengujian efisiensi konversi daya modul inverter fotovoltaik (n = 16 sampel), diperoleh rata-rata bar{X} = 94.50% dengan standar devias...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Tentukan derajat kebebasan: nu = n - 1 = 16 - 1 = 15.",
+          "Langkah 2: Cari nilai kritis t-Student untuk alpha = 0.05 dua arah: t_(0.025, 15) = 2.131.",
+          "Langkah 3: Hitung Standar Error: SE = s / sqrt(n) = 1.20 / sqrt(16) = 1.20 / 4 = 0.30%.",
+          "Interpretasi: Interval Kepercayaan 95% efisiensi inverter adalah [93.86%, 95.14%]. Prosedur inferensi ini memiliki keandalan jangka pa..."
+        ],
+        "keyFormulaOrDiagram": "Langkah 5: Hitung batas interval: L = 94.50 - 0.64 = 93.86%; U = 94.50 + 0.64 = 95.14%."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Simulasi Monte Carlo membuktikan makna frekuensi jangka panjang: 95 dari 100 interval mencakup parameter sejati.",
+          "Dependensi Pustaka: numpy, scipy.stats",
+          "Keluaran Diharapkan: Total Eksperimen Independen Dijalankan : 100"
+        ],
+        "keyFormulaOrDiagram": "Total Eksperimen Independen Dijalankan : 100 | Jumlah Interval yang Mencakup Nilai Sejati..."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Menyatakan bahwa terdapat probabilitas 95% bahwa parameter populasi berada di dalam rentang angka numerik yang...",
+          "Perangkap: Mengabaikan fakta bahwa jika ukuran sampel sangat kecil dan data menceng, persentase cakupan sejati CI bisa ja...",
+          "Perangkap: Menyimpulkan dua kelompok berbeda secara signifikan hanya karena interval kepercayaan masing-masing kelompok t..."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Gunakan metode Bootstrap Confidence Interval (BCa Bootstrap) jika data melanggar asumsi normalitas secara mode...",
+          "Prosedur: Sajikan interval kepercayaan untuk selisih rata-rata (Difference CI) saat membandingkan dua perlakuan, bukan h..."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Dua kelompok perlakuan masing-masing memiliki CI 95%: Kelompok A [10, 16] dan Kelompok B [14, 20]. Apakah tumpang tindih...",
+          "Petunjuk: Perhatikan bahwa standar error selisih dua kelompok lebih kecil dari penjumlahan standar error masin...",
+          "Solusi Kunci: Belum tentu. Uji tumpang tindih interval individual (*eyeball test*) sangat konservatif. Dua kelompok yang interval kepe..."
+        ]
+      }
+    ]
   },
-  '3.5.3': {
-    id: '3.5.3',
-    chapterId: 'CH-20',
-    title: 'Mengapa Signifikansi Statistik Tidak Sama dengan Signifikansi Praktis Rekayasa',
-    readingTimeMinutes: 18,
-    status: 'verified',
-    learningObjectives: [
-      'Membedakan Signifikansi Statistik (*Statistical Significance*) dan Signifikansi Praktis (*Practical Significance*).',
-      'Mendefinisikan Minimal Practically Important Difference (MPID) dalam spesifikasi rekayasa.',
-      'Mencegah pemborosan investasi industri akibat mengejar signifikansi statistik semu.',
+  "3.5.2": {
+    "id": "3.5.2",
+    "chapterId": "CH-20",
+    "title": "Standarisasi Ukuran Efek: Cohens d, Hedges g, Glasss Delta, dan Rasio Odds",
+    "readingTimeMinutes": 20,
+    "status": "verified",
+    "learningObjectives": [
+      "Menghitung dan membedakan metrik standarisasi ukuran efek: Cohen's d, Hedges' g, dan Glass's Delta.",
+      "Menerapkan koreksi bias ukuran sampel kecil Hedges pada Cohen's d.",
+      "Menginterpretasikan besaran efek kuantitatif menurut panduan substantif rekayasa Jacob Cohen."
     ],
-    content: `Dalam dunia akademik teoretis, peneliti sering bersorak gembira ketika perangkat lunak statistik menampilkan angka $p < 0.001$. Namun dalam dunia rekayasa industri, pertanyaannya bukanlah "apakah perbedaannya signifikan secara statistik?", melainkan "apakah besaran perbaikan tersebut bernilai cukup besar untuk membenarkan biaya modifikasi mesin, penggantian material, atau konsumsi memori tambahan?".
-
-Pemisahan Konseptual:
-1. Signifikansi Statistik ($p < \alpha$): Hanya membuktikan bahwa perbedaan yang teramati pada sampel sangat tidak mungkin dibangkitkan oleh fluktuasi acak murni semata. Signifikansi statistik adalah fungsi dari dua hal: besaran efek fisis DAN ukuran sampel $n$. Dengan sampel yang sangat masif ($n = 1.000.000$), selisih efisiensi sekecil 0.001% akan menghasilkan $p < 0.000001$.
-2. Signifikansi Praktis / Rekayasa: Menilai apakah besaran efek tersebut melampaui Ambang Perbedaan Minimum yang Bermakna (*Minimal Practically Important Difference* / MPID). Jika sebuah algoritma baru membutuhkan penambahan chip memori seharga Rp 500.000 per unit perangkat IoT demi mendapatkan peningkatan akurasi baterai sebesar 0.05%, algoritma tersebut signifikan secara statistik namun gagal total secara praktis rekayasa.
-
-Peneliti rekayasa yang matang tidak pernah berhenti pada pelaporan p-value, melainkan selalu membandingkan interval kepercayaan estimasi terhadap batas ambang batas toleransi rekayasa (*engineering tolerance threshold*).`,
-    mathematicalFoundations: `Kerangka Kerja Wilayah Kesetaraan Praktis (*Region of Practical Equivalence* / ROPE):
-
-Didefinisikan batas toleransi praktis $[-\\delta_{\\text{MPID}}, +\\delta_{\\text{MPID}}]$ di mana perbedaan di dalam rentang tersebut dianggap tidak memiliki dampak fisis yang berarti bagi kinerja sistem.
-
-Diberikan Interval Kepercayaan 95% dari selisih performa $[L_{\\Delta}, U_{\\Delta}]$:
-1. Signifikan Statistik & Signifikan Praktis:
-$$L_{\\Delta} > \\delta_{\\text{MPID}} \\quad (p < 0.05 \\text{ dan seluruh CI berada di atas ambang praktis})$$
-
-2. Signifikan Statistik Tetapi Tidak Bermakna Praktis (*Trivially Significant*):
-$$0 < L_{\\Delta} \\le U_{\\Delta} < \\delta_{\\text{MPID}} \\quad (p < 0.05 \\text{ namun seluruh perbaikan berada di bawah ambang praktis})$$
-
-3. Tidak Konklusif / Sampel Terlalu Kecil:
-$$L_{\\Delta} < \\delta_{\\text{MPID}} < U_{\\Delta} \\quad (\\text{Interval kepercayaan terlalu lebar melintasi batas ambang})$$`,
-    workedExample: {
-      problemStatement: 'Sebuah perusahaan telekomunikasi menetapkan bahwa algoritma kompresi baru hanya layak diimplementasikan jika mampu menurunkan latensi transmisi minimal delta_MPID = 15.0 ms. Pada pengujian 100.000 paket data, algoritma baru menghasilkan penurunan latensi rata-rata sebesar 1.2 ms dengan Interval Kepercayaan 95% [1.1 ms, 1.3 ms] dan p-value < 0.0001. Evaluasi keputusan rekayasa yang harus diambil.',
-      stepByStepSolution: [
-        'Langkah 1: Evaluasi signifikansi statistik: p-value < 0.0001 dan selang kepercayaan [1.1 ms, 1.3 ms] tidak mencakup angka 0. Perbedaan terbukti sangat signifikan secara statistik.',
-        'Langkah 2: Evaluasi signifikansi praktis: Ambang batas kelayakan industri adalah delta_MPID = 15.0 ms. Nilai perbaikan tertinggi yang masuk akal secara statistik adalah batas atas CI (1.3 ms).',
-        'Langkah 3: Bandingkan CI dengan ROPE: Batas atas CI (1.3 ms) berada jauh di bawah tuntutan kelayakan praktis (15.0 ms).',
-        'Langkah 4: Kesimpulan rekayasa: Algoritma tersebut secara meyakinkan "tidak bernilai praktis" (*trivially superior*). Mengganti infrastruktur server untuk penurunan 1.2 ms adalah pemborosan investasi finansial yang tidak rasional.',
+    "content": "Ukuran Efek (*Effect Size*) adalah besaran kuantitatif dari fenomena fisis atau dampak perlakuan yang sedang diteliti, yang dinyatakan bebas dari pengaruh ukuran sampel. Berbeda dengan p-value yang secara artifisial dapat dibuat sangat kecil hanya dengan memperbesar jumlah sampel ($n \\to \\infty$), ukuran efek memberikan estimasi obyektif mengenai seberapa besar perbaikan atau perubahan yang sebenarnya dihasilkan oleh metode baru.\n\nKeluarga Metrik Ukuran Efek Komparasi Dua Kelompok:\n1. Cohen's d (Jacob Cohen, 1988): Mengukur selisih antara dua rata-rata kelompok yang dinormalisasi terhadap standar deviasi gabungan (*pooled standard deviation*). Namun, Cohen's d memiliki sedikit bias positif pada sampel kecil ($n < 20$).\n2. Hedges' g (Larry Hedges, 1981): Memodifikasi Cohen's d dengan mengalikan faktor koreksi eksak berbasis fungsi Gamma untuk menghilangkan bias sampel kecil. Hedges' g adalah estimator tak bias terbaik untuk ukuran efek standar.\n3. Glass's Delta ($\\Delta$): Menggunakan standar deviasi kelompok kontrol murni sebagai pembagi normalisasi, bukan standar deviasi gabungan. Sangat dianjurkan jika perlakuan eksperimen mengubah variabilitas kelompok perlakuan secara ekstrem sehingga varians kedua kelompok tidak homogen.\n4. Odds Ratio (OR) & Risk Ratio (RR): Ukuran efek standar untuk variabel luaran biner kategorikal (misal: probabilitas kegagalan sistem lolos vs gagal).",
+    "mathematicalFoundations": "1. Formulasi Cohen's $d$:\n$$d = \\frac{\\bar{X}_1 - \\bar{X}_2}{s_{\\text{pooled}}}$$\nDi mana varians gabungan berbobot:\n$$s_{\\text{pooled}} = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$$\n\n2. Koreksi Tak Bias Hedges' $g$:\n$$g = J(n_1 + n_2 - 2) \\cdot d \\approx \\left( 1 - \\frac{3}{4(n_1 + n_2) - 9} \\right) \\cdot d$$\n\n3. Glass's Delta ($\\Delta$):\n$$\\Delta = \\frac{\\bar{X}_{\\text{perlakuan}} - \\bar{X}_{\\text{kontrol}}}{s_{\\text{kontrol}}}$$\n\nAcuan Besaran Cohen:\n- $|d| \\approx 0.20$ : Efek Kecil (*Small*)\n- $|d| \\approx 0.50$ : Efek Sedang (*Medium*)\n- $|d| \\ge 0.80$ : Efek Besar (*Large*)",
+    "workedExample": {
+      "problemStatement": "Dua kelompok pengujian kekuatan tarik sambungan las gesek (n1 = 8 sampel metode baru, n2 = 8 sampel metode lama). Metode baru: bar{X}1 = 520 MPa, s1 = 25 MPa. Metode lama: bar{X}2 = 490 MPa, s2 = 25 MPa. Hitung Cohen's d dan Hedges' g untuk mengevaluasi besaran efek peningkatan kekuatan las tersebut.",
+      "stepByStepSolution": [
+        "Langkah 1: Hitung selisih rata-rata: Delta bar{X} = 520 - 490 = 30 MPa.",
+        "Langkah 2: Karena s1 = s2 = 25 MPa, maka s_pooled = 25 MPa.",
+        "Langkah 3: Hitung Cohen's d: d = 30 / 25 = 1.20 (Efek sangat besar).",
+        "Langkah 4: Hitung faktor koreksi Hedges J(14) untuk n1 + n2 = 16: J = 1 - 3 / (4*16 - 9) = 1 - 3 / (64 - 9) = 1 - 3 / 55 = 1 - 0.0545 = 0.9455.",
+        "Langkah 5: Hitung Hedges' g tak bias: g = 0.9455 * 1.20 = 1.135."
       ],
-      resultInterpretation: 'Pemisahan antara signifikansi statistik dan praktis mencegah adopsi teknologi yang secara statistik tampak unggul namun tidak memberikan dampak nyata di dunia industri.',
+      "resultInterpretation": "Peningkatan kekuatan las sebesar 30 MPa merepresentasikan ukuran efek Hedges g = 1.135 (> 0.80), membuktikan inovasi pengelasan baru memberikan perbaikan mekanis substansial yang sangat bermakna."
     },
-    pythonImplementation: {
-      description: 'Visualisasi pengambilan keputusan rekayasa berbasis Region of Practical Equivalence (ROPE) versus p-value.',
-      libraryDependencies: ['numpy'],
-      code: `delta_mpid = 15.0  # Ambang batas praktis minimum (ms)
-
-skenario = [
-    {"nama": "Skenario A (Sampel Raksasa, Efek Kerdil)", "L": 1.1, "U": 1.3, "p": 0.00001},
-    {"nama": "Skenario B (Efek Nyata Praktis)", "L": 18.5, "U": 24.2, "p": 0.001},
-    {"nama": "Skenario C (Sampel Kecil, Tidak Konklusif)", "L": 2.0, "U": 28.0, "p": 0.03},
-    {"nama": "Skenario D (Ekuivalen Praktis Terbukti)", "L": -0.5, "U": 1.2, "p": 0.45}
-]
-
-print(f"Ambang Batas Praktis Minimum (MPID): {delta_mpid:.1f} ms\n")
-for s in skenario:
-    L, U, p = s["L"], s["U"], s["p"]
-    sig_stat = p < 0.05
-    if L > delta_mpid:
-        status_praktis = "SANGAT BERMAKNA PRAKTIS (Rekomendasi Adopsi)"
-    elif U < delta_mpid and sig_stat:
-        status_praktis = "TRIVIAL / TIDAK BERMAKNA PRAKTIS (Tolak Adopsi)"
-    elif L < delta_mpid and U > delta_mpid:
-        status_praktis = "TIDAK KONKLUSIF (Tambah Sampel Uji)"
-    else:
-        status_praktis = "EKUIVALEN SECARA PRAKTIS"
-        
-    print(f"[{s['nama']}]")
-    print(f"  95% CI: [{L:.1f}, {U:.1f}] ms | p = {p:.5f}")
-    print(f"  Status: {status_praktis}\n")
-`,
-      expectedOutput: `Ambang Batas Praktis Minimum (MPID): 15.0 ms
-
-[Skenario A (Sampel Raksasa, Efek Kerdil)]
-  95% CI: [1.1, 1.3] ms | p = 0.00001
-  Status: TRIVIAL / TIDAK BERMAKNA PRAKTIS (Tolak Adopsi)
-
-[Skenario B (Efek Nyata Praktis)]
-  95% CI: [18.5, 24.2] ms | p = 0.00100
-  Status: SANGAT BERMAKNA PRAKTIS (Rekomendasi Adopsi)
-
-[Skenario C (Sampel Kecil, Tidak Konklusif)]
-  95% CI: [2.0, 28.0] ms | p = 0.03000
-  Status: TIDAK KONKLUSIF (Tambah Sampel Uji)
-
-[Skenario D (Ekuivalen Praktis Terbukti)]
-  95% CI: [-0.5, 1.2] ms | p = 0.45000
-  Status: EKUIVALEN SECARA PRAKTIS`,
-    },
-    commonPitfalls: [
-      'Menyimpulkan bahwa inovasi rekayasa siap dipatenkan dan diproduksi massal hanya karena memperoleh p < 0.05.',
-      'Menolak metode baru yang memiliki potensi peningkatan efisiensi masif hanya karena p-valuenya 0.06 akibat ukuran sampel pengujian awal yang kecil.',
-      'Tidak pernah mendefinisikan batas ambang keberhasilan praktis (MPID) sebelum penelitian dimulai.',
-    ],
-    validationProcedures: [
-      'Konsultasikan kriteria MPID dengan insinyur lapangan atau standar industri sebelum menetapkan target pengujian.',
-      'Laporkan grafik kurva interval estimasi terhadap batas ROPE di bab kesimpulan laporan akhir.',
-    ],
-    exercises: [
-      {
-        question: 'Bagaimana sebuah penelitian dapat membuktikan secara meyakinkan bahwa metode baru memiliki performa yang "setara / ekuivalen secara praktis" dengan metode baku emas komersial?',
-        hint: 'Perhatikan uji ekuivalensi dua sisi (Two One-Sided Tests / TOST) dan posisi seluruh interval kepercayaan di dalam batas ROPE.',
-        answerExplanation: 'Untuk membuktikan ekuivalensi praktis, peneliti tidak boleh menggunakan uji-t biasa lalu bersandar pada p > 0.05. Peneliti wajib menggunakan kerangka Two One-Sided Tests (TOST) dan membuktikan bahwa SELURUH rentang Interval Kepercayaan 90% atau 95% dari selisih performa berada secara utuh di dalam batas Region of Practical Equivalence [-delta_MPID, +delta_MPID].',
-      },
-    ],
-    references: [
-      { citation: 'Kirk, R. E. (1996). Practical significance: A concept whose time has come. Educational and Psychological Measurement, 56(5), 746-759.', type: 'peer-reviewed-article' },
-      { citation: 'Lakens, D. (2017). Equivalence testing for psychological research: A tutorial. Advances in Methods and Practices in Psychological Science, 1(2), 259-269.', type: 'peer-reviewed-article' },
-    ],
-    slides: [
-      {
-        slideNumber: 1,
-        title: 'Signifikansi Statistik vs Praktis',
-        bulletPoints: [
-          'Statistik (p < 0.05): Hanya membuktikan perbedaan bukan derau acak murni.',
-          'Praktis: Apakah besaran efek membenarkan biaya modifikasi industri?',
-          'Sampel raksasa (n -> inf) dapat membuat efek mikroskopis menjadi p < 0.001.',
-        ],
-        keyFormulaOrDiagram: 'Batas Praktis: $$\\text{CI}_{95\\%} = [L_{\\Delta}, U_{\\Delta}] \\text{ dibandingkan terhadap } \\delta_{\\text{MPID}}$$',
-      },
-      {
-        slideNumber: 2,
-        title: 'Region of Practical Equivalence (ROPE)',
-        bulletPoints: [
-          'Trivial: p < 0.05 namun seluruh CI berada di bawah ambang MPID.',
-          'Bermakna Praktis: Seluruh CI berada di atas batas ambang MPID.',
-          'Ekuivalensi Praktis (TOST): Seluruh CI terkunci di dalam rentang ROPE.',
-        ],
-      },
-    ],
-  },
-  '3.5.4': {
-    id: '3.5.4',
-    chapterId: 'CH-20',
-    title: 'Pelaporan Hasil Komparasi Berbasis Estimasi: Menggantikan Dikotomi P-Value',
-    readingTimeMinutes: 18,
-    status: 'verified',
-    learningObjectives: [
-      'Menerapkan paradigma pelaporan statistika berbasis estimasi (*The New Statistics* Geoff Cumming).',
-      'Merancang visualisasi Gardner-Altman Estimation Plots mendampingi uji komparasi.',
-      'Menyusun naskah ilmiah yang bebas dari dikotomi biner "signifikan vs tidak signifikan".',
-    ],
-    content: `Sebagai respons terhadap krisis replikasi, gerakan "The New Statistics" (dipelopori oleh Geoff Cumming, 2014) menyerukan pergeseran paradigma dari pengambilan keputusan dikotomis kaku berbasis p-value ("signifikan versus tidak signifikan") menuju sains berbasis estimasi kuantitatif (*estimation thinking*).
-
-Dalam paradigma lama berbasis NHST, peneliti mengotak-kotakkan realitas secara artifisial: p = 0.049 disambut sebagai penemuan ilmiah terbukti, sedangkan p = 0.051 dibuang ke laci meja sebagai kegagalan total, padahal kedua data tersebut memiliki informasi empiris yang hampir identik sempurna.
-
-Paradigma Pelaporan Berbasis Estimasi menggantikan tabel p-value konvensional dengan Plot Estimasi Gardner-Altman (*Gardner-Altman Estimation Plots*). Plot ini menyajikan dua bidang yang saling terintegrasi:
-1. Bidang Data Pengamatan Mentah: Menampilkan sebaran data empiris lengkap beserta rata-rata dan deviasi standar untuk setiap kelompok perlakuan.
-2. Bidang Selisih Efek Mengambang (*Floating Difference Axis*): Menampilkan selisih rata-rata ($\\Delta \\bar{X}$) beserta kurva distribusi sampling dan rentang Interval Kepercayaan 95% secara langsung pada sumbu selisih tersendiri.
-
-Dengan format ini, pembaca dapat secara langsung mengevaluasi besaran efek fisis, presisi estimasi, dan signifikansi praktis dalam satu pandangan mata tanpa terjebak pada ilusi dikotomi p-value.`,
-    mathematicalFoundations: `Struktur Data Plot Estimasi Gardner-Altman:
-
-Sumbu Utama: Nilai absolut variabel respon $Y$.
-Sumbu Diferensial Mengambang: Sumbu selisih efek $\\Delta = \\bar{X}_1 - \\bar{X}_2$.
-
-Titik Estimasi Efek dan Interval Bootstrap BCa (Bias-Corrected and Accelerated):
-$$\\hat{\\Delta} = \\bar{X}_1 - \\bar{X}_2$$
-$$\\text{CI}_{95\\%} = [\\Delta_{\\text{lo}}, \\; \\Delta_{\\text{hi}}]$$
-
-Rasio Ketidakpastian Relatif (Relative Uncertainty Ratio / RUR):
-$$\\text{RUR} = \\frac{\\Delta_{\\text{hi}} - \\Delta_{\\text{lo}}}{|\\hat{\\Delta}|}$$
-Jika $\\text{RUR} < 0.30$, estimasi memiliki presisi tinggi. Jika $\\text{RUR} > 1.0$, presisi estimasi rendah dan membutuhkan pengumpulan data tambahan.`,
-    workedExample: {
-      problemStatement: 'Bandingkan dua gaya pelaporan naskah hasil eksperimen sistem pendingin baterai: (A) Gaya Tradisional NHST dan (B) Gaya Pelaporan Berbasis Estimasi. Berikan evaluasi kritis keunggulan format B.',
-      stepByStepSolution: [
-        'Langkah 1 (Format A - Tradisional): "Sistem pendingin berbasis heat-pipe menunjukkan penurunan suhu yang signifikan dibanding kipas konvensional (t(28) = 2.45, p = 0.021)."',
-        'Evaluasi Format A: Pembaca tidak mengetahui berapa derajat Celsius penurunan suhu yang dicapai, berapa derajat variasi kestabilan sistem, dan apakah penurunan tersebut bermakna untuk mencegah thermal runaway baterai.',
-        'Langkah 2 (Format B - Berbasis Estimasi): "Sistem heat-pipe menghasilkan suhu rata-rata 38.2 deg C (SD 2.1) dibanding kipas konvensional 42.6 deg C (SD 2.4). Penurunan suhu rata-rata adalah 4.40 deg C dengan Interval Kepercayaan 95% [0.75 deg C, 8.05 deg C], mewakili ukuran efek Hedges g = 1.91. Nilai p-value adalah 0.021."',
-        'Evaluasi Format B: Pembaca mendapatkan gambaran lengkap: nilai dasar per kelompok, besaran efek penurunan fisis sejati (4.40 deg C), rentang ketidakpastian presisi ([0.75, 8.05] deg C), dan ukuran efek standar (g = 1.91).',
+    "pythonImplementation": {
+      "description": "Komputasi Cohen's d, Hedges' g, dan interval kepercayaan 95% ukuran efek.",
+      "libraryDependencies": [
+        "numpy"
       ],
-      resultInterpretation: 'Format pelaporan berbasis estimasi menyajikan informasi ilmiah yang transparan, lengkap, dan informatif secara rekayasa.',
+      "code": "import numpy as np\n\n# Data dua kelompok perlakuan [SIMULASI/SYNTHETIC DATA]\ngrup_baru = np.array([518, 525, 515, 530, 522, 510, 528, 512], dtype=float)\ngrup_lama = np.array([488, 495, 490, 485, 492, 498, 486, 486], dtype=float)\n\nn1, n2 = len(grup_baru), len(grup_lama)\nm1, m2 = np.mean(grup_baru), np.mean(grup_lama)\ns1, s2 = np.std(grup_baru, ddof=1), np.std(grup_lama, ddof=1)\n\n# Varians pooled dan Cohen's d\ns_pooled = np.sqrt(((n1 - 1)*s1**2 + (n2 - 1)*s2**2) / (n1 + n2 - 2))\nd = (m1 - m2) / s_pooled\n\n# Faktor koreksi Hedges\nfaktor_j = 1.0 - (3.0 / (4.0 * (n1 + n2) - 9.0))\ng = faktor_j * d\n\n# Standar error dari d\nse_d = np.sqrt((n1 + n2)/(n1 * n2) + (d**2)/(2 * (n1 + n2)))\nci_d = [d - 1.96 * se_d, d + 1.96 * se_d]\n\nprint(f\"Rata-rata Grup Baru : {m1:.2f} MPa (s = {s1:.2f})\")\nprint(f\"Rata-rata Grup Lama : {m2:.2f} MPa (s = {s2:.2f})\")\nprint(f\"Standar Deviasi Pooled : {s_pooled:.2f} MPa\")\nprint(\"-\" * 50)\nprint(f\"Cohen's d (Bias Sampel Kecil) : {d:.3f}\")\nprint(f\"Hedges' g (Terkoreksi Tak Bias) : {g:.3f}\")\nprint(f\"95% CI untuk Ukuran Efek d     : [{ci_d[0]:.3f}, {ci_d[1]:.3f}]\")\n",
+      "expectedOutput": "Rata-rata Grup Baru : 520.00 MPa (s = 7.15)\nRata-rata Grup Lama : 490.00 MPa (s = 4.87)\nStandar Deviasi Pooled : 6.13 MPa\n--------------------------------------------------\nCohen's d (Bias Sampel Kecil) : 4.896\nHedges' g (Terkoreksi Tak Bias) : 4.629\n95% CI untuk Ukuran Efek d     : [3.109, 6.682]"
     },
-    pythonImplementation: {
-      description: 'Program penyusunan tabel ringkasan pelaporan komparasi berbasis estimasi lengkap (The New Statistics).',
-      libraryDependencies: ['numpy', 'scipy.stats'],
-      code: `import numpy as np
-from scipy import stats
-
-np.random.seed(42)
-heat_pipe = np.random.normal(loc=38.2, scale=2.1, size=15)
-kipas_biasa = np.random.normal(loc=42.6, scale=2.4, size=15)
-
-# Perhitungan parameter estimasi
-m1, m2 = np.mean(heat_pipe), np.mean(kipas_biasa)
-s1, s2 = np.std(heat_pipe, ddof=1), np.std(kipas_biasa, ddof=1)
-n1, n2 = len(heat_pipe), len(kipas_biasa)
-
-delta = m2 - m1  # Penurunan suhu
-se_diff = np.sqrt(s1**2/n1 + s2**2/n2)
-df_w = (s1**2/n1 + s2**2/n2)**2 / ((s1**2/n1)**2/(n1-1) + (s2**2/n2)**2/(n2-1))
-t_kritis = stats.t.ppf(0.975, df=df_w)
-ci_diff = [delta - t_kritis * se_diff, delta + t_kritis * se_diff]
-
-s_p = np.sqrt(((n1-1)*s1**2 + (n2-1)*s2**2)/(n1+n2-2))
-hedges_g = (1.0 - 3.0/(4*(n1+n2)-9)) * (delta / s_p)
-t_stat, p_val = stats.ttest_ind(kipas_biasa, heat_pipe)
-
-print("TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS):")
-print("-" * 65)
-print(f"Kelompok Acuan (Kipas Biasa)  : Rata-rata = {m2:.2f} deg C, SD = {s2:.2f} (n={n2})")
-print(f"Kelompok Usulan (Heat Pipe)   : Rata-rata = {m1:.2f} deg C, SD = {s1:.2f} (n={n1})")
-print(f"Besaran Efek Fisis (Delta)    : Penurunan {delta:.2f} deg C")
-print(f"95% Interval Kepercayaan (CI) : [{ci_diff[0]:.2f} deg C, {ci_diff[1]:.2f} deg C]")
-print(f"Ukuran Efek Standar Hedges g  : {hedges_g:.2f} (Kategori Sangat Besar)")
-print(f"Uji Inferensi Klasik (Welch)  : t({df_w:.1f}) = {t_stat:.2f}, p = {p_val:.4f}")
-print("-" * 65)
-print("Pernyataan Naskah: Sistem heat pipe menurunkan suhu sebesar 4.40 deg C [95% CI: 2.76, 6.04], g = 1.91, p < 0.001.")
-`,
-      expectedOutput: `TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS):
------------------------------------------------------------------
-Kelompok Acuan (Kipas Biasa)  : Rata-rata = 42.06 deg C, SD = 2.18 (n=15)
-Kelompok Usulan (Heat Pipe)   : Rata-rata = 37.66 deg C, SD = 1.98 (n=15)
-Besaran Efek Fisis (Delta)    : Penurunan 4.40 deg C
-95% Interval Kepercayaan (CI) : [2.84 deg C, 5.96 deg C]
-Ukuran Efek Standar Hedges g  : 2.06 (Kategori Sangat Besar)
-Uji Inferensi Klasik (Welch)  : t(27.7) = 5.78, p = 0.0000
------------------------------------------------------------------
-Pernyataan Naskah: Sistem heat pipe menurunkan suhu sebesar 4.40 deg C [95% CI: 2.76, 6.04], g = 1.91, p < 0.001.`,
-    },
-    commonPitfalls: [
-      'Menuliskan pembahasan bab hasil yang hanya mengulang frasa "berbeda signifikan" tanpa menyebutkan angka penurunan fisisnya.',
-      'Menyajikan grafik batang berarsir dengan huruf alfabet (a, b, c) tanpa menyajikan kurva distribusi dan interval kepercayaan.',
-      'Menghilangkan pelaporan nilai p-value sama sekali (p-value tetap dilaporkan sebagai informasi pelengkap, namun bukan juri tunggal).',
+    "commonPitfalls": [
+      "Hanya melaporkan persentase perbaikan relatif (misal \"naik 20%\") tanpa menyertakan ukuran efek standar yang dinormalisasi varians.",
+      "Menggunakan deviasi standar gabungan pada kasus di mana perlakuan baru melipatgandakan varians kelompok secara masif (wajib gunakan Glass's Delta).",
+      "Mengabaikan koreksi Hedges pada penelitian bersampel kecil (n per grup < 20)."
     ],
-    validationProcedures: [
-      'Pastikan setiap klaim keunggulan metode memuat 3 elemen: Besaran Efek Fisis Terukur, 95% Confidence Interval, dan Hedges\' g.',
-      'Gunakan paket visualisasi modern (seperti DABEST Python) untuk menghasilkan plot estimasi Gardner-Altman dua sumbu.',
+    "validationProcedures": [
+      "Sertakan interval kepercayaan untuk ukuran efek (misal 95% CI of Cohen's d) untuk memperlihatkan ketidakpastian estimasi besaran efek.",
+      "Bandingkan nilai d dengan standar konvensi domain rekayasa terkait (benchmark meta-analisis literatur)."
     ],
-    exercises: [
+    "exercises": [
       {
-        question: 'Mengapa plot estimasi Gardner-Altman dinilai jauh lebih unggul dan informatif dibandingkan diagram batang dengan error bar (bar-and-error-bar plot)?',
-        hint: 'Perhatikan kemampuan visualisasi data individu dan penyajian sumbu selisih efek secara eksplisit.',
-        answerExplanation: 'Diagram batang konvensional menyembunyikan distribusi data mentah (apakah bimodal atau menceng), menghamburkan tinta untuk area di bawah rata-rata yang tidak memiliki data, dan memaksa pembaca menerka-nerka selisih efek serta signifikansi tumpang tindihnya secara visual. Plot Gardner-Altman menyajikan seluruh titik data individu dan menempatkan selisih efek beserta interval kepercayaannya pada sumbu terapung tersendiri, memberikan transparansi visual penuh.',
+        "question": "Kapan seorang peneliti wajib menggunakan Glass's Delta alih-alih Cohen's d atau Hedges' g dalam membandingkan dua kelompok?",
+        "hint": "Perhatikan kondisi di mana perlakuan baru mempengaruhi variabilitas kelompok eksperimen secara ekstrem.",
+        "answerExplanation": "Glass's Delta wajib digunakan ketika perlakuan eksperimen secara fundamental mengubah variabilitas (homoskedastisitas) kelompok perlakuan dibandingkan kelompok kontrol (misalnya perlakuan kimiawi baru membuat beberapa benda uji menjadi sangat seragam sementara yang lain sangat bervariasi). Dalam kondisi varians heterogen tersebut, menggabungkan kedua varians (pooled) tidak lagi valid, sehingga deviasi standar kelompok kontrol murni dijadikan sebagai satu-satunya tolok ukur pembagi normalisasi."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Lawrence Erlbaum Associates.",
+        "type": "canonical-textbook"
       },
-    ],
-    references: [
-      { citation: 'Cumming, G. (2014). The new statistics: Why and how. Psychological Science, 25(1), 7-29.', type: 'peer-reviewed-article' },
-      { citation: 'Ho, J., et al. (2019). Moving beyond P values: everyday data analysis using DABEST. Nature Methods, 16(7), 565-566.', type: 'peer-reviewed-article' },
-    ],
-    slides: [
       {
-        slideNumber: 1,
-        title: 'The New Statistics: Paradigma Estimasi',
-        bulletPoints: [
-          'Tinggalkan dikotomi biner signifikan vs tidak signifikan.',
-          'P-value 0.049 dan 0.051 memiliki informasi bukti yang hampir identik.',
-          'Fokuskan pembahasan pada besaran efek terukur dan interval kepercayaan.',
+        "citation": "Hedges, L. V. (1981). Distribution theory for Glass's estimator of effect size and related estimators. Journal of Educational Statistics, 6(2), 107-128.",
+        "type": "peer-reviewed-article"
+      }
+    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Standarisasi Ukuran Efek: Cohens d, Hedges g, Glasss De...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.5.2.",
+          "Capaian: Menghitung dan membedakan metrik standarisasi ukuran efek: Cohen's d, Hedges' g, dan Glass's Delta.",
+          "Capaian: Menerapkan koreksi bias ukuran sampel kecil Hedges pada Cohen's d.",
+          "Capaian: Menginterpretasikan besaran efek kuantitatif menurut panduan substantif rekayasa Jacob Cohen."
         ],
-        keyFormulaOrDiagram: 'Pilar Estimasi: $$\\Delta \\bar{X} \\pm \\text{CI}_{95\\%} \\quad [\\text{Besaran Efek} + \\text{Presisi Ketidakpastian}]$$',
+        "keyFormulaOrDiagram": "$$d = \\frac{\\bar{X}_1 - \\bar{X}_2}{s_{\\text{pooled}}}$$"
       },
       {
-        slideNumber: 2,
-        title: 'Plot Estimasi Gardner-Altman',
-        bulletPoints: [
-          'Bidang Kiri: Sebaran titik data mentah empiris lengkap.',
-          'Bidang Kanan: Sumbu selisih mengambang dengan kurva distribusi sampling.',
-          'Transparansi visual penuh tanpa menyembunyikan variabilitas data.',
-        ],
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Standarisasi Ukuran Efek: Cohens d, Hedges g, Glasss De...",
+        "bulletPoints": [
+          "Ukuran Efek (*Effect Size*) adalah besaran kuantitatif dari fenomena fisis atau dampak perlakuan yang sedang diteliti, yang d...",
+          "Keluarga Metrik Ukuran Efek Komparasi Dua Kelompok: 1. Cohen's d (Jacob Cohen, 1988): Mengukur selisih antara dua rata-rata k...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ]
       },
-    ],
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Ukuran Efek (*Effect Size*) adalah besaran kuantitatif dari fenomena fisis atau dampak perlakuan yang sedang diteliti, yang d...",
+          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "1. Formulasi Cohen's $d$:",
+          "Di mana varians gabungan berbobot:",
+          "2. Koreksi Tak Bias Hedges' $g$:"
+        ],
+        "keyFormulaOrDiagram": "$$d = \\frac{\\bar{X}_1 - \\bar{X}_2}{s_{\\text{pooled}}}$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Dua kelompok pengujian kekuatan tarik sambungan las gesek (n1 = 8 sampel metode baru, n2 = 8 sampel metode lama). Metode baru: bar{X}1 = 520...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Hitung selisih rata-rata: Delta bar{X} = 520 - 490 = 30 MPa.",
+          "Langkah 2: Karena s1 = s2 = 25 MPa, maka s_pooled = 25 MPa.",
+          "Langkah 3: Hitung Cohen's d: d = 30 / 25 = 1.20 (Efek sangat besar).",
+          "Interpretasi: Peningkatan kekuatan las sebesar 30 MPa merepresentasikan ukuran efek Hedges g = 1.135 (> 0.80), membuktikan inovasi pen..."
+        ],
+        "keyFormulaOrDiagram": "Langkah 5: Hitung Hedges' g tak bias: g = 0.9455 * 1.20 = 1.135."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Komputasi Cohen's d, Hedges' g, dan interval kepercayaan 95% ukuran efek.",
+          "Dependensi Pustaka: numpy",
+          "Keluaran Diharapkan: Rata-rata Grup Baru : 520.00 MPa (s = 7.15)"
+        ],
+        "keyFormulaOrDiagram": "Rata-rata Grup Baru : 520.00 MPa (s = 7.15) | Rata-rata Grup Lama : 490.00 MPa (s = 4.87)..."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Hanya melaporkan persentase perbaikan relatif (misal \"naik 20%\") tanpa menyertakan ukuran efek standar yang di...",
+          "Perangkap: Menggunakan deviasi standar gabungan pada kasus di mana perlakuan baru melipatgandakan varians kelompok secara...",
+          "Perangkap: Mengabaikan koreksi Hedges pada penelitian bersampel kecil (n per grup < 20)."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Sertakan interval kepercayaan untuk ukuran efek (misal 95% CI of Cohen's d) untuk memperlihatkan ketidakpastia...",
+          "Prosedur: Bandingkan nilai d dengan standar konvensi domain rekayasa terkait (benchmark meta-analisis literatur)."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Kapan seorang peneliti wajib menggunakan Glass's Delta alih-alih Cohen's d atau Hedges' g dalam membandingkan dua kelomp...",
+          "Petunjuk: Perhatikan kondisi di mana perlakuan baru mempengaruhi variabilitas kelompok eksperimen secara ekstr...",
+          "Solusi Kunci: Glass's Delta wajib digunakan ketika perlakuan eksperimen secara fundamental mengubah variabilitas (homoskedastisitas) k..."
+        ]
+      }
+    ]
   },
+  "3.5.3": {
+    "id": "3.5.3",
+    "chapterId": "CH-20",
+    "title": "Mengapa Signifikansi Statistik Tidak Sama dengan Signifikansi Praktis Rekayasa",
+    "readingTimeMinutes": 18,
+    "status": "verified",
+    "learningObjectives": [
+      "Membedakan Signifikansi Statistik (*Statistical Significance*) dan Signifikansi Praktis (*Practical Significance*).",
+      "Mendefinisikan Minimal Practically Important Difference (MPID) dalam spesifikasi rekayasa.",
+      "Mencegah pemborosan investasi industri akibat mengejar signifikansi statistik semu."
+    ],
+    "content": "Dalam dunia akademik teoretis, peneliti sering bersorak gembira ketika perangkat lunak statistik menampilkan angka $p < 0.001$. Namun dalam dunia rekayasa industri, pertanyaannya bukanlah \"apakah perbedaannya signifikan secara statistik?\", melainkan \"apakah besaran perbaikan tersebut bernilai cukup besar untuk membenarkan biaya modifikasi mesin, penggantian material, atau konsumsi memori tambahan?\".\n\nPemisahan Konseptual:\n1. Signifikansi Statistik ($p < alpha$): Hanya membuktikan bahwa perbedaan yang teramati pada sampel sangat tidak mungkin dibangkitkan oleh fluktuasi acak murni semata. Signifikansi statistik adalah fungsi dari dua hal: besaran efek fisis DAN ukuran sampel $n$. Dengan sampel yang sangat masif ($n = 1.000.000$), selisih efisiensi sekecil 0.001% akan menghasilkan $p < 0.000001$.\n2. Signifikansi Praktis / Rekayasa: Menilai apakah besaran efek tersebut melampaui Ambang Perbedaan Minimum yang Bermakna (*Minimal Practically Important Difference* / MPID). Jika sebuah algoritma baru membutuhkan penambahan chip memori seharga Rp 500.000 per unit perangkat IoT demi mendapatkan peningkatan akurasi baterai sebesar 0.05%, algoritma tersebut signifikan secara statistik namun gagal total secara praktis rekayasa.\n\nPeneliti rekayasa yang matang tidak pernah berhenti pada pelaporan p-value, melainkan selalu membandingkan interval kepercayaan estimasi terhadap batas ambang batas toleransi rekayasa (*engineering tolerance threshold*).",
+    "mathematicalFoundations": "Kerangka Kerja Wilayah Kesetaraan Praktis (*Region of Practical Equivalence* / ROPE):\n\nDidefinisikan batas toleransi praktis $[-\\delta_{\\text{MPID}}, +\\delta_{\\text{MPID}}]$ di mana perbedaan di dalam rentang tersebut dianggap tidak memiliki dampak fisis yang berarti bagi kinerja sistem.\n\nDiberikan Interval Kepercayaan 95% dari selisih performa $[L_{\\Delta}, U_{\\Delta}]$:\n1. Signifikan Statistik & Signifikan Praktis:\n$$L_{\\Delta} > \\delta_{\\text{MPID}} \\quad (p < 0.05 \\text{ dan seluruh CI berada di atas ambang praktis})$$\n\n2. Signifikan Statistik Tetapi Tidak Bermakna Praktis (*Trivially Significant*):\n$$0 < L_{\\Delta} \\le U_{\\Delta} < \\delta_{\\text{MPID}} \\quad (p < 0.05 \\text{ namun seluruh perbaikan berada di bawah ambang praktis})$$\n\n3. Tidak Konklusif / Sampel Terlalu Kecil:\n$$L_{\\Delta} < \\delta_{\\text{MPID}} < U_{\\Delta} \\quad (\\text{Interval kepercayaan terlalu lebar melintasi batas ambang})$$",
+    "workedExample": {
+      "problemStatement": "Sebuah perusahaan telekomunikasi menetapkan bahwa algoritma kompresi baru hanya layak diimplementasikan jika mampu menurunkan latensi transmisi minimal delta_MPID = 15.0 ms. Pada pengujian 100.000 paket data, algoritma baru menghasilkan penurunan latensi rata-rata sebesar 1.2 ms dengan Interval Kepercayaan 95% [1.1 ms, 1.3 ms] dan p-value < 0.0001. Evaluasi keputusan rekayasa yang harus diambil.",
+      "stepByStepSolution": [
+        "Langkah 1: Evaluasi signifikansi statistik: p-value < 0.0001 dan selang kepercayaan [1.1 ms, 1.3 ms] tidak mencakup angka 0. Perbedaan terbukti sangat signifikan secara statistik.",
+        "Langkah 2: Evaluasi signifikansi praktis: Ambang batas kelayakan industri adalah delta_MPID = 15.0 ms. Nilai perbaikan tertinggi yang masuk akal secara statistik adalah batas atas CI (1.3 ms).",
+        "Langkah 3: Bandingkan CI dengan ROPE: Batas atas CI (1.3 ms) berada jauh di bawah tuntutan kelayakan praktis (15.0 ms).",
+        "Langkah 4: Kesimpulan rekayasa: Algoritma tersebut secara meyakinkan \"tidak bernilai praktis\" (*trivially superior*). Mengganti infrastruktur server untuk penurunan 1.2 ms adalah pemborosan investasi finansial yang tidak rasional."
+      ],
+      "resultInterpretation": "Pemisahan antara signifikansi statistik dan praktis mencegah adopsi teknologi yang secara statistik tampak unggul namun tidak memberikan dampak nyata di dunia industri."
+    },
+    "pythonImplementation": {
+      "description": "Visualisasi pengambilan keputusan rekayasa berbasis Region of Practical Equivalence (ROPE) versus p-value.",
+      "libraryDependencies": [
+        "numpy"
+      ],
+      "code": "delta_mpid = 15.0  # Ambang batas praktis minimum (ms)\n\nskenario = [\n    {\"nama\": \"Skenario A (Sampel Raksasa, Efek Kerdil)\", \"L\": 1.1, \"U\": 1.3, \"p\": 0.00001},\n    {\"nama\": \"Skenario B (Efek Nyata Praktis)\", \"L\": 18.5, \"U\": 24.2, \"p\": 0.001},\n    {\"nama\": \"Skenario C (Sampel Kecil, Tidak Konklusif)\", \"L\": 2.0, \"U\": 28.0, \"p\": 0.03},\n    {\"nama\": \"Skenario D (Ekuivalen Praktis Terbukti)\", \"L\": -0.5, \"U\": 1.2, \"p\": 0.45}\n]\n\nprint(f\"Ambang Batas Praktis Minimum (MPID): {delta_mpid:.1f} ms\\n\")\nfor s in skenario:\n    L, U, p = s[\"L\"], s[\"U\"], s[\"p\"]\n    sig_stat = p < 0.05\n    if L > delta_mpid:\n        status_praktis = \"SANGAT BERMAKNA PRAKTIS (Rekomendasi Adopsi)\"\n    elif U < delta_mpid and sig_stat:\n        status_praktis = \"TRIVIAL / TIDAK BERMAKNA PRAKTIS (Tolak Adopsi)\"\n    elif L < delta_mpid and U > delta_mpid:\n        status_praktis = \"TIDAK KONKLUSIF (Tambah Sampel Uji)\"\n    else:\n        status_praktis = \"EKUIVALEN SECARA PRAKTIS\"\n        \n    print(f\"[{s['nama']}]\")\n    print(f\"  95% CI: [{L:.1f}, {U:.1f}] ms | p = {p:.5f}\")\n    print(f\"  Status: {status_praktis}\\n\")\n",
+      "expectedOutput": "Ambang Batas Praktis Minimum (MPID): 15.0 ms\n\n[Skenario A (Sampel Raksasa, Efek Kerdil)]\n  95% CI: [1.1, 1.3] ms | p = 0.00001\n  Status: TRIVIAL / TIDAK BERMAKNA PRAKTIS (Tolak Adopsi)\n\n[Skenario B (Efek Nyata Praktis)]\n  95% CI: [18.5, 24.2] ms | p = 0.00100\n  Status: SANGAT BERMAKNA PRAKTIS (Rekomendasi Adopsi)\n\n[Skenario C (Sampel Kecil, Tidak Konklusif)]\n  95% CI: [2.0, 28.0] ms | p = 0.03000\n  Status: TIDAK KONKLUSIF (Tambah Sampel Uji)\n\n[Skenario D (Ekuivalen Praktis Terbukti)]\n  95% CI: [-0.5, 1.2] ms | p = 0.45000\n  Status: EKUIVALEN SECARA PRAKTIS"
+    },
+    "commonPitfalls": [
+      "Menyimpulkan bahwa inovasi rekayasa siap dipatenkan dan diproduksi massal hanya karena memperoleh p < 0.05.",
+      "Menolak metode baru yang memiliki potensi peningkatan efisiensi masif hanya karena p-valuenya 0.06 akibat ukuran sampel pengujian awal yang kecil.",
+      "Tidak pernah mendefinisikan batas ambang keberhasilan praktis (MPID) sebelum penelitian dimulai."
+    ],
+    "validationProcedures": [
+      "Konsultasikan kriteria MPID dengan insinyur lapangan atau standar industri sebelum menetapkan target pengujian.",
+      "Laporkan grafik kurva interval estimasi terhadap batas ROPE di bab kesimpulan laporan akhir."
+    ],
+    "exercises": [
+      {
+        "question": "Bagaimana sebuah penelitian dapat membuktikan secara meyakinkan bahwa metode baru memiliki performa yang \"setara / ekuivalen secara praktis\" dengan metode baku emas komersial?",
+        "hint": "Perhatikan uji ekuivalensi dua sisi (Two One-Sided Tests / TOST) dan posisi seluruh interval kepercayaan di dalam batas ROPE.",
+        "answerExplanation": "Untuk membuktikan ekuivalensi praktis, peneliti tidak boleh menggunakan uji-t biasa lalu bersandar pada p > 0.05. Peneliti wajib menggunakan kerangka Two One-Sided Tests (TOST) dan membuktikan bahwa SELURUH rentang Interval Kepercayaan 90% atau 95% dari selisih performa berada secara utuh di dalam batas Region of Practical Equivalence [-delta_MPID, +delta_MPID]."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Kirk, R. E. (1996). Practical significance: A concept whose time has come. Educational and Psychological Measurement, 56(5), 746-759.",
+        "type": "peer-reviewed-article"
+      },
+      {
+        "citation": "Lakens, D. (2017). Equivalence testing for psychological research: A tutorial. Advances in Methods and Practices in Psychological Science, 1(2), 259-269.",
+        "type": "peer-reviewed-article"
+      }
+    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Mengapa Signifikansi Statistik Tidak Sama dengan Signif...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.5.3.",
+          "Capaian: Membedakan Signifikansi Statistik (*Statistical Significance*) dan Signifikansi Praktis (*Practical Significan...",
+          "Capaian: Mendefinisikan Minimal Practically Important Difference (MPID) dalam spesifikasi rekayasa.",
+          "Capaian: Mencegah pemborosan investasi industri akibat mengejar signifikansi statistik semu."
+        ],
+        "keyFormulaOrDiagram": "$$L_{\\Delta} > \\delta_{\\text{MPID}} \\quad (p < 0.05 \\text{ dan seluruh CI berada di atas ambang praktis})$$"
+      },
+      {
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Mengapa Signifikansi Statistik Tidak Sama dengan Signif...",
+        "bulletPoints": [
+          "Dalam dunia akademik teoretis, peneliti sering bersorak gembira ketika perangkat lunak statistik menampilkan angka $p < 0.001...",
+          "Pemisahan Konseptual: 1. Signifikansi Statistik ($p < alpha$): Hanya membuktikan bahwa perbedaan yang teramati pada sampel sa...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ],
+        "keyFormulaOrDiagram": "Peneliti rekayasa yang matang tidak pernah berhenti pada pelaporan p-value, melainkan sela..."
+      },
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Peneliti rekayasa yang matang tidak pernah berhenti pada pelaporan p-value, melainkan selalu membandingkan interval kepercaya...",
+          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "Kerangka Kerja Wilayah Kesetaraan Praktis (*Region of Practical Equivalence* / ROPE):",
+          "Didefinisikan batas toleransi praktis $[-\\delta_{\\text{MPID}}, +\\delta_{\\text{MPID}}]$ di mana perbedaan di da...",
+          "Diberikan Interval Kepercayaan 95% dari selisih performa $[L_{\\Delta}, U_{\\Delta}]$:"
+        ],
+        "keyFormulaOrDiagram": "$$L_{\\Delta} > \\delta_{\\text{MPID}} \\quad (p < 0.05 \\text{ dan seluruh CI berada di atas ambang praktis})$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Sebuah perusahaan telekomunikasi menetapkan bahwa algoritma kompresi baru hanya layak diimplementasikan jika mampu menurunkan latensi transm...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Evaluasi signifikansi statistik: p-value < 0.0001 dan selang kepercayaan [1.1 ms, 1.3 ms] tidak men...",
+          "Langkah 2: Evaluasi signifikansi praktis: Ambang batas kelayakan industri adalah delta_MPID = 15.0 ms. Nilai p...",
+          "Langkah 3: Bandingkan CI dengan ROPE: Batas atas CI (1.3 ms) berada jauh di bawah tuntutan kelayakan praktis (...",
+          "Interpretasi: Pemisahan antara signifikansi statistik dan praktis mencegah adopsi teknologi yang secara statistik tampak unggul namun..."
+        ],
+        "keyFormulaOrDiagram": "Langkah 4: Kesimpulan rekayasa: Algoritma tersebut secara meyakinkan \"tidak bernilai prakt..."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Visualisasi pengambilan keputusan rekayasa berbasis Region of Practical Equivalence (ROPE) versus p-value.",
+          "Dependensi Pustaka: numpy",
+          "Keluaran Diharapkan: Ambang Batas Praktis Minimum (MPID): 15.0 ms"
+        ],
+        "keyFormulaOrDiagram": "Ambang Batas Praktis Minimum (MPID): 15.0 ms | | [Skenario A (Sampel Raksasa, Efek Kerdil)..."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Menyimpulkan bahwa inovasi rekayasa siap dipatenkan dan diproduksi massal hanya karena memperoleh p < 0.05.",
+          "Perangkap: Menolak metode baru yang memiliki potensi peningkatan efisiensi masif hanya karena p-valuenya 0.06 akibat ukur...",
+          "Perangkap: Tidak pernah mendefinisikan batas ambang keberhasilan praktis (MPID) sebelum penelitian dimulai."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Konsultasikan kriteria MPID dengan insinyur lapangan atau standar industri sebelum menetapkan target pengujian...",
+          "Prosedur: Laporkan grafik kurva interval estimasi terhadap batas ROPE di bab kesimpulan laporan akhir."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Bagaimana sebuah penelitian dapat membuktikan secara meyakinkan bahwa metode baru memiliki performa yang \"setara / ekuiv...",
+          "Petunjuk: Perhatikan uji ekuivalensi dua sisi (Two One-Sided Tests / TOST) dan posisi seluruh interval keperca...",
+          "Solusi Kunci: Untuk membuktikan ekuivalensi praktis, peneliti tidak boleh menggunakan uji-t biasa lalu bersandar pada p > 0.05. Peneli..."
+        ]
+      }
+    ]
+  },
+  "3.5.4": {
+    "id": "3.5.4",
+    "chapterId": "CH-20",
+    "title": "Pelaporan Hasil Komparasi Berbasis Estimasi: Menggantikan Dikotomi P-Value",
+    "readingTimeMinutes": 18,
+    "status": "verified",
+    "learningObjectives": [
+      "Menerapkan paradigma pelaporan statistika berbasis estimasi (*The New Statistics* Geoff Cumming).",
+      "Merancang visualisasi Gardner-Altman Estimation Plots mendampingi uji komparasi.",
+      "Menyusun naskah ilmiah yang bebas dari dikotomi biner \"signifikan vs tidak signifikan\"."
+    ],
+    "content": "Sebagai respons terhadap krisis replikasi, gerakan \"The New Statistics\" (dipelopori oleh Geoff Cumming, 2014) menyerukan pergeseran paradigma dari pengambilan keputusan dikotomis kaku berbasis p-value (\"signifikan versus tidak signifikan\") menuju sains berbasis estimasi kuantitatif (*estimation thinking*).\n\nDalam paradigma lama berbasis NHST, peneliti mengotak-kotakkan realitas secara artifisial: p = 0.049 disambut sebagai penemuan ilmiah terbukti, sedangkan p = 0.051 dibuang ke laci meja sebagai kegagalan total, padahal kedua data tersebut memiliki informasi empiris yang hampir identik sempurna.\n\nParadigma Pelaporan Berbasis Estimasi menggantikan tabel p-value konvensional dengan Plot Estimasi Gardner-Altman (*Gardner-Altman Estimation Plots*). Plot ini menyajikan dua bidang yang saling terintegrasi:\n1. Bidang Data Pengamatan Mentah: Menampilkan sebaran data empiris lengkap beserta rata-rata dan deviasi standar untuk setiap kelompok perlakuan.\n2. Bidang Selisih Efek Mengambang (*Floating Difference Axis*): Menampilkan selisih rata-rata ($\\Delta \\bar{X}$) beserta kurva distribusi sampling dan rentang Interval Kepercayaan 95% secara langsung pada sumbu selisih tersendiri.\n\nDengan format ini, pembaca dapat secara langsung mengevaluasi besaran efek fisis, presisi estimasi, dan signifikansi praktis dalam satu pandangan mata tanpa terjebak pada ilusi dikotomi p-value.",
+    "mathematicalFoundations": "Struktur Data Plot Estimasi Gardner-Altman:\n\nSumbu Utama: Nilai absolut variabel respon $Y$.\nSumbu Diferensial Mengambang: Sumbu selisih efek $\\Delta = \\bar{X}_1 - \\bar{X}_2$.\n\nTitik Estimasi Efek dan Interval Bootstrap BCa (Bias-Corrected and Accelerated):\n$$\\hat{\\Delta} = \\bar{X}_1 - \\bar{X}_2$$\n$$\\text{CI}_{95\\%} = [\\Delta_{\\text{lo}}, \\; \\Delta_{\\text{hi}}]$$\n\nRasio Ketidakpastian Relatif (Relative Uncertainty Ratio / RUR):\n$$\\text{RUR} = \\frac{\\Delta_{\\text{hi}} - \\Delta_{\\text{lo}}}{|\\hat{\\Delta}|}$$\nJika $\\text{RUR} < 0.30$, estimasi memiliki presisi tinggi. Jika $\\text{RUR} > 1.0$, presisi estimasi rendah dan membutuhkan pengumpulan data tambahan.",
+    "workedExample": {
+      "problemStatement": "Bandingkan dua gaya pelaporan naskah hasil eksperimen sistem pendingin baterai: (A) Gaya Tradisional NHST dan (B) Gaya Pelaporan Berbasis Estimasi. Berikan evaluasi kritis keunggulan format B.",
+      "stepByStepSolution": [
+        "Langkah 1 (Format A - Tradisional): \"Sistem pendingin berbasis heat-pipe menunjukkan penurunan suhu yang signifikan dibanding kipas konvensional (t(28) = 2.45, p = 0.021).\"",
+        "Evaluasi Format A: Pembaca tidak mengetahui berapa derajat Celsius penurunan suhu yang dicapai, berapa derajat variasi kestabilan sistem, dan apakah penurunan tersebut bermakna untuk mencegah thermal runaway baterai.",
+        "Langkah 2 (Format B - Berbasis Estimasi): \"Sistem heat-pipe menghasilkan suhu rata-rata 38.2 deg C (SD 2.1) dibanding kipas konvensional 42.6 deg C (SD 2.4). Penurunan suhu rata-rata adalah 4.40 deg C dengan Interval Kepercayaan 95% [0.75 deg C, 8.05 deg C], mewakili ukuran efek Hedges g = 1.91. Nilai p-value adalah 0.021.\"",
+        "Evaluasi Format B: Pembaca mendapatkan gambaran lengkap: nilai dasar per kelompok, besaran efek penurunan fisis sejati (4.40 deg C), rentang ketidakpastian presisi ([0.75, 8.05] deg C), dan ukuran efek standar (g = 1.91)."
+      ],
+      "resultInterpretation": "Format pelaporan berbasis estimasi menyajikan informasi ilmiah yang transparan, lengkap, dan informatif secara rekayasa."
+    },
+    "pythonImplementation": {
+      "description": "Program penyusunan tabel ringkasan pelaporan komparasi berbasis estimasi lengkap (The New Statistics).",
+      "libraryDependencies": [
+        "numpy",
+        "scipy.stats"
+      ],
+      "code": "import numpy as np\nfrom scipy import stats\n\nnp.random.seed(42)\nheat_pipe = np.random.normal(loc=38.2, scale=2.1, size=15)\nkipas_biasa = np.random.normal(loc=42.6, scale=2.4, size=15)\n\n# Perhitungan parameter estimasi\nm1, m2 = np.mean(heat_pipe), np.mean(kipas_biasa)\ns1, s2 = np.std(heat_pipe, ddof=1), np.std(kipas_biasa, ddof=1)\nn1, n2 = len(heat_pipe), len(kipas_biasa)\n\ndelta = m2 - m1  # Penurunan suhu\nse_diff = np.sqrt(s1**2/n1 + s2**2/n2)\ndf_w = (s1**2/n1 + s2**2/n2)**2 / ((s1**2/n1)**2/(n1-1) + (s2**2/n2)**2/(n2-1))\nt_kritis = stats.t.ppf(0.975, df=df_w)\nci_diff = [delta - t_kritis * se_diff, delta + t_kritis * se_diff]\n\ns_p = np.sqrt(((n1-1)*s1**2 + (n2-1)*s2**2)/(n1+n2-2))\nhedges_g = (1.0 - 3.0/(4*(n1+n2)-9)) * (delta / s_p)\nt_stat, p_val = stats.ttest_ind(kipas_biasa, heat_pipe)\n\nprint(\"TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS):\")\nprint(\"-\" * 65)\nprint(f\"Kelompok Acuan (Kipas Biasa)  : Rata-rata = {m2:.2f} deg C, SD = {s2:.2f} (n={n2})\")\nprint(f\"Kelompok Usulan (Heat Pipe)   : Rata-rata = {m1:.2f} deg C, SD = {s1:.2f} (n={n1})\")\nprint(f\"Besaran Efek Fisis (Delta)    : Penurunan {delta:.2f} deg C\")\nprint(f\"95% Interval Kepercayaan (CI) : [{ci_diff[0]:.2f} deg C, {ci_diff[1]:.2f} deg C]\")\nprint(f\"Ukuran Efek Standar Hedges g  : {hedges_g:.2f} (Kategori Sangat Besar)\")\nprint(f\"Uji Inferensi Klasik (Welch)  : t({df_w:.1f}) = {t_stat:.2f}, p = {p_val:.4f}\")\nprint(\"-\" * 65)\nprint(\"Pernyataan Naskah: Sistem heat pipe menurunkan suhu sebesar 4.40 deg C [95% CI: 2.76, 6.04], g = 1.91, p < 0.001.\")\n",
+      "expectedOutput": "TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS):\n-----------------------------------------------------------------\nKelompok Acuan (Kipas Biasa)  : Rata-rata = 42.06 deg C, SD = 2.18 (n=15)\nKelompok Usulan (Heat Pipe)   : Rata-rata = 37.66 deg C, SD = 1.98 (n=15)\nBesaran Efek Fisis (Delta)    : Penurunan 4.40 deg C\n95% Interval Kepercayaan (CI) : [2.84 deg C, 5.96 deg C]\nUkuran Efek Standar Hedges g  : 2.06 (Kategori Sangat Besar)\nUji Inferensi Klasik (Welch)  : t(27.7) = 5.78, p = 0.0000\n-----------------------------------------------------------------\nPernyataan Naskah: Sistem heat pipe menurunkan suhu sebesar 4.40 deg C [95% CI: 2.76, 6.04], g = 1.91, p < 0.001."
+    },
+    "commonPitfalls": [
+      "Menuliskan pembahasan bab hasil yang hanya mengulang frasa \"berbeda signifikan\" tanpa menyebutkan angka penurunan fisisnya.",
+      "Menyajikan grafik batang berarsir dengan huruf alfabet (a, b, c) tanpa menyajikan kurva distribusi dan interval kepercayaan.",
+      "Menghilangkan pelaporan nilai p-value sama sekali (p-value tetap dilaporkan sebagai informasi pelengkap, namun bukan juri tunggal)."
+    ],
+    "validationProcedures": [
+      "Pastikan setiap klaim keunggulan metode memuat 3 elemen: Besaran Efek Fisis Terukur, 95% Confidence Interval, dan Hedges' g.",
+      "Gunakan paket visualisasi modern (seperti DABEST Python) untuk menghasilkan plot estimasi Gardner-Altman dua sumbu."
+    ],
+    "exercises": [
+      {
+        "question": "Mengapa plot estimasi Gardner-Altman dinilai jauh lebih unggul dan informatif dibandingkan diagram batang dengan error bar (bar-and-error-bar plot)?",
+        "hint": "Perhatikan kemampuan visualisasi data individu dan penyajian sumbu selisih efek secara eksplisit.",
+        "answerExplanation": "Diagram batang konvensional menyembunyikan distribusi data mentah (apakah bimodal atau menceng), menghamburkan tinta untuk area di bawah rata-rata yang tidak memiliki data, dan memaksa pembaca menerka-nerka selisih efek serta signifikansi tumpang tindihnya secara visual. Plot Gardner-Altman menyajikan seluruh titik data individu dan menempatkan selisih efek beserta interval kepercayaannya pada sumbu terapung tersendiri, memberikan transparansi visual penuh."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Cumming, G. (2014). The new statistics: Why and how. Psychological Science, 25(1), 7-29.",
+        "type": "peer-reviewed-article"
+      },
+      {
+        "citation": "Ho, J., et al. (2019). Moving beyond P values: everyday data analysis using DABEST. Nature Methods, 16(7), 565-566.",
+        "type": "peer-reviewed-article"
+      }
+    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Pelaporan Hasil Komparasi Berbasis Estimasi: Menggantik...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.5.4.",
+          "Capaian: Menerapkan paradigma pelaporan statistika berbasis estimasi (*The New Statistics* Geoff Cumming).",
+          "Capaian: Merancang visualisasi Gardner-Altman Estimation Plots mendampingi uji komparasi.",
+          "Capaian: Menyusun naskah ilmiah yang bebas dari dikotomi biner \"signifikan vs tidak signifikan\"."
+        ],
+        "keyFormulaOrDiagram": "$$\\hat{\\Delta} = \\bar{X}_1 - \\bar{X}_2$$"
+      },
+      {
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Pelaporan Hasil Komparasi Berbasis Estimasi: Menggantik...",
+        "bulletPoints": [
+          "Sebagai respons terhadap krisis replikasi, gerakan \"The New Statistics\" (dipelopori oleh Geoff Cumming, 2014) menyerukan perg...",
+          "Dalam paradigma lama berbasis NHST, peneliti mengotak-kotakkan realitas secara artifisial: p = 0.049 disambut sebagai penemua...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ],
+        "keyFormulaOrDiagram": "Paradigma Pelaporan Berbasis Estimasi menggantikan tabel p-value konvensional dengan Plot..."
+      },
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Paradigma Pelaporan Berbasis Estimasi menggantikan tabel p-value konvensional dengan Plot Estimasi Gardner-Altman (*Gardner-A...",
+          "Dengan format ini, pembaca dapat secara langsung mengevaluasi besaran efek fisis, presisi estimasi, dan signifikansi praktis...",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "Struktur Data Plot Estimasi Gardner-Altman:",
+          "Sumbu Utama: Nilai absolut variabel respon $Y$.",
+          "Sumbu Diferensial Mengambang: Sumbu selisih efek $\\Delta = \\bar{X}_1 - \\bar{X}_2$."
+        ],
+        "keyFormulaOrDiagram": "$$\\hat{\\Delta} = \\bar{X}_1 - \\bar{X}_2$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Bandingkan dua gaya pelaporan naskah hasil eksperimen sistem pendingin baterai: (A) Gaya Tradisional NHST dan (B) Gaya Pelaporan Berbasis Es...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1 (Format A - Tradisional): \"Sistem pendingin berbasis heat-pipe menunjukkan penurunan suhu yang signi...",
+          "Evaluasi Format A: Pembaca tidak mengetahui berapa derajat Celsius penurunan suhu yang dicapai, berapa derajat...",
+          "Langkah 2 (Format B - Berbasis Estimasi): \"Sistem heat-pipe menghasilkan suhu rata-rata 38.2 deg C (SD 2.1) di...",
+          "Interpretasi: Format pelaporan berbasis estimasi menyajikan informasi ilmiah yang transparan, lengkap, dan informatif secara rekayasa."
+        ],
+        "keyFormulaOrDiagram": "Evaluasi Format B: Pembaca mendapatkan gambaran lengkap: nilai dasar per kelompok, besaran..."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Program penyusunan tabel ringkasan pelaporan komparasi berbasis estimasi lengkap (The New Statistics).",
+          "Dependensi Pustaka: numpy, scipy.stats",
+          "Keluaran Diharapkan: TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS):"
+        ],
+        "keyFormulaOrDiagram": "TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS): | --------------------------------..."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Menuliskan pembahasan bab hasil yang hanya mengulang frasa \"berbeda signifikan\" tanpa menyebutkan angka penuru...",
+          "Perangkap: Menyajikan grafik batang berarsir dengan huruf alfabet (a, b, c) tanpa menyajikan kurva distribusi dan interva...",
+          "Perangkap: Menghilangkan pelaporan nilai p-value sama sekali (p-value tetap dilaporkan sebagai informasi pelengkap, namun..."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Pastikan setiap klaim keunggulan metode memuat 3 elemen: Besaran Efek Fisis Terukur, 95% Confidence Interval,...",
+          "Prosedur: Gunakan paket visualisasi modern (seperti DABEST Python) untuk menghasilkan plot estimasi Gardner-Altman dua s..."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa plot estimasi Gardner-Altman dinilai jauh lebih unggul dan informatif dibandingkan diagram batang dengan error b...",
+          "Petunjuk: Perhatikan kemampuan visualisasi data individu dan penyajian sumbu selisih efek secara eksplisit.",
+          "Solusi Kunci: Diagram batang konvensional menyembunyikan distribusi data mentah (apakah bimodal atau menceng), menghamburkan tinta unt..."
+        ]
+      }
+    ]
+  }
 };

@@ -1,0 +1,369 @@
+{
+  "totalChapters": 51,
+  "totalSlides": 2035,
+  "rawMarkdownCount": 0,
+  "brokenLatexCount": 0,
+  "textOverflowCount": 0,
+  "brokenMarkdownIssues": [],
+  "brokenLatexIssues": [],
+  "textOverflowIssues": [],
+  "chapterStats": [
+    {
+      "chapter": "CH-01",
+      "slides": 38,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-02",
+      "slides": 37,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-03",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-04",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-05",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-06",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-07",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-08",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-09",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-10",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-11",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-12",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-13",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-14",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-15",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-16",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-17",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-18",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-19",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-20",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-21",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-22",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-23",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-24",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-25",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-26",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-27",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-28",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-29",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-30",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-31",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-32",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-33",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-34",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-35",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-36",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-37",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-38",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-39",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-40",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-41",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-42",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-43",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-44",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-45",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-46",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-47",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-48",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-49",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-50",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    },
+    {
+      "chapter": "CH-51",
+      "slides": 40,
+      "rawMd": 0,
+      "brokenLatex": 0,
+      "overflow": 0
+    }
+  ]
+}

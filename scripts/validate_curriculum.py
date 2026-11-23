@@ -24,7 +24,7 @@ def main():
         sys.exit(1)
 
     total_lessons = 0
-    lesson_id_pattern = re.compile(r"'(\d+\.\d+\.\d+)':\s*\{")
+    lesson_id_pattern = re.compile(r"['\"](\d+\.\d+\.\d+)['\"]:\s*\{")
     required_fields = [
         "id", "chapterId", "title", "readingTimeMinutes", "status",
         "learningObjectives", "content", "mathematicalFoundations",

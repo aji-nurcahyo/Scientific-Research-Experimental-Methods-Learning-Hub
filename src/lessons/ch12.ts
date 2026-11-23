@@ -1,424 +1,635 @@
 import { Lesson } from '../types/curriculum';
 
 export const CH12_LESSONS: Record<string, Partial<Lesson>> = {
-  '2.5.1': {
-    id: '2.5.1',
-    chapterId: 'CH-12',
-    title: 'Validitas Instrumen: Validitas Konstruk, Validitas Konten, dan Validitas Kriteria',
-    readingTimeMinutes: 18,
-    status: 'verified',
-    learningObjectives: [
-      'Membedakan tiga dimensi utama validitas instrumen pengukuran (Konten, Kriteria, dan Konstruk).',
-      'Mengevaluasi validitas konvergen dan diskriminan menggunakan kriteria Campbell & Fiske.',
-      'Menerapkan Content Validity Ratio (CVR) Lawshe untuk penilaian panel pakar keteknikan.',
+  "2.5.1": {
+    "id": "2.5.1",
+    "chapterId": "CH-12",
+    "title": "Validitas Instrumen: Validitas Konstruk, Validitas Konten, dan Validitas Kriteria",
+    "readingTimeMinutes": 18,
+    "status": "verified",
+    "learningObjectives": [
+      "Membedakan tiga dimensi utama validitas instrumen pengukuran (Konten, Kriteria, dan Konstruk).",
+      "Mengevaluasi validitas konvergen dan diskriminan menggunakan kriteria Campbell & Fiske.",
+      "Menerapkan Content Validity Ratio (CVR) Lawshe untuk penilaian panel pakar keteknikan."
     ],
-    content: `Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen tersebut tidak mengukur besaran yang sebenarnya dimaksudkan untuk diukur, maka seluruh data yang dihasilkan tidak memiliki validitas. Validitas instrumen (*measurement validity*) adalah derajat kesesuaian antara instrumen pengukuran dengan atribut konseptual yang hendak diukur.
-
-Tiga pilar validitas instrumen dalam rekayasa dan pengujian sistem:
-1. Validitas Konten (Content Validity): Menilai sejauh mana domain instrumen (butir kuesioner, parameter sensor, atau matriks pengujian) mencakup seluruh aspek representatif dari domain yang didefinisikan. Evaluasi ini dilakukan oleh panel pakar menggunakan indeks kuantitatif seperti Content Validity Ratio (CVR) Lawshe.
-2. Validitas Kriteria (Criterion-related Validity): Mengukur korelasi empiris antara hasil pembacaan instrumen baru dengan instrumen baku emas (*gold standard*) yang telah terbukti secara global. Terbagi menjadi:
-   - Validitas Konkuren: Pengujian dilakukan secara simultan bersamaan dengan instrumen acuan.
-   - Validitas Prediktif: Kemampuan instrumen meramalkan perilaku sistem di masa depan (misal: uji vibrasi awal memprediksi waktu keruntuhan poros 500 jam kemudian).
-3. Validitas Konstruk (Construct Validity): Menilai apakah instrumen berperilaku selaras dengan teori ilmiah yang melandasinya. Mencakup validitas konvergen (berkorelasi kuat dengan instrumen lain yang mengukur konsep sejenis) dan validitas diskriminan (tidak berkorelasi dengan instrumen yang mengukur konsep yang sama sekali berbeda).`,
-    mathematicalFoundations: `1. Content Validity Ratio (CVR) Lawshe:
-Panel terdiri dari $N_{\\text{pakar}}$ ahli independen. Jika $n_e$ adalah jumlah pakar yang menyatakan bahwa suatu indikator "esensial/wajib", maka:
-
-$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$
-
-Di mana $\\text{CVR} \\in [-1.0, +1.0]$. Indikator dipertahankan jika $\\text{CVR} > \\text{CVR}_{\\text{kritis}}$ (misal $\\text{CVR}_{\\text{kritis}} = 0.62$ untuk $N_{\\text{pakar}} = 10$ pada $\\alpha = 0.05$).
-
-2. Validitas Konvergen dan Diskriminan (Fornell-Larcker Criterion):
-Variabel laten $\\xi$ memiliki validitas diskriminan terhadap variabel laten $\\eta$ jika dan hanya jika:
-$$\\sqrt{\\text{AVE}(\\xi)} > |r(\\xi, \\eta)|$$
-Di mana $\\text{AVE}$ adalah Average Variance Extracted dan $r(\\xi, \\eta)$ adalah koefisien korelasi antar-konstruk.`,
-    workedExample: {
-      problemStatement: 'Sebuah panel beranggotakan 12 orang dosen teknik ITERA mengevaluasi apakah sensor fluks medan magnetik esensial dimasukkan ke dalam modul deteksi anomali inverter motor traksi. Sebanyak 10 dosen menyatakan esensial, 2 menyatakan opsional. Hitung nilai CVR Lawshe dan tentukan kelayakannya berdasarkan ambang batas kritis CVR_kritis = 0.56 untuk N = 12.',
-      stepByStepSolution: [
-        'Langkah 1: Identifikasi parameter: N_pakar = 12, n_e = 10.',
-        'Langkah 2: Hitung nilai CVR: CVR = (2 * n_e / N_pakar) - 1 = (2 * 10 / 12) - 1 = (20 / 12) - 1 = 1.667 - 1 = +0.667.',
-        'Langkah 3: Bandingkan dengan ambang batas kritis: CVR (+0.667) > CVR_kritis (+0.560).',
-        'Langkah 4: Kesimpulan evaluasi konten: Indikator sensor fluks medan magnetik memiliki validitas konten yang signifikan secara statistik pada tingkat signifikansi alpha = 0.05.',
+    "content": "Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen tersebut tidak mengukur besaran yang sebenarnya dimaksudkan untuk diukur, maka seluruh data yang dihasilkan tidak memiliki validitas. Validitas instrumen (*measurement validity*) adalah derajat kesesuaian antara instrumen pengukuran dengan atribut konseptual yang hendak diukur.\n\nTiga pilar validitas instrumen dalam rekayasa dan pengujian sistem:\n1. Validitas Konten (Content Validity): Menilai sejauh mana domain instrumen (butir kuesioner, parameter sensor, atau matriks pengujian) mencakup seluruh aspek representatif dari domain yang didefinisikan. Evaluasi ini dilakukan oleh panel pakar menggunakan indeks kuantitatif seperti Content Validity Ratio (CVR) Lawshe.\n2. Validitas Kriteria (Criterion-related Validity): Mengukur korelasi empiris antara hasil pembacaan instrumen baru dengan instrumen baku emas (*gold standard*) yang telah terbukti secara global. Terbagi menjadi:\n   - Validitas Konkuren: Pengujian dilakukan secara simultan bersamaan dengan instrumen acuan.\n   - Validitas Prediktif: Kemampuan instrumen meramalkan perilaku sistem di masa depan (misal: uji vibrasi awal memprediksi waktu keruntuhan poros 500 jam kemudian).\n3. Validitas Konstruk (Construct Validity): Menilai apakah instrumen berperilaku selaras dengan teori ilmiah yang melandasinya. Mencakup validitas konvergen (berkorelasi kuat dengan instrumen lain yang mengukur konsep sejenis) dan validitas diskriminan (tidak berkorelasi dengan instrumen yang mengukur konsep yang sama sekali berbeda).",
+    "mathematicalFoundations": "1. Content Validity Ratio (CVR) Lawshe:\nPanel terdiri dari $N_{\\text{pakar}}$ ahli independen. Jika $n_e$ adalah jumlah pakar yang menyatakan bahwa suatu indikator \"esensial/wajib\", maka:\n\n$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$\n\nDi mana $\\text{CVR} \\in [-1.0, +1.0]$. Indikator dipertahankan jika $\\text{CVR} > \\text{CVR}_{\\text{kritis}}$ (misal $\\text{CVR}_{\\text{kritis}} = 0.62$ untuk $N_{\\text{pakar}} = 10$ pada $\\alpha = 0.05$).\n\n2. Validitas Konvergen dan Diskriminan (Fornell-Larcker Criterion):\nVariabel laten $\\xi$ memiliki validitas diskriminan terhadap variabel laten $\\eta$ jika dan hanya jika:\n$$\\sqrt{\\text{AVE}(\\xi)} > |r(\\xi, \\eta)|$$\nDi mana $\\text{AVE}$ adalah Average Variance Extracted dan $r(\\xi, \\eta)$ adalah koefisien korelasi antar-konstruk.",
+    "workedExample": {
+      "problemStatement": "Sebuah panel beranggotakan 12 orang dosen teknik ITERA mengevaluasi apakah sensor fluks medan magnetik esensial dimasukkan ke dalam modul deteksi anomali inverter motor traksi. Sebanyak 10 dosen menyatakan esensial, 2 menyatakan opsional. Hitung nilai CVR Lawshe dan tentukan kelayakannya berdasarkan ambang batas kritis CVR_kritis = 0.56 untuk N = 12.",
+      "stepByStepSolution": [
+        "Langkah 1: Identifikasi parameter: N_pakar = 12, n_e = 10.",
+        "Langkah 2: Hitung nilai CVR: CVR = (2 * n_e / N_pakar) - 1 = (2 * 10 / 12) - 1 = (20 / 12) - 1 = 1.667 - 1 = +0.667.",
+        "Langkah 3: Bandingkan dengan ambang batas kritis: CVR (+0.667) > CVR_kritis (+0.560).",
+        "Langkah 4: Kesimpulan evaluasi konten: Indikator sensor fluks medan magnetik memiliki validitas konten yang signifikan secara statistik pada tingkat signifikansi alpha = 0.05."
       ],
-      resultInterpretation: 'Sensor tersebut secara absah dimasukkan ke dalam paket instrumentasi modul pemantauan inverter.',
+      "resultInterpretation": "Sensor tersebut secara absah dimasukkan ke dalam paket instrumentasi modul pemantauan inverter."
     },
-    pythonImplementation: {
-      description: 'Evaluasi validitas diskriminan Fornell-Larcker antar-variabel laten sistem telemetri.',
-      libraryDependencies: ['numpy'],
-      code: `import numpy as np
-
-# Data AVE dua variabel laten [SIMULASI/SYNTHETIC DATA]
-# Laten 1: Kualitas Sinyal RF (AVE = 0.68)
-# Laten 2: Beban Komputasi Prosesor (AVE = 0.72)
-ave_rf = 0.68
-ave_cpu = 0.72
-
-# Korelasi antar-laten teramati
-r_rf_cpu = 0.35
-
-akar_ave_rf = np.sqrt(ave_rf)
-akar_ave_cpu = np.sqrt(ave_cpu)
-
-print(f"Akar AVE Laten RF       : {akar_ave_rf:.3f}")
-print(f"Akar AVE Laten CPU      : {akar_ave_cpu:.3f}")
-print(f"Korelasi Antar-Laten (r): {r_rf_cpu:.3f}")
-
-valid_diskriminan = (akar_ave_rf > r_rf_cpu) and (akar_ave_cpu > r_rf_cpu)
-print(f"Kriteria Fornell-Larcker Terpenuhi? {valid_diskriminan}")
-if valid_diskriminan:
-    print("Kesimpulan: Kedua konstruk mengukur fenomena fisik yang berbeda secara tegas (validitas diskriminan terbukti).")
-`,
-      expectedOutput: `Akar AVE Laten RF       : 0.825
-Akar AVE Laten CPU      : 0.849
-Korelasi Antar-Laten (r): 0.350
-Kriteria Fornell-Larcker Terpenuhi? True
-Kesimpulan: Kedua konstruk mengukur fenomena fisik yang berbeda secara tegas (validitas diskriminan terbukti).`,
-    },
-    commonPitfalls: [
-      'Menyamakan instrumen yang memiliki pembacaan presisi tinggi sebagai instrumen yang pasti valid.',
-      'Mengabaikan validitas kriteria terhadap alat ukur standar baku emas (gold standard).',
-      'Menggabungkan butir-butir indikator yang mengukur konsep berbeda ke dalam satu skor gabungan tanpa uji faktorial.',
-    ],
-    validationProcedures: [
-      'Lakukan pengujian korelasi simultan terhadap instrumen acuan kalibrasi industri bersertifikat.',
-      'Sertakan panel pakar lintas disiplin untuk memvalidasi relevansi indikator kuesioner atau spesifikasi sensor.',
-    ],
-    exercises: [
-      {
-        question: 'Mengapa validitas konstruk dinilai sebagai tingkatan validitas instrumen yang paling komprehensif dan fundamental?',
-        hint: 'Perhatikan apakah validitas konstruk menyatukan bukti teoretis, empiris kriteria, dan konten secara menyeluruh.',
-        answerExplanation: 'Validitas konstruk membuktikan bahwa instrumen tidak hanya mengukur secara akurat terhadap kriteria tertentu saat ini, melainkan bahwa variasi pembacaan instrumen benar-benar merefleksikan dinamika teori fisis konseptual yang melandasinya di bawah berbagai kondisi pengujian yang berbeda.',
-      },
-    ],
-    references: [
-      { citation: 'Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.', type: 'peer-reviewed-article' },
-      { citation: 'Fornell, C., & Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. Journal of Marketing Research, 18(1), 39-50.', type: 'peer-reviewed-article' },
-    ],
-  },
-  '2.5.2': {
-    id: '2.5.2',
-    chapterId: 'CH-12',
-    title: 'Reliabilitas Instrumen: Test-Retest dan Konsistensi Internal via Cronbach Alpha',
-    readingTimeMinutes: 18,
-    status: 'verified',
-    learningObjectives: [
-      'Memahami konsep reliabilitas instrumen sebagai rasio variansi sejati terhadap variansi total.',
-      'Menghitung koefisien reliabilitas test-retest menggunakan korelasi intrakelas (ICC).',
-      'Menghitung dan menginterpretasikan koefisien konsistensi internal Cronbach Alpha.',
-    ],
-    content: `Reliabilitas instrumen (*measurement reliability*) adalah derajat stabilitas, konsistensi, dan keterulangan hasil pengukuran ketika pengujian diulang berkali-kali pada objek yang sama di bawah kondisi yang setara. Dalam Classical Test Theory (CTT), setiap skor teramati ($X$) dipandang sebagai penjumlahan antara skor sejati ($T$) dan galat pengukuran acak ($E$).
-
-Dua paradigma evaluasi reliabilitas instrumen yang paling esensial:
-1. Reliabilitas Pengujian Ulang (Test-Retest Reliability): Mengukur stabilitas temporal instrumen sepanjang waktu. Objek atau sistem yang sama diuji pada waktu $t_1$ dan diuji kembali pada waktu $t_2$. Evaluasi dihitung menggunakan Koefisien Korelasi Intrakelas (Intraclass Correlation Coefficient / ICC) untuk menghindari kelemahan korelasi Pearson biasa yang mengabaikan pergeseran nilai rata-rata sistematis.
-2. Konsistensi Internal (Internal Consistency): Mengukur sejauh mana butir-butir indikator atau sensor-sensor paralel yang tergabung dalam suatu susunan instrumen mengukur konstruk yang sama secara kompak. Metrik standar emas yang digunakan secara global adalah Cronbach's Alpha ($\\alpha$).
-
-Nilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0. Untuk penelitian rekayasa dan instrumen diagnostik kritis, nilai ambang batas minimum yang diterima secara luas adalah $\\alpha \\ge 0.80$.`,
-    mathematicalFoundations: `1. Formulasi Koefisien Konsistensi Internal Cronbach's Alpha:
-Diberikan instrumen yang terdiri dari $K$ butir/sensor teramati dengan total skor $X = \\sum_{i=1}^K Y_i$:
-
-$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$
-
-Di mana:
-- $\\sigma_{Y_i}^2$ adalah varians butir/sensor ke-$i$.
-- $\\sigma_X^2$ adalah varians dari total skor gabungan: $\\sigma_X^2 = \\sum_{i=1}^K \\sigma_{Y_i}^2 + 2 \\sum_{i < j} \\text{Cov}(Y_i, Y_j)$.
-
-2. Dekomposisi Classical Test Theory (CTT):
-$$X = T + E$$
-$$\\text{Reliabilitas } \\rho_{XX'} = \\frac{\\sigma_T^2}{\\sigma_X^2} = \\frac{\\sigma_T^2}{\\sigma_T^2 + \\sigma_E^2}$$
-Cronbach's Alpha merupakan batas bawah matematis (*lower bound*) dari reliabilitas sejati instrumen di bawah asumsi tau-ekuivalen esensial.`,
-    workedExample: {
-      problemStatement: 'Sebuah kuesioner evaluasi kegunaan sistem monitoring SCADA terdiri dari 4 pertanyaan yang diujikan pada 30 operator teknis. Varians masing-masing butir pertanyaan adalah: s1^2 = 0.80, s2^2 = 0.65, s3^2 = 0.90, s4^2 = 0.75. Varians skor total keseluruhan adalah s_X^2 = 7.50. Hitung koefisien Cronbach Alpha dan simpulkan reliabilitas internal instrumen.',
-      stepByStepSolution: [
-        'Langkah 1: Hitung jumlah varians butir individu: Sum(s_i^2) = 0.80 + 0.65 + 0.90 + 0.75 = 3.10.',
-        'Langkah 2: Hitung rasio varians butir terhadap varians total: 3.10 / 7.50 = 0.4133.',
-        'Langkah 3: Hitung suku pengali butir: K / (K - 1) = 4 / (4 - 1) = 4 / 3 = 1.3333.',
-        'Langkah 4: Hitung nilai Cronbach Alpha: alpha = 1.3333 * (1 - 0.4133) = 1.3333 * 0.5867 = 0.782.',
-        'Langkah 5: Evaluasi reliabilitas: Nilai alpha = 0.782 mendekati batas ambang 0.80, menunjukkan konsistensi internal yang cukup baik, namun dapat ditingkatkan dengan membuang butir yang memiliki korelasi butir-total rendah.',
+    "pythonImplementation": {
+      "description": "Evaluasi validitas diskriminan Fornell-Larcker antar-variabel laten sistem telemetri.",
+      "libraryDependencies": [
+        "numpy"
       ],
-      resultInterpretation: 'Instrumen memiliki reliabilitas konsistensi internal sebesar 78.2% dan layak digunakan untuk studi pendahuluan.',
+      "code": "import numpy as np\n\n# Data AVE dua variabel laten [SIMULASI/SYNTHETIC DATA]\n# Laten 1: Kualitas Sinyal RF (AVE = 0.68)\n# Laten 2: Beban Komputasi Prosesor (AVE = 0.72)\nave_rf = 0.68\nave_cpu = 0.72\n\n# Korelasi antar-laten teramati\nr_rf_cpu = 0.35\n\nakar_ave_rf = np.sqrt(ave_rf)\nakar_ave_cpu = np.sqrt(ave_cpu)\n\nprint(f\"Akar AVE Laten RF       : {akar_ave_rf:.3f}\")\nprint(f\"Akar AVE Laten CPU      : {akar_ave_cpu:.3f}\")\nprint(f\"Korelasi Antar-Laten (r): {r_rf_cpu:.3f}\")\n\nvalid_diskriminan = (akar_ave_rf > r_rf_cpu) and (akar_ave_cpu > r_rf_cpu)\nprint(f\"Kriteria Fornell-Larcker Terpenuhi? {valid_diskriminan}\")\nif valid_diskriminan:\n    print(\"Kesimpulan: Kedua konstruk mengukur fenomena fisik yang berbeda secara tegas (validitas diskriminan terbukti).\")\n",
+      "expectedOutput": "Akar AVE Laten RF       : 0.825\nAkar AVE Laten CPU      : 0.849\nKorelasi Antar-Laten (r): 0.350\nKriteria Fornell-Larcker Terpenuhi? True\nKesimpulan: Kedua konstruk mengukur fenomena fisik yang berbeda secara tegas (validitas diskriminan terbukti)."
     },
-    pythonImplementation: {
-      description: 'Komputasi koefisien Cronbach Alpha dan korelasi butir-total (Item-Total Correlation) menggunakan NumPy.',
-      libraryDependencies: ['numpy'],
-      code: `import numpy as np
-
-# Matriks data respon 20 subjek terhadap 4 butir indikator [SIMULASI/SYNTHETIC DATA]
-np.random.seed(42)
-laten = np.random.normal(0, 1.0, 20)
-item1 = np.round(np.clip(3.5 + 0.8 * laten + np.random.normal(0, 0.4, 20), 1, 5))
-item2 = np.round(np.clip(3.2 + 0.7 * laten + np.random.normal(0, 0.5, 20), 1, 5))
-item3 = np.round(np.clip(3.8 + 0.9 * laten + np.random.normal(0, 0.3, 20), 1, 5))
-item4 = np.round(np.clip(3.0 + 0.6 * laten + np.random.normal(0, 0.6, 20), 1, 5))
-
-X = np.column_stack([item1, item2, item3, item4])
-K = X.shape[1]
-
-# Hitung varians butir dan varians total skor
-varians_butir = np.var(X, axis=0, ddof=1)
-total_skor = np.sum(X, axis=1)
-varians_total = np.var(total_skor, axis=0, ddof=1)
-
-alpha = (K / (K - 1)) * (1.0 - np.sum(varians_butir) / varians_total)
-
-print(f"Jumlah Butir (K)             : {K}")
-print(f"Varians Masing-masing Butir  : {np.round(varians_butir, 3)}")
-print(f"Varians Skor Total Gabungan  : {varians_total:.3f}")
-print(f"Koefisien Cronbach's Alpha   : {alpha:.3f}")
-if alpha >= 0.80:
-    print("Status: Konsistensi internal SANGAT TINGGI (Layak untuk pengujian rekayasa kritis).")
-else:
-    print("Status: Konsistensi internal MODERAT.")
-`,
-      expectedOutput: `Jumlah Butir (K)             : 4
-Varians Masing-masing Butir  : [1.25  0.892 1.04  0.724]
-Varians Skor Total Gabungan  : 11.208
-Koefisien Cronbach's Alpha   : 0.871
-Status: Konsistensi internal SANGAT TINGGI (Layak untuk pengujian rekayasa kritis).`,
-    },
-    commonPitfalls: [
-      'Menghitung Cronbach Alpha pada instrumen multidimensi secara serentak (Alpha mengasumsikan unidimensionalitas mutlak).',
-      'Mengartikan nilai Alpha yang sangat tinggi (> 0.95) sebagai hal positif, padahal nilai tersebut sering kali menandakan adanya redundansi butir pertanyaan yang berlebihan.',
-      'Mengabaikan durasi jeda waktu pada uji test-retest (jeda terlalu pendek memicu efek mengingat, jeda terlalu panjang memicu maturasi).',
+    "commonPitfalls": [
+      "Menyamakan instrumen yang memiliki pembacaan presisi tinggi sebagai instrumen yang pasti valid.",
+      "Mengabaikan validitas kriteria terhadap alat ukur standar baku emas (gold standard).",
+      "Menggabungkan butir-butir indikator yang mengukur konsep berbeda ke dalam satu skor gabungan tanpa uji faktorial."
     ],
-    validationProcedures: [
-      'Jalankan analisis faktor eksploratori terlebih dahulu untuk memastikan instrumen bersifat unidimensional sebelum menghitung Alpha.',
-      'Periksa nilai Corrected Item-Total Correlation (wajib > 0.30 untuk setiap butir yang dipertahankan).',
+    "validationProcedures": [
+      "Lakukan pengujian korelasi simultan terhadap instrumen acuan kalibrasi industri bersertifikat.",
+      "Sertakan panel pakar lintas disiplin untuk memvalidasi relevansi indikator kuesioner atau spesifikasi sensor."
     ],
-    exercises: [
+    "exercises": [
       {
-        question: 'Mengapa nilai Cronbach Alpha akan otomatis membesar jika peneliti terus menambahkan butir-butir pertanyaan baru yang serupa ke dalam kuesioner?',
-        hint: 'Perhatikan suku K / (K - 1) dan sifat akumulasi kovarians butir pada penyebut varians total.',
-        answerExplanation: 'Penambahan butir baru secara mekanis menaikkan dimensi K dan melipatgandakan jumlah pasangan kovarians antar-butir (K*(K-1)/2 pasang) pada varians total. Oleh karena itu, nilai Alpha yang tinggi dapat mencerminkan jumlah butir yang terlalu banyak (panjang kuesioner berlebihan), bukan mutu butir yang sejati.',
+        "question": "Mengapa validitas konstruk dinilai sebagai tingkatan validitas instrumen yang paling komprehensif dan fundamental?",
+        "hint": "Perhatikan apakah validitas konstruk menyatukan bukti teoretis, empiris kriteria, dan konten secara menyeluruh.",
+        "answerExplanation": "Validitas konstruk membuktikan bahwa instrumen tidak hanya mengukur secara akurat terhadap kriteria tertentu saat ini, melainkan bahwa variasi pembacaan instrumen benar-benar merefleksikan dinamika teori fisis konseptual yang melandasinya di bawah berbagai kondisi pengujian yang berbeda."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Lawshe, C. H. (1975). A quantitative approach to content validity. Personnel Psychology, 28(4), 563-575.",
+        "type": "peer-reviewed-article"
       },
+      {
+        "citation": "Fornell, C., & Larcker, D. F. (1981). Evaluating structural equation models with unobservable variables and measurement error. Journal of Marketing Research, 18(1), 39-50.",
+        "type": "peer-reviewed-article"
+      }
     ],
-    references: [
-      { citation: 'Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. Psychometrika, 16(3), 297-334.', type: 'peer-reviewed-article' },
-      { citation: 'Shrout, P. E., & Fleiss, J. L. (1979). Intraclass correlations: uses in assessing rater reliability. Psychological Bulletin, 86(2), 420-428.', type: 'peer-reviewed-article' },
-    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Validitas Instrumen: Validitas Konstruk, Validitas Kont...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.1.",
+          "Capaian: Membedakan tiga dimensi utama validitas instrumen pengukuran (Konten, Kriteria, dan Konstruk).",
+          "Capaian: Mengevaluasi validitas konvergen dan diskriminan menggunakan kriteria Campbell & Fiske.",
+          "Capaian: Menerapkan Content Validity Ratio (CVR) Lawshe untuk penilaian panel pakar keteknikan."
+        ],
+        "keyFormulaOrDiagram": "$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$"
+      },
+      {
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Validitas Instrumen: Validitas Konstruk, Validitas Kont...",
+        "bulletPoints": [
+          "Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen terseb...",
+          "Tiga pilar validitas instrumen dalam rekayasa dan pengujian sistem: 1. Validitas Konten (Content Validity): Menilai sejauh ma...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ]
+      },
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen terseb...",
+          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "1. Content Validity Ratio (CVR) Lawshe:",
+          "Panel terdiri dari $N_{\\text{pakar}}$ ahli independen. Jika $n_e$ adalah jumlah pakar yang menyatakan bahwa su...",
+          "Di mana $\\text{CVR} \\in [-1.0, +1.0]$. Indikator dipertahankan jika $\\text{CVR} > \\text{CVR}_{\\text{kritis}}$..."
+        ],
+        "keyFormulaOrDiagram": "$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Sebuah panel beranggotakan 12 orang dosen teknik ITERA mengevaluasi apakah sensor fluks medan magnetik esensial dimasukkan ke dalam modul de...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi parameter: N_pakar = 12, n_e = 10.",
+          "Langkah 2: Hitung nilai CVR: CVR = (2 * n_e / N_pakar) - 1 = (2 * 10 / 12) - 1 = (20 / 12) - 1 = 1.667 - 1 = +...",
+          "Langkah 3: Bandingkan dengan ambang batas kritis: CVR (+0.667) > CVR_kritis (+0.560).",
+          "Interpretasi: Sensor tersebut secara absah dimasukkan ke dalam paket instrumentasi modul pemantauan inverter."
+        ],
+        "keyFormulaOrDiagram": "Langkah 4: Kesimpulan evaluasi konten: Indikator sensor fluks medan magnetik memiliki vali..."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Evaluasi validitas diskriminan Fornell-Larcker antar-variabel laten sistem telemetri.",
+          "Dependensi Pustaka: numpy",
+          "Keluaran Diharapkan: Akar AVE Laten RF : 0.825"
+        ],
+        "keyFormulaOrDiagram": "Akar AVE Laten RF : 0.825 | Akar AVE Laten CPU : 0.849 | Korelasi Antar-Laten (r): 0.350"
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Menyamakan instrumen yang memiliki pembacaan presisi tinggi sebagai instrumen yang pasti valid.",
+          "Perangkap: Mengabaikan validitas kriteria terhadap alat ukur standar baku emas (gold standard).",
+          "Perangkap: Menggabungkan butir-butir indikator yang mengukur konsep berbeda ke dalam satu skor gabungan tanpa uji faktori..."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Lakukan pengujian korelasi simultan terhadap instrumen acuan kalibrasi industri bersertifikat.",
+          "Prosedur: Sertakan panel pakar lintas disiplin untuk memvalidasi relevansi indikator kuesioner atau spesifikasi sensor."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa validitas konstruk dinilai sebagai tingkatan validitas instrumen yang paling komprehensif dan fundamental?",
+          "Petunjuk: Perhatikan apakah validitas konstruk menyatukan bukti teoretis, empiris kriteria, dan konten secara...",
+          "Solusi Kunci: Validitas konstruk membuktikan bahwa instrumen tidak hanya mengukur secara akurat terhadap kriteria tertentu saat ini, m..."
+        ]
+      }
+    ]
   },
-  '2.5.3': {
-    id: '2.5.3',
-    chapterId: 'CH-12',
-    title: 'Kesepakatan Antar-Penilai (Inter-Rater Reliability): Cohen Kappa dan Fleiss Kappa',
-    readingTimeMinutes: 18,
-    status: 'verified',
-    learningObjectives: [
-      'Membedakan konsep kesepakatan persentase sederhana versus indeks kesepakatan terkoreksi kebetulan (*chance-corrected agreement*).',
-      'Menghitung dan menginterpretasikan koefisien Cohen\'s Kappa ($\\kappa$) untuk dua penilai.',
-      'Menerapkan Fleiss\' Kappa untuk panel multi-penilai dan Weighted Kappa untuk data bertingkat ordinal.',
+  "2.5.2": {
+    "id": "2.5.2",
+    "chapterId": "CH-12",
+    "title": "Reliabilitas Instrumen: Test-Retest dan Konsistensi Internal via Cronbach Alpha",
+    "readingTimeMinutes": 18,
+    "status": "verified",
+    "learningObjectives": [
+      "Memahami konsep reliabilitas instrumen sebagai rasio variansi sejati terhadap variansi total.",
+      "Menghitung koefisien reliabilitas test-retest menggunakan korelasi intrakelas (ICC).",
+      "Menghitung dan menginterpretasikan koefisien konsistensi internal Cronbach Alpha."
     ],
-    content: `Dalam rekayasa kualitas, anotasi dataset visi komputer (misalnya pemberian label bounding box retak jalan), dan inspeksi visual cacat manufaktur, keputusan klasifikasi sering kali diambil oleh evaluator manusia atau algoritma pengklasifikasi otomatis. Sebelum dataset ground truth tersebut digunakan untuk melatih kecerdasan buatan, peneliti wajib mengukur derajat kesepakatan antar-penilai (*Inter-Rater Reliability*).
-
-Kesalahan paling umum adalah menggunakan persentase kesepakatan sederhana (*percent agreement*). Jika dua penilai sama-sama memberi label "Normal" pada 95% produk karena cacat produksi sangat langka (1%), kedua penilai dapat menyepakati 90% sampel secara kebetulan belaka tanpa menggunakan keahlian apa pun.
-
-Untuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen\'s Kappa ($\\kappa$), yang mengukur kesepakatan proporsional yang diamati ($P_o$) setelah dikoreksi terhadap probabilitas kesepakatan acak yang diharapkan secara teoritis ($P_e$). Untuk panel yang melibatkan lebih dari dua penilai, metode diperluas menggunakan Fleiss\' Kappa.`,
-    mathematicalFoundations: `1. Formulasi Koefisien Cohen's Kappa (Dua Penilai):
-$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$
-
-Di mana:
-- $P_o$ adalah proporsi kesepakatan teramati riil: $P_o = \\frac{1}{N} \\sum_{i=1}^C n_{ii}$
-- $P_e$ adalah proporsi kesepakatan acak berdasarkan probabilitas marginal:
-$$P_e = \\sum_{i=1}^C P(\\text{Rater 1} = i) \\cdot P(\\text{Rater 2} = i) = \\sum_{i=1}^C \\left( \\frac{R_{1,i}}{N} \\right) \\left( \\frac{R_{2,i}}{N} \\right)$$
-
-2. Skala Interpretasi Landis & Koch (1977):
-- $\\kappa < 0.00$ : Kesepakatan buruk (lebih buruk dari tebakan acak)
-- $0.00 \\le \\kappa \\le 0.20$ : Kesepakatan sangat lemah (*slight*)
-- $0.21 \\le \\kappa \\le 0.40$ : Kesepakatan adil (*fair*)
-- $0.41 \\le \\kappa \\le 0.60$ : Kesepakatan moderat (*moderate*)
-- $0.61 \\le \\kappa \\le 0.80$ : Kesepakatan substansial (*substantial*)
-- $0.81 \\le \\kappa \\le 1.00$ : Kesepakatan hampir sempurna (*almost perfect*)`,
-    workedExample: {
-      problemStatement: 'Dua inspektur las independen memeriksa 100 citra radiografi sambungan pipa baja untuk mengklasifikasikan status Cacat (Defect) vs Lolos (Pass). Tabel kontingensi menunjukkan: Keduanya sepakat Cacat = 25 citra; Keduanya sepakat Lolos = 60 citra; Penilai 1 Cacat tapi Penilai 2 Lolos = 5 citra; Penilai 1 Lolos tapi Penilai 2 Cacat = 10 citra. Hitung persentase kesepakatan teramati Po, kesepakatan peluang acak Pe, dan Cohen Kappa.',
-      stepByStepSolution: [
-        'Langkah 1: Hitung total observasi: N = 25 + 5 + 10 + 60 = 100 citra.',
-        'Langkah 2: Hitung kesepakatan teramati Po: Po = (25 + 60) / 100 = 85 / 100 = 0.85 (85%).',
-        'Langkah 3: Hitung total marginal masing-masing penilai:',
-        'Penilai 1: Total Cacat = 25 + 5 = 30; Total Lolos = 10 + 60 = 70.',
-        'Penilai 2: Total Cacat = 25 + 10 = 35; Total Lolos = 5 + 60 = 65.',
-        'Langkah 4: Hitung kesepakatan acak Pe:',
-        'Pe(Cacat) = (30/100) * (35/100) = 0.30 * 0.35 = 0.105.',
-        'Pe(Lolos) = (70/100) * (65/100) = 0.70 * 0.65 = 0.455.',
-        'Pe total = 0.105 + 0.455 = 0.560 (56.0%).',
-        'Langkah 5: Hitung Cohen Kappa: kappa = (0.85 - 0.56) / (1 - 0.56) = 0.29 / 0.44 = 0.659.',
+    "content": "Reliabilitas instrumen (*measurement reliability*) adalah derajat stabilitas, konsistensi, dan keterulangan hasil pengukuran ketika pengujian diulang berkali-kali pada objek yang sama di bawah kondisi yang setara. Dalam Classical Test Theory (CTT), setiap skor teramati ($X$) dipandang sebagai penjumlahan antara skor sejati ($T$) dan galat pengukuran acak ($E$).\n\nDua paradigma evaluasi reliabilitas instrumen yang paling esensial:\n1. Reliabilitas Pengujian Ulang (Test-Retest Reliability): Mengukur stabilitas temporal instrumen sepanjang waktu. Objek atau sistem yang sama diuji pada waktu $t_1$ dan diuji kembali pada waktu $t_2$. Evaluasi dihitung menggunakan Koefisien Korelasi Intrakelas (Intraclass Correlation Coefficient / ICC) untuk menghindari kelemahan korelasi Pearson biasa yang mengabaikan pergeseran nilai rata-rata sistematis.\n2. Konsistensi Internal (Internal Consistency): Mengukur sejauh mana butir-butir indikator atau sensor-sensor paralel yang tergabung dalam suatu susunan instrumen mengukur konstruk yang sama secara kompak. Metrik standar emas yang digunakan secara global adalah Cronbach's Alpha ($\\alpha$).\n\nNilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0. Untuk penelitian rekayasa dan instrumen diagnostik kritis, nilai ambang batas minimum yang diterima secara luas adalah $\\alpha \\ge 0.80$.",
+    "mathematicalFoundations": "1. Formulasi Koefisien Konsistensi Internal Cronbach's Alpha:\nDiberikan instrumen yang terdiri dari $K$ butir/sensor teramati dengan total skor $X = \\sum_{i=1}^K Y_i$:\n\n$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$\n\nDi mana:\n- $\\sigma_{Y_i}^2$ adalah varians butir/sensor ke-$i$.\n- $\\sigma_X^2$ adalah varians dari total skor gabungan: $\\sigma_X^2 = \\sum_{i=1}^K \\sigma_{Y_i}^2 + 2 \\sum_{i < j} \\text{Cov}(Y_i, Y_j)$.\n\n2. Dekomposisi Classical Test Theory (CTT):\n$$X = T + E$$\n$$\\text{Reliabilitas } \\rho_{XX'} = \\frac{\\sigma_T^2}{\\sigma_X^2} = \\frac{\\sigma_T^2}{\\sigma_T^2 + \\sigma_E^2}$$\nCronbach's Alpha merupakan batas bawah matematis (*lower bound*) dari reliabilitas sejati instrumen di bawah asumsi tau-ekuivalen esensial.",
+    "workedExample": {
+      "problemStatement": "Sebuah kuesioner evaluasi kegunaan sistem monitoring SCADA terdiri dari 4 pertanyaan yang diujikan pada 30 operator teknis. Varians masing-masing butir pertanyaan adalah: s1^2 = 0.80, s2^2 = 0.65, s3^2 = 0.90, s4^2 = 0.75. Varians skor total keseluruhan adalah s_X^2 = 7.50. Hitung koefisien Cronbach Alpha dan simpulkan reliabilitas internal instrumen.",
+      "stepByStepSolution": [
+        "Langkah 1: Hitung jumlah varians butir individu: Sum(s_i^2) = 0.80 + 0.65 + 0.90 + 0.75 = 3.10.",
+        "Langkah 2: Hitung rasio varians butir terhadap varians total: 3.10 / 7.50 = 0.4133.",
+        "Langkah 3: Hitung suku pengali butir: K / (K - 1) = 4 / (4 - 1) = 4 / 3 = 1.3333.",
+        "Langkah 4: Hitung nilai Cronbach Alpha: alpha = 1.3333 * (1 - 0.4133) = 1.3333 * 0.5867 = 0.782.",
+        "Langkah 5: Evaluasi reliabilitas: Nilai alpha = 0.782 mendekati batas ambang 0.80, menunjukkan konsistensi internal yang cukup baik, namun dapat ditingkatkan dengan membuang butir yang memiliki korelasi butir-total rendah."
       ],
-      resultInterpretation: 'Nilai Kappa sebesar 0.659 menunjukkan kesepakatan substansial (substantial agreement) yang membuktikan bahwa reliabilitas pelabelan citra las berada pada batas kualitas yang dapat diterima.',
+      "resultInterpretation": "Instrumen memiliki reliabilitas konsistensi internal sebesar 78.2% dan layak digunakan untuk studi pendahuluan."
     },
-    pythonImplementation: {
-      description: 'Komputasi Cohen\'s Kappa dan matriks kebingungan antar-penilai menggunakan scikit-learn/NumPy.',
-      libraryDependencies: ['numpy'],
-      code: `import numpy as np
-
-# Matriks kontingensi 2x2: [[Sepakat Cacat, P1 Cacat P2 Lolos], [P1 Lolos P2 Cacat, Sepakat Lolos]]
-kontingensi = np.array([
-    [25, 5],
-    [10, 60]
-])
-
-N = np.sum(kontingensi)
-P_o = np.trace(kontingensi) / N
-
-# Probabilitas marginal baris dan kolom
-p_baris = np.sum(kontingensi, axis=1) / N
-p_kolom = np.sum(kontingensi, axis=0) / N
-P_e = np.sum(p_baris * p_kolom)
-
-kappa = (P_o - P_e) / (1.0 - P_e)
-
-print(f"Total Citra Uji           : {N}")
-print(f"Kesepakatan Teramati (Po) : {P_o * 100:.1f}%")
-print(f"Kesepakatan Peluang (Pe)  : {P_e * 100:.1f}%")
-print(f"Koefisien Cohen's Kappa   : {kappa:.3f}")
-if kappa > 0.60:
-    print("Kategori Kesepakatan: SUBSTANSIAL (Memenuhi standar pelabelan data rekayasa).")
-`,
-      expectedOutput: `Total Citra Uji           : 100
-Kesepakatan Teramati (Po) : 85.0%
-Kesepakatan Peluang (Pe)  : 56.0%
-Koefisien Cohen's Kappa   : 0.659
-Kategori Kesepakatan: SUBSTANSIAL (Memenuhi standar pelabelan data rekayasa).`,
-    },
-    commonPitfalls: [
-      'Hanya melaporkan persentase kesepakatan sederhana pada dataset yang memiliki ketimpangan kelas ekstrem (*prevalence paradox*).',
-      'Menggunakan Cohen\'s Kappa biasa pada data ordinal bertingkat tanpa menerapkan pembobotan selisih peringkat (*Weighted Kappa*).',
-      'Mengasumsikan bahwa dua model kecerdasan buatan pasti andal hanya karena keduanya menyepakati label yang sama pada dataset yang bias.',
-    ],
-    validationProcedures: [
-      'Gunakan batas minimum Kappa > 0.70 sebelum melatih model supervised learning pada dataset anotasi manusia.',
-      'Sertakan uji signifikansi statistik terhadap hipotesis nol kappa = 0 untuk memastikan kesepakatan bukan kebetulan acak.',
-    ],
-    exercises: [
-      {
-        question: 'Apa yang dimaksud dengan Paradoks Kappa (Kappa Paradox) pada dataset dengan prevalensi ekstrem?',
-        hint: 'Perhatikan kondisi di mana persentase kesepakatan Po sangat tinggi (misal 98%) namun nilai Kappa justru bernilai sangat rendah.',
-        answerExplanation: 'Paradoks prevalensi terjadi ketika satu kategori sangat mendominasi populasi (misal 99% data adalah normal). Dalam kondisi ini, kesepakatan peluang Pe menjadi sangat tinggi mendekati 1. Akibatnya, selisih kecil pada penyebut (1 - Pe) membuat nilai Kappa menjadi sangat kecil secara artifisial meskipun kedua penilai menyepakati 98% kasus.',
-      },
-    ],
-    references: [
-      { citation: 'Cohen, J. (1960). A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1), 37-46.', type: 'peer-reviewed-article' },
-      { citation: 'Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for categorical data. Biometrics, 33(1), 159-174.', type: 'peer-reviewed-article' },
-    ],
-  },
-  '2.5.4': {
-    id: '2.5.4',
-    chapterId: 'CH-12',
-    title: 'Evaluasi Sistem Pengukuran Menggunakan Repeatability and Reproducibility (Gauge R&R)',
-    readingTimeMinutes: 20,
-    status: 'verified',
-    learningObjectives: [
-      'Menerapkan metodologi Measurement Systems Analysis (MSA) berbasis studi Gauge R&R.',
-      'Memisahkan variabilitas sistem menjadi Repeatability (EV) dan Reproducibility (AV).',
-      'Menghitung metrik kapabilitas sistem pengukuran (%GRR dan Number of Distinct Categories / ndc).',
-    ],
-    content: `Sebelum sebuah sistem sensor atau alat ukur laboratorium digunakan untuk menguji hipotesis eksperimen, peneliti harus memastikan bahwa variasi yang muncul dalam data benar-benar berasal dari variasi alami benda uji (part-to-part variation), BUKAN berasal dari kecacatan sistem pengukuran itu sendiri. Metodologi terstandarisasi untuk memverifikasi ini dikenal sebagai Measurement Systems Analysis (MSA) tipe Gauge Repeatability and Reproducibility (Gauge R&R).
-
-Gauge R&R membedakan dua komponen variasi sistem pengukuran:
-1. Keterulangan (Repeatability / Equipment Variation / EV): Variasi yang terjadi ketika satu operator mengukur benda kerja yang sama berkali-kali menggunakan alat ukur yang sama di bawah kondisi yang identik dalam jangka pendek. EV mencerminkan presisi perangkat keras internal instrumen.
-2. Keterulangan Antar-Kondisi (Reproducibility / Appraiser Variation / AV): Variasi pada rata-rata pengukuran yang terjadi ketika beberapa operator berbeda mengukur benda kerja yang sama menggunakan alat ukur yang sama di bawah kondisi operasional yang berbeda. AV mencerminkan sensitivitas instrumen terhadap variasi prosedur manusia.
-
-Berdasarkan standar Automotive Industry Action Group (AIAG):
-- %GRR < 10%: Sistem pengukuran dapat diterima secara sempurna (*acceptable*).
-- 10% <= %GRR <= 30%: Sistem pengukuran marjinal (dapat diterima bergantung pada tingkat kekritisan aplikasi).
-- %GRR > 30%: Sistem pengukuran cacat dan tidak dapat diterima (*unacceptable*); instrumen atau SOP harus diperbaiki.`,
-    mathematicalFoundations: `Dekomposisi Model ANOVA Dua Arah Efek Acak (Two-Way Random Effects ANOVA):
-
-Total varians pengukuran teramati:
-$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$
-
-Di mana varians Gauge R&R:
-$$\\sigma_{\\text{GRR}}^2 = \\sigma_{\\text{Repeatability}}^2 + \\sigma_{\\text{Reproducibility}}^2$$
-
-1. Persentase Kontribusi Variansi Terhadap Variasi Total (%GRR):
-$$\\%\\text{GRR} = \\frac{\\sigma_{\\text{GRR}}}{\\sigma_{\\text{Total}}} \\times 100\\%$$
-
-2. Rasio Presisi terhadap Toleransi Spesifikasi (Precision-to-Tolerance / P/T Ratio):
-$$P/T = \\frac{6 \\cdot \\sigma_{\\text{GRR}}}{\\text{USL} - \\text{LSL}} \\times 100\\%$$
-Di mana USL dan LSL adalah Upper dan Lower Specification Limits produk.
-
-3. Jumlah Kategori Pembeda Unik (*Number of Distinct Categories* / ndc):
-$$\\text{ndc} = 1.41 \\left( \\frac{\\sigma_{\\text{Part}}}{\\sigma_{\\text{GRR}}} \\right)$$
-Standar penerimaan: $\\text{ndc} \\ge 5$ (sistem mampu membedakan minimal 5 kelompok variasi komponen).`,
-    workedExample: {
-      problemStatement: 'Sebuah mikrometer digital diuji melalui studi Gauge R&R ANOVA dengan 10 komponen poros, 3 operator penguji, dan 3 kali pengulangan. Estimasi varians yang diperoleh: sigma_Repeatability^2 = 0.04 um^2, sigma_Reproducibility^2 = 0.05 um^2, dan sigma_Part^2 = 0.91 um^2. Hitung varians sigma_GRR, varians total sigma_Total, persentase %GRR, dan nilai indeks ndc.',
-      stepByStepSolution: [
-        'Langkah 1: Hitung varians Gauge R&R: sigma_GRR^2 = 0.04 + 0.05 = 0.09 um^2. Deviasi standar sigma_GRR = sqrt(0.09) = 0.30 um.',
-        'Langkah 2: Hitung varians Total: sigma_Total^2 = sigma_Part^2 + sigma_GRR^2 = 0.91 + 0.09 = 1.00 um^2. Deviasi standar sigma_Total = sqrt(1.00) = 1.00 um.',
-        'Langkah 3: Hitung deviasi standar komponen poros: sigma_Part = sqrt(0.91) = 0.9539 um.',
-        'Langkah 4: Hitung persentase %GRR: %GRR = (sigma_GRR / sigma_Total) * 100% = (0.30 / 1.00) * 100% = 30.0%.',
-        'Langkah 5: Hitung indeks Number of Distinct Categories: ndc = 1.41 * (sigma_Part / sigma_GRR) = 1.41 * (0.9539 / 0.30) = 1.41 * 3.18 = 4.48 -> bulatkan ke bawah menjadi 4 kategori.',
+    "pythonImplementation": {
+      "description": "Komputasi koefisien Cronbach Alpha dan korelasi butir-total (Item-Total Correlation) menggunakan NumPy.",
+      "libraryDependencies": [
+        "numpy"
       ],
-      resultInterpretation: 'Sistem pengukuran berada pada batas marjinal kritis (%GRR = 30.0% dan ndc = 4 < 5). Sistem ini tidak cukup tajam untuk proses pemilahan presisi tinggi. Pelatihan ulang operator disarankan untuk menekan komponen Reproducibility.',
+      "code": "import numpy as np\n\n# Matriks data respon 20 subjek terhadap 4 butir indikator [SIMULASI/SYNTHETIC DATA]\nnp.random.seed(42)\nlaten = np.random.normal(0, 1.0, 20)\nitem1 = np.round(np.clip(3.5 + 0.8 * laten + np.random.normal(0, 0.4, 20), 1, 5))\nitem2 = np.round(np.clip(3.2 + 0.7 * laten + np.random.normal(0, 0.5, 20), 1, 5))\nitem3 = np.round(np.clip(3.8 + 0.9 * laten + np.random.normal(0, 0.3, 20), 1, 5))\nitem4 = np.round(np.clip(3.0 + 0.6 * laten + np.random.normal(0, 0.6, 20), 1, 5))\n\nX = np.column_stack([item1, item2, item3, item4])\nK = X.shape[1]\n\n# Hitung varians butir dan varians total skor\nvarians_butir = np.var(X, axis=0, ddof=1)\ntotal_skor = np.sum(X, axis=1)\nvarians_total = np.var(total_skor, axis=0, ddof=1)\n\nalpha = (K / (K - 1)) * (1.0 - np.sum(varians_butir) / varians_total)\n\nprint(f\"Jumlah Butir (K)             : {K}\")\nprint(f\"Varians Masing-masing Butir  : {np.round(varians_butir, 3)}\")\nprint(f\"Varians Skor Total Gabungan  : {varians_total:.3f}\")\nprint(f\"Koefisien Cronbach's Alpha   : {alpha:.3f}\")\nif alpha >= 0.80:\n    print(\"Status: Konsistensi internal SANGAT TINGGI (Layak untuk pengujian rekayasa kritis).\")\nelse:\n    print(\"Status: Konsistensi internal MODERAT.\")\n",
+      "expectedOutput": "Jumlah Butir (K)             : 4\nVarians Masing-masing Butir  : [1.25  0.892 1.04  0.724]\nVarians Skor Total Gabungan  : 11.208\nKoefisien Cronbach's Alpha   : 0.871\nStatus: Konsistensi internal SANGAT TINGGI (Layak untuk pengujian rekayasa kritis)."
     },
-    pythonImplementation: {
-      description: 'Simulasi dekomposisi variansi Gauge R&R dan perhitungan metrik kapabilitas sistem pengukuran.',
-      libraryDependencies: ['numpy'],
-      code: `import numpy as np
-
-# Komponen variansi yang diestimasi dari tabel ANOVA [SIMULASI/SYNTHETIC DATA]
-var_repeatability = 0.04   # Peralatan
-var_reproducibility = 0.05 # Operator
-var_part = 0.91            # Komponen Benda Uji
-
-# Perhitungan variansi gabungan
-var_grr = var_repeatability + var_reproducibility
-var_total = var_part + var_grr
-
-sd_repeatability = np.sqrt(var_repeatability)
-sd_reproducibility = np.sqrt(var_reproducibility)
-sd_grr = np.sqrt(var_grr)
-sd_part = np.sqrt(var_part)
-sd_total = np.sqrt(var_total)
-
-persen_grr = (sd_grr / sd_total) * 100.0
-persen_part = (sd_part / sd_total) * 100.0
-ndc = int(np.floor(1.41 * (sd_part / sd_grr)))
-
-print("HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):")
-print(f"Deviasi Standar Repeatability (EV)   : {sd_repeatability:.4f}")
-print(f"Deviasi Standar Reproducibility (AV) : {sd_reproducibility:.4f}")
-print(f"Deviasi Standar Total GRR            : {sd_grr:.4f}")
-print(f"Deviasi Standar Part-to-Part (PV)    : {sd_part:.4f}")
-print(f"Deviasi Standar Total Sistem         : {sd_total:.4f}")
-print("-" * 55)
-print(f"Persentase %GRR Terhadap Variasi Total: {persen_grr:.1f}%")
-print(f"Jumlah Kategori Pembeda Unik (ndc)    : {ndc}")
-
-if persen_grr <= 10.0:
-    print("Keputusan AIAG: Sistem Pengukuran SANGAT BAIK (Diterima).")
-elif persen_grr <= 30.0:
-    print("Keputusan AIAG: Sistem Pengukuran MARJINAL (Perlu perbaikan operator/alat).")
-else:
-    print("Keputusan AIAG: Sistem Pengukuran DITOLAK (Tidak dapat digunakan).")
-`,
-      expectedOutput: `HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):
-Deviasi Standar Repeatability (EV)   : 0.2000
-Deviasi Standar Reproducibility (AV) : 0.2236
-Deviasi Standar Total GRR            : 0.3000
-Deviasi Standar Part-to-Part (PV)    : 0.9539
-Deviasi Standar Total Sistem         : 1.0000
--------------------------------------------------------
-Persentase %GRR Terhadap Variasi Total: 30.0%
-Jumlah Kategori Pembeda Unik (ndc)    : 4
-Keputusan AIAG: Sistem Pengukuran MARJINAL (Perlu perbaikan operator/alat).`,
-    },
-    commonPitfalls: [
-      'Memilih 10 sampel komponen uji yang seragam sempurna sehingga varians part-to-part menjadi nol dan membuat %GRR meledak mendekati 100%.',
-      'Mengizinkan operator mengetahui urutan nomor komponen yang sedang diuji (ketiadaan penyamaran / blinding).',
-      'Mengabaikan interaksi antara Operator dan Komponen (Operator-by-Part Interaction).',
+    "commonPitfalls": [
+      "Menghitung Cronbach Alpha pada instrumen multidimensi secara serentak (Alpha mengasumsikan unidimensionalitas mutlak).",
+      "Mengartikan nilai Alpha yang sangat tinggi (> 0.95) sebagai hal positif, padahal nilai tersebut sering kali menandakan adanya redundansi butir pertanyaan yang berlebihan.",
+      "Mengabaikan durasi jeda waktu pada uji test-retest (jeda terlalu pendek memicu efek mengingat, jeda terlalu panjang memicu maturasi)."
     ],
-    validationProcedures: [
-      'Pilih sampel komponen uji yang mencakup seluruh rentang toleransi proses produksi normal (dari batas bawah hingga batas atas).',
-      'Lakukan pengacakan urutan uji penuh pada setiap pengulangan pengukuran operator.',
+    "validationProcedures": [
+      "Jalankan analisis faktor eksploratori terlebih dahulu untuk memastikan instrumen bersifat unidimensional sebelum menghitung Alpha.",
+      "Periksa nilai Corrected Item-Total Correlation (wajib > 0.30 untuk setiap butir yang dipertahankan)."
     ],
-    exercises: [
+    "exercises": [
       {
-        question: 'Mengapa metrik Number of Distinct Categories (ndc) wajib bernilai minimal 5 untuk sistem kendali proses statistik industri?',
-        hint: 'Perhatikan kemampuan sistem dalam membedakan variasi komponen menjadi kategori ekstrem rendah, moderat, dan tinggi.',
-        answerExplanation: 'Nilai ndc menyatakan berapa banyak interval varians part yang tidak tumpang tindih dengan interval galat pengukuran alat. Nilai ndc minimal 5 memastikan bahwa sistem ukur mampu membagi distribusi produk menjadi minimal 5 kelompok diskrit (rendah ekstrem, rendah, tengah, tinggi, tinggi ekstrem), yang merupakan syarat mutlak agar grafik kendali X-bar dan R tidak kehilangan daya pemantauan sinyal kontrol.',
+        "question": "Mengapa nilai Cronbach Alpha akan otomatis membesar jika peneliti terus menambahkan butir-butir pertanyaan baru yang serupa ke dalam kuesioner?",
+        "hint": "Perhatikan suku K / (K - 1) dan sifat akumulasi kovarians butir pada penyebut varians total.",
+        "answerExplanation": "Penambahan butir baru secara mekanis menaikkan dimensi K dan melipatgandakan jumlah pasangan kovarians antar-butir (K*(K-1)/2 pasang) pada varians total. Oleh karena itu, nilai Alpha yang tinggi dapat mencerminkan jumlah butir yang terlalu banyak (panjang kuesioner berlebihan), bukan mutu butir yang sejati."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Cronbach, L. J. (1951). Coefficient alpha and the internal structure of tests. Psychometrika, 16(3), 297-334.",
+        "type": "peer-reviewed-article"
       },
+      {
+        "citation": "Shrout, P. E., & Fleiss, J. L. (1979). Intraclass correlations: uses in assessing rater reliability. Psychological Bulletin, 86(2), 420-428.",
+        "type": "peer-reviewed-article"
+      }
     ],
-    references: [
-      { citation: 'Automotive Industry Action Group (AIAG). (2010). Measurement Systems Analysis (MSA) Reference Manual (4th ed.). AIAG.', type: 'formal-standard' },
-      { citation: 'Montgomery, D. C. (2013). Introduction to Statistical Quality Control (7th ed.). John Wiley & Sons.', type: 'canonical-textbook' },
-    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Reliabilitas Instrumen: Test-Retest dan Konsistensi Int...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.2.",
+          "Capaian: Memahami konsep reliabilitas instrumen sebagai rasio variansi sejati terhadap variansi total.",
+          "Capaian: Menghitung koefisien reliabilitas test-retest menggunakan korelasi intrakelas (ICC).",
+          "Capaian: Menghitung dan menginterpretasikan koefisien konsistensi internal Cronbach Alpha."
+        ],
+        "keyFormulaOrDiagram": "$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$"
+      },
+      {
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Reliabilitas Instrumen: Test-Retest dan Konsistensi Int...",
+        "bulletPoints": [
+          "Reliabilitas instrumen (*measurement reliability*) adalah derajat stabilitas, konsistensi, dan keterulangan hasil pengukuran...",
+          "Dua paradigma evaluasi reliabilitas instrumen yang paling esensial: 1. Reliabilitas Pengujian Ulang (Test-Retest Reliability)...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ],
+        "keyFormulaOrDiagram": "Nilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0. Untuk penelitian rekayasa dan instr..."
+      },
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Nilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0. Untuk penelitian rekayasa dan instrumen diagnostik kritis, nilai amban...",
+          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "1. Formulasi Koefisien Konsistensi Internal Cronbach's Alpha:",
+          "Diberikan instrumen yang terdiri dari $K$ butir/sensor teramati dengan total skor $X = \\sum_{i=1}^K Y_i$:",
+          "Di mana:"
+        ],
+        "keyFormulaOrDiagram": "$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Sebuah kuesioner evaluasi kegunaan sistem monitoring SCADA terdiri dari 4 pertanyaan yang diujikan pada 30 operator teknis. Varians masing-m...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Hitung jumlah varians butir individu: Sum(s_i^2) = 0.80 + 0.65 + 0.90 + 0.75 = 3.10.",
+          "Langkah 2: Hitung rasio varians butir terhadap varians total: 3.10 / 7.50 = 0.4133.",
+          "Langkah 3: Hitung suku pengali butir: K / (K - 1) = 4 / (4 - 1) = 4 / 3 = 1.3333.",
+          "Interpretasi: Instrumen memiliki reliabilitas konsistensi internal sebesar 78.2% dan layak digunakan untuk studi pendahuluan."
+        ],
+        "keyFormulaOrDiagram": "Langkah 5: Evaluasi reliabilitas: Nilai alpha = 0.782 mendekati batas ambang 0.80, menunju..."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Komputasi koefisien Cronbach Alpha dan korelasi butir-total (Item-Total Correlation) menggunakan NumPy.",
+          "Dependensi Pustaka: numpy",
+          "Keluaran Diharapkan: Jumlah Butir (K) : 4"
+        ],
+        "keyFormulaOrDiagram": "Jumlah Butir (K) : 4 | Varians Masing-masing Butir : [1.25 0.892 1.04 0.724] | Varians Sko..."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Menghitung Cronbach Alpha pada instrumen multidimensi secara serentak (Alpha mengasumsikan unidimensionalitas...",
+          "Perangkap: Mengartikan nilai Alpha yang sangat tinggi (> 0.95) sebagai hal positif, padahal nilai tersebut sering kali me...",
+          "Perangkap: Mengabaikan durasi jeda waktu pada uji test-retest (jeda terlalu pendek memicu efek mengingat, jeda terlalu pa..."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Jalankan analisis faktor eksploratori terlebih dahulu untuk memastikan instrumen bersifat unidimensional sebel...",
+          "Prosedur: Periksa nilai Corrected Item-Total Correlation (wajib > 0.30 untuk setiap butir yang dipertahankan)."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa nilai Cronbach Alpha akan otomatis membesar jika peneliti terus menambahkan butir-butir pertanyaan baru yang ser...",
+          "Petunjuk: Perhatikan suku K / (K - 1) dan sifat akumulasi kovarians butir pada penyebut varians total.",
+          "Solusi Kunci: Penambahan butir baru secara mekanis menaikkan dimensi K dan melipatgandakan jumlah pasangan kovarians antar-butir (K*(K..."
+        ]
+      }
+    ]
   },
+  "2.5.3": {
+    "id": "2.5.3",
+    "chapterId": "CH-12",
+    "title": "Kesepakatan Antar-Penilai (Inter-Rater Reliability): Cohen Kappa dan Fleiss Kappa",
+    "readingTimeMinutes": 18,
+    "status": "verified",
+    "learningObjectives": [
+      "Membedakan konsep kesepakatan persentase sederhana versus indeks kesepakatan terkoreksi kebetulan (*chance-corrected agreement*).",
+      "Menghitung dan menginterpretasikan koefisien Cohen's Kappa ($\\kappa$) untuk dua penilai.",
+      "Menerapkan Fleiss' Kappa untuk panel multi-penilai dan Weighted Kappa untuk data bertingkat ordinal."
+    ],
+    "content": "Dalam rekayasa kualitas, anotasi dataset visi komputer (misalnya pemberian label bounding box retak jalan), dan inspeksi visual cacat manufaktur, keputusan klasifikasi sering kali diambil oleh evaluator manusia atau algoritma pengklasifikasi otomatis. Sebelum dataset ground truth tersebut digunakan untuk melatih kecerdasan buatan, peneliti wajib mengukur derajat kesepakatan antar-penilai (*Inter-Rater Reliability*).\n\nKesalahan paling umum adalah menggunakan persentase kesepakatan sederhana (*percent agreement*). Jika dua penilai sama-sama memberi label \"Normal\" pada 95% produk karena cacat produksi sangat langka (1%), kedua penilai dapat menyepakati 90% sampel secara kebetulan belaka tanpa menggunakan keahlian apa pun.\n\nUntuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen's Kappa ($\\kappa$), yang mengukur kesepakatan proporsional yang diamati ($P_o$) setelah dikoreksi terhadap probabilitas kesepakatan acak yang diharapkan secara teoritis ($P_e$). Untuk panel yang melibatkan lebih dari dua penilai, metode diperluas menggunakan Fleiss' Kappa.",
+    "mathematicalFoundations": "1. Formulasi Koefisien Cohen's Kappa (Dua Penilai):\n$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$\n\nDi mana:\n- $P_o$ adalah proporsi kesepakatan teramati riil: $P_o = \\frac{1}{N} \\sum_{i=1}^C n_{ii}$\n- $P_e$ adalah proporsi kesepakatan acak berdasarkan probabilitas marginal:\n$$P_e = \\sum_{i=1}^C P(\\text{Rater 1} = i) \\cdot P(\\text{Rater 2} = i) = \\sum_{i=1}^C \\left( \\frac{R_{1,i}}{N} \\right) \\left( \\frac{R_{2,i}}{N} \\right)$$\n\n2. Skala Interpretasi Landis & Koch (1977):\n- $\\kappa < 0.00$ : Kesepakatan buruk (lebih buruk dari tebakan acak)\n- $0.00 \\le \\kappa \\le 0.20$ : Kesepakatan sangat lemah (*slight*)\n- $0.21 \\le \\kappa \\le 0.40$ : Kesepakatan adil (*fair*)\n- $0.41 \\le \\kappa \\le 0.60$ : Kesepakatan moderat (*moderate*)\n- $0.61 \\le \\kappa \\le 0.80$ : Kesepakatan substansial (*substantial*)\n- $0.81 \\le \\kappa \\le 1.00$ : Kesepakatan hampir sempurna (*almost perfect*)",
+    "workedExample": {
+      "problemStatement": "Dua inspektur las independen memeriksa 100 citra radiografi sambungan pipa baja untuk mengklasifikasikan status Cacat (Defect) vs Lolos (Pass). Tabel kontingensi menunjukkan: Keduanya sepakat Cacat = 25 citra; Keduanya sepakat Lolos = 60 citra; Penilai 1 Cacat tapi Penilai 2 Lolos = 5 citra; Penilai 1 Lolos tapi Penilai 2 Cacat = 10 citra. Hitung persentase kesepakatan teramati Po, kesepakatan peluang acak Pe, dan Cohen Kappa.",
+      "stepByStepSolution": [
+        "Langkah 1: Hitung total observasi: N = 25 + 5 + 10 + 60 = 100 citra.",
+        "Langkah 2: Hitung kesepakatan teramati Po: Po = (25 + 60) / 100 = 85 / 100 = 0.85 (85%).",
+        "Langkah 3: Hitung total marginal masing-masing penilai:",
+        "Penilai 1: Total Cacat = 25 + 5 = 30; Total Lolos = 10 + 60 = 70.",
+        "Penilai 2: Total Cacat = 25 + 10 = 35; Total Lolos = 5 + 60 = 65.",
+        "Langkah 4: Hitung kesepakatan acak Pe:",
+        "Pe(Cacat) = (30/100) * (35/100) = 0.30 * 0.35 = 0.105.",
+        "Pe(Lolos) = (70/100) * (65/100) = 0.70 * 0.65 = 0.455.",
+        "Pe total = 0.105 + 0.455 = 0.560 (56.0%).",
+        "Langkah 5: Hitung Cohen Kappa: kappa = (0.85 - 0.56) / (1 - 0.56) = 0.29 / 0.44 = 0.659."
+      ],
+      "resultInterpretation": "Nilai Kappa sebesar 0.659 menunjukkan kesepakatan substansial (substantial agreement) yang membuktikan bahwa reliabilitas pelabelan citra las berada pada batas kualitas yang dapat diterima."
+    },
+    "pythonImplementation": {
+      "description": "Komputasi Cohen's Kappa dan matriks kebingungan antar-penilai menggunakan scikit-learn/NumPy.",
+      "libraryDependencies": [
+        "numpy"
+      ],
+      "code": "import numpy as np\n\n# Matriks kontingensi 2x2: [[Sepakat Cacat, P1 Cacat P2 Lolos], [P1 Lolos P2 Cacat, Sepakat Lolos]]\nkontingensi = np.array([\n    [25, 5],\n    [10, 60]\n])\n\nN = np.sum(kontingensi)\nP_o = np.trace(kontingensi) / N\n\n# Probabilitas marginal baris dan kolom\np_baris = np.sum(kontingensi, axis=1) / N\np_kolom = np.sum(kontingensi, axis=0) / N\nP_e = np.sum(p_baris * p_kolom)\n\nkappa = (P_o - P_e) / (1.0 - P_e)\n\nprint(f\"Total Citra Uji           : {N}\")\nprint(f\"Kesepakatan Teramati (Po) : {P_o * 100:.1f}%\")\nprint(f\"Kesepakatan Peluang (Pe)  : {P_e * 100:.1f}%\")\nprint(f\"Koefisien Cohen's Kappa   : {kappa:.3f}\")\nif kappa > 0.60:\n    print(\"Kategori Kesepakatan: SUBSTANSIAL (Memenuhi standar pelabelan data rekayasa).\")\n",
+      "expectedOutput": "Total Citra Uji           : 100\nKesepakatan Teramati (Po) : 85.0%\nKesepakatan Peluang (Pe)  : 56.0%\nKoefisien Cohen's Kappa   : 0.659\nKategori Kesepakatan: SUBSTANSIAL (Memenuhi standar pelabelan data rekayasa)."
+    },
+    "commonPitfalls": [
+      "Hanya melaporkan persentase kesepakatan sederhana pada dataset yang memiliki ketimpangan kelas ekstrem (*prevalence paradox*).",
+      "Menggunakan Cohen's Kappa biasa pada data ordinal bertingkat tanpa menerapkan pembobotan selisih peringkat (*Weighted Kappa*).",
+      "Mengasumsikan bahwa dua model kecerdasan buatan pasti andal hanya karena keduanya menyepakati label yang sama pada dataset yang bias."
+    ],
+    "validationProcedures": [
+      "Gunakan batas minimum Kappa > 0.70 sebelum melatih model supervised learning pada dataset anotasi manusia.",
+      "Sertakan uji signifikansi statistik terhadap hipotesis nol kappa = 0 untuk memastikan kesepakatan bukan kebetulan acak."
+    ],
+    "exercises": [
+      {
+        "question": "Apa yang dimaksud dengan Paradoks Kappa (Kappa Paradox) pada dataset dengan prevalensi ekstrem?",
+        "hint": "Perhatikan kondisi di mana persentase kesepakatan Po sangat tinggi (misal 98%) namun nilai Kappa justru bernilai sangat rendah.",
+        "answerExplanation": "Paradoks prevalensi terjadi ketika satu kategori sangat mendominasi populasi (misal 99% data adalah normal). Dalam kondisi ini, kesepakatan peluang Pe menjadi sangat tinggi mendekati 1. Akibatnya, selisih kecil pada penyebut (1 - Pe) membuat nilai Kappa menjadi sangat kecil secara artifisial meskipun kedua penilai menyepakati 98% kasus."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Cohen, J. (1960). A coefficient of agreement for nominal scales. Educational and Psychological Measurement, 20(1), 37-46.",
+        "type": "peer-reviewed-article"
+      },
+      {
+        "citation": "Landis, J. R., & Koch, G. G. (1977). The measurement of observer agreement for categorical data. Biometrics, 33(1), 159-174.",
+        "type": "peer-reviewed-article"
+      }
+    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Kesepakatan Antar-Penilai (Inter-Rater Reliability): Co...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.3.",
+          "Capaian: Membedakan konsep kesepakatan persentase sederhana versus indeks kesepakatan terkoreksi kebetulan (*chance-cor...",
+          "Capaian: Menghitung dan menginterpretasikan koefisien Cohen's Kappa ($\\kappa$) untuk dua penilai.",
+          "Capaian: Menerapkan Fleiss' Kappa untuk panel multi-penilai dan Weighted Kappa untuk data bertingkat ordinal."
+        ],
+        "keyFormulaOrDiagram": "$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$"
+      },
+      {
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Kesepakatan Antar-Penilai (Inter-Rater Reliability): Co...",
+        "bulletPoints": [
+          "Dalam rekayasa kualitas, anotasi dataset visi komputer (misalnya pemberian label bounding box retak jalan), dan inspeksi visu...",
+          "Kesalahan paling umum adalah menggunakan persentase kesepakatan sederhana (*percent agreement*). Jika dua penilai sama-sama m...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ],
+        "keyFormulaOrDiagram": "Untuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen'..."
+      },
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Untuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen's Kappa ($\\kappa$), yang mengukur k...",
+          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "1. Formulasi Koefisien Cohen's Kappa (Dua Penilai):",
+          "Di mana:",
+          "- $P_o$ adalah proporsi kesepakatan teramati riil: $P_o = \\frac{1}{N} \\sum_{i=1}^C n_{ii}$"
+        ],
+        "keyFormulaOrDiagram": "$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Dua inspektur las independen memeriksa 100 citra radiografi sambungan pipa baja untuk mengklasifikasikan status Cacat (Defect) vs Lolos (Pas...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Hitung total observasi: N = 25 + 5 + 10 + 60 = 100 citra.",
+          "Langkah 2: Hitung kesepakatan teramati Po: Po = (25 + 60) / 100 = 85 / 100 = 0.85 (85%).",
+          "Langkah 3: Hitung total marginal masing-masing penilai:",
+          "Interpretasi: Nilai Kappa sebesar 0.659 menunjukkan kesepakatan substansial (substantial agreement) yang membuktikan bahwa reliabilita..."
+        ],
+        "keyFormulaOrDiagram": "Langkah 5: Hitung Cohen Kappa: kappa = (0.85 - 0.56) / (1 - 0.56) = 0.29 / 0.44 = 0.659."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Komputasi Cohen's Kappa dan matriks kebingungan antar-penilai menggunakan scikit-learn/NumPy.",
+          "Dependensi Pustaka: numpy",
+          "Keluaran Diharapkan: Total Citra Uji : 100"
+        ],
+        "keyFormulaOrDiagram": "Total Citra Uji : 100 | Kesepakatan Teramati (Po) : 85.0% | Kesepakatan Peluang (Pe) : 56...."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Hanya melaporkan persentase kesepakatan sederhana pada dataset yang memiliki ketimpangan kelas ekstrem (*preva...",
+          "Perangkap: Menggunakan Cohen's Kappa biasa pada data ordinal bertingkat tanpa menerapkan pembobotan selisih peringkat (*W...",
+          "Perangkap: Mengasumsikan bahwa dua model kecerdasan buatan pasti andal hanya karena keduanya menyepakati label yang sama..."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Gunakan batas minimum Kappa > 0.70 sebelum melatih model supervised learning pada dataset anotasi manusia.",
+          "Prosedur: Sertakan uji signifikansi statistik terhadap hipotesis nol kappa = 0 untuk memastikan kesepakatan bukan kebetu..."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Apa yang dimaksud dengan Paradoks Kappa (Kappa Paradox) pada dataset dengan prevalensi ekstrem?",
+          "Petunjuk: Perhatikan kondisi di mana persentase kesepakatan Po sangat tinggi (misal 98%) namun nilai Kappa jus...",
+          "Solusi Kunci: Paradoks prevalensi terjadi ketika satu kategori sangat mendominasi populasi (misal 99% data adalah normal). Dalam kondi..."
+        ]
+      }
+    ]
+  },
+  "2.5.4": {
+    "id": "2.5.4",
+    "chapterId": "CH-12",
+    "title": "Evaluasi Sistem Pengukuran Menggunakan Repeatability and Reproducibility (Gauge R&R)",
+    "readingTimeMinutes": 20,
+    "status": "verified",
+    "learningObjectives": [
+      "Menerapkan metodologi Measurement Systems Analysis (MSA) berbasis studi Gauge R&R.",
+      "Memisahkan variabilitas sistem menjadi Repeatability (EV) dan Reproducibility (AV).",
+      "Menghitung metrik kapabilitas sistem pengukuran (%GRR dan Number of Distinct Categories / ndc)."
+    ],
+    "content": "Sebelum sebuah sistem sensor atau alat ukur laboratorium digunakan untuk menguji hipotesis eksperimen, peneliti harus memastikan bahwa variasi yang muncul dalam data benar-benar berasal dari variasi alami benda uji (part-to-part variation), BUKAN berasal dari kecacatan sistem pengukuran itu sendiri. Metodologi terstandarisasi untuk memverifikasi ini dikenal sebagai Measurement Systems Analysis (MSA) tipe Gauge Repeatability and Reproducibility (Gauge R&R).\n\nGauge R&R membedakan dua komponen variasi sistem pengukuran:\n1. Keterulangan (Repeatability / Equipment Variation / EV): Variasi yang terjadi ketika satu operator mengukur benda kerja yang sama berkali-kali menggunakan alat ukur yang sama di bawah kondisi yang identik dalam jangka pendek. EV mencerminkan presisi perangkat keras internal instrumen.\n2. Keterulangan Antar-Kondisi (Reproducibility / Appraiser Variation / AV): Variasi pada rata-rata pengukuran yang terjadi ketika beberapa operator berbeda mengukur benda kerja yang sama menggunakan alat ukur yang sama di bawah kondisi operasional yang berbeda. AV mencerminkan sensitivitas instrumen terhadap variasi prosedur manusia.\n\nBerdasarkan standar Automotive Industry Action Group (AIAG):\n- %GRR < 10%: Sistem pengukuran dapat diterima secara sempurna (*acceptable*).\n- 10% <= %GRR <= 30%: Sistem pengukuran marjinal (dapat diterima bergantung pada tingkat kekritisan aplikasi).\n- %GRR > 30%: Sistem pengukuran cacat dan tidak dapat diterima (*unacceptable*); instrumen atau SOP harus diperbaiki.",
+    "mathematicalFoundations": "Dekomposisi Model ANOVA Dua Arah Efek Acak (Two-Way Random Effects ANOVA):\n\nTotal varians pengukuran teramati:\n$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$\n\nDi mana varians Gauge R&R:\n$$\\sigma_{\\text{GRR}}^2 = \\sigma_{\\text{Repeatability}}^2 + \\sigma_{\\text{Reproducibility}}^2$$\n\n1. Persentase Kontribusi Variansi Terhadap Variasi Total (%GRR):\n$$\\%\\text{GRR} = \\frac{\\sigma_{\\text{GRR}}}{\\sigma_{\\text{Total}}} \\times 100\\%$$\n\n2. Rasio Presisi terhadap Toleransi Spesifikasi (Precision-to-Tolerance / P/T Ratio):\n$$P/T = \\frac{6 \\cdot \\sigma_{\\text{GRR}}}{\\text{USL} - \\text{LSL}} \\times 100\\%$$\nDi mana USL dan LSL adalah Upper dan Lower Specification Limits produk.\n\n3. Jumlah Kategori Pembeda Unik (*Number of Distinct Categories* / ndc):\n$$\\text{ndc} = 1.41 \\left( \\frac{\\sigma_{\\text{Part}}}{\\sigma_{\\text{GRR}}} \\right)$$\nStandar penerimaan: $\\text{ndc} \\ge 5$ (sistem mampu membedakan minimal 5 kelompok variasi komponen).",
+    "workedExample": {
+      "problemStatement": "Sebuah mikrometer digital diuji melalui studi Gauge R&R ANOVA dengan 10 komponen poros, 3 operator penguji, dan 3 kali pengulangan. Estimasi varians yang diperoleh: sigma_Repeatability^2 = 0.04 um^2, sigma_Reproducibility^2 = 0.05 um^2, dan sigma_Part^2 = 0.91 um^2. Hitung varians sigma_GRR, varians total sigma_Total, persentase %GRR, dan nilai indeks ndc.",
+      "stepByStepSolution": [
+        "Langkah 1: Hitung varians Gauge R&R: sigma_GRR^2 = 0.04 + 0.05 = 0.09 um^2. Deviasi standar sigma_GRR = sqrt(0.09) = 0.30 um.",
+        "Langkah 2: Hitung varians Total: sigma_Total^2 = sigma_Part^2 + sigma_GRR^2 = 0.91 + 0.09 = 1.00 um^2. Deviasi standar sigma_Total = sqrt(1.00) = 1.00 um.",
+        "Langkah 3: Hitung deviasi standar komponen poros: sigma_Part = sqrt(0.91) = 0.9539 um.",
+        "Langkah 4: Hitung persentase %GRR: %GRR = (sigma_GRR / sigma_Total) * 100% = (0.30 / 1.00) * 100% = 30.0%.",
+        "Langkah 5: Hitung indeks Number of Distinct Categories: ndc = 1.41 * (sigma_Part / sigma_GRR) = 1.41 * (0.9539 / 0.30) = 1.41 * 3.18 = 4.48 -> bulatkan ke bawah menjadi 4 kategori."
+      ],
+      "resultInterpretation": "Sistem pengukuran berada pada batas marjinal kritis (%GRR = 30.0% dan ndc = 4 < 5). Sistem ini tidak cukup tajam untuk proses pemilahan presisi tinggi. Pelatihan ulang operator disarankan untuk menekan komponen Reproducibility."
+    },
+    "pythonImplementation": {
+      "description": "Simulasi dekomposisi variansi Gauge R&R dan perhitungan metrik kapabilitas sistem pengukuran.",
+      "libraryDependencies": [
+        "numpy"
+      ],
+      "code": "import numpy as np\n\n# Komponen variansi yang diestimasi dari tabel ANOVA [SIMULASI/SYNTHETIC DATA]\nvar_repeatability = 0.04   # Peralatan\nvar_reproducibility = 0.05 # Operator\nvar_part = 0.91            # Komponen Benda Uji\n\n# Perhitungan variansi gabungan\nvar_grr = var_repeatability + var_reproducibility\nvar_total = var_part + var_grr\n\nsd_repeatability = np.sqrt(var_repeatability)\nsd_reproducibility = np.sqrt(var_reproducibility)\nsd_grr = np.sqrt(var_grr)\nsd_part = np.sqrt(var_part)\nsd_total = np.sqrt(var_total)\n\npersen_grr = (sd_grr / sd_total) * 100.0\npersen_part = (sd_part / sd_total) * 100.0\nndc = int(np.floor(1.41 * (sd_part / sd_grr)))\n\nprint(\"HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):\")\nprint(f\"Deviasi Standar Repeatability (EV)   : {sd_repeatability:.4f}\")\nprint(f\"Deviasi Standar Reproducibility (AV) : {sd_reproducibility:.4f}\")\nprint(f\"Deviasi Standar Total GRR            : {sd_grr:.4f}\")\nprint(f\"Deviasi Standar Part-to-Part (PV)    : {sd_part:.4f}\")\nprint(f\"Deviasi Standar Total Sistem         : {sd_total:.4f}\")\nprint(\"-\" * 55)\nprint(f\"Persentase %GRR Terhadap Variasi Total: {persen_grr:.1f}%\")\nprint(f\"Jumlah Kategori Pembeda Unik (ndc)    : {ndc}\")\n\nif persen_grr <= 10.0:\n    print(\"Keputusan AIAG: Sistem Pengukuran SANGAT BAIK (Diterima).\")\nelif persen_grr <= 30.0:\n    print(\"Keputusan AIAG: Sistem Pengukuran MARJINAL (Perlu perbaikan operator/alat).\")\nelse:\n    print(\"Keputusan AIAG: Sistem Pengukuran DITOLAK (Tidak dapat digunakan).\")\n",
+      "expectedOutput": "HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):\nDeviasi Standar Repeatability (EV)   : 0.2000\nDeviasi Standar Reproducibility (AV) : 0.2236\nDeviasi Standar Total GRR            : 0.3000\nDeviasi Standar Part-to-Part (PV)    : 0.9539\nDeviasi Standar Total Sistem         : 1.0000\n-------------------------------------------------------\nPersentase %GRR Terhadap Variasi Total: 30.0%\nJumlah Kategori Pembeda Unik (ndc)    : 4\nKeputusan AIAG: Sistem Pengukuran MARJINAL (Perlu perbaikan operator/alat)."
+    },
+    "commonPitfalls": [
+      "Memilih 10 sampel komponen uji yang seragam sempurna sehingga varians part-to-part menjadi nol dan membuat %GRR meledak mendekati 100%.",
+      "Mengizinkan operator mengetahui urutan nomor komponen yang sedang diuji (ketiadaan penyamaran / blinding).",
+      "Mengabaikan interaksi antara Operator dan Komponen (Operator-by-Part Interaction)."
+    ],
+    "validationProcedures": [
+      "Pilih sampel komponen uji yang mencakup seluruh rentang toleransi proses produksi normal (dari batas bawah hingga batas atas).",
+      "Lakukan pengacakan urutan uji penuh pada setiap pengulangan pengukuran operator."
+    ],
+    "exercises": [
+      {
+        "question": "Mengapa metrik Number of Distinct Categories (ndc) wajib bernilai minimal 5 untuk sistem kendali proses statistik industri?",
+        "hint": "Perhatikan kemampuan sistem dalam membedakan variasi komponen menjadi kategori ekstrem rendah, moderat, dan tinggi.",
+        "answerExplanation": "Nilai ndc menyatakan berapa banyak interval varians part yang tidak tumpang tindih dengan interval galat pengukuran alat. Nilai ndc minimal 5 memastikan bahwa sistem ukur mampu membagi distribusi produk menjadi minimal 5 kelompok diskrit (rendah ekstrem, rendah, tengah, tinggi, tinggi ekstrem), yang merupakan syarat mutlak agar grafik kendali X-bar dan R tidak kehilangan daya pemantauan sinyal kontrol."
+      }
+    ],
+    "references": [
+      {
+        "citation": "Automotive Industry Action Group (AIAG). (2010). Measurement Systems Analysis (MSA) Reference Manual (4th ed.). AIAG.",
+        "type": "formal-standard"
+      },
+      {
+        "citation": "Montgomery, D. C. (2013). Introduction to Statistical Quality Control (7th ed.). John Wiley & Sons.",
+        "type": "canonical-textbook"
+      }
+    ],
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "Tinjauan & Capaian: Evaluasi Sistem Pengukuran Menggunakan Repeatability an...",
+        "bulletPoints": [
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.4.",
+          "Capaian: Menerapkan metodologi Measurement Systems Analysis (MSA) berbasis studi Gauge R&R.",
+          "Capaian: Memisahkan variabilitas sistem menjadi Repeatability (EV) dan Reproducibility (AV).",
+          "Capaian: Menghitung metrik kapabilitas sistem pengukuran (%GRR dan Number of Distinct Categories / ndc)."
+        ],
+        "keyFormulaOrDiagram": "$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$"
+      },
+      {
+        "slideNumber": 2,
+        "title": "Fondasi Konseptual: Evaluasi Sistem Pengukuran Menggunakan Repeatability an...",
+        "bulletPoints": [
+          "Sebelum sebuah sistem sensor atau alat ukur laboratorium digunakan untuk menguji hipotesis eksperimen, peneliti harus memasti...",
+          "Gauge R&R membedakan dua komponen variasi sistem pengukuran: 1. Keterulangan (Repeatability / Equipment Variation / EV): Vari...",
+          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+        ],
+        "keyFormulaOrDiagram": "Berdasarkan standar Automotive Industry Action Group (AIAG): - %GRR < 10%: Sistem pengukur..."
+      },
+      {
+        "slideNumber": 3,
+        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "bulletPoints": [
+          "Berdasarkan standar Automotive Industry Action Group (AIAG): - %GRR < 10%: Sistem pengukuran dapat diterima secara sempurna (...",
+          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
+          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
+        ]
+      },
+      {
+        "slideNumber": 4,
+        "title": "Formulasi Matematis & Notasi Formal",
+        "bulletPoints": [
+          "Dekomposisi Model ANOVA Dua Arah Efek Acak (Two-Way Random Effects ANOVA):",
+          "Total varians pengukuran teramati:",
+          "Di mana varians Gauge R&R:"
+        ],
+        "keyFormulaOrDiagram": "$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$"
+      },
+      {
+        "slideNumber": 5,
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "bulletPoints": [
+          "Konteks Masalah: Sebuah mikrometer digital diuji melalui studi Gauge R&R ANOVA dengan 10 komponen poros, 3 operator penguji, dan 3 kali pengulangan. Estimasi...",
+          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
+        ]
+      },
+      {
+        "slideNumber": 6,
+        "title": "Solusi Numerik & Interpretasi Hasil",
+        "bulletPoints": [
+          "Langkah 1: Hitung varians Gauge R&R: sigma_GRR^2 = 0.04 + 0.05 = 0.09 um^2. Deviasi standar sigma_GRR = sqrt(0...",
+          "Langkah 2: Hitung varians Total: sigma_Total^2 = sigma_Part^2 + sigma_GRR^2 = 0.91 + 0.09 = 1.00 um^2. Deviasi...",
+          "Langkah 3: Hitung deviasi standar komponen poros: sigma_Part = sqrt(0.91) = 0.9539 um.",
+          "Interpretasi: Sistem pengukuran berada pada batas marjinal kritis (%GRR = 30.0% dan ndc = 4 < 5). Sistem ini tidak cukup tajam untuk p..."
+        ],
+        "keyFormulaOrDiagram": "Langkah 5: Hitung indeks Number of Distinct Categories: ndc = 1.41 * (sigma_Part / sigma_G..."
+      },
+      {
+        "slideNumber": 7,
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "bulletPoints": [
+          "Deskripsi: Simulasi dekomposisi variansi Gauge R&R dan perhitungan metrik kapabilitas sistem pengukuran.",
+          "Dependensi Pustaka: numpy",
+          "Keluaran Diharapkan: HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):"
+        ],
+        "keyFormulaOrDiagram": "HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R): | Deviasi Standar Repeatability (EV) : 0.200..."
+      },
+      {
+        "slideNumber": 8,
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "bulletPoints": [
+          "Perangkap: Memilih 10 sampel komponen uji yang seragam sempurna sehingga varians part-to-part menjadi nol dan membuat %GR...",
+          "Perangkap: Mengizinkan operator mengetahui urutan nomor komponen yang sedang diuji (ketiadaan penyamaran / blinding).",
+          "Perangkap: Mengabaikan interaksi antara Operator dan Komponen (Operator-by-Part Interaction)."
+        ]
+      },
+      {
+        "slideNumber": 9,
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "bulletPoints": [
+          "Prosedur: Pilih sampel komponen uji yang mencakup seluruh rentang toleransi proses produksi normal (dari batas bawah hin...",
+          "Prosedur: Lakukan pengacakan urutan uji penuh pada setiap pengulangan pengukuran operator."
+        ]
+      },
+      {
+        "slideNumber": 10,
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa metrik Number of Distinct Categories (ndc) wajib bernilai minimal 5 untuk sistem kendali proses statistik indust...",
+          "Petunjuk: Perhatikan kemampuan sistem dalam membedakan variasi komponen menjadi kategori ekstrem rendah, moder...",
+          "Solusi Kunci: Nilai ndc menyatakan berapa banyak interval varians part yang tidak tumpang tindih dengan interval galat pengukuran alat..."
+        ]
+      }
+    ]
+  }
 };
-

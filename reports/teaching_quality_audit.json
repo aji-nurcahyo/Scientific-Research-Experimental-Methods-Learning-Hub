@@ -1,0 +1,381 @@
+{
+  "totalChapters": 51,
+  "totalSlides": 2035,
+  "avgSlidesPerChapter": 39.9,
+  "totalBullets": 6409,
+  "avgBulletsPerSlide": 3.15,
+  "slidesWithFormulas": 981,
+  "formulaCoveragePct": 48.2,
+  "placeholderIssues": [],
+  "pedagogicalDistribution": {
+    "Tinjauan & Capaian": 204,
+    "Fondasi Konseptual": 204,
+    "Arsitektur Metodologis & Prinsip Operasional": 204,
+    "Formulasi Matematis & Notasi Formal": 204,
+    "Studi Kasus Numerik": 204,
+    "Solusi Numerik & Interpretasi Hasil": 204,
+    "Implementasi Komputasi & Eksekusi Python": 199,
+    "Perangkap Metodologis & P-Hacking Warning": 204,
+    "Prosedur Validasi Empiris & Integritas Riset": 204,
+    "Sintesis Materi & Latihan Mandiri": 204
+  },
+  "chapters": [
+    {
+      "chapterId": "CH-01",
+      "slideCount": 38,
+      "bulletCount": 118,
+      "formulaCount": 17,
+      "avgBulletsPerSlide": "3.11"
+    },
+    {
+      "chapterId": "CH-02",
+      "slideCount": 37,
+      "bulletCount": 110,
+      "formulaCount": 17,
+      "avgBulletsPerSlide": "2.97"
+    },
+    {
+      "chapterId": "CH-03",
+      "slideCount": 40,
+      "bulletCount": 122,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.05"
+    },
+    {
+      "chapterId": "CH-04",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-05",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-06",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-07",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-08",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-09",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-10",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-11",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-12",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-13",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 16,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-14",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-15",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-16",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 17,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-17",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-18",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-19",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-20",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-21",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-22",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-23",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-24",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-25",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-26",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-27",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-28",
+      "slideCount": 40,
+      "bulletCount": 127,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.17"
+    },
+    {
+      "chapterId": "CH-29",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-30",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-31",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-32",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-33",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-34",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-35",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-36",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-37",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-38",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-39",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-40",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-41",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-42",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-43",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-44",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-45",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 17,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-46",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-47",
+      "slideCount": 40,
+      "bulletCount": 128,
+      "formulaCount": 18,
+      "avgBulletsPerSlide": "3.20"
+    },
+    {
+      "chapterId": "CH-48",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-49",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-50",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 20,
+      "avgBulletsPerSlide": "3.10"
+    },
+    {
+      "chapterId": "CH-51",
+      "slideCount": 40,
+      "bulletCount": 124,
+      "formulaCount": 19,
+      "avgBulletsPerSlide": "3.10"
+    }
+  ]
+}

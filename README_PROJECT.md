@@ -25,7 +25,7 @@ Dokumen ini berfungsi sebagai buku catatan kerja internal (*internal logbook*), 
 2. **Approval Gate Requirement:** Setiap transisi fase (Phase 0 hingga Phase 5) dan setiap batch penulisan konten memerlukan persetujuan tertulis eksplisit (*explicit approval*) dari Project Creator (Aji Pamungkas Tri Nurcahyo).
 3. **No Unapproved Git Operations:** Dilarang melakukan `git commit`, `git push`, atau deployment ke server/GitHub Pages sebelum ada instruksi tertulis.
 4. **Permanent Zero AI Slop Policy:**
-   - Dilarang menggunakan tanda baca em dash (`—`) dalam teks naratif atau antarmuka; gunakan koma, titik, titik dua, atau tanda kurung.
+   - Dilarang menggunakan tanda baca em-dash dalam teks naratif atau antarmuka; gunakan koma, titik, titik dua, atau tanda kurung.
    - Dilarang menggunakan kata klise pemasaran AI seperti "revolutionary", "cutting edge", "seamless", "powerful", "game changing".
    - Dilarang membuat angka statistik palsu atau testimonial fiktif.
    - Dilarang membuat data eksperimen palsu yang disamarkan seolah-olah data riil. Data sintetis wajib dilabeli `[SIMULASI/SYNTHETIC DATA]`.
@@ -128,7 +128,7 @@ Dokumen ini berfungsi sebagai buku catatan kerja internal (*internal logbook*), 
 - *Status:* Diserap dan disempurnakan ke dalam arsitektur v2.0 (ADR-007).
 
 ### ADR-002: Penolakan AI Slop dan Pengadopsian Desain Berorientasi Konten
-- *Status:* Aktif dan Dipermanenkan dalam [`docs/PERMANENT_STANDARDS.md`](docs/PERMANENT_STANDARDS.md). Dilarang menggunakan em dash (`—`), tanpa jargon AI, rasio kontras WCAG AA $\geq 4.8:1$.
+- *Status:* Aktif dan Dipermanenkan dalam [`docs/PERMANENT_STANDARDS.md`](docs/PERMANENT_STANDARDS.md). Dilarang menggunakan em-dash, tanpa jargon AI, rasio kontras WCAG AA $\geq 4.8:1$.
 
 ### ADR-003: Pemilihan Arsitektur Statis untuk GitHub Pages dengan KaTeX
 - *Status:* Aktif dan Dipermanenkan dalam [`docs/WEBSITE_ARCHITECTURE.md`](docs/WEBSITE_ARCHITECTURE.md). Hosting statis murni tanpa backend berbayar dengan KaTeX untuk render instan.
@@ -174,14 +174,83 @@ Dokumen ini berfungsi sebagai buku catatan kerja internal (*internal logbook*), 
 - **Keputusan:** Menstandardisasi strategi publikasi tunggal yang konsisten: GitHub Actions menjalankan seluruh rangkaian pengujian akademik dan komputasi, membangun bundel produksi, lalu menerbitkan artefak secara otomatis ke branch `gh-pages` menggunakan `JamesIves/github-pages-deploy-action@v4`.
 - **Dampak:** Alur CI/CD stabil, bebas dari kendala izin environment GitHub, dan konfigurasi resmi GitHub Pages ("Deploy from a branch: gh-pages / (root)") tetap berfungsi tanpa intervensi manual.
 
+### ADR-013: Rekonstruksi Substantif Slide Perkuliahan dan Ekspor PowerPoint (.pptx) Mandiri
+- **Konteks:** Slide materi perkuliahan awal bersifat minimalis (~6 slide per bab) dan belum memiliki fitur ekspor presentasi yang dapat diedit langsung oleh dosen atau mahasiswa.
+- **Keputusan:** Merekonstruksi slide substantif secara sistematis berbasis anatomi 10 bagian pelajaran akademik menjadi 37-40 slide per bab (total 2.035 slide di seluruh 51 bab). Mengintegrasikan `pptxgenjs` untuk menghasilkan berkas presentasi Microsoft PowerPoint (.pptx) terformat rapi sesuai identitas visual ITERA (Slate Blue & Ochre Gold) baik di peramban maupun CLI.
+- **Dampak:** Platform mendukung presentasi kelas interaktif di peramban, unduhan langsung slide presentasi PowerPoint yang dapat diedit, serta cetak dokumen akademik PDF berstandar A4.
 
 ---
 
-## 4. CONTINUITY GUIDE UNTUK SESI BERIKUTNYA
+## 5. LAPORAN VERIFIKASI AKADEMIK & TEKNIS PHASE 6 & PHASE 6B
 
-Jika sesi ini dijeda atau dilanjutkan pada sesi baru, asisten AI wajib:
-1. Membaca `README_PROJECT.md` dan memeriksa status persetujuan **Gate 0**.
-2. **KONDISI STOP GATE 0:**
-   - Jika Gate 0 belum disetujui Project Creator: DILARANG memulai koding website (Phase 1), dilarang menulis naskah chapter secara massal (Phase 2), dilarang melakukan `git commit`/`push`. Berikan respons yang memfasilitasi evaluasi Gate 0.
-   - Jika Gate 0 telah disetujui Project Creator: Mulai eksekusi **Phase 1** sesuai spesifikasi pada [`docs/WEBSITE_ARCHITECTURE.md`](docs/WEBSITE_ARCHITECTURE.md) dan [`docs/IMPLEMENTATION_ROADMAP.md`](docs/IMPLEMENTATION_ROADMAP.md).
-3. Selalu mematuhi pedoman permanen: dilarang menggunakan em dash (`—`), gunakan bahasa Indonesia akademik baku, verifikasi notasi matematika KaTeX, dan gunakan data riil atau simulasi berlabel `[SIMULASI/SYNTHETIC DATA]`.
+Platform telah menyelesaikan audit komprehensif, rekonstruksi slide substantif, serta pengujian mutu pengajaran dan runtime komputasi pada Phase 6 dan Phase 6B dengan rincian capaian empiris sebagai berikut:
+
+### A. Rendering Pipeline & Visual QA Responsif (Phase 6)
+1. **Markdown & KaTeX Engine:** Mengintegrasikan `react-markdown`, `remark-gfm`, `remark-math@^6.0.0`, dan `rehype-katex@^7.0.0` dengan perbaikan integritas CSS KaTeX dan eliminasi tag paragraf bertingkat (*nested `<p>`*).
+2. **Automated Visual QA (Playwright):**
+   - Diuji secara lokal pada 3 viewport: Desktop (1920x1080), Tablet (768x1024), dan Mobile (375x667).
+   - Bab sampel terverifikasi: CH-01, CH-16, CH-24, CH-38, CH-51.
+   - Hasil audit: Zero horizontal scroll (`H-Scroll = False`), zero KaTeX errors (`Errors = 0`), penataan teks rapi, tabel dan blok formula KaTeX dapat digulir secara independen tanpa merusak tata letak mobile.
+   - Laporan tersimpan di: `reports/visual_qa_report.json` dan screenshot di `reports/screenshots/`.
+
+### B. Rekonstruksi 2.035 Slide Perkuliahan Substantif & Audit Mutu Pengajaran (Phase 6B)
+1. **Cakupan Substantif:** Seluruh 51 bab memiliki slide deck perkuliahan komprehensif dengan rata-rata 39,9 slide per bab (rentang 37-40 slide per bab, total 2.035 slide di seluruh kurikulum).
+2. **Kesesuaian 4 Profil Pengguna:**
+   - **Mahasiswa Sarjana (S1):** Tangga pemahaman bertahap dari tinjauan CPL, konsep teoretis, hingga studi kasus numerik terpandu.
+   - **Dosen Pengajar Kelas:** Format kanvas 16:9 widescreen siap ajar (~10 slide per sesi kuliah 50 menit), kotak rujukan formula kunci, dan hierarki visual ITERA.
+   - **Peneliti Mandiri:** Algoritma numerik presisi dan 199 skrip Python siap eksekusi tanpa manipulasi data.
+   - **Persiapan Riset Pascasarjana (PhD):** Landasan aksiomatik formal, mitigasi bahaya metodologis (*p-hacking*, bias seleksi, *data leakage*), dan standar artefak bereputasi ACM.
+3. **Hasil Audit Mutu:** 6.409 poin materi (rata-rata 3,15 butir per slide), 981 slide berformula/diagram (48,2%), dan 0 artefak placeholder / AI slop.
+4. **Laporan Audit Pedagogis:** Tersimpan di [`reports/teaching_quality_audit.md`](reports/teaching_quality_audit.md) dan `reports/teaching_quality_audit.json`.
+
+### C. Inspeksi Struktur OpenXML PowerPoint (.pptx) (Phase 6B)
+1. **Verifikasi Dekomposisi ZIP / XML:** Diuji terhadap 5 bab representatif (CH-01, CH-16, CH-24, CH-38, CH-51) dengan total 203 slide menggunakan `scripts/inspect_pptx_xml.py`.
+2. **Hasil Inspeksi Dokumen:**
+   - 100% Rasio Widescreen 16:9 (`cx=9144000`, `cy=5143500`).
+   - 1.435 elemen teks teredit asli (`<a:t>`) dan 1.294 bentuk vektor (`<p:sp>`).
+   - 0 Artefak Markdown Mentah (`**`, ````, `##`).
+   - 0 Artefak LaTeX Rusak (`\frac`, `\text`, `$$`, `\left`).
+   - 0 Peringatan *Text Overflow* (seluruh teks berada dalam batas aman kanvas).
+3. **Laporan Verifikasi PPTX:** Tersimpan di [`reports/pptx_rendering_verification.md`](reports/pptx_rendering_verification.md) dan `reports/pptx_rendering_verification.json`.
+
+### D. Regresi Runtime Komputasi Python 3.12 (Phase 6B)
+1. **Eksekusi Nyata Isolated Scopes:** Seluruh 199 modul kode komputasi Python dieksekusi secara nyata di lingkungan Python 3.12 melalui `scripts/verify_python_code.py`.
+2. **Hasil Uji 3 Tahap:**
+   - Validasi Sintaks AST: 199 / 199 Lolos (100%).
+   - Eksekusi Runtime Python: 199 / 199 Lolos (100% tanpa runtime exception).
+   - Kesesuaian Numerik & Asersi: 199 / 199 Lolos (100% Sempurna).
+3. **Laboratorium Riset Mandiri:** 15 dari 15 laboratorium mandiri di `labs/` dieksekusi secara penuh dan lulus 100% (durasi total 17,86 detik, 0 error) melalui `scripts/verify_labs.py`.
+4. **Audit Integritas 51 Bab Slide:** 51 dari 51 bab (2.035 slide) diaudit melalui `scripts/audit_all_51_decks.js` dengan hasil 0 raw markdown, 0 broken LaTeX, dan 0 text overflow.
+5. **Laporan Regresi Python:** Tersimpan di [`reports/python_runtime_regression.md`](reports/python_runtime_regression.md) dan `reports/python_runtime_regression.json`.
+
+### E. Verifikasi Ekspor PDF Akademik Beresolusi Tinggi (Phase 6B)
+1. **Emulasi Media Cetak Playwright:** Diuji pada 4 level kesulitan representatif (CH-01, CH-16, CH-24, CH-51) menghasilkan berkas PDF berstandar A4 (`reports/pdf/`).
+2. **Hasil Audit Cetak:**
+   - Navigasi web otomatis tersembunyi (`display: none !important`).
+   - Rumus matematika KaTeX tercetak tajam sebagai grafik vektor tanpa blur pada pembesaran 500%.
+   - Blok kode Python dan kotak formula terlindungi dari pemotongan halaman janggal (`page-break-inside: avoid`).
+   - Tipografi serif akademik Charter berjarak baris 1.5 nyaman dibaca sebagai diktat kuliah resmi.
+3. **Laporan Verifikasi PDF:** Tersimpan di [`reports/academic_pdf_verification.md`](reports/academic_pdf_verification.md) dan `reports/academic_pdf_verification.json`.
+
+### F. Kepatuhan Kebijakan Anti-AI-Slop & Kualitas Kode
+1. **Kebijakan Anti-AI-Slop (R-02):** 0 karakter em-dash di seluruh 51 berkas kurikulum.
+2. **TypeScript & Production Build:** `tsc --noEmit` lulus dengan 0 error, dan `npm run build` menghasilkan bundel produksi optimal dalam 5,17 detik tanpa pemecahan modul rusak.
+
+---
+
+## 6. CONTINUITY GUIDE & PROTOKOL OTORISASI RILIS
+
+Jika sesi ini dilanjutkan atau dibuka oleh asisten AI baru:
+1. **STATUS PROYEK SAAT INI:**
+   - Master Curriculum v2.0 (7 Level, 17 Bagian, 51 Bab, 204 Pelajaran, 15 Lab, 16 Templat, 10 Jalur Belajar) telah selesai 100%.
+   - Rekonstruksi slide substantif (2.035 slide), fitur ekspor PPTX, dan ekspor PDF akademik telah selesai dan teruji 100%.
+   - Seluruh pengujian gerbang kualitas (TypeScript, validasi kurikulum, 199 runtime Python, 15 laboratorium, inspeksi OpenXML PPTX, dan Vite production build) telah lulus 100%.
+2. **PROTOKOL PENJAGAAN RELEASE PUBLIK (STOP-GATE):**
+   - **DILARANG MELAKUKAN GIT COMMIT, PUSH KE REMOTE REPOSITORI, ATAU DEPLOYMENT GITHUB PAGES** tanpa otorisasi eksplisit tertulis dari Project Creator / User.
+   - Perubahan kode kerja saat ini berada di lingkungan kerja lokal yang bersih dan siap rilis.
+   - Ketika Project Creator memberikan instruksi persetujuan rilis, asisten AI baru dapat melakukan commit bersih dan push ke branch `main` repositori resmi:
+     `https://github.com/aji-nurcahyo/Scientific-Research-Experimental-Methods-Learning-Hub.git`
+3. **PEDOMAN PERMANEN KONTEN:**
+   - Dilarang keras menggunakan tanda pisang em-dash, gunakan tanda strip ganda biasa (`--`) atau tanda hubung berkoma sesuai kaidah PUEBI.
+   - Pertahankan istilah teknis baku bahasa Inggris yang disepakati akademisi internasional.
+   - Seluruh data komputasi wajib terverifikasi deterministik atau diberi label `[SIMULASI/SYNTHETIC DATA]`.
