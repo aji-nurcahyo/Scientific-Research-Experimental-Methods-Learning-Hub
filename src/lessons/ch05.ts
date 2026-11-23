@@ -58,99 +58,133 @@ export const CH05_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Taksonomi Celah Penelitian: Teoretis, Metodologis, Empi...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Taksonomi Celah Penelitian: Teoretis, Metodologis, Empiris, dan Aplikasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.5.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.1.",
-          "Capaian: Membedakan 4 kategori celah penelitian utama (teoretis, metodologis, empiris, dan aplikasi).",
-          "Capaian: Mengidentifikasi celah riset yang valid dan memiliki signifikansi ilmiah substansial.",
-          "Capaian: Menghindari jebakan celah penelitian artifisial yang tidak bernilai akademis."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan 4 kategori celah penelitian utama (teoretis, metodologis, empiris, dan aplikasi).",
+          "Capaian 2: Mengidentifikasi celah riset yang valid dan memiliki signifikansi ilmiah substansial.",
+          "Capaian 3: Menghindari jebakan celah penelitian artifisial yang tidak bernilai akademis."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{G} = \\mathcal{R} \\setminus \\mathcal{C}_{\\text{SOTA}}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{G} = \\mathcal{R} \\setminus \\mathcal{C}_{\\text{SOTA}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.5.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Taksonomi Celah Penelitian: Teoretis, Metodologis, Empi...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Taksonomi Celah Penelitian: Teoretis, Metodologis, Empiris, dan Aplikasi",
+        "lead": "Celah penelitian (research gap) adalah ruang ketidaktahuan ilmiah yang terdefinisi dengan jelas di antara batas pengetahuan saat ini (frontier of knowledge) dengan kebutuhan pemahaman atau solusi masa depan.",
         "bulletPoints": [
-          "Celah penelitian (research gap) adalah ruang ketidaktahuan ilmiah yang terdefinisi dengan jelas di antara batas pengetahuan s...",
-          "Secara akademis, celah penelitian diklasifikasikan ke dalam empat taksonomi utama: 1. Celah Teoretis (Theoretical Gap): Ketia...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kegagalan paling kritis yang sering terjadi pada mahasiswa tingkat akhir dan peneliti pemula adalah mengklaim keberadaan celah riset hanya karena \"belum ada orang yang meneliti hal X di lokasi Y\".",
+          "Klaim semacam ini sering kali bukan merupakan celah ilmiah, melainkan sekadar ketiadaan data lokal yang tidak memiliki kebaruan konseptual.",
+          "Secara akademis, celah penelitian diklasifikasikan ke dalam empat taksonomi utama: 1.",
+          "Celah Teoretis (Theoretical Gap): Ketiadaan model konseptual atau ketidakmampuan teori yang ada saat ini untuk menerangkan suatu fenomena baru."
         ],
-        "keyFormulaOrDiagram": "Penelitian yang bernilai tinggi selalu berangkat dari celah teoretis atau metodologis yang..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Penelitian yang bernilai tinggi selalu berangkat dari celah teoretis atau metodologis yang dikonfirmasi melalui sintesis lite...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Penelitian yang bernilai tinggi selalu berangkat dari celah teoretis atau metodologis yang dikonfirmasi melalui sintesis literatur yang mendalam.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi formal celah penelitian dapat dinyatakan sebagai defisit fungsi kapabilitas:",
         "bulletPoints": [
-          "Formulasi formal celah penelitian dapat dinyatakan sebagai defisit fungsi kapabilitas:",
-          "Diberikan himpunan tuntutan operasional sistem $\\mathcal{R} = \\{r_1, r_2, \\dots, r_m\\}$ dan ruang kapabilitas...",
-          "Defisit Celah Riset $\\mathcal{G}$ adalah selisih himpunan:"
+          "Diberikan himpunan tuntutan operasional sistem $\\mathcal{R} = \\{r_1, r_2, \\dots, r_m\\}$ dan ruang kapabilitas state-of-the-art $\\mathcal{C}_{\\text{SOTA}} = \\{c_1, c_2, \\dots, c_p\\}$.",
+          "Defisit Celah Riset $\\mathcal{G}$ adalah selisih himpunan:",
+          "Suatu celah riset $\\mathcal{G}$ dikatakan valid dan substansial jika terdapat setidaknya satu tuntutan kritis $r^* \\in \\mathcal{G}$ sedemikian rupa sehingga:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{G} = \\mathcal{R} \\setminus \\mathcal{C}_{\\text{SOTA}}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{G} = \\mathcal{R} \\setminus \\mathcal{C}_{\\text{SOTA}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim mahasiswa merencanakan penelitian skripsi dengan judul: \"Implementasi YOLOv8 untuk Deteksi Sampah di Pantai Kalianda Lampung Sela...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah tim mahasiswa merencanakan penelitian skripsi dengan judul: \"Implementasi YOLOv8 untuk Deteksi Sampah di Pantai Kalianda Lampung Selatan\". Evaluasi apakah penelitian ini memiliki celah riset yang valid secara ilmiah atau sekadar celah geografis permukaan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Analisis pertanyaan: Apakah algoritma YOLOv8 belum pernah diterapkan untuk mendeteksi sampah plasti...",
-          "Langkah 2: Evaluasi faktor lokasi \"Pantai Kalianda\": Apakah terdapat karakteristik optis, spektral, atau fisik...",
-          "Langkah 3: Transformasi menjadi celah metodologis: Jika tim mengidentifikasi bahwa sampah di bibir pantai seri...",
-          "Interpretasi: Mengubah fokus dari lokasi geografis ke tantangan fisis-optis spesifik (buih ombak dinamis) mentransformasikan proyek da..."
+          "Langkah 1: Analisis pertanyaan: Apakah algoritma YOLOv8 belum pernah diterapkan untuk mendeteksi sampah plastik di pantai? Literatur internasional menunjukkan ratusan publikasi dengan topik deteksi sampah pantai berbasis YOLO.",
+          "Langkah 2: Evaluasi faktor lokasi \"Pantai Kalianda\": Apakah terdapat karakteristik optis, spektral, atau fisika gelombang unik di Kalianda yang membuat YOLOv8 standar mengalami degradasi performa ekstrem? Jika jawabannya tidak, maka faktor lokasi adalah celah artifisial."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Transformasi menjadi celah metodologis: Jika tim mengidentifikasi bahwa sampah..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Evaluasi matriks pemenuhan kapabilitas solusi terhadap daftar tuntutan sistem.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: Kapabilitas SOTA yang telah tercapai: {'R4', 'R2', 'R1', 'R3'}"
+          "Langkah 3: Transformasi menjadi celah metodologis: Jika tim mengidentifikasi bahwa sampah di bibir pantai sering tertutup buih ombak dinamis yang memicu false positive tinggi, dan merancang mekanisme temporal-attention baru untuk menyaring buih tersebut, maka riset berubah menjadi celah metodologis yang berbobot.",
+          "[result: Interpretasi Ilmiah] Mengubah fokus dari lokasi geografis ke tantangan fisis-optis spesifik (buih ombak dinamis) mentransformasikan proyek dari sekadar kompilasi teknis menjadi kontribusi ilmiah yang valid."
         ],
-        "keyFormulaOrDiagram": "Kapabilitas SOTA yang telah tercapai: {'R4', 'R2', 'R1', 'R3'} | Celah yang belum dipenuhi..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Evaluasi matriks pemenuhan kapabilitas solusi terhadap daftar tuntutan sistem.",
         "bulletPoints": [
-          "Perangkap: Menyatakan celah penelitian hanya berbasis intuisi pribadi tanpa menyertakan referensi bukti dari literatur te...",
-          "Perangkap: Menciptakan celah artifisial dengan memilih batasan yang tidak relevan secara praktis maupun teoretis.",
-          "Perangkap: Mengabaikan solusi yang telah mapan di bidang disiplin ilmu lain yang dapat langsung menyelesaikan masalah ter..."
-        ]
+          "Tujuan Algoritma: Evaluasi matriks pemenuhan kapabilitas solusi terhadap daftar tuntutan sistem.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: Kapabilitas SOTA yang telah tercapai: {'R4', 'R2', 'R1', 'R3'}"
+        ],
+        "keyFormulaOrDiagram": "Kapabilitas SOTA yang telah tercapai: {'R4', 'R2', 'R1', 'R3'}\nCelah yang belum dipenuhi studi tunggal: R3 + R4 terintegrasi\n- R1 (Latensi < 10 ms): Dilaporkan oleh 2 studi ['Studi A (2022)', 'Studi C (2024)']\n- R2 (Akurasi Deteksi > 95%): Dilaporkan oleh 2 studi ['Studi A (2022)', 'Studi B (2023)']\n- R3 (Operasi Tanpa GPU Khusus): Dilaporkan oleh 1 studi ['Studi C (2024)']",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Lakukan uji kontradiksi: carilah setidaknya 3 artikel terkini yang berpotensi telah menyelesaikan celah terseb...",
-          "Prosedur: Ujilah apakah penyelesaian celah tersebut memberikan dampak terukur pada efisiensi, akurasi, atau pemahaman te..."
-        ]
+          "[warning: Perangkap] Menyatakan celah penelitian hanya berbasis intuisi pribadi tanpa menyertakan referensi bukti dari literatur terkini.",
+          "[warning: Perangkap] Menciptakan celah artifisial dengan memilih batasan yang tidak relevan secara praktis maupun teoretis.",
+          "[warning: Perangkap] Mengabaikan solusi yang telah mapan di bidang disiplin ilmu lain yang dapat langsung menyelesaikan masalah tersebut (reinventing the wheel)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa sebuah penelitian yang hanya mengganti lokasi survei dari kota A ke kota B sering kali ditolak oleh jurnal inter...",
-          "Petunjuk: Perhatikan asas generalisasi ilmiah dan transferabilitas model.",
-          "Solusi Kunci: Sains bertujuan membangun prinsip universal yang dapat digeneralisasi. Perubahan lokasi geografis semata tanpa variasi k..."
-        ]
+          "Prosedur: Lakukan uji kontradiksi: carilah setidaknya 3 artikel terkini yang berpotensi telah menyelesaikan celah tersebut sebelum menetapkan judul.",
+          "Prosedur: Ujilah apakah penyelesaian celah tersebut memberikan dampak terukur pada efisiensi, akurasi, atau pemahaman teoretis."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa sebuah penelitian yang hanya mengganti lokasi survei dari kota A ke kota B sering kali ditolak oleh jurnal internasional terindeks bereputasi?",
+          "Petunjuk Analitis: Perhatikan asas generalisasi ilmiah dan transferabilitas model.",
+          "Solusi Kunci: Sains bertujuan membangun prinsip universal yang dapat digeneralisasi. Perubahan lokasi geografis semata tanpa variasi kondisi fisis, lingkungan, atau tantangan metodologis baru hanya menghasilkan replikasi data lokal, bukan kontribusi terhadap tubuh pengetahuan global."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -212,100 +246,132 @@ export const CH05_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pemetaan Posisi terhadap State-of-the-Art (SOTA) Terkin...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pemetaan Posisi terhadap State-of-the-Art (SOTA) Terkini",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.5.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.2.",
-          "Capaian: Mengidentifikasi metode, arsitektur, dan tolok ukur (benchmarks) State-of-the-Art terkini.",
-          "Capaian: Membangun tabel perbandingan komprehensif terhadap baseline kompetitif.",
-          "Capaian: Menilai dominasi performa menggunakan konsep batas Pareto (Pareto frontier)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi metode, arsitektur, dan tolok ukur (benchmarks) State-of-the-Art terkini.",
+          "Capaian 2: Membangun tabel perbandingan komprehensif terhadap baseline kompetitif.",
+          "Capaian 3: Menilai dominasi performa menggunakan konsep batas Pareto (Pareto frontier)."
         ],
-        "keyFormulaOrDiagram": "$$\\forall k \\in \\{1, \\dots, K\\}, \\quad f_k(\\mathbf{x}_1) \\le f_k(\\mathbf{x}_2) \\quad \\land \\quad \\exists k^* \\in \\{1, \\dots, K\\}, \\quad f_{k^*}(\\mathbf{x}_1) < f_{k^*}(\\mathbf{x}_2)$$"
+        "keyFormulaOrDiagram": "$$\\forall k \\in \\{1, \\dots, K\\}, \\quad f_k(\\mathbf{x}_1) \\le f_k(\\mathbf{x}_2) \\quad \\land \\quad \\exists k^* \\in \\{1, \\dots, K\\}, \\quad f_{k^*}(\\mathbf{x}_1) < f_{k^*}(\\mathbf{x}_2)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.5.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pemetaan Posisi terhadap State-of-the-Art (SOTA) Terkin...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pemetaan Posisi terhadap State-of-the-Art (SOTA) Terkini",
+        "lead": "State-of-the-Art (SOTA) adalah tingkat pencapaian tertinggi, baik dalam hal ketelitian pemodelan, efisiensi algoritma, maupun ketahanan material, yang telah diakui oleh komunitas ilmiah pada saat tertentu.",
         "bulletPoints": [
-          "State-of-the-Art (SOTA) adalah tingkat pencapaian tertinggi, baik dalam hal ketelitian pemodelan, efisiensi algoritma, maupun...",
-          "Memposisikan riset terhadap SOTA menuntut pemahaman trade-off multi-objektif. Dalam rekayasa, jarang sekali ada metode baru y...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Penelitian ilmiah yang bermutu tidak membandingkan usulannya dengan metode purba yang sudah usang, melainkan harus bertarung langsung melawan metode SOTA terkini di bawah kondisi uji yang adil dan terkontrol ketat.",
+          "Memposisikan riset terhadap SOTA menuntut pemahaman trade-off multi-objektif.",
+          "Dalam rekayasa, jarang sekali ada metode baru yang mengungguli metode lama pada seluruh dimensi sekaligus tanpa konsekuensi kompensasi."
         ],
-        "keyFormulaOrDiagram": "Oleh karena itu, posisi ilmiah suatu penelitian didefinisikan melalui konsep Batas Pareto..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Oleh karena itu, posisi ilmiah suatu penelitian didefinisikan melalui konsep Batas Pareto (Pareto Frontier): - Sebuah metode...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Oleh karena itu, posisi ilmiah suatu penelitian didefinisikan melalui konsep Batas Pareto (Pareto Frontier): - Sebuah metode dikatakan mendominasi jika metode tersebut lebih unggul pada setidaknya satu metrik tanpa mengalami penurunan pada metrik lainnya. - Jika metode baru menawarkan titik kompromi baru yang sangat dibutuhkan oleh aplikasi praktis (misalnya akurasi sedikit lebih rendah namun mampu berjalan pada mikrokontroler berdaya 1 Watt), metode tersebut merupakan kontribusi valid terhadap batas Pareto efisiensi rekayasa.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Diberikan ruang solusi $\\mathcal{S}$ dengan $K$ fungsi objektif yang ingin diminimalkan $\\mathbf{f}(\\mathbf{x}) = [f_1(\\mathbf{x}), f_2(\\mathbf{x}), \\dots, f_K(\\mathbf{x})]^T$.",
         "bulletPoints": [
-          "Diberikan ruang solusi $\\mathcal{S}$ dengan $K$ fungsi objektif yang ingin diminimalkan $\\mathbf{f}(\\mathbf{x}...",
-          "Solusi $\\mathbf{x}_1$ mendominasi secara Pareto terhadap $\\mathbf{x}_2$ (ditulis $\\mathbf{x}_1 \\prec \\mathbf{x...",
-          "Himpunan Pareto Optimal $\\mathcal{P}^*$ adalah kumpulan solusi yang tidak didominasi oleh solusi lain mana pun..."
+          "Solusi $\\mathbf{x}_1$ mendominasi secara Pareto terhadap $\\mathbf{x}_2$ (ditulis $\\mathbf{x}_1 \\prec \\mathbf{x}_2$) jika dan hanya jika:",
+          "Himpunan Pareto Optimal $\\mathcal{P}^*$ adalah kumpulan solusi yang tidak didominasi oleh solusi lain mana pun dalam literatur:"
         ],
-        "keyFormulaOrDiagram": "$$\\forall k \\in \\{1, \\dots, K\\}, \\quad f_k(\\mathbf{x}_1) \\le f_k(\\mathbf{x}_2) \\quad \\land \\quad \\exists k^* \\in \\{1, \\dots, K\\}, \\quad f_{k^*}(\\mathbf{x}_1) < f_{k^*}(\\mathbf{x}_2)$$"
+        "keyFormulaOrDiagram": "$$\\forall k \\in \\{1, \\dots, K\\}, \\quad f_k(\\mathbf{x}_1) \\le f_k(\\mathbf{x}_2) \\quad \\land \\quad \\exists k^* \\in \\{1, \\dots, K\\}, \\quad f_{k^*}(\\mathbf{x}_1) < f_{k^*}(\\mathbf{x}_2)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua metode SOTA klasifikasi sinyal EEG memiliki profil sebagai berikut: Metode A (Akurasi: 94%, Latensi: 120 ms, Ukuran Model: 45 MB); Metod...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Bandingkan Metode C dengan Metode A. Akurasi C (92%) lebih rendah dari A (94%), namun Latensi C (25...",
-          "Langkah 2: Bandingkan Metode C dengan Metode B. Akurasi C (92%) lebih tinggi dari B (89%), meskipun latensi da...",
-          "Langkah 3: Karena tidak ada metode yang mendominasi C pada seluruh metrik sekaligus, Metode C membentuk titik...",
-          "Interpretasi: Metode C memperluas batas Pareto dengan menyediakan trade-off akurasi tinggi yang tetap layak diimplementasikan pada per..."
+          "Konteks Kasus: Dua metode SOTA klasifikasi sinyal EEG memiliki profil sebagai berikut: Metode A (Akurasi: 94%, Latensi: 120 ms, Ukuran Model: 45 MB); Metode B (Akurasi: 89%, Latensi: 15 ms, Ukuran Model: 2.1 MB). Peneliti mengusulkan Metode C (Akurasi: 92%, Latensi: 25 ms, Ukuran Model: 4.8 MB). Apakah Metode C berada pada batas Pareto atau didominasi oleh metode yang sudah ada?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Karena tidak ada metode yang mendominasi C pada seluruh metrik sekaligus, Metod..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Bandingkan Metode C dengan Metode A. Akurasi C (92%) lebih rendah dari A (94%), namun Latensi C (25 ms) jauh lebih cepat dari A (120 ms) dan ukuran model jauh lebih hemat. Jadi C tidak didominasi oleh A.",
+          "Langkah 2: Bandingkan Metode C dengan Metode B. Akurasi C (92%) lebih tinggi dari B (89%), meskipun latensi dan ukuran model B sedikit lebih hemat. Jadi C tidak didominasi oleh B."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Karena tidak ada metode yang mendominasi C pada seluruh metrik sekaligus, Metode C membentuk titik kompromi optimal baru pada kurva Pareto.",
+          "[result: Interpretasi Ilmiah] Metode C memperluas batas Pareto dengan menyediakan trade-off akurasi tinggi yang tetap layak diimplementasikan pada perangkat komputasi tepi (edge devices)."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Program penyaringan solusi non-terdominasi (Pareto Frontier) dari sekumpulan metode riset.",
         "bulletPoints": [
-          "Deskripsi: Program penyaringan solusi non-terdominasi (Pareto Frontier) dari sekumpulan metode riset.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Metode yang berada pada Garis Depan Pareto (Optimal Trade-off):"
+          "Tujuan Algoritma: Program penyaringan solusi non-terdominasi (Pareto Frontier) dari sekumpulan metode riset.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Metode yang berada pada Garis Depan Pareto (Optimal Trade-off):"
         ],
-        "keyFormulaOrDiagram": "Metode yang berada pada Garis Depan Pareto (Optimal Trade-off): | - Baseline Klasik -> Gal..."
+        "keyFormulaOrDiagram": "Metode yang berada pada Garis Depan Pareto (Optimal Trade-off):\n- Baseline Klasik -> Galat: 0.15, Latensi: 10.0 ms\n- SOTA Deep-ResNet -> Galat: 0.04, Latensi: 85.0 ms\n- Metode Usulan -> Galat: 0.05, Latensi: 30.0 ms",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Membandingkan metode baru dengan model baseline tanpa penyesuaian parameter yang optimal (strawman baseline).",
-          "Perangkap: Mengabaikan metrik komputasi penting seperti konsumsi daya, waktu pelatihan, atau kompleksitas asimtotik algor...",
-          "Perangkap: Mengklaim keunggulan SOTA berdasarkan pengujian pada dataset tunggal yang tidak mewakili variabilitas dunia ny..."
-        ]
+          "[warning: Perangkap] Membandingkan metode baru dengan model baseline tanpa penyesuaian parameter yang optimal (strawman baseline).",
+          "[warning: Perangkap] Mengabaikan metrik komputasi penting seperti konsumsi daya, waktu pelatihan, atau kompleksitas asimtotik algoritma.",
+          "[warning: Perangkap] Mengklaim keunggulan SOTA berdasarkan pengujian pada dataset tunggal yang tidak mewakili variabilitas dunia nyata."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan repositori benchmark publik yang terstandarisasi untuk memverifikasi performa baseline secara independ...",
-          "Prosedur: Sertakan kurva trade-off grafis dua sumbu yang memperlihatkan posisi metode usulan terhadap seluruh pesaing ku..."
-        ]
+          "Prosedur: Gunakan repositori benchmark publik yang terstandarisasi untuk memverifikasi performa baseline secara independen.",
+          "Prosedur: Sertakan kurva trade-off grafis dua sumbu yang memperlihatkan posisi metode usulan terhadap seluruh pesaing kunci."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa sebuah artikel yang melaporkan akurasi sedikit di bawah SOTA tetapi memiliki efisiensi komputasi 10 kali lebih c...",
-          "Petunjuk: Perhatikan konsep relevansi rekayasa terhadap batasan komputasi praktis.",
-          "Solusi Kunci: Dalam rekayasa sistem nyata, sumber daya komputasi, memori, dan daya baterai adalah batasan keras. Metode yang mengorban..."
-        ]
+          "Pertanyaan Uji: Mengapa sebuah artikel yang melaporkan akurasi sedikit di bawah SOTA tetapi memiliki efisiensi komputasi 10 kali lebih cepat tetap dapat dipublikasikan di jurnal tingkat atas?",
+          "Petunjuk Analitis: Perhatikan konsep relevansi rekayasa terhadap batasan komputasi praktis.",
+          "Solusi Kunci: Dalam rekayasa sistem nyata, sumber daya komputasi, memori, dan daya baterai adalah batasan keras. Metode yang mengorbankan fraksi kecil akurasi untuk memperoleh efisiensi komputasi masif memberikan nilai kepraktisan yang tinggi dan memperluas batas Pareto solusi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -368,100 +434,137 @@ export const CH05_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
+        "slideNumber": 23,
+        "layout": "concept",
         "title": "Tinjauan & Capaian: Formulasi Kontribusi Delta (Δ) dan Rasionalisasi Ilmiah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.5.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.3.",
-          "Capaian: Mengisolasi kontribusi delta unik dari metode penelitian yang diusulkan.",
-          "Capaian: Menghubungkan peningkatan performa empiris dengan prinsip mekanisme fisis atau matematis.",
-          "Capaian: Menghindari klaim kontribusi inkremental dangkal yang tidak memiliki nilai ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengisolasi kontribusi delta unik dari metode penelitian yang diusulkan.",
+          "Capaian 2: Menghubungkan peningkatan performa empiris dengan prinsip mekanisme fisis atau matematis.",
+          "Capaian 3: Menghindari klaim kontribusi inkremental dangkal yang tidak memiliki nilai ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{\\Delta} = \\mathbf{v}_{\\text{prop}} - \\mathbf{v}_{\\text{SOTA}}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{\\Delta} = \\mathbf{v}_{\\text{prop}} - \\mathbf{v}_{\\text{SOTA}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.5.3."
       },
       {
-        "slideNumber": 2,
+        "slideNumber": 24,
+        "layout": "concept",
         "title": "Fondasi Konseptual: Formulasi Kontribusi Delta (Δ) dan Rasionalisasi Ilmiah",
+        "lead": "Kontribusi ilmiah dari sebuah penelitian rekayasa dapat dianalogikan sebagai vektor perpindahan diferensial atau Kontribusi Delta ($\\Delta$).",
         "bulletPoints": [
-          "Kontribusi ilmiah dari sebuah penelitian rekayasa dapat dianalogikan sebagai vektor perpindahan diferensial atau Kontribusi D...",
-          "Banyak peneliti pemula terjebak pada pembuatan kontribusi inkremental dangkal (trivial incremental contribution), seperti sek...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Nilai sebuah karya ilmiah tidak diukur dari seberapa panjang kode yang ditulis atau seberapa rumit rangkaian yang dirakit, melainkan dari seberapa jelas $\\Delta$ pengetahuan yang ditambahkan ke dalam khazanah ilmiah global.",
+          "Banyak peneliti pemula terjebak pada pembuatan kontribusi inkremental dangkal (trivial incremental contribution), seperti sekadar mengubah ukuran filter konvolusi dari 3x3 menjadi 5x5, menggabungkan dua modul yang sudah ada tanpa rasionalisasi teoretis, atau mengganti optimizer standar tanpa hipotesis komputasional yang jelas."
         ],
-        "keyFormulaOrDiagram": "Kontribusi ilmiah yang kokoh memerlukan Rasionalisasi Ilmiah (Scientific Rationale): 1. Me..."
+        "keyFormulaOrDiagram": "$\\Delta$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Kontribusi ilmiah yang kokoh memerlukan Rasionalisasi Ilmiah (Scientific Rationale): 1.",
         "bulletPoints": [
-          "Kontribusi ilmiah yang kokoh memerlukan Rasionalisasi Ilmiah (Scientific Rationale): 1. Mengapa modifikasi tersebut secara fu...",
-          "Penelitian yang baik mampu menjawab pertanyaan: \"Seandainya eksperimen ini berhasil, prinsip ilmiah baru apa yang kini dipaha...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Mengapa modifikasi tersebut secara fundamental diharapkan menghasilkan perbaikan?",
+          "2.",
+          "Penelitian yang baik mampu menjawab pertanyaan: \"Seandainya eksperimen ini berhasil, prinsip ilmiah baru apa yang kini dipahami oleh komunitas peneliti yang sebelumnya tidak mereka ketahui?\""
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Didefinisikan vektor profil metode SOTA $\\mathbf{v}_{\\text{SOTA}} \\in \\mathbb{R}^D$ dan vektor metode yang diajukan $\\mathbf{v}_{\\text{prop}} \\in \\mathbb{R}^D$ dalam ruang karakteristik ilmiah:",
         "bulletPoints": [
-          "Didefinisikan vektor profil metode SOTA $\\mathbf{v}_{\\text{SOTA}} \\in \\mathbb{R}^D$ dan vektor metode yang dia...",
-          "Vektor kontribusi $\\mathbf{\\Delta}$ terdiri dari komponen teoretis $\\Delta_{\\text{theory}}$, komponen algoritm...",
-          "Di mana bobot $\\alpha, \\beta, \\gamma$ merefleksikan nilai kontribusi keilmuan. Jika $\\|\\Delta_{\\text{theory}}\\..."
+          "Vektor kontribusi $\\mathbf{\\Delta}$ terdiri dari komponen teoretis $\\Delta_{\\text{theory}}$, komponen algoritmik $\\Delta_{\\text{algo}}$, dan komponen performa empiris $\\Delta_{\\text{perf}}$:",
+          "Di mana bobot $\\alpha, \\beta, \\gamma$ merefleksikan nilai kontribusi keilmuan. Jika $\\|\\Delta_{\\text{theory}}\\| = 0$ dan $\\|\\Delta_{\\text{algo}}\\| = 0$, maka kenaikan $\\|\\Delta_{\\text{perf}}\\|$ hanya bersifat heuristik tuning belaka."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{\\Delta} = \\mathbf{v}_{\\text{prop}} - \\mathbf{v}_{\\text{SOTA}}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{\\Delta} = \\mathbf{v}_{\\text{prop}} - \\mathbf{v}_{\\text{SOTA}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang peneliti menambahkan lapisan self-attention pada jaringan LSTM untuk prediksi beban listrik harian dan memperoleh penurunan RMSE seb...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1 (Identifikasi Keterbatasan Model Dasar): LSTM standar memiliki keterbatasan degradasi memori saat me...",
-          "Langkah 2 (Rasionalisasi Mekanistik): Mekanisme perhatian (attention) menghitung bobot keterkaitan langsung an...",
-          "Langkah 3 (Prediksi Terarah): Mekanisme ini secara teoretis memulihkan korelasi beban periodik mingguan (pola...",
-          "Interpretasi: Dengan menyandarkan kontribusi pada mekanisme penanganan memori periodik panjang, modifikasi arsitektur memiliki dasar i..."
+          "Konteks Kasus: Seorang peneliti menambahkan lapisan self-attention pada jaringan LSTM untuk prediksi beban listrik harian dan memperoleh penurunan RMSE sebesar 12%. Jelaskan bagaimana peneliti tersebut harus merumuskan rasionalisasi ilmiah kontribusinya agar tidak dinilai sebagai penggabungan modul secara sembrono.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4 (Formulasi Delta): Kontribusi bukanlah \"menggabungkan LSTM dan Attention\", melai..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1 (Identifikasi Keterbatasan Model Dasar): LSTM standar memiliki keterbatasan degradasi memori saat memproses ketergantungan temporal panjang melebihi 48 jam.",
+          "Langkah 2 (Rasionalisasi Mekanistik): Mekanisme perhatian (attention) menghitung bobot keterkaitan langsung antar-langkah waktu tanpa harus mengalirkan informasi melalui seluruh state rekuren secara sekuensial."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Prediksi Terarah): Mekanisme ini secara teoretis memulihkan korelasi beban periodik mingguan (pola hari Senin terhadap hari Senin sebelumnya) yang sebelumnya teredam.",
+          "Langkah 4 (Formulasi Delta): Kontribusi bukanlah \"menggabungkan LSTM dan Attention\", melainkan \"penyelesaian degradasi memori periodisitas mingguan pada prediksi beban melalui pembobotan langsung matriks kovarians waktu\".",
+          "[result: Interpretasi Ilmiah] Dengan menyandarkan kontribusi pada mekanisme penanganan memori periodik panjang, modifikasi arsitektur memiliki dasar ilmiah yang dapat dipertanggungjawabkan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Analisis kontribusi komponen ablasi untuk memverifikasi kontribusi delta independen setiap modul.",
         "bulletPoints": [
-          "Deskripsi: Analisis kontribusi komponen ablasi untuk memverifikasi kontribusi delta independen setiap modul.",
-          "Dependensi Pustaka: pandas",
-          "Keluaran Diharapkan: Tabel Verifikasi Kontribusi Delta (Studi Ablasi):"
+          "Tujuan Algoritma: Analisis kontribusi komponen ablasi untuk memverifikasi kontribusi delta independen setiap modul.",
+          "Dependensi Pustaka Ilmiah: pandas",
+          "Keluaran Terverifikasi: Tabel Verifikasi Kontribusi Delta (Studi Ablasi):"
         ],
-        "keyFormulaOrDiagram": "Tabel Verifikasi Kontribusi Delta (Studi Ablasi): | Model RMSE Peningkatan Efisiensi (%) |..."
+        "keyFormulaOrDiagram": "Tabel Verifikasi Kontribusi Delta (Studi Ablasi):\n                       Model  RMSE  Peningkatan Efisiensi (%)\n            Baseline Standar  18.4                        0.0\n      + Modul Spatial Filter  16.1                       12.5\n  + Modul Temporal Attention  14.8                       19.5",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengklaim kontribusi besar hanya berdasarkan peningkatan performa numerik tanpa membuktikan modul mana yang be...",
-          "Perangkap: Menggabungkan modul-modul kompleks yang menyebabkan membengkaknya parameter komputasi tanpa memberikan perbaik...",
-          "Perangkap: Menyajikan rasionalisasi post-hoc (alasan yang dikarang-karang setelah hasil eksperimen keluar tanpa dasar ded..."
-        ]
+          "[warning: Perangkap] Mengklaim kontribusi besar hanya berdasarkan peningkatan performa numerik tanpa membuktikan modul mana yang bertanggung jawab melalui studi ablasi.",
+          "[warning: Perangkap] Menggabungkan modul-modul kompleks yang menyebabkan membengkaknya parameter komputasi tanpa memberikan perbaikan yang sebanding.",
+          "[warning: Perangkap] Menyajikan rasionalisasi post-hoc (alasan yang dikarang-karang setelah hasil eksperimen keluar tanpa dasar deduksi awal)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan uji ablasi sistematis: nonaktifkan komponen baru satu per satu untuk membuktikan bahwa kontribusi delt...",
-          "Prosedur: Lakukan pengujian signifikansi statistik (misalnya Wilcoxon signed-rank test) untuk memastikan perbaikan bukan..."
-        ]
+          "Prosedur: Lakukan uji ablasi sistematis: nonaktifkan komponen baru satu per satu untuk membuktikan bahwa kontribusi delta benar-benar berasal dari inovasi yang diajukan.",
+          "Prosedur: Lakukan pengujian signifikansi statistik (misalnya Wilcoxon signed-rank test) untuk memastikan perbaikan bukan akibat variasi acak bibit inisialisasi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa fungsi utama dari studi ablasi (ablation study) dalam membuktikan kontribusi delta suatu karya ilmiah?",
-          "Petunjuk: Pikirkan isolasi efek komponen pada sistem yang memiliki banyak bagian.",
-          "Solusi Kunci: Studi ablasi secara sengaja mematikan atau mencopot komponen inovasi yang diusulkan satu per satu untuk mengukur dampak..."
-        ]
+          "Petunjuk Analitis: Pikirkan isolasi efek komponen pada sistem yang memiliki banyak bagian.",
+          "Solusi Kunci: Studi ablasi secara sengaja mematikan atau mencopot komponen inovasi yang diusulkan satu per satu untuk mengukur dampak empiris langsung dari masing-masing komponen. Hal ini membuktikan secara ilmiah bahwa perbaikan performa sistem secara keseluruhan benar-benar disebabkan oleh inovasi tersebut, bukan oleh faktor kebetulan atau penalaan parameter lain."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -525,100 +628,137 @@ export const CH05_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penulisan Pernyataan Kebaruan (Novelty Claim Statement)...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penulisan Pernyataan Kebaruan (Novelty Claim Statement) Tanpa Overclaiming",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.5.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.4.",
-          "Capaian: Menyusun pernyataan klaim kebaruan yang presisi, terukur, dan dapat diverifikasi.",
-          "Capaian: Menghindari retorika berlebihan (overclaiming) dan kata sifat superlatif tanpa bukti kuantitatif.",
-          "Capaian: Mendefinisikan ruang batas validitas klaim secara transparan dan bertanggung jawab."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.5.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun pernyataan klaim kebaruan yang presisi, terukur, dan dapat diverifikasi.",
+          "Capaian 2: Menghindari retorika berlebihan (overclaiming) dan kata sifat superlatif tanpa bukti kuantitatif.",
+          "Capaian 3: Mendefinisikan ruang batas validitas klaim secara transparan dan bertanggung jawab."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Claim} \\equiv \\forall x \\in \\mathcal{X}_{\\text{domain}}, \\quad \\left( \\mathcal{M}(x) \\implies P(f_{\\text{prop}}(x) > f_{\\text{SOTA}}(x)) \\ge 1 - \\alpha \\right)$$"
+        "keyFormulaOrDiagram": "$$\\text{Claim} \\equiv \\forall x \\in \\mathcal{X}_{\\text{domain}}, \\quad \\left( \\mathcal{M}(x) \\implies P(f_{\\text{prop}}(x) > f_{\\text{SOTA}}(x)) \\ge 1 - \\alpha \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.5.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penulisan Pernyataan Kebaruan (Novelty Claim Statement)...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penulisan Pernyataan Kebaruan (Novelty Claim Statement) Tanpa Overclaiming",
+        "lead": "Pernyataan kebaruan (novelty claim statement) adalah bagian paling menentukan dalam naskah ilmiah, proposal hibah riset, maupun naskah disertasi.",
         "bulletPoints": [
-          "Pernyataan kebaruan (novelty claim statement) adalah bagian paling menentukan dalam naskah ilmiah, proposal hibah riset, maup...",
-          "Salah satu tanda paling nyata dari naskah berkualitas rendah adalah penggunaan retorika berlebihan (*overclaiming*) dan kata...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Pernyataan ini merangkum secara eksplisit apa yang telah dicapai dalam penelitian, bagaimana pencapaian tersebut melampaui batas pengetahuan terdahulu, dan di bawah kondisi apa klaim tersebut berlaku.",
+          "Salah satu tanda paling nyata dari naskah berkualitas rendah adalah penggunaan retorika berlebihan (*overclaiming*) dan kata sifat superlatif tanpa pembuktian matematis, seperti \"metode kami adalah yang pertama di dunia yang secara sempurna menyelesaikan masalah X\", atau \"algoritma kami revolusioner dan sangat superior dibanding seluruh metode yang ada\".",
+          "Pernyataan bombastis semacam ini justru mengundang skeptisisme instan dari reviewer dan penguji ahli."
         ],
-        "keyFormulaOrDiagram": "Sebaliknya, peneliti yang matang menuliskan klaim dengan presisi terkalibrasi (*hedging*)..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Sebaliknya, peneliti yang matang menuliskan klaim dengan presisi terkalibrasi (*hedging*) yang bertanggung jawab: 1.",
         "bulletPoints": [
-          "Sebaliknya, peneliti yang matang menuliskan klaim dengan presisi terkalibrasi (*hedging*) yang bertanggung jawab: 1. Menyebut...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Menyebutkan mekanisme spesifik yang diajukan (Bukan: \"sistem cerdas canggih\", Melainkan: \"mekanisme filtering berbasis kovarians Kalman terdisparitasi\").",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pernyataan klaim formal dapat dimodelkan sebagai predikat logika terikat:",
         "bulletPoints": [
-          "Pernyataan klaim formal dapat dimodelkan sebagai predikat logika terikat:",
-          "Di mana $\\mathcal{X}_{\\text{domain}}$ adalah domain operasional eksplisit, $\\mathcal{M}(x)$ adalah kondisi pem...",
-          "Overclaiming terjadi ketika peneliti mengabaikan domain $\\mathcal{X}_{\\text{domain}}$ dan menyatakan klaim ber..."
+          "Di mana $\\mathcal{X}_{\\text{domain}}$ adalah domain operasional eksplisit, $\\mathcal{M}(x)$ adalah kondisi pemenuhan asumsi batas, dan $\\alpha$ adalah tingkat signifikansi galat tipe I.",
+          "Overclaiming terjadi ketika peneliti mengabaikan domain $\\mathcal{X}_{\\text{domain}}$ dan menyatakan klaim berlaku untuk semesta tak terhingga $\\forall x$."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Claim} \\equiv \\forall x \\in \\mathcal{X}_{\\text{domain}}, \\quad \\left( \\mathcal{M}(x) \\implies P(f_{\\text{prop}}(x) > f_{\\text{SOTA}}(x)) \\ge 1 - \\alpha \\right)$$"
+        "keyFormulaOrDiagram": "$$\\text{Claim} \\equiv \\forall x \\in \\mathcal{X}_{\\text{domain}}, \\quad \\left( \\mathcal{M}(x) \\implies P(f_{\\text{prop}}(x) > f_{\\text{SOTA}}(x)) \\ge 1 - \\alpha \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Perbaiki draf klaim kebaruan berikut agar memenuhi standar ilmiah tanpa overclaiming: \"Dalam penelitian ini kami menciptakan metode deteksi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi kata-kata bermasalah (superlatif tanpa bukti): \"paling mutakhir\", \"paling akurat di du...",
-          "Langkah 2: Tentukan mekanisme teknis sebenarnya: integrasi fusi spektral inframerah termal dan indeks vegetasi...",
-          "Langkah 3: Tentukan data empiris konkret: menurunkan false alarm rate sebesar 35% dibandingkan detektor optik...",
-          "Interpretasi: Pernyataan yang telah direvisi bersifat obyektif, spesifik, kuantitatif, dan dapat diuji secara empiris oleh peneliti la..."
+          "Konteks Kasus: Perbaiki draf klaim kebaruan berikut agar memenuhi standar ilmiah tanpa overclaiming: \"Dalam penelitian ini kami menciptakan metode deteksi kebakaran hutan paling mutakhir dan paling akurat di dunia yang berhasil mengatasi seluruh kegagalan sensor konvensional.\"",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Susun kalimat ilmiah final: \"Penelitian ini mengusulkan model fusi spektral inf..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi kata-kata bermasalah (superlatif tanpa bukti): \"paling mutakhir\", \"paling akurat di dunia\", \"mengatasi seluruh kegagalan\".",
+          "Langkah 2: Tentukan mekanisme teknis sebenarnya: integrasi fusi spektral inframerah termal dan indeks vegetasi NDVI pada mikrokontroler berdaya rendah.",
+          "Langkah 3: Tentukan data empiris konkret: menurunkan false alarm rate sebesar 35% dibandingkan detektor optik ambang batas tunggal."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Tentukan batasan operasional: pada pengujian kanopi hutan tropis lembap dengan jarak deteksi hingga 50 meter.",
+          "Langkah 5: Susun kalimat ilmiah final: \"Penelitian ini mengusulkan model fusi spektral inframerah termal dan indeks vegetasi NDVI berdaya rendah yang menurunkan laju alarm palsu sebesar 35% dibandingkan metode ambang batas optik tunggal pada pengujian kanopi hutan tropis lembap.\"",
+          "[result: Interpretasi Ilmiah] Pernyataan yang telah direvisi bersifat obyektif, spesifik, kuantitatif, dan dapat diuji secara empiris oleh peneliti lain."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Linter teks otomatis sederhana untuk mendeteksi kata-kata overclaiming dan buzzwords pada draf naskah ilmiah.",
         "bulletPoints": [
-          "Deskripsi: Linter teks otomatis sederhana untuk mendeteksi kata-kata overclaiming dan buzzwords pada draf naskah ilmiah.",
-          "Dependensi Pustaka: re",
-          "Keluaran Diharapkan: Total indikasi overclaiming ditemukan: 4"
+          "Tujuan Algoritma: Linter teks otomatis sederhana untuk mendeteksi kata-kata overclaiming dan buzzwords pada draf naskah ilmiah.",
+          "Dependensi Pustaka Ilmiah: re",
+          "Keluaran Terverifikasi: Total indikasi overclaiming ditemukan: 4"
         ],
-        "keyFormulaOrDiagram": "Total indikasi overclaiming ditemukan: 4 | - Peringatan Overclaim: Frasa 'tanpa cela' haru..."
+        "keyFormulaOrDiagram": "Total indikasi overclaiming ditemukan: 4\n- Peringatan Overclaim: Frasa 'tanpa cela' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'revolusioner' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'sempurna' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'paling canggih' harus diganti dengan bukti kuantitatif spesifik.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengklaim sebagai \"yang pertama\" (the first ever) tanpa melakukan penelusuran pustaka multibahasa dan multidek...",
-          "Perangkap: Menggeneralisasi temuan dari eksperimen laboratorium skala miniatur ke sistem industri berskala penuh.",
-          "Perangkap: Menyembunyikan skenario kegagalan atau degradasi performa sistem dari pembahasan naskah."
-        ]
+          "[warning: Perangkap] Mengklaim sebagai \"yang pertama\" (the first ever) tanpa melakukan penelusuran pustaka multibahasa dan multidekade secara menyeluruh.",
+          "[warning: Perangkap] Menggeneralisasi temuan dari eksperimen laboratorium skala miniatur ke sistem industri berskala penuh.",
+          "[warning: Perangkap] Menyembunyikan skenario kegagalan atau degradasi performa sistem dari pembahasan naskah."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Pastikan setiap klaim keunggulan pada bagian kesimpulan memiliki rujukan tabel data atau gambar grafik pembukt...",
-          "Prosedur: Tinjau kembali apakah batasan penelitian (*limitations*) telah dituliskan secara proporsional mendampingi klai..."
-        ]
+          "Prosedur: Pastikan setiap klaim keunggulan pada bagian kesimpulan memiliki rujukan tabel data atau gambar grafik pembuktian pada bab hasil.",
+          "Prosedur: Tinjau kembali apakah batasan penelitian (*limitations*) telah dituliskan secara proporsional mendampingi klaim kebaruan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa jurnal bereputasi tinggi lebih menghargai peneliti yang secara jujur memaparkan kondisi di mana metode mereka ga...",
-          "Petunjuk: Pikirkan reproduksibilitas ilmiah dan pemahaman batas operasional sistem rekayasa.",
-          "Solusi Kunci: Dalam sains dan rekayasa, tidak ada metode yang sempurna pada semua kondisi. Memaparkan kondisi batas dan kegagalan just..."
-        ]
+          "Pertanyaan Uji: Mengapa jurnal bereputasi tinggi lebih menghargai peneliti yang secara jujur memaparkan kondisi di mana metode mereka gagal dibanding peneliti yang mengklaim metodenya selalu berhasil 100%?",
+          "Petunjuk Analitis: Pikirkan reproduksibilitas ilmiah dan pemahaman batas operasional sistem rekayasa.",
+          "Solusi Kunci: Dalam sains dan rekayasa, tidak ada metode yang sempurna pada semua kondisi. Memaparkan kondisi batas dan kegagalan justru memberikan pemahaman mekanistik yang mendalam tentang variabel pembatas sistem, mencegah pemborosan sumber daya peneliti lain yang ingin mereplikasi, dan memperkuat kredibilitas integritas ilmiah penulis."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

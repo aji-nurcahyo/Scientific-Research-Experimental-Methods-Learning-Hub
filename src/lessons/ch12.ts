@@ -61,98 +61,125 @@ export const CH12_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Validitas Instrumen: Validitas Konstruk, Validitas Kont...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Validitas Instrumen: Validitas Konstruk, Validitas Konten, dan Validitas Kriteria",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.5.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.1.",
-          "Capaian: Membedakan tiga dimensi utama validitas instrumen pengukuran (Konten, Kriteria, dan Konstruk).",
-          "Capaian: Mengevaluasi validitas konvergen dan diskriminan menggunakan kriteria Campbell & Fiske.",
-          "Capaian: Menerapkan Content Validity Ratio (CVR) Lawshe untuk penilaian panel pakar keteknikan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan tiga dimensi utama validitas instrumen pengukuran (Konten, Kriteria, dan Konstruk).",
+          "Capaian 2: Mengevaluasi validitas konvergen dan diskriminan menggunakan kriteria Campbell & Fiske.",
+          "Capaian 3: Menerapkan Content Validity Ratio (CVR) Lawshe untuk penilaian panel pakar keteknikan."
         ],
-        "keyFormulaOrDiagram": "$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$"
+        "keyFormulaOrDiagram": "$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.5.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Validitas Instrumen: Validitas Konstruk, Validitas Kont...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Validitas Instrumen: Validitas Konstruk, Validitas Konten, dan Validitas Kriteria",
+        "lead": "Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen tersebut tidak mengukur besaran yang sebenarnya dimaksudkan untuk diukur, maka seluruh data yang dihasilkan tidak memiliki validitas.",
         "bulletPoints": [
-          "Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen terseb...",
-          "Tiga pilar validitas instrumen dalam rekayasa dan pengujian sistem: 1. Validitas Konten (Content Validity): Menilai sejauh ma...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Validitas instrumen (*measurement validity*) adalah derajat kesesuaian antara instrumen pengukuran dengan atribut konseptual yang hendak diukur.",
+          "Tiga pilar validitas instrumen dalam rekayasa dan pengujian sistem: 1.",
+          "Validitas Konten (Content Validity): Menilai sejauh mana domain instrumen (butir kuesioner, parameter sensor, atau matriks pengujian) mencakup seluruh aspek representatif dari domain yang didefinisikan."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "derivation",
+        "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Content Validity Ratio (CVR) Lawshe:",
         "bulletPoints": [
-          "Sebuah instrumen ukur atau rangkaian sensor dapat beroperasi secara sangat konsisten tanpa henti, namun jika instrumen terseb...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Panel terdiri dari $N_{\\text{pakar}}$ ahli independen. Jika $n_e$ adalah jumlah pakar yang menyatakan bahwa suatu indikator \"esensial/wajib\", maka:",
+          "Di mana $\\text{CVR} \\in [-1.0, +1.0]$. Indikator dipertahankan jika $\\text{CVR} > \\text{CVR}_{\\text{kritis}}$ (misal $\\text{CVR}_{\\text{kritis}} = 0.62$ untuk $N_{\\text{pakar}} = 10$ pada $\\alpha = 0.05$).",
+          "2. Validitas Konvergen dan Diskriminan (Fornell-Larcker Criterion):"
+        ],
+        "keyFormulaOrDiagram": "$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 4,
-        "title": "Formulasi Matematis & Notasi Formal",
+        "layout": "example",
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "1. Content Validity Ratio (CVR) Lawshe:",
-          "Panel terdiri dari $N_{\\text{pakar}}$ ahli independen. Jika $n_e$ adalah jumlah pakar yang menyatakan bahwa su...",
-          "Di mana $\\text{CVR} \\in [-1.0, +1.0]$. Indikator dipertahankan jika $\\text{CVR} > \\text{CVR}_{\\text{kritis}}$..."
+          "Konteks Kasus: Sebuah panel beranggotakan 12 orang dosen teknik ITERA mengevaluasi apakah sensor fluks medan magnetik esensial dimasukkan ke dalam modul deteksi anomali inverter motor traksi. Sebanyak 10 dosen menyatakan esensial, 2 menyatakan opsional. Hitung nilai CVR Lawshe dan tentukan kelayakannya berdasarkan ambang batas kritis CVR_kritis = 0.56 untuk N = 12.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "$$\\text{CVR} = \\frac{n_e - \\frac{N_{\\text{pakar}}}{2}}{\\frac{N_{\\text{pakar}}}{2}} = \\frac{2 n_e}{N_{\\text{pakar}}} - 1$$"
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 5,
-        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah panel beranggotakan 12 orang dosen teknik ITERA mengevaluasi apakah sensor fluks medan magnetik esensial dimasukkan ke dalam modul de...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Langkah 1: Identifikasi parameter: N_pakar = 12, n_e = 10.",
+          "Langkah 2: Hitung nilai CVR: CVR = (2 * n_e / N_pakar) - 1 = (2 * 10 / 12) - 1 = (20 / 12) - 1 = 1.667 - 1 = +0.667."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi parameter: N_pakar = 12, n_e = 10.",
-          "Langkah 2: Hitung nilai CVR: CVR = (2 * n_e / N_pakar) - 1 = (2 * 10 / 12) - 1 = (20 / 12) - 1 = 1.667 - 1 = +...",
           "Langkah 3: Bandingkan dengan ambang batas kritis: CVR (+0.667) > CVR_kritis (+0.560).",
-          "Interpretasi: Sensor tersebut secara absah dimasukkan ke dalam paket instrumentasi modul pemantauan inverter."
+          "Langkah 4: Kesimpulan evaluasi konten: Indikator sensor fluks medan magnetik memiliki validitas konten yang signifikan secara statistik pada tingkat signifikansi alpha = 0.05.",
+          "[result: Interpretasi Ilmiah] Sensor tersebut secara absah dimasukkan ke dalam paket instrumentasi modul pemantauan inverter."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Kesimpulan evaluasi konten: Indikator sensor fluks medan magnetik memiliki vali..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 7,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Evaluasi validitas diskriminan Fornell-Larcker antar-variabel laten sistem telemetri.",
         "bulletPoints": [
-          "Deskripsi: Evaluasi validitas diskriminan Fornell-Larcker antar-variabel laten sistem telemetri.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Akar AVE Laten RF : 0.825"
+          "Tujuan Algoritma: Evaluasi validitas diskriminan Fornell-Larcker antar-variabel laten sistem telemetri.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Akar AVE Laten RF       : 0.825"
         ],
-        "keyFormulaOrDiagram": "Akar AVE Laten RF : 0.825 | Akar AVE Laten CPU : 0.849 | Korelasi Antar-Laten (r): 0.350"
+        "keyFormulaOrDiagram": "Akar AVE Laten RF       : 0.825\nAkar AVE Laten CPU      : 0.849\nKorelasi Antar-Laten (r): 0.350\nKriteria Fornell-Larcker Terpenuhi? True\nKesimpulan: Kedua konstruk mengukur fenomena fisik yang berbeda secara tegas (validitas diskriminan terbukti).",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 8,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyamakan instrumen yang memiliki pembacaan presisi tinggi sebagai instrumen yang pasti valid.",
-          "Perangkap: Mengabaikan validitas kriteria terhadap alat ukur standar baku emas (gold standard).",
-          "Perangkap: Menggabungkan butir-butir indikator yang mengukur konsep berbeda ke dalam satu skor gabungan tanpa uji faktori..."
-        ]
+          "[warning: Perangkap] Menyamakan instrumen yang memiliki pembacaan presisi tinggi sebagai instrumen yang pasti valid.",
+          "[warning: Perangkap] Mengabaikan validitas kriteria terhadap alat ukur standar baku emas (gold standard).",
+          "[warning: Perangkap] Menggabungkan butir-butir indikator yang mengukur konsep berbeda ke dalam satu skor gabungan tanpa uji faktorial."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 9,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Lakukan pengujian korelasi simultan terhadap instrumen acuan kalibrasi industri bersertifikat.",
           "Prosedur: Sertakan panel pakar lintas disiplin untuk memvalidasi relevansi indikator kuesioner atau spesifikasi sensor."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
         "slideNumber": 10,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa validitas konstruk dinilai sebagai tingkatan validitas instrumen yang paling komprehensif dan fundamental?",
-          "Petunjuk: Perhatikan apakah validitas konstruk menyatukan bukti teoretis, empiris kriteria, dan konten secara...",
-          "Solusi Kunci: Validitas konstruk membuktikan bahwa instrumen tidak hanya mengukur secara akurat terhadap kriteria tertentu saat ini, m..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah validitas konstruk menyatukan bukti teoretis, empiris kriteria, dan konten secara menyeluruh.",
+          "Solusi Kunci: Validitas konstruk membuktikan bahwa instrumen tidak hanya mengukur secara akurat terhadap kriteria tertentu saat ini, melainkan bahwa variasi pembacaan instrumen benar-benar merefleksikan dinamika teori fisis konseptual yang melandasinya di bawah berbagai kondisi pengujian yang berbeda."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -216,100 +243,138 @@ export const CH12_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Reliabilitas Instrumen: Test-Retest dan Konsistensi Int...",
+        "slideNumber": 11,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Reliabilitas Instrumen: Test-Retest dan Konsistensi Internal via Cronbach Alpha",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.5.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.2.",
-          "Capaian: Memahami konsep reliabilitas instrumen sebagai rasio variansi sejati terhadap variansi total.",
-          "Capaian: Menghitung koefisien reliabilitas test-retest menggunakan korelasi intrakelas (ICC).",
-          "Capaian: Menghitung dan menginterpretasikan koefisien konsistensi internal Cronbach Alpha."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami konsep reliabilitas instrumen sebagai rasio variansi sejati terhadap variansi total.",
+          "Capaian 2: Menghitung koefisien reliabilitas test-retest menggunakan korelasi intrakelas (ICC).",
+          "Capaian 3: Menghitung dan menginterpretasikan koefisien konsistensi internal Cronbach Alpha."
         ],
-        "keyFormulaOrDiagram": "$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.5.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Reliabilitas Instrumen: Test-Retest dan Konsistensi Int...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Reliabilitas Instrumen: Test-Retest dan Konsistensi Internal via Cronbach Alpha",
+        "lead": "Reliabilitas instrumen (*measurement reliability*) adalah derajat stabilitas, konsistensi, dan keterulangan hasil pengukuran ketika pengujian diulang berkali-kali pada objek yang sama di bawah kondisi yang setara.",
         "bulletPoints": [
-          "Reliabilitas instrumen (*measurement reliability*) adalah derajat stabilitas, konsistensi, dan keterulangan hasil pengukuran...",
-          "Dua paradigma evaluasi reliabilitas instrumen yang paling esensial: 1. Reliabilitas Pengujian Ulang (Test-Retest Reliability)...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam Classical Test Theory (CTT), setiap skor teramati ($X$) dipandang sebagai penjumlahan antara skor sejati ($T$) dan galat pengukuran acak ($E$).",
+          "Dua paradigma evaluasi reliabilitas instrumen yang paling esensial: 1.",
+          "Reliabilitas Pengujian Ulang (Test-Retest Reliability): Mengukur stabilitas temporal instrumen sepanjang waktu."
         ],
-        "keyFormulaOrDiagram": "Nilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0. Untuk penelitian rekayasa dan instr..."
+        "keyFormulaOrDiagram": "$\\alpha \\ge 0.80$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Nilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0.",
         "bulletPoints": [
-          "Nilai Cronbach's Alpha berkisar antara 0.0 hingga 1.0. Untuk penelitian rekayasa dan instrumen diagnostik kritis, nilai amban...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Untuk penelitian rekayasa dan instrumen diagnostik kritis, nilai ambang batas minimum yang diterima secara luas adalah $\\alpha \\ge 0.80$."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Koefisien Konsistensi Internal Cronbach's Alpha:",
         "bulletPoints": [
-          "1. Formulasi Koefisien Konsistensi Internal Cronbach's Alpha:",
           "Diberikan instrumen yang terdiri dari $K$ butir/sensor teramati dengan total skor $X = \\sum_{i=1}^K Y_i$:",
-          "Di mana:"
+          "Di mana:",
+          "- $\\sigma_{Y_i}^2$ adalah varians butir/sensor ke-$i$."
         ],
-        "keyFormulaOrDiagram": "$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\alpha = \\frac{K}{K - 1} \\left( 1 - \\frac{\\sum_{i=1}^K \\sigma_{Y_i}^2}{\\sigma_X^2} \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah kuesioner evaluasi kegunaan sistem monitoring SCADA terdiri dari 4 pertanyaan yang diujikan pada 30 operator teknis. Varians masing-m...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah kuesioner evaluasi kegunaan sistem monitoring SCADA terdiri dari 4 pertanyaan yang diujikan pada 30 operator teknis. Varians masing-masing butir pertanyaan adalah: s1^2 = 0.80, s2^2 = 0.65, s3^2 = 0.90, s4^2 = 0.75. Varians skor total keseluruhan adalah s_X^2 = 7.50. Hitung koefisien Cronbach Alpha dan simpulkan reliabilitas internal instrumen.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung jumlah varians butir individu: Sum(s_i^2) = 0.80 + 0.65 + 0.90 + 0.75 = 3.10.",
           "Langkah 2: Hitung rasio varians butir terhadap varians total: 3.10 / 7.50 = 0.4133.",
-          "Langkah 3: Hitung suku pengali butir: K / (K - 1) = 4 / (4 - 1) = 4 / 3 = 1.3333.",
-          "Interpretasi: Instrumen memiliki reliabilitas konsistensi internal sebesar 78.2% dan layak digunakan untuk studi pendahuluan."
+          "Langkah 3: Hitung suku pengali butir: K / (K - 1) = 4 / (4 - 1) = 4 / 3 = 1.3333."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Evaluasi reliabilitas: Nilai alpha = 0.782 mendekati batas ambang 0.80, menunju..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung nilai Cronbach Alpha: alpha = 1.3333 * (1 - 0.4133) = 1.3333 * 0.5867 = 0.782.",
+          "Langkah 5: Evaluasi reliabilitas: Nilai alpha = 0.782 mendekati batas ambang 0.80, menunjukkan konsistensi internal yang cukup baik, namun dapat ditingkatkan dengan membuang butir yang memiliki korelasi butir-total rendah.",
+          "[result: Interpretasi Ilmiah] Instrumen memiliki reliabilitas konsistensi internal sebesar 78.2% dan layak digunakan untuk studi pendahuluan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komputasi koefisien Cronbach Alpha dan korelasi butir-total (Item-Total Correlation) menggunakan NumPy.",
         "bulletPoints": [
-          "Deskripsi: Komputasi koefisien Cronbach Alpha dan korelasi butir-total (Item-Total Correlation) menggunakan NumPy.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Jumlah Butir (K) : 4"
+          "Tujuan Algoritma: Komputasi koefisien Cronbach Alpha dan korelasi butir-total (Item-Total Correlation) menggunakan NumPy.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Jumlah Butir (K)             : 4"
         ],
-        "keyFormulaOrDiagram": "Jumlah Butir (K) : 4 | Varians Masing-masing Butir : [1.25 0.892 1.04 0.724] | Varians Sko..."
+        "keyFormulaOrDiagram": "Jumlah Butir (K)             : 4\nVarians Masing-masing Butir  : [1.25  0.892 1.04  0.724]\nVarians Skor Total Gabungan  : 11.208\nKoefisien Cronbach's Alpha   : 0.871\nStatus: Konsistensi internal SANGAT TINGGI (Layak untuk pengujian rekayasa kritis).",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghitung Cronbach Alpha pada instrumen multidimensi secara serentak (Alpha mengasumsikan unidimensionalitas...",
-          "Perangkap: Mengartikan nilai Alpha yang sangat tinggi (> 0.95) sebagai hal positif, padahal nilai tersebut sering kali me...",
-          "Perangkap: Mengabaikan durasi jeda waktu pada uji test-retest (jeda terlalu pendek memicu efek mengingat, jeda terlalu pa..."
-        ]
+          "[warning: Perangkap] Menghitung Cronbach Alpha pada instrumen multidimensi secara serentak (Alpha mengasumsikan unidimensionalitas mutlak).",
+          "[warning: Perangkap] Mengartikan nilai Alpha yang sangat tinggi (> 0.95) sebagai hal positif, padahal nilai tersebut sering kali menandakan adanya redundansi butir pertanyaan yang berlebihan.",
+          "[warning: Perangkap] Mengabaikan durasi jeda waktu pada uji test-retest (jeda terlalu pendek memicu efek mengingat, jeda terlalu panjang memicu maturasi)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Jalankan analisis faktor eksploratori terlebih dahulu untuk memastikan instrumen bersifat unidimensional sebel...",
+          "Prosedur: Jalankan analisis faktor eksploratori terlebih dahulu untuk memastikan instrumen bersifat unidimensional sebelum menghitung Alpha.",
           "Prosedur: Periksa nilai Corrected Item-Total Correlation (wajib > 0.30 untuk setiap butir yang dipertahankan)."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa nilai Cronbach Alpha akan otomatis membesar jika peneliti terus menambahkan butir-butir pertanyaan baru yang ser...",
-          "Petunjuk: Perhatikan suku K / (K - 1) dan sifat akumulasi kovarians butir pada penyebut varians total.",
-          "Solusi Kunci: Penambahan butir baru secara mekanis menaikkan dimensi K dan melipatgandakan jumlah pasangan kovarians antar-butir (K*(K..."
-        ]
+          "Pertanyaan Uji: Mengapa nilai Cronbach Alpha akan otomatis membesar jika peneliti terus menambahkan butir-butir pertanyaan baru yang serupa ke dalam kuesioner?",
+          "Petunjuk Analitis: Perhatikan suku K / (K - 1) dan sifat akumulasi kovarians butir pada penyebut varians total.",
+          "Solusi Kunci: Penambahan butir baru secara mekanis menaikkan dimensi K dan melipatgandakan jumlah pasangan kovarians antar-butir (K*(K-1)/2 pasang) pada varians total. Oleh karena itu, nilai Alpha yang tinggi dapat mencerminkan jumlah butir yang terlalu banyak (panjang kuesioner berlebihan), bukan mutu butir yang sejati."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -378,100 +443,143 @@ export const CH12_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kesepakatan Antar-Penilai (Inter-Rater Reliability): Co...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kesepakatan Antar-Penilai (Inter-Rater Reliability): Cohen Kappa dan Fleiss Kappa",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.5.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.3.",
-          "Capaian: Membedakan konsep kesepakatan persentase sederhana versus indeks kesepakatan terkoreksi kebetulan (*chance-cor...",
-          "Capaian: Menghitung dan menginterpretasikan koefisien Cohen's Kappa ($\\kappa$) untuk dua penilai.",
-          "Capaian: Menerapkan Fleiss' Kappa untuk panel multi-penilai dan Weighted Kappa untuk data bertingkat ordinal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan konsep kesepakatan persentase sederhana versus indeks kesepakatan terkoreksi kebetulan (*chance-corrected agreement*).",
+          "Capaian 2: Menghitung dan menginterpretasikan koefisien Cohen's Kappa ($\\kappa$) untuk dua penilai.",
+          "Capaian 3: Menerapkan Fleiss' Kappa untuk panel multi-penilai dan Weighted Kappa untuk data bertingkat ordinal."
         ],
-        "keyFormulaOrDiagram": "$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$"
+        "keyFormulaOrDiagram": "$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.5.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kesepakatan Antar-Penilai (Inter-Rater Reliability): Co...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kesepakatan Antar-Penilai (Inter-Rater Reliability): Cohen Kappa dan Fleiss Kappa",
+        "lead": "Dalam rekayasa kualitas, anotasi dataset visi komputer (misalnya pemberian label bounding box retak jalan), dan inspeksi visual cacat manufaktur, keputusan klasifikasi sering kali diambil oleh evaluator manusia atau algoritma pengklasifikasi otomatis.",
         "bulletPoints": [
-          "Dalam rekayasa kualitas, anotasi dataset visi komputer (misalnya pemberian label bounding box retak jalan), dan inspeksi visu...",
-          "Kesalahan paling umum adalah menggunakan persentase kesepakatan sederhana (*percent agreement*). Jika dua penilai sama-sama m...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Sebelum dataset ground truth tersebut digunakan untuk melatih kecerdasan buatan, peneliti wajib mengukur derajat kesepakatan antar-penilai (*Inter-Rater Reliability*).",
+          "Kesalahan paling umum adalah menggunakan persentase kesepakatan sederhana (*percent agreement*).",
+          "Jika dua penilai sama-sama memberi label \"Normal\" pada 95% produk karena cacat produksi sangat langka (1%), kedua penilai dapat menyepakati 90% sampel secara kebetulan belaka tanpa menggunakan keahlian apa pun."
         ],
-        "keyFormulaOrDiagram": "Untuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen'..."
+        "keyFormulaOrDiagram": "$\\kappa$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Untuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen's Kappa ($\\kappa$), yang mengukur kesepakatan proporsional yang diamati ($P_o$) setelah dikoreksi terhadap probabilitas kesepakatan acak yang diharapkan secara teoritis ($P_e$).",
         "bulletPoints": [
-          "Untuk mengatasi ilusi kesepakatan semu ini, Jacob Cohen (1960) merumuskan koefisien Cohen's Kappa ($\\kappa$), yang mengukur k...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Untuk panel yang melibatkan lebih dari dua penilai, metode diperluas menggunakan Fleiss' Kappa."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Koefisien Cohen's Kappa (Dua Penilai):",
         "bulletPoints": [
-          "1. Formulasi Koefisien Cohen's Kappa (Dua Penilai):",
           "Di mana:",
-          "- $P_o$ adalah proporsi kesepakatan teramati riil: $P_o = \\frac{1}{N} \\sum_{i=1}^C n_{ii}$"
+          "- $P_o$ adalah proporsi kesepakatan teramati riil: $P_o = \\frac{1}{N} \\sum_{i=1}^C n_{ii}$",
+          "- $P_e$ adalah proporsi kesepakatan acak berdasarkan probabilitas marginal:"
         ],
-        "keyFormulaOrDiagram": "$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$"
+        "keyFormulaOrDiagram": "$$\\kappa = \\frac{P_o - P_e}{1 - P_e}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua inspektur las independen memeriksa 100 citra radiografi sambungan pipa baja untuk mengklasifikasikan status Cacat (Defect) vs Lolos (Pas...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua inspektur las independen memeriksa 100 citra radiografi sambungan pipa baja untuk mengklasifikasikan status Cacat (Defect) vs Lolos (Pass). Tabel kontingensi menunjukkan: Keduanya sepakat Cacat = 25 citra; Keduanya sepakat Lolos = 60 citra; Penilai 1 Cacat tapi Penilai 2 Lolos = 5 citra; Penilai 1 Lolos tapi Penilai 2 Cacat = 10 citra. Hitung persentase kesepakatan teramati Po, kesepakatan peluang acak Pe, dan Cohen Kappa.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung total observasi: N = 25 + 5 + 10 + 60 = 100 citra.",
           "Langkah 2: Hitung kesepakatan teramati Po: Po = (25 + 60) / 100 = 85 / 100 = 0.85 (85%).",
           "Langkah 3: Hitung total marginal masing-masing penilai:",
-          "Interpretasi: Nilai Kappa sebesar 0.659 menunjukkan kesepakatan substansial (substantial agreement) yang membuktikan bahwa reliabilita..."
+          "Penilai 1: Total Cacat = 25 + 5 = 30; Total Lolos = 10 + 60 = 70.",
+          "Penilai 2: Total Cacat = 25 + 10 = 35; Total Lolos = 5 + 60 = 65."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung Cohen Kappa: kappa = (0.85 - 0.56) / (1 - 0.56) = 0.29 / 0.44 = 0.659."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung kesepakatan acak Pe:",
+          "Pe(Cacat) = (30/100) * (35/100) = 0.30 * 0.35 = 0.105.",
+          "Pe(Lolos) = (70/100) * (65/100) = 0.70 * 0.65 = 0.455.",
+          "Pe total = 0.105 + 0.455 = 0.560 (56.0%).",
+          "Langkah 5: Hitung Cohen Kappa: kappa = (0.85 - 0.56) / (1 - 0.56) = 0.29 / 0.44 = 0.659.",
+          "[result: Interpretasi Ilmiah] Nilai Kappa sebesar 0.659 menunjukkan kesepakatan substansial (substantial agreement) yang membuktikan bahwa reliabilitas pelabelan citra las berada pada batas kualitas yang dapat diterima."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komputasi Cohen's Kappa dan matriks kebingungan antar-penilai menggunakan scikit-learn/NumPy.",
         "bulletPoints": [
-          "Deskripsi: Komputasi Cohen's Kappa dan matriks kebingungan antar-penilai menggunakan scikit-learn/NumPy.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Total Citra Uji : 100"
+          "Tujuan Algoritma: Komputasi Cohen's Kappa dan matriks kebingungan antar-penilai menggunakan scikit-learn/NumPy.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Total Citra Uji           : 100"
         ],
-        "keyFormulaOrDiagram": "Total Citra Uji : 100 | Kesepakatan Teramati (Po) : 85.0% | Kesepakatan Peluang (Pe) : 56...."
+        "keyFormulaOrDiagram": "Total Citra Uji           : 100\nKesepakatan Teramati (Po) : 85.0%\nKesepakatan Peluang (Pe)  : 56.0%\nKoefisien Cohen's Kappa   : 0.659\nKategori Kesepakatan: SUBSTANSIAL (Memenuhi standar pelabelan data rekayasa).",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 30,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya melaporkan persentase kesepakatan sederhana pada dataset yang memiliki ketimpangan kelas ekstrem (*preva...",
-          "Perangkap: Menggunakan Cohen's Kappa biasa pada data ordinal bertingkat tanpa menerapkan pembobotan selisih peringkat (*W...",
-          "Perangkap: Mengasumsikan bahwa dua model kecerdasan buatan pasti andal hanya karena keduanya menyepakati label yang sama..."
-        ]
+          "[warning: Perangkap] Hanya melaporkan persentase kesepakatan sederhana pada dataset yang memiliki ketimpangan kelas ekstrem (*prevalence paradox*).",
+          "[warning: Perangkap] Menggunakan Cohen's Kappa biasa pada data ordinal bertingkat tanpa menerapkan pembobotan selisih peringkat (*Weighted Kappa*).",
+          "[warning: Perangkap] Mengasumsikan bahwa dua model kecerdasan buatan pasti andal hanya karena keduanya menyepakati label yang sama pada dataset yang bias."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan batas minimum Kappa > 0.70 sebelum melatih model supervised learning pada dataset anotasi manusia.",
-          "Prosedur: Sertakan uji signifikansi statistik terhadap hipotesis nol kappa = 0 untuk memastikan kesepakatan bukan kebetu..."
-        ]
+          "Prosedur: Sertakan uji signifikansi statistik terhadap hipotesis nol kappa = 0 untuk memastikan kesepakatan bukan kebetulan acak."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa yang dimaksud dengan Paradoks Kappa (Kappa Paradox) pada dataset dengan prevalensi ekstrem?",
-          "Petunjuk: Perhatikan kondisi di mana persentase kesepakatan Po sangat tinggi (misal 98%) namun nilai Kappa jus...",
-          "Solusi Kunci: Paradoks prevalensi terjadi ketika satu kategori sangat mendominasi populasi (misal 99% data adalah normal). Dalam kondi..."
-        ]
+          "Petunjuk Analitis: Perhatikan kondisi di mana persentase kesepakatan Po sangat tinggi (misal 98%) namun nilai Kappa justru bernilai sangat rendah.",
+          "Solusi Kunci: Paradoks prevalensi terjadi ketika satu kategori sangat mendominasi populasi (misal 99% data adalah normal). Dalam kondisi ini, kesepakatan peluang Pe menjadi sangat tinggi mendekati 1. Akibatnya, selisih kecil pada penyebut (1 - Pe) membuat nilai Kappa menjadi sangat kecil secara artifisial meskipun kedua penilai menyepakati 98% kasus."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -535,100 +643,135 @@ export const CH12_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Evaluasi Sistem Pengukuran Menggunakan Repeatability an...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Evaluasi Sistem Pengukuran Menggunakan Repeatability and Reproducibility (Gauge R&R)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.5.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.4.",
-          "Capaian: Menerapkan metodologi Measurement Systems Analysis (MSA) berbasis studi Gauge R&R.",
-          "Capaian: Memisahkan variabilitas sistem menjadi Repeatability (EV) dan Reproducibility (AV).",
-          "Capaian: Menghitung metrik kapabilitas sistem pengukuran (%GRR dan Number of Distinct Categories / ndc)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.5.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan metodologi Measurement Systems Analysis (MSA) berbasis studi Gauge R&R.",
+          "Capaian 2: Memisahkan variabilitas sistem menjadi Repeatability (EV) dan Reproducibility (AV).",
+          "Capaian 3: Menghitung metrik kapabilitas sistem pengukuran (%GRR dan Number of Distinct Categories / ndc)."
         ],
-        "keyFormulaOrDiagram": "$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$"
+        "keyFormulaOrDiagram": "$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.5.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Evaluasi Sistem Pengukuran Menggunakan Repeatability an...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Evaluasi Sistem Pengukuran Menggunakan Repeatability and Reproducibility (Gauge R&R)",
+        "lead": "Sebelum sebuah sistem sensor atau alat ukur laboratorium digunakan untuk menguji hipotesis eksperimen, peneliti harus memastikan bahwa variasi yang muncul dalam data benar-benar berasal dari variasi alami benda uji (part-to-part variation), BUKAN berasal dari kecacatan sistem pengukuran itu sendiri.",
         "bulletPoints": [
-          "Sebelum sebuah sistem sensor atau alat ukur laboratorium digunakan untuk menguji hipotesis eksperimen, peneliti harus memasti...",
-          "Gauge R&R membedakan dua komponen variasi sistem pengukuran: 1. Keterulangan (Repeatability / Equipment Variation / EV): Vari...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Metodologi terstandarisasi untuk memverifikasi ini dikenal sebagai Measurement Systems Analysis (MSA) tipe Gauge Repeatability and Reproducibility (Gauge R&R).",
+          "Gauge R&R membedakan dua komponen variasi sistem pengukuran: 1.",
+          "Keterulangan (Repeatability / Equipment Variation / EV): Variasi yang terjadi ketika satu operator mengukur benda kerja yang sama berkali-kali menggunakan alat ukur yang sama di bawah kondisi yang identik dalam jangka pendek."
         ],
-        "keyFormulaOrDiagram": "Berdasarkan standar Automotive Industry Action Group (AIAG): - %GRR < 10%: Sistem pengukur..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Berdasarkan standar Automotive Industry Action Group (AIAG): - %GRR < 10%: Sistem pengukuran dapat diterima secara sempurna (...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Berdasarkan standar Automotive Industry Action Group (AIAG): - %GRR < 10%: Sistem pengukuran dapat diterima secara sempurna (*acceptable*). - 10% <= %GRR <= 30%: Sistem pengukuran marjinal (dapat diterima bergantung pada tingkat kekritisan aplikasi). - %GRR > 30%: Sistem pengukuran cacat dan tidak dapat diterima (*unacceptable*); instrumen atau SOP harus diperbaiki.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Dekomposisi Model ANOVA Dua Arah Efek Acak (Two-Way Random Effects ANOVA):",
         "bulletPoints": [
-          "Dekomposisi Model ANOVA Dua Arah Efek Acak (Two-Way Random Effects ANOVA):",
           "Total varians pengukuran teramati:",
-          "Di mana varians Gauge R&R:"
+          "Di mana varians Gauge R&R:",
+          "1. Persentase Kontribusi Variansi Terhadap Variasi Total (%GRR):"
         ],
-        "keyFormulaOrDiagram": "$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$"
+        "keyFormulaOrDiagram": "$$\\sigma_{\\text{Total}}^2 = \\sigma_{\\text{Part}}^2 + \\sigma_{\\text{GRR}}^2$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah mikrometer digital diuji melalui studi Gauge R&R ANOVA dengan 10 komponen poros, 3 operator penguji, dan 3 kali pengulangan. Estimasi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung varians Gauge R&R: sigma_GRR^2 = 0.04 + 0.05 = 0.09 um^2. Deviasi standar sigma_GRR = sqrt(0...",
-          "Langkah 2: Hitung varians Total: sigma_Total^2 = sigma_Part^2 + sigma_GRR^2 = 0.91 + 0.09 = 1.00 um^2. Deviasi...",
-          "Langkah 3: Hitung deviasi standar komponen poros: sigma_Part = sqrt(0.91) = 0.9539 um.",
-          "Interpretasi: Sistem pengukuran berada pada batas marjinal kritis (%GRR = 30.0% dan ndc = 4 < 5). Sistem ini tidak cukup tajam untuk p..."
+          "Konteks Kasus: Sebuah mikrometer digital diuji melalui studi Gauge R&R ANOVA dengan 10 komponen poros, 3 operator penguji, dan 3 kali pengulangan. Estimasi varians yang diperoleh: sigma_Repeatability^2 = 0.04 um^2, sigma_Reproducibility^2 = 0.05 um^2, dan sigma_Part^2 = 0.91 um^2. Hitung varians sigma_GRR, varians total sigma_Total, persentase %GRR, dan nilai indeks ndc.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung indeks Number of Distinct Categories: ndc = 1.41 * (sigma_Part / sigma_G..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung varians Gauge R&R: sigma_GRR^2 = 0.04 + 0.05 = 0.09 um^2. Deviasi standar sigma_GRR = sqrt(0.09) = 0.30 um.",
+          "Langkah 2: Hitung varians Total: sigma_Total^2 = sigma_Part^2 + sigma_GRR^2 = 0.91 + 0.09 = 1.00 um^2. Deviasi standar sigma_Total = sqrt(1.00) = 1.00 um.",
+          "Langkah 3: Hitung deviasi standar komponen poros: sigma_Part = sqrt(0.91) = 0.9539 um."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung persentase %GRR: %GRR = (sigma_GRR / sigma_Total) * 100% = (0.30 / 1.00) * 100% = 30.0%.",
+          "Langkah 5: Hitung indeks Number of Distinct Categories: ndc = 1.41 * (sigma_Part / sigma_GRR) = 1.41 * (0.9539 / 0.30) = 1.41 * 3.18 = 4.48 -> bulatkan ke bawah menjadi 4 kategori.",
+          "[result: Interpretasi Ilmiah] Sistem pengukuran berada pada batas marjinal kritis (%GRR = 30.0% dan ndc = 4 < 5). Sistem ini tidak cukup tajam untuk proses pemilahan presisi tinggi. Pelatihan ulang operator disarankan untuk menekan komponen Reproducibility."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi dekomposisi variansi Gauge R&R dan perhitungan metrik kapabilitas sistem pengukuran.",
         "bulletPoints": [
-          "Deskripsi: Simulasi dekomposisi variansi Gauge R&R dan perhitungan metrik kapabilitas sistem pengukuran.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):"
+          "Tujuan Algoritma: Simulasi dekomposisi variansi Gauge R&R dan perhitungan metrik kapabilitas sistem pengukuran.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):"
         ],
-        "keyFormulaOrDiagram": "HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R): | Deviasi Standar Repeatability (EV) : 0.200..."
+        "keyFormulaOrDiagram": "HASIL ANALISIS SISTEM PENGUKURAN (GAUGE R&R):\nDeviasi Standar Repeatability (EV)   : 0.2000\nDeviasi Standar Reproducibility (AV) : 0.2236\nDeviasi Standar Total GRR            : 0.3000\nDeviasi Standar Part-to-Part (PV)    : 0.9539",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memilih 10 sampel komponen uji yang seragam sempurna sehingga varians part-to-part menjadi nol dan membuat %GR...",
-          "Perangkap: Mengizinkan operator mengetahui urutan nomor komponen yang sedang diuji (ketiadaan penyamaran / blinding).",
-          "Perangkap: Mengabaikan interaksi antara Operator dan Komponen (Operator-by-Part Interaction)."
-        ]
+          "[warning: Perangkap] Memilih 10 sampel komponen uji yang seragam sempurna sehingga varians part-to-part menjadi nol dan membuat %GRR meledak mendekati 100%.",
+          "[warning: Perangkap] Mengizinkan operator mengetahui urutan nomor komponen yang sedang diuji (ketiadaan penyamaran / blinding).",
+          "[warning: Perangkap] Mengabaikan interaksi antara Operator dan Komponen (Operator-by-Part Interaction)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Pilih sampel komponen uji yang mencakup seluruh rentang toleransi proses produksi normal (dari batas bawah hin...",
+          "Prosedur: Pilih sampel komponen uji yang mencakup seluruh rentang toleransi proses produksi normal (dari batas bawah hingga batas atas).",
           "Prosedur: Lakukan pengacakan urutan uji penuh pada setiap pengulangan pengukuran operator."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa metrik Number of Distinct Categories (ndc) wajib bernilai minimal 5 untuk sistem kendali proses statistik indust...",
-          "Petunjuk: Perhatikan kemampuan sistem dalam membedakan variasi komponen menjadi kategori ekstrem rendah, moder...",
-          "Solusi Kunci: Nilai ndc menyatakan berapa banyak interval varians part yang tidak tumpang tindih dengan interval galat pengukuran alat..."
-        ]
+          "Pertanyaan Uji: Mengapa metrik Number of Distinct Categories (ndc) wajib bernilai minimal 5 untuk sistem kendali proses statistik industri?",
+          "Petunjuk Analitis: Perhatikan kemampuan sistem dalam membedakan variasi komponen menjadi kategori ekstrem rendah, moderat, dan tinggi.",
+          "Solusi Kunci: Nilai ndc menyatakan berapa banyak interval varians part yang tidak tumpang tindih dengan interval galat pengukuran alat. Nilai ndc minimal 5 memastikan bahwa sistem ukur mampu membagi distribusi produk menjadi minimal 5 kelompok diskrit (rendah ekstrem, rendah, tengah, tinggi, tinggi ekstrem), yang merupakan syarat mutlak agar grafik kendali X-bar dan R tidak kehilangan daya pemantauan sinyal kontrol."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

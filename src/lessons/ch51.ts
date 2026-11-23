@@ -68,98 +68,127 @@ export const CH51_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanya...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanyaan hingga Desain Uji",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.7.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.1.",
-          "Capaian: Mensintesis seluruh tahapan awal penelitian ilmiah menjadi satu dokumen protokol riset terintegrasi.",
-          "Capaian: Menerapkan formulasi hipotesis berarah (Directional Hypothesis) yang terikat langsung pada desain eksperimen f...",
-          "Capaian: Menetapkan metrik performa objektif dan rencana analisis data pra-registrasi (Pre-registration Protocol)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mensintesis seluruh tahapan awal penelitian ilmiah menjadi satu dokumen protokol riset terintegrasi.",
+          "Capaian 2: Menerapkan formulasi hipotesis berarah (Directional Hypothesis) yang terikat langsung pada desain eksperimen faktorial.",
+          "Capaian 3: Menetapkan metrik performa objektif dan rencana analisis data pra-registrasi (Pre-registration Protocol)."
         ],
-        "keyFormulaOrDiagram": "$$n = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{\\delta / \\sigma} \\right)^2 = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{d} \\right)^2$$"
+        "keyFormulaOrDiagram": "$$n = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{\\delta / \\sigma} \\right)^2 = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{d} \\right)^2$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.7.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanya...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanyaan hingga Desain Uji",
+        "lead": "Sebagai bab puncak (Capstone Project) dari kurikulum metodologi penelitian ilmiah dan eksperimen rekayasa, bab ini menyatukan seluruh pengetahuan fondasional, perancangan instrumen, inferensi statistik, validasi komputasi, dan rekayasa perangkat lunak riset menjadi satu alur eksekusi terpadu.",
         "bulletPoints": [
-          "Sebagai bab puncak (Capstone Project) dari kurikulum metodologi penelitian ilmiah dan eksperimen rekayasa, bab ini menyatukan...",
-          "Integrasi Alur Perancangan Capstone Riset: 1. Formulasi Masalah dan Deklarasi Gap: Merumuskan pertanyaan penelitian menggunak...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Kesalahan paling mendasar dalam penelitian adalah melompat langsung ke laboratorium atau penulisan kode tanpa desain eksperimen yang matang.",
+          "Protokol riset yang dirancang secara apik di awal menjamin bahwa eksperimen yang dilakukan mampu menjawab pertanyaan ilmiah secara meyakinkan dan bebas dari bias konfirmasi.",
+          "Integrasi Alur Perancangan Capstone Riset: 1.",
+          "Formulasi Masalah dan Deklarasi Gap: Merumuskan pertanyaan penelitian menggunakan kerangka Swales CARS Move 2."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "derivation",
+        "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Analisis Kekuatan Statistik A Priori (A Priori Power Calculation):",
         "bulletPoints": [
-          "Sebagai bab puncak (Capstone Project) dari kurikulum metodologi penelitian ilmiah dan eksperimen rekayasa, bab ini menyatukan...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Untuk menguji perbedaan dua kelompok perlakuan independen dengan asumsi normalitas (Two-Sample t-Test), ukuran sampel per kelompok $n$ dihitung sebagai:",
+          "di mana:",
+          "- $z_{1 - \\alpha/2}$ adalah nilai kritis distribusi normal standar untuk tingkat signifikansi dua sisi $\\alpha$ (untuk $\\alpha = 0.05$, $z = 1.96$)."
+        ],
+        "keyFormulaOrDiagram": "$$n = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{\\delta / \\sigma} \\right)^2 = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{d} \\right)^2$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 4,
-        "title": "Formulasi Matematis & Notasi Formal",
+        "layout": "example",
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Analisis Kekuatan Statistik A Priori (A Priori Power Calculation):",
-          "Untuk menguji perbedaan dua kelompok perlakuan independen dengan asumsi normalitas (Two-Sample t-Test), ukuran...",
-          "di mana:"
+          "Konteks Kasus: Sebuah proyek riset capstone di ITERA merancang sistem pengeringan biji kopi cerdas berbasis pemanas inframerah dan kontrol logika adaptif. Eksperimen bertujuan membuktikan bahwa metode kontrol adaptif baru mampu menurunkan konsumsi energi spesifik (SEC) dibandingkan kontrol proporsional standar. Berdasarkan studi pendahuluan, efek penurunan yang diharapkan memiliki Cohen d = 0.80 (efek besar). Tentukan ukuran sampel eksperimen minimal yang wajib dilakukan per kelompok agar pengujian memiliki kekuatan statistik 80% pada alpha = 0.05.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "$$n = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{\\delta / \\sigma} \\right)^2 = 2 \\left( \\frac{z_{1 - \\alpha/2} + z_{1 - \\beta}}{d} \\right)^2$$"
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 5,
-        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah proyek riset capstone di ITERA merancang sistem pengeringan biji kopi cerdas berbasis pemanas inframerah dan kontrol logika adaptif....",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Langkah 1: Identifikasi parameter input: alpha = 0.05 (maka z_{1-alpha/2} = 1.96), power = 0.80 (maka z_{1-beta} = 0.8416), Cohen d = 0.80.",
+          "Langkah 2: Gunakan formula analitis a priori: n = 2 * ((1.96 + 0.8416) / 0.80)^2.",
+          "Langkah 3: Hitung suku dalam kurung: 1.96 + 0.8416 = 2.8016. Bagi dengan d: 2.8016 / 0.80 = 3.502."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi parameter input: alpha = 0.05 (maka z_{1-alpha/2} = 1.96), power = 0.80 (maka z_{1-bet...",
-          "Langkah 2: Gunakan formula analitis a priori: n = 2 * ((1.96 + 0.8416) / 0.80)^2.",
-          "Langkah 3: Hitung suku dalam kurung: 1.96 + 0.8416 = 2.8016. Bagi dengan d: 2.8016 / 0.80 = 3.502.",
-          "Interpretasi: Menjalankan 25 replikasi per kelompok menjamin probabilitas 80% mendeteksi penurunan konsumsi energi secara signifikan p..."
+          "Langkah 4: Kuadratkan dan kalikan 2: (3.502)^2 = 12.264. Kalikan 2: n = 24.53.",
+          "Langkah 5: Pembulatan ke atas (Ceiling rule): n = 25 replikasi independen per kelompok perlakuan. Maka total eksperimen yang wajib dijalankan minimal adalah 50 batch pengeringan.",
+          "[result: Interpretasi Ilmiah] Menjalankan 25 replikasi per kelompok menjamin probabilitas 80% mendeteksi penurunan konsumsi energi secara signifikan pada taraf signifikansi 5%."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Pembulatan ke atas (Ceiling rule): n = 25 replikasi independen per kelompok per..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 7,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Kalkulator penentuan ukuran sampel minimal a priori berbasis kekuatan statistik target.",
         "bulletPoints": [
-          "Deskripsi: Kalkulator penentuan ukuran sampel minimal a priori berbasis kekuatan statistik target.",
-          "Dependensi Pustaka: numpy, scipy",
-          "Keluaran Diharapkan: PERANCANGAN UKURAN SAMPEL A PRIORI (CAPSTONE PROJECT):"
+          "Tujuan Algoritma: Kalkulator penentuan ukuran sampel minimal a priori berbasis kekuatan statistik target.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy",
+          "Keluaran Terverifikasi: PERANCANGAN UKURAN SAMPEL A PRIORI (CAPSTONE PROJECT):"
         ],
-        "keyFormulaOrDiagram": "PERANCANGAN UKURAN SAMPEL A PRIORI (CAPSTONE PROJECT): | =================================..."
+        "keyFormulaOrDiagram": "PERANCANGAN UKURAN SAMPEL A PRIORI (CAPSTONE PROJECT):\n============================================================\nTarget Efek Ukuran (Cohen's d) : 0.8\nTingkat Signifikansi (Alpha)   : 0.05\nTarget Kekuatan Uji (Power)    : 0.80 (80%)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 8,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menentukan jumlah pengujian atau subjek semata-mata berdasarkan intuisi atau keterbatasan kenyamanan peneliti...",
-          "Perangkap: Mengubah hipotesis penelitian setelah melihat hasil data eksperimen (HARKing).",
-          "Perangkap: Mengabaikan variabel perancu (confounding variables) seperti urutan waktu pengujian atau fluktuasi suhu ruanga..."
-        ]
+          "[warning: Perangkap] Menentukan jumlah pengujian atau subjek semata-mata berdasarkan intuisi atau keterbatasan kenyamanan peneliti tanpa dasar power analysis.",
+          "[warning: Perangkap] Mengubah hipotesis penelitian setelah melihat hasil data eksperimen (HARKing).",
+          "[warning: Perangkap] Mengabaikan variabel perancu (confounding variables) seperti urutan waktu pengujian atau fluktuasi suhu ruangan lab."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 9,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan pra-registrasi dokumen desain eksperimen di Open Science Framework (osf.io) sebelum pengambilan data p...",
-          "Prosedur: Sertakan diagram alir CONSORT atau flow-diagram metodologis yang memetakan seluruh tahapan eksperimen dari awa..."
-        ]
+          "Prosedur: Lakukan pra-registrasi dokumen desain eksperimen di Open Science Framework (osf.io) sebelum pengambilan data pertama dimulai.",
+          "Prosedur: Sertakan diagram alir CONSORT atau flow-diagram metodologis yang memetakan seluruh tahapan eksperimen dari awal hingga akhir."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
         "slideNumber": 10,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa melakukan analisis kekuatan statistik a priori sebelum eksperimen dimulai jauh lebih bermoral dan valid daripada...",
-          "Petunjuk: Perhatikan bahwa post-hoc power hanyalah transformasi monotonik dari p-value yang diperoleh.",
-          "Solusi Kunci: A priori power analysis menentukan desain eksperimen yang cukup untuk menguji hipotesis secara adil tanpa membuang sumbe..."
-        ]
+          "Pertanyaan Uji: Mengapa melakukan analisis kekuatan statistik a priori sebelum eksperimen dimulai jauh lebih bermoral dan valid daripada melakukan post-hoc power analysis?",
+          "Petunjuk Analitis: Perhatikan bahwa post-hoc power hanyalah transformasi monotonik dari p-value yang diperoleh.",
+          "Solusi Kunci: A priori power analysis menentukan desain eksperimen yang cukup untuk menguji hipotesis secara adil tanpa membuang sumber daya secara berlebihan. Sebaliknya, post-hoc power analysis (menghitung power setelah data didapat) secara matematis hanyalah fungsi langsung dari nilai p-value yang sudah diperoleh dan tidak memberikan informasi diagnostik independen mengenai keandalan eksperimen."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -228,100 +257,138 @@ export const CH51_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Eksekusi Eksperimen Terkalibrasi dan Pengumpulan Data T...",
+        "slideNumber": 11,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Eksekusi Eksperimen Terkalibrasi dan Pengumpulan Data Terverifikasi Hash",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.7.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.2.",
-          "Capaian: Menjalankan rantai kalibrasi instrumen laboratorium yang tertelusur ke standar metrologi nasional/internasiona...",
-          "Capaian: Menerapkan pipeline akusisi data otomatis dengan logging kondisi lingkungan terintegrasi.",
-          "Capaian: Membangun sistem integritas data mentah menggunakan verifikasi hash kriptografi SHA-256 dan Write-Once-Read-Ma..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menjalankan rantai kalibrasi instrumen laboratorium yang tertelusur ke standar metrologi nasional/internasional.",
+          "Capaian 2: Menerapkan pipeline akusisi data otomatis dengan logging kondisi lingkungan terintegrasi.",
+          "Capaian 3: Membangun sistem integritas data mentah menggunakan verifikasi hash kriptografi SHA-256 dan Write-Once-Read-Many (WORM)."
         ],
-        "keyFormulaOrDiagram": "$$H_i = \\text{SHA-256}(D_i), \\quad \\forall i \\in \\{1, \\dots, K\\}$$"
+        "keyFormulaOrDiagram": "$$H_i = \\text{SHA-256}(D_i), \\quad \\forall i \\in \\{1, \\dots, K\\}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.7.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Eksekusi Eksperimen Terkalibrasi dan Pengumpulan Data T...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Eksekusi Eksperimen Terkalibrasi dan Pengumpulan Data Terverifikasi Hash",
+        "lead": "Eksekusi eksperimental adalah fase di mana teori diuji di hadapan realitas fisik alam.",
         "bulletPoints": [
-          "Eksekusi eksperimental adalah fase di mana teori diuji di hadapan realitas fisik alam. Namun, data yang dihasilkan instrumen...",
-          "Ketertelusuran Metrologi dan Kalibrasi Alat: Setiap sensor, timbangan, spektrofotometer, atau osiloskop yang digunakan dalam...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, data yang dihasilkan instrumen laboratorium hanya memiliki nilai ilmiah jika keabsahan instrumen ukur tersebut dapat dipertanggungjawabkan melalui rantai ketertelusuran kalibrasi (calibration traceability) dan data mentah disimpan dalam format yang tahan manipulasi.",
+          "Data yang dikumpulkan tanpa catatan kalibrasi atau data yang diedit manual di spreadsheet merupakan pelanggaran fatal terhadap prinsip reproduktibilitas ilmiah.",
+          "Ketertelusuran Metrologi dan Kalibrasi Alat: Setiap sensor, timbangan, spektrofotometer, atau osiloskop yang digunakan dalam proyek capstone wajib memiliki catatan kalibrasi: - Standar Rujukan: Alat ukur wajib dikalibrasi terhadap standar acuan yang tertelusur ke standar nasional (misal SNSU-BSN di Indonesia) atau internasional (BIPM / NIST). - Kurva Kalibrasi dan Ketidakpastian: Setiap pengukuran harus melaporkan ketidakpastian baku gabungan ($u_c$) dan faktor cakupan ($k=2$ untuk tingkat kepercayaan 95%) sesuai panduan Guide to the Expression of Uncertainty in Measurement (GUM)."
         ],
-        "keyFormulaOrDiagram": "Penyimpanan Data Mentah Abadi (Immutable Raw Data Architecture): 1. Ingestion Otomatis: Da..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Penyimpanan Data Mentah Abadi (Immutable Raw Data Architecture): 1.",
         "bulletPoints": [
-          "Penyimpanan Data Mentah Abadi (Immutable Raw Data Architecture): 1. Ingestion Otomatis: Data dari mikrokontroler, instrumen l...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Ingestion Otomatis: Data dari mikrokontroler, instrumen lab, atau simulator langsung dialirkan ke media penyimpanan digital tanpa intervensi penyuntingan manual manusia.",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pengecekan Integritas Kriptografi dan Pohon Merkle (Merkle Tree Integrity):",
         "bulletPoints": [
-          "Pengecekan Integritas Kriptografi dan Pohon Merkle (Merkle Tree Integrity):",
-          "Untuk dataset berukuran besar yang terdiri dari $K$ berkas data mentah terpisah $\\{D_1, D_2, \\dots, D_K\\}$, in...",
-          "Audit Verifikasi Integritas:"
+          "Untuk dataset berukuran besar yang terdiri dari $K$ berkas data mentah terpisah $\\{D_1, D_2, \\dots, D_K\\}$, integritas keseluruhan koleksi dijamin menggunakan Root Hash Pohon Merkle:",
+          "Audit Verifikasi Integritas:",
+          "Diberikan Root Hash publik yang dipra-registrasikan $H_{\\text{root}}^{\\text{registered}}$, audit integritas forensik menyatakan dataset bebas perubahan liar jika:"
         ],
-        "keyFormulaOrDiagram": "$$H_i = \\text{SHA-256}(D_i), \\quad \\forall i \\in \\{1, \\dots, K\\}$$"
+        "keyFormulaOrDiagram": "$$H_i = \\text{SHA-256}(D_i), \\quad \\forall i \\in \\{1, \\dots, K\\}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah stasiun pengujian sel fotovoltaik di ITERA mencatat 10.000 titik pengukuran arus-tegangan (I-V). Berkas mentah disimpan dengan nama \"...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung hash SHA-256 dari berkas asli: Misal didapatkan digest asli: e3b0c44298fc1c149afbf4c8996fb92...",
-          "Langkah 2: Simpan hash digest asli ini di dalam berkas metadata checksum terpisah yang di-commit ke repositori...",
-          "Langkah 3: Simulasikan insiden data tampering: Seorang asisten lab secara tidak sengaja mengubah angka pada ba...",
-          "Interpretasi: Penyegelan kriptografi SHA-256 secara deterministik memvalidasi keaslian rekaman sensor mentah dan mencegah insiden pema..."
+          "Konteks Kasus: Sebuah stasiun pengujian sel fotovoltaik di ITERA mencatat 10.000 titik pengukuran arus-tegangan (I-V). Berkas mentah disimpan dengan nama \"iv_raw_run1.csv\". Tunjukkan bagaimana cara mengunci berkas ini secara kriptografi menggunakan SHA-256 dan mendemonstrasikan bahwa manipulasi satu karakter angka saja akan meruntuhkan integritas berkas.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Sistem audit mendeteksi ketidaksesuaian digest dan menolak data tersebut untuk..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung hash SHA-256 dari berkas asli: Misal didapatkan digest asli: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.",
+          "Langkah 2: Simpan hash digest asli ini di dalam berkas metadata checksum terpisah yang di-commit ke repositori Git berversi.",
+          "Langkah 3: Simulasikan insiden data tampering: Seorang asisten lab secara tidak sengaja mengubah angka pada baris 45 dari \"1.245\" menjadi \"1.246\"."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung ulang hash SHA-256 dari berkas yang termutasi tersebut: Hasil digest berubah secara total menjadi: 7d1a54127b222502f5b79b5fb0803061152a44f92b37e23c65dd0e336d329da6 (efek longsoran / avalanche effect).",
+          "Langkah 5: Sistem audit mendeteksi ketidaksesuaian digest dan menolak data tersebut untuk dianalisis, menuntut investigasi insiden integritas data.",
+          "[result: Interpretasi Ilmiah] Penyegelan kriptografi SHA-256 secara deterministik memvalidasi keaslian rekaman sensor mentah dan mencegah insiden pemalsuan data di laboratorium."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pipeline verifikasi integritas data eksperimen laboratorium menggunakan hash SHA-256.",
         "bulletPoints": [
-          "Deskripsi: Pipeline verifikasi integritas data eksperimen laboratorium menggunakan hash SHA-256.",
-          "Dependensi Pustaka: hashlib",
-          "Keluaran Diharapkan: Original SHA-256 Digest : 06efda1765c9cfa74caeef5f1ee55bdf9b3e1fb63a62ea6da7719602514aa428"
+          "Tujuan Algoritma: Pipeline verifikasi integritas data eksperimen laboratorium menggunakan hash SHA-256.",
+          "Dependensi Pustaka Ilmiah: hashlib",
+          "Keluaran Terverifikasi: Original SHA-256 Digest : 06efda1765c9cfa74caeef5f1ee55bdf9b3e1fb63a62ea6da7719602514aa428"
         ],
-        "keyFormulaOrDiagram": "Original SHA-256 Digest : 06efda1765c9cfa74caeef5f1ee55bdf9b3e1fb63a62ea6da7719602514aa428..."
+        "keyFormulaOrDiagram": "Original SHA-256 Digest : 06efda1765c9cfa74caeef5f1ee55bdf9b3e1fb63a62ea6da7719602514aa428\nStatus Audit Data Asli  : TERVERIFIKASI SAH\n\nTampered SHA-256 Digest : de0cf821fb7a641a9eb5339d1b64a2c157f13b632906e57d5402484646844498\nStatus Audit Data Modif : PERINGATAN: DATA TELAH DIMANIPULASI!",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpan dan membersihkan data langsung di berkas Excel asli, menimpa angka-angka mentah instrumen.",
-          "Perangkap: Melakukan pengukuran laboratorium tanpa mencatat suhu, kelembaban, dan tanggal kalibrasi terakhir instrumen.",
-          "Perangkap: Tidak menyertakan berkas checksum (misal sha256sum.txt) saat membagikan data eksperimen kepada kolaborator."
-        ]
+          "[warning: Perangkap] Menyimpan dan membersihkan data langsung di berkas Excel asli, menimpa angka-angka mentah instrumen.",
+          "[warning: Perangkap] Melakukan pengukuran laboratorium tanpa mencatat suhu, kelembaban, dan tanggal kalibrasi terakhir instrumen.",
+          "[warning: Perangkap] Tidak menyertakan berkas checksum (misal sha256sum.txt) saat membagikan data eksperimen kepada kolaborator."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Terapkan skrip validasi otomatis pre-commit hook yang menghitung dan memverifikasi checksum seluruh berkas di...",
-          "Prosedur: Pastikan seluruh instrumen laboratorium memiliki stiker sertifikat kalibrasi yang masih berlaku saat pengambil..."
-        ]
+          "Prosedur: Terapkan skrip validasi otomatis pre-commit hook yang menghitung dan memverifikasi checksum seluruh berkas di folder data/raw/.",
+          "Prosedur: Pastikan seluruh instrumen laboratorium memiliki stiker sertifikat kalibrasi yang masih berlaku saat pengambilan data berlangsung."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa sifat \"Avalanche Effect\" pada algoritma hash kriptografi seperti SHA-256 sangat penting dalam forensik integrita...",
-          "Petunjuk: Perhatikan sensitivitas output hash terhadap perubahan sekecil satu bit input.",
-          "Solusi Kunci: Avalanche effect menjamin bahwa jika input berubah sekecil apa pun (bahkan hanya 1 bit atau 1 karakter tanda titik), leb..."
-        ]
+          "Pertanyaan Uji: Mengapa sifat \"Avalanche Effect\" pada algoritma hash kriptografi seperti SHA-256 sangat penting dalam forensik integritas data riset?",
+          "Petunjuk Analitis: Perhatikan sensitivitas output hash terhadap perubahan sekecil satu bit input.",
+          "Solusi Kunci: Avalanche effect menjamin bahwa jika input berubah sekecil apa pun (bahkan hanya 1 bit atau 1 karakter tanda titik), lebih dari 50% bit dari output hash digest akan berubah secara acak dan drastis. Hal ini membuat manipulasi data mentah sekecil apa pun menjadi mustahil disembunyikan dalam audit integritas."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -391,100 +458,138 @@ export const CH51_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Analisis Statistik Inferensial, Efek Ukuran, dan Studi...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Analisis Statistik Inferensial, Efek Ukuran, dan Studi Ablasi Multi-Komponen",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.7.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.3.",
-          "Capaian: Menjalankan pipeline uji inferensial lengkap: uji asumsi, uji hipotesis komparatif, dan estimasi interval kepe...",
-          "Capaian: Melaporkan ukuran efek terstandarisasi (Effect Sizes) dan menginterpretasikan signifikansi praktis di samping...",
-          "Capaian: Merancang matriks studi ablasi sistematis untuk mengisolasi kontribusi masing-masing komponen inovasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menjalankan pipeline uji inferensial lengkap: uji asumsi, uji hipotesis komparatif, dan estimasi interval kepercayaan.",
+          "Capaian 2: Melaporkan ukuran efek terstandarisasi (Effect Sizes) dan menginterpretasikan signifikansi praktis di samping signifikansi statistik.",
+          "Capaian 3: Merancang matriks studi ablasi sistematis untuk mengisolasi kontribusi masing-masing komponen inovasi."
         ],
-        "keyFormulaOrDiagram": "$$g = d \\times J(df) = \\left( \\frac{\\bar{x}_1 - \\bar{x}_2}{s_{\\text{pooled}}} \\right) \\left( 1 - \\frac{3}{4(n_1 + n_2) - 9} \\right)$$"
+        "keyFormulaOrDiagram": "$$g = d \\times J(df) = \\left( \\frac{\\bar{x}_1 - \\bar{x}_2}{s_{\\text{pooled}}} \\right) \\left( 1 - \\frac{3}{4(n_1 + n_2) - 9} \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.7.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Analisis Statistik Inferensial, Efek Ukuran, dan Studi...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Analisis Statistik Inferensial, Efek Ukuran, dan Studi Ablasi Multi-Komponen",
+        "lead": "Data eksperimen yang telah dikumpulkan dan terverifikasi integritasnya wajib dianalisis menggunakan inferensi statistik yang kokoh dan jujur.",
         "bulletPoints": [
-          "Data eksperimen yang telah dikumpulkan dan terverifikasi integritasnya wajib dianalisis menggunakan inferensi statistik yang...",
-          "Pipeline Inferensi Statistik Terintegrasi: 1. Verifikasi Asumsi Distribusi: Uji normalitas residual (Shapiro-Wilk / Anderson-...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kesalahan yang sangat lazim ditemukan pada skripsi, tesis, bahkan draf naskah jurnal adalah ketergantungan buta pada nilai p-value semata (p-value fetishism).",
+          "Menunjukkan bahwa p < 0.05 hanyalah langkah pertama untuk menolak hipotesis nol secara statistik, namun sama sekali tidak membuktikan apakah peningkatan yang dicapai memiliki dampak praktis yang berarti di dunia nyata.",
+          "Pipeline Inferensi Statistik Terintegrasi: 1.",
+          "Verifikasi Asumsi Distribusi: Uji normalitas residual (Shapiro-Wilk / Anderson-Darling) dan uji homogenitas variansi (Levene's Test)."
         ],
-        "keyFormulaOrDiagram": "Desain Studi Ablasi Sistematis (Systematic Ablation Study): Ketika sebuah metode baru dius..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Desain Studi Ablasi Sistematis (Systematic Ablation Study): Ketika sebuah metode baru diusulkan dengan menggabungkan beberapa modul (misalnya: Arsitektur Dasar + Modul Attention + Fungsi Rugi Khusus + Augmentasi Adaptif), reviewer akan mempertanyakan: \"Dari mana asal mula peningkatan akurasi tersebut?",
         "bulletPoints": [
-          "Desain Studi Ablasi Sistematis (Systematic Ablation Study): Ketika sebuah metode baru diusulkan dengan menggabungkan beberapa...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Apakah modul attention benar-benar berkontribusi, atau hanya menambah beban komputasi?\" Studi ablasi secara sistematis mencopot atau mematikan satu per satu komponen tersebut untuk mengukur kontribusi marginal orisinal dari masing-masing inovasi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Ukuran Efek Terkoreksi Bias (Hedges' g) dan Interval Kepercayaan Bootstrap:",
         "bulletPoints": [
-          "Formulasi Ukuran Efek Terkoreksi Bias (Hedges' g) dan Interval Kepercayaan Bootstrap:",
-          "Untuk ukuran sampel kecil hingga moderat, Cohen's d memiliki sedikit bias positif. Koreksi Hedges' g didefinis...",
-          "di mana $s_{\\text{pooled}} = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$."
+          "Untuk ukuran sampel kecil hingga moderat, Cohen's d memiliki sedikit bias positif. Koreksi Hedges' g didefinisikan sebagai:",
+          "di mana $s_{\\text{pooled}} = \\sqrt{\\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}}$.",
+          "Dekomposisi Kontribusi Marginal Studi Ablasi:"
         ],
-        "keyFormulaOrDiagram": "$$g = d \\times J(df) = \\left( \\frac{\\bar{x}_1 - \\bar{x}_2}{s_{\\text{pooled}}} \\right) \\left( 1 - \\frac{3}{4(n_1 + n_2) - 9} \\right)$$"
+        "keyFormulaOrDiagram": "$$g = d \\times J(df) = \\left( \\frac{\\bar{x}_1 - \\bar{x}_2}{s_{\\text{pooled}}} \\right) \\left( 1 - \\frac{3}{4(n_1 + n_2) - 9} \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dalam proyek capstone computer vision, model lengkap (Full Model) menghasilkan mAP 91.5% pada 10 fold pengujian. Ketika Modul Spatial Attent...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dalam proyek capstone computer vision, model lengkap (Full Model) menghasilkan mAP 91.5% pada 10 fold pengujian. Ketika Modul Spatial Attention (SA) dicopot, mAP turun menjadi 88.2% (penurunan 3.3%). Ketika Loss Function Baru (FL) diganti dengan Cross-Entropy standar, mAP turun menjadi 89.8% (penurunan 1.7%). Uji apakah pencopotan Spatial Attention memberikan efek penurunan yang signifikan secara statistik menggunakan Uji Wilcoxon Signed-Rank berpasangan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Rumuskan hipotesis: H0: Median selisih mAP (Full - No SA) = 0. H1: Median selisih mAP > 0 (Model Fu...",
+          "Langkah 1: Rumuskan hipotesis: H0: Median selisih mAP (Full - No SA) = 0. H1: Median selisih mAP > 0 (Model Full secara signifikan lebih unggul dibanding Model tanpa SA).",
           "Langkah 2: Hitung selisih berpasangan d_i = Full_i - NoSA_i untuk 10 fold pengujian.",
-          "Langkah 3: Hitung peringkat bertanda (signed ranks) dari selisih absolut.",
-          "Interpretasi: Pencopotan Spatial Attention secara konsisten menurunkan performa pada seluruh fold dengan ukuran efek besar, mengonfirm..."
+          "Langkah 3: Hitung peringkat bertanda (signed ranks) dari selisih absolut."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Dari tabel Wilcoxon signed-rank untuk n=10 satu sisi, nilai p-value = 0.00098 (..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung statistik uji W. Misal dari 10 fold, seluruh selisih bernilai positif (seluruh d_i > 0). Maka jumlah peringkat positif W+ = 1 + 2 + ... + 10 = 55. W- = 0.",
+          "Langkah 5: Dari tabel Wilcoxon signed-rank untuk n=10 satu sisi, nilai p-value = 0.00098 (p < 0.001). Kesimpulan: Modul Spatial Attention berkontribusi signifikan terhadap performa model secara keseluruhan.",
+          "[result: Interpretasi Ilmiah] Pencopotan Spatial Attention secara konsisten menurunkan performa pada seluruh fold dengan ukuran efek besar, mengonfirmasi nilai inovasi modul tersebut."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Analisis statistik inferensial non-parametrik Wilcoxon berpasangan dan perhitungan ukuran efek ablasi.",
         "bulletPoints": [
-          "Deskripsi: Analisis statistik inferensial non-parametrik Wilcoxon berpasangan dan perhitungan ukuran efek ablasi.",
-          "Dependensi Pustaka: numpy, scipy",
-          "Keluaran Diharapkan: HASIL ANALISIS ABLASI CAPSTONE (10-FOLD CV):"
+          "Tujuan Algoritma: Analisis statistik inferensial non-parametrik Wilcoxon berpasangan dan perhitungan ukuran efek ablasi.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy",
+          "Keluaran Terverifikasi: HASIL ANALISIS ABLASI CAPSTONE (10-FOLD CV):"
         ],
-        "keyFormulaOrDiagram": "HASIL ANALISIS ABLASI CAPSTONE (10-FOLD CV): | ===========================================..."
+        "keyFormulaOrDiagram": "HASIL ANALISIS ABLASI CAPSTONE (10-FOLD CV):\n=================================================================\nFull Model mAP (Mean +/- SD)    : 91.49% +/- 0.45%\nWithout Attention (No-Attn)     : 88.35% +/- 0.52%\nWithout Custom Loss (No-Loss)   : 89.96% +/- 0.47%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 30,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan suatu metode unggul hanya karena p < 0.05 tanpa memeriksa nilai ukuran efek (bisa jadi efeknya sa...",
-          "Perangkap: Menggunakan uji parametrik t-test pada data yang jelas-jelas menceng tajam atau bervariansi tidak homogen tanp...",
-          "Perangkap: Melakukan studi ablasi dengan mengubah lebih dari satu komponen secara bersamaan, sehingga mengaburkan atribus..."
-        ]
+          "[warning: Perangkap] Menyimpulkan suatu metode unggul hanya karena p < 0.05 tanpa memeriksa nilai ukuran efek (bisa jadi efeknya sangat sepele/trivial di dunia nyata).",
+          "[warning: Perangkap] Menggunakan uji parametrik t-test pada data yang jelas-jelas menceng tajam atau bervariansi tidak homogen tanpa koreksi Welch.",
+          "[warning: Perangkap] Melakukan studi ablasi dengan mengubah lebih dari satu komponen secara bersamaan, sehingga mengaburkan atribusi kausal performa."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan visualisasi Forest Plot untuk menyajikan ukuran efek beserta interval kepercayaannya untuk setiap perb...",
-          "Prosedur: Terapkan koreksi Benjamini-Hochberg FDR saat melakukan uji signifikansi komparatif terhadap lebih dari dua bas..."
-        ]
+          "Prosedur: Gunakan visualisasi Forest Plot untuk menyajikan ukuran efek beserta interval kepercayaannya untuk setiap perbandingan studi ablasi.",
+          "Prosedur: Terapkan koreksi Benjamini-Hochberg FDR saat melakukan uji signifikansi komparatif terhadap lebih dari dua baseline secara simultan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa sebuah penelitian ilmiah yang melaporkan ukuran efek (Effect Size) jauh lebih bernilai bagi sains dibanding yang...",
-          "Petunjuk: Perhatikan bahwa nilai p-value sangat dipengaruhi oleh ukuran sampel n.",
-          "Solusi Kunci: Nilai p-value dapat dibuat menjadi sangat kecil (p < 0.0001) semata-mata dengan memperbesar ukuran sampel (misal jutaan..."
-        ]
+          "Pertanyaan Uji: Mengapa sebuah penelitian ilmiah yang melaporkan ukuran efek (Effect Size) jauh lebih bernilai bagi sains dibanding yang hanya melaporkan p-value?",
+          "Petunjuk Analitis: Perhatikan bahwa nilai p-value sangat dipengaruhi oleh ukuran sampel n.",
+          "Solusi Kunci: Nilai p-value dapat dibuat menjadi sangat kecil (p < 0.0001) semata-mata dengan memperbesar ukuran sampel (misal jutaan data), meskipun perbedaan performa antar-metode sebenarnya hanya 0.001% (tidak bermakna di dunia nyata). Sebaliknya, Effect Size mengukur besaran dampak murni yang terstandardisasi dan independen dari ukuran sampel, memberikan pembaca gambaran langsung mengenai nilai praktis temuan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -549,100 +654,134 @@ export const CH51_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pengemasan Paket Publikasi Akhir: Naskah LaTeX, Docker...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pengemasan Paket Publikasi Akhir: Naskah LaTeX, Docker Environment, dan Repositori Terbuka",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.7.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.4.",
-          "Capaian: Menyusun naskah ilmiah final menggunakan sistem typesetting LaTeX profesional berstandar IEEE/ACM/Elsevier.",
-          "Capaian: Membungkus keseluruhan lingkungan komputasi ke dalam kontainer Docker dan DevContainer yang sepenuhnya mandiri...",
-          "Capaian: Merilis paket riset terbuka di Zenodo/OSF dengan perolehan Digital Object Identifier (DOI) permanen sesuai sta..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.7.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun naskah ilmiah final menggunakan sistem typesetting LaTeX profesional berstandar IEEE/ACM/Elsevier.",
+          "Capaian 2: Membungkus keseluruhan lingkungan komputasi ke dalam kontainer Docker dan DevContainer yang sepenuhnya mandiri.",
+          "Capaian 3: Merilis paket riset terbuka di Zenodo/OSF dengan perolehan Digital Object Identifier (DOI) permanen sesuai standar ACM Artifact Badging."
         ],
-        "keyFormulaOrDiagram": "$$\\Phi(\\mathcal{A}) = \\sum_{j=1}^6 w_j c_j$$"
+        "keyFormulaOrDiagram": "$$\\Phi(\\mathcal{A}) = \\sum_{j=1}^6 w_j c_j$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.7.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pengemasan Paket Publikasi Akhir: Naskah LaTeX, Docker...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pengemasan Paket Publikasi Akhir: Naskah LaTeX, Docker Environment, dan Repositori Terbuka",
+        "lead": "Tahap kulminasi dari sebuah proyek penelitian ilmiah adalah pengemasan hasil riset menjadi satu Paket Reproduktibilitas Ilmiah Lengkap (Complete Reproducible Research Package).",
         "bulletPoints": [
-          "Tahap kulminasi dari sebuah proyek penelitian ilmiah adalah pengemasan hasil riset menjadi satu Paket Reproduktibilitas Ilmia...",
-          "Anatomi Paket Publikasi Akhir (The Golden Artifact Bundle): 1. Naskah LaTeX Terstruktur: Berkas sumber (.tex) terpisah per ba...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam standar sains modern abad ke-21, sebuah naskah PDF saja tidak lagi dianggap memadai untuk mewakili suatu karya ilmiah bereputasi.",
+          "Naskah artikel ilmiah hanyalah puncak gunung es dari klaim penelitian; sedangkan substansi sesungguhnya dari sains adalah data, kode sumber, skrip pemrosesan, dan lingkungan komputasi yang dapat dieksekusi ulang secara deterministik oleh ilmuwan mana pun di seluruh dunia.",
+          "Anatomi Paket Publikasi Akhir (The Golden Artifact Bundle): 1.",
+          "Naskah LaTeX Terstruktur: Berkas sumber (.tex) terpisah per bab, manajemen bibliografi otomatis menggunakan BibTeX (.bib) bebas dari sitasi rusak, serta gambar vektor beresolusi tinggi (PDF/EPS)."
         ],
-        "keyFormulaOrDiagram": "Standar Lencana Artefak ACM (ACM Artifact Badging Standards): Asosiasi komputasi global se..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Standar Lencana Artefak ACM (ACM Artifact Badging Standards): Asosiasi komputasi global seperti ACM memberikan penghargaan re...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Standar Lencana Artefak ACM (ACM Artifact Badging Standards): Asosiasi komputasi global seperti ACM memberikan penghargaan resmi pada artikel yang melampirkan artefak terverifikasi: - Artifacts Available: Kode dan data ditempatkan di repositori publik permanen. - Artifacts Evaluated - Functional: Artefak terdokumentasi, konsisten, lengkap, dan dapat dijalankan. - Results Replicated: Komite independen berhasil menjalankan ulang kode dan memverifikasi bahwa angka hasil replikasi identik dengan klaim pada artikel.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Metrik Kelengkapan Artefak Penelitian (ACM Reproducibility Metric):",
         "bulletPoints": [
-          "Metrik Kelengkapan Artefak Penelitian (ACM Reproducibility Metric):",
-          "Kelengkapan paket artefak reproduktibilitas $\\mathcal{A}$ dievaluasi melalui fungsi keterpenuhan biner terhada...",
-          "di mana kriteria meliputi:"
+          "Kelengkapan paket artefak reproduktibilitas $\\mathcal{A}$ dievaluasi melalui fungsi keterpenuhan biner terhadap vektor kriteria $\\mathbf{c} \\in \\{0, 1\\}^6$:",
+          "di mana kriteria meliputi:",
+          "- $c_1$: Ketersediaan Data Mentah Terverifikasi Hash SHA-256."
         ],
-        "keyFormulaOrDiagram": "$$\\Phi(\\mathcal{A}) = \\sum_{j=1}^6 w_j c_j$$"
+        "keyFormulaOrDiagram": "$$\\Phi(\\mathcal{A}) = \\sum_{j=1}^6 w_j c_j$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah proyek capstone ITERA telah menyelesaikan riset sistem navigasi otonom. Susun struktur pohon direktori repositori akhir berstandar in...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Rancang struktur direktori terstandarisasi:\\nreproducible-research-pkg/\\n|-- data/\\n| |-- raw/ (dat...",
-          "Langkah 2: Tulis skrip eksekusi satu perintah \"reproduce.sh\":\\n#!/bin/bash\\nset -e\\necho \"Step 1: Memverifikas...",
-          "Langkah 3: Bangun citra Docker: docker build -t capstone-itera:v1.0 . dan jalankan docker run --rm capstone-it...",
-          "Interpretasi: Paket reproduktibilitas satu perintah ini memenuhi standar emas ACM Artifact Evaluation dan menjamin replikasi independe..."
+          "Konteks Kasus: Sebuah proyek capstone ITERA telah menyelesaikan riset sistem navigasi otonom. Susun struktur pohon direktori repositori akhir berstandar internasional dan isi berkas \"reproduce.sh\" satu perintah yang memungkinkan reviewer mereplikasi seluruh hasil dalam satu langkah.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Bangun citra Docker: docker build -t capstone-itera:v1.0 . dan jalankan docker..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Rancang struktur direktori terstandarisasi:\\nreproducible-research-pkg/\\n|-- data/\\n|   |-- raw/ (data mentah read-only + sha256sums.txt)\\n|   |-- processed/\\n|-- src/ (modul kode python)\\n|-- scripts/ (skrip pelatihan dan analisis)\\n|-- paper/ (naskah latex, figures, bibtex)\\n|-- Dockerfile\\n|-- requirements.txt\\n|-- Makefile\\n|-- reproduce.sh\\n|-- README.md\\n|-- LICENSE",
+          "Langkah 2: Tulis skrip eksekusi satu perintah \"reproduce.sh\":\\n#!/bin/bash\\nset -e\\necho \"Step 1: Memverifikasi integritas hash data mentah...\"\\nsha256sum -c data/raw/sha256sums.txt\\necho \"Step 2: Menjalankan prapemrosesan data...\"\\npython scripts/01_preprocess.py\\necho \"Step 3: Menjalankan eksperimen komputasi dan ablasi...\"\\npython scripts/02_run_experiments.py\\necho \"Step 4: Melakukan inferensi statistik dan ekspor grafik...\"\\npython scripts/03_statistical_analysis.py\\necho \"Step 5: Mengompilasi naskah LaTeX dengan tabel terbaru...\"\\ncd paper && pdflatex main.tex && bibtex main && pdflatex main.tex\\necho \"Sukses: Seluruh artefak dan naskah berhasil direplikasi identik!\""
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Bangun citra Docker: docker build -t capstone-itera:v1.0 . dan jalankan docker run --rm capstone-itera:v1.0 ./reproduce.sh.",
+          "[result: Interpretasi Ilmiah] Paket reproduktibilitas satu perintah ini memenuhi standar emas ACM Artifact Evaluation dan menjamin replikasi independen tanpa hambatan konfigurasi lingkungan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit kelengkapan paket artefak reproduktibilitas riset berbasis standar ACM Artifact Badging.",
         "bulletPoints": [
-          "Deskripsi: Audit kelengkapan paket artefak reproduktibilitas riset berbasis standar ACM Artifact Badging.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: AUDIT KEPATUHAN ACM ARTIFACT EVALUATION:"
+          "Tujuan Algoritma: Audit kelengkapan paket artefak reproduktibilitas riset berbasis standar ACM Artifact Badging.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: AUDIT KEPATUHAN ACM ARTIFACT EVALUATION:"
         ],
-        "keyFormulaOrDiagram": "AUDIT KEPATUHAN ACM ARTIFACT EVALUATION: | ===============================================..."
+        "keyFormulaOrDiagram": "AUDIT KEPATUHAN ACM ARTIFACT EVALUATION:\n=================================================================\n[LULUS] Data mentah dengan SHA-256 Checksums          (Bobot: 0.15)\n[LULUS] Kode sumber lengkap & lisensi terbuka         (Bobot: 0.15)\n[LULUS] Dockerfile mandiri teruji                     (Bobot: 0.20)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpan dependensi Python tanpa versi spesifik di requirements.txt (misal menulis \"numpy\" alih-alih \"numpy==...",
-          "Perangkap: Mengunggah berkas kode dengan hardcoded path absolut komputer lokal (misal: \"C:/Users/Nama/Desktop/data.csv\").",
-          "Perangkap: Membuat repositori publik yang tidak mencantumkan lisensi (secara hukum berarti All Rights Reserved dan tidak..."
-        ]
+          "[warning: Perangkap] Menyimpan dependensi Python tanpa versi spesifik di requirements.txt (misal menulis \"numpy\" alih-alih \"numpy==1.24.3\").",
+          "[warning: Perangkap] Mengunggah berkas kode dengan hardcoded path absolut komputer lokal (misal: \"C:/Users/Nama/Desktop/data.csv\").",
+          "[warning: Perangkap] Membuat repositori publik yang tidak mencantumkan lisensi (secara hukum berarti All Rights Reserved dan tidak boleh dijalankan orang lain)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Uji coba kloning repositori di mesin komputer baru yang bersih (clean environment test) untuk memastikan selur...",
+          "Prosedur: Uji coba kloning repositori di mesin komputer baru yang bersih (clean environment test) untuk memastikan seluruh instruksi README dapat berjalan tanpa galat.",
           "Prosedur: Sertakan badge status verifikasi artefak dan DOI Zenodo resmi di berkas README.md utama repositori."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa menyertakan tautan Google Drive pribadi di artikel ilmiah sangat tidak disarankan oleh penerbit internasional be...",
-          "Petunjuk: Perhatikan persistensi jangka panjang dan risiko tautan rusak (link rot).",
-          "Solusi Kunci: Tautan Google Drive pribadi sangat rapuh dan dapat terhapus sewaktu-waktu (misal ketika akun berganti, penyimpanan penuh..."
-        ]
+          "Pertanyaan Uji: Mengapa menyertakan tautan Google Drive pribadi di artikel ilmiah sangat tidak disarankan oleh penerbit internasional bereputasi?",
+          "Petunjuk Analitis: Perhatikan persistensi jangka panjang dan risiko tautan rusak (link rot).",
+          "Solusi Kunci: Tautan Google Drive pribadi sangat rapuh dan dapat terhapus sewaktu-waktu (misal ketika akun berganti, penyimpanan penuh, atau pemilik meninggal). Jurnal internasional mewajibkan penyimpanan pada repositori data permanen yang memberikan Digital Object Identifier (DOI) seperti Zenodo, Figshare, atau OSF yang menjamin persistensi berkas selama puluhan tahun di bawah pengawasan konsorsium perpustakaan dan data center dunia."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

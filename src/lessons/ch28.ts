@@ -61,100 +61,136 @@ export const CH28_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Filosofi DoE vs Pendekatan Satu-Faktor-pada-Satu-Waktu...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Filosofi DoE vs Pendekatan Satu-Faktor-pada-Satu-Waktu (OFAT)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.5.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.1.",
-          "Capaian: Membandingkan efisiensi eksperimental dan keandalan inferensi antara DoE dan OFAT.",
-          "Capaian: Memahami ketidakmampuan fundamental pendekatan OFAT dalam mendeteksi interaksi antar-faktor.",
-          "Capaian: Menghitung rasio penghematan jumlah run eksperimen dengan desain faktorial ortogonal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membandingkan efisiensi eksperimental dan keandalan inferensi antara DoE dan OFAT.",
+          "Capaian 2: Memahami ketidakmampuan fundamental pendekatan OFAT dalam mendeteksi interaksi antar-faktor.",
+          "Capaian 3: Menghitung rasio penghematan jumlah run eksperimen dengan desain faktorial ortogonal."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_{j, \\text{DoE}}) = \\frac{\\sigma^2}{N}$$"
+        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_{j, \\text{DoE}}) = \\frac{\\sigma^2}{N}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.5.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Filosofi DoE vs Pendekatan Satu-Faktor-pada-Satu-Waktu...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Filosofi DoE vs Pendekatan Satu-Faktor-pada-Satu-Waktu (OFAT)",
+        "lead": "Dalam praktik rekayasa dan laboratorium tradisional, metode eksperimen yang paling lazim dipraktikkan secara intuitif adalah pendekatan Satu-Faktor-pada-Satu-Waktu (One-Factor-at-a-Time / OFAT).",
         "bulletPoints": [
-          "Dalam praktik rekayasa dan laboratorium tradisional, metode eksperimen yang paling lazim dipraktikkan secara intuitif adalah...",
-          "Meskipun tampak masuk akal secara intuitif, pendekatan OFAT memiliki tiga cacat fatal secara ilmiah: 1. Ketidakmampuan Mendet...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam pendekatan ini, peneliti memilih satu variabel input, mengubah nilainya sambil mempertahankan seluruh variabel lainnya konstan, mengamati responnya, lalu mengulangi proses yang sama untuk variabel berikutnya.",
+          "Meskipun tampak masuk akal secara intuitif, pendekatan OFAT memiliki tiga cacat fatal secara ilmiah: 1.",
+          "Ketidakmampuan Mendeteksi Efek Interaksi: OFAT mengasumsikan secara naif bahwa pengaruh suatu faktor bersifat independen dari level faktor lainnya."
         ],
-        "keyFormulaOrDiagram": "Design of Experiments (DoE), yang dirintis oleh Sir Ronald A. Fisher pada 1920-an, merevol..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Design of Experiments (DoE), yang dirintis oleh Sir Ronald A.",
         "bulletPoints": [
-          "Design of Experiments (DoE), yang dirintis oleh Sir Ronald A. Fisher pada 1920-an, merevolusi metodologi eksperimen modern. D...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Fisher pada 1920-an, merevolusi metodologi eksperimen modern.",
+          "Dalam DoE, faktor-faktor divariasikan secara simultan dalam matriks ortogonal yang terstruktur rapi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Efisiensi Presisi Estimasi Efek (DoE vs OFAT):",
         "bulletPoints": [
-          "1. Efisiensi Presisi Estimasi Efek (DoE vs OFAT):",
-          "Misalkan terdapat $k$ faktor pada 2 level (+ dan -), dan tujuan eksperimen adalah mengestimasi efek utama masi...",
-          "- Pada Desain Faktorial Penuh ($2^k$) dengan $N$ total pengujian:"
+          "Misalkan terdapat $k$ faktor pada 2 level (+ dan -), dan tujuan eksperimen adalah mengestimasi efek utama masing-masing faktor dengan varians estimasi $\\text{Var}(\\text{efek}) = 4\\sigma^2 / N$.",
+          "- Pada Desain Faktorial Penuh ($2^k$) dengan $N$ total pengujian:",
+          "Seluruh $N$ pengujian berkontribusi pada estimasi setiap efek utama karena sifat ortogonalitas matriks desain:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_{j, \\text{DoE}}) = \\frac{\\sigma^2}{N}$$"
+        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_{j, \\text{DoE}}) = \\frac{\\sigma^2}{N}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang insinyur manufaktur ingin menguji 4 parameter proses mesin bubut CNC (kecepatan spindel, laju pemakanan, kedalaman potong, tipe pelu...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang insinyur manufaktur ingin menguji 4 parameter proses mesin bubut CNC (kecepatan spindel, laju pemakanan, kedalaman potong, tipe pelumas) masing-masing pada 2 level. Insinyur mempertimbangkan dua opsi: (a) Desain faktorial DoE 2^4 = 16 run, atau (b) Pendekatan OFAT dengan 4 replikasi pada baseline dan tiap cabang variasi (total 20 run). Hitung varians estimasi efek utama untuk kedua pendekatan (asumsikan varians galat sigma^2 = 1.0).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung varians efek utama pada DoE 2^4 (N = 16 run): Pada matriks ortogonal, seluruh 16 run digunak...",
-          "Langkah 2: Hitung varians efek utama pada OFAT (4 run baseline + 4 run per variasi faktor = 20 run total): Unt...",
-          "Langkah 3: Bandingkan efisiensi: Meskipun OFAT menggunakan 20 run (lebih banyak dari DoE yang 16 run), varians...",
-          "Interpretasi: Pendekatan DoE menghasilkan estimasi yang dua kali lebih presisi (varians separuhnya) dengan jumlah pengujian 20% lebih..."
+          "Langkah 1: Hitung varians efek utama pada DoE 2^4 (N = 16 run):\nPada matriks ortogonal, seluruh 16 run digunakan untuk menghitung efek tiap faktor.\nVar(efek_DoE) = 4 * sigma^2 / N = 4 * 1.0 / 16 = 0.2500.\nStandar Error SE_DoE = sqrt(0.25) = 0.5000.",
+          "Langkah 2: Hitung varians efek utama pada OFAT (4 run baseline + 4 run per variasi faktor = 20 run total):\nUntuk mengestimasi efek suatu faktor, hanya dibandingkan 4 run variasi faktor tersebut terhadap 4 run baseline (n = 4 per kelompok).\nVar(efek_OFAT) = sigma^2 / n + sigma^2 / n = 2 * sigma^2 / n = 2 * 1.0 / 4 = 0.5000.\nStandar Error SE_OFAT = sqrt(0.50) = 0.7071."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Bandingkan efisiensi: Meskipun OFAT menggunakan 20 run (lebih banyak dari DoE y..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Monte Carlo membandingkan presisi estimasi parameter antara DoE Faktorial dan OFAT.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Perbandingan Kinerja DoE vs OFAT (8 Run)"
+          "Langkah 3: Bandingkan efisiensi:\nMeskipun OFAT menggunakan 20 run (lebih banyak dari DoE yang 16 run), varians estimasi OFAT (0.50) adalah dua kali lipat lebih besar daripada DoE (0.25).",
+          "[result: Interpretasi Ilmiah] Pendekatan DoE menghasilkan estimasi yang dua kali lebih presisi (varians separuhnya) dengan jumlah pengujian 20% lebih sedikit, dan sekaligus mampu mendeteksi seluruh interaksi antar-parameter yang sama sekali tidak dapat diukur oleh OFAT."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Kinerja DoE vs OFAT (8 Run) | Varians Estimasi DoE..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Monte Carlo membandingkan presisi estimasi parameter antara DoE Faktorial dan OFAT.",
         "bulletPoints": [
-          "Perangkap: Terus mempertahankan pendekatan OFAT dengan alasan \"sederhana\" tanpa menyadari bahwa interaksi proses tidak pe...",
-          "Perangkap: Mengubah lebih dari satu faktor secara sembarangan tanpa struktur matriks ortogonal (desain acak tak terencana...",
-          "Perangkap: Mengabaikan efek lingkungan eksternal (suhu ruang, kelembapan) yang berubah selama eksperimen OFAT berlangsung..."
-        ]
+          "Tujuan Algoritma: Simulasi Monte Carlo membandingkan presisi estimasi parameter antara DoE Faktorial dan OFAT.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Perbandingan Kinerja DoE vs OFAT (8 Run)"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Kinerja DoE vs OFAT (8 Run)\nVarians Estimasi DoE  : 0.5012 (Teoretis: 0.5000)\nVarians Estimasi OFAT : 0.9984 (Teoretis: 1.0000)\nRasio Presisi (OFAT/DoE): 1.99x lipat lebih bervariasi",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Terus mempertahankan pendekatan OFAT dengan alasan \"sederhana\" tanpa menyadari bahwa interaksi proses tidak pernah terdeteksi.",
+          "[warning: Perangkap] Mengubah lebih dari satu faktor secara sembarangan tanpa struktur matriks ortogonal (desain acak tak terencana).",
+          "[warning: Perangkap] Mengabaikan efek lingkungan eksternal (suhu ruang, kelembapan) yang berubah selama eksperimen OFAT berlangsung berhari-hari."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan matriks desain faktorial ortogonal untuk memvariasikan faktor secara simultan.",
           "Prosedur: Pastikan seluruh kolom prediktor pada matriks desain memiliki korelasi nol (ortogonal sempurna).",
           "Prosedur: Evaluasi kehadiran efek interaksi sebelum menyimpulkan titik optimal proses."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apakah kelemahan teoritis paling kritis dari pendekatan eksperimen Satu-Faktor-pada-Satu-Waktu (OFAT)?",
-          "Petunjuk: Perhatikan kemampuan mendeteksi sinergi atau antagonisme antar-variabel input.",
-          "Solusi Kunci: Kelemahan paling fatal dari OFAT adalah ketidakmampuannya secara mendasar untuk mendeteksi efek interaksi antar-faktor,..."
-        ]
+          "Petunjuk Analitis: Perhatikan kemampuan mendeteksi sinergi atau antagonisme antar-variabel input.",
+          "Solusi Kunci: Kelemahan paling fatal dari OFAT adalah ketidakmampuannya secara mendasar untuk mendeteksi efek interaksi antar-faktor, karena setiap faktor diuji secara terisolasi pada satu kondisi tetap faktor lainnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -217,100 +253,139 @@ export const CH28_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Tiga Aksioma Fisherian: Replikasi untuk Estimasi Error,...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Tiga Aksioma Fisherian: Replikasi untuk Estimasi Error, Randomisasi untuk Menghapus Bias, Blocking untuk Mengontrol Gangguan",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.5.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.2.",
-          "Capaian: Menguasai tiga pilar fundamental desain eksperimen Fisher: Replikasi, Randomisasi, dan Blocking.",
-          "Capaian: Memahami bagaimana replikasi menyediakan estimasi varians galat eksperimental tak bias.",
-          "Capaian: Menerapkan prinsip \"Block what you can, randomize what you cannot\" dalam tata kelola gangguan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menguasai tiga pilar fundamental desain eksperimen Fisher: Replikasi, Randomisasi, dan Blocking.",
+          "Capaian 2: Memahami bagaimana replikasi menyediakan estimasi varians galat eksperimental tak bias.",
+          "Capaian 3: Menerapkan prinsip \"Block what you can, randomize what you cannot\" dalam tata kelola gangguan."
         ],
-        "keyFormulaOrDiagram": "$$\\text{df}_{\\text{error}} = k(n - 1) = N - k$$"
+        "keyFormulaOrDiagram": "$$\\text{df}_{\\text{error}} = k(n - 1) = N - k$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.5.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Tiga Aksioma Fisherian: Replikasi untuk Estimasi Error,...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Tiga Aksioma Fisherian: Replikasi untuk Estimasi Error, Randomisasi untuk Menghapus Bias, Blocking untuk Mengontrol Gangguan",
+        "lead": "Seluruh teori dan praktik perancangan eksperimen ilmiah bertumpu pada Tiga Aksioma Fisherian yang dirumuskan oleh Ronald A.",
         "bulletPoints": [
-          "Seluruh teori dan praktik perancangan eksperimen ilmiah bertumpu pada Tiga Aksioma Fisherian yang dirumuskan oleh Ronald A. F...",
-          "Pilar 1: Replikasi (Replication) Replikasi adalah pengulangan independen dari suatu perlakuan eksperimen pada unit-unit ekspe...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Fisher.",
+          "Tanpa penerapan ketiga prinsip ini secara disiplin, hasil eksperimen apa pun tidak memiliki validitas inferensial dan klaim kausalitas menjadi tidak sah.",
+          "Pilar 1: Replikasi (Replication) Replikasi adalah pengulangan independen dari suatu perlakuan eksperimen pada unit-unit eksperimen yang berbeda.",
+          "Replikasi memiliki dua fungsi esensial: - Menyediakan estimasi objektif mengenai variabilitas galat eksperimental (MSE), yang menjadi penyebut wajib pada uji statistik F dan uji t."
         ],
-        "keyFormulaOrDiagram": "Pilar 2: Randomisasi (Randomization) Randomisasi adalah proses pengalokasian unit-unit eks..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Pilar 2: Randomisasi (Randomization) Randomisasi adalah proses pengalokasian unit-unit eksperimen ke dalam kelompok perlakuan dan penentuan urutan eksekusi eksperimen secara acak murni (menggunakan generator angka acak).",
         "bulletPoints": [
-          "Pilar 2: Randomisasi (Randomization) Randomisasi adalah proses pengalokasian unit-unit eksperimen ke dalam kelompok perlakuan...",
-          "Pilar 3: Blocking (Local Control) Blocking adalah teknik mengisolasi variabel pengganggu yang diketahui dan dapat diidentifik...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Randomisasi adalah asuransi matematis terhadap variabel pengganggu yang tidak diketahui atau tidak dapat dikontrol (seperti keausan alat bertahap, pergeseran suhu harian, atau kelelahan operator).",
+          "Randomisasi meratakan pengaruh pengganggu ke seluruh kelompok sehingga mengeliminasi bias sistematis.",
+          "Pilar 3: Blocking (Local Control) Blocking adalah teknik mengisolasi variabel pengganggu yang diketahui dan dapat diidentifikasi (misalnya perbedaan batch bahan baku, perbedaan operator, atau hari kerja).",
+          "Unit-unit eksperimen yang homogen dikelompokkan ke dalam blok yang sama."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Replikasi dan Estimasi Derajat Kebebasan Galat:",
         "bulletPoints": [
-          "1. Replikasi dan Estimasi Derajat Kebebasan Galat:",
           "Pada eksperimen dengan $k$ perlakuan dan $n$ replikasi independen per perlakuan:",
-          "Jika $n = 1$ (tanpa replikasi):"
+          "Jika $n = 1$ (tanpa replikasi):",
+          "Tanpa derajat kebebasan galat, $\\text{MSE} = \\text{SSE} / 0$ tidak terdefinisi secara matematis, sehingga uji hipotesis inferensial tidak mungkin dilakukan."
         ],
-        "keyFormulaOrDiagram": "$$\\text{df}_{\\text{error}} = k(n - 1) = N - k$$"
+        "keyFormulaOrDiagram": "$$\\text{df}_{\\text{error}} = k(n - 1) = N - k$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian kuat tekan beton dengan 3 campuran agregat (a = 3), eksperimen dilakukan dalam 4 batch semen (b = 4 blok). Variabilitas total...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung komponen jika dianalisis sebagai Completely Randomized Design (CRD, tanpa blocking): SSE_CRD...",
-          "Langkah 2: Hitung komponen dengan Blocking (RCBD): SSE_RCBD = SST - SS_Treatment - SS_Block = 180.0 - 90.0 - 6...",
-          "Interpretasi: Dengan menerapkan aksioma blocking, varians galat MSE berhasil dipangkas hingga separuhnya (dari 10.0 menjadi 5.0). Nila..."
+          "Konteks Kasus: Pada pengujian kuat tekan beton dengan 3 campuran agregat (a = 3), eksperimen dilakukan dalam 4 batch semen (b = 4 blok). Variabilitas total adalah SST = 180.0. Jumlah kuadrat perlakuan campuran adalah SS_Treatment = 90.0, dan variabilitas antar-batch adalah SS_Block = 60.0. Bandingkan nilai MSE jika batch diabaikan (CRD) versus jika batch dikontrol menggunakan blocking (RCBD).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 2: Hitung komponen dengan Blocking (RCBD): SSE_RCBD = SST - SS_Treatment - SS_Bloc..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung komponen jika dianalisis sebagai Completely Randomized Design (CRD, tanpa blocking):\nSSE_CRD = SST - SS_Treatment = 180.0 - 90.0 = 90.0.\nDerajat kebebasan galat CRD: df_E = N - a = 12 - 3 = 9.\nMSE_CRD = 90.0 / 9 = 10.00.\nF_Treatment(CRD) = (90.0 / 2) / 10.00 = 45.0 / 10.0 = 4.50 (p = 0.044)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 2: Hitung komponen dengan Blocking (RCBD):\nSSE_RCBD = SST - SS_Treatment - SS_Block = 180.0 - 90.0 - 60.0 = 30.0.\nDerajat kebebasan galat RCBD: df_E = (a - 1)(b - 1) = (3 - 1)(4 - 1) = 2 * 3 = 6.\nMSE_RCBD = 30.0 / 6 = 5.00.\nF_Treatment(RCBD) = (90.0 / 2) / 5.00 = 45.0 / 5.0 = 9.00 (p = 0.015).",
+          "[result: Interpretasi Ilmiah] Dengan menerapkan aksioma blocking, varians galat MSE berhasil dipangkas hingga separuhnya (dari 10.0 menjadi 5.0). Nilai statistik F melonjak dari 4.50 menjadi 9.00 dan p-value menjadi jauh lebih meyakinkan (p = 0.015). Blocking terbukti membersihkan noise batch semen."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi pentingnya randomisasi untuk menetralkan tren gangguan drift temporal.",
         "bulletPoints": [
-          "Deskripsi: Simulasi pentingnya randomisasi untuk menetralkan tren gangguan drift temporal.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Uji Aksioma Randomisasi vs Drift Temporal"
+          "Tujuan Algoritma: Simulasi pentingnya randomisasi untuk menetralkan tren gangguan drift temporal.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Uji Aksioma Randomisasi vs Drift Temporal"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Uji Aksioma Randomisasi vs Drift Temporal | Tanpa Randomisasi :..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Uji Aksioma Randomisasi vs Drift Temporal\nTanpa Randomisasi  : Selisih Mean = 5.21, p-value = 1.0371e-15 (False Positive Fatal!)\nDengan Randomisasi : Selisih Mean = 0.17, p-value = 0.8523 (Valid / H0 Bertahan)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menjalankan eksperimen secara berurutan per kelompok (semua unit A lalu semua unit B) yang mencampuradukkan ef...",
-          "Perangkap: Mengira replikasi teknis (mengukur satu cawan petri 3 kali) sebagai replikasi biologi/eksperimen sejati.",
-          "Perangkap: Mengabaikan faktor gangguan yang diketahui (seperti batch bahan baku atau teknisi laboratorium) tanpa menerapk..."
-        ]
+          "[warning: Perangkap] Menjalankan eksperimen secara berurutan per kelompok (semua unit A lalu semua unit B) yang mencampuradukkan efek perlakuan dengan drift waktu/alat.",
+          "[warning: Perangkap] Mengira replikasi teknis (mengukur satu cawan petri 3 kali) sebagai replikasi biologi/eksperimen sejati.",
+          "[warning: Perangkap] Mengabaikan faktor gangguan yang diketahui (seperti batch bahan baku atau teknisi laboratorium) tanpa menerapkan blocking."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan generator angka acak untuk menentukan run order pelaksanaan setiap eksperimen.",
           "Prosedur: Pastikan unit eksperimen yang menerima perlakuan berasal dari entitas fisik yang independen.",
           "Prosedur: Identifikasi seluruh variabel gangguan potensial dan kelompokkan unit eksperimen ke dalam blok homogen."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa randomisasi urutan pengujian (run order) dianggap sebagai syarat mutlak validitas inferensi statistik dalam eksp...",
-          "Petunjuk: Perhatikan perlindungan terhadap variabel perancu yang tidak terduga atau drift instrumen.",
-          "Solusi Kunci: Randomisasi menetralkan bias sistematis dari variabel gangguan yang tidak diketahui atau tidak dapat dikontrol (seperti..."
-        ]
+          "Pertanyaan Uji: Mengapa randomisasi urutan pengujian (run order) dianggap sebagai syarat mutlak validitas inferensi statistik dalam eksperimen laboratorium?",
+          "Petunjuk Analitis: Perhatikan perlindungan terhadap variabel perancu yang tidak terduga atau drift instrumen.",
+          "Solusi Kunci: Randomisasi menetralkan bias sistematis dari variabel gangguan yang tidak diketahui atau tidak dapat dikontrol (seperti kelelahan operator, fluktuasi voltase, atau pergeseran kalibrasi alat seiring waktu) dengan meratakan dampaknya secara stokastik ke seluruh kelompok perlakuan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -375,101 +450,137 @@ export const CH28_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Desain Acak Lengkap (Completely Randomized Design - CRD...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Desain Acak Lengkap (Completely Randomized Design - CRD)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.5.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.3.",
-          "Capaian: Merancang protokol Completely Randomized Design (CRD) untuk lingkungan eksperimen homogen.",
-          "Capaian: Menghasilkan tabel alokasi perlakuan acak menggunakan algoritma permutasi komputasi.",
-          "Capaian: Menganalisis hasil eksperimen CRD menggunakan model One-Way ANOVA ortogonal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang protokol Completely Randomized Design (CRD) untuk lingkungan eksperimen homogen.",
+          "Capaian 2: Menghasilkan tabel alokasi perlakuan acak menggunakan algoritma permutasi komputasi.",
+          "Capaian 3: Menganalisis hasil eksperimen CRD menggunakan model One-Way ANOVA ortogonal."
         ],
-        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\epsilon_{ij}, \\quad i = 1, \\dots, k; \\; j = 1, \\dots, n_i$$"
+        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\epsilon_{ij}, \\quad i = 1, \\dots, k; \\; j = 1, \\dots, n_i$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.5.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Desain Acak Lengkap (Completely Randomized Design - CRD...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Desain Acak Lengkap (Completely Randomized Design - CRD)",
+        "lead": "Completely Randomized Design (CRD) atau Desain Acak Lengkap adalah rancangan eksperimen paling mendasar dan paling sederhana dalam metodologi ilmiah.",
         "bulletPoints": [
-          "Completely Randomized Design (CRD) atau Desain Acak Lengkap adalah rancangan eksperimen paling mendasar dan paling sederhana...",
-          "Asumsi Lingkungan CRD: CRD dirancang khusus untuk kondisi di mana unit-unit eksperimen bersifat homogen sempurna, atau variab...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam CRD, perlakuan-perlakuan eksperimen dialokasikan secara acak murni ke seluruh unit eksperimen tanpa adanya pembatasan blocking.",
+          "Asumsi Lingkungan CRD: CRD dirancang khusus untuk kondisi di mana unit-unit eksperimen bersifat homogen sempurna, atau variabilitas lingkungan laboratorium dapat dikontrol secara seragam.",
+          "Contoh aplikasi yang ideal untuk CRD meliputi: - Eksperimen kimia di mana seluruh sampel diambil dari satu larutan induk homogen yang sama di bawah temperatur inkubator yang seragam. - Simulasi komputasi dan pembandingan algoritma software pada node klaster komputasi berspesifikasi identik. - Pengujian formulasi pakan pada hewan uji dari garis keturunan murni (inbred strain) dengan usia dan bobot yang seragam."
         ],
-        "keyFormulaOrDiagram": "Keunggulan utama CRD adalah kesederhanaan matematisnya: fleksibilitas jumlah kelompok dan..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Keunggulan utama CRD adalah kesederhanaan matematisnya: fleksibilitas jumlah kelompok dan replikasi tidak terbatas (boleh tidak seimbang), analisis data sangat langsung menggunakan One-Way ANOVA standar, dan derajat kebebasan untuk estimasi galat berada pada tingkat maksimum (N - k).",
         "bulletPoints": [
-          "Keunggulan utama CRD adalah kesederhanaan matematisnya: fleksibilitas jumlah kelompok dan replikasi tidak terbatas (boleh tid...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Namun, kelemahan fatal CRD adalah kerentanannya terhadap penurunan sensitivitas jika unit eksperimen sebenarnya tidak homogen: seluruh variasi lingkungan yang tidak dikontrol akan terserap ke dalam galat residual (SSE), memperbesar MSE dan menenggelamkan sinyal perlakuan."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Model Statistik CRD:",
         "bulletPoints": [
-          "1. Formulasi Model Statistik CRD:",
           "di mana:",
-          "- $k$ adalah jumlah perlakuan."
+          "- $k$ adalah jumlah perlakuan.",
+          "- $n_i$ adalah jumlah replikasi untuk perlakuan ke-$i$."
         ],
-        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\epsilon_{ij}, \\quad i = 1, \\dots, k; \\; j = 1, \\dots, n_i$$"
+        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\epsilon_{ij}, \\quad i = 1, \\dots, k; \\; j = 1, \\dots, n_i$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang peneliti kecerdasan buatan ingin menguji 3 variasi learning rate (k = 3: 0.001, 0.01, 0.1) pada akurasi konvergensi model deep learn...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang peneliti kecerdasan buatan ingin menguji 3 variasi learning rate (k = 3: 0.001, 0.01, 0.1) pada akurasi konvergensi model deep learning. Setiap variasi dijalankan sebanyak n = 5 replikasi independen (total N = 15 run komputasi). Susun protokol alokasi acak lengkap (CRD) dan tentukan derajat kebebasan galat eksperimen.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi unit eksperimen: Terdapat N = 15 run komputasi independen.",
-          "Langkah 2: Buat vektor perlakuan: [LR_0.001 x 5, LR_0.01 x 5, LR_0.1 x 5].",
-          "Langkah 3: Terapkan algoritma randomisasi acak murni (Fisher-Yates shuffle) untuk mengacak urutan eksekusi 15...",
-          "Interpretasi: Protokol CRD menjamin bahwa urutan eksekusi komputasi sepenuhnya acak, melindungi perbandingan dari fluktuasi beban serv..."
+          "Langkah 2: Buat vektor perlakuan: [LR_0.001 x 5, LR_0.01 x 5, LR_0.1 x 5]."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung derajat kebebasan galat: df_error = N - k = 15 - 3 = 12."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Terapkan algoritma randomisasi acak murni (Fisher-Yates shuffle) untuk mengacak urutan eksekusi 15 run tersebut.",
+          "Langkah 4: Hitung derajat kebebasan galat: df_error = N - k = 15 - 3 = 12.",
+          "[result: Interpretasi Ilmiah] Protokol CRD menjamin bahwa urutan eksekusi komputasi sepenuhnya acak, melindungi perbandingan dari fluktuasi beban server latar belakang. Derajat kebebasan galat df = 12 menyediakan estimasi variabilitas numerik yang memadai."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Algoritma pembuatan jadwal eksekusi eksperimen Completely Randomized Design (CRD) teracak.",
         "bulletPoints": [
-          "Deskripsi: Algoritma pembuatan jadwal eksekusi eksperimen Completely Randomized Design (CRD) teracak.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Jadwal Eksekusi Eksperimen CRD Teracak"
+          "Tujuan Algoritma: Algoritma pembuatan jadwal eksekusi eksperimen Completely Randomized Design (CRD) teracak.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Jadwal Eksekusi Eksperimen CRD Teracak"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Jadwal Eksekusi Eksperimen CRD Teracak | Run_Order Unit_ID Perla..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Jadwal Eksekusi Eksperimen CRD Teracak\n Run_Order Unit_ID   Perlakuan\n         1 Unit_11 Formulasi_C\n         2 Unit_10 Formulasi_C\n         3 Unit_01 Formulasi_A",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menerapkan CRD pada lingkungan yang heterogen (seperti pengujian di beberapa laboratorium atau hari berbeda ta...",
-          "Perangkap: Mengabaikan randomisasi urutan eksekusi dan menjalankan perlakuan secara terkelompok berurutan.",
-          "Perangkap: Mengabaikan uji asumsi homogenitas varians residual antar-kelompok perlakuan."
-        ]
+          "[warning: Perangkap] Menerapkan CRD pada lingkungan yang heterogen (seperti pengujian di beberapa laboratorium atau hari berbeda tanpa blocking).",
+          "[warning: Perangkap] Mengabaikan randomisasi urutan eksekusi dan menjalankan perlakuan secara terkelompok berurutan.",
+          "[warning: Perangkap] Mengabaikan uji asumsi homogenitas varians residual antar-kelompok perlakuan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan unit-unit eksperimen memiliki karakteristik fisik awal yang homogen.",
           "Prosedur: Gunakan urutan eksekusi teracak acak murni sesuai jadwal CRD.",
           "Prosedur: Verifikasi bahwa estimasi varians galat residual memenuhi asumsi normalitas dan homoskedastisitas."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Pada kondisi operasional manakah Desain Acak Lengkap (CRD) merupakan pilihan metodologis yang paling tepat?",
-          "Petunjuk: Perhatikan tingkat homogenitas unit eksperimen dan lingkungan laboratorium.",
-          "Solusi Kunci: CRD paling tepat digunakan ketika seluruh unit eksperimen dan kondisi lingkungan pengujian bersifat sangat homogen (misa..."
-        ]
+          "Petunjuk Analitis: Perhatikan tingkat homogenitas unit eksperimen dan lingkungan laboratorium.",
+          "Solusi Kunci: CRD paling tepat digunakan ketika seluruh unit eksperimen dan kondisi lingkungan pengujian bersifat sangat homogen (misal larutan kimia homogen dalam satu inkubator terkontrol atau simulasi komputasi pada klaster identik)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -533,101 +644,135 @@ export const CH28_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penentuan Jumlah Replikasi Berdasarkan Analisis Power E...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penentuan Jumlah Replikasi Berdasarkan Analisis Power Eksperimen",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.5.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.4.",
-          "Capaian: Menghitung jumlah replikasi minimum per perlakuan berdasarkan target kekuatan statistik (Power = 1 - beta).",
-          "Capaian: Menggunakan kurva parameter non-sentralitas F-distribution (Operating Characteristic Curves).",
-          "Capaian: Mencegah eksperimen yang underpowered (gagal mendeteksi efek nyata) atau overpowered (pemborosan anggaran)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.5.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menghitung jumlah replikasi minimum per perlakuan berdasarkan target kekuatan statistik (Power = 1 - beta).",
+          "Capaian 2: Menggunakan kurva parameter non-sentralitas F-distribution (Operating Characteristic Curves).",
+          "Capaian 3: Mencegah eksperimen yang underpowered (gagal mendeteksi efek nyata) atau overpowered (pemborosan anggaran)."
         ],
-        "keyFormulaOrDiagram": "$$\\lambda = n \\sum_{i=1}^k \\frac{\\tau_i^2}{\\sigma^2} = \\frac{n \\sum_{i=1}^k (\\mu_i - \\bar{\\mu})^2}{\\sigma^2}$$"
+        "keyFormulaOrDiagram": "$$\\lambda = n \\sum_{i=1}^k \\frac{\\tau_i^2}{\\sigma^2} = \\frac{n \\sum_{i=1}^k (\\mu_i - \\bar{\\mu})^2}{\\sigma^2}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.5.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penentuan Jumlah Replikasi Berdasarkan Analisis Power E...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penentuan Jumlah Replikasi Berdasarkan Analisis Power Eksperimen",
+        "lead": "Salah satu keputusan perancangan paling krusial sebelum memulai eksperimen laboratorium adalah menentukan jumlah replikasi n.",
         "bulletPoints": [
-          "Salah satu keputusan perancangan paling krusial sebelum memulai eksperimen laboratorium adalah menentukan jumlah replikasi n....",
-          "Metodologi penentuan jumlah replikasi ilmiah didasarkan pada Analisis Power Statistik Apriori (A-Priori Power Analysis). Pene...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam praktik rekayasa yang buruk, peneliti sering memilih angka replikasi secara arbitrer (misalnya \"ambil 3 sampel per kelompok karena biasanya begitu\").",
+          "Pemilihan acak ini membawa dua risiko fatal: 1.",
+          "Metodologi penentuan jumlah replikasi ilmiah didasarkan pada Analisis Power Statistik Apriori (A-Priori Power Analysis).",
+          "Peneliti harus menetapkan empat parameter: 1."
         ],
-        "keyFormulaOrDiagram": "Dengan mengintegrasikan keempat parameter ini melalui parameter non-sentralitas distribusi..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dengan mengintegrasikan keempat parameter ini melalui parameter non-sentralitas distribusi non-sentral F, jumlah replikasi n...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dengan mengintegrasikan keempat parameter ini melalui parameter non-sentralitas distribusi non-sentral F, jumlah replikasi n minimum yang dibutuhkan dapat dihitung secara eksak.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Parameter Non-Sentralitas Distribusi F (Non-Centrality Parameter $\\lambda$):",
         "bulletPoints": [
-          "1. Parameter Non-Sentralitas Distribusi F (Non-Centrality Parameter $\\lambda$):",
           "Pada One-Way ANOVA dengan $k$ perlakuan dan $n$ replikasi seimbang per kelompok:",
-          "Di bawah hipotesis alternatif $H_1$, statistik rasio varians mengikuti Distribusi F Non-Sentral:"
+          "Di bawah hipotesis alternatif $H_1$, statistik rasio varians mengikuti Distribusi F Non-Sentral:",
+          "2. Formulasi Kekuatan Statistik (Power):"
         ],
-        "keyFormulaOrDiagram": "$$\\lambda = n \\sum_{i=1}^k \\frac{\\tau_i^2}{\\sigma^2} = \\frac{n \\sum_{i=1}^k (\\mu_i - \\bar{\\mu})^2}{\\sigma^2}$$"
+        "keyFormulaOrDiagram": "$$\\lambda = n \\sum_{i=1}^k \\frac{\\tau_i^2}{\\sigma^2} = \\frac{n \\sum_{i=1}^k (\\mu_i - \\bar{\\mu})^2}{\\sigma^2}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah laboratorium rekayasa material ingin menguji k = 3 metode pelapisan anti-korosi. Dari studi pendahuluan, deviasi standar pengukuran a...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung variasi rata-rata perlakuan di sekitar grand mean: (mu_1 - bar{mu})^2 = (10.0 - 11.5)^2 = (-...",
-          "Langkah 2: Hitung ukuran efek Cohen f: f = sqrt( sum(mu_i - bar{mu})^2 / (k * sigma^2) ) = sqrt( 4.50 / (3 * 4...",
-          "Langkah 3: Hitung kebutuhan n secara iteratif untuk mencapai Power >= 0.80 pada alpha = 0.05, k = 3: - Coba n...",
-          "Interpretasi: Dibutuhkan minimal n = 9 replikasi per kelompok (total N = 27 run eksperimen) untuk memastikan peluang mendeteksi selisi..."
+          "Konteks Kasus: Sebuah laboratorium rekayasa material ingin menguji k = 3 metode pelapisan anti-korosi. Dari studi pendahuluan, deviasi standar pengukuran adalah sigma = 2.0 um. Peneliti ingin mampu mendeteksi perbedaan rata-rata keausan sebesar delta = 3.0 um antara metode terbaik dan terburuk (misal mu = [10.0, 11.5, 13.0] sehingga grand mean = 11.5 um) dengan kekuatan statistik 1 - beta = 0.80 pada alpha = 0.05. Hitung ukuran efek Cohen f dan tentukan jumlah replikasi n minimum per kelompok.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung kebutuhan n secara iteratif untuk mencapai Power >= 0.80 pada alpha = 0...."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung variasi rata-rata perlakuan di sekitar grand mean:\n(mu_1 - bar{mu})^2 = (10.0 - 11.5)^2 = (-1.5)^2 = 2.25.\n(mu_2 - bar{mu})^2 = (11.5 - 11.5)^2 = 0.0.\n(mu_3 - bar{mu})^2 = (13.0 - 11.5)^2 = (1.5)^2 = 2.25.\nJumlah kuadrat efek: sum(mu_i - bar{mu})^2 = 2.25 + 0.0 + 2.25 = 4.50.",
+          "Langkah 2: Hitung ukuran efek Cohen f:\nf = sqrt( sum(mu_i - bar{mu})^2 / (k * sigma^2) ) = sqrt( 4.50 / (3 * 4.0) ) = sqrt( 4.50 / 12.0 ) = sqrt(0.375) = 0.6124 (Efek besar)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung kebutuhan n secara iteratif untuk mencapai Power >= 0.80 pada alpha = 0.05, k = 3:\n- Coba n = 6: N = 18, df1 = 2, df2 = 15, lambda = 18 * (0.375) = 6.75 -> Power = 0.62 (kurang).\n- Coba n = 8: N = 24, df1 = 2, df2 = 21, lambda = 24 * (0.375) = 9.00 -> Power = 0.77 (kurang).\n- Coba n = 9: N = 27, df1 = 2, df2 = 24, lambda = 27 * (0.375) = 10.125 -> Power = 0.82 (memenuhi target > 0.80).",
+          "[result: Interpretasi Ilmiah] Dibutuhkan minimal n = 9 replikasi per kelompok (total N = 27 run eksperimen) untuk memastikan peluang mendeteksi selisih 3.0 um mencapai 82% pada tingkat signifikansi 5%. Pengujian dengan n < 9 berisiko tinggi gagal mendeteksi keunggulan pelapis anti-korosi tersebut."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komputasi presisi ukuran sampel minimum ANOVA berdasarkan power analysis menggunakan statsmodels.",
         "bulletPoints": [
-          "Deskripsi: Komputasi presisi ukuran sampel minimum ANOVA berdasarkan power analysis menggunakan statsmodels.",
-          "Dependensi Pustaka: numpy, statsmodels.stats.power",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Analisis Power Apriori untuk One-Way ANOVA"
+          "Tujuan Algoritma: Komputasi presisi ukuran sampel minimum ANOVA berdasarkan power analysis menggunakan statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels.stats.power",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Analisis Power Apriori untuk One-Way ANOVA"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Power Apriori untuk One-Way ANOVA | Jumlah Kelompok (k)..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Power Apriori untuk One-Way ANOVA\nJumlah Kelompok (k)     : 3\nUkuran Efek Cohen's f   : 0.6124 (Kategori Efek Besar)\nTarget Power (1 - beta) : 0.80\nReplikasi Dihitung (n)  : 8.44",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menetapkan jumlah sampel secara arbitrer tanpa kalkulasi power formal sebelum data dikumpulkan.",
-          "Perangkap: Melakukan analisis power aposteriori (post-hoc power) menggunakan ukuran efek sampel teramati setelah p-value...",
-          "Perangkap: Meremehkan varians galat sigma^2 sehingga menghasilkan ukuran sampel yang terlalu kecil."
-        ]
+          "[warning: Perangkap] Menetapkan jumlah sampel secara arbitrer tanpa kalkulasi power formal sebelum data dikumpulkan.",
+          "[warning: Perangkap] Melakukan analisis power aposteriori (post-hoc power) menggunakan ukuran efek sampel teramati setelah p-value tidak signifikan (ini adalah tautologi matematis yang keliru).",
+          "[warning: Perangkap] Meremehkan varians galat sigma^2 sehingga menghasilkan ukuran sampel yang terlalu kecil."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Tentukan selisih minimum yang bermakna secara teknis (bukan sekadar perbedaan sembarang).",
           "Prosedur: Dapatkan estimasi sigma yang kredibel dari studi rintisan (pilot study) atau data historis.",
           "Prosedur: Tetapkan target kekuatan statistik minimal 0.80 (atau 0.90 untuk sistem kritis keselamatan)."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa analisis post-hoc power (menghitung power setelah eksperimen selesai menggunakan p-value dan efek teramati) sang...",
-          "Petunjuk: Perhatikan bahwa post-hoc power semata-mata merupakan transformasi monotonik 1-ke-1 dari nilai p-val...",
-          "Solusi Kunci: Post-hoc power adalah kekeliruan matematis: nilai power teramati hanyalah fungsi monotonik langsung dari p-value teramat..."
-        ]
+          "Pertanyaan Uji: Mengapa analisis post-hoc power (menghitung power setelah eksperimen selesai menggunakan p-value dan efek teramati) sangat ditentang dalam metodologi ilmiah modern?",
+          "Petunjuk Analitis: Perhatikan bahwa post-hoc power semata-mata merupakan transformasi monotonik 1-ke-1 dari nilai p-value yang teramati.",
+          "Solusi Kunci: Post-hoc power adalah kekeliruan matematis: nilai power teramati hanyalah fungsi monotonik langsung dari p-value teramati (jika p > 0.05, post-hoc power pasti rendah). Analisis power sejati hanya valid dilakukan secara apriori sebelum data dikumpulkan untuk memandu ukuran sampel."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

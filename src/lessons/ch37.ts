@@ -69,100 +69,140 @@ export const CH37_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Strategi Optimasi Hyperparameter: Grid Search, Random S...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Strategi Optimasi Hyperparameter: Grid Search, Random Search, dan Bayesian Optimization",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.6.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.1.",
-          "Capaian: Membandingkan efisiensi ruang pencarian antara Grid Search, Random Search, dan Bayesian Optimization.",
-          "Capaian: Memahami Teorema Bergstra & Bengio (2012) mengenai keunggulan matematis Random Search pada ruang berdimensi ef...",
-          "Capaian: Menerapkan Bayesian Optimization berbasis Gaussian Process dengan fungsi akuisisi Expected Improvement (EI)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membandingkan efisiensi ruang pencarian antara Grid Search, Random Search, dan Bayesian Optimization.",
+          "Capaian 2: Memahami Teorema Bergstra & Bengio (2012) mengenai keunggulan matematis Random Search pada ruang berdimensi efektif rendah.",
+          "Capaian 3: Menerapkan Bayesian Optimization berbasis Gaussian Process dengan fungsi akuisisi Expected Improvement (EI)."
         ],
-        "keyFormulaOrDiagram": "$$f(\\boldsymbol{\\lambda}) \\sim \\mathcal{GP}\\left(m(\\boldsymbol{\\lambda}), k(\\boldsymbol{\\lambda}, \\boldsymbol{\\lambda}')\\right)$$"
+        "keyFormulaOrDiagram": "$$f(\\boldsymbol{\\lambda}) \\sim \\mathcal{GP}\\left(m(\\boldsymbol{\\lambda}), k(\\boldsymbol{\\lambda}, \\boldsymbol{\\lambda}')\\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.6.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Strategi Optimasi Hyperparameter: Grid Search, Random S...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Strategi Optimasi Hyperparameter: Grid Search, Random Search, dan Bayesian Optimization",
+        "lead": "Dalam rekayasa sistem pembelajaran mesin, performa sebuah algoritma sangat bergantung pada pemilihan konfigurasi hyperparameter: learning rate, bobot penalti regularisasi (L2/weight decay), jumlah layer, ukuran filter, atau parameter kernel.",
         "bulletPoints": [
-          "Dalam rekayasa sistem pembelajaran mesin, performa sebuah algoritma sangat bergantung pada pemilihan konfigurasi hyperparamet...",
-          "Tiga Paradigma Optimasi Hyperparameter: 1. Pencarian Kisi Penuh (Grid Search): Mengevaluasi seluruh kombinasi nilai diskrit p...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Menemukan kombinasi hyperparameter optimal adalah masalah optimasi fungsi kotak hitam (black-box optimization) yang berbiaya komputasi tinggi, karena setiap evaluasi fungsi membutuhkan satu siklus pelatihan model yang utuh.",
+          "Tiga Paradigma Optimasi Hyperparameter: 1.",
+          "Pencarian Kisi Penuh (Grid Search): Mengevaluasi seluruh kombinasi nilai diskrit pada kisi teratur."
         ],
-        "keyFormulaOrDiagram": "2. Pencarian Acak (Random Search, Bergstra & Bengio, 2012): Mengambil sampel kombinasi hyp..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Pencarian Acak (Random Search, Bergstra & Bengio, 2012): Mengambil sampel kombinasi hyperparameter secara acak dari distri...",
-          "3. Optimasi Bayesian (Bayesian Optimization): Pendekatan berbasis model pengganti (surrogate model), umumnya menggunakan Gaus...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Pencarian Acak (Random Search, Bergstra & Bengio, 2012): Mengambil sampel kombinasi hyperparameter secara acak dari distribusi probabilitas kontinu yang ditentukan.",
+          "Bergstra & Bengio membuktikan secara matematis bahwa Random Search jauh lebih unggul daripada Grid Search dengan anggaran komputasi yang sama.",
+          "3.",
+          "Optimasi Bayesian (Bayesian Optimization): Pendekatan berbasis model pengganti (surrogate model), umumnya menggunakan Gaussian Process (GP) atau Tree-structured Parzen Estimator (TPE)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Optimasi Bayesian dengan Gaussian Process:",
         "bulletPoints": [
-          "Formulasi Matematis Optimasi Bayesian dengan Gaussian Process:",
-          "Misalkan $f(\\boldsymbol{\\lambda})$ adalah fungsi evaluasi performa model untuk hyperparameter $\\boldsymbol{\\la...",
-          "Fungsi $f$ dimodelkan sebagai Gaussian Process:"
+          "Misalkan $f(\\boldsymbol{\\lambda})$ adalah fungsi evaluasi performa model untuk hyperparameter $\\boldsymbol{\\lambda} \\in \\Lambda \\subset \\mathbb{R}^d$.",
+          "Fungsi $f$ dimodelkan sebagai Gaussian Process:",
+          "di mana $k$ adalah fungsi kovarians (misal Matérn 5/2 atau RBF kernel)."
         ],
-        "keyFormulaOrDiagram": "$$f(\\boldsymbol{\\lambda}) \\sim \\mathcal{GP}\\left(m(\\boldsymbol{\\lambda}), k(\\boldsymbol{\\lambda}, \\boldsymbol{\\lambda}')\\right)$$"
+        "keyFormulaOrDiagram": "$$f(\\boldsymbol{\\lambda}) \\sim \\mathcal{GP}\\left(m(\\boldsymbol{\\lambda}), k(\\boldsymbol{\\lambda}, \\boldsymbol{\\lambda}')\\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan titik performa terbaik saat ini y^+ = 0.850. Pada titik hyperparameter baru lambda, model Gaussian Process memprediksi mean mu = 0...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan titik performa terbaik saat ini y^+ = 0.850. Pada titik hyperparameter baru lambda, model Gaussian Process memprediksi mean mu = 0.870 dan standar deviasi sigma = 0.020. Hitung nilai Z, phi(Z), Phi(Z), dan skor Expected Improvement alpha_EI. Tentukan apakah titik ini menjanjikan perbaikan performa.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung deviasi terhadap performa terbaik: mu - y^+ = 0.870 - 0.850 = +0.020.",
           "Langkah 2: Hitung nilai ternormalisasi Z: Z = (mu - y^+) / sigma = 0.020 / 0.020 = 1.000.",
-          "Langkah 3: Hitung nilai PDF dan CDF Gaussian pada Z=1.000: phi(1.0) = (1 / sqrt(2*pi)) * e^(-0.5) = 0.3989 * 0...",
-          "Interpretasi: Titik hyperparameter lambda menawarkan ekspektasi perbaikan sebesar 2.17% di atas rekor terbaik sebelumnya, menjadikanny..."
+          "Langkah 3: Hitung nilai PDF dan CDF Gaussian pada Z=1.000: phi(1.0) = (1 / sqrt(2*pi)) * e^(-0.5) = 0.3989 * 0.6065 = 0.2420; Phi(1.0) = 0.8413."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung total Expected Improvement: alpha_EI = 0.01683 + 0.00484 = 0.02167 (atau..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Implementasi 1D Gaussian Process Expected Improvement Acquisition Function.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Expected Improvement (EI):"
+          "Langkah 4: Hitung komponen eksploitasi dan eksplorasi: Eksploitasi = (mu - y^+) * Phi(Z) = 0.020 * 0.8413 = 0.01683; Eksplorasi = sigma * phi(Z) = 0.020 * 0.2420 = 0.00484.",
+          "Langkah 5: Hitung total Expected Improvement: alpha_EI = 0.01683 + 0.00484 = 0.02167 (atau 2.17%).",
+          "[result: Interpretasi Ilmiah] Titik hyperparameter lambda menawarkan ekspektasi perbaikan sebesar 2.17% di atas rekor terbaik sebelumnya, menjadikannya kandidat kuat untuk dieksekusi pada iterasi berikutnya."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Expected Improvement (EI): | Performa Terbaik Saat Ini..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi 1D Gaussian Process Expected Improvement Acquisition Function.",
         "bulletPoints": [
-          "Perangkap: Menjalankan Grid Search manual dengan rentang nilai yang terlalu sempit atau linier pada parameter berskala lo...",
-          "Perangkap: Mengalokasikan 100 iterasi tuning untuk model usulan namun hanya 5 iterasi untuk baseline pembanding.",
-          "Perangkap: Melakukan tuning hyperparameter langsung pada data uji akhir (test set)."
-        ]
+          "Tujuan Algoritma: Implementasi 1D Gaussian Process Expected Improvement Acquisition Function.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Expected Improvement (EI):"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Expected Improvement (EI):\nPerforma Terbaik Saat Ini (y_best) : 0.8500\n----------------------------------------------------\nKandidat   | Pred Mean  | Pred Std   | EI Score  \n----------------------------------------------------",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Gunakan skala logaritmik (Log-Uniform) untuk hyperparameter seperti learning rate dan bobot regularisasi.",
-          "Prosedur: Gunakan Bayesian Optimization (Optuna/Scikit-Optimize) untuk efisiensi ruang pencarian berdimensi tinggi.",
-          "Prosedur: Kunci batasan anggaran pencarian (Search Budget) yang setara secara proporsional untuk seluruh model pembandin..."
-        ]
+          "[warning: Perangkap] Menjalankan Grid Search manual dengan rentang nilai yang terlalu sempit atau linier pada parameter berskala logaritmik (misal learning rate).",
+          "[warning: Perangkap] Mengalokasikan 100 iterasi tuning untuk model usulan namun hanya 5 iterasi untuk baseline pembanding.",
+          "[warning: Perangkap] Melakukan tuning hyperparameter langsung pada data uji akhir (test set)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa ruang pencarian untuk learning rate dan weight decay wajib didefinisikan dalam skala logaritmik (log-uniform) bu...",
-          "Petunjuk: Perhatikan perbedaan dampak antara perubahan 0.0001 ke 0.001 vs 0.1 ke 0.1009.",
-          "Solusi Kunci: Sensitivitas performa model terhadap parameter laju belajar bersifat multiplikatif, bukan aditif. Rentang antara 10^-5 k..."
-        ]
+          "Prosedur: Gunakan skala logaritmik (Log-Uniform) untuk hyperparameter seperti learning rate dan bobot regularisasi.",
+          "Prosedur: Gunakan Bayesian Optimization (Optuna/Scikit-Optimize) untuk efisiensi ruang pencarian berdimensi tinggi.",
+          "Prosedur: Kunci batasan anggaran pencarian (Search Budget) yang setara secara proporsional untuk seluruh model pembanding."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa ruang pencarian untuk learning rate dan weight decay wajib didefinisikan dalam skala logaritmik (log-uniform) bukan skala linier?",
+          "Petunjuk Analitis: Perhatikan perbedaan dampak antara perubahan 0.0001 ke 0.001 vs 0.1 ke 0.1009.",
+          "Solusi Kunci: Sensitivitas performa model terhadap parameter laju belajar bersifat multiplikatif, bukan aditif. Rentang antara 10^-5 ke 10^-4 memiliki rentang eksplorasi fisis yang sama luasnya dengan 10^-2 ke 10^-1. Skala linier seragam akan membuang 90% sampel pada rentang angka besar yang seringkali memicu divergensi numerik."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -230,101 +270,136 @@ export const CH37_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Sensitivitas terhadap Random Seeds: Mengapa Klaim Keung...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Sensitivitas terhadap Random Seeds: Mengapa Klaim Keunggulan Berbasis Single Run Tidak Sah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.6.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.2.",
-          "Capaian: Menganalisis sumber-sumber stokastisitas dalam pelatihan komputasi modern (bobot awal, data shuffling, GPU non...",
-          "Capaian: Membuktikan fenomena seed lottery dan cherry-picking pada klaim publikasi ilmiah.",
-          "Capaian: Menetapkan standar protokol pelaporan berbasis distribusi performa multi-seed."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menganalisis sumber-sumber stokastisitas dalam pelatihan komputasi modern (bobot awal, data shuffling, GPU non-determinism).",
+          "Capaian 2: Membuktikan fenomena seed lottery dan cherry-picking pada klaim publikasi ilmiah.",
+          "Capaian 3: Menetapkan standar protokol pelaporan berbasis distribusi performa multi-seed."
         ],
-        "keyFormulaOrDiagram": "$$Y_{m, s} = \\mu_m + \\epsilon_{\\text{seed}(s)} + \\epsilon_{\\text{hardware}}$$"
+        "keyFormulaOrDiagram": "$$Y_{m, s} = \\mu_m + \\epsilon_{\\text{seed}(s)} + \\epsilon_{\\text{hardware}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.6.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Sensitivitas terhadap Random Seeds: Mengapa Klaim Keung...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Sensitivitas terhadap Random Seeds: Mengapa Klaim Keunggulan Berbasis Single Run Tidak Sah",
+        "lead": "Dalam ekosistem riset kecerdasan buatan dan rekayasa komputasi, salah satu penyebab utama krisis reproduksibilitas adalah publikasi klaim keunggulan yang hanya didasarkan pada satu kali proses pelatihan (single run).",
         "bulletPoints": [
-          "Dalam ekosistem riset kecerdasan buatan dan rekayasa komputasi, salah satu penyebab utama krisis reproduksibilitas adalah pub...",
-          "Klaim semacam ini secara metodologis tidak sah. Pelatihan jaringan syaraf tiruan modern melibatkan berbagai sumber stokastisi...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Penulis mengeksekusi model baru dengan satu random seed acak, mendapatkan akurasi 94.2%, membandingkannya dengan baseline yang menghasilkan 93.8%, lalu menyimpulkan bahwa metode baru mereka mengalahkan baseline sebesar 0.4%.",
+          "Klaim semacam ini secara metodologis tidak sah.",
+          "Pelatihan jaringan syaraf tiruan modern melibatkan berbagai sumber stokastisitas acak yang masif: 1."
         ],
-        "keyFormulaOrDiagram": "Studi \"Seed Lottery\" (Henderson et al., 2018; Lucic et al., 2018): Para peneliti membuktik..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Studi \"Seed Lottery\" (Henderson et al., 2018; Lucic et al., 2018): Para peneliti membuktikan bahwa variasi performa yang dihasilkan hanya dari mengubah nilai integer random seed (misal seed=1 vs seed=42) seringkali berkisar antara 1.0% hingga 4.0% akurasi.",
         "bulletPoints": [
-          "Studi \"Seed Lottery\" (Henderson et al., 2018; Lucic et al., 2018): Para peneliti membuktikan bahwa variasi performa yang diha...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Selisih 0.4% yang diklaim sebagai inovasi ilmiah seringkali murni merupakan \"keberuntungan undian seed\" (seed lottery lucky draw), bukan keunggulan arsitektural."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Dekomposisi Varians Kinerja Algoritma Stokastik:",
         "bulletPoints": [
-          "Dekomposisi Varians Kinerja Algoritma Stokastik:",
           "Misalkan $Y_{m, s}$ adalah performa dari model $m$ yang dieksekusi dengan random seed $s \\in \\mathcal{S}$.",
-          "Model efek acak:"
+          "Model efek acak:",
+          "di mana:"
         ],
-        "keyFormulaOrDiagram": "$$Y_{m, s} = \\mu_m + \\epsilon_{\\text{seed}(s)} + \\epsilon_{\\text{hardware}}$$"
+        "keyFormulaOrDiagram": "$$Y_{m, s} = \\mu_m + \\epsilon_{\\text{seed}(s)} + \\epsilon_{\\text{hardware}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua peneliti membandingkan Algoritma Baru vs Baseline. Peneliti 1 menjalankan 1 kali run: Algoritma Baru = 92.5%, Baseline = 92.0% (Klaim: u...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Evaluasi Peneliti 1: Mengambil run ke-4 dari Algoritma Baru (92.5%) dan run ke-3 dari Baseline (92....",
-          "Langkah 2: Evaluasi Peneliti 2: Menghitung nilai mean sejati dari 5 seed: Mean Algoritma Baru = 91.60%; Mean B...",
-          "Langkah 3: Evaluasi stabilitas (varians): Standar deviasi Algoritma Baru (1.08%) hampir 7 kali lebih besar dar...",
-          "Interpretasi: Klaim keunggulan Peneliti 1 adalah ilusi hasil cherry-picking. Algoritma Baru sebenarnya memiliki performa rata-rata yan..."
+          "Konteks Kasus: Dua peneliti membandingkan Algoritma Baru vs Baseline. Peneliti 1 menjalankan 1 kali run: Algoritma Baru = 92.5%, Baseline = 92.0% (Klaim: unggul +0.5%). Peneliti 2 menjalankan 5 random seed independen: Algoritma Baru = [91.0, 93.0, 90.5, 92.5, 91.0]% (mean = 91.60%, std = 1.08%); Baseline = [91.8, 92.2, 92.0, 91.9, 92.1]% (mean = 92.00%, std = 0.16%). Analisis hasil kedua peneliti tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Evaluasi stabilitas (varians): Standar deviasi Algoritma Baru (1.08%) hampir 7..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Evaluasi Peneliti 1: Mengambil run ke-4 dari Algoritma Baru (92.5%) dan run ke-3 dari Baseline (92.0%). Peneliti 1 menarik kesimpulan palsu akibat kebetulan seed.",
+          "Langkah 2: Evaluasi Peneliti 2: Menghitung nilai mean sejati dari 5 seed: Mean Algoritma Baru = 91.60%; Mean Baseline = 92.00%. Rata-rata Algoritma Baru sebenarnya lebih rendah -0.40%."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi stabilitas (varians): Standar deviasi Algoritma Baru (1.08%) hampir 7 kali lebih besar daripada Baseline (0.16%), membuktikan bahwa Algoritma Baru sangat rapuh dan sensitif terhadap inisialisasi acak.",
+          "[result: Interpretasi Ilmiah] Klaim keunggulan Peneliti 1 adalah ilusi hasil cherry-picking. Algoritma Baru sebenarnya memiliki performa rata-rata yang lebih buruk dan stabilitas stokastik yang sangat buruk."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi variasi performa 10 random seeds independen membongkar bahaya single run.",
         "bulletPoints": [
-          "Deskripsi: Simulasi variasi performa 10 random seeds independen membongkar bahaya single run.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Forensik Sensitivitas Random Seed:"
+          "Tujuan Algoritma: Simulasi variasi performa 10 random seeds independen membongkar bahaya single run.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Forensik Sensitivitas Random Seed:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Sensitivitas Random Seed: | Hasil 10 Seed Baseline (%)..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Sensitivitas Random Seed:\nHasil 10 Seed Baseline (%) : [85.2, 84.95, 85.26, 85.61, 84.91, 84.87, 85.63, 85.31, 84.81, 85.22]\nHasil 10 Seed Proposed (%) : [84.14, 84.09, 86.82, 81.33, 81.69, 83.9, 84.7, 86.63, 83.21, 82.26]\n----------------------------------------------------\nKlaim Cherry-Picked Single Run: Proposed=86.82% vs Base=85.21% (Unggul Palsu!)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya menjalankan model satu kali dan mempublikasikan skor tersebut sebagai representasi metode.",
-          "Perangkap: Melakukan pengujian multi-seed hanya untuk model usulan sendiri sementara baseline tetap satu run.",
-          "Perangkap: Menggunakan rentang seed yang tidak berurutan dan hanya memilih seed-seed yang memberikan hasil tinggi."
-        ]
+          "[warning: Perangkap] Hanya menjalankan model satu kali dan mempublikasikan skor tersebut sebagai representasi metode.",
+          "[warning: Perangkap] Melakukan pengujian multi-seed hanya untuk model usulan sendiri sementara baseline tetap satu run.",
+          "[warning: Perangkap] Menggunakan rentang seed yang tidak berurutan dan hanya memilih seed-seed yang memberikan hasil tinggi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan minimal 5 hingga 10 random seeds yang telah ditentukan sebelumnya (misal seed 1 s.d. 10).",
           "Prosedur: Laporkan rata-rata (mean) dan deviasi standar (std dev) atau median dan rentang interkuartil (IQR).",
           "Prosedur: Sertakan uji signifikansi statistik berpasangan (misal Wilcoxon atau t-test independen) antar sebaran seed."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa non-determinisme perangkat keras GPU (GPU non-determinism) tetap dapat terjadi meskipun peneliti telah mengatur...",
-          "Petunjuk: Perhatikan algoritma atomik konvolusi CUDA di pustaka cuDNN.",
-          "Solusi Kunci: Pustaka cuDNN menggunakan algoritma benchmarking otomatis untuk memilih kernel tercepat. Beberapa operasi atomik (sepert..."
-        ]
+          "Pertanyaan Uji: Mengapa non-determinisme perangkat keras GPU (GPU non-determinism) tetap dapat terjadi meskipun peneliti telah mengatur torch.manual_seed(42)?",
+          "Petunjuk Analitis: Perhatikan algoritma atomik konvolusi CUDA di pustaka cuDNN.",
+          "Solusi Kunci: Pustaka cuDNN menggunakan algoritma benchmarking otomatis untuk memilih kernel tercepat. Beberapa operasi atomik (seperti penambahan gradien floating point pada thread paralel) dieksekusi dalam urutan non-deterministik bergantung pada penjadwalan thread GPU, yang memicu sedikit perbedaan presisi pembulatan desimal terakhir."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -395,101 +470,138 @@ export const CH37_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Evaluasi Sebaran Kinerja Multi-Seed (10+ Iterasi Acak)...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Evaluasi Sebaran Kinerja Multi-Seed (10+ Iterasi Acak) dengan Interval Kepercayaan",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.6.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.3.",
-          "Capaian: Menghitung interval kepercayaan 95% untuk estimasi performa rata-rata multi-seed.",
-          "Capaian: Memvisualisasikan distribusi sebaran performa menggunakan Violin Plot dan Box Plot teranotasi.",
-          "Capaian: Menerapkan analisis ukuran efek (Cohen's d) untuk menilai signifikansi praktis di atas noise seed."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menghitung interval kepercayaan 95% untuk estimasi performa rata-rata multi-seed.",
+          "Capaian 2: Memvisualisasikan distribusi sebaran performa menggunakan Violin Plot dan Box Plot teranotasi.",
+          "Capaian 3: Menerapkan analisis ukuran efek (Cohen's d) untuk menilai signifikansi praktis di atas noise seed."
         ],
-        "keyFormulaOrDiagram": "$$\\text{CI}_{1-\\alpha} = \\left[ \\bar{y}_A - t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}}, \\; \\bar{y}_A + t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}} \\right]$$"
+        "keyFormulaOrDiagram": "$$\\text{CI}_{1-\\alpha} = \\left[ \\bar{y}_A - t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}}, \\; \\bar{y}_A + t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}} \\right]$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.6.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Evaluasi Sebaran Kinerja Multi-Seed (10+ Iterasi Acak)...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Evaluasi Sebaran Kinerja Multi-Seed (10+ Iterasi Acak) dengan Interval Kepercayaan",
+        "lead": "Melaporkan nilai rata-rata dan deviasi standar $\\bar{x} \\pm s$ dari 10 seed acak adalah langkah awal yang baik, namun belum cukup untuk menjawab pertanyaan inti peninjau ilmiah: \"Berapa interval estimasi yang masuk akal bagi performa sejati arsitektur ini di populasi umum?\" Untuk menjawab pertanyaan tersebut, peneliti wajib mengonstruksi interval kepercayaan (Confidence Interval) formal dan menghitung ukuran efek terstandardisasi (Effect Size).",
         "bulletPoints": [
-          "Melaporkan nilai rata-rata dan deviasi standar $\\bar{x} \\pm s$ dari 10 seed acak adalah langkah awal yang baik, namun belum c...",
-          "Interval Kepercayaan Multi-Seed: Interval kepercayaan 95% memberikan rentang nilai di mana kita memiliki keyakinan 95% bahwa...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Interval Kepercayaan Multi-Seed: Interval kepercayaan 95% memberikan rentang nilai di mana kita memiliki keyakinan 95% bahwa performa rata-rata sejati model berada di dalam rentang tersebut jika eksperimen multi-seed diulang secara independen berulang kali.",
+          "Jika interval kepercayaan 95% dari model usulan tumpang tindih (overlap) secara substansial dengan interval kepercayaan model baseline, peneliti tidak memiliki landasan statistik yang kuat untuk mengklaim superioritas."
         ],
-        "keyFormulaOrDiagram": "Ukuran Efek (Cohen's d): Selain nilai p-value, peneliti wajib melaporkan Cohen's d yang me..."
+        "keyFormulaOrDiagram": "$d = 3.0$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Ukuran Efek (Cohen's d): Selain nilai p-value, peneliti wajib melaporkan Cohen's d yang mengukur jarak antara rata-rata kedua model dinormalisasi oleh gabungan standar deviasi mereka (pooled standard deviation).",
         "bulletPoints": [
-          "Ukuran Efek (Cohen's d): Selain nilai p-value, peneliti wajib melaporkan Cohen's d yang mengukur jarak antara rata-rata kedua...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Kenaikan akurasi 0.3% dengan pooled std 0.1% menghasilkan $d = 3.0$ (efek masif), sedangkan kenaikan akurasi 0.3% dengan pooled std 1.0% hanya menghasilkan $d = 0.3$ (efek kecil yang rentan tenggelam oleh derau)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Interval Kepercayaan dan Ukuran Efek Multi-Seed:",
         "bulletPoints": [
-          "Formulasi Matematis Interval Kepercayaan dan Ukuran Efek Multi-Seed:",
           "Diberikan $S$ sampel performa multi-seed untuk model $A$: $\\{y_{A, 1}, \\dots, y_{A, S}\\}$.",
-          "1. Interval Kepercayaan $(1 - \\alpha)$ Distribusi t-Student:"
+          "1. Interval Kepercayaan $(1 - \\alpha)$ Distribusi t-Student:",
+          "2. Standar Deviasi Tergabung (Pooled Standard Deviation, $s_{\\text{pooled}}$):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{CI}_{1-\\alpha} = \\left[ \\bar{y}_A - t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}}, \\; \\bar{y}_A + t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}} \\right]$$"
+        "keyFormulaOrDiagram": "$$\\text{CI}_{1-\\alpha} = \\left[ \\bar{y}_A - t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}}, \\; \\bar{y}_A + t_{\\alpha/2, S-1} \\frac{s_A}{\\sqrt{S}} \\right]$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua model dievaluasi pada S = 10 random seeds. Model Usulan: mean = 89.20%, s_1 = 0.60%. Model Baseline: mean = 88.30%, s_2 = 0.50%. Hitung...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua model dievaluasi pada S = 10 random seeds. Model Usulan: mean = 89.20%, s_1 = 0.60%. Model Baseline: mean = 88.30%, s_2 = 0.50%. Hitung interval kepercayaan 95% untuk Model Usulan (t_0.025, 9 = 2.262). Hitung pooled standard deviation s_pooled dan Cohen's d. Tentukan apakah perbedaan performa memiliki signifikansi praktis besar.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung standar error Model Usulan: SE = s_1 / sqrt(S) = 0.60 / sqrt(10) = 0.60 / 3.1623 = 0.1897%.",
           "Langkah 2: Hitung margin of error: ME = 2.262 * 0.1897% = 0.429%.",
-          "Langkah 3: Hitung CI 95% Model Usulan: [89.20 - 0.43, 89.20 + 0.43] = [88.77%, 89.63%].",
-          "Interpretasi: Nilai d = 1.63 jauh melampaui ambang batas 0.80, membuktikan bahwa selisih kenaikan +0.90% memiliki ukuran efek praktis..."
+          "Langkah 3: Hitung CI 95% Model Usulan: [89.20 - 0.43, 89.20 + 0.43] = [88.77%, 89.63%]."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung Cohen's d: d = (89.20 - 88.30) / 0.5523 = 0.90 / 0.5523 = 1.63."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung s_pooled: s_pooled = sqrt([(9 * 0.60^2 + 9 * 0.50^2) / 18]) = sqrt([(9 * 0.36 + 9 * 0.25) / 18]) = sqrt([3.24 + 2.25] / 18) = sqrt(5.49 / 18) = sqrt(0.305) = 0.5523%.",
+          "Langkah 5: Hitung Cohen's d: d = (89.20 - 88.30) / 0.5523 = 0.90 / 0.5523 = 1.63.",
+          "[result: Interpretasi Ilmiah] Nilai d = 1.63 jauh melampaui ambang batas 0.80, membuktikan bahwa selisih kenaikan +0.90% memiliki ukuran efek praktis yang sangat besar dan kokoh terhadap variabilitas stokastik seed."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Perhitungan interval kepercayaan 95% dan Cohen's d untuk komparasi multi-seed.",
         "bulletPoints": [
-          "Deskripsi: Perhitungan interval kepercayaan 95% dan Cohen's d untuk komparasi multi-seed.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Analisis Rigoritas Multi-Seed (S=10):"
+          "Tujuan Algoritma: Perhitungan interval kepercayaan 95% dan Cohen's d untuk komparasi multi-seed.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Analisis Rigoritas Multi-Seed (S=10):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Rigoritas Multi-Seed (S=10): | Model Usulan : Mean=89.0..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Rigoritas Multi-Seed (S=10):\nModel Usulan : Mean=89.09% | 95% CI=[88.75%, 89.43%]\nModel Baseline: Mean=88.07% | 95% CI=[87.72%, 88.42%]\n----------------------------------------------------\nPooled Standard Deviation : 0.485%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menampilkan grafik batang (bar chart) tanpa menyertakan error bar sama sekali.",
-          "Perangkap: Menggunakan deviasi standar sebagai pengganti interval kepercayaan tanpa keterangan yang jelas pada caption gr...",
-          "Perangkap: Mengabaikan ukuran efek dan hanya berpatokan pada p-value."
-        ]
+          "[warning: Perangkap] Menampilkan grafik batang (bar chart) tanpa menyertakan error bar sama sekali.",
+          "[warning: Perangkap] Menggunakan deviasi standar sebagai pengganti interval kepercayaan tanpa keterangan yang jelas pada caption grafik.",
+          "[warning: Perangkap] Mengabaikan ukuran efek dan hanya berpatokan pada p-value."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Visualisasikan distribusi multi-seed menggunakan Violin Plot yang memperlihatkan sebaran seluruh titik data.",
           "Prosedur: Sajikan tabel komparasi yang memuat nilai Mean, Median, SD, IQR, dan CI 95%.",
           "Prosedur: Laporkan nilai Cohen's d atau Hedges' g untuk setiap perbandingan utama."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa perbedaan mendasar dalam interpretasi antara deviasi standar (Standard Deviation) dan standar error (Standard Error...",
-          "Petunjuk: Perhatikan apakah Anda mendeskripsikan variabilitas data sampel atau presisi estimasi parameter popu...",
-          "Solusi Kunci: Standar deviasi menggambarkan seberapa lebar variasi performa individual antar run atau seed. Standar error menggambarka..."
-        ]
+          "Pertanyaan Uji: Apa perbedaan mendasar dalam interpretasi antara deviasi standar (Standard Deviation) dan standar error (Standard Error of the Mean)?",
+          "Petunjuk Analitis: Perhatikan apakah Anda mendeskripsikan variabilitas data sampel atau presisi estimasi parameter populasi.",
+          "Solusi Kunci: Standar deviasi menggambarkan seberapa lebar variasi performa individual antar run atau seed. Standar error menggambarkan ketidakpastian dalam mengestimasi nilai rata-rata sejati populasi (seberapa jauh rata-rata sampel berfluktuasi jika eksperimen diulang berkali-kali)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -558,101 +670,136 @@ export const CH37_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pelaporan Anggaran Komputasi (Compute Budget) dan Efisi...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pelaporan Anggaran Komputasi (Compute Budget) dan Efisiensi Karbon/Daya",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.6.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.4.",
-          "Capaian: Mendokumentasikan anggaran komputasi total (Compute Budget) dalam GPU-hours atau FLOPs.",
-          "Capaian: Mengukur konsumsi energi listrik dan jejak emisi karbon ekuivalen (CO2e) dari eksperimen komputasi.",
-          "Capaian: Mematuhi panduan transparansi Green AI dan standar pelaporan efisiensi NeurIPS/ICLR."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.6.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mendokumentasikan anggaran komputasi total (Compute Budget) dalam GPU-hours atau FLOPs.",
+          "Capaian 2: Mengukur konsumsi energi listrik dan jejak emisi karbon ekuivalen (CO2e) dari eksperimen komputasi.",
+          "Capaian 3: Mematuhi panduan transparansi Green AI dan standar pelaporan efisiensi NeurIPS/ICLR."
         ],
-        "keyFormulaOrDiagram": "$$E_{\\text{total}} = \\sum_{k=1}^K P_{\\text{avg}, k} \\cdot \\Delta t_k \\cdot \\text{PUE} \\quad \\text{[kWh]}$$"
+        "keyFormulaOrDiagram": "$$E_{\\text{total}} = \\sum_{k=1}^K P_{\\text{avg}, k} \\cdot \\Delta t_k \\cdot \\text{PUE} \\quad \\text{[kWh]}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.6.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pelaporan Anggaran Komputasi (Compute Budget) dan Efisi...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pelaporan Anggaran Komputasi (Compute Budget) dan Efisiensi Karbon/Daya",
+        "lead": "Komunitas ilmiah global semakin menaruh perhatian kritis terhadap jejak energi dan dampak lingkungan dari penelitian kecerdasan buatan (\"Green AI\", Schwartz et al., 2020).",
         "bulletPoints": [
-          "Komunitas ilmiah global semakin menaruh perhatian kritis terhadap jejak energi dan dampak lingkungan dari penelitian kecerdas...",
-          "Pilar Pelaporan Anggaran Komputasi (Compute Budget Reporting): 1. Anggaran Komputasi Total Pelatihan (Total Training Budget):...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Melaporkan algoritma baru yang mencapai skor SOTA tanpa mencantumkan anggaran komputasi total yang dihabiskan untuk mencapainya adalah bentuk ketidakjujuran saintifik (\"Red AI\").",
+          "Sebuah metode yang membutuhkan 10.000 jam GPU untuk tuning hyperparameter demi kenaikan akurasi 0.1% memiliki kelayakan ekonomi dan ekologis yang dipertanyakan.",
+          "Pilar Pelaporan Anggaran Komputasi (Compute Budget Reporting): 1.",
+          "Anggaran Komputasi Total Pelatihan (Total Training Budget): Mencakup total jam komputasi prosesor (GPU-hours atau TPU-hours) yang dihabiskan selama seluruh siklus penelitian, termasuk fase eksplorasi awal, tuning hyperparameter, dan evaluasi multi-seed akhir."
         ],
-        "keyFormulaOrDiagram": "Alat Bantu Otomatisasi Terstandarisasi: Peneliti didorong untuk mengintegrasikan pustaka p..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Alat Bantu Otomatisasi Terstandarisasi: Peneliti didorong untuk mengintegrasikan pustaka pelacak energi otomatis seperti Code...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Alat Bantu Otomatisasi Terstandarisasi: Peneliti didorong untuk mengintegrasikan pustaka pelacak energi otomatis seperti CodeCarbon atau Carbontracker ke dalam skrip eksperimen untuk mencatat konsumsi energi secara langsung dari sensor perangkat keras.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Anggaran Energi dan Emisi Karbon:",
         "bulletPoints": [
-          "Formulasi Matematis Anggaran Energi dan Emisi Karbon:",
           "1. Konsumsi Energi Listrik Total ($E_{\\text{total}}$):",
-          "di mana:"
+          "di mana:",
+          "- $P_{\\text{avg}, k}$: Rata-rata konsumsi daya perangkat keras pada run ke-$k$ (kW)."
         ],
-        "keyFormulaOrDiagram": "$$E_{\\text{total}} = \\sum_{k=1}^K P_{\\text{avg}, k} \\cdot \\Delta t_k \\cdot \\text{PUE} \\quad \\text{[kWh]}$$"
+        "keyFormulaOrDiagram": "$$E_{\\text{total}} = \\sum_{k=1}^K P_{\\text{avg}, k} \\cdot \\Delta t_k \\cdot \\text{PUE} \\quad \\text{[kWh]}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah proyek riset deep learning di ITERA menggunakan satu server dengan 2 unit GPU (masing-masing rata-rata daya 250 Watt) dan CPU/Motherb...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah proyek riset deep learning di ITERA menggunakan satu server dengan 2 unit GPU (masing-masing rata-rata daya 250 Watt) dan CPU/Motherboard (daya 150 Watt). Total durasi penelitian: 200 jam pelatihan dan tuning. Efisiensi data center PUE = 1.2. Faktor intensitas karbon jaringan listrik lokal adalah 0.80 kg CO2/kWh. Hitung total konsumsi energi dalam kWh dan total emisi karbon dalam kg CO2e.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung total daya sistem: P_total = (2 * 250 W) + 150 W = 500 W + 150 W = 650 Watt = 0.65 kW.",
-          "Langkah 2: Hitung konsumsi energi sistem mentah: E_raw = 0.65 kW * 200 jam = 130 kWh.",
+          "Langkah 2: Hitung konsumsi energi sistem mentah: E_raw = 0.65 kW * 200 jam = 130 kWh."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung total energi dengan faktor PUE: E_total = 130 kWh * 1.2 = 156 kWh.",
-          "Interpretasi: Eksperimen riset menghasilkan jejak emisi sebesar 124.8 kg CO2e (setara dengan perjalanan kendaraan bermotor sejauh ~600..."
+          "Langkah 4: Hitung emisi karbon total: C_emisi = 156 kWh * 0.80 kg CO2/kWh = 124.8 kg CO2e.",
+          "[result: Interpretasi Ilmiah] Eksperimen riset menghasilkan jejak emisi sebesar 124.8 kg CO2e (setara dengan perjalanan kendaraan bermotor sejauh ~600 km). Transparansi data ini wajib dicantumkan dalam lampiran naskah ilmiah."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung emisi karbon total: C_emisi = 156 kWh * 0.80 kg CO2/kWh = 124.8 kg CO2e."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit kalkulasi anggaran komputasi, konsumsi energi, dan emisi karbon riset.",
         "bulletPoints": [
-          "Deskripsi: Audit kalkulasi anggaran komputasi, konsumsi energi, dan emisi karbon riset.",
-          "Dependensi Pustaka: pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Laporan Anggaran Komputasi & Jejak Karbon Riset:"
+          "Tujuan Algoritma: Audit kalkulasi anggaran komputasi, konsumsi energi, dan emisi karbon riset.",
+          "Dependensi Pustaka Ilmiah: pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Laporan Anggaran Komputasi & Jejak Karbon Riset:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Laporan Anggaran Komputasi & Jejak Karbon Riset: | Phase GPU_Hou..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Laporan Anggaran Komputasi & Jejak Karbon Riset:\n                      Phase  GPU_Hours  Energy_kWh  Carbon_kg_CO2e\n        Initial Prototyping         40       20.00          16.400\n      Hyperparameter Tuning        240      112.50          92.250\nFinal Multi-Seed Evaluation         60       28.12          23.062",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyembunyikan jumlah iterasi hyperparameter tuning yang masif dan hanya melaporkan waktu satu kali final run.",
-          "Perangkap: Tidak mencantumkan spesifikasi perangkat keras (GPU model, TDP, RAM) yang digunakan.",
-          "Perangkap: Mengklaim efisiensi tinggi tanpa data pengukuran konsumsi daya aktual."
-        ]
+          "[warning: Perangkap] Menyembunyikan jumlah iterasi hyperparameter tuning yang masif dan hanya melaporkan waktu satu kali final run.",
+          "[warning: Perangkap] Tidak mencantumkan spesifikasi perangkat keras (GPU model, TDP, RAM) yang digunakan.",
+          "[warning: Perangkap] Mengklaim efisiensi tinggi tanpa data pengukuran konsumsi daya aktual."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan pustaka CodeCarbon atau Carbontracker untuk logging otomatis emisi.",
           "Prosedur: Cantumkan tabel ringkasan Compute Budget di seksi Experimental Setup.",
           "Prosedur: Diskusikan rasio efisiensi energi terhadap keuntungan akurasi dalam kerangka Green AI."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa gerakan Green AI mengkritik keras tren riset yang hanya berfokus pada metrik akurasi puncak (peak accuracy)?",
-          "Petunjuk: Kaitkan dengan biaya eksponensial dalam mencapai perbaikan marjinal yang kecil.",
-          "Solusi Kunci: Gerakan Green AI menyoroti bahwa mengejar kenaikan 0.1% akurasi seringkali menuntut kelipatan 10x hingga 100x anggaran k..."
-        ]
+          "Petunjuk Analitis: Kaitkan dengan biaya eksponensial dalam mencapai perbaikan marjinal yang kecil.",
+          "Solusi Kunci: Gerakan Green AI menyoroti bahwa mengejar kenaikan 0.1% akurasi seringkali menuntut kelipatan 10x hingga 100x anggaran komputasi dan energi. Pendekatan ini eksklusif hanya untuk segelintir korporasi raksasa, memperparah emisi karbon global, dan menghasilkan sistem yang tidak efisien untuk penerapan praktis di dunia nyata."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

@@ -61,99 +61,135 @@ export const CH16_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum P...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum Pemodelan Statistik",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.1.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.1.",
-          "Capaian: Memahami filosofi Exploratory Data Analysis (EDA) John Tukey sebagai detektif data.",
-          "Capaian: Membedakan pendekatan konfirmatori (hipotesis kaku) dengan eksploratori (penemuan struktur alami).",
-          "Capaian: Menerapkan visualisasi diagnostik awal untuk mendeteksi multimodalitas dan diskontinuitas data."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami filosofi Exploratory Data Analysis (EDA) John Tukey sebagai detektif data.",
+          "Capaian 2: Membedakan pendekatan konfirmatori (hipotesis kaku) dengan eksploratori (penemuan struktur alami).",
+          "Capaian 3: Menerapkan visualisasi diagnostik awal untuk mendeteksi multimodalitas dan diskontinuitas data."
         ],
-        "keyFormulaOrDiagram": "$$\\bar{X}_k = 9.0, \\quad \\text{Var}(X_k) = 11.0$$"
+        "keyFormulaOrDiagram": "$$\\bar{X}_k = 9.0, \\quad \\text{Var}(X_k) = 11.0$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.1.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum P...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum Pemodelan Statistik",
+        "lead": "John Tukey (1977) dalam bukunya yang mengubah sejarah statistika, Exploratory Data Analysis, mengajarkan bahwa sebelum seorang ilmuwan memaksakan asumsi model probabilistik atau menguji hipotesis parametrik, ilmuwan tersebut wajib bersikap seperti seorang detektif: mengamati data tanpa prasangka teoretis untuk membiarkan data memperlihatkan struktur fisisnya sendiri.",
         "bulletPoints": [
-          "John Tukey (1977) dalam bukunya yang mengubah sejarah statistika, Exploratory Data Analysis, mengajarkan bahwa sebelum seoran...",
-          "Kesalahan metodologis yang paling fatal di kalangan peneliti rekayasa adalah langsung menjalankan model regresi linier atau A...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kesalahan metodologis yang paling fatal di kalangan peneliti rekayasa adalah langsung menjalankan model regresi linier atau ANOVA segera setelah data mentah terkumpul, hanya berpatokan pada nilai p-value tanpa pernah melihat sebaran data secara visual.",
+          "Fenomena seperti kuartet Anscombe (Anscombe's Quartet, 1973) membuktikan secara matematis bahwa empat kumpulan data dengan rata-rata, varians, korelasi, dan garis regresi yang identik sempurna dapat memiliki struktur fisis yang sepenuhnya berbeda: satu linier murni, satu kurva kuadratik, satu linier dengan satu pencilan ekstrem, dan satu data vertikal palsu."
         ],
-        "keyFormulaOrDiagram": "EDA bukan sekadar membuat grafik deskriptif, melainkan serangkaian teknik iteratif untuk:..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "EDA bukan sekadar membuat grafik deskriptif, melainkan serangkaian teknik iteratif untuk: 1.",
         "bulletPoints": [
-          "EDA bukan sekadar membuat grafik deskriptif, melainkan serangkaian teknik iteratif untuk: 1. Mengidentifikasi bentuk distribu...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Mengidentifikasi bentuk distribusi data sesungguhnya (apakah simetris, menceng, atau multimodal).",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Peringatan Kuartet Anscombe: Diberikan 4 dataset $(X_k, Y_k)$ untuk $k \\in \\{1, 2, 3, 4\\}$:",
         "bulletPoints": [
-          "Peringatan Kuartet Anscombe: Diberikan 4 dataset $(X_k, Y_k)$ untuk $k \\in \\{1, 2, 3, 4\\}$:",
-          "Meskipun seluruh parameter statistik ringkasan sama persis hingga tiga desimal, representasi fisis keempat dat...",
-          "- Dataset 1: Hubungan linier Gaussian wajar."
+          "Meskipun seluruh parameter statistik ringkasan sama persis hingga tiga desimal, representasi fisis keempat dataset sangat kontras:",
+          "- Dataset 1: Hubungan linier Gaussian wajar.",
+          "- Dataset 2: Hubungan non-linier kuadratik sempurna ($Y = f(X^2)$)."
         ],
-        "keyFormulaOrDiagram": "$$\\bar{X}_k = 9.0, \\quad \\text{Var}(X_k) = 11.0$$"
+        "keyFormulaOrDiagram": "$$\\bar{X}_k = 9.0, \\quad \\text{Var}(X_k) = 11.0$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua sensor arus motor listrik menghasilkan nilai rata-rata yang sama (10.0 A) dan standar deviasi yang sama (2.0 A). Namun setelah diplot me...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua sensor arus motor listrik menghasilkan nilai rata-rata yang sama (10.0 A) dan standar deviasi yang sama (2.0 A). Namun setelah diplot menggunakan histogram beresolusi tinggi, Sensor A membentuk kurva lonceng simetris tunggal, sedangkan Sensor B membentuk dua puncak terpisah (bimodal) pada 8.0 A dan 12.0 A. Jelaskan mengapa pemodelan regresi berbasis asumsi Gaussian tunggal akan menyesatkan pada Sensor B.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Analisis Sensor A: Distribusi unimodal simetris konsisten dengan model derau Gaussian di sekitar ni...",
-          "Langkah 2: Analisis Sensor B: Keberadaan dua puncak (bimodal) membuktikan bahwa motor tidak beroperasi pada sa...",
-          "Langkah 3: Evaluasi rata-rata 10.0 A pada Sensor B: Nilai 10.0 A sebenarnya adalah kondisi yang hampir tidak p...",
-          "Interpretasi: Eksplorasi visual EDA berhasil mengungkap adanya dua mode operasional fisis mesin yang tersembunyi jika hanya mengandalk..."
+          "Langkah 1: Analisis Sensor A: Distribusi unimodal simetris konsisten dengan model derau Gaussian di sekitar nilai tunak 10.0 A.",
+          "Langkah 2: Analisis Sensor B: Keberadaan dua puncak (bimodal) membuktikan bahwa motor tidak beroperasi pada satu kondisi tunggal, melainkan berpindah-pindah di antara dua kondisi operasi fisik yang berbeda (misalnya kondisi tanpa beban pada 8.0 A dan kondisi beban penuh pada 12.0 A)."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Rekomendasi metodologi: Peneliti harus memisahkan data Sensor B menjadi dua sub..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Demonstrasi Kuartet Anscombe: Kesamaan statistik ringkasan versus perbedaan bentuk grafis data.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Metrik | Dataset I | Dataset II"
+          "Langkah 3: Evaluasi rata-rata 10.0 A pada Sensor B: Nilai 10.0 A sebenarnya adalah kondisi yang hampir tidak pernah terjadi dalam realitas fisik operasional motor.",
+          "Langkah 4: Rekomendasi metodologi: Peneliti harus memisahkan data Sensor B menjadi dua sub-populasi sebelum analisis atau menggunakan Gaussian Mixture Model (GMM).",
+          "[result: Interpretasi Ilmiah] Eksplorasi visual EDA berhasil mengungkap adanya dua mode operasional fisis mesin yang tersembunyi jika hanya mengandalkan angka rata-rata."
         ],
-        "keyFormulaOrDiagram": "Metrik | Dataset I | Dataset II | ---------------------------------------------------- | R..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Demonstrasi Kuartet Anscombe: Kesamaan statistik ringkasan versus perbedaan bentuk grafis data.",
         "bulletPoints": [
-          "Perangkap: Langsung menjalankan uji hipotesis tanpa memeriksa plot sebaran visual data.",
-          "Perangkap: Mengasumsikan data selalu berdistribusi normal hanya karena ukuran sampel n > 30.",
-          "Perangkap: Membuang data yang tidak sesuai dengan kurva linier tanpa memeriksa apakah fenomena tersebut adalah hubungan n..."
-        ]
+          "Tujuan Algoritma: Demonstrasi Kuartet Anscombe: Kesamaan statistik ringkasan versus perbedaan bentuk grafis data.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Metrik                 | Dataset I    | Dataset II  "
+        ],
+        "keyFormulaOrDiagram": "Metrik                 | Dataset I    | Dataset II  \n----------------------------------------------------\nRata-rata X            |         9.00 |         9.00\nRata-rata Y            |         7.50 |         7.50\nSlope Regresi OLS      |        0.500 |        0.500",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Gunakan matriks scatterplot (pairplot) pada seluruh kombinasi variabel sebelum menyusun model multivariat.",
-          "Prosedur: Gunakan plot Quantile-Quantile (Q-Q plot) untuk mengonfirmasi normalitas visual residu."
-        ]
+          "[warning: Perangkap] Langsung menjalankan uji hipotesis tanpa memeriksa plot sebaran visual data.",
+          "[warning: Perangkap] Mengasumsikan data selalu berdistribusi normal hanya karena ukuran sampel n > 30.",
+          "[warning: Perangkap] Membuang data yang tidak sesuai dengan kurva linier tanpa memeriksa apakah fenomena tersebut adalah hubungan non-linier sejati."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa bahaya terbesar jika seorang peneliti hanya mengandalkan nilai koefisien korelasi Pearson r = 0.85 tanpa melihat sca...",
-          "Petunjuk: Perhatikan bagaimana satu titik pencilan ekstrem (leverage point) dapat mendistorsi korelasi Pearson...",
-          "Solusi Kunci: Satu titik pencilan ekstrem yang letaknya jauh dari gugusan data utama dapat menarik garis regresi secara artifisial, me..."
-        ]
+          "Prosedur: Gunakan matriks scatterplot (pairplot) pada seluruh kombinasi variabel sebelum menyusun model multivariat.",
+          "Prosedur: Gunakan plot Quantile-Quantile (Q-Q plot) untuk mengonfirmasi normalitas visual residu."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Apa bahaya terbesar jika seorang peneliti hanya mengandalkan nilai koefisien korelasi Pearson r = 0.85 tanpa melihat scatterplot data?",
+          "Petunjuk Analitis: Perhatikan bagaimana satu titik pencilan ekstrem (leverage point) dapat mendistorsi korelasi Pearson secara masif.",
+          "Solusi Kunci: Satu titik pencilan ekstrem yang letaknya jauh dari gugusan data utama dapat menarik garis regresi secara artifisial, menghasilkan korelasi Pearson tinggi (r = 0.85) pada data yang sebenarnya tidak memiliki korelasi di antara titik-titik lainnya. Sebaliknya, relasi non-linier yang sempurna (seperti parabola y = x^2) dapat menghasilkan korelasi Pearson mendekati nol."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -221,99 +257,130 @@ export const CH16_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Ukuran Pemusatan dan Dispersi Tahan Outlier (Median, MA...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Ukuran Pemusatan dan Dispersi Tahan Outlier (Median, MAD, Trimmed Mean)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.1.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.2.",
-          "Capaian: Memahami konsep titik runtuh (*breakdown point*) statistik pemusatan dan dispersi.",
-          "Capaian: Menghitung Median Absolute Deviation (MAD) dan faktor skalanya untuk estimasi standar deviasi normal.",
-          "Capaian: Menerapkan Trimmed Mean dan Winsorized Mean pada data telemetri yang rentan lonjakan derau."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami konsep titik runtuh (*breakdown point*) statistik pemusatan dan dispersi.",
+          "Capaian 2: Menghitung Median Absolute Deviation (MAD) dan faktor skalanya untuk estimasi standar deviasi normal.",
+          "Capaian 3: Menerapkan Trimmed Mean dan Winsorized Mean pada data telemetri yang rentan lonjakan derau."
         ],
-        "keyFormulaOrDiagram": "$$\\text{MAD} = \\text{Median}\\left( |X_i - \\text{Median}(X)| \\right)$$"
+        "keyFormulaOrDiagram": "$$\\text{MAD} = \\text{Median}\\left( |X_i - \\text{Median}(X)| \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.1.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Ukuran Pemusatan dan Dispersi Tahan Outlier (Median, MA...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Ukuran Pemusatan dan Dispersi Tahan Outlier (Median, MAD, Trimmed Mean)",
+        "lead": "Rata-rata aritmatika (mean) dan standar deviasi adalah ukuran statistik klasik yang paling umum digunakan, namun keduanya memiliki kelemahan fatal: keduanya memiliki Titik Runtuh (*breakdown point*) sebesar nol (0%).",
         "bulletPoints": [
-          "Rata-rata aritmatika (mean) dan standar deviasi adalah ukuran statistik klasik yang paling umum digunakan, namun keduanya mem...",
-          "Dalam Exploratory Data Analysis, peneliti menggunakan ukuran pemusatan dan dispersi yang kokoh (*robust statistics*): 1. Medi...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Artinya, satu titik data pencilan ekstrem yang salah akibat kegagalan transmisi sensor (misalnya nilai tegangan terbaca 9999 V alih-alih 5.0 V) sudah cukup untuk mendistorsi nilai rata-rata dan membuat standar deviasi meledak, menghancurkan seluruh analisis berikutnya.",
+          "Dalam Exploratory Data Analysis, peneliti menggunakan ukuran pemusatan dan dispersi yang kokoh (*robust statistics*): 1.",
+          "Median: Ukuran pemusatan berbasis urutan nilai tengah dengan titik runtuh maksimum 50%."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Rata-rata aritmatika (mean) dan standar deviasi adalah ukuran statistik klasik yang paling umum digunakan, namun keduanya mem...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Median Absolute Deviation (MAD):",
         "bulletPoints": [
-          "1. Median Absolute Deviation (MAD):",
           "Estimator Standar Deviasi Normal Konsisten (Normalized MAD / NMAD):",
-          "Di mana $\\Phi^{-1}(0.75)$ adalah kuantil ke-75 dari distribusi normal baku."
+          "Di mana $\\Phi^{-1}(0.75)$ adalah kuantil ke-75 dari distribusi normal baku.",
+          "2. Rata-rata Terpangkas $\\alpha$ (Alpha-Trimmed Mean):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{MAD} = \\text{Median}\\left( |X_i - \\text{Median}(X)| \\right)$$"
+        "keyFormulaOrDiagram": "$$\\text{MAD} = \\text{Median}\\left( |X_i - \\text{Median}(X)| \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Tujuh pengukuran latensi paket data IoT (ms) menghasilkan: [12, 14, 15, 13, 16, 14, 450] di mana nilai 450 ms adalah anomali timeout koneksi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Tujuh pengukuran latensi paket data IoT (ms) menghasilkan: [12, 14, 15, 13, 16, 14, 450] di mana nilai 450 ms adalah anomali timeout koneksi. Hitung: (a) Mean dan Standar Deviasi biasa, (b) Median dan NMAD (estimasi sigma robust). Analisis perbandingannya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1 (Statistik Klasik):",
           "Jumlah total = 12 + 14 + 15 + 13 + 16 + 14 + 450 = 534 ms.",
           "Mean klasik = 534 / 7 = 76.29 ms. Standar Deviasi s = 164.71 ms.",
-          "Interpretasi: Nilai mean klasik (76.29 ms) dan deviasi standar (164.71 ms) rusak total akibat 1 outlier. Sebaliknya, Median (14.0 ms)..."
+          "Langkah 2 (Statistik Robust):"
         ],
-        "keyFormulaOrDiagram": "Langkah 3 (Normalisasi MAD): NMAD = 1.4826 * MAD = 1.4826 * 1.0 = 1.48 ms."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Urutkan data: [12, 13, 14, 14, 15, 16, 450]. Median = 14.0 ms.",
+          "Hitung deviasi absolut terhadap median |Xi - 14|: [|12-14|, |13-14|, |14-14|, |14-14|, |15-14|, |16-14|, |450-14|] = [2, 1, 0, 0, 1, 2, 436].",
+          "Urutkan deviasi absolut: [0, 0, 1, 1, 2, 2, 436]. Median deviasi absolut (MAD) = 1.0 ms.",
+          "Langkah 3 (Normalisasi MAD): NMAD = 1.4826 * MAD = 1.4826 * 1.0 = 1.48 ms.",
+          "[result: Interpretasi Ilmiah] Nilai mean klasik (76.29 ms) dan deviasi standar (164.71 ms) rusak total akibat 1 outlier. Sebaliknya, Median (14.0 ms) dan NMAD (1.48 ms) mencerminkan performa latensi jaringan normal yang sesungguhnya dengan sangat akurat."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komparasi ketahanan statistik klasik (Mean/SD) versus statistik robust (Median/NMAD) terhadap spike outlier.",
         "bulletPoints": [
-          "Deskripsi: Komparasi ketahanan statistik klasik (Mean/SD) versus statistik robust (Median/NMAD) terhadap spike outlier.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: Data Pengamatan : [12.0, 14.0, 15.0, 13.0, 16.0, 14.0, 450.0]"
+          "Tujuan Algoritma: Komparasi ketahanan statistik klasik (Mean/SD) versus statistik robust (Median/NMAD) terhadap spike outlier.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: Data Pengamatan             : [12.0, 14.0, 15.0, 13.0, 16.0, 14.0, 450.0]"
         ],
-        "keyFormulaOrDiagram": "Data Pengamatan : [12.0, 14.0, 15.0, 13.0, 16.0, 14.0, 450.0] | --------------------------..."
+        "keyFormulaOrDiagram": "Data Pengamatan             : [12.0, 14.0, 15.0, 13.0, 16.0, 14.0, 450.0]\n-------------------------------------------------------\nRata-rata Klasik (Mean)     : 76.29 ms\nStandar Deviasi Klasik      : 164.71 ms\nMedian Robust               : 14.00 ms",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan mean dan SD untuk data sinyal telemetri yang sering mengalami gangguan koneksi (dropout/spike).",
-          "Perangkap: Lupa mengalikan nilai MAD dengan faktor 1.4826 saat ingin mengestimasi parameter dispersi setara normal.",
-          "Perangkap: Membuang data ekstrim tanpa mencatat alasan fisiknya alih-alih menggunakan estimator robust."
-        ]
+          "[warning: Perangkap] Menggunakan mean dan SD untuk data sinyal telemetri yang sering mengalami gangguan koneksi (dropout/spike).",
+          "[warning: Perangkap] Lupa mengalikan nilai MAD dengan faktor 1.4826 saat ingin mengestimasi parameter dispersi setara normal.",
+          "[warning: Perangkap] Membuang data ekstrim tanpa mencatat alasan fisiknya alih-alih menggunakan estimator robust."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Bandingkan nilai mean dan median: jika selisihnya melebihi 0.5 kali standar deviasi, data kemungkinan besar me...",
+          "Prosedur: Bandingkan nilai mean dan median: jika selisihnya melebihi 0.5 kali standar deviasi, data kemungkinan besar menceng atau mengandung pencilan berat.",
           "Prosedur: Gunakan NMAD sebagai skala penyaring dalam penentuan ambang batas deteksi anomali."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Berapa titik runtuh (breakdown point) dari median sampel, dan apa makna praktisnya dalam pemrosesan data sensor?",
-          "Petunjuk: Berapa proporsi data ekstrem palsu yang mampu ditolerir median sebelum nilainya tertarik tak terhing...",
-          "Solusi Kunci: Titik runtuh median adalah 50% (0.50). Artinya, hingga separuh minus satu dari total data pengamatan dapat rusak total a..."
-        ]
+          "Petunjuk Analitis: Berapa proporsi data ekstrem palsu yang mampu ditolerir median sebelum nilainya tertarik tak terhingga?",
+          "Solusi Kunci: Titik runtuh median adalah 50% (0.50). Artinya, hingga separuh minus satu dari total data pengamatan dapat rusak total atau bernilai ekstrem tak terhingga tanpa mampu menarik nilai median keluar dari rentang data normal yang sah."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -377,99 +444,127 @@ export const CH16_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Teknik Deteksi Pencilan: Tukeys Fences, Modified Z-scor...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Teknik Deteksi Pencilan: Tukeys Fences, Modified Z-score, dan Isolation Forest",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.1.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.3.",
-          "Capaian: Membandingkan metode deteksi pencilan parametrik, non-parametrik, dan berbasis machine learning.",
-          "Capaian: Menghitung batas Tukey's Fences berbasis Interquartile Range (IQR).",
-          "Capaian: Menerapkan Modified Z-score Boris Iglewicz dan David Hoaglin berbasis MAD."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membandingkan metode deteksi pencilan parametrik, non-parametrik, dan berbasis machine learning.",
+          "Capaian 2: Menghitung batas Tukey's Fences berbasis Interquartile Range (IQR).",
+          "Capaian 3: Menerapkan Modified Z-score Boris Iglewicz dan David Hoaglin berbasis MAD."
         ],
-        "keyFormulaOrDiagram": "$$M_i = \\frac{0.6745 \\cdot (x_i - \\tilde{x})}{\\text{MAD}}$$"
+        "keyFormulaOrDiagram": "$$M_i = \\frac{0.6745 \\cdot (x_i - \\tilde{x})}{\\text{MAD}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.1.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Teknik Deteksi Pencilan: Tukeys Fences, Modified Z-scor...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Teknik Deteksi Pencilan: Tukeys Fences, Modified Z-score, dan Isolation Forest",
+        "lead": "Pencilan (*outlier*) adalah titik pengamatan yang menyimpang begitu jauh dari keseluruhan gugusan data sehingga memicu kecurigaan bahwa titik tersebut dibangkitkan oleh mekanisme fisik atau galat instrumen yang berbeda.",
         "bulletPoints": [
-          "Pencilan (*outlier*) adalah titik pengamatan yang menyimpang begitu jauh dari keseluruhan gugusan data sehingga memicu kecuri...",
-          "Tiga kelas metodologi deteksi pencilan yang digunakan dalam rekayasa: 1. Tukey's Fences (Berdasarkan Boxplot IQR): Metode non...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Mengidentifikasi pencilan bukan bertujuan untuk langsung menghapusnya, melainkan untuk mengisolasi anomali tersebut guna penyelidikan fisik lebih lanjut.",
+          "Tiga kelas metodologi deteksi pencilan yang digunakan dalam rekayasa: 1.",
+          "Tukey's Fences (Berdasarkan Boxplot IQR): Metode non-parametrik yang tidak mengasumsikan distribusi normal."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Pencilan (*outlier*) adalah titik pengamatan yang menyimpang begitu jauh dari keseluruhan gugusan data sehingga memicu kecuri...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 24,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Modified Z-Score ($M_i$):",
         "bulletPoints": [
-          "1. Modified Z-Score ($M_i$):",
-          "Di mana $\\tilde{x}$ adalah median data, dan nilai $0.6745$ berasal dari fakta bahwa $\\mathbb{E}[\\text{MAD}] =...",
-          "Kriteria Iglewicz-Hoaglin: $x_i$ adalah pencilan jika $|M_i| > 3.5$."
+          "Di mana $\\tilde{x}$ adalah median data, dan nilai $0.6745$ berasal dari fakta bahwa $\\mathbb{E}[\\text{MAD}] = 0.6745 \\cdot \\sigma$ untuk distribusi normal ($1/1.4826 \\approx 0.6745$).",
+          "Kriteria Iglewicz-Hoaglin: $x_i$ adalah pencilan jika $|M_i| > 3.5$.",
+          "2. Kedalaman Jalur Partisi Isolation Forest:"
         ],
-        "keyFormulaOrDiagram": "$$M_i = \\frac{0.6745 \\cdot (x_i - \\tilde{x})}{\\text{MAD}}$$"
+        "keyFormulaOrDiagram": "$$M_i = \\frac{0.6745 \\cdot (x_i - \\tilde{x})}{\\text{MAD}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 25,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Suhu bearing generator turbin gas (deg C) tercatat: [65, 66, 64, 65, 67, 66, 98]. Hitung Modified Z-score untuk titik 98 deg C dan tentukan...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Suhu bearing generator turbin gas (deg C) tercatat: [65, 66, 64, 65, 67, 66, 98]. Hitung Modified Z-score untuk titik 98 deg C dan tentukan apakah titik tersebut memenuhi kriteria pencilan Iglewicz-Hoaglin (|Mi| > 3.5).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 26,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Urutkan data: [64, 65, 65, 66, 66, 67, 98]. Median = 66.0 deg C.",
           "Langkah 2: Hitung selisih absolut |xi - 66|: [2, 1, 1, 0, 0, 1, 32].",
-          "Langkah 3: Urutkan selisih: [0, 0, 1, 1, 1, 2, 32]. Median selisih absolut (MAD) = 1.0 deg C.",
-          "Interpretasi: Titik 98 deg C memiliki skor anomali ekstrem (Modified Z-score = 21.58), mengonfirmasi anomali termal kritis yang wajib..."
+          "Langkah 3: Urutkan selisih: [0, 0, 1, 1, 1, 2, 32]. Median selisih absolut (MAD) = 1.0 deg C."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Evaluasi ambang batas: |M_98| = 21.58 >> 3.5."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung Modified Z-score untuk x = 98: M_98 = 0.6745 * (98 - 66) / 1.0 = 0.6745 * 32 / 1.0 = 21.58.",
+          "Langkah 5: Evaluasi ambang batas: |M_98| = 21.58 >> 3.5.",
+          "[result: Interpretasi Ilmiah] Titik 98 deg C memiliki skor anomali ekstrem (Modified Z-score = 21.58), mengonfirmasi anomali termal kritis yang wajib segera diinvestigasi di logbook generator."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi komparasi Tukey's Fences dan Modified Z-score untuk penyaringan anomali data sensor.",
         "bulletPoints": [
-          "Deskripsi: Implementasi komparasi Tukey's Fences dan Modified Z-score untuk penyaringan anomali data sensor.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Data Sensor : [65.0, 66.0, 64.0, 65.0, 67.0, 66.0, 98.0]"
+          "Tujuan Algoritma: Implementasi komparasi Tukey's Fences dan Modified Z-score untuk penyaringan anomali data sensor.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Data Sensor            : [65.0, 66.0, 64.0, 65.0, 67.0, 66.0, 98.0]"
         ],
-        "keyFormulaOrDiagram": "Data Sensor : [65.0, 66.0, 64.0, 65.0, 67.0, 66.0, 98.0] | Rentang Normal Tukey : [62.7, 6..."
+        "keyFormulaOrDiagram": "Data Sensor            : [65.0, 66.0, 64.0, 65.0, 67.0, 66.0, 98.0]\nRentang Normal Tukey   : [62.7, 68.3] deg C\nOutlier Tukey Fences   : [98.0]\n--------------------------------------------------\nNilai Modified Z-Scores: [-0.67, 0.0, -1.35, -0.67, 0.67, 0.0, 21.58]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 29,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan Z-score biasa ((x - mean)/std) pada sampel kecil yang mengandung outlier besar (fenomena masking e...",
-          "Perangkap: Menghapus pencilan secara buta tanpa memeriksa apakah pencilan tersebut merupakan indikasi mode kegagalan sist...",
-          "Perangkap: Menggunakan Isolation Forest pada data berdimensi satu bersampel sangat kecil (cukup gunakan Tukey atau Modifi..."
-        ]
+          "[warning: Perangkap] Menggunakan Z-score biasa ((x - mean)/std) pada sampel kecil yang mengandung outlier besar (fenomena masking effect).",
+          "[warning: Perangkap] Menghapus pencilan secara buta tanpa memeriksa apakah pencilan tersebut merupakan indikasi mode kegagalan sistem yang baru.",
+          "[warning: Perangkap] Menggunakan Isolation Forest pada data berdimensi satu bersampel sangat kecil (cukup gunakan Tukey atau Modified Z-score)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 30,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Periksa logbook perangkat keras untuk mencocokkan waktu munculnya outlier dengan peristiwa lonjakan arus atau...",
+          "Prosedur: Periksa logbook perangkat keras untuk mencocokkan waktu munculnya outlier dengan peristiwa lonjakan arus atau getaran fisik.",
           "Prosedur: Laporkan model statistik dalam dua skenario: dengan pencilan dan tanpa pencilan (analisis sensitivitas)."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 31,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa Z-score klasik berbasis mean dan standar deviasi gagal mendeteksi pencilan ketika terdapat sekelompok kecil penc...",
-          "Petunjuk: Perhatikan bagaimana kelompok pencilan tersebut meningkatkan deviasi standar secara masif.",
-          "Solusi Kunci: Kelompok pencilan ekstrem akan secara artifisial melambungkan nilai deviasi standar (penyebut Z-score) menjadi sangat be..."
-        ]
+          "Pertanyaan Uji: Mengapa Z-score klasik berbasis mean dan standar deviasi gagal mendeteksi pencilan ketika terdapat sekelompok kecil pencilan ekstrem dalam data (masking effect)?",
+          "Petunjuk Analitis: Perhatikan bagaimana kelompok pencilan tersebut meningkatkan deviasi standar secara masif.",
+          "Solusi Kunci: Kelompok pencilan ekstrem akan secara artifisial melambungkan nilai deviasi standar (penyebut Z-score) menjadi sangat besar dan menggeser nilai rata-rata mendekati kelompok pencilan tersebut. Akibatnya, jarak relatif dari pencilan ke rata-rata menjadi tampak kecil ketika dibagi dengan standar deviasi yang sudah membengkak, sehingga Z-score gagal melampaui ambang batas 3.0."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -532,99 +627,127 @@ export const CH16_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Diagnosis Pola Data Hilang (MCAR, MAR, MNAR) dan Strate...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Diagnosis Pola Data Hilang (MCAR, MAR, MNAR) dan Strategi Imputasi yang Valid",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.1.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.4.",
-          "Capaian: Memahami taksonomi mekanisme data hilang Rubin: MCAR, MAR, dan MNAR.",
-          "Capaian: Mendiagnosis dampak penghapusan data hilang (*complete case analysis / listwise deletion*).",
-          "Capaian: Memilih strategi penanganan data hilang: Imputasi Berganda (MICE) versus K-Nearest Neighbors."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.1.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami taksonomi mekanisme data hilang Rubin: MCAR, MAR, dan MNAR.",
+          "Capaian 2: Mendiagnosis dampak penghapusan data hilang (*complete case analysis / listwise deletion*).",
+          "Capaian 3: Memilih strategi penanganan data hilang: Imputasi Berganda (MICE) versus K-Nearest Neighbors."
         ],
-        "keyFormulaOrDiagram": "$$R_{ij} = \\begin{cases} 1, & \\text{jika } Y_{ij} \\text{ hilang} \\\\ 0, & \\text{jika } Y_{ij} \\text{ teramati} \\end{cases}$$"
+        "keyFormulaOrDiagram": "$$R_{ij} = \\begin{cases} 1, & \\text{jika } Y_{ij} \\text{ hilang} \\\\ 0, & \\text{jika } Y_{ij} \\text{ teramati} \\end{cases}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.1.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Diagnosis Pola Data Hilang (MCAR, MAR, MNAR) dan Strate...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Diagnosis Pola Data Hilang (MCAR, MAR, MNAR) dan Strategi Imputasi yang Valid",
+        "lead": "Dalam pengujian sensor di lapangan atau transmisi telemetri nirkabel, data yang hilang (*missing data*) adalah keniscayaan fisik akibat baterai habis, collision paket jaringan, atau pemadaman listrik.",
         "bulletPoints": [
-          "Dalam pengujian sensor di lapangan atau transmisi telemetri nirkabel, data yang hilang (*missing data*) adalah keniscayaan fi...",
-          "Donald Rubin (1976) merumuskan tiga taksonomi mekanisme data hilang: 1. Missing Completely at Random (MCAR): Probabilitas dat...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Peneliti sering kali tergoda untuk mengambil jalan pintas: menghapus seluruh baris data yang mengandung nilai kosong (*listwise deletion* / *complete case analysis*).",
+          "Tindakan naif ini dapat memicu bias seleksi masif jika pola hilangnya data tidak acak.",
+          "Donald Rubin (1976) merumuskan tiga taksonomi mekanisme data hilang: 1.",
+          "Missing Completely at Random (MCAR): Probabilitas data hilang tidak bergantung pada variabel mana pun, baik variabel yang teramati maupun variabel yang hilang itu sendiri."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dalam pengujian sensor di lapangan atau transmisi telemetri nirkabel, data yang hilang (*missing data*) adalah keniscayaan fi...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 34,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Diberikan matriks data lengkap $\\mathbf{Y} = (\\mathbf{Y}_{\\text{obs}}, \\mathbf{Y}_{\\text{mis}})$ dan matriks indikator hilang $\\mathbf{R}$:",
         "bulletPoints": [
-          "Diberikan matriks data lengkap $\\mathbf{Y} = (\\mathbf{Y}_{\\text{obs}}, \\mathbf{Y}_{\\text{mis}})$ dan matriks i...",
           "1. Kondisi MCAR:",
-          "2. Kondisi MAR:"
+          "2. Kondisi MAR:",
+          "3. Kondisi MNAR (Non-ignorable):"
         ],
-        "keyFormulaOrDiagram": "$$R_{ij} = \\begin{cases} 1, & \\text{jika } Y_{ij} \\text{ hilang} \\\\ 0, & \\text{jika } Y_{ij} \\text{ teramati} \\end{cases}$$"
+        "keyFormulaOrDiagram": "$$R_{ij} = \\begin{cases} 1, & \\text{jika } Y_{ij} \\text{ hilang} \\\\ 0, & \\text{jika } Y_{ij} \\text{ teramati} \\end{cases}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 35,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian daya panel surya ITERA selama 100 hari, 15 hari mengalami data kosong pada kolom \"Produksi Daya (kWh)\". Analisis log menunjuk...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Periksa apakah hilangnya data acak murni independen dari variabel lain: Data hilang terkonsentrasi...",
-          "Langkah 2: Periksa apakah kelembaban udara tercatat secara lengkap pada variabel teramati: Ya, sensor cuaca me...",
-          "Langkah 3: Tentukan klasifikasi: Karena hilangnya data produksi daya dapat diterangkan dan dimodelkan secara s...",
-          "Interpretasi: Klasifikasi MAR memungkinkan rekonstruksi data yang tidak bias melalui pemodelan kovariat cuaca yang tersedia."
+          "Konteks Kasus: Pada pengujian daya panel surya ITERA selama 100 hari, 15 hari mengalami data kosong pada kolom \"Produksi Daya (kWh)\". Analisis log menunjukkan bahwa ke-15 hari kosong tersebut seluruhnya terjadi pada hari hujan lebat dengan kelembaban > 90%. Apakah pola data hilang ini termasuk MCAR, MAR, atau MNAR? Bagaimana rekomendasi penanganannya?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Rekomendasi penanganan: Jangan lakukan listwise deletion (karena akan membuang..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 36,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Periksa apakah hilangnya data acak murni independen dari variabel lain: Data hilang terkonsentrasi saat hujan lebat, sehingga MCAR gugur.",
+          "Langkah 2: Periksa apakah kelembaban udara tercatat secara lengkap pada variabel teramati: Ya, sensor cuaca mencatat kelembaban secara utuh."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Tentukan klasifikasi: Karena hilangnya data produksi daya dapat diterangkan dan dimodelkan secara statistik oleh variabel teramati (kelembaban udara), kondisi ini diklasifikasikan sebagai Missing at Random (MAR).",
+          "Langkah 4: Rekomendasi penanganan: Jangan lakukan listwise deletion (karena akan membuang kondisi cuaca hujan dan melebih-lebihkan rata-rata produksi surya tahunan). Terapkan algoritma Multiple Imputation by Chained Equations (MICE) dengan memasukkan kelembaban dan tutupan awan sebagai prediktor.",
+          "[result: Interpretasi Ilmiah] Klasifikasi MAR memungkinkan rekonstruksi data yang tidak bias melalui pemodelan kovariat cuaca yang tersedia."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 38,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Demonstrasi bias listwise deletion pada kondisi MAR dan koreksinya menggunakan imputasi regresi.",
         "bulletPoints": [
-          "Deskripsi: Demonstrasi bias listwise deletion pada kondisi MAR dan koreksinya menggunakan imputasi regresi.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Rata-rata Efisiensi Populasi Sejati : 16.008%"
+          "Tujuan Algoritma: Demonstrasi bias listwise deletion pada kondisi MAR dan koreksinya menggunakan imputasi regresi.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Rata-rata Efisiensi Populasi Sejati   : 16.008%"
         ],
-        "keyFormulaOrDiagram": "Rata-rata Efisiensi Populasi Sejati : 16.008% | Jumlah Data Hilang Terjadi : 211 dari 1000..."
+        "keyFormulaOrDiagram": "Rata-rata Efisiensi Populasi Sejati   : 16.008%\nJumlah Data Hilang Terjadi            : 211 dari 1000\nRata-rata dengan Listwise Deletion    : 16.170%\nBias Akibat Listwise Deletion pada MAR: +0.162% (Overestimasi Efisiensi!)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 39,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengisi data hilang dengan nilai rata-rata kolom secara konstan (mean imputation) yang secara artifisial menci...",
-          "Perangkap: Mengabaikan diagnosis mekanisme data hilang dan mengasumsikan seluruh data hilang pasti MCAR.",
-          "Perangkap: Melakukan listwise deletion ketika proporsi data hilang melebihi 5% dari total dataset."
-        ]
+          "[warning: Perangkap] Mengisi data hilang dengan nilai rata-rata kolom secara konstan (mean imputation) yang secara artifisial menciutkan varians data sejati.",
+          "[warning: Perangkap] Mengabaikan diagnosis mekanisme data hilang dan mengasumsikan seluruh data hilang pasti MCAR.",
+          "[warning: Perangkap] Melakukan listwise deletion ketika proporsi data hilang melebihi 5% dari total dataset."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 40,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan visualisasi missingness matrix (missingno) untuk memetakan korelasi ketidakhadiran antar-kolom.",
           "Prosedur: Lakukan analisis sensitivitas dengan membandingkan kesimpulan model sebelum dan sesudah imputasi berganda."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 41,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa imputasi nilai rata-rata (mean imputation) dianggap sebagai praktik penanganan data hilang yang sangat buruk dal...",
-          "Petunjuk: Perhatikan dampak penambahan titik-titik data identik pada penyebut rumus varians dan korelasi antar...",
-          "Solusi Kunci: Mean imputation menyisipkan nilai identik tepat di tengah distribusi, yang secara artifisial menekan dan mengecilkan nil..."
-        ]
+          "Pertanyaan Uji: Mengapa imputasi nilai rata-rata (mean imputation) dianggap sebagai praktik penanganan data hilang yang sangat buruk dalam riset ilmiah?",
+          "Petunjuk Analitis: Perhatikan dampak penambahan titik-titik data identik pada penyebut rumus varians dan korelasi antarvariabel.",
+          "Solusi Kunci: Mean imputation menyisipkan nilai identik tepat di tengah distribusi, yang secara artifisial menekan dan mengecilkan nilai varians data sejati. Selain itu, metode ini merusak kovarians dan mendistorsi koefisien korelasi dengan variabel lain, menghasilkan interval kepercayaan yang terlalu sempit semu (*underestimated standard errors*) dan menaikkan risiko Galat Tipe I pada pengujian hipotesis."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

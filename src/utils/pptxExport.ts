@@ -2,9 +2,13 @@ import pptxgen from 'pptxgenjs';
 
 export interface ExportableSlide {
   slideNumber: number;
+  layout?: string;
   title: string;
+  subtitle?: string;
+  lead?: string;
   bulletPoints: string[];
   keyFormulaOrDiagram?: string;
+  notes?: string;
 }
 
 export interface ChapterPresentationOptions {
@@ -89,6 +93,11 @@ export function cleanFormulaForPPTX(formula: string): string {
 export function cleanBulletText(text: string): string {
   if (!text) return '';
   let res = text
+    .replace(/\[(warning|perangkap|danger):\s*([^\]]+)\]/gi, '[PERINGATAN] $2')
+    .replace(/\[(result|hasil|temuan):\s*([^\]]+)\]/gi, '[TEMUAN] $2')
+    .replace(/\[(definition|definisi):\s*([^\]]+)\]/gi, '[DEFINISI] $2')
+    .replace(/\[(concept|konsep):\s*([^\]]+)\]/gi, '[KONSEP] $2')
+    .replace(/\[(note|catatan):\s*([^\]]+)\]/gi, '[CATATAN] $2')
     .replace(/\*\*([^*]+)\*\*/g, '$1')
     .replace(/\*([^*]+)\*/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
@@ -275,6 +284,11 @@ export async function exportChapterToPPTX(options: ChapterPresentationOptions): 
         valign: 'middle',
         align: 'center',
       });
+    }
+
+    // Speaker Notes
+    if (s.notes) {
+      slide.addNotes(s.notes);
     }
 
     // Bottom Footer

@@ -63,99 +63,135 @@ export const CH19_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kerangka Inferensi Fisherian vs Neyman-Pearson Decision...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kerangka Inferensi Fisherian vs Neyman-Pearson Decision Theory",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.4.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.1.",
-          "Capaian: Membedakan dua tradisi epistemologis pengujian hipotesis klasik: Fisherian vs Neyman-Pearson.",
-          "Capaian: Memahami sintesis hibrida tidak resmi (Null Hypothesis Significance Testing / NHST) dan kontradiksi internalny...",
-          "Capaian: Menerapkan batas keputusan Tipe I (alpha) dan Tipe II (beta) dalam pengendalian kualitas rekayasa."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan dua tradisi epistemologis pengujian hipotesis klasik: Fisherian vs Neyman-Pearson.",
+          "Capaian 2: Memahami sintesis hibrida tidak resmi (Null Hypothesis Significance Testing / NHST) dan kontradiksi internalnya.",
+          "Capaian 3: Menerapkan batas keputusan Tipe I (alpha) dan Tipe II (beta) dalam pengendalian kualitas rekayasa."
         ],
-        "keyFormulaOrDiagram": "$$p = P(T(\\mathbf{X}) \\ge t_{\\text{obs}} \\mid H_0)$$"
+        "keyFormulaOrDiagram": "$$p = P(T(\\mathbf{X}) \\ge t_{\\text{obs}} \\mid H_0)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.4.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kerangka Inferensi Fisherian vs Neyman-Pearson Decision...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kerangka Inferensi Fisherian vs Neyman-Pearson Decision Theory",
+        "lead": "Sebagian besar buku teks pengantar statistika menyajikan pengujian hipotesis seolah-olah pengujian tersebut adalah metode monolitik yang tunggal dan disepakati secara bulat.",
         "bulletPoints": [
-          "Sebagian besar buku teks pengantar statistika menyajikan pengujian hipotesis seolah-olah pengujian tersebut adalah metode mon...",
-          "1. Pendekatan Fisher (Uji Signifikansi Murni): Fisher memandang pengujian sebagai alat inferensi induktif pembelajaran ilmiah...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kenyataannya, prosedur yang kita kenal saat ini sebagai Null Hypothesis Significance Testing (NHST) adalah gabungan hibrida tidak resmi dari dua mazhab pemikiran yang saling bertentangan secara tajam: Mazhab Ronald Fisher melawan Mazhab Jerzy Neyman dan Egon Pearson.",
+          "1.",
+          "Pendekatan Fisher (Uji Signifikansi Murni): Fisher memandang pengujian sebagai alat inferensi induktif pembelajaran ilmiah (*inductive inference*)."
         ],
-        "keyFormulaOrDiagram": "Praktik modern mencampuradukkan keduanya secara keliru: mengambil p-value dari Fisher lalu..."
+        "keyFormulaOrDiagram": "$\\alpha = 0.05$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Praktik modern mencampuradukkan keduanya secara keliru: mengambil p-value dari Fisher lalu membandingkannya secara dikotomis...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Praktik modern mencampuradukkan keduanya secara keliru: mengambil p-value dari Fisher lalu membandingkannya secara dikotomis dengan ambang batas $\\alpha = 0.05$ dari Neyman-Pearson, memicu krisis reproduksibilitas sains kontemporer.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Logika Fisherian P-Value:",
         "bulletPoints": [
-          "1. Logika Fisherian P-Value:",
           "Ukuran bukti kontinu empiris bersyarat terhadap kebenaran $H_0$:",
-          "Interpretasi: Derajat kompatibilitas data dengan model nol."
+          "Interpretasi: Derajat kompatibilitas data dengan model nol.",
+          "2. Matriks Keputusan Neyman-Pearson:"
         ],
-        "keyFormulaOrDiagram": "$$p = P(T(\\mathbf{X}) \\ge t_{\\text{obs}} \\mid H_0)$$"
+        "keyFormulaOrDiagram": "$$p = P(T(\\mathbf{X}) \\ge t_{\\text{obs}} \\mid H_0)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian sensor deteksi kebocoran gas metana tambang batubara di Sumatera, terdapat dua skenario risiko: H0 adalah kondisi normal (tid...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian sensor deteksi kebocoran gas metana tambang batubara di Sumatera, terdapat dua skenario risiko: H0 adalah kondisi normal (tidak ada kebocoran), dan H1 adalah kondisi kebocoran gas berbahaya. Analisis konsekuensi fisis dari Galat Tipe I dan Galat Tipe II, lalu tentukan prioritas minimasi bagi insinyur keselamatan tambang.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi Galat Tipe I (False Positive / False Alarm): Sensor membunyikan alarm evakuasi darurat...",
+          "Langkah 1: Identifikasi Galat Tipe I (False Positive / False Alarm): Sensor membunyikan alarm evakuasi darurat (menolak H0) padahal konsentrasi gas sebenarnya normal (H0 benar).",
           "Konsekuensi Tipe I: Pabrik berhenti beroperasi sementara, tim evakuasi turun, biaya kerugian ekonomi terbuang.",
-          "Langkah 2: Identifikasi Galat Tipe II (False Negative / Missed Detection): Sensor tetap diam dan menyatakan ko...",
-          "Interpretasi: Pilihan nilai alpha dan beta dalam rekayasa selalu merupakan keputusan trade-off biaya-manfaat fisis yang nyata, bukan s..."
+          "Langkah 2: Identifikasi Galat Tipe II (False Negative / Missed Detection): Sensor tetap diam dan menyatakan kondisi aman (gagal menolak H0) padahal terjadi kebocoran gas berbahaya (H1 benar)."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Penetapan prioritas rekayasa: Konsekuensi Galat Tipe II jauh lebih katastropik..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi kurva trade-off Galat Tipe I (alpha) versus Daya Uji (1 - beta) pada pengujian hipotesis.",
-          "Dependensi Pustaka: scipy.stats, numpy",
-          "Keluaran Diharapkan: Ambang c | Galat Tipe I (Alpha) | Daya Uji (1 - Beta) | Galat Tipe II (Beta)"
+          "Konsekuensi Tipe II: Ledakan tambang fatal dan hilangnya nyawa para pekerja.",
+          "Langkah 3: Penetapan prioritas rekayasa: Konsekuensi Galat Tipe II jauh lebih katastropik dibanding Galat Tipe I. Insinyur wajib merancang sistem dengan daya uji maksimum (1 - beta > 0.999), bersedia menaikkan sedikit ambang alpha (misal alpha = 0.05 dinaikkan ke 0.10) demi memastikan Galat Tipe II mendekati nol.",
+          "[result: Interpretasi Ilmiah] Pilihan nilai alpha dan beta dalam rekayasa selalu merupakan keputusan trade-off biaya-manfaat fisis yang nyata, bukan sekadar angka ritual 0.05."
         ],
-        "keyFormulaOrDiagram": "Ambang c | Galat Tipe I (Alpha) | Daya Uji (1 - Beta) | Galat Tipe II (Beta) | -----------..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi kurva trade-off Galat Tipe I (alpha) versus Daya Uji (1 - beta) pada pengujian hipotesis.",
         "bulletPoints": [
-          "Perangkap: Memperlakukan ambang alpha = 0.05 sebagai hukum alam universal yang tidak boleh disesuaikan dengan konteks ris...",
-          "Perangkap: Mengartikan p-value sebagai probabilitas bahwa hipotesis nol benar (P(H0 | Data)), yang merupakan kekeliruan i...",
-          "Perangkap: Mengabaikan analisis daya uji statistik (power) saat melaporkan hasil eksperimen yang gagal menolak hipotesis..."
-        ]
+          "Tujuan Algoritma: Simulasi kurva trade-off Galat Tipe I (alpha) versus Daya Uji (1 - beta) pada pengujian hipotesis.",
+          "Dependensi Pustaka Ilmiah: scipy.stats, numpy",
+          "Keluaran Terverifikasi: Ambang c   | Galat Tipe I (Alpha)   | Daya Uji (1 - Beta)    | Galat Tipe II (Beta)  "
+        ],
+        "keyFormulaOrDiagram": "Ambang c   | Galat Tipe I (Alpha)   | Daya Uji (1 - Beta)    | Galat Tipe II (Beta)  \n--------------------------------------------------------------------------------\nc = -1.00    |                 0.8413 |                 0.9998 |                 0.0002\nc = -0.00    |                 0.5000 |                 0.9938 |                 0.0062\nc =  1.00    |                 0.1587 |                 0.9332 |                 0.0668",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Tetapkan batas ambang alpha dan target beta secara eksplisit sebelum pengumpulan data dilakukan (preregistrasi...",
-          "Prosedur: Laporkan kurva Operating Characteristic (OC curve) untuk memetakan sensitivitas deteksi sistem pada berbagai b..."
-        ]
+          "[warning: Perangkap] Memperlakukan ambang alpha = 0.05 sebagai hukum alam universal yang tidak boleh disesuaikan dengan konteks risiko aplikasi rekayasa.",
+          "[warning: Perangkap] Mengartikan p-value sebagai probabilitas bahwa hipotesis nol benar (P(H0 | Data)), yang merupakan kekeliruan inversi bersyarat.",
+          "[warning: Perangkap] Mengabaikan analisis daya uji statistik (power) saat melaporkan hasil eksperimen yang gagal menolak hipotesis nol."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa Ronald Fisher menentang keras konsep \"Hipotesis Alternatif (H1)\" dan \"Galat Tipe II (Beta)\" yang diusulkan oleh...",
-          "Petunjuk: Perhatikan pandangan Fisher tentang sifat kemajuan sains sebagai proses pembelajaran eksploratori vs...",
-          "Solusi Kunci: Fisher memandang sains sebagai proses penemuan pengetahuan baru yang penuh ketidakpastian, di mana ilmuwan sering kali t..."
-        ]
+          "Prosedur: Tetapkan batas ambang alpha dan target beta secara eksplisit sebelum pengumpulan data dilakukan (preregistrasi protokol).",
+          "Prosedur: Laporkan kurva Operating Characteristic (OC curve) untuk memetakan sensitivitas deteksi sistem pada berbagai besaran efek."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa Ronald Fisher menentang keras konsep \"Hipotesis Alternatif (H1)\" dan \"Galat Tipe II (Beta)\" yang diusulkan oleh Neyman dan Pearson?",
+          "Petunjuk Analitis: Perhatikan pandangan Fisher tentang sifat kemajuan sains sebagai proses pembelajaran eksploratori vs keputusan industri pabrik.",
+          "Solusi Kunci: Fisher memandang sains sebagai proses penemuan pengetahuan baru yang penuh ketidakpastian, di mana ilmuwan sering kali tidak mengetahui secara pasti apa alternatif spesifik yang benar saat suatu teori terbukti gagal. Fisher berargumen bahwa menetapkan satu hipotesis alternatif kaku H1 membatasi imajinasi peneliti, dan konsep keputusan mekanis biner Neyman-Pearson lebih cocok untuk inspeksi penerimaan barang pabrik (*quality control acceptance testing*) dibanding riset ilmiah murni."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -220,100 +256,137 @@ export const CH19_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prosedur 5-Langkah NHST: Satu Sampel, Dua Sampel Indepe...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prosedur 5-Langkah NHST: Satu Sampel, Dua Sampel Independen, dan Sampel Berpasangan",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.4.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.2.",
-          "Capaian: Menerapkan protokol terstruktur 5-langkah Null Hypothesis Significance Testing.",
-          "Capaian: Memilih formula uji-t yang tepat: Satu Sampel, Dua Sampel Independen (Student vs Welch), dan Berpasangan (*Pai...",
-          "Capaian: Mengevaluasi asumsi homogenitas varians menggunakan Uji Levene."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan protokol terstruktur 5-langkah Null Hypothesis Significance Testing.",
+          "Capaian 2: Memilih formula uji-t yang tepat: Satu Sampel, Dua Sampel Independen (Student vs Welch), dan Berpasangan (*Paired*).",
+          "Capaian 3: Mengevaluasi asumsi homogenitas varians menggunakan Uji Levene."
         ],
-        "keyFormulaOrDiagram": "$$t = \\frac{\\bar{X} - \\mu_0}{s / \\sqrt{n}}, \\quad \\nu = n - 1$$"
+        "keyFormulaOrDiagram": "$$t = \\frac{\\bar{X} - \\mu_0}{s / \\sqrt{n}}, \\quad \\nu = n - 1$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.4.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prosedur 5-Langkah NHST: Satu Sampel, Dua Sampel Indepe...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prosedur 5-Langkah NHST: Satu Sampel, Dua Sampel Independen, dan Sampel Berpasangan",
+        "lead": "Agar pengujian signifikansi hipotesis dapat dipertanggungjawabkan secara ilmiah dan kebal dari bias konfirmasi peneliti, pelaksanaannya harus mengikuti Protokol Baku 5-Langkah NHST:",
         "bulletPoints": [
-          "Agar pengujian signifikansi hipotesis dapat dipertanggungjawabkan secara ilmiah dan kebal dari bias konfirmasi peneliti, pela...",
-          "1. Langkah 1 (Formulasi Pasangan Hipotesis): Nyatakan hipotesis nol ($H_0$) dan hipotesis alternatif ($H_1$) dalam parameter...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "1.",
+          "Langkah 1 (Formulasi Pasangan Hipotesis): Nyatakan hipotesis nol ($H_0$) dan hipotesis alternatif ($H_1$) dalam parameter populasi terukur, serta tetapkan arah pengujian (satu arah vs dua arah)."
         ],
-        "keyFormulaOrDiagram": "Pilihan Varian Uji-t: - Satu Sampel: Membandingkan rata-rata sistem baru terhadap nilai st..."
+        "keyFormulaOrDiagram": "$mu_0$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Pilihan Varian Uji-t: - Satu Sampel: Membandingkan rata-rata sistem baru terhadap nilai standar baku industri acuan ($mu_0$). - Dua Sampel Berpasangan (*Paired t-test*): Menguji objek fisik yang sama sebelum dan sesudah perlakuan ($D_i = X_{i,\\text{post}} - X_{i,\\text{pre}}$). - Dua Sampel Independen: Membandingkan dua kelompok unit uji yang berbeda.",
         "bulletPoints": [
-          "Pilihan Varian Uji-t: - Satu Sampel: Membandingkan rata-rata sistem baru terhadap nilai standar baku industri acuan ($mu_0$)....",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Jika varians kedua kelompok tidak sama ($sigma_1^2 \\neq \\sigma_2^2$), peneliti WAJIB menggunakan Uji Welch's t-test alih-alih Student's t biasa."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Uji-t Satu Sampel:",
         "bulletPoints": [
-          "1. Uji-t Satu Sampel:",
           "2. Uji-t Sampel Berpasangan:",
-          "Di mana $D_i = X_{1,i} - X_{2,i}$ dan $s_D$ adalah standar deviasi dari selisih pasangan."
+          "Di mana $D_i = X_{1,i} - X_{2,i}$ dan $s_D$ adalah standar deviasi dari selisih pasangan.",
+          "3. Uji Welch's t-test (Varians Tidak Sama / Heteroscedastic):"
         ],
-        "keyFormulaOrDiagram": "$$t = \\frac{\\bar{X} - \\mu_0}{s / \\sqrt{n}}, \\quad \\nu = n - 1$$"
+        "keyFormulaOrDiagram": "$$t = \\frac{\\bar{X} - \\mu_0}{s / \\sqrt{n}}, \\quad \\nu = n - 1$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua belas unit node sensor transmisi diukur konsumsi dayanya (milli-Watt) sebelum dan sesudah optimasi algoritma sleeping protocol. Rata-rat...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua belas unit node sensor transmisi diukur konsumsi dayanya (milli-Watt) sebelum dan sesudah optimasi algoritma sleeping protocol. Rata-rata penurunan konsumsi daya per node adalah D_bar = 4.50 mW dengan deviasi standar selisih s_D = 1.80 mW. Ujilah pada tingkat signifikansi alpha = 0.01 apakah optimasi algoritma berhasil menurunkan konsumsi daya secara signifikan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Pasangan Hipotesis: H0: mu_D <= 0 (Tidak ada penurunan daya); H1: mu_D > 0 (Daya turun signifikan,...",
+          "Langkah 1: Pasangan Hipotesis: H0: mu_D <= 0 (Tidak ada penurunan daya); H1: mu_D > 0 (Daya turun signifikan, uji satu arah kanan).",
           "Langkah 2: Tingkat signifikansi alpha = 0.01, derajat kebebasan nu = n - 1 = 12 - 1 = 11.",
-          "Langkah 3: Hitung statistik uji t berpasangan: t = (4.50 - 0) / (1.80 / sqrt(12)) = 4.50 / (1.80 / 3.4641) = 4...",
-          "Interpretasi: Penurunan daya sebesar 4.50 mW terbukti secara statistik bukan akibat fluktuasi acak pengukuran."
+          "Langkah 3: Hitung statistik uji t berpasangan: t = (4.50 - 0) / (1.80 / sqrt(12)) = 4.50 / (1.80 / 3.4641) = 4.50 / 0.5196 = 8.660."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Kesimpulan: Tolak H0 pada alpha = 0.01. Bukti empiris sangat meyakinkan bahwa a..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung nilai kritis atau p-value: Nilai kritis t_(0.01, 11) = 2.718. Nilai t_obs (8.660) >> 2.718. Nilai p-value = 1.54 x 10^(-6).",
+          "Langkah 5: Kesimpulan: Tolak H0 pada alpha = 0.01. Bukti empiris sangat meyakinkan bahwa algoritma sleeping protocol menurunkan konsumsi daya rata-rata sebesar 4.50 mW (p < 0.0001).",
+          "[result: Interpretasi Ilmiah] Penurunan daya sebesar 4.50 mW terbukti secara statistik bukan akibat fluktuasi acak pengukuran."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Eksekusi protokol 5-langkah uji-t berpasangan dan uji Welch dua sampel menggunakan SciPy.",
         "bulletPoints": [
-          "Deskripsi: Eksekusi protokol 5-langkah uji-t berpasangan dan uji Welch dua sampel menggunakan SciPy.",
-          "Dependensi Pustaka: scipy.stats, numpy",
-          "Keluaran Diharapkan: KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi)"
+          "Tujuan Algoritma: Eksekusi protokol 5-langkah uji-t berpasangan dan uji Welch dua sampel menggunakan SciPy.",
+          "Dependensi Pustaka Ilmiah: scipy.stats, numpy",
+          "Keluaran Terverifikasi: KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi)"
         ],
-        "keyFormulaOrDiagram": "KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi) | Rata-rata Selisih Penurunan : 4.41 mW..."
+        "keyFormulaOrDiagram": "KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi)\nRata-rata Selisih Penurunan : 4.41 mW (SD: 1.57)\nStatistik t_obs             : 9.722\nP-value (Satu Arah)         : 4.1481e-07\nKeputusan (alpha=0.01)      : TOLAK H0",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan uji-t sampel independen untuk data sebelum-sesudah pada unit yang sama (mengabaikan korelasi pasan...",
-          "Perangkap: Menggunakan uji-t Student standar dengan asumsi varians sama (equal_var=True) padahal uji Levene menunjukkan v...",
-          "Perangkap: Mengubah rumusan hipotesis satu arah menjadi dua arah setelah melihat arah data sampel di layar komputer."
-        ]
+          "[warning: Perangkap] Menggunakan uji-t sampel independen untuk data sebelum-sesudah pada unit yang sama (mengabaikan korelasi pasangan yang menaikkan varians galat).",
+          "[warning: Perangkap] Menggunakan uji-t Student standar dengan asumsi varians sama (equal_var=True) padahal uji Levene menunjukkan varians kedua kelompok heterogen (wajib gunakan Welch t-test).",
+          "[warning: Perangkap] Mengubah rumusan hipotesis satu arah menjadi dua arah setelah melihat arah data sampel di layar komputer."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan uji Levene sebelum uji komparasi dua sampel untuk memeriksa asumsi homoskedastisitas varians.",
-          "Prosedur: Jadikan Welch's t-test sebagai standar baku *default* untuk dua sampel independen karena kebal terhadap perbed..."
-        ]
+          "Prosedur: Jadikan Welch's t-test sebagai standar baku *default* untuk dua sampel independen karena kebal terhadap perbedaan varians."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa banyak ahli biostatistika dan ekonometrika merekomendasikan untuk SELALU menggunakan Welch's t-test secara defau...",
-          "Petunjuk: Perhatikan kinerja Welch's t-test ketika varians kedua kelompok ternyata benar-benar setara versus k...",
-          "Solusi Kunci: Welch's t-test memberikan perlindungan yang sangat kuat terhadap inflasi Galat Tipe I ketika varians kedua kelompok tida..."
-        ]
+          "Pertanyaan Uji: Mengapa banyak ahli biostatistika dan ekonometrika merekomendasikan untuk SELALU menggunakan Welch's t-test secara default dibanding Student's t-test biasa?",
+          "Petunjuk Analitis: Perhatikan kinerja Welch's t-test ketika varians kedua kelompok ternyata benar-benar setara versus ketika tidak setara.",
+          "Solusi Kunci: Welch's t-test memberikan perlindungan yang sangat kuat terhadap inflasi Galat Tipe I ketika varians kedua kelompok tidak sama (terutama jika ukuran sampel kedua kelompok tidak seimbang). Sebaliknya, jika varians kedua kelompok ternyata benar-benar sama, Welch's t-test hanya mengorbankan fraksi pecahan derajat kebebasan yang sangat kecil tanpa kehilangan daya uji yang berarti. Oleh karena itu, Welch's t-test jauh lebih aman digunakan sebagai prosedur default."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -376,100 +449,133 @@ export const CH19_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Batasan dan Kesalahpahaman Fatal Mengenai Makna P-Value...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Batasan dan Kesalahpahaman Fatal Mengenai Makna P-Value (ASA Statement)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.4.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.3.",
-          "Capaian: Memahami definisi formal matematis dari p-value menurut American Statistical Association (ASA).",
-          "Capaian: Mengidentifikasi 6 kesalahpahaman fatal mengenai interpretasi p-value.",
-          "Capaian: Memahami mengapa \"ketiadaan bukti perbedaan\" bukan merupakan \"bukti ketiadaan perbedaan\"."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami definisi formal matematis dari p-value menurut American Statistical Association (ASA).",
+          "Capaian 2: Mengidentifikasi 6 kesalahpahaman fatal mengenai interpretasi p-value.",
+          "Capaian 3: Memahami mengapa \"ketiadaan bukti perbedaan\" bukan merupakan \"bukti ketiadaan perbedaan\"."
         ],
-        "keyFormulaOrDiagram": "$$p = P(\\text{Data Ekstrem} \\mid H_0)$$"
+        "keyFormulaOrDiagram": "$$p = P(\\text{Data Ekstrem} \\mid H_0)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.4.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Batasan dan Kesalahpahaman Fatal Mengenai Makna P-Value...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Batasan dan Kesalahpahaman Fatal Mengenai Makna P-Value (ASA Statement)",
+        "lead": "Pada tahun 2016, American Statistical Association (ASA) mengambil langkah luar biasa dengan merilis pernyataan resmi darurat (*ASA Statement on Statistical Significance and P-Values*) untuk memperingatkan komunitas ilmiah global mengenai bahaya salah tafsir masif terhadap p-value yang telah merusak ribuan kesimpulan penelitian akademik.",
         "bulletPoints": [
-          "Pada tahun 2016, American Statistical Association (ASA) mengambil langkah luar biasa dengan merilis pernyataan resmi darurat...",
-          "Berdasarkan konsensus ASA, terdapat 6 prinsip dasar mengenai p-value yang wajib dipahami oleh setiap peneliti: 1. P-value dap...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Berdasarkan konsensus ASA, terdapat 6 prinsip dasar mengenai p-value yang wajib dipahami oleh setiap peneliti: 1.",
+          "P-value dapat mengindikasikan seberapa tidak kompatibelnya data dengan model statistik tertentu yang dispesifikasikan (Hipotesis Nol)."
         ],
-        "keyFormulaOrDiagram": "Pernyataan \"p > 0.05 membuktikan bahwa metode A dan metode B adalah sama persis\" adalah ke..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Pernyataan \"p > 0.05 membuktikan bahwa metode A dan metode B adalah sama persis\" adalah kebohongan statistika (*absence of ev...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Pernyataan \"p > 0.05 membuktikan bahwa metode A dan metode B adalah sama persis\" adalah kebohongan statistika (*absence of evidence is not evidence of absence*).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Kekeliruan Probalistik Inversi Klasik (*Fallacy of the Transposed Conditional*):",
         "bulletPoints": [
-          "Kekeliruan Probalistik Inversi Klasik (*Fallacy of the Transposed Conditional*):",
           "P-value formal:",
-          "Banyak peneliti secara keliru menganggap bahwa:"
+          "Banyak peneliti secara keliru menganggap bahwa:",
+          "Berdasarkan Teorema Bayes, probabilitas kebenaran $H_0$ setelah data diamati (*Posterior Probability*) bergantung secara kritis pada probabilitas awal apriori (*Prior Odds* $P(H_0) / P(H_1)$):"
         ],
-        "keyFormulaOrDiagram": "$$p = P(\\text{Data Ekstrem} \\mid H_0)$$"
+        "keyFormulaOrDiagram": "$$p = P(\\text{Data Ekstrem} \\mid H_0)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah pengujian algoritma kompresi baru menghasilkan p-value = 0.08 terhadap algoritma lama. Penulis menyimpulkan dalam draf skripsi: \"Hasi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi kesalahan logis: Penulis menyamakan \"Gagal menolak H0\" dengan \"Membuktikan H0 benar\" (...",
-          "Langkah 2: Evaluasi nilai p = 0.08: Nilai p = 0.08 berarti bahwa jika kedua algoritma benar-benar identik, ter...",
-          "Langkah 3: Analisis daya uji: Gagalnya pengujian mendeteksi perbedaan bisa jadi semata-mata karena ukuran samp...",
-          "Interpretasi: Penyajian interval kepercayaan menggantikan kesimpulan dikotomis palsu dan menyajikan batas ketidakpastian estimasi seca..."
+          "Konteks Kasus: Sebuah pengujian algoritma kompresi baru menghasilkan p-value = 0.08 terhadap algoritma lama. Penulis menyimpulkan dalam draf skripsi: \"Hasil membuktikan bahwa kedua algoritma memiliki performa yang identik\". Perbaiki kesimpulan ini sesuai pedoman ASA.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Rumuskan kalimat ilmiah terkalibrasi: \"Berdasarkan data sampel yang diuji, pene..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi kesalahan logis: Penulis menyamakan \"Gagal menolak H0\" dengan \"Membuktikan H0 benar\" (Fallacy of Acceptance).",
+          "Langkah 2: Evaluasi nilai p = 0.08: Nilai p = 0.08 berarti bahwa jika kedua algoritma benar-benar identik, terdapat peluang 8% untuk mendapatkan selisih performa sebesar itu atau lebih ekstrem akibat variasi acak cuplikan."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Analisis daya uji: Gagalnya pengujian mendeteksi perbedaan bisa jadi semata-mata karena ukuran sampel pengujian terlalu kecil (underpowered experiment).",
+          "Langkah 4: Rumuskan kalimat ilmiah terkalibrasi: \"Berdasarkan data sampel yang diuji, penelitian ini belum memiliki bukti empiris yang cukup kuat untuk menolak hipotesis nol pada tingkat signifikansi alpha = 0.05 (p = 0.08). Namun demikian, interval kepercayaan 95% menunjukkan rentang perbedaan performa sebesar [-0.2%, +3.8%], sehingga pengujian lanjutan dengan ukuran sampel lebih besar diperlukan untuk memastikan signifikansi praktisnya.\"",
+          "[result: Interpretasi Ilmiah] Penyajian interval kepercayaan menggantikan kesimpulan dikotomis palsu dan menyajikan batas ketidakpastian estimasi secara jujur."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Bayes False Positive Report Probability (FPRP) membuktikan p = 0.05 tidak menjamin temuan 95% benar.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Bayes False Positive Report Probability (FPRP) membuktikan p = 0.05 tidak menjamin temuan 95% benar.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Ambang Signifikansi (Alpha): 0.05, Daya Uji (Power): 0.8"
+          "Tujuan Algoritma: Simulasi Bayes False Positive Report Probability (FPRP) membuktikan p = 0.05 tidak menjamin temuan 95% benar.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Ambang Signifikansi (Alpha): 0.05, Daya Uji (Power): 0.8"
         ],
-        "keyFormulaOrDiagram": "Ambang Signifikansi (Alpha): 0.05, Daya Uji (Power): 0.8 | | Peluang Apriori H1 | False Po..."
+        "keyFormulaOrDiagram": "Ambang Signifikansi (Alpha): 0.05, Daya Uji (Power): 0.8\n\nPeluang Apriori H1     | False Positive Risk (FPRP)  \n-------------------------------------------------------\nPrior H1 = 50.0%          |                        5.9%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyatakan bahwa p-value = 0.03 berarti terdapat peluang 97% bahwa hipotesis penelitian benar.",
-          "Perangkap: Mengklaim bahwa p > 0.05 membuktikan dua perlakuan ekuivalen atau sama persis.",
-          "Perangkap: Hanya melaporkan bintang signifikansi (* atau **) tanpa mencantumkan nilai numerik p-value eksak dan ukuran ef..."
-        ]
+          "[warning: Perangkap] Menyatakan bahwa p-value = 0.03 berarti terdapat peluang 97% bahwa hipotesis penelitian benar.",
+          "[warning: Perangkap] Mengklaim bahwa p > 0.05 membuktikan dua perlakuan ekuivalen atau sama persis.",
+          "[warning: Perangkap] Hanya melaporkan bintang signifikansi (* atau **) tanpa mencantumkan nilai numerik p-value eksak dan ukuran efek."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Tinjau kembali bab kesimpulan naskah: pastikan tidak ada kalimat yang menyatakan hipotesis nol \"terbukti benar...",
-          "Prosedur: Sertakan estimasi ukuran efek (effect size) dan interval kepercayaan 95% mendampingi setiap nilai p-value yang..."
-        ]
+          "Prosedur: Tinjau kembali bab kesimpulan naskah: pastikan tidak ada kalimat yang menyatakan hipotesis nol \"terbukti benar\".",
+          "Prosedur: Sertakan estimasi ukuran efek (effect size) dan interval kepercayaan 95% mendampingi setiap nilai p-value yang dilaporkan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Jika seorang peneliti memperoleh p-value = 0.00001 pada pengujian performa algoritma baru dengan ukuran sampel n = 10.00...",
-          "Petunjuk: Perhatikan hubungan antara ukuran sampel raksasa dengan p-value yang sangat kecil pada perbedaan efe...",
-          "Solusi Kunci: Belum tentu. Pada ukuran sampel sebesar sepuluh juta observasi, perbedaan mikroskopis yang tidak memiliki arti praktis a..."
-        ]
+          "Pertanyaan Uji: Jika seorang peneliti memperoleh p-value = 0.00001 pada pengujian performa algoritma baru dengan ukuran sampel n = 10.000.000, apakah peneliti dapat menyimpulkan bahwa algoritma tersebut memberikan dampak revolusioner bagi industri?",
+          "Petunjuk Analitis: Perhatikan hubungan antara ukuran sampel raksasa dengan p-value yang sangat kecil pada perbedaan efek mikroskopis.",
+          "Solusi Kunci: Belum tentu. Pada ukuran sampel sebesar sepuluh juta observasi, perbedaan mikroskopis yang tidak memiliki arti praktis apa pun (misal kenaikan kecepatan hanya 0.0001% atau selisih 1 pikosekon) akan menghasilkan p-value yang sangat kecil secara astronomis (p < 0.00001). Signifikansi statistik tidak sama dengan signifikansi praktis rekayasa. Peneliti wajib memeriksa ukuran efek (effect size) untuk menentukan nilai praktisnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -533,100 +639,137 @@ export const CH19_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Bahaya P-Hacking, Data Dredging, dan Praktik Optional S...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Bahaya P-Hacking, Data Dredging, dan Praktik Optional Stopping",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.4.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.4.",
-          "Capaian: Mengidentifikasi taksonomi Questionable Research Practices (QRP): P-Hacking, HARKing, dan Data Dredging.",
-          "Capaian: Memahami mekanisme inflasi Galat Tipe I akibat penghentian uji coba opsional (*optional stopping*).",
-          "Capaian: Menerapkan preregistrasi protokol riset sebagai benteng integritas pembuktian ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.4.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi taksonomi Questionable Research Practices (QRP): P-Hacking, HARKing, dan Data Dredging.",
+          "Capaian 2: Memahami mekanisme inflasi Galat Tipe I akibat penghentian uji coba opsional (*optional stopping*).",
+          "Capaian 3: Menerapkan preregistrasi protokol riset sebagai benteng integritas pembuktian ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$\\alpha_{\\text{sejati}} = P\\left( \\bigcup_{k=1}^K (p_k < \\alpha) \\mid H_0 \\right) = 1 - (1 - \\alpha)^K$$"
+        "keyFormulaOrDiagram": "$$\\alpha_{\\text{sejati}} = P\\left( \\bigcup_{k=1}^K (p_k < \\alpha) \\mid H_0 \\right) = 1 - (1 - \\alpha)^K$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.4.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Bahaya P-Hacking, Data Dredging, dan Praktik Optional S...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Bahaya P-Hacking, Data Dredging, dan Praktik Optional Stopping",
+        "lead": "Krisis replikasi yang melanda komunitas riset global sebagian besar dipicu oleh insentif akademik yang cacat: jurnal ilmiah cenderung hanya mempublikasikan artikel yang memiliki p-value signifikan ($p < 0.05$).",
         "bulletPoints": [
-          "Krisis replikasi yang melanda komunitas riset global sebagian besar dipicu oleh insentif akademik yang cacat: jurnal ilmiah c...",
-          "Empat bentuk p-hacking yang paling merusak dalam rekayasa: 1. Penghentian Pengujian Opsional (*Optional Stopping*): Peneliti...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Tekanan publikasi ini melahirkan serangkaian praktik meragukan yang dikenal sebagai P-Hacking, Data Dredging, atau Data Fishing: manipulasi analitis yang disengaja maupun tidak disengaja hingga data menghasilkan p-value di bawah 0.05.",
+          "Empat bentuk p-hacking yang paling merusak dalam rekayasa: 1.",
+          "Penghentian Pengujian Opsional (*Optional Stopping*): Peneliti mengumpulkan sampel kecil, memeriksa p-value."
         ],
-        "keyFormulaOrDiagram": "Prinsip dasar sains: jika kita menyiksa data cukup lama, data akan mengaku apa saja (*if y..."
+        "keyFormulaOrDiagram": "$p < 0.05$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Prinsip dasar sains: jika kita menyiksa data cukup lama, data akan mengaku apa saja (*if you torture the data enough, nature will confess*).",
         "bulletPoints": [
-          "Prinsip dasar sains: jika kita menyiksa data cukup lama, data akan mengaku apa saja (*if you torture the data enough, nature...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Namun kesimpulan tersebut adalah ilusi acak yang tidak akan pernah dapat direplikasi oleh peneliti lain."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Inflasi Galat Tipe I Akibat Penghentian Opsional (*Optional Stopping / Data Peeking*):",
         "bulletPoints": [
-          "Inflasi Galat Tipe I Akibat Penghentian Opsional (*Optional Stopping / Data Peeking*):",
-          "Jika seorang peneliti melakukan uji signifikansi pada $K$ titik inspeksi berkala independen dengan ambang bata...",
-          "Untuk $K = 5$ kali pengintipan data berturut-turut:"
+          "Jika seorang peneliti melakukan uji signifikansi pada $K$ titik inspeksi berkala independen dengan ambang batas nominal $\\alpha = 0.05$:",
+          "Untuk $K = 5$ kali pengintipan data berturut-turut:",
+          "Jika pengujian dibiarkan berjalan terus menerus hingga p-value kebetulan menyeberang di bawah 0.05 ($K \\to \\infty$), probabilitas penolakan palsu $H_0$ mendekati 100% (pasti akan terjadi false positive akibat hukum gerak Brown fluktuasi statistik)."
         ],
-        "keyFormulaOrDiagram": "$$\\alpha_{\\text{sejati}} = P\\left( \\bigcup_{k=1}^K (p_k < \\alpha) \\mid H_0 \\right) = 1 - (1 - \\alpha)^K$$"
+        "keyFormulaOrDiagram": "$$\\alpha_{\\text{sejati}} = P\\left( \\bigcup_{k=1}^K (p_k < \\alpha) \\mid H_0 \\right) = 1 - (1 - \\alpha)^K$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang mahasiswa menguji efisiensi algoritma tracking surya baru. Mula-mula diuji pada 10 data hari (p = 0.09). Mahasiswa menambah data har...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi pelanggaran prosedur: Mahasiswa melakukan penghentian opsional (optional stopping) ber...",
-          "Langkah 2: Evaluasi tingkat signifikansi sejati: Tingkat signifikansi riil bukan lagi 5%, melainkan mendekati...",
-          "Langkah 3: Analisis batas ambang: Nilai p-value teramati p = 0.042 hanya berada sedikit di bawah 0.05. Di bawa...",
-          "Interpretasi: P-hacking telah menggelembungkan risiko kesalahan positif palsu hampir tiga kali lipat tanpa disadari oleh mahasiswa."
+          "Konteks Kasus: Seorang mahasiswa menguji efisiensi algoritma tracking surya baru. Mula-mula diuji pada 10 data hari (p = 0.09). Mahasiswa menambah data hari ke-11 s.d. 15 (p = 0.06). Mahasiswa menambah lagi hingga hari ke-20 dan menemukan p = 0.042. Mahasiswa langsung menghentikan pengumpulan data dan menulis di skripsinya bahwa algoritma terbukti unggul pada alpha = 0.05. Jelaskan mengapa kesimpulan ini cacat secara metodologis.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Prosedur ilmiah yang benar: Mahasiswa wajib menentukan ukuran sampel n = 20 sej..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi pelanggaran prosedur: Mahasiswa melakukan penghentian opsional (optional stopping) berbasis pengintipan data berulang (K = 3 kali inspeksi interim).",
+          "Langkah 2: Evaluasi tingkat signifikansi sejati: Tingkat signifikansi riil bukan lagi 5%, melainkan mendekati 1 - (0.95)^3 = 14.3%."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Analisis batas ambang: Nilai p-value teramati p = 0.042 hanya berada sedikit di bawah 0.05. Di bawah tingkat risiko Galat Tipe I sejati sebesar 14.3%, angka 0.042 tidak lagi memiliki kekuatan pembuktian yang signifikan.",
+          "Langkah 4: Prosedur ilmiah yang benar: Mahasiswa wajib menentukan ukuran sampel n = 20 sejak awal melalui analisis daya uji (power analysis), atau jika terpaksa melakukan analisis interim, wajib menggunakan koreksi batas penolakan bertingkat O'Brien-Fleming.",
+          "[result: Interpretasi Ilmiah] P-hacking telah menggelembungkan risiko kesalahan positif palsu hampir tiga kali lipat tanpa disadari oleh mahasiswa."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Monte Carlo membuktikan inflasi False Positive akibat praktik pengintipan data berulang (Optional Stopping).",
         "bulletPoints": [
-          "Deskripsi: Simulasi Monte Carlo membuktikan inflasi False Positive akibat praktik pengintipan data berulang (Optional Stopping).",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: Laju Galat Tipe I Uji Terkunci Standar : 4.88% (Tepat di target 5%)"
+          "Tujuan Algoritma: Simulasi Monte Carlo membuktikan inflasi False Positive akibat praktik pengintipan data berulang (Optional Stopping).",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: Laju Galat Tipe I Uji Terkunci Standar : 4.88% (Tepat di target 5%)"
         ],
-        "keyFormulaOrDiagram": "Laju Galat Tipe I Uji Terkunci Standar : 4.88% (Tepat di target 5%) | Laju Galat Tipe I de..."
+        "keyFormulaOrDiagram": "Laju Galat Tipe I Uji Terkunci Standar : 4.88% (Tepat di target 5%)\nLaju Galat Tipe I dengan Data Peeking   : 14.54% (Terinflasi masif!)\nFaktor Pelipatgandaan False Positive    : 3.0x lipat",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memeriksa p-value secara berkala saat pengujian laboratorium berlangsung dan langsung berhenti mengumpulkan sa...",
-          "Perangkap: Mencoba 5 metode normalisasi data yang berbeda dan hanya melaporkan 1 metode yang menghasilkan p < 0.05 (cherr...",
-          "Perangkap: Mengubah rumusan hipotesis penelitian setelah melihat grafik hasil akhir data."
-        ]
+          "[warning: Perangkap] Memeriksa p-value secara berkala saat pengujian laboratorium berlangsung dan langsung berhenti mengumpulkan sampel saat p < 0.05.",
+          "[warning: Perangkap] Mencoba 5 metode normalisasi data yang berbeda dan hanya melaporkan 1 metode yang menghasilkan p < 0.05 (cherry-picking).",
+          "[warning: Perangkap] Mengubah rumusan hipotesis penelitian setelah melihat grafik hasil akhir data."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Kunci rencana ukuran sampel dan analisis statistik dalam dokumen preregistrasi (misal di OSF.io) sebelum pengu...",
-          "Prosedur: Jika analisis interim bertahap harus dilakukan (seperti pada uji klinis atau uji destruktif mahal), gunakan ko..."
-        ]
+          "Prosedur: Kunci rencana ukuran sampel dan analisis statistik dalam dokumen preregistrasi (misal di OSF.io) sebelum pengumpulan data dimulai.",
+          "Prosedur: Jika analisis interim bertahap harus dilakukan (seperti pada uji klinis atau uji destruktif mahal), gunakan koreksi batas alfa alfa-spending function O'Brien-Fleming."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Bagaimana preregistrasi protokol riset (study preregistration) mampu memberantas praktik p-hacking dan HARKing secara to...",
-          "Petunjuk: Perhatikan pemisahan waktu yang ketat antara fase perumusan hipotesis dengan fase melihat data.",
-          "Solusi Kunci: Preregistrasi mewajibkan peneliti mengunggah dokumen terkunci bertanda waktu publik (timestamped) yang merinci secara ek..."
-        ]
+          "Pertanyaan Uji: Bagaimana preregistrasi protokol riset (study preregistration) mampu memberantas praktik p-hacking dan HARKing secara total?",
+          "Petunjuk Analitis: Perhatikan pemisahan waktu yang ketat antara fase perumusan hipotesis dengan fase melihat data.",
+          "Solusi Kunci: Preregistrasi mewajibkan peneliti mengunggah dokumen terkunci bertanda waktu publik (timestamped) yang merinci secara eksak hipotesis riset, ukuran sampel pasti, kriteria eliminasi outlier, dan model statistik yang akan digunakan SEBELUM data dikumpulkan. Hal ini memutus ruang gerak peneliti untuk mengubah hipotesis (mencegah HARKing), memanipulasi penghentian data (mencegah optional stopping), atau memilih-milih variabel respon post-hoc."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

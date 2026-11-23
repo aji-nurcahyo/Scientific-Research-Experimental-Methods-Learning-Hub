@@ -64,100 +64,137 @@ export const CH27_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Batasan Model Linier Standar pada Data Terkorelasi (Clu...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Batasan Model Linier Standar pada Data Terkorelasi (Clustered/Nested Data)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.4.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.1.",
-          "Capaian: Mengidentifikasi struktur ketergantungan hierarkis, bersarang (nested), dan berulang (longitudinal).",
-          "Capaian: Memahami konsekuensi fatal mengabaikan korelasi intra-klaster (pseudoreplication).",
-          "Capaian: Menghitung Koefisien Korelasi Intra-Kelas (Intraclass Correlation Coefficient / ICC)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi struktur ketergantungan hierarkis, bersarang (nested), dan berulang (longitudinal).",
+          "Capaian 2: Memahami konsekuensi fatal mengabaikan korelasi intra-klaster (pseudoreplication).",
+          "Capaian 3: Menghitung Koefisien Korelasi Intra-Kelas (Intraclass Correlation Coefficient / ICC)."
         ],
-        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + u_j + \\epsilon_{ij}$$"
+        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + u_j + \\epsilon_{ij}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.4.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Batasan Model Linier Standar pada Data Terkorelasi (Clu...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Batasan Model Linier Standar pada Data Terkorelasi (Clustered/Nested Data)",
+        "lead": "Salah satu asumsi fondasional dalam regresi OLS dan ANOVA klasik adalah independensi observasi: kovarians antara galat pada dua sampel yang berbeda diasumsikan nol murni (Cov(epsilon_i, epsilon_j) = 0).",
         "bulletPoints": [
-          "Salah satu asumsi fondasional dalam regresi OLS dan ANOVA klasik adalah independensi observasi: kovarians antara galat pada d...",
-          "Contoh struktur bertingkat dalam rekayasa: 1. Data bersarang (Nested Data): Pengujian efisiensi turbin angin di mana turbin-t...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, dalam desain eksperimen rekayasa dunia nyata, asumsi ini sangat sering dilanggar karena data memiliki struktur pengelompokan alami (clustered, nested, or hierarchical data).",
+          "Contoh struktur bertingkat dalam rekayasa: 1.",
+          "Data bersarang (Nested Data): Pengujian efisiensi turbin angin di mana turbin-turbin beroperasi di dalam beberapa ladang angin (wind farms) yang berbeda."
         ],
-        "keyFormulaOrDiagram": "Jika seorang peneliti memperlakukan observasi yang terkorelasi ini seolah-olah independen..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Jika seorang peneliti memperlakukan observasi yang terkorelasi ini seolah-olah independen (seperti memodelkannya langsung dengan regresi OLS biasa), peneliti melakukan pelanggaran metodologis berat yang disebut Pseudoreplikasi (Pseudoreplication).",
         "bulletPoints": [
-          "Jika seorang peneliti memperlakukan observasi yang terkorelasi ini seolah-olah independen (seperti memodelkannya langsung den...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Pseudoreplikasi menghasilkan perkiraan ukuran sampel efektif yang jauh terlalu optimis, mengecilkan standar error secara drastis, dan menghasilkan nilai p-value yang sangat menipu (p < 0.001 semu pada efek yang sebenarnya tidak ada)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Model Komponen Varians Dua Tingkat (Random Intercept Empty Model):",
         "bulletPoints": [
-          "1. Model Komponen Varians Dua Tingkat (Random Intercept Empty Model):",
           "di mana:",
-          "- $j = 1, \\dots, J$ adalah indeks klaster/grup tingkat-2 (misal ladang angin)."
+          "- $j = 1, \\dots, J$ adalah indeks klaster/grup tingkat-2 (misal ladang angin).",
+          "- $i = 1, \\dots, n_j$ adalah indeks observasi tingkat-1 di dalam klaster $j$ (misal turbin)."
         ],
-        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + u_j + \\epsilon_{ij}$$"
+        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + u_j + \\epsilon_{ij}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian getaran gearbox mesin industri, diambil data getaran dari 10 gearbox (klaster, J = 10) dengan 20 sensor pengujian per gearbox...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian getaran gearbox mesin industri, diambil data getaran dari 10 gearbox (klaster, J = 10) dengan 20 sensor pengujian per gearbox (m = 20, total N = 200). Dari dekomposisi varians diperoleh varians antargearbox sigma_u^2 = 12.0 dan varians residual dalam-gearbox sigma_e^2 = 4.0. Hitung ICC (rho), faktor desain (Deff), dan ukuran sampel efektif (N_eff).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi parameter: J = 10 klaster, m = 20 observasi per klaster, N = 200 total. sigma_u^2 = 12...",
+          "Langkah 1: Identifikasi parameter: J = 10 klaster, m = 20 observasi per klaster, N = 200 total.\nsigma_u^2 = 12.0, sigma_e^2 = 4.0.",
           "Langkah 2: Hitung varians total: Var_total = 12.0 + 4.0 = 16.0.",
-          "Langkah 3: Hitung Intraclass Correlation Coefficient (ICC): rho = sigma_u^2 / (sigma_u^2 + sigma_e^2) = 12.0 /...",
-          "Interpretasi: Meskipun peneliti mengumpulkan 200 baris data, tingginya korelasi intra-klaster (ICC = 0.75) menyebabkan data tersebut h..."
+          "Langkah 3: Hitung Intraclass Correlation Coefficient (ICC):\nrho = sigma_u^2 / (sigma_u^2 + sigma_e^2) = 12.0 / 16.0 = 0.75 (75% variasi getaran berasal dari perbedaan antargearbox)."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung ukuran sampel efektif N_eff: N_eff = N / Deff = 200 / 15.25 = 13.11 obse..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi data hierarkis bersarang (nested) dan komputasi empiris ICC serta dekomposisi komponen varians.",
-          "Dependensi Pustaka: numpy, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Estimasi Komponen Varians Hierarkis"
+          "Langkah 4: Hitung Design Effect (Deff):\nDeff = 1 + (m - 1) * rho = 1 + (20 - 1) * 0.75 = 1 + 19 * 0.75 = 1 + 14.25 = 15.25.",
+          "Langkah 5: Hitung ukuran sampel efektif N_eff:\nN_eff = N / Deff = 200 / 15.25 = 13.11 observasi independen.",
+          "[result: Interpretasi Ilmiah] Meskipun peneliti mengumpulkan 200 baris data, tingginya korelasi intra-klaster (ICC = 0.75) menyebabkan data tersebut hanya membawa informasi yang setara dengan 13 observasi independen murni. Regresi OLS biasa akan mengasumsikan n = 200, meremehkan standar error sebesar sqrt(15.25) = 3.9 kali lipat, memicu kesimpulan palsu."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Estimasi Komponen Varians Hierarkis | Grand Mean Estimasi : 51.4..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi data hierarkis bersarang (nested) dan komputasi empiris ICC serta dekomposisi komponen varians.",
         "bulletPoints": [
-          "Perangkap: Memperlakukan data bersarang sebagai data independen pada OLS standar (pseudoreplikasi).",
-          "Perangkap: Mengagregasikan data (menghitung rata-rata per klaster) sehingga membuang seluruh informasi variabilitas tingk...",
-          "Perangkap: Mengabaikan ICC padahal ICC > 0.05 sudah cukup untuk mendistorsi standar error secara substansial."
-        ]
+          "Tujuan Algoritma: Simulasi data hierarkis bersarang (nested) dan komputasi empiris ICC serta dekomposisi komponen varians.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Estimasi Komponen Varians Hierarkis"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Estimasi Komponen Varians Hierarkis\nGrand Mean Estimasi          : 51.49 (Sejati: 50.00)\nVarians Antarklaster (sigma_u^2) : 6.34 (Sejati: 12.00)\nVarians Residual (sigma_e^2)     : 3.73 (Sejati: 4.00)\nIntraclass Correlation (ICC) : 0.6294 (Sejati: 0.7500)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Memperlakukan data bersarang sebagai data independen pada OLS standar (pseudoreplikasi).",
+          "[warning: Perangkap] Mengagregasikan data (menghitung rata-rata per klaster) sehingga membuang seluruh informasi variabilitas tingkat-1.",
+          "[warning: Perangkap] Mengabaikan ICC padahal ICC > 0.05 sudah cukup untuk mendistorsi standar error secara substansial."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Hitung ICC pada model kosong (unconditional empty model) sebagai langkah pre-flight wajib.",
           "Prosedur: Jika ICC > 0.05 dan ukuran klaster > 5, model regresi campuran (Mixed Model) wajib digunakan.",
           "Prosedur: Laporkan komponen varians antarklaster dan dalam-klaster secara transparan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apakah yang dimaksud dengan fenomena Pseudoreplikasi dalam metodologi penelitian ilmiah eksperimental?",
-          "Petunjuk: Perhatikan perlakuan terhadap sampel yang saling berkorelasi atau berasal dari subjek yang sama.",
-          "Solusi Kunci: Pseudoreplikasi adalah kesalahan metodologis di mana unit-unit observasi yang saling berkorelasi (misal pengukuran berul..."
-        ]
+          "Petunjuk Analitis: Perhatikan perlakuan terhadap sampel yang saling berkorelasi atau berasal dari subjek yang sama.",
+          "Solusi Kunci: Pseudoreplikasi adalah kesalahan metodologis di mana unit-unit observasi yang saling berkorelasi (misal pengukuran berulang pada subjek yang sama atau sampel dari klaster yang sama) diperlakukan seolah-olah merupakan sampel independen baru, menghasilkan standar error yang terlalu kecil palsu."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -224,101 +261,137 @@ export const CH27_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pembedaan Efek Tetap (Fixed Effects) dan Efek Acak (Ran...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pembedaan Efek Tetap (Fixed Effects) dan Efek Acak (Random Effects)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.4.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.2.",
-          "Capaian: Membedakan konsep filosofis dan operasional antara Fixed Effects dan Random Effects.",
-          "Capaian: Memahami mekanisme penyusutan estimasi (shrinkage / empirical Bayes prediction).",
-          "Capaian: Memilih spesifikasi model yang tepat berdasarkan tujuan inferensi (kondisional vs marginal)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan konsep filosofis dan operasional antara Fixed Effects dan Random Effects.",
+          "Capaian 2: Memahami mekanisme penyusutan estimasi (shrinkage / empirical Bayes prediction).",
+          "Capaian 3: Memilih spesifikasi model yang tepat berdasarkan tujuan inferensi (kondisional vs marginal)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\mathbf{Z} \\mathbf{u} + \\boldsymbol{\\epsilon}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\mathbf{Z} \\mathbf{u} + \\boldsymbol{\\epsilon}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.4.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pembedaan Efek Tetap (Fixed Effects) dan Efek Acak (Ran...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pembedaan Efek Tetap (Fixed Effects) dan Efek Acak (Random Effects)",
+        "lead": "Dalam pemodelan statistik modern, salah satu pertanyaan paling mendasar bagi peneliti adalah: \"Kapan suatu faktor harus diperlakukan sebagai Efek Tetap (Fixed Effect), dan kapan harus diperlakukan sebagai Efek Acak (Random Effect)?\"",
         "bulletPoints": [
-          "Dalam pemodelan statistik modern, salah satu pertanyaan paling mendasar bagi peneliti adalah: \"Kapan suatu faktor harus diper...",
-          "Pembedaan Konseptual: 1. Efek Tetap (Fixed Effects): Faktor diperlakukan sebagai efek tetap jika level faktor yang diteliti m...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Pembedaan Konseptual: 1.",
+          "Efek Tetap (Fixed Effects): Faktor diperlakukan sebagai efek tetap jika level faktor yang diteliti mencakup seluruh populasi yang menarik perhatian peneliti secara spesifik, atau level-level tersebut dipilih secara sengaja dan tidak acak."
         ],
-        "keyFormulaOrDiagram": "Keunggulan matematis luar biasa dari efek acak adalah sifat Penyusutan (Shrinkage / Partia..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Keunggulan matematis luar biasa dari efek acak adalah sifat Penyusutan (Shrinkage / Partial Pooling).",
         "bulletPoints": [
-          "Keunggulan matematis luar biasa dari efek acak adalah sifat Penyusutan (Shrinkage / Partial Pooling). Estimator efek acak men...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Estimator efek acak menarik estimasi klaster-klaster kecil yang memiliki sedikit data menuju rata-rata global (grand mean), mencegah penarikan kesimpulan ekstrem akibat fluktuasi sampel terbatas."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Matriks Linear Mixed Models (LMM):",
         "bulletPoints": [
-          "1. Formulasi Matriks Linear Mixed Models (LMM):",
           "di mana:",
-          "- $\\mathbf{X} \\in \\mathbb{R}^{n \\times p}$ adalah matriks desain untuk Efek Tetap (*Fixed Effects*)."
+          "- $\\mathbf{X} \\in \\mathbb{R}^{n \\times p}$ adalah matriks desain untuk Efek Tetap (*Fixed Effects*).",
+          "- $\\boldsymbol{\\beta} \\in \\mathbb{R}^{p \\times 1}$ adalah vektor koefisien efek tetap (parameter konstan populasi)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\mathbf{Z} \\mathbf{u} + \\boldsymbol{\\epsilon}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\mathbf{Z} \\mathbf{u} + \\boldsymbol{\\epsilon}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada kalibrasi sensor IoT, varians antarsensor adalah sigma_u^2 = 8.0 dan varians pengukuran acak sigma_e^2 = 2.0. Rata-rata populasi grand...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada kalibrasi sensor IoT, varians antarsensor adalah sigma_u^2 = 8.0 dan varians pengukuran acak sigma_e^2 = 2.0. Rata-rata populasi grand mean adalah mu = 100.0. Terdapat sensor X yang hanya memiliki n = 2 data pengukuran dengan rata-rata bar{y}_X = 110.0. Hitung faktor penyusutan lambda dan estimasi Empirical Bayes untuk sensor X.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi parameter: sigma_u^2 = 8.0, sigma_e^2 = 2.0, n_j = 2, bar{y}_X = 110.0, mu = 100.0.",
           "Langkah 2: Hitung rasio varians: sigma_e^2 / sigma_u^2 = 2.0 / 8.0 = 0.25.",
-          "Langkah 3: Hitung faktor bobot penyusutan lambda: lambda = n_j / (n_j + sigma_e^2 / sigma_u^2) = 2 / (2 + 0.25...",
-          "Interpretasi: Tanpa model acak (no pooling), peneliti akan menyimpulkan nilai sensor adalah 110.0. Namun karena data hanya 2 sampel, m..."
+          "Langkah 3: Hitung faktor bobot penyusutan lambda:\nlambda = n_j / (n_j + sigma_e^2 / sigma_u^2) = 2 / (2 + 0.25) = 2 / 2.25 = 0.8889."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung nilai prediksi performa sensor X: y_pred = mu + hat{u}_X = 100.0 + 8.89..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung estimasi efek acak hat{u}_X:\nhat{u}_X = lambda * (bar{y}_X - mu) = 0.8889 * (110.0 - 100.0) = 0.8889 * 10.0 = +8.889.",
+          "Langkah 5: Hitung nilai prediksi performa sensor X:\ny_pred = mu + hat{u}_X = 100.0 + 8.89 = 108.89.",
+          "[result: Interpretasi Ilmiah] Tanpa model acak (no pooling), peneliti akan menyimpulkan nilai sensor adalah 110.0. Namun karena data hanya 2 sampel, model campuran secara cerdas \"menyusutkan\" estimasi sebesar 1.11 poin ke arah rata-rata populasi menjadi 108.89. Ini memberikan prediksi yang jauh lebih tahan uji terhadap fluktuasi acak."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Demonstrasi sifat shrinkage (partial pooling) pada estimasi Empirical Bayes menggunakan Linear Mixed Model.",
         "bulletPoints": [
-          "Deskripsi: Demonstrasi sifat shrinkage (partial pooling) pada estimasi Empirical Bayes menggunakan Linear Mixed Model.",
-          "Dependensi Pustaka: numpy, pandas, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Penyusutan (Shrinkage) Efek Acak"
+          "Tujuan Algoritma: Demonstrasi sifat shrinkage (partial pooling) pada estimasi Empirical Bayes menggunakan Linear Mixed Model.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Penyusutan (Shrinkage) Efek Acak"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Penyusutan (Shrinkage) Efek Acak | Grup Ukuran n Rata-r..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Penyusutan (Shrinkage) Efek Acak\nGrup    Ukuran n  Rata-rata Sampel  BLUP Estimasi (u)   Prediksi Final  \n------------------------------------------------------------------------\nG1      2         100.26            -0.10               99.88           \nG2      3         99.45             -0.45               99.53           ",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memperlakukan faktor dengan sedikit level (misal k = 2 level) sebagai efek acak (sulit mengestimasi varians si...",
-          "Perangkap: Mengira bahwa efek acak mengasumsikan efek sama di setiap kelompok (efek acak mengizinkan tiap kelompok berbed...",
-          "Perangkap: Menafsirkan koefisien marjinal populasi sama persis dengan koefisien spesifik subjek."
-        ]
+          "[warning: Perangkap] Memperlakukan faktor dengan sedikit level (misal k = 2 level) sebagai efek acak (sulit mengestimasi varians sigma_u^2 dengan presisi jika level < 5).",
+          "[warning: Perangkap] Mengira bahwa efek acak mengasumsikan efek sama di setiap kelompok (efek acak mengizinkan tiap kelompok berbeda, namun perbedaannya dimodelkan mengikuti distribusi normal).",
+          "[warning: Perangkap] Menafsirkan koefisien marjinal populasi sama persis dengan koefisien spesifik subjek."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Fixed Effects jika jumlah level sedikit (< 5) dan peneliti hanya peduli pada level spesifik tersebut.",
           "Prosedur: Gunakan Random Effects jika tujuannya menggeneralisasi ke populasi klaster dan level berjumlah >= 5.",
           "Prosedur: Periksa apakah matriks varians G definit positif."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Kapan suatu faktor sebaiknya dimodelkan sebagai Fixed Effect dan bukan sebagai Random Effect?",
-          "Petunjuk: Perhatikan jumlah level faktor dan apakah level-level tersebut mencakup seluruh target penelitian sp...",
-          "Solusi Kunci: Faktor dimodelkan sebagai Fixed Effect jika level faktor dipilih secara spesifik, berjumlah sedikit (< 5), dan peneliti..."
-        ]
+          "Petunjuk Analitis: Perhatikan jumlah level faktor dan apakah level-level tersebut mencakup seluruh target penelitian spesifik.",
+          "Solusi Kunci: Faktor dimodelkan sebagai Fixed Effect jika level faktor dipilih secara spesifik, berjumlah sedikit (< 5), dan peneliti ingin membandingkan perbedaan rata-rata langsung antar level tersebut tanpa bermaksud menggeneralisasikannya ke populasi klaster yang lebih luas."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -383,101 +456,137 @@ export const CH27_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pemodelan Pengukuran Berulang (Repeated Measures) Mengg...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pemodelan Pengukuran Berulang (Repeated Measures) Menggunakan Linear Mixed Models",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.4.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.3.",
-          "Capaian: Menerapkan Random Intercept dan Random Slope untuk data longitudinal deret waktu.",
-          "Capaian: Menangani nilai yang hilang (missing data) secara elegan tanpa membuang subjek.",
-          "Capaian: Membandingkan struktur matriks kovarians residual (Compound Symmetry vs Autoregressive AR(1))."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan Random Intercept dan Random Slope untuk data longitudinal deret waktu.",
+          "Capaian 2: Menangani nilai yang hilang (missing data) secara elegan tanpa membuang subjek.",
+          "Capaian 3: Membandingkan struktur matriks kovarians residual (Compound Symmetry vs Autoregressive AR(1))."
         ],
-        "keyFormulaOrDiagram": "$$y_{ti} = (\\beta_0 + u_{0i}) + (\\beta_1 + u_{1i}) t + \\epsilon_{ti}$$"
+        "keyFormulaOrDiagram": "$$y_{ti} = (\\beta_0 + u_{0i}) + (\\beta_1 + u_{1i}) t + \\epsilon_{ti}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.4.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pemodelan Pengukuran Berulang (Repeated Measures) Mengg...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pemodelan Pengukuran Berulang (Repeated Measures) Menggunakan Linear Mixed Models",
+        "lead": "Dalam eksperimen ilmiah, data pengukuran berulang (repeated measures) dihasilkan ketika unit eksperimen yang sama diukur pada beberapa titik waktu yang berurutan atau di bawah kondisi pengujian yang berbeda-beda.",
         "bulletPoints": [
-          "Dalam eksperimen ilmiah, data pengukuran berulang (repeated measures) dihasilkan ketika unit eksperimen yang sama diukur pada...",
-          "Pendekatan lama menggunakan Repeated Measures ANOVA (RM-ANOVA) memiliki dua kelemahan fatal: 1. Asumsi Sferisitas (Sphericity...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Contoh klasik meliputi laju korosi pipa pada bulan ke-1 hingga ke-12, atau degradasi performa model AI selama proses continual learning.",
+          "Pendekatan lama menggunakan Repeated Measures ANOVA (RM-ANOVA) memiliki dua kelemahan fatal: 1.",
+          "Asumsi Sferisitas (Sphericity): RM-ANOVA menuntut varians dari seluruh pasangan selisih waktu adalah identik."
         ],
-        "keyFormulaOrDiagram": "Linear Mixed Models (LMM) merevolusi analisis pengukuran berulang. LMM tidak menuntut asum..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Linear Mixed Models (LMM) merevolusi analisis pengukuran berulang.",
         "bulletPoints": [
-          "Linear Mixed Models (LMM) merevolusi analisis pengukuran berulang. LMM tidak menuntut asumsi sferisitas, dapat mengakomodasi...",
-          "Dalam LMM, peneliti dapat memodelkan: - Random Intercept: Mengizinkan setiap subjek memulai dengan garis dasar (baseline) per...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "LMM tidak menuntut asumsi sferisitas, dapat mengakomodasi titik waktu observasi yang tidak seragam (unbalanced time points), dan secara otomatis mempertahankan subjek yang memiliki missing data di beberapa titik waktu (asalkan missing at random / MAR).",
+          "Dalam LMM, peneliti dapat memodelkan: - Random Intercept: Mengizinkan setiap subjek memulai dengan garis dasar (baseline) performa yang berbeda. - Random Slope: Mengizinkan laju perubahan performa seiring waktu (trajectory) berbeda-beda untuk tiap subjek."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Model Pengukuran Berulang (Random Intercept & Random Slope):",
         "bulletPoints": [
-          "1. Model Pengukuran Berulang (Random Intercept & Random Slope):",
           "di mana:",
-          "- $t$ adalah variabel waktu kontinu."
+          "- $t$ adalah variabel waktu kontinu.",
+          "- $i$ adalah indeks subjek/unit eksperimen."
         ],
-        "keyFormulaOrDiagram": "$$y_{ti} = (\\beta_0 + u_{0i}) + (\\beta_1 + u_{1i}) t + \\epsilon_{ti}$$"
+        "keyFormulaOrDiagram": "$$y_{ti} = (\\beta_0 + u_{0i}) + (\\beta_1 + u_{1i}) t + \\epsilon_{ti}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah eksperimen mengukur keausan bantalan poros (wear, mikrometer) pada 5 poros mesin selama 4 interval waktu (t = 1, 2, 3, 4 jam). Model...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung prediksi rata-rata populasi pada jam ke-3 (t = 3): y_pop(3) = beta_0 + beta_1 * (3) = 10.0 +...",
-          "Langkah 2: Hitung intersep spesifik untuk Poros 3: Intersep_3 = beta_0 + u_03 = 10.0 + (-1.8) = 8.2 um.",
-          "Langkah 3: Hitung prediksi spesifik untuk Poros 3 pada jam ke-3: y_poros3(3) = Intersep_3 + beta_1 * (3) = 8.2...",
-          "Interpretasi: Poros 3 memiliki baseline keausan awal yang lebih rendah sebesar 1.8 um dibandingkan rata-rata mesin lainnya. Pada jam k..."
+          "Konteks Kasus: Sebuah eksperimen mengukur keausan bantalan poros (wear, mikrometer) pada 5 poros mesin selama 4 interval waktu (t = 1, 2, 3, 4 jam). Model Random Intercept menghasilkan: beta_0 = 10.0, beta_1 (laju keausan) = 2.5 um/jam. Untuk Poros 3, efek acak intersep terestimasi u_03 = -1.8 um. Hitung prediksi keausan Poros 3 pada jam ke-3 dan bandingkan dengan rata-rata populasi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung prediksi spesifik untuk Poros 3 pada jam ke-3: y_poros3(3) = Intersep_3..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung prediksi rata-rata populasi pada jam ke-3 (t = 3):\ny_pop(3) = beta_0 + beta_1 * (3) = 10.0 + 2.5 * (3) = 10.0 + 7.5 = 17.5 um.",
+          "Langkah 2: Hitung intersep spesifik untuk Poros 3:\nIntersep_3 = beta_0 + u_03 = 10.0 + (-1.8) = 8.2 um."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung prediksi spesifik untuk Poros 3 pada jam ke-3:\ny_poros3(3) = Intersep_3 + beta_1 * (3) = 8.2 + 2.5 * (3) = 8.2 + 7.5 = 15.7 um.",
+          "[result: Interpretasi Ilmiah] Poros 3 memiliki baseline keausan awal yang lebih rendah sebesar 1.8 um dibandingkan rata-rata mesin lainnya. Pada jam ke-3, keausan Poros 3 diprediksi 15.7 um (dibandingkan rata-rata populasi 17.5 um). Model LMM memisahkan variasi baseline individual dari laju degradasi global."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemodelan longitudinal repeated measures dengan Random Intercept menggunakan MixedLM statsmodels.",
         "bulletPoints": [
-          "Deskripsi: Pemodelan longitudinal repeated measures dengan Random Intercept menggunakan MixedLM statsmodels.",
-          "Dependensi Pustaka: numpy, pandas, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Pemodelan Longitudinal Repeated Measures LMM"
+          "Tujuan Algoritma: Pemodelan longitudinal repeated measures dengan Random Intercept menggunakan MixedLM statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Pemodelan Longitudinal Repeated Measures LMM"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Pemodelan Longitudinal Repeated Measures LMM | Total Obser..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Pemodelan Longitudinal Repeated Measures LMM\nTotal Observasi Tersedia : 67 dari 75 (Ada Missing Data)\nEstimasi Intersep (beta0): 12.0725 (Sejati: 12.0000)\nEstimasi Slope (beta1)   : 3.5228 (Sejati: 3.5000)\nStandar Error Slope      : 0.0469 (p-value: 0.0000e+00)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Membuang seluruh data dari subjek yang memiliki satu data pengukuran bolong (listwise deletion) alih-alih mema...",
-          "Perangkap: Memaksakan model Random Slope padahal data hanya memiliki 2 titik waktu observasi per subjek (dibutuhkan minim...",
-          "Perangkap: Mengabaikan korelasi antara random intercept dan random slope."
-        ]
+          "[warning: Perangkap] Membuang seluruh data dari subjek yang memiliki satu data pengukuran bolong (listwise deletion) alih-alih memanfaatkan LMM.",
+          "[warning: Perangkap] Memaksakan model Random Slope padahal data hanya memiliki 2 titik waktu observasi per subjek (dibutuhkan minimal 3 titik waktu untuk estimasi varians slope).",
+          "[warning: Perangkap] Mengabaikan korelasi antara random intercept dan random slope."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Periksa apakah variabel waktu diperlakukan secara tepat (sebagai kovariat kontinu atau faktor kategori).",
-          "Prosedur: Bandingkan model Random Intercept saja versus model Random Intercept + Slope menggunakan Likelihood Ratio Test...",
+          "Prosedur: Bandingkan model Random Intercept saja versus model Random Intercept + Slope menggunakan Likelihood Ratio Test.",
           "Prosedur: Verifikasi bahwa estimasi parameter varians tidak menghasilkan singular fit (boundary convergence)."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa Linear Mixed Models (LMM) jauh lebih unggul daripada Repeated Measures ANOVA (RM-ANOVA) dalam menganalisis data...",
-          "Petunjuk: Perhatikan penanganan data yang hilang dan asumsi sferisitas matriks kovarians.",
-          "Solusi Kunci: LMM mampu memproses data dengan nilai hilang (missing at random) tanpa membuang subjek, tidak memerlukan asumsi sferisit..."
-        ]
+          "Pertanyaan Uji: Mengapa Linear Mixed Models (LMM) jauh lebih unggul daripada Repeated Measures ANOVA (RM-ANOVA) dalam menganalisis data eksperimen longitudinal industri?",
+          "Petunjuk Analitis: Perhatikan penanganan data yang hilang dan asumsi sferisitas matriks kovarians.",
+          "Solusi Kunci: LMM mampu memproses data dengan nilai hilang (missing at random) tanpa membuang subjek, tidak memerlukan asumsi sferisitas yang restriktif, dan fleksibel mengakomodasi titik waktu observasi yang tidak berjarak seragam."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -543,101 +652,138 @@ export const CH27_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Estimasi Restricted Maximum Likelihood (REML) Menggunak...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Estimasi Restricted Maximum Likelihood (REML) Menggunakan Python statsmodels",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.4.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.4.",
-          "Capaian: Memahami kelemahan estimasi Maximum Likelihood (ML) standar pada komponen varians dan keunggulan REML.",
-          "Capaian: Menurunkan transformasi ortogonal matriks proyeksi pendukung REML.",
-          "Capaian: Menguasai aturan perbandingan model: Kapan menggunakan ML versus REML untuk uji Likelihood Ratio."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.4.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami kelemahan estimasi Maximum Likelihood (ML) standar pada komponen varians dan keunggulan REML.",
+          "Capaian 2: Menurunkan transformasi ortogonal matriks proyeksi pendukung REML.",
+          "Capaian 3: Menguasai aturan perbandingan model: Kapan menggunakan ML versus REML untuk uji Likelihood Ratio."
         ],
-        "keyFormulaOrDiagram": "$$\\ell_{\\text{ML}}(\\boldsymbol{\\beta}, \\mathbf{V}) = -\\frac{n}{2} \\ln(2\\pi) - \\frac{1}{2} \\ln|\\mathbf{V}| - \\frac{1}{2} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T \\mathbf{V}^{-1} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})$$"
+        "keyFormulaOrDiagram": "$$\\ell_{\\text{ML}}(\\boldsymbol{\\beta}, \\mathbf{V}) = -\\frac{n}{2} \\ln(2\\pi) - \\frac{1}{2} \\ln|\\mathbf{V}| - \\frac{1}{2} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T \\mathbf{V}^{-1} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.4.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Estimasi Restricted Maximum Likelihood (REML) Menggunak...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Estimasi Restricted Maximum Likelihood (REML) Menggunakan Python statsmodels",
+        "lead": "Dalam estimasi model campuran Linear Mixed Models, terdapat dua metode utama yang bersaing: Maximum Likelihood (ML) dan Restricted (atau Residual) Maximum Likelihood (REML).",
         "bulletPoints": [
-          "Dalam estimasi model campuran Linear Mixed Models, terdapat dua metode utama yang bersaing: Maximum Likelihood (ML) dan Restr...",
-          "Kelemahan Mendasar Estimasi Maximum Likelihood (ML): Ketika mengestimasi parameter komponen varians (seperti sigma_u^2 dan si...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kelemahan Mendasar Estimasi Maximum Likelihood (ML): Ketika mengestimasi parameter komponen varians (seperti sigma_u^2 dan sigma_e^2), metode ML standar tidak memperhitungkan derajat kebebasan yang telah dihabiskan untuk mengestimasi koefisien efek tetap beta.",
+          "Fenomena ini persis analog dengan rumus varians sampel naif yang membagi dengan n (bukan n - 1), yang menghasilkan estimator varians yang bias ke bawah (underestimated)."
         ],
-        "keyFormulaOrDiagram": "Restricted Maximum Likelihood (REML), yang diperkenalkan oleh Patterson dan Thompson (1971..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Restricted Maximum Likelihood (REML), yang diperkenalkan oleh Patterson dan Thompson (1971), mengatasi bias ini secara matematis.",
         "bulletPoints": [
-          "Restricted Maximum Likelihood (REML), yang diperkenalkan oleh Patterson dan Thompson (1971), mengatasi bias ini secara matema...",
-          "Aturan Emas Perbandingan Model: - Untuk membandingkan struktur varians/efek acak (misal Random Intercept vs Random Slope) den...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "REML mentransformasikan data respon y menggunakan matriks proyeksi ortogonal K sedemikian rupa sehingga komponen efek tetap beta tereliminasi sepenuhnya dari fungsi likelihood: K * X = 0.",
+          "Fungsi likelihood yang tersisa murni mencerminkan varians dari residual data.",
+          "Aturan Emas Perbandingan Model: - Untuk membandingkan struktur varians/efek acak (misal Random Intercept vs Random Slope) dengan efek tetap identik: Gunakan REML. - Untuk membandingkan dua model yang memiliki efek tetap berbeda (misal Model 1 vs Model 2 dengan prediktor berbeda) menggunakan Likelihood Ratio Test: Wajib mengestimasi ulang kedua model menggunakan ML murni, karena fungsi kemungkinan REML pada kedua model dibangun di atas ruang proyeksi residu yang berbeda sehingga tidak dapat dibandingkan secara langsung."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Likelihood Marjinal Penuh (ML):",
         "bulletPoints": [
-          "1. Formulasi Likelihood Marjinal Penuh (ML):",
           "Fungsi log-likelihood marjinal dari $\\mathbf{y} \\sim \\mathcal{N}(\\mathbf{X}\\boldsymbol{\\beta}, \\mathbf{V})$:",
-          "Estimator ML untuk koefisien adalah Generalized Least Squares: $\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T \\math..."
+          "Estimator ML untuk koefisien adalah Generalized Least Squares: $\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}^T \\mathbf{V}^{-1} \\mathbf{X})^{-1} \\mathbf{X}^T \\mathbf{V}^{-1} \\mathbf{y}$.",
+          "2. Formulasi Restricted Maximum Likelihood (REML):"
         ],
-        "keyFormulaOrDiagram": "$$\\ell_{\\text{ML}}(\\boldsymbol{\\beta}, \\mathbf{V}) = -\\frac{n}{2} \\ln(2\\pi) - \\frac{1}{2} \\ln|\\mathbf{V}| - \\frac{1}{2} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T \\mathbf{V}^{-1} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})$$"
+        "keyFormulaOrDiagram": "$$\\ell_{\\text{ML}}(\\boldsymbol{\\beta}, \\mathbf{V}) = -\\frac{n}{2} \\ln(2\\pi) - \\frac{1}{2} \\ln|\\mathbf{V}| - \\frac{1}{2} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})^T \\mathbf{V}^{-1} (\\mathbf{y} - \\mathbf{X}\\boldsymbol{\\beta})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian varians galat satu sampel dengan n = 10 observasi dan p = 2 parameter efek tetap, Jumlah Kuadrat Residu adalah RSS = 80.0. Hi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian varians galat satu sampel dengan n = 10 observasi dan p = 2 parameter efek tetap, Jumlah Kuadrat Residu adalah RSS = 80.0. Hitung estimasi varians galat sigma^2 menggunakan metode ML versus metode REML, dan tentukan persentase bias pada estimasi ML.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi parameter: n = 10 observasi, p = 2 parameter, RSS = 80.0.",
-          "Langkah 2: Hitung estimasi varians Maximum Likelihood (ML): sigma^2_ML = RSS / n = 80.0 / 10 = 8.00.",
-          "Langkah 3: Hitung estimasi varians Restricted Maximum Likelihood (REML): sigma^2_REML = RSS / (n - p) = 80.0 /...",
-          "Interpretasi: Estimasi varians ML menghasilkan nilai 8.00 yang terbias ke bawah sebesar 20% karena mengabaikan 2 derajat kebebasan yan..."
+          "Langkah 2: Hitung estimasi varians Maximum Likelihood (ML):\nsigma^2_ML = RSS / n = 80.0 / 10 = 8.00."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung persentase bias pada estimasi ML: Persentase Bias = (sigma^2_ML - sigma^..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung estimasi varians Restricted Maximum Likelihood (REML):\nsigma^2_REML = RSS / (n - p) = 80.0 / (10 - 2) = 80.0 / 8 = 10.00.",
+          "Langkah 4: Hitung persentase bias pada estimasi ML:\nPersentase Bias = (sigma^2_ML - sigma^2_REML) / sigma^2_REML = (8.00 - 10.00) / 10.00 = -2.00 / 10.00 = -20.0%.",
+          "[result: Interpretasi Ilmiah] Estimasi varians ML menghasilkan nilai 8.00 yang terbias ke bawah sebesar 20% karena mengabaikan 2 derajat kebebasan yang dipakai untuk estimasi efek tetap. Estimasi REML menghasilkan 10.00 yang tidak bias sempurna."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Perbandingan estimasi komponen varians antara REML dan ML menggunakan statsmodels MixedLM.",
         "bulletPoints": [
-          "Deskripsi: Perbandingan estimasi komponen varians antara REML dan ML menggunakan statsmodels MixedLM.",
-          "Dependensi Pustaka: numpy, pandas, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Perbandingan Estimasi REML vs ML"
+          "Tujuan Algoritma: Perbandingan estimasi komponen varians antara REML dan ML menggunakan statsmodels MixedLM.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Perbandingan Estimasi REML vs ML"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Estimasi REML vs ML | Parameter Varians REML (Unbia..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Estimasi REML vs ML\nParameter Varians        REML (Unbiased)     ML (Biased)         \n-----------------------------------------------------------------\nVarians Acak (sigma_u^2) 9.1724              7.3512              \nVarians Residual (sigma_e^2) 3.8641              3.1519              ",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan Likelihood Ratio Test (LRT) berbasis likelihood REML untuk menguji perbedaan efek tetap antara dua...",
-          "Perangkap: Menggunakan estimasi ML standar pada sampel dengan klaster sedikit yang berujung pada peremehan komponen varia...",
-          "Perangkap: Melupakan bahwa untuk menguji perbedaan efek tetap dengan LRT, kedua model wajib di-fit ulang menggunakan reml..."
-        ]
+          "[warning: Perangkap] Menggunakan Likelihood Ratio Test (LRT) berbasis likelihood REML untuk menguji perbedaan efek tetap antara dua model (menghasilkan p-value yang tidak valid).",
+          "[warning: Perangkap] Menggunakan estimasi ML standar pada sampel dengan klaster sedikit yang berujung pada peremehan komponen varians.",
+          "[warning: Perangkap] Melupakan bahwa untuk menguji perbedaan efek tetap dengan LRT, kedua model wajib di-fit ulang menggunakan reml=False (ML murni)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan REML sebagai default untuk estimasi parameter akhir dan interpretasi komponen varians.",
           "Prosedur: Jika membandingkan model dengan efek tetap berbeda via LRT, gunakan ML (reml=False).",
-          "Prosedur: Konfirmasi bahwa konvergensi algoritma optimasi numerik Newton-Raphson / L-BFGS tercapai tanpa matriks singula..."
-        ]
+          "Prosedur: Konfirmasi bahwa konvergensi algoritma optimasi numerik Newton-Raphson / L-BFGS tercapai tanpa matriks singular."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Kapan seorang peneliti wajib mengubah pengaturan dari REML menjadi ML murni (reml=False) saat membandingkan dua model ca...",
-          "Petunjuk: Perhatikan apakah yang dibandingkan adalah struktur efek tetap (fixed effects) atau struktur efek ac...",
-          "Solusi Kunci: Peneliti wajib beralih ke ML murni ketika membandingkan dua model yang memiliki struktur efek tetap (fixed effects) yang..."
-        ]
+          "Pertanyaan Uji: Kapan seorang peneliti wajib mengubah pengaturan dari REML menjadi ML murni (reml=False) saat membandingkan dua model campuran?",
+          "Petunjuk Analitis: Perhatikan apakah yang dibandingkan adalah struktur efek tetap (fixed effects) atau struktur efek acak (random effects).",
+          "Solusi Kunci: Peneliti wajib beralih ke ML murni ketika membandingkan dua model yang memiliki struktur efek tetap (fixed effects) yang berbeda menggunakan Likelihood Ratio Test, karena fungsi likelihood REML dari kedua model dibangun di atas ruang proyeksi residual yang berbeda."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

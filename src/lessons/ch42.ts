@@ -67,100 +67,137 @@ export const CH42_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Perbedaan Mendasar Analisis Sensitivitas Lokal (Derivat...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Perbedaan Mendasar Analisis Sensitivitas Lokal (Derivatif) vs Global (Berbasis Varians)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.5.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.1.",
-          "Capaian: Memahami fungsi analitis analisis sensitivitas dalam pemodelan rekayasa dan simulasi komputasi.",
-          "Capaian: Membedakan keterbatasan Analisis Sensitivitas Lokal (OAT / Gradien) terhadap Analisis Sensitivitas Global (GSA...",
-          "Capaian: Mengidentifikasi fenomena interaksi faktor non-linier yang tidak terdeteksi oleh turunan parsial lokal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami fungsi analitis analisis sensitivitas dalam pemodelan rekayasa dan simulasi komputasi.",
+          "Capaian 2: Membedakan keterbatasan Analisis Sensitivitas Lokal (OAT / Gradien) terhadap Analisis Sensitivitas Global (GSA).",
+          "Capaian 3: Mengidentifikasi fenomena interaksi faktor non-linier yang tidak terdeteksi oleh turunan parsial lokal."
         ],
-        "keyFormulaOrDiagram": "$$S_i^{\\text{local}} = \\left. \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0} \\quad \\text{atau dinormalisasi: } \\quad S_{i, \\text{norm}}^{\\text{local}} = \\left. \\frac{x_i^0}{y^0} \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0}$$"
+        "keyFormulaOrDiagram": "$$S_i^{\\text{local}} = \\left. \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0} \\quad \\text{atau dinormalisasi: } \\quad S_{i, \\text{norm}}^{\\text{local}} = \\left. \\frac{x_i^0}{y^0} \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.5.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Perbedaan Mendasar Analisis Sensitivitas Lokal (Derivat...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Perbedaan Mendasar Analisis Sensitivitas Lokal (Derivatif) vs Global (Berbasis Varians)",
+        "lead": "Dalam pemodelan sistem rekayasa matematika yang kompleks (seperti dinamika termofluida, simulasi aerodinamika, atau model ekonometrika terapan), sistem seringkali memiliki puluhan hingga ratusan parameter masukan.",
         "bulletPoints": [
-          "Dalam pemodelan sistem rekayasa matematika yang kompleks (seperti dinamika termofluida, simulasi aerodinamika, atau model eko...",
-          "Analisis Sensitivitas Lokal (Local Sensitivity Analysis / LSA): - Karakteristik: Menghitung gradien turunan parsial $\\frac{\\p...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Pertanyaan mendasar yang wajib dijawab peneliti sebelum optimasi atau kalibrasi adalah: \"Variabel masukan manakah yang paling dominan mengendalikan variabilitas respon keluaran sistem, dan variabel mana yang tidak berpengaruh signifikan sehingga dapat dikunci pada nilai konstan?\"",
+          "Analisis Sensitivitas Lokal (Local Sensitivity Analysis / LSA): - Karakteristik: Menghitung gradien turunan parsial $\\frac{\\partial Y}{\\partial X_i}$ pada satu titik kerja nominal tertentu (One-At-a-Time / OAT), sementara seluruh variabel lain ditahan konstan. - Keterbatasan Fatal: 1.",
+          "Hanya mengeksplorasi satu titik lokal di ruang parameter."
         ],
-        "keyFormulaOrDiagram": "Analisis Sensitivitas Global (Global Sensitivity Analysis / GSA, Saltelli et al., 2008): -..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Analisis Sensitivitas Global (Global Sensitivity Analysis / GSA, Saltelli et al., 2008): - Karakteristik: Mengevaluasi variabilitas output di seluruh ruang probabilitas masukan secara simultan.",
         "bulletPoints": [
-          "Analisis Sensitivitas Global (Global Sensitivity Analysis / GSA, Saltelli et al., 2008): - Karakteristik: Mengevaluasi variab...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Semua variabel diubah bersama-sama melintasi rentang fisiknya. - Keunggulan: Menangkap non-linearitas penuh, mengukur efek interaksi orde tinggi secara kuantitatif, dan secara eksplisit memperhitungkan distribusi ketidakpastian masukan.",
+          "GSA adalah standar ilmiah mutlak untuk penjaminan keabsahan model simulasi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Perbandingan Formulasi Matematika LSA vs GSA:",
         "bulletPoints": [
-          "Perbandingan Formulasi Matematika LSA vs GSA:",
-          "Misalkan sistem fisik dimodelkan sebagai $Y = f(X_1, X_2, \\dots, X_k)$, di mana $\\mathbf{X} \\in \\Omega \\subset...",
-          "1. Indeks Sensitivitas Lokal (LSA):"
+          "Misalkan sistem fisik dimodelkan sebagai $Y = f(X_1, X_2, \\dots, X_k)$, di mana $\\mathbf{X} \\in \\Omega \\subset \\mathbb{R}^k$.",
+          "1. Indeks Sensitivitas Lokal (LSA):",
+          "Dievaluasi pada titik acuan dasar $\\mathbf{x}^0 = (x_1^0, \\dots, x_k^0)$:"
         ],
-        "keyFormulaOrDiagram": "$$S_i^{\\text{local}} = \\left. \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0} \\quad \\text{atau dinormalisasi: } \\quad S_{i, \\text{norm}}^{\\text{local}} = \\left. \\frac{x_i^0}{y^0} \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0}$$"
+        "keyFormulaOrDiagram": "$$S_i^{\\text{local}} = \\left. \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0} \\quad \\text{atau dinormalisasi: } \\quad S_{i, \\text{norm}}^{\\text{local}} = \\left. \\frac{x_i^0}{y^0} \\frac{\\partial f}{\\partial X_i} \\right|_{\\mathbf{x} = \\mathbf{x}^0}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan model non-linier sederhana dengan efek interaksi: Y = X_1 + X_1 * X_2, dengan X_1, X_2 ~ Uniform(0, 1) independen. Hitung sensitiv...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan model non-linier sederhana dengan efek interaksi: Y = X_1 + X_1 * X_2, dengan X_1, X_2 ~ Uniform(0, 1) independen. Hitung sensitivitas lokal parsial dY/dX_1 pada titik nominal (X_1=0.5, X_2=0.0) dan pada titik alternatif (X_1=0.5, X_2=1.0). Jelaskan mengapa LSA gagal memberikan gambaran sensitivitas yang objektif.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung turunan analitis parsial terhadap X_1: dY/dX_1 = 1 + X_2.",
-          "Langkah 2: Evaluasi pada titik nominal x^0 = (0.5, 0.0): dY/dX_1 = 1 + 0.0 = 1.0.",
-          "Langkah 3: Evaluasi pada titik alternatif x' = (0.5, 1.0): dY/dX_1 = 1 + 1.0 = 2.0.",
-          "Interpretasi: Sensitivitas lokal bernilai 1.0 atau 2.0 bergantung sepenuhnya pada titik evaluasi yang dipilih secara subjektif oleh pe..."
+          "Langkah 2: Evaluasi pada titik nominal x^0 = (0.5, 0.0): dY/dX_1 = 1 + 0.0 = 1.0."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Analisis sensitivitas lokal terhadap X_2: dY/dX_2 = X_1. Jika dievaluasi pada t..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Komparasi kegagalan turunan lokal (LSA) vs keandalan varians global (GSA) pada model interaksi non-linier.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Sensitivitas Lokal pada (0,0,0):"
+          "Langkah 3: Evaluasi pada titik alternatif x' = (0.5, 1.0): dY/dX_1 = 1 + 1.0 = 2.0.",
+          "Langkah 4: Analisis sensitivitas lokal terhadap X_2: dY/dX_2 = X_1. Jika dievaluasi pada titik x_1 = 0, maka dY/dX_2 = 0 (menimbulkan kesimpulan palsu bahwa X_2 tidak berpengaruh sama sekali!).",
+          "[result: Interpretasi Ilmiah] Sensitivitas lokal bernilai 1.0 atau 2.0 bergantung sepenuhnya pada titik evaluasi yang dipilih secara subjektif oleh peneliti. LSA gagal mendeteksi bahwa sensitivitas X_1 dikendalikan secara interaktif oleh nilai X_2."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Sensitivitas Lokal pada (0,0,0): | Gradien Lokal X1 : 1..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komparasi kegagalan turunan lokal (LSA) vs keandalan varians global (GSA) pada model interaksi non-linier.",
         "bulletPoints": [
-          "Perangkap: Menilai pengaruh parameter hanya berdasarkan turunan lokal parsial atau koefisien regresi linier.",
-          "Perangkap: Melakukan analisis sensitivitas satu-per-satu (OAT) pada model simulasi yang sarat interaksi non-linier.",
-          "Perangkap: Mengabaikan rentang batas fisik ketidakpastian variabel masukan."
-        ]
+          "Tujuan Algoritma: Komparasi kegagalan turunan lokal (LSA) vs keandalan varians global (GSA) pada model interaksi non-linier.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Sensitivitas Lokal pada (0,0,0):"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Sensitivitas Lokal pada (0,0,0):\nGradien Lokal X1 : 1.00 (Tampak Sangat Dominan)\nGradien Lokal X2 : 0.00 (Tampak Sama Sekali Tidak Berpengaruh!)\nGradien Lokal X3 : 0.00 (Tampak Sama Sekali Tidak Berpengaruh!)\n",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Menilai pengaruh parameter hanya berdasarkan turunan lokal parsial atau koefisien regresi linier.",
+          "[warning: Perangkap] Melakukan analisis sensitivitas satu-per-satu (OAT) pada model simulasi yang sarat interaksi non-linier.",
+          "[warning: Perangkap] Mengabaikan rentang batas fisik ketidakpastian variabel masukan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Analisis Sensitivitas Global (GSA) sebagai standar metodologi dalam naskah jurnal ilmiah.",
           "Prosedur: Tentukan rentang batas probabilitas masukan berdasarkan data empiris atau literatur fisik.",
           "Prosedur: Sajikan perbandingan proporsi varians yang dijelaskan oleh efek utama vs efek interaksi."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa Analisis Sensitivitas Satu-Faktor-pada-Satu-Waktu (OAT) dikritik keras oleh komunitas sains internasional (Salte...",
-          "Petunjuk: Perhatikan volume ruang hipersfer yang terabaikan saat variabel lain dikunci konstan.",
-          "Solusi Kunci: Pendekatan OAT hanya menelusuri garis-garis koordinat ortogonal yang melewati titik pusat nominal. Pada ruang berdimensi..."
-        ]
+          "Pertanyaan Uji: Mengapa Analisis Sensitivitas Satu-Faktor-pada-Satu-Waktu (OAT) dikritik keras oleh komunitas sains internasional (Saltelli et al., 2019)?",
+          "Petunjuk Analitis: Perhatikan volume ruang hipersfer yang terabaikan saat variabel lain dikunci konstan.",
+          "Solusi Kunci: Pendekatan OAT hanya menelusuri garis-garis koordinat ortogonal yang melewati titik pusat nominal. Pada ruang berdimensi tinggi (k > 5), lebih dari 99% volume ruang parameter berada di luar sumbu koordinat tersebut. OAT sepenuhnya buta terhadap interaksi non-linier multi-faktor dan memberikan kesimpulan yang menyesatkan bagi pembuat kebijakan rekayasa."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -230,101 +267,141 @@ export const CH42_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Metode Screening Morris: Mengidentifikasi Faktor Tak Pe...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Metode Screening Morris: Mengidentifikasi Faktor Tak Penting pada Dimensi Tinggi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.5.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.2.",
-          "Capaian: Memahami fungsi metode penyaringan (Screening) pada sistem komputasi berdimensi tinggi (k > 20 faktor).",
-          "Capaian: Mengkonstruksi lintasan acak ruang kisi (Elementary Effects trajectories) Morris.",
-          "Capaian: Menginterpretasikan bidang diagnostik Morris: Rata-rata absolut (mu*) dan Standar Deviasi (sigma)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami fungsi metode penyaringan (Screening) pada sistem komputasi berdimensi tinggi (k > 20 faktor).",
+          "Capaian 2: Mengkonstruksi lintasan acak ruang kisi (Elementary Effects trajectories) Morris.",
+          "Capaian 3: Menginterpretasikan bidang diagnostik Morris: Rata-rata absolut (mu*) dan Standar Deviasi (sigma)."
         ],
-        "keyFormulaOrDiagram": "$$EE_i(\\mathbf{x}) = \\frac{f(x_1, \\dots, x_{i-1}, x_i + \\Delta, x_{i+1}, \\dots, x_k) - f(\\mathbf{x})}{\\Delta}$$"
+        "keyFormulaOrDiagram": "$$EE_i(\\mathbf{x}) = \\frac{f(x_1, \\dots, x_{i-1}, x_i + \\Delta, x_{i+1}, \\dots, x_k) - f(\\mathbf{x})}{\\Delta}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.5.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Metode Screening Morris: Mengidentifikasi Faktor Tak Pe...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Metode Screening Morris: Mengidentifikasi Faktor Tak Penting pada Dimensi Tinggi",
+        "lead": "Ketika seorang peneliti menghadapi model simulasi dengan 30 hingga 100 parameter masukan, menjalankan Analisis Sensitivitas Sobol berbasis varians penuh dapat membutuhkan puluhan ribu evaluasi simulasi yang melampaui batas anggaran komputasi.",
         "bulletPoints": [
-          "Ketika seorang peneliti menghadapi model simulasi dengan 30 hingga 100 parameter masukan, menjalankan Analisis Sensitivitas S...",
-          "Metode Efek Elementer Morris (Morris Elementary Effects, 1991): Metode Morris adalah teknik screening global berbasis desain...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam situasi ini, peneliti membutuhkan metode penyaringan awal (Screening Method) yang sangat efisien untuk mengeliminasi faktor-faktor yang terbukti tidak berpengaruh penting (Factor Fixing).",
+          "Metode Efek Elementer Morris (Morris Elementary Effects, 1991): Metode Morris adalah teknik screening global berbasis desain One-At-a-Time acak (Randomized OAT) pada ruang kisi p-level terstandarisasi.",
+          "Alih-alih mengevaluasi di satu titik nominal tetap, Morris merancang serangkaian lintasan acak (trajectories) yang menelusuri seluruh ruang parameter."
         ],
-        "keyFormulaOrDiagram": "Dua Statistik Diagnostik Utama Morris: 1. Rata-rata Efek Absolut ($\\mu^*$, Campolongo et a..."
+        "keyFormulaOrDiagram": "$\\mu^*$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dua Statistik Diagnostik Utama Morris: 1.",
         "bulletPoints": [
-          "Dua Statistik Diagnostik Utama Morris: 1. Rata-rata Efek Absolut ($\\mu^*$, Campolongo et al., 2007): Mengukur pengaruh keselu...",
-          "Bidang Diagnostik Morris (Scatter Plot $\\mu^*$ vs $\\sigma$): - Kuadran Kiri Bawah ($\\mu^*$ kecil, $\\sigma$ kecil): Faktor tid...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Rata-rata Efek Absolut ($\\mu^*$, Campolongo et al., 2007): Mengukur pengaruh keseluruhan dari suatu faktor terhadap variabilitas keluaran.",
+          "Semakin besar nilai $\\mu^*$, semakin penting faktor tersebut.",
+          "Bidang Diagnostik Morris (Scatter Plot $\\mu^*$ vs $\\sigma$): - Kuadran Kiri Bawah ($\\mu^*$ kecil, $\\sigma$ kecil): Faktor tidak penting (dapat dikunci konstan). - Kuadran Kanan Bawah ($\\mu^*$ besar, $\\sigma$ kecil): Faktor linier dominan tanpa interaksi. - Kuadran Kanan Atas ($\\mu^*$ besar, $\\sigma$ besar): Faktor sangat berpengaruh dengan interaksi non-linier yang kuat."
+        ],
+        "keyFormulaOrDiagram": "$\\mu^*$",
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Efek Elementer Morris:",
         "bulletPoints": [
-          "Formulasi Efek Elementer Morris:",
-          "Ruang masukan dinormalisasi ke dalam hiperkubus unit $\\Omega = [0, 1]^k$ yang didiskritisasi ke dalam kisi den...",
-          "Besaran langkah diskritisasi $\\Delta = \\frac{p}{2(p - 1)}$."
+          "Ruang masukan dinormalisasi ke dalam hiperkubus unit $\\Omega = [0, 1]^k$ yang didiskritisasi ke dalam kisi dengan $p$ level.",
+          "Besaran langkah diskritisasi $\\Delta = \\frac{p}{2(p - 1)}$.",
+          "Efek Elementer dari Variabel ke-$i$ pada Titik $\\mathbf{x}$:"
         ],
-        "keyFormulaOrDiagram": "$$EE_i(\\mathbf{x}) = \\frac{f(x_1, \\dots, x_{i-1}, x_i + \\Delta, x_{i+1}, \\dots, x_k) - f(\\mathbf{x})}{\\Delta}$$"
+        "keyFormulaOrDiagram": "$$EE_i(\\mathbf{x}) = \\frac{f(x_1, \\dots, x_{i-1}, x_i + \\Delta, x_{i+1}, \\dots, x_k) - f(\\mathbf{x})}{\\Delta}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan model dengan k = 20 parameter masukan. Peneliti ingin melakukan screening awal. Jika metode Morris dijalankan dengan r = 10 lintas...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung total pemanggilan fungsi simulasi: N = r * (k + 1) = 10 * (20 + 1) = 10 * 21 = 210 kali eval...",
-          "Langkah 2: Klasifikasi Parameter A (mu* = 15.2, sigma = 8.4): Nilai mu* sangat tinggi dan sigma sangat besar....",
-          "Langkah 3: Klasifikasi Parameter B (mu* = 12.0, sigma = 0.5): Nilai mu* tinggi namun sigma mendekati nol. Para...",
-          "Interpretasi: Metode Morris dengan hanya 210 evaluasi berhasil menyaring parameter kritis (A dan B) serta mengidentifikasi parameter r..."
+          "Konteks Kasus: Diberikan model dengan k = 20 parameter masukan. Peneliti ingin melakukan screening awal. Jika metode Morris dijalankan dengan r = 10 lintasan, hitung total pemanggilan fungsi simulasi N. Jika Parameter A menghasilkan mu* = 15.2, sigma = 8.4; Parameter B menghasilkan mu* = 12.0, sigma = 0.5; dan Parameter C menghasilkan mu* = 0.05, sigma = 0.02. Klasifikasikan perilaku ketiga parameter tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Klasifikasi Parameter C (mu* = 0.05, sigma = 0.02): Kedua metrik mendekati nol...."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung total pemanggilan fungsi simulasi: N = r * (k + 1) = 10 * (20 + 1) = 10 * 21 = 210 kali evaluasi model.",
+          "Langkah 2: Klasifikasi Parameter A (mu* = 15.2, sigma = 8.4): Nilai mu* sangat tinggi dan sigma sangat besar. Parameter A adalah faktor kritis yang sangat berpengaruh dan memiliki interaksi non-linier kuat dengan parameter lain."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Klasifikasi Parameter B (mu* = 12.0, sigma = 0.5): Nilai mu* tinggi namun sigma mendekati nol. Parameter B adalah faktor linier penting yang bekerja secara independen tanpa interaksi signifikan.",
+          "Langkah 4: Klasifikasi Parameter C (mu* = 0.05, sigma = 0.02): Kedua metrik mendekati nol. Parameter C adalah parameter tidak penting (negligible) yang dapat dibekukan nilainya.",
+          "[result: Interpretasi Ilmiah] Metode Morris dengan hanya 210 evaluasi berhasil menyaring parameter kritis (A dan B) serta mengidentifikasi parameter redundan (C) yang aman untuk diabaikan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi mandiri Metode Efek Elementer Morris dan visualisasi bidang mu* vs sigma.",
         "bulletPoints": [
-          "Deskripsi: Implementasi mandiri Metode Efek Elementer Morris dan visualisasi bidang mu* vs sigma.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Screening Efek Elementer Morris (r=20):"
+          "Tujuan Algoritma: Implementasi mandiri Metode Efek Elementer Morris dan visualisasi bidang mu* vs sigma.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Screening Efek Elementer Morris (r=20):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Screening Efek Elementer Morris (r=20): | Parameter mu* si..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Screening Efek Elementer Morris (r=20):\n     Parameter   mu*    sigma\n     X1_Linear 2.000 0.000000\nX2_Interaction 2.500 2.564946\nX3_Interaction 2.500 2.564946",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan rata-rata biasa mu alih-alih rata-rata absolut mu* (efek yang berlawanan tanda dapat saling meniad...",
-          "Perangkap: Menggunakan jumlah lintasan terlalu sedikit (r < 4) yang memicu instabilitas estimasi sigma.",
-          "Perangkap: Menyimpulkan bahwa Morris memberikan dekomposisi varians persentase eksak (Morris hanya metode peringkat/scree..."
-        ]
+          "[warning: Perangkap] Menggunakan rata-rata biasa mu alih-alih rata-rata absolut mu* (efek yang berlawanan tanda dapat saling meniadakan menjadi nol).",
+          "[warning: Perangkap] Menggunakan jumlah lintasan terlalu sedikit (r < 4) yang memicu instabilitas estimasi sigma.",
+          "[warning: Perangkap] Menyimpulkan bahwa Morris memberikan dekomposisi varians persentase eksak (Morris hanya metode peringkat/screening)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan mu* sebagai metrik primer pemeringkatan tingkat kepentingan faktor.",
           "Prosedur: Plot diagram pencar mu* vs sigma untuk memisahkan efek linier dan efek interaksi secara visual.",
           "Prosedur: Lakukan Analisis Sobol penuh hanya pada sub-himpunan parameter yang lolos dari screening Morris."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa Campolongo et al. (2007) merekomendasikan penggunaan mu* (rata-rata nilai absolut) sebagai pengganti mu pada met...",
-          "Petunjuk: Perhatikan fungsi non-monotonik seperti f(x) = sin(x) di mana gradien bisa bernilai +1 dan -1.",
-          "Solusi Kunci: Pada fungsi non-monotonik, efek elementer dapat bernilai positif pada separuh lintasan dan bernilai negatif pada separuh..."
-        ]
+          "Pertanyaan Uji: Mengapa Campolongo et al. (2007) merekomendasikan penggunaan mu* (rata-rata nilai absolut) sebagai pengganti mu pada metode Morris asli?",
+          "Petunjuk Analitis: Perhatikan fungsi non-monotonik seperti f(x) = sin(x) di mana gradien bisa bernilai +1 dan -1.",
+          "Solusi Kunci: Pada fungsi non-monotonik, efek elementer dapat bernilai positif pada separuh lintasan dan bernilai negatif pada separuh lintasan lainnya. Jika dihitung menggunakan rata-rata aritmatika biasa mu, kedua efek ini akan saling meniadakan sehingga mu bernilai mendekati nol, memicu kesimpulan salah bahwa faktor tersebut tidak penting. Menggunakan nilai absolut |EE| pada mu* secara akurat menangkap total besaran dampak faktor."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -393,101 +470,139 @@ export const CH42_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Dekomposisi Varians Sobol: Perhitungan Indeks Efek Utam...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Dekomposisi Varians Sobol: Perhitungan Indeks Efek Utama (S_i) dan Efek Total (S_Ti)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.5.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.3.",
-          "Capaian: Memahami Teorema Dekomposisi Fungsi ANOVA Orde Tinggi Ilya Sobol (1993).",
-          "Capaian: Menghitung Indeks Sensitivitas Orde Pertama ($S_i$) dan Indeks Sensitivitas Efek Total ($S_{Ti}$).",
-          "Capaian: Menginterpretasikan selisih $S_{Ti} - S_i$ sebagai indikator kuantitatif kekuatan interaksi non-linier."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami Teorema Dekomposisi Fungsi ANOVA Orde Tinggi Ilya Sobol (1993).",
+          "Capaian 2: Menghitung Indeks Sensitivitas Orde Pertama ($S_i$) dan Indeks Sensitivitas Efek Total ($S_{Ti}$).",
+          "Capaian 3: Menginterpretasikan selisih $S_{Ti} - S_i$ sebagai indikator kuantitatif kekuatan interaksi non-linier."
         ],
-        "keyFormulaOrDiagram": "$$f(\\mathbf{X}) = f_0 + \\sum_{i=1}^k f_i(X_i) + \\sum_{1 \\leq i < j \\leq k} f_{ij}(X_i, X_j) + \\dots + f_{12\\dots k}(X_1, \\dots, X_k)$$"
+        "keyFormulaOrDiagram": "$$f(\\mathbf{X}) = f_0 + \\sum_{i=1}^k f_i(X_i) + \\sum_{1 \\leq i < j \\leq k} f_{ij}(X_i, X_j) + \\dots + f_{12\\dots k}(X_1, \\dots, X_k)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.5.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Dekomposisi Varians Sobol: Perhitungan Indeks Efek Utam...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Dekomposisi Varians Sobol: Perhitungan Indeks Efek Utama (S_i) dan Efek Total (S_Ti)",
+        "lead": "Dalam ekosistem sains komputasi internasional, Dekomposisi Varians Sobol (Sobol Variance Decomposition) adalah metode analisis sensitivitas berbasis varians yang paling fundamental dan berwibawa secara matematis.",
         "bulletPoints": [
-          "Dalam ekosistem sains komputasi internasional, Dekomposisi Varians Sobol (Sobol Variance Decomposition) adalah metode analisi...",
-          "Dua Indeks Kunci Sobol: 1. Indeks Sensitivitas Orde Pertama (First-Order Sensitivity Index, $S_i$ / Efek Utama): Mengukur pro...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Berakar pada teorema dekomposisi ANOVA fungsional ortogonal, metode ini memecah total varians respon sistem ke dalam kontribusi individual dari masing-masing faktor masukan, kontribusi interaksi berpasangan dua faktor, interaksi tiga faktor, hingga interaksi orde tertinggi.",
+          "Dua Indeks Kunci Sobol: 1.",
+          "Indeks Sensitivitas Orde Pertama (First-Order Sensitivity Index, $S_i$ / Efek Utama): Mengukur proporsi varians keluaran sistem yang secara eksklusif disebabkan oleh variasi parameter $X_i$ secara mandiri tanpa melibatkan interaksi dengan faktor lain. - Makna Praktis (Factor Prioritization): Jika seorang peneliti ingin mereduksi varians keluaran sistem sebesar mungkin dengan memfokuskan pengukuran pada satu variabel masukan, variabel dengan nilai $S_i$ tertinggi adalah prioritas utama."
         ],
-        "keyFormulaOrDiagram": "2. Indeks Sensitivitas Efek Total (Total-Effect Sensitivity Index, $S_{Ti}$, Homma & Salte..."
+        "keyFormulaOrDiagram": "$S_{Ti}$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Indeks Sensitivitas Efek Total (Total-Effect Sensitivity Index, $S_{Ti}$, Homma & Saltelli, 1996): Mengukur proporsi varia...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Indeks Sensitivitas Efek Total (Total-Effect Sensitivity Index, $S_{Ti}$, Homma & Saltelli, 1996): Mengukur proporsi varians keluaran sistem yang melibatkan parameter $X_i$, mencakup efek utamanya ditambah seluruh interaksi orde tinggi dengan sembarang kombinasi faktor lain ($S_{Ti} = S_i + \\sum S_{ij} + \\dots$). - Makna Praktis (Factor Fixing): Jika suatu parameter memiliki $S_{Ti} \\approx 0$, parameter tersebut terbukti secara matematis tidak berpengaruh baik secara langsung maupun melalui interaksi dengan parameter lain.",
+          "Parameter ini dapat dibekukan (di-fix) pada nilai konstan tanpa mengubah varians sistem."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Dekomposisi Fungsional ANOVA Sobol:",
         "bulletPoints": [
-          "Dekomposisi Fungsional ANOVA Sobol:",
           "Misalkan $Y = f(\\mathbf{X})$ dengan $\\mathbf{X} \\in [0, 1]^k$ independen seragam.",
-          "Fungsi $f$ dapat didekomposisi secara ortogonal unik menjadi $2^k$ suku:"
+          "Fungsi $f$ dapat didekomposisi secara ortogonal unik menjadi $2^k$ suku:",
+          "di mana $\\int_0^1 f_{i_1 \\dots i_s} \\, dX_j = 0$ untuk setiap $j \\in \\{i_1, \\dots, i_s\\}$."
         ],
-        "keyFormulaOrDiagram": "$$f(\\mathbf{X}) = f_0 + \\sum_{i=1}^k f_i(X_i) + \\sum_{1 \\leq i < j \\leq k} f_{ij}(X_i, X_j) + \\dots + f_{12\\dots k}(X_1, \\dots, X_k)$$"
+        "keyFormulaOrDiagram": "$$f(\\mathbf{X}) = f_0 + \\sum_{i=1}^k f_i(X_i) + \\sum_{1 \\leq i < j \\leq k} f_{ij}(X_i, X_j) + \\dots + f_{12\\dots k}(X_1, \\dots, X_k)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah model efisiensi pendingin dievaluasi menggunakan analisis Sobol. Hasil perhitungan: S_1 = 0.35, S_2 = 0.20, S_3 = 0.15. Total efek in...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah model efisiensi pendingin dievaluasi menggunakan analisis Sobol. Hasil perhitungan: S_1 = 0.35, S_2 = 0.20, S_3 = 0.15. Total efek indeks: S_T1 = 0.40, S_T2 = 0.50, S_T3 = 0.15. Analisis hasil ini: hitung total efek aditif, tentukan parameter mana yang memiliki efek interaksi terkuat, dan tentukan parameter mana yang tidak memiliki interaksi sama sekali.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung total efek utama aditif: Sum(S_i) = S_1 + S_2 + S_3 = 0.35 + 0.20 + 0.15 = 0.70 (70%).",
-          "Langkah 2: Evaluasi varians interaksi global: Sisa varians sebesar 1.00 - 0.70 = 0.30 (30%) berasal dari efek...",
-          "Langkah 3: Hitung derajat interaksi per parameter (S_Ti - S_i): Variabel 1: S_T1 - S_1 = 0.40 - 0.35 = 0.05 (5...",
-          "Interpretasi: Variabel 1 adalah prioritas utama untuk perbaikan mandiri, sedangkan Variabel 2 harus dianalisis secara berpasangan kare..."
+          "Langkah 2: Evaluasi varians interaksi global: Sisa varians sebesar 1.00 - 0.70 = 0.30 (30%) berasal dari efek interaksi multi-faktor."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Kesimpulan fisis: Variabel 2 memiliki efek interaksi terkuat (30% variansnya te..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung derajat interaksi per parameter (S_Ti - S_i): Variabel 1: S_T1 - S_1 = 0.40 - 0.35 = 0.05 (5%); Variabel 2: S_T2 - S_2 = 0.50 - 0.20 = 0.30 (30%); Variabel 3: S_T3 - S_3 = 0.15 - 0.15 = 0.00 (0%).",
+          "Langkah 4: Kesimpulan fisis: Variabel 2 memiliki efek interaksi terkuat (30% variansnya terkait dengan interaksi). Variabel 3 bekerja secara murni independen tanpa interaksi (S_T3 = S_3). Variabel 1 adalah kontributor mandiri terbesar (S_1 = 0.35).",
+          "[result: Interpretasi Ilmiah] Variabel 1 adalah prioritas utama untuk perbaikan mandiri, sedangkan Variabel 2 harus dianalisis secara berpasangan karena memiliki keterikatan interaktif yang masif."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Estimasi numerik Indeks Sobol S_i dan S_Ti menggunakan estimator Saltelli (1993/2002).",
         "bulletPoints": [
-          "Deskripsi: Estimasi numerik Indeks Sobol S_i dan S_Ti menggunakan estimator Saltelli (1993/2002).",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Dekomposisi Indeks Sensitivitas Sobol:"
+          "Tujuan Algoritma: Estimasi numerik Indeks Sobol S_i dan S_Ti menggunakan estimator Saltelli (1993/2002).",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Dekomposisi Indeks Sensitivitas Sobol:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Dekomposisi Indeks Sensitivitas Sobol: | Parameter X1 | S_i (Mai..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Dekomposisi Indeks Sensitivitas Sobol:\nParameter X1 | S_i (Main) =  0.316 | S_Ti (Total) =  0.558 | Interaksi =  0.242\nParameter X2 | S_i (Main) =  0.442 | S_Ti (Total) =  0.443 | Interaksi =  0.001\nParameter X3 | S_i (Main) = -0.002 | S_Ti (Total) =  0.244 | Interaksi =  0.246",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengasumsikan bahwa parameter dengan S_i = 0 dapat dieliminasi tanpa memeriksa S_Ti (parameter X3 pada Ishigam...",
-          "Perangkap: Menggunakan ukuran sampel Saltelli N yang terlalu kecil, yang menyebabkan nilai estimasi S_i menjadi negatif a...",
-          "Perangkap: Menerapkan analisis Sobol standar pada variabel masukan yang berkorelasi tinggi tanpa transformasi ortogonal G..."
-        ]
+          "[warning: Perangkap] Mengasumsikan bahwa parameter dengan S_i = 0 dapat dieliminasi tanpa memeriksa S_Ti (parameter X3 pada Ishigami memiliki S_3=0 namun S_T3=0.24 karena interaksi dengan X1).",
+          "[warning: Perangkap] Menggunakan ukuran sampel Saltelli N yang terlalu kecil, yang menyebabkan nilai estimasi S_i menjadi negatif akibat noise numerik.",
+          "[warning: Perangkap] Menerapkan analisis Sobol standar pada variabel masukan yang berkorelasi tinggi tanpa transformasi ortogonal Gram-Schmidt."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Verifikasi bahwa 0 <= S_i <= S_Ti <= 1.0 untuk seluruh parameter.",
-          "Prosedur: Periksa apakah total efek utama Sum(S_i) <= 1.0 (deviasi signifikan menandakan sampel Monte Carlo belum konver...",
+          "Prosedur: Periksa apakah total efek utama Sum(S_i) <= 1.0 (deviasi signifikan menandakan sampel Monte Carlo belum konvergen).",
           "Prosedur: Laporkan interval kepercayaan bootstrap untuk setiap nilai indeks Sobol."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Pada contoh keluaran simulasi fungsi Ishigami di atas, Parameter X3 memiliki S_i = -0.002 (~0) namun S_Ti = 0.244. Jelas...",
-          "Petunjuk: Perhatikan apakah X3 mampu mempengaruhi respon jika variabel lain konstan vs jika X1 berubah.",
-          "Solusi Kunci: Nilai S_3 = 0 berarti bahwa jika X3 diubah sendirian sementara nilai X1 dikunci pada nilai nol, X3 tidak memberikan damp..."
-        ]
+          "Pertanyaan Uji: Pada contoh keluaran simulasi fungsi Ishigami di atas, Parameter X3 memiliki S_i = -0.002 (~0) namun S_Ti = 0.244. Jelaskan makna fisis dari fenomena ini!",
+          "Petunjuk Analitis: Perhatikan apakah X3 mampu mempengaruhi respon jika variabel lain konstan vs jika X1 berubah.",
+          "Solusi Kunci: Nilai S_3 = 0 berarti bahwa jika X3 diubah sendirian sementara nilai X1 dikunci pada nilai nol, X3 tidak memberikan dampak sama sekali terhadap respon (efek utama mandiri nol). Namun nilai S_T3 = 0.244 membuktikan bahwa X3 berinteraksi secara masif dengan X1 (melalui suku X3^4 * sin(X1)). X3 adalah pemicu penguatan variabilitas X1. Mengeliminasi X3 dari model adalah kesalahan fatal."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -557,100 +672,127 @@ export const CH42_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Eksekusi Analisis Sensitivitas Model Simulasi Menggunak...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Eksekusi Analisis Sensitivitas Model Simulasi Menggunakan Pustaka Python SALib",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.5.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.4.",
-          "Capaian: Menyusun alur kerja analisis sensitivitas terintegrasi menggunakan pustaka standar industri SALib.",
-          "Capaian: Merancang matriks sampling kuasi-acak Sobol sequence dan Saltelli sample generation.",
-          "Capaian: Memvisualisasikan indeks sensitivitas beserta interval kepercayaan bootstrap untuk pelaporan naskah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.5.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun alur kerja analisis sensitivitas terintegrasi menggunakan pustaka standar industri SALib.",
+          "Capaian 2: Merancang matriks sampling kuasi-acak Sobol sequence dan Saltelli sample generation.",
+          "Capaian 3: Memvisualisasikan indeks sensitivitas beserta interval kepercayaan bootstrap untuk pelaporan naskah."
         ],
-        "keyFormulaOrDiagram": "$$N_{\\text{total}} = N(2k + 2) \\quad \\text{titik evaluasi}$$"
+        "keyFormulaOrDiagram": "$$N_{\\text{total}} = N(2k + 2) \\quad \\text{titik evaluasi}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.5.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Eksekusi Analisis Sensitivitas Model Simulasi Menggunak...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Eksekusi Analisis Sensitivitas Model Simulasi Menggunakan Pustaka Python SALib",
+        "lead": "Dalam alur kerja rekayasa modern, mengimplementasikan algoritma sampling kuasi-acak dan estimator Sobol secara manual dari nol rentan terhadap kesalahan indeks dan kebocoran korelasi numerik.",
         "bulletPoints": [
-          "Dalam alur kerja rekayasa modern, mengimplementasikan algoritma sampling kuasi-acak dan estimator Sobol secara manual dari no...",
-          "Alur Kerja Tiga Langkah Baku SALib: 1. Definisi Masalah (Problem Definition): Mendefinisikan kamus metadata spesifikasi masal...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Komunitas riset global telah menstandarisasi alur kerja ini menggunakan pustaka Python sumber terbuka SALib (Sensitivity Analysis Library in Python, Herman & Usher, 2017).",
+          "Alur Kerja Tiga Langkah Baku SALib: 1.",
+          "Definisi Masalah (Problem Definition): Mendefinisikan kamus metadata spesifikasi masalah: jumlah parameter masukan (num_vars), nama parameter (names), dan batas rentang fisik operasional (bounds)."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dalam alur kerja rekayasa modern, mengimplementasikan algoritma sampling kuasi-acak dan estimator Sobol secara manual dari no...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Skema Sampling Saltelli dalam SALib:",
         "bulletPoints": [
-          "Skema Sampling Saltelli dalam SALib:",
           "Diberikan masalah dengan $k$ variabel masukan.",
-          "Pengguna menentukan ukuran basis sampel $N$ (misal $N = 1024$ atau $2048$, dianjurkan bilangan pangkat 2)."
+          "Pengguna menentukan ukuran basis sampel $N$ (misal $N = 1024$ atau $2048$, dianjurkan bilangan pangkat 2).",
+          "Matriks Desain Saltelli Menghasilkan:"
         ],
-        "keyFormulaOrDiagram": "$$N_{\\text{total}} = N(2k + 2) \\quad \\text{titik evaluasi}$$"
+        "keyFormulaOrDiagram": "$$N_{\\text{total}} = N(2k + 2) \\quad \\text{titik evaluasi}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah model aerodinamika drone memiliki k = 5 variabel masukan. Peneliti menggunakan ukuran basis sampel N = 1024 pada SALib. Hitung jumlah...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung total titik evaluasi Saltelli: N_total = N * (2k + 2) = 1024 * (2 * 5 + 2) = 1024 * 12 = 12....",
-          "Langkah 2: Evaluasi signifikansi S_1: Batas interval 95% untuk S_1 adalah [0.52 - 0.04, 0.52 + 0.04] = [0.48,...",
-          "Langkah 3: Evaluasi signifikansi S_T1: Batas interval 95% untuk S_T1 adalah [0.55 - 0.03, 0.55 + 0.03] = [0.52...",
-          "Interpretasi: Variabel 1 terbukti sangat dominan (menyumbang lebih dari separuh varians total) dan bekerja hampir secara aditif murni."
+          "Konteks Kasus: Sebuah model aerodinamika drone memiliki k = 5 variabel masukan. Peneliti menggunakan ukuran basis sampel N = 1024 pada SALib. Hitung jumlah total simulasi yang harus dijalankan. Jika hasil analisis SALib menunjukkan S_1 = 0.52 +/- 0.04 dan S_T1 = 0.55 +/- 0.03, tentukan apakah variabel 1 memiliki kontribusi signifikan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi interaksi: Selisih S_T1 - S_1 = 0.55 - 0.52 = 0.03. Karena selisih (0...."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung total titik evaluasi Saltelli: N_total = N * (2k + 2) = 1024 * (2 * 5 + 2) = 1024 * 12 = 12.288 kali evaluasi simulasi.",
+          "Langkah 2: Evaluasi signifikansi S_1: Batas interval 95% untuk S_1 adalah [0.52 - 0.04, 0.52 + 0.04] = [0.48, 0.56]. Nilai nol berada jauh di luar interval."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi signifikansi S_T1: Batas interval 95% untuk S_T1 adalah [0.55 - 0.03, 0.55 + 0.03] = [0.52, 0.58].",
+          "Langkah 4: Evaluasi interaksi: Selisih S_T1 - S_1 = 0.55 - 0.52 = 0.03. Karena selisih (0.03) lebih kecil dari ketidakpastian bootstrap (+/- 0.04), interaksi variabel 1 dengan variabel lain sangat lemah.",
+          "[result: Interpretasi Ilmiah] Variabel 1 terbukti sangat dominan (menyumbang lebih dari separuh varians total) dan bekerja hampir secara aditif murni."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Alur kerja lengkap SALib: Problem definition, Saltelli sample generation, dan Sobol analysis.",
         "bulletPoints": [
-          "Deskripsi: Alur kerja lengkap SALib: Problem definition, Saltelli sample generation, dan Sobol analysis.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Analisis Sensitivitas Protokol SALib:"
+          "Tujuan Algoritma: Alur kerja lengkap SALib: Problem definition, Saltelli sample generation, dan Sobol analysis.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Analisis Sensitivitas Protokol SALib:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Analisis Sensitivitas Protokol SALib: | Total Evaluasi Sim..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Analisis Sensitivitas Protokol SALib:\nTotal Evaluasi Simulasi Dijalankan : 8192\nVarians Respon Total              : 2275069.95\n----------------------------------------------------\nParameter: Velocity        | Proksi Indeks Sobol S_i: 0.6970",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menentukan batas bawah dan batas atas (bounds) yang tidak realistis secara fisik sehingga simulasi solver cras...",
-          "Perangkap: Menggunakan urutan parameter yang tidak konsisten antara matriks sampling masukan dan kolom solver.",
-          "Perangkap: Melaporkan indeks Sobol tanpa menyertakan error bar interval kepercayaan bootstrap."
-        ]
+          "[warning: Perangkap] Menentukan batas bawah dan batas atas (bounds) yang tidak realistis secara fisik sehingga simulasi solver crash.",
+          "[warning: Perangkap] Menggunakan urutan parameter yang tidak konsisten antara matriks sampling masukan dan kolom solver.",
+          "[warning: Perangkap] Melaporkan indeks Sobol tanpa menyertakan error bar interval kepercayaan bootstrap."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Verifikasi bahwa ukuran sampel N merupakan bilangan pangkat 2 (misal 512, 1024, 2048) untuk optimalitas barisa...",
+          "Prosedur: Verifikasi bahwa ukuran sampel N merupakan bilangan pangkat 2 (misal 512, 1024, 2048) untuk optimalitas barisan Sobol.",
           "Prosedur: Gunakan grafik batang (Bar Chart) teranotasi yang membandingkan S_i dan S_Ti berdampingan.",
           "Prosedur: Periksa apakah ada peringatan numerik pada SALib mengenai pelanggaran konvergensi batas."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa barisan kuasi-acak Sobol (Sobol sequence) menghasilkan konvergensi yang jauh lebih cepat dibandingkan pembangkit...",
-          "Petunjuk: Perhatikan fenomena clustering (penggumpalan) titik pada random sampling.",
-          "Solusi Kunci: Pembangkit bilangan acak standar menghasilkan titik-titik yang secara acak saling tumpang tindih (clustering) di beberap..."
-        ]
+          "Pertanyaan Uji: Mengapa barisan kuasi-acak Sobol (Sobol sequence) menghasilkan konvergensi yang jauh lebih cepat dibandingkan pembangkit pseudorandom standar (Mersenne Twister)?",
+          "Petunjuk Analitis: Perhatikan fenomena clustering (penggumpalan) titik pada random sampling.",
+          "Solusi Kunci: Pembangkit bilangan acak standar menghasilkan titik-titik yang secara acak saling tumpang tindih (clustering) di beberapa wilayah dan meninggalkan celah kosong besar di wilayah lain. Barisan kuasi-acak Sobol dirancang secara deterministik dengan sifat low-discrepancy, di mana setiap titik baru ditempatkan sejauh mungkin dari titik-titik yang sudah ada, mengisi ruang secara seragam sempurna dan mempercepat laju konvergensi mendekati O(1/N)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

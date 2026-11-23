@@ -64,99 +64,135 @@ export const CH17_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Variabel Acak Diskrit vs Kontinu dan Sifat Fungsi Kerap...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Variabel Acak Diskrit vs Kontinu dan Sifat Fungsi Kerapatan Probabilitas",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.2.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.1.",
-          "Capaian: Membedakan ruang sampel diskrit dan kontinu dalam pemodelan sistem rekayasa.",
-          "Capaian: Memahami aksioma Kolmogorov dan sifat-sifat Probability Density Function (PDF) serta Cumulative Distribution F...",
-          "Capaian: Menghitung probabilitas interval kontinu melalui integrasi kalkulus riil."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan ruang sampel diskrit dan kontinu dalam pemodelan sistem rekayasa.",
+          "Capaian 2: Memahami aksioma Kolmogorov dan sifat-sifat Probability Density Function (PDF) serta Cumulative Distribution Function (CDF).",
+          "Capaian 3: Menghitung probabilitas interval kontinu melalui integrasi kalkulus riil."
         ],
-        "keyFormulaOrDiagram": "$$f(x) \\ge 0, \\quad \\forall x \\in \\mathbb{R}$$"
+        "keyFormulaOrDiagram": "$$f(x) \\ge 0, \\quad \\forall x \\in \\mathbb{R}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.2.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Variabel Acak Diskrit vs Kontinu dan Sifat Fungsi Kerap...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Variabel Acak Diskrit vs Kontinu dan Sifat Fungsi Kerapatan Probabilitas",
+        "lead": "Probabilitas adalah bahasa matematika untuk mengukur ketidakpastian.",
         "bulletPoints": [
-          "Probabilitas adalah bahasa matematika untuk mengukur ketidakpastian. Dalam riset rekayasa dan sains komputasi, setiap keluara...",
-          "Dua kategori variabel acak fundamental: 1. Variabel Acak Diskrit: Memiliki ruang hasil yang dapat dihitung (*countable*). Pro...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam riset rekayasa dan sains komputasi, setiap keluaran fisik yang terpengaruh oleh fluktuasi acak dimodelkan sebagai Variabel Acak (*Random Variable*), yaitu fungsi terukur yang memetakan elemen dari ruang sampel kejadian $\\Omega$ menuju himpunan bilangan riil $\\mathbb{R}$.",
+          "Dua kategori variabel acak fundamental: 1.",
+          "Variabel Acak Diskrit: Memiliki ruang hasil yang dapat dihitung (*countable*)."
         ],
-        "keyFormulaOrDiagram": "Fungsi Distribusi Kumulatif (Cumulative Distribution Function / CDF), $F(x) = P(X \\le x)$,..."
+        "keyFormulaOrDiagram": "$F(x) = P(X \\le x)$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Fungsi Distribusi Kumulatif (Cumulative Distribution Function / CDF), $F(x) = P(X \\le x)$, memberikan gambaran monolitik prob...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Fungsi Distribusi Kumulatif (Cumulative Distribution Function / CDF), $F(x) = P(X \\le x)$, memberikan gambaran monolitik probabilitas bahwa variabel acak tidak melampaui ambang batas tertentu $x$, yang merupakan fondasi perhitungan batas risiko dan keandalan sistem (*reliability engineering*).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Aksioma Probabilitas Kolmogorov & Sifat Fungsi Kontinu:",
         "bulletPoints": [
-          "Aksioma Probabilitas Kolmogorov & Sifat Fungsi Kontinu:",
           "1. Syarat Keabsahan Fungsi Kerapatan Probabilitas (PDF $f(x)$):",
-          "2. Probabilitas Interval:"
+          "2. Probabilitas Interval:",
+          "3. Nilai Ekspektasi dan Momen Sentral:"
         ],
-        "keyFormulaOrDiagram": "$$f(x) \\ge 0, \\quad \\forall x \\in \\mathbb{R}$$"
+        "keyFormulaOrDiagram": "$$f(x) \\ge 0, \\quad \\forall x \\in \\mathbb{R}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sinyal derau termal tegangan sensor memiliki PDF kontinu seragam pada rentang [-0.5, +0.5] Volt: f(x) = 1 untuk -0.5 <= x <= 0.5, dan 0 untu...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sinyal derau termal tegangan sensor memiliki PDF kontinu seragam pada rentang [-0.5, +0.5] Volt: f(x) = 1 untuk -0.5 <= x <= 0.5, dan 0 untuk lainnya. Hitung: (a) Probabilitas bahwa derau tepat bernilai 0.2000 Volt, (b) Probabilitas bahwa amplitudo derau absolut melebihi 0.3 Volt (|X| > 0.3 V).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1 (Probabilitas Titik Tunggal): Sifat variabel acak kontinu menyatakan bahwa probabilitas untuk satu t...",
-          "Langkah 2 (Probabilitas Interval): Peristiwa |X| > 0.3 terbagi menjadi dua daerah saling lepas: X < -0.3 atau...",
-          "Langkah 3 (Integrasi Bagian Bawah): P(X < -0.3) = integral dari -0.5 sampai -0.3 dari 1 dx = [-0.3 - (-0.5)] =...",
-          "Interpretasi: Terdapat peluang 40% bahwa derau termal sensor akan melompat keluar dari zona toleransi +/- 0.3 Volt."
+          "Langkah 1 (Probabilitas Titik Tunggal): Sifat variabel acak kontinu menyatakan bahwa probabilitas untuk satu titik nilai presisi tak hingga adalah nol: P(X = 0.2000) = 0.",
+          "Langkah 2 (Probabilitas Interval): Peristiwa |X| > 0.3 terbagi menjadi dua daerah saling lepas: X < -0.3 atau X > 0.3.",
+          "Langkah 3 (Integrasi Bagian Bawah): P(X < -0.3) = integral dari -0.5 sampai -0.3 dari 1 dx = [-0.3 - (-0.5)] = 0.20."
         ],
-        "keyFormulaOrDiagram": "Langkah 5 (Penjumlahan Total): P(|X| > 0.3) = 0.20 + 0.20 = 0.40 (40%)."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Integrasi numerik fungsi kerapatan probabilitas kontinu menggunakan SciPy.",
-          "Dependensi Pustaka: scipy.integrate, scipy.stats, numpy",
-          "Keluaran Diharapkan: Probabilitas via Integrasi Numerik PDF : 0.75013"
+          "Langkah 4 (Integrasi Bagian Atas): P(X > +0.3) = integral dari +0.3 sampai +0.5 dari 1 dx = [0.5 - 0.3] = 0.20.",
+          "Langkah 5 (Penjumlahan Total): P(|X| > 0.3) = 0.20 + 0.20 = 0.40 (40%).",
+          "[result: Interpretasi Ilmiah] Terdapat peluang 40% bahwa derau termal sensor akan melompat keluar dari zona toleransi +/- 0.3 Volt."
         ],
-        "keyFormulaOrDiagram": "Probabilitas via Integrasi Numerik PDF : 0.75013 | Probabilitas via Selisih CDF Teoritis :..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Integrasi numerik fungsi kerapatan probabilitas kontinu menggunakan SciPy.",
         "bulletPoints": [
-          "Perangkap: Menyatakan bahwa nilai f(x) pada kurva PDF adalah probabilitas titik tersebut (f(x) adalah kerapatan, bisa ber...",
-          "Perangkap: Lupa memverifikasi bahwa total integral PDF sama dengan satu sebelum melakukan pemodelan probabilistik.",
-          "Perangkap: Menggunakan rumus ekspektasi diskrit (penjumlahan sigma) pada variabel acak kontinu tanpa integrasi."
-        ]
+          "Tujuan Algoritma: Integrasi numerik fungsi kerapatan probabilitas kontinu menggunakan SciPy.",
+          "Dependensi Pustaka Ilmiah: scipy.integrate, scipy.stats, numpy",
+          "Keluaran Terverifikasi: Probabilitas via Integrasi Numerik PDF : 0.75013"
+        ],
+        "keyFormulaOrDiagram": "Probabilitas via Integrasi Numerik PDF : 0.75013\nProbabilitas via Selisih CDF Teoritis  : 0.75013\nSelisih Mutlak Presisi                : 0.00e+00",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Periksa apakah fungsi distribusi kumulatif bersifat monoton naik tegas: F(x1) <= F(x2) untuk x1 < x2.",
-          "Prosedur: Verifikasi kondisi batas asimtotik: limit F(x) saat x mendekati -tak hingga adalah 0, dan saat x mendekati +ta..."
-        ]
+          "[warning: Perangkap] Menyatakan bahwa nilai f(x) pada kurva PDF adalah probabilitas titik tersebut (f(x) adalah kerapatan, bisa bernilai lebih besar dari 1).",
+          "[warning: Perangkap] Lupa memverifikasi bahwa total integral PDF sama dengan satu sebelum melakukan pemodelan probabilistik.",
+          "[warning: Perangkap] Menggunakan rumus ekspektasi diskrit (penjumlahan sigma) pada variabel acak kontinu tanpa integrasi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa nilai fungsi kerapatan probabilitas f(x) pada distribusi normal dengan deviasi standar sangat kecil (misal sigma...",
-          "Petunjuk: Perhatikan perbedaan antara \"kerapatan probabilitas per satuan panjang\" versus \"probabilitas tanpa d...",
-          "Solusi Kunci: Nilai f(x) adalah kerapatan probabilitas (*probability density*), yang memiliki dimensi satuan 1 / [satuan x]. Kerapatan..."
-        ]
+          "Prosedur: Periksa apakah fungsi distribusi kumulatif bersifat monoton naik tegas: F(x1) <= F(x2) untuk x1 < x2.",
+          "Prosedur: Verifikasi kondisi batas asimtotik: limit F(x) saat x mendekati -tak hingga adalah 0, dan saat x mendekati +tak hingga adalah 1."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa nilai fungsi kerapatan probabilitas f(x) pada distribusi normal dengan deviasi standar sangat kecil (misal sigma = 0.01) dapat bernilai hampir 40, padahal probabilitas tidak boleh melebihi 1?",
+          "Petunjuk Analitis: Perhatikan perbedaan antara \"kerapatan probabilitas per satuan panjang\" versus \"probabilitas tanpa dimensi\".",
+          "Solusi Kunci: Nilai f(x) adalah kerapatan probabilitas (*probability density*), yang memiliki dimensi satuan 1 / [satuan x]. Kerapatan dapat bernilai berapa pun asalkan total area di bawah kurva integral tetap sama dengan 1. Probabilitas sesungguhnya adalah perkalian kerapatan dengan lebar interval (f(x) * dx), yang nilainya dijamin selalu berada pada rentang [0, 1]."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -219,99 +255,127 @@ export const CH17_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Distribusi Parametrik Fundamental: Gaussian (Normal), S...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Distribusi Parametrik Fundamental: Gaussian (Normal), Students t, Snedecor F, Chi-Square",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.2.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.2.",
-          "Capaian: Memahami relasi derivasi matematis antara 4 distribusi sampling pilar statistika parametrik.",
-          "Capaian: Menurunkan distribusi Chi-Square sebagai penjumlahan kuadrat variabel normal baku.",
-          "Capaian: Memahami peranan Student's t dan Fisher-Snedecor F dalam uji komparasi rata-rata dan varians."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami relasi derivasi matematis antara 4 distribusi sampling pilar statistika parametrik.",
+          "Capaian 2: Menurunkan distribusi Chi-Square sebagai penjumlahan kuadrat variabel normal baku.",
+          "Capaian 3: Memahami peranan Student's t dan Fisher-Snedecor F dalam uji komparasi rata-rata dan varians."
         ],
-        "keyFormulaOrDiagram": "$$Z_i \\sim \\mathcal{N}(0, 1), \\quad f(z) = \\frac{1}{\\sqrt{2\\pi}} e^{-z^2/2}$$"
+        "keyFormulaOrDiagram": "$$Z_i \\sim \\mathcal{N}(0, 1), \\quad f(z) = \\frac{1}{\\sqrt{2\\pi}} e^{-z^2/2}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.2.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Distribusi Parametrik Fundamental: Gaussian (Normal), S...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Distribusi Parametrik Fundamental: Gaussian (Normal), Students t, Snedecor F, Chi-Square",
+        "lead": "Seluruh bangunan inferensi statistik parametrik klasik (uji-t, ANOVA, regresi linier, interval kepercayaan) bertumpu pada kuartet distribusi probabilitas fundamental: Gaussian (Normal), Chi-Square ($\\chi^2$), Student's t, dan Snedecor's F.",
         "bulletPoints": [
-          "Seluruh bangunan inferensi statistik parametrik klasik (uji-t, ANOVA, regresi linier, interval kepercayaan) bertumpu pada kua...",
-          "1. Distribusi Gaussian / Normal $\\mathcal{N}(\\mu, \\sigma^2)$: Ditemukan oleh Gauss, distribusi simetris berbentuk lonceng ini...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Keempat distribusi ini bukanlah entitas yang terpisah, melainkan saling terhubung secara elegan melalui transformasi aljabar kuadrat dan rasio.",
+          "1.",
+          "Distribusi Gaussian / Normal $\\mathcal{N}(\\mu, \\sigma^2)$: Ditemukan oleh Gauss, distribusi simetris berbentuk lonceng ini muncul secara alami di alam ketika sebuah variabel dipengaruhi oleh akumulasi penjumlahan aditif banyak derau kecil independen (Teorema Batas Pusat)."
+        ],
+        "keyFormulaOrDiagram": "$\\chi^2$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Seluruh bangunan inferensi statistik parametrik klasik (uji-t, ANOVA, regresi linier, interval kepercayaan) bertumpu pada kua...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pohon Derivasi Kausal Matematika Kuartet Distribusi:",
         "bulletPoints": [
-          "Pohon Derivasi Kausal Matematika Kuartet Distribusi:",
           "1. Normal Baku:",
-          "2. Chi-Square $\\chi^2$ dengan derajat kebebasan $\\nu$:"
+          "2. Chi-Square $\\chi^2$ dengan derajat kebebasan $\\nu$:",
+          "3. Student's $t$ dengan derajat kebebasan $\\nu$:"
         ],
-        "keyFormulaOrDiagram": "$$Z_i \\sim \\mathcal{N}(0, 1), \\quad f(z) = \\frac{1}{\\sqrt{2\\pi}} e^{-z^2/2}$$"
+        "keyFormulaOrDiagram": "$$Z_i \\sim \\mathcal{N}(0, 1), \\quad f(z) = \\frac{1}{\\sqrt{2\\pi}} e^{-z^2/2}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada derajat kebebasan nu = 5, bandingkan nilai kritis kuantil 97.5% (alpha = 0.05 dua arah) untuk distribusi normal baku Z versus distribus...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada derajat kebebasan nu = 5, bandingkan nilai kritis kuantil 97.5% (alpha = 0.05 dua arah) untuk distribusi normal baku Z versus distribusi Student t. Jelaskan mengapa peneliti yang menggunakan nilai Z = 1.96 pada sampel kecil akan melakukan kesalahan fatal.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Cari kuantil normal baku: Z_(0.025) = 1.960.",
-          "Langkah 2: Cari kuantil Student t dengan df = 5: t_(0.025, 5) = 2.571.",
+          "Langkah 2: Cari kuantil Student t dengan df = 5: t_(0.025, 5) = 2.571."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung selisih ambang pembuktian: t_(0.025, 5) - Z_(0.025) = 2.571 - 1.960 = 0.611.",
-          "Interpretasi: Menggunakan Z = 1.96 pada sampel kecil akan menyebabkan interval kepercayaan terlalu sempit semu dan menghasilkan laju f..."
+          "Langkah 4: Evaluasi dampak risiko: Pada sampel kecil (n = 6, df = 5), ketidakpastian dalam mengestimasi standar deviasi s sangat tinggi. Ekor distribusi t jauh lebih tebal untuk mengompensasi variasi estimasi s.",
+          "[result: Interpretasi Ilmiah] Menggunakan Z = 1.96 pada sampel kecil akan menyebabkan interval kepercayaan terlalu sempit semu dan menghasilkan laju false positive (Galat Tipe I) yang jauh melampaui 5%."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi dampak risiko: Pada sampel kecil (n = 6, df = 5), ketidakpastian dalam..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Verifikasi konvergensi empiris distribusi t-Student menuju Normal Baku seiring kenaikan derajat kebebasan.",
         "bulletPoints": [
-          "Deskripsi: Verifikasi konvergensi empiris distribusi t-Student menuju Normal Baku seiring kenaikan derajat kebebasan.",
-          "Dependensi Pustaka: scipy.stats",
-          "Keluaran Diharapkan: Nilai Kritis Normal Baku Z (df=inf) : 1.9600"
+          "Tujuan Algoritma: Verifikasi konvergensi empiris distribusi t-Student menuju Normal Baku seiring kenaikan derajat kebebasan.",
+          "Dependensi Pustaka Ilmiah: scipy.stats",
+          "Keluaran Terverifikasi: Nilai Kritis Normal Baku Z (df=inf) : 1.9600"
         ],
-        "keyFormulaOrDiagram": "Nilai Kritis Normal Baku Z (df=inf) : 1.9600 | | Derajat Kebebasan (df) | Nilai Kritis t |..."
+        "keyFormulaOrDiagram": "Nilai Kritis Normal Baku Z (df=inf) : 1.9600\n\nDerajat Kebebasan (df)    | Nilai Kritis t   | Selisih thd Z \n------------------------------------------------------------\ndf =   2                  |           4.3027 | +        2.3427",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan distribusi Normal alih-alih Student's t saat menguji sampel kecil (n < 30) dengan deviasi standar...",
-          "Perangkap: Mengabaikan urutan derajat kebebasan pembilang dan penyebut (df1, df2) pada distribusi F yang tidak bersifat s...",
-          "Perangkap: Mengasumsikan distribusi Chi-Square dapat bernilai negatif (Chi-Square selalu non-negatif karena merupakan kua..."
-        ]
+          "[warning: Perangkap] Menggunakan distribusi Normal alih-alih Student's t saat menguji sampel kecil (n < 30) dengan deviasi standar populasi yang tidak diketahui.",
+          "[warning: Perangkap] Mengabaikan urutan derajat kebebasan pembilang dan penyebut (df1, df2) pada distribusi F yang tidak bersifat simetris.",
+          "[warning: Perangkap] Mengasumsikan distribusi Chi-Square dapat bernilai negatif (Chi-Square selalu non-negatif karena merupakan kuadrat)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Periksa apakah pengujian rasio varians menggunakan urutan varians terbesar sebagai pembilang untuk tabel satu...",
-          "Prosedur: Konfirmasikan bahwa uji-t dua sampel dengan derajat kebebasan nu menghasilkan nilai F yang tepat sama dengan t..."
-        ]
+          "Prosedur: Periksa apakah pengujian rasio varians menggunakan urutan varians terbesar sebagai pembilang untuk tabel satu sisi standar.",
+          "Prosedur: Konfirmasikan bahwa uji-t dua sampel dengan derajat kebebasan nu menghasilkan nilai F yang tepat sama dengan t^2."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Bagaimana hubungan matematis formal antara nilai statistik uji-t independen dua kelompok dengan nilai statistik F pada A...",
-          "Petunjuk: Perhatikan relasi rasio varians ketika kelompok perlakuan hanya berjumlah dua.",
-          "Solusi Kunci: Untuk kasus dua kelompok independen, statistik F dari ANOVA satu arah identik secara eksak dengan kuadrat dari statistik..."
-        ]
+          "Pertanyaan Uji: Bagaimana hubungan matematis formal antara nilai statistik uji-t independen dua kelompok dengan nilai statistik F pada Analisis Varians (ANOVA) satu arah untuk dua kelompok?",
+          "Petunjuk Analitis: Perhatikan relasi rasio varians ketika kelompok perlakuan hanya berjumlah dua.",
+          "Solusi Kunci: Untuk kasus dua kelompok independen, statistik F dari ANOVA satu arah identik secara eksak dengan kuadrat dari statistik uji-t Student: F(1, nu) = t^2(nu). Keduanya menguji hipotesis nol kesetaraan rata-rata yang sama persis dan menghasilkan nilai p-value yang identik."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -378,99 +442,129 @@ export const CH17_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Distribusi Proses Rekayasa: Poisson, Binomial, Eksponen...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Distribusi Proses Rekayasa: Poisson, Binomial, Eksponensial, Log-Normal, dan Weibull",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.2.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.3.",
-          "Capaian: Memilih distribusi probabilitas yang tepat untuk fenomena fisik rekayasa spesifik.",
-          "Capaian: Memodelkan keandalan dan waktu hingga kerusakan (*Time to Failure*) menggunakan distribusi Weibull.",
-          "Capaian: Memahami proses Poisson dan interval waktu antar-kejadian eksponensial dalam antrean jaringan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memilih distribusi probabilitas yang tepat untuk fenomena fisik rekayasa spesifik.",
+          "Capaian 2: Memodelkan keandalan dan waktu hingga kerusakan (*Time to Failure*) menggunakan distribusi Weibull.",
+          "Capaian 3: Memahami proses Poisson dan interval waktu antar-kejadian eksponensial dalam antrean jaringan."
         ],
-        "keyFormulaOrDiagram": "$$f(t) = \\frac{\\beta}{\\eta} \\left( \\frac{t}{\\eta} \\right)^{\\beta - 1} e^{-(t/\\eta)^\\beta}, \\quad t \\ge 0$$"
+        "keyFormulaOrDiagram": "$$f(t) = \\frac{\\beta}{\\eta} \\left( \\frac{t}{\\eta} \\right)^{\\beta - 1} e^{-(t/\\eta)^\\beta}, \\quad t \\ge 0$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.2.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Distribusi Proses Rekayasa: Poisson, Binomial, Eksponen...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Distribusi Proses Rekayasa: Poisson, Binomial, Eksponensial, Log-Normal, dan Weibull",
+        "lead": "Dalam rekayasa sistem nyata, data eksperimen jarang sekali mengikuti kurva lonceng Gaussian murni.",
         "bulletPoints": [
-          "Dalam rekayasa sistem nyata, data eksperimen jarang sekali mengikuti kurva lonceng Gaussian murni. Mengasumsikan distribusi n...",
-          "Distribusi probabilitas parametrik khusus untuk proses rekayasa: 1. Distribusi Poisson (Diskrit): Memodelkan jumlah kejadian...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Mengasumsikan distribusi normal pada fenomena keausan mekanik, kedatangan paket jaringan internet, atau ketahanan isolasi kabel tegangan tinggi adalah kesalahan fatal yang sering memicu kegagalan desain rekayasa bencana (*catastrophic engineering failure*).",
+          "Distribusi probabilitas parametrik khusus untuk proses rekayasa: 1.",
+          "Distribusi Poisson (Diskrit): Memodelkan jumlah kejadian diskrit acak yang terjadi dalam interval waktu atau ruang yang tetap, dengan laju rata-rata konstan $\\lambda$."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dalam rekayasa sistem nyata, data eksperimen jarang sekali mengikuti kurva lonceng Gaussian murni. Mengasumsikan distribusi n...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 24,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Distribusi Weibull (Fungsi Kerapatan & Laju Kegagalan Hazard):",
         "bulletPoints": [
-          "1. Distribusi Weibull (Fungsi Kerapatan & Laju Kegagalan Hazard):",
           "Fungsi Kerapatan Probabilitas (PDF):",
-          "Fungsi Keandalan (*Reliability Function* $R(t) = P(T > t)$):"
+          "Fungsi Keandalan (*Reliability Function* $R(t) = P(T > t)$):",
+          "Fungsi Laju Kegagalan Instan (*Hazard Rate* $h(t) = f(t)/R(t)$):"
         ],
-        "keyFormulaOrDiagram": "$$f(t) = \\frac{\\beta}{\\eta} \\left( \\frac{t}{\\eta} \\right)^{\\beta - 1} e^{-(t/\\eta)^\\beta}, \\quad t \\ge 0$$"
+        "keyFormulaOrDiagram": "$$f(t) = \\frac{\\beta}{\\eta} \\left( \\frac{t}{\\eta} \\right)^{\\beta - 1} e^{-(t/\\eta)^\\beta}, \\quad t \\ge 0$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 25,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Bantalan poros turbin angin ITERA memiliki waktu hidup yang mengikuti distribusi Weibull dengan parameter bentuk beta = 2.5 (fase keausan) d...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Bantalan poros turbin angin ITERA memiliki waktu hidup yang mengikuti distribusi Weibull dengan parameter bentuk beta = 2.5 (fase keausan) dan umur karakteristik eta = 50.000 jam operasi. Hitung: (a) Probabilitas bantalan masih bertahan beroperasi melewati 30.000 jam (Keandalan R(30000)), (b) Umur bantalan saat keandalan turun menjadi 90% (B10 life).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 26,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung rasio waktu operasi terhadap skala: t / eta = 30000 / 50000 = 0.60.",
           "Langkah 2: Pangkatkan dengan beta: (0.60)^2.5 = 0.27885.",
           "Langkah 3: Hitung keandalan R(30000) = exp(-0.27885) = 0.7566 (75.66%).",
-          "Interpretasi: Pabrikan dapat menjamin dengan tingkat keyakinan 90% bahwa bantalan tidak akan rusak sebelum mencapai 20.340 jam operasi..."
+          "Langkah 4: Hitung B10 life (waktu di mana R(t) = 0.90 atau 10% unit rusak):"
         ],
-        "keyFormulaOrDiagram": "t_B10 = 50000 * 0.4068 = 20.340 jam operasi."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "ln(R(t)) = -(t / eta)^beta -> ln(0.90) = -0.10536.",
+          "(t / eta)^2.5 = 0.10536 -> t / eta = (0.10536)^(1 / 2.5) = (0.10536)^0.40 = 0.4068.",
+          "t_B10 = 50000 * 0.4068 = 20.340 jam operasi.",
+          "[result: Interpretasi Ilmiah] Pabrikan dapat menjamin dengan tingkat keyakinan 90% bahwa bantalan tidak akan rusak sebelum mencapai 20.340 jam operasi (B10 life)."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemodelan kurva keandalan Weibull dan estimasi B10 life menggunakan SciPy.",
         "bulletPoints": [
-          "Deskripsi: Pemodelan kurva keandalan Weibull dan estimasi B10 life menggunakan SciPy.",
-          "Dependensi Pustaka: scipy.stats, numpy",
-          "Keluaran Diharapkan: Parameter Bentuk (Beta) : 2.5"
+          "Tujuan Algoritma: Pemodelan kurva keandalan Weibull dan estimasi B10 life menggunakan SciPy.",
+          "Dependensi Pustaka Ilmiah: scipy.stats, numpy",
+          "Keluaran Terverifikasi: Parameter Bentuk (Beta)   : 2.5"
         ],
-        "keyFormulaOrDiagram": "Parameter Bentuk (Beta) : 2.5 | Umur Karakteristik (Eta) : 50,000 jam | Keandalan pada 30...."
+        "keyFormulaOrDiagram": "Parameter Bentuk (Beta)   : 2.5\nUmur Karakteristik (Eta)  : 50,000 jam\nKeandalan pada 30.000 jam : 75.66%\nB10 Life (90% Keandalan) : 20,340.2 jam",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 29,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memaksakan kurva Gaussian pada data waktu hingga kegagalan (time to failure) yang selalu bernilai positif dan...",
-          "Perangkap: Mengasumsikan laju kegagalan selalu konstan sepanjang masa pakai produk (hanya berlaku jika beta = 1).",
-          "Perangkap: Mengacaukan parameter skala eta dengan nilai rata-rata aritmatika mean time between failures (MTBF)."
-        ]
+          "[warning: Perangkap] Memaksakan kurva Gaussian pada data waktu hingga kegagalan (time to failure) yang selalu bernilai positif dan memiliki kemencengan panjang.",
+          "[warning: Perangkap] Mengasumsikan laju kegagalan selalu konstan sepanjang masa pakai produk (hanya berlaku jika beta = 1).",
+          "[warning: Perangkap] Mengacaukan parameter skala eta dengan nilai rata-rata aritmatika mean time between failures (MTBF)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 30,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan Weibull Probability Plot: jika titik-titik data empiris membentuk garis lurus pada kertas probabilitas...",
+          "Prosedur: Gunakan Weibull Probability Plot: jika titik-titik data empiris membentuk garis lurus pada kertas probabilitas Weibull, model Weibull terbukti absah.",
           "Prosedur: Lakukan uji Anderson-Darling khusus untuk distribusi Weibull untuk mengonfirmasi kebaikan suai."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 31,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Dalam pemodelan keandalan, apa implikasi fisis jika hasil regresi Weibull menunjukkan parameter bentuk beta < 1.0?",
-          "Petunjuk: Perhatikan arah laju kegagalan hazard rate h(t) seiring bertambahnya waktu.",
-          "Solusi Kunci: Jika beta < 1.0, laju kegagalan instan h(t) menurun seiring waktu. Ini mencerminkan fenomena kegagalan dini (infant mort..."
-        ]
+          "Petunjuk Analitis: Perhatikan arah laju kegagalan hazard rate h(t) seiring bertambahnya waktu.",
+          "Solusi Kunci: Jika beta < 1.0, laju kegagalan instan h(t) menurun seiring waktu. Ini mencerminkan fenomena kegagalan dini (infant mortality atau burn-in period), di mana komponen yang cacat produksi atau mengalami kesalahan perakitan pabrik rusak di awal masa operasi. Komponen yang berhasil melewati periode awal ini justru memiliki ketahanan hidup yang semakin membaik."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -486,7 +580,7 @@ export const CH17_LESSONS: Record<string, Partial<Lesson>> = {
       "Menerapkan uji Kolmogorov-Smirnov satu sampel dan dua sampel untuk kebaikan suai distribusi."
     ],
     "content": "Teorema Batas Pusat (*Central Limit Theorem* / CLT) adalah salah satu pencapaian intelektual paling monumental dalam sejarah matematika. CLT menyatakan bahwa jika kita mengambil sampel acak berukuran $n$ secara independen dari populasi apa pun (bahkan populasi yang sangat menceng, bimodal, atau seragam), distribusi dari rata-rata sampel tersebut ($\\bar{X}_n$) akan mendekati distribusi normal Gaussian seiring bertambahnya ukuran sampel $n$.\n\nNamun, terdapat kesalahpahaman fatal di kalangan peneliti pemula: mengira bahwa CLT membuat data mentah berubah menjadi normal. CLT hanya berlaku untuk rata-rata sampel ($\\bar{X}$), BUKAN untuk data observasi mentah ($X_i$). Jika data mentah tidak normal, pengujian parametrik yang mensyaratkan normalitas observasi tetap tidak sah.\n\nOleh karena itu, sebelum menjalankan uji parametrik, peneliti wajib melakukan Uji Kebaikan Suai (*Goodness-of-Fit Tests*):\n1. Uji Shapiro-Wilk ($W$): Uji normalitas paling sensitif dan memiliki daya statistik tertinggi (*most powerful*) untuk ukuran sampel $n < 2000$. Mengukur korelasi antara kuantil data teramati dengan bobot skor terurut normal.\n2. Uji Kolmogorov-Smirnov ($D$): Mengukur deviasi vertikal supremum absolut maksimum antara Fungsi Distribusi Kumulatif Empiris ($F_n(x)$) dengan CDF teoritis acuan ($F_0(x)$).\n3. Evaluasi Grafis Q-Q Plot: Penilaian visual linearitas kuantil empiris terhadap kuantil teoritis Gaussian.",
-    "mathematicalFoundations": "1. Teorema Batas Pusat Lindberg-L\u00e9vy:\nDiberikan barisan variabel acak i.i.d. $X_1, X_2, \\dots, X_n$ dengan rata-rata $\\mu$ dan varians berhingga $\\sigma^2 < \\infty$. Rata-rata sampel $\\bar{X}_n = \\frac{1}{n} \\sum X_i$ memiliki sifat konvergensi distribusi:\n\n$$\\sqrt{n} \\left( \\frac{\\bar{X}_n - \\mu}{\\sigma} \\right) \\xrightarrow{d} \\mathcal{N}(0, 1) \\quad \\text{saat } n \\to \\infty$$\n\n2. Statistik Uji Normalitas Shapiro-Wilk:\n$$W = \\frac{\\left( \\sum_{i=1}^n a_i X_{(i)} \\right)^2}{\\sum_{i=1}^n (X_i - \\bar{X})^2}$$\nDi mana vektor bobot $\\mathbf{a} = \\frac{\\mathbf{m}^T \\mathbf{V}^{-1}}{\\sqrt{\\mathbf{m}^T \\mathbf{V}^{-1} \\mathbf{V}^{-1} \\mathbf{m}}}$. Nilai $W \\in (0, 1]$. Nilai $W \\approx 1$ membuktikan data berdistribusi normal ($H_0: \\text{Data Normal}$).\n\n3. Statistik Uji Kolmogorov-Smirnov:\n$$D = \\sup_x |F_n(x) - F_0(x)|$$\nTolak hipotesis kesesuaian distribusi jika $D > D_{\\text{kritis}, \\alpha}$.",
+    "mathematicalFoundations": "1. Teorema Batas Pusat Lindberg-Lévy:\nDiberikan barisan variabel acak i.i.d. $X_1, X_2, \\dots, X_n$ dengan rata-rata $\\mu$ dan varians berhingga $\\sigma^2 < \\infty$. Rata-rata sampel $\\bar{X}_n = \\frac{1}{n} \\sum X_i$ memiliki sifat konvergensi distribusi:\n\n$$\\sqrt{n} \\left( \\frac{\\bar{X}_n - \\mu}{\\sigma} \\right) \\xrightarrow{d} \\mathcal{N}(0, 1) \\quad \\text{saat } n \\to \\infty$$\n\n2. Statistik Uji Normalitas Shapiro-Wilk:\n$$W = \\frac{\\left( \\sum_{i=1}^n a_i X_{(i)} \\right)^2}{\\sum_{i=1}^n (X_i - \\bar{X})^2}$$\nDi mana vektor bobot $\\mathbf{a} = \\frac{\\mathbf{m}^T \\mathbf{V}^{-1}}{\\sqrt{\\mathbf{m}^T \\mathbf{V}^{-1} \\mathbf{V}^{-1} \\mathbf{m}}}$. Nilai $W \\in (0, 1]$. Nilai $W \\approx 1$ membuktikan data berdistribusi normal ($H_0: \\text{Data Normal}$).\n\n3. Statistik Uji Kolmogorov-Smirnov:\n$$D = \\sup_x |F_n(x) - F_0(x)|$$\nTolak hipotesis kesesuaian distribusi jika $D > D_{\\text{kritis}, \\alpha}$.",
     "workedExample": {
       "problemStatement": "Dua puluh pengukuran resistansi kontak saklar daya listrik diuji normalitasnya menggunakan uji Shapiro-Wilk pada tingkat signifikansi alpha = 0.05. Perangkat lunak menghasilkan nilai statistik W = 0.812 dengan p-value = 0.0012. Apakah data tersebut memenuhi asumsi normalitas untuk uji-t parametrik?",
       "stepByStepSolution": [
@@ -535,100 +629,139 @@ export const CH17_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Teorema Batas Pusat (CLT) dan Uji Kebaikan Suai (Kolmog...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Teorema Batas Pusat (CLT) dan Uji Kebaikan Suai (Kolmogorov-Smirnov, Shapiro-Wilk)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.2.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.4.",
-          "Capaian: Memahami Teorema Batas Pusat (Central Limit Theorem) dan batasan penerapannya.",
-          "Capaian: Menerapkan uji normalitas Shapiro-Wilk untuk pengujian sampel kecil dan menengah.",
-          "Capaian: Menerapkan uji Kolmogorov-Smirnov satu sampel dan dua sampel untuk kebaikan suai distribusi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.2.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami Teorema Batas Pusat (Central Limit Theorem) dan batasan penerapannya.",
+          "Capaian 2: Menerapkan uji normalitas Shapiro-Wilk untuk pengujian sampel kecil dan menengah.",
+          "Capaian 3: Menerapkan uji Kolmogorov-Smirnov satu sampel dan dua sampel untuk kebaikan suai distribusi."
         ],
-        "keyFormulaOrDiagram": "$$\\sqrt{n} \\left( \\frac{\\bar{X}_n - \\mu}{\\sigma} \\right) \\xrightarrow{d} \\mathcal{N}(0, 1) \\quad \\text{saat } n \\to \\infty$$"
+        "keyFormulaOrDiagram": "$$\\sqrt{n} \\left( \\frac{\\bar{X}_n - \\mu}{\\sigma} \\right) \\xrightarrow{d} \\mathcal{N}(0, 1) \\quad \\text{saat } n \\to \\infty$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.2.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Teorema Batas Pusat (CLT) dan Uji Kebaikan Suai (Kolmog...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Teorema Batas Pusat (CLT) dan Uji Kebaikan Suai (Kolmogorov-Smirnov, Shapiro-Wilk)",
+        "lead": "Teorema Batas Pusat (*Central Limit Theorem* / CLT) adalah salah satu pencapaian intelektual paling monumental dalam sejarah matematika.",
         "bulletPoints": [
-          "Teorema Batas Pusat (*Central Limit Theorem* / CLT) adalah salah satu pencapaian intelektual paling monumental dalam sejarah...",
-          "Namun, terdapat kesalahpahaman fatal di kalangan peneliti pemula: mengira bahwa CLT membuat data mentah berubah menjadi norma...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "CLT menyatakan bahwa jika kita mengambil sampel acak berukuran $n$ secara independen dari populasi apa pun (bahkan populasi yang sangat menceng, bimodal, atau seragam), distribusi dari rata-rata sampel tersebut ($\\bar{X}_n$) akan mendekati distribusi normal Gaussian seiring bertambahnya ukuran sampel $n$.",
+          "Namun, terdapat kesalahpahaman fatal di kalangan peneliti pemula: mengira bahwa CLT membuat data mentah berubah menjadi normal.",
+          "CLT hanya berlaku untuk rata-rata sampel ($\\bar{X}$), BUKAN untuk data observasi mentah ($X_i$)."
         ],
-        "keyFormulaOrDiagram": "Oleh karena itu, sebelum menjalankan uji parametrik, peneliti wajib melakukan Uji Kebaikan..."
+        "keyFormulaOrDiagram": "$W$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Oleh karena itu, sebelum menjalankan uji parametrik, peneliti wajib melakukan Uji Kebaikan Suai (*Goodness-of-Fit Tests*): 1.",
         "bulletPoints": [
-          "Oleh karena itu, sebelum menjalankan uji parametrik, peneliti wajib melakukan Uji Kebaikan Suai (*Goodness-of-Fit Tests*): 1....",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Uji Shapiro-Wilk ($W$): Uji normalitas paling sensitif dan memiliki daya statistik tertinggi (*most powerful*) untuk ukuran sampel $n < 2000$.",
+          "Mengukur korelasi antara kuantil data teramati dengan bobot skor terurut normal."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Teorema Batas Pusat Lindberg-Lévy:",
         "bulletPoints": [
-          "1. Teorema Batas Pusat Lindberg-L\u00e9vy:",
-          "Diberikan barisan variabel acak i.i.d. $X_1, X_2, \\dots, X_n$ dengan rata-rata $\\mu$ dan varians berhingga $\\s...",
-          "2. Statistik Uji Normalitas Shapiro-Wilk:"
+          "Diberikan barisan variabel acak i.i.d. $X_1, X_2, \\dots, X_n$ dengan rata-rata $\\mu$ dan varians berhingga $\\sigma^2 < \\infty$. Rata-rata sampel $\\bar{X}_n = \\frac{1}{n} \\sum X_i$ memiliki sifat konvergensi distribusi:",
+          "2. Statistik Uji Normalitas Shapiro-Wilk:",
+          "Di mana vektor bobot $\\mathbf{a} = \\frac{\\mathbf{m}^T \\mathbf{V}^{-1}}{\\sqrt{\\mathbf{m}^T \\mathbf{V}^{-1} \\mathbf{V}^{-1} \\mathbf{m}}}$. Nilai $W \\in (0, 1]$. Nilai $W \\approx 1$ membuktikan data berdistribusi normal ($H_0: \\text{Data Normal}$)."
         ],
-        "keyFormulaOrDiagram": "$$\\sqrt{n} \\left( \\frac{\\bar{X}_n - \\mu}{\\sigma} \\right) \\xrightarrow{d} \\mathcal{N}(0, 1) \\quad \\text{saat } n \\to \\infty$$"
+        "keyFormulaOrDiagram": "$$\\sqrt{n} \\left( \\frac{\\bar{X}_n - \\mu}{\\sigma} \\right) \\xrightarrow{d} \\mathcal{N}(0, 1) \\quad \\text{saat } n \\to \\infty$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua puluh pengukuran resistansi kontak saklar daya listrik diuji normalitasnya menggunakan uji Shapiro-Wilk pada tingkat signifikansi alpha...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua puluh pengukuran resistansi kontak saklar daya listrik diuji normalitasnya menggunakan uji Shapiro-Wilk pada tingkat signifikansi alpha = 0.05. Perangkat lunak menghasilkan nilai statistik W = 0.812 dengan p-value = 0.0012. Apakah data tersebut memenuhi asumsi normalitas untuk uji-t parametrik?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi pasangan hipotesis uji Shapiro-Wilk: H0: Data berasal dari populasi berdistribusi Norm...",
+          "Langkah 1: Identifikasi pasangan hipotesis uji Shapiro-Wilk: H0: Data berasal dari populasi berdistribusi Normal; H1: Data tidak berdistribusi Normal.",
           "Langkah 2: Ambil keputusan berdasarkan p-value: p-value terhitung adalah 0.0012.",
-          "Langkah 3: Bandingkan dengan tingkat signifikansi: 0.0012 < 0.05 (Tolak H0 secara meyakinkan).",
-          "Interpretasi: Penolakan H0 melindungi peneliti dari penarikan kesimpulan yang cacat akibat asumsi parametrik yang dilanggar."
+          "Langkah 3: Bandingkan dengan tingkat signifikansi: 0.0012 < 0.05 (Tolak H0 secara meyakinkan)."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Implikasi metodologis: Data melanggar asumsi normalitas. Peneliti dilarang meng..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Evaluasi nilai statistik W: Nilai W = 0.812 jauh di bawah 1.0, menunjukkan deviasi kelengkungan signifikan dari garis normalitas.",
+          "Langkah 5: Implikasi metodologis: Data melanggar asumsi normalitas. Peneliti dilarang menggunakan uji-t Student klasik dan wajib beralih ke uji non-parametrik (Mann-Whitney U / Wilcoxon) atau melakukan transformasi logaritmik.",
+          "[result: Interpretasi Ilmiah] Penolakan H0 melindungi peneliti dari penarikan kesimpulan yang cacat akibat asumsi parametrik yang dilanggar."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pengujian normalitas formal menggunakan Shapiro-Wilk dan visualisasi CLT dari distribusi eksponensial menceng.",
         "bulletPoints": [
-          "Deskripsi: Pengujian normalitas formal menggunakan Shapiro-Wilk dan visualisasi CLT dari distribusi eksponensial menceng.",
-          "Dependensi Pustaka: scipy.stats, numpy",
-          "Keluaran Diharapkan: UJI NORMALITAS SHAPIRO-WILK (Data Mentah):"
+          "Tujuan Algoritma: Pengujian normalitas formal menggunakan Shapiro-Wilk dan visualisasi CLT dari distribusi eksponensial menceng.",
+          "Dependensi Pustaka Ilmiah: scipy.stats, numpy",
+          "Keluaran Terverifikasi: UJI NORMALITAS SHAPIRO-WILK (Data Mentah):"
         ],
-        "keyFormulaOrDiagram": "UJI NORMALITAS SHAPIRO-WILK (Data Mentah): | Statistik W : 0.8528 | P-value : 2.1485e-05"
+        "keyFormulaOrDiagram": "UJI NORMALITAS SHAPIRO-WILK (Data Mentah):\nStatistik W     : 0.8528\nP-value         : 2.1485e-05\nStatus Normal?  : False (Data mentah TIDAK normal)\n",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan bahwa data mentah pasti normal hanya karena ukuran sampel n > 30 (mengacaukan distribusi data den...",
-          "Perangkap: Menggunakan uji Kolmogorov-Smirnov standar pada data yang parameter rata-rata dan deviasi standarnya diestimas...",
-          "Perangkap: Mengabaikan pemeriksaan visual Q-Q plot ketika ukuran sampel sangat besar (di mana uji formal menolak normalit..."
-        ]
+          "[warning: Perangkap] Menyimpulkan bahwa data mentah pasti normal hanya karena ukuran sampel n > 30 (mengacaukan distribusi data dengan distribusi rata-rata sampel).",
+          "[warning: Perangkap] Menggunakan uji Kolmogorov-Smirnov standar pada data yang parameter rata-rata dan deviasi standarnya diestimasi dari sampel (wajib gunakan Uji Lilliefors).",
+          "[warning: Perangkap] Mengabaikan pemeriksaan visual Q-Q plot ketika ukuran sampel sangat besar (di mana uji formal menolak normalitas bahkan untuk deviasi mikroskopis yang tidak berbahaya)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Kombinasikan uji formal Shapiro-Wilk dengan inspeksi visual plot Q-Q residu.",
-          "Prosedur: Jika p-value Shapiro-Wilk < 0.05, periksa apakah rasio skewness terhadap standar error-nya berada di luar rent..."
-        ]
+          "Prosedur: Jika p-value Shapiro-Wilk < 0.05, periksa apakah rasio skewness terhadap standar error-nya berada di luar rentang [-2, +2]."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 42,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa pada dataset yang berukuran sangat besar (misal n = 100.000 sampel), uji Shapiro-Wilk hampir selalu menghasilkan...",
-          "Petunjuk: Perhatikan sensitivitas daya uji statistik terhadap ukuran sampel raksasa pada deviasi riil yang kec...",
-          "Solusi Kunci: Pada ukuran sampel yang sangat masif, daya uji statistik (power) menjadi hampir 100%. Akibatnya, uji formal akan mendete..."
-        ]
+          "Pertanyaan Uji: Mengapa pada dataset yang berukuran sangat besar (misal n = 100.000 sampel), uji Shapiro-Wilk hampir selalu menghasilkan p-value < 0.001 meskipun data tampak normal secara visual?",
+          "Petunjuk Analitis: Perhatikan sensitivitas daya uji statistik terhadap ukuran sampel raksasa pada deviasi riil yang kecil.",
+          "Solusi Kunci: Pada ukuran sampel yang sangat masif, daya uji statistik (power) menjadi hampir 100%. Akibatnya, uji formal akan mendeteksi penyimpangan mikroskopis yang secara praktis tidak berbahaya terhadap asumsi model (seperti sedikit ketebalan ekor pada desil ke-99) sebagai penolakan normalitas yang signifikan secara statistik. Pada sampel raksasa, peneliti harus memprioritaskan inspeksi visual Q-Q plot dan metrik effect size kemencengan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

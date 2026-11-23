@@ -63,98 +63,127 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penerapan FAIR Data Principles: Findable, Accessible, I...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penerapan FAIR Data Principles: Findable, Accessible, Interoperable, Reusable",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.7.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.1.",
-          "Capaian: Memahami 15 asas panduan FAIR Data Principles dalam ekosistem sains terbuka (*open science*).",
-          "Capaian: Mengintegrasikan Persistent Identifiers (DOI, Handle) untuk penemuan dataset otomatis.",
-          "Capaian: Memilih lisensi terbuka yang tepat (Creative Commons CC-BY, CC0, MIT) untuk repositori data riset."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami 15 asas panduan FAIR Data Principles dalam ekosistem sains terbuka (*open science*).",
+          "Capaian 2: Mengintegrasikan Persistent Identifiers (DOI, Handle) untuk penemuan dataset otomatis.",
+          "Capaian 3: Memilih lisensi terbuka yang tepat (Creative Commons CC-BY, CC0, MIT) untuk repositori data riset."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{F} = \\sum_{k=1}^M w_k \\cdot I_k$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{F} = \\sum_{k=1}^M w_k \\cdot I_k$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.7.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penerapan FAIR Data Principles: Findable, Accessible, I...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penerapan FAIR Data Principles: Findable, Accessible, Interoperable, Reusable",
+        "lead": "Publikasi artikel ilmiah dalam format PDF statis hanya menyajikan kesimpulan permukaan dari proses penelitian.",
         "bulletPoints": [
-          "Publikasi artikel ilmiah dalam format PDF statis hanya menyajikan kesimpulan permukaan dari proses penelitian. Data mentah, t...",
-          "Empat pilar utama FAIR: 1. Findable (Dapat Ditemukan): Metadata dan data harus mudah ditemukan oleh sistem pencari digital. D...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Data mentah, tabel hasil observasi, parameter eksperimen, dan kode komputasi yang mendasarinya sering kali terkunci di laptop pribadi peneliti atau hilang selamanya saat mahasiswa lulus.",
+          "Krisis reproduksibilitas global mendorong terbentuknya Prinsip FAIR (Wilkinson et al., 2016), standar internasional yang mewajibkan data penelitian dikelola agar mudah ditemukan dan digunakan kembali baik oleh manusia maupun agen komputasi cerdas.",
+          "Empat pilar utama FAIR: 1.",
+          "Findable (Dapat Ditemukan): Metadata dan data harus mudah ditemukan oleh sistem pencari digital."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "derivation",
+        "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Metrik Kepatuhan FAIR (*FAIR Data Maturity Model*):",
         "bulletPoints": [
-          "Publikasi artikel ilmiah dalam format PDF statis hanya menyajikan kesimpulan permukaan dari proses penelitian. Data mentah, t...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Tingkat Kematangan FAIR $\\mathcal{F}$ dihitung sebagai skor kepatuhan terbobot terhadap $M$ indikator evaluasi resmi RDA (Research Data Alliance):",
+          "Di mana $I_k \\in \\{0, 1\\}$ menyatakan pemenuhan indikator (seperti keberadaan DOI, lisensi mesin-terbaca, format terbuka) dan $w_k$ adalah bobot kekritisan:",
+          "- Indikator Esensial (Must-have): $w_{\\text{ess}} = 3$"
+        ],
+        "keyFormulaOrDiagram": "$$\\mathcal{F} = \\sum_{k=1}^M w_k \\cdot I_k$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 4,
-        "title": "Formulasi Matematis & Notasi Formal",
+        "layout": "example",
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Metrik Kepatuhan FAIR (*FAIR Data Maturity Model*):",
-          "Tingkat Kematangan FAIR $\\mathcal{F}$ dihitung sebagai skor kepatuhan terbobot terhadap $M$ indikator evaluasi...",
-          "Di mana $I_k \\in \\{0, 1\\}$ menyatakan pemenuhan indikator (seperti keberadaan DOI, lisensi mesin-terbaca, form..."
+          "Konteks Kasus: Sebuah tim peneliti ITERA menyelesaikan pengujian dataset sensor konsumsi daya PLTS selama 1 tahun. Dataset disimpan di Google Drive pribadi dalam format file .xlsx dengan penamaan \"data_final_revisi3_beneran.xlsx\" tanpa lisensi tertulis. Evaluasi kepatuhan dataset ini terhadap prinsip FAIR dan susun rencana perbaikannya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{F} = \\sum_{k=1}^M w_k \\cdot I_k$$"
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 5,
-        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim peneliti ITERA menyelesaikan pengujian dataset sensor konsumsi daya PLTS selama 1 tahun. Dataset disimpan di Google Drive pribadi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Langkah 1 (Audit Findable): Tidak memiliki Persistent Identifier (DOI), penamaan file ambigu, dan tidak terindeks oleh mesin pengindeks akademik (Gagal).",
+          "Langkah 2 (Audit Accessible): Disimpan di cloud privat yang membutuhkan persetujuan akses manual; tautan dapat mati sewaktu-waktu jika akun dinonaktifkan (Gagal).",
+          "Langkah 3 (Audit Interoperable): Format .xlsx adalah format biner proprietary komersial tertutup yang membutuhkan perangkat lunak khusus (Kurang memadai)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Langkah 1 (Audit Findable): Tidak memiliki Persistent Identifier (DOI), penamaan file ambigu, dan tidak terind...",
-          "Langkah 2 (Audit Accessible): Disimpan di cloud privat yang membutuhkan persetujuan akses manual; tautan dapat...",
-          "Langkah 3 (Audit Interoperable): Format .xlsx adalah format biner proprietary komersial tertutup yang membutuh...",
-          "Interpretasi: Melalui remediasi repositori terbuka Zenodo, dataset berubah dari data terkunci menjadi aset sains terbuka berstandar in..."
+          "Langkah 4 (Audit Reusable): Tidak ada dokumen lisensi hak cipta, tidak ada kamus data definisi kolom, dan tidak ada catatan kalibrasi sensor (Gagal total).",
+          "Langkah 5 (Rencana Remediasi): Konversi data ke format CSV/Parquet terbuka; susun kamus data metadata JSON-LD; unggah ke repositori Zenodo untuk mendapatkan DOI permanen; tetapkan lisensi terbuka Creative Commons CC-BY 4.0.",
+          "[result: Interpretasi Ilmiah] Melalui remediasi repositori terbuka Zenodo, dataset berubah dari data terkunci menjadi aset sains terbuka berstandar internasional."
         ],
-        "keyFormulaOrDiagram": "Langkah 5 (Rencana Remediasi): Konversi data ke format CSV/Parquet terbuka; susun kamus da..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 7,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit otomatis kepatuhan berkas data terhadap prinsip FAIR menggunakan parser metadata lokal.",
         "bulletPoints": [
-          "Deskripsi: Audit otomatis kepatuhan berkas data terhadap prinsip FAIR menggunakan parser metadata lokal.",
-          "Dependensi Pustaka: os, json",
-          "Keluaran Diharapkan: HASIL AUDIT PRINSIP FAIR DATA:"
+          "Tujuan Algoritma: Audit otomatis kepatuhan berkas data terhadap prinsip FAIR menggunakan parser metadata lokal.",
+          "Dependensi Pustaka Ilmiah: os, json",
+          "Keluaran Terverifikasi: HASIL AUDIT PRINSIP FAIR DATA:"
         ],
-        "keyFormulaOrDiagram": "HASIL AUDIT PRINSIP FAIR DATA: | - Findable : Lolos (Compliant) | - Accessible : Lolos (Co..."
+        "keyFormulaOrDiagram": "HASIL AUDIT PRINSIP FAIR DATA:\n- Findable       : Lolos (Compliant)\n- Accessible     : Lolos (Compliant)\n- Interoperable  : Lolos (Compliant)\n- Reusable       : Lolos (Compliant)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 8,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpan data penelitian pada Google Drive pribadi atau repositori institusi internal yang tidak menjamin per...",
-          "Perangkap: Mengunggah berkas data tanpa dokumen kamus data yang menerangkan arti setiap singkatan kolom tabel.",
-          "Perangkap: Memilih lisensi pembatasan komersial (seperti CC-BY-NC) yang secara tidak sengaja melarang data digunakan oleh..."
-        ]
+          "[warning: Perangkap] Menyimpan data penelitian pada Google Drive pribadi atau repositori institusi internal yang tidak menjamin persistensi URL jangka panjang.",
+          "[warning: Perangkap] Mengunggah berkas data tanpa dokumen kamus data yang menerangkan arti setiap singkatan kolom tabel.",
+          "[warning: Perangkap] Memilih lisensi pembatasan komersial (seperti CC-BY-NC) yang secara tidak sengaja melarang data digunakan oleh peneliti di institusi nirlaba tertentu."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 9,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Uji resolusi tautan DOI menggunakan resolver netral https://doi.org untuk memastikan keterhubungan langsung ke...",
-          "Prosedur: Validasi keterbacaan berkas data pada sistem operasi Linux bersih tanpa perangkat lunak komersial pihak ketiga..."
-        ]
+          "Prosedur: Uji resolusi tautan DOI menggunakan resolver netral https://doi.org untuk memastikan keterhubungan langsung ke halaman pendaratan (*landing page*).",
+          "Prosedur: Validasi keterbacaan berkas data pada sistem operasi Linux bersih tanpa perangkat lunak komersial pihak ketiga."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
         "slideNumber": 10,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa lisensi Creative Commons Zero (CC0) sering kali dinilai paling ideal untuk repositori data mentah sains terbuka?",
-          "Petunjuk: Perhatikan asas domain publik dan pencegahan \"attribution stacking\" pada penggabungan ribuan dataset...",
-          "Solusi Kunci: CC0 mendedikasikan data sepenuhnya ke domain publik tanpa syarat hukum apa pun. Dalam penelitian komputasi berskala besa..."
-        ]
+          "Petunjuk Analitis: Perhatikan asas domain publik dan pencegahan \"attribution stacking\" pada penggabungan ribuan dataset mikro.",
+          "Solusi Kunci: CC0 mendedikasikan data sepenuhnya ke domain publik tanpa syarat hukum apa pun. Dalam penelitian komputasi berskala besar yang menggabungkan ribuan dataset mikro, lisensi yang mewajibkan sitasi formal (seperti CC-BY) memicu masalah hukum atribusi berlipat (*attribution stacking*) di mana peneliti secara hukum harus menyebutkan ribuan nama lisensi yang mustahil dimuat dalam artikel ilmiah."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -196,7 +225,7 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     },
     "commonPitfalls": [
       "Menggunakan angka nol (\"0\") sebagai kode data hilang (missing value), yang akan merusak perhitungan rata-rata dan deviasi standar.",
-      "Menggunakan spasi atau karakter non-ASCII pada nama kolom (misal: \"Suhu (\u00b0C) / menit\") yang menyebabkan kegagalan parsing pada script Python/R.",
+      "Menggunakan spasi atau karakter non-ASCII pada nama kolom (misal: \"Suhu (°C) / menit\") yang menyebabkan kegagalan parsing pada script Python/R.",
       "Mengubah nama kolom antar-berkas dalam satu rangkaian serial waktu pengujian."
     ],
     "validationProcedures": [
@@ -222,100 +251,139 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Perancangan Data Dictionary, Buku Kode, dan Skema Metad...",
+        "slideNumber": 11,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Perancangan Data Dictionary, Buku Kode, dan Skema Metadata JSON-LD",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.7.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.2.",
-          "Capaian: Merancang dokumen Data Dictionary komprehensif untuk struktur basis data tabular eksperimen.",
-          "Capaian: Membangun skema metadata semantik berstandar JSON-LD dan Schema.org/Dataset.",
-          "Capaian: Menetapkan aturan penamaan variabel dan kode hilang (missing values) yang konsisten."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang dokumen Data Dictionary komprehensif untuk struktur basis data tabular eksperimen.",
+          "Capaian 2: Membangun skema metadata semantik berstandar JSON-LD dan Schema.org/Dataset.",
+          "Capaian 3: Menetapkan aturan penamaan variabel dan kode hilang (missing values) yang konsisten."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{dict}}(c_j) = \\langle \\text{Nama}, \\text{Tipe}, \\text{Satuan}, \\mathcal{R}_{\\text{valid}}, \\text{MetodeUkur}, \\text{MissingCode} \\rangle$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{dict}}(c_j) = \\langle \\text{Nama}, \\text{Tipe}, \\text{Satuan}, \\mathcal{R}_{\\text{valid}}, \\text{MetodeUkur}, \\text{MissingCode} \\rangle$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.7.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Perancangan Data Dictionary, Buku Kode, dan Skema Metad...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Perancangan Data Dictionary, Buku Kode, dan Skema Metadata JSON-LD",
+        "lead": "Sebuah berkas data CSV yang berisi kolom bernama \"T1\", \"P_val\", dan \"Stat\" tidak memiliki arti ilmiah apa pun bagi orang lain tanpa adanya Kamus Data (Data Dictionary) atau Buku Kode (Codebook).",
         "bulletPoints": [
-          "Sebuah berkas data CSV yang berisi kolom bernama \"T1\", \"P_val\", dan \"Stat\" tidak memiliki arti ilmiah apa pun bagi orang lain...",
-          "Dalam era Semantic Web dan penemuan dataset terotomasi, metadata tidak lagi cukup ditulis dalam berkas teks biasa. Peneliti m...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kamus data adalah dokumen acuan otoritatif yang mendefinisikan secara terperinci setiap variabel, tipe data komputasi, satuan fisik metrologis, rentang nilai valid yang diizinkan, dan arti dari setiap kode kategorikal.",
+          "Dalam era Semantic Web dan penemuan dataset terotomasi, metadata tidak lagi cukup ditulis dalam berkas teks biasa.",
+          "Peneliti menggunakan format JSON-LD (JavaScript Object Notation for Linked Data) yang disematkan dengan kosa kata Schema.org/Dataset."
         ],
-        "keyFormulaOrDiagram": "Kombinasi kamus data yang ramah manusia dan metadata semantik yang ramah mesin menjamin ke..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Kombinasi kamus data yang ramah manusia dan metadata semantik yang ramah mesin menjamin keterbacaan data lintas generasi.",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Kombinasi kamus data yang ramah manusia dan metadata semantik yang ramah mesin menjamin keterbacaan data lintas generasi.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Struktur Relasional Kamus Data $\\mathcal{D}_{\\text{dict}}$ memetakan setiap kolom $c_j \\in \\mathcal{C}$:",
         "bulletPoints": [
-          "Struktur Relasional Kamus Data $\\mathcal{D}_{\\text{dict}}$ memetakan setiap kolom $c_j \\in \\mathcal{C}$:",
           "Di mana:",
-          "- $\\text{Satuan} \\in \\text{Katalog Satuan SI}$ (misal: $\\text{W/m}^2$, $\\text{m/s}$, $\\text{V}$)"
+          "- $\\text{Satuan} \\in \\text{Katalog Satuan SI}$ (misal: $\\text{W/m}^2$, $\\text{m/s}$, $\\text{V}$)",
+          "- $\\mathcal{R}_{\\text{valid}} = [x_{\\min}, x_{\\max}] \\subset \\mathbb{R}$ (Domain Fisik Valid)"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{dict}}(c_j) = \\langle \\text{Nama}, \\text{Tipe}, \\text{Satuan}, \\mathcal{R}_{\\text{valid}}, \\text{MetodeUkur}, \\text{MissingCode} \\rangle$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{dict}}(c_j) = \\langle \\text{Nama}, \\text{Tipe}, \\text{Satuan}, \\mathcal{R}_{\\text{valid}}, \\text{MetodeUkur}, \\text{MissingCode} \\rangle$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Rancang entri kamus data untuk variabel \"Fluks Radiasi Matahari Global\" pada stasiun cuaca PLTS ITERA, dan susun cuplikan metadata Schema.or...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Rancang entri kamus data untuk variabel \"Fluks Radiasi Matahari Global\" pada stasiun cuaca PLTS ITERA, dan susun cuplikan metadata Schema.org JSON-LD yang merepresentasikannya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1 (Entri Kamus Data):",
           "- Nama Kolom: GHI_Watt_m2",
           "- Deskripsi: Global Horizontal Irradiance terukur pada bidang datar permukaan bumi",
-          "Interpretasi: Metadata ini memastikan bahwa agen komputasi pencari data dapat mengidentifikasi variabel fluks surya secara otomatis ta..."
+          "- Tipe Data: Float64 (Presisi Ganda)",
+          "- Satuan Pengukuran: Watt per meter persegi (W/m^2)"
         ],
-        "keyFormulaOrDiagram": "Langkah 2 (Struktur Semantik JSON-LD): Tautkan ke Schema.org/Dataset dengan mendefinisikan..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "- Rentang Valid: [0.0, 1400.0] W/m^2 (nilai di luar rentang ini menandai sensor jenuh atau rusak)",
+          "- Instrumen Ukur: Piranometer Sekunder Terkalibrasi Kelas A (Kipp & Zonen CMP11)",
+          "- Kode Data Hilang: NaN atau -9999.0",
+          "Langkah 2 (Struktur Semantik JSON-LD): Tautkan ke Schema.org/Dataset dengan mendefinisikan \"@context\": \"https://schema.org\", \"@type\": \"Dataset\", menyertakan nama, deskripsi, variabel measuredProperty, dan tautan lisensi resmi.",
+          "[result: Interpretasi Ilmiah] Metadata ini memastikan bahwa agen komputasi pencari data dapat mengidentifikasi variabel fluks surya secara otomatis tanpa salah menafsirkannya sebagai radiasi termal."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembangkit berkas metadata Schema.org/Dataset dalam format JSON-LD yang valid secara semantik.",
         "bulletPoints": [
-          "Deskripsi: Pembangkit berkas metadata Schema.org/Dataset dalam format JSON-LD yang valid secara semantik.",
-          "Dependensi Pustaka: json",
-          "Keluaran Diharapkan: Draf Validasi Schema.org JSON-LD:"
+          "Tujuan Algoritma: Pembangkit berkas metadata Schema.org/Dataset dalam format JSON-LD yang valid secara semantik.",
+          "Dependensi Pustaka Ilmiah: json",
+          "Keluaran Terverifikasi: Draf Validasi Schema.org JSON-LD:"
         ],
-        "keyFormulaOrDiagram": "Draf Validasi Schema.org JSON-LD: | { | \"@context\": \"https://schema.org/\","
+        "keyFormulaOrDiagram": "Draf Validasi Schema.org JSON-LD:\n{\n  \"@context\": \"https://schema.org/\",\n  \"@type\": \"Dataset\",\n  \"name\": \"Dataset Telemetri Radiasi Surya ITERA 2025\",",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan angka nol (\"0\") sebagai kode data hilang (missing value), yang akan merusak perhitungan rata-rata...",
-          "Perangkap: Menggunakan spasi atau karakter non-ASCII pada nama kolom (misal: \"Suhu (\u00b0C) / menit\") yang menyebabkan kegaga...",
-          "Perangkap: Mengubah nama kolom antar-berkas dalam satu rangkaian serial waktu pengujian."
-        ]
+          "[warning: Perangkap] Menggunakan angka nol (\"0\") sebagai kode data hilang (missing value), yang akan merusak perhitungan rata-rata dan deviasi standar.",
+          "[warning: Perangkap] Menggunakan spasi atau karakter non-ASCII pada nama kolom (misal: \"Suhu (°C) / menit\") yang menyebabkan kegagalan parsing pada script Python/R.",
+          "[warning: Perangkap] Mengubah nama kolom antar-berkas dalam satu rangkaian serial waktu pengujian."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan validator resmi Google Rich Results Test untuk memeriksa validitas sintaks berkas JSON-LD.",
-          "Prosedur: Jalankan skrip pemeriksaan integritas data otomatis yang memeriksa apakah seluruh nilai kolom berada di dalam..."
-        ]
+          "Prosedur: Jalankan skrip pemeriksaan integritas data otomatis yang memeriksa apakah seluruh nilai kolom berada di dalam rentang valid kamus data."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa penggunaan string kosong (\"\") atau spasi tunggal (\" \") sebagai kode data hilang sangat berbahaya dalam analisis...",
-          "Petunjuk: Perhatikan bagaimana parser CSV mengonversi tipe data kolom dari numerik menjadi teks objek jika ter...",
-          "Solusi Kunci: Jika sebuah kolom angka berisi string kosong atau spasi tersembunyi, parser data (seperti pandas.read_csv) dapat secara..."
-        ]
+          "Pertanyaan Uji: Mengapa penggunaan string kosong (\"\") atau spasi tunggal (\" \") sebagai kode data hilang sangat berbahaya dalam analisis data otomatis?",
+          "Petunjuk Analitis: Perhatikan bagaimana parser CSV mengonversi tipe data kolom dari numerik menjadi teks objek jika terdapat string.",
+          "Solusi Kunci: Jika sebuah kolom angka berisi string kosong atau spasi tersembunyi, parser data (seperti pandas.read_csv) dapat secara otomatis mendeteksi kolom tersebut sebagai tipe teks (*object/string*), bukan angka (*float/int*). Hal ini memicu kegagalan eksekusi (*crash*) pada seluruh fungsi matematika dan algoritma pembelajaran mesin berikutnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -335,10 +403,10 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     "workedExample": {
       "problemStatement": "Sebuah tim peneliti visi komputer ITERA memiliki dataset citra retak rel kereta api berukuran 12 GB. Rancang alur perintah CLI terminal yang memadukan Git dan DVC dari inisialisasi awal hingga penyimpanan berkas di remote storage laboratorium.",
       "stepByStepSolution": [
-        "Langkah 1 (Inisialisasi): Inisialisasi Git dan DVC di folder proyek:\n$ git init\n$ dvc init\n$ git commit -m \"Initialize Git and DVC\"",
-        "Langkah 2 (Pelacakan Dataset): Daftarkan folder dataset besar ke DVC:\n$ dvc add data/raw_rail_cracks/\n(DVC secara otomatis membuat berkas pointer data/raw_rail_cracks.dvc dan menambahkan data/raw_rail_cracks ke .gitignore)",
-        "Langkah 3 (Commit Git Pointer): Lacak berkas pointer di Git:\n$ git add data/raw_rail_cracks.dvc .gitignore\n$ git commit -m \"Track 12GB rail crack raw dataset via DVC pointer\"",
-        "Langkah 4 (Konfigurasi Remote & Unggah): Konfigurasi penyimpanan server lab dan dorong data biner:\n$ dvc remote add -d lab_server ssh://data.itera.ac.id/storage/riset_rel\n$ dvc push"
+        "Langkah 1 (Inisialisasi): Inisialisasi Git dan DVC di folder proyek:\ngit init && dvc init && git commit -m \"Initialize Git and DVC\"",
+        "Langkah 2 (Pelacakan Dataset): Daftarkan folder dataset besar ke DVC:\ndvc add data/raw_rail_cracks/\n(DVC secara otomatis membuat berkas pointer data/raw_rail_cracks.dvc dan menambahkan data/raw_rail_cracks ke .gitignore)",
+        "Langkah 3 (Commit Git Pointer): Lacak berkas pointer di Git:\ngit add data/raw_rail_cracks.dvc .gitignore && git commit -m \"Track 12GB rail crack raw dataset via DVC pointer\"",
+        "Langkah 4 (Konfigurasi Remote & Unggah): Konfigurasi penyimpanan server lab dan dorong data biner:\ndvc remote add -d lab_server ssh://data.itera.ac.id/storage/riset_rel && dvc push"
       ],
       "resultInterpretation": "Repositori GitHub tim tetap berukuran ringan (< 5 MB) sementara data mentah 12 GB tersimpan aman dan terikat secara kriptografis dengan riwayat commit kode."
     },
@@ -378,100 +446,134 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Manajemen Versi Dataset Menggunakan Data Version Contro...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Manajemen Versi Dataset Menggunakan Data Version Control (DVC) dan Git",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.7.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.3.",
-          "Capaian: Memahami arsitektur integrasi Git dan Data Version Control (DVC) untuk aset data biner besar.",
-          "Capaian: Membangun alur kerja pipeline data reproducibility (*dvc repro*).",
-          "Capaian: Mengelola penyimpanan remote storage terenkripsi untuk kolaborasi penelitian terdistribusi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami arsitektur integrasi Git dan Data Version Control (DVC) untuk aset data biner besar.",
+          "Capaian 2: Membangun alur kerja pipeline data reproducibility (*dvc repro*).",
+          "Capaian 3: Mengelola penyimpanan remote storage terenkripsi untuk kolaborasi penelitian terdistribusi."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Stage}_k: \\{ D_{k,1}, D_{k,2}, \\dots \\} \\xrightarrow{\\text{Script}} \\{ O_{k,1}, O_{k,2}, \\dots \\}$$"
+        "keyFormulaOrDiagram": "$$\\text{Stage}_k: \\{ D_{k,1}, D_{k,2}, \\dots \\} \\xrightarrow{\\text{Script}} \\{ O_{k,1}, O_{k,2}, \\dots \\}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.7.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Manajemen Versi Dataset Menggunakan Data Version Contro...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Manajemen Versi Dataset Menggunakan Data Version Control (DVC) dan Git",
+        "lead": "Sistem kontrol versi Git adalah standar baku dalam pengembangan perangkat lunak, namun Git dirancang untuk berkas kode teks berukuran kecil.",
         "bulletPoints": [
-          "Sistem kontrol versi Git adalah standar baku dalam pengembangan perangkat lunak, namun Git dirancang untuk berkas kode teks b...",
-          "Solusi ilmiah modern untuk mengatasi masalah ini adalah Data Version Control (DVC). DVC memisahkan repositori menjadi dua bid...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Ketika Git dipaksa melacak dataset citra berukuran 50 GB atau bobot model deep learning 5 GB, repositori Git akan menjadi lambat (*bloated*), memicu penolakan kuota oleh GitHub, dan gagal melakukan kompresi delta yang efisien.",
+          "Solusi ilmiah modern untuk mengatasi masalah ini adalah Data Version Control (DVC).",
+          "DVC memisahkan repositori menjadi dua bidang: 1."
         ],
-        "keyFormulaOrDiagram": "Ketika peneliti berpindah cabang Git (misal dari branch \"baseline-cnn\" ke \"proposed-transf..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Ketika peneliti berpindah cabang Git (misal dari branch \"baseline-cnn\" ke \"proposed-transformer\"), perintah sederhana \"git ch...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Ketika peneliti berpindah cabang Git (misal dari branch \"baseline-cnn\" ke \"proposed-transformer\"), perintah sederhana \"git checkout\" yang diikuti \"dvc checkout\" akan secara instan menyinkronkan dataset dan bobot model yang tepat sesuai dengan versi kode tersebut, menjamin reproduksibilitas komputasional 100%.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Arsitektur Graf Asiklik Berarah Komputasi DVC (*DVC Pipeline DAG*):",
         "bulletPoints": [
-          "Arsitektur Graf Asiklik Berarah Komputasi DVC (*DVC Pipeline DAG*):",
-          "Sebuah pipeline riset komputasi direpresentasikan sebagai graf $\\mathcal{G} = (\\mathcal{V}_P, \\mathcal{E}_P)$...",
-          "Tahapan komputasi ke-$k$ memetakan:"
+          "Sebuah pipeline riset komputasi direpresentasikan sebagai graf $\\mathcal{G} = (\\mathcal{V}_P, \\mathcal{E}_P)$ di mana simpul adalah tahapan pemrosesan (*stages*) dan busur adalah ketergantungan berkas (*dependencies & outputs*).",
+          "Tahapan komputasi ke-$k$ memetakan:",
+          "Kondisi Reproduksi Terdistribusi (Cache Invariance):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Stage}_k: \\{ D_{k,1}, D_{k,2}, \\dots \\} \\xrightarrow{\\text{Script}} \\{ O_{k,1}, O_{k,2}, \\dots \\}$$"
+        "keyFormulaOrDiagram": "$$\\text{Stage}_k: \\{ D_{k,1}, D_{k,2}, \\dots \\} \\xrightarrow{\\text{Script}} \\{ O_{k,1}, O_{k,2}, \\dots \\}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim peneliti visi komputer ITERA memiliki dataset citra retak rel kereta api berukuran 12 GB. Rancang alur perintah CLI terminal yang...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1 (Inisialisasi): Inisialisasi Git dan DVC di folder proyek: $ git init $ dvc init $ git commit -m \"In...",
-          "Langkah 2 (Pelacakan Dataset): Daftarkan folder dataset besar ke DVC: $ dvc add data/raw_rail_cracks/ (DVC sec...",
-          "Langkah 3 (Commit Git Pointer): Lacak berkas pointer di Git: $ git add data/raw_rail_cracks.dvc .gitignore $ g...",
-          "Interpretasi: Repositori GitHub tim tetap berukuran ringan (< 5 MB) sementara data mentah 12 GB tersimpan aman dan terikat secara krip..."
+          "Konteks Kasus: Sebuah tim peneliti visi komputer ITERA memiliki dataset citra retak rel kereta api berukuran 12 GB. Rancang alur perintah CLI terminal yang memadukan Git dan DVC dari inisialisasi awal hingga penyimpanan berkas di remote storage laboratorium.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4 (Konfigurasi Remote & Unggah): Konfigurasi penyimpanan server lab dan dorong dat..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1 (Inisialisasi): Inisialisasi Git dan DVC di folder proyek:\ngit init && dvc init && git commit -m \"Initialize Git and DVC\"",
+          "Langkah 2 (Pelacakan Dataset): Daftarkan folder dataset besar ke DVC:\ndvc add data/raw_rail_cracks/\n(DVC secara otomatis membuat berkas pointer data/raw_rail_cracks.dvc dan menambahkan data/raw_rail_cracks ke .gitignore)"
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Commit Git Pointer): Lacak berkas pointer di Git:\ngit add data/raw_rail_cracks.dvc .gitignore && git commit -m \"Track 12GB rail crack raw dataset via DVC pointer\"",
+          "Langkah 4 (Konfigurasi Remote & Unggah): Konfigurasi penyimpanan server lab dan dorong data biner:\ndvc remote add -d lab_server ssh://data.itera.ac.id/storage/riset_rel && dvc push",
+          "[result: Interpretasi Ilmiah] Repositori GitHub tim tetap berukuran ringan (< 5 MB) sementara data mentah 12 GB tersimpan aman dan terikat secara kriptografis dengan riwayat commit kode."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi verifikasi integritas berkas pointer DVC terhadap digest hash konten lokal.",
         "bulletPoints": [
-          "Deskripsi: Simulasi verifikasi integritas berkas pointer DVC terhadap digest hash konten lokal.",
-          "Dependensi Pustaka: hashlib",
-          "Keluaran Diharapkan: BERKAS POINTER DVC (Ukuran Ringan Dilacak Git):"
+          "Tujuan Algoritma: Simulasi verifikasi integritas berkas pointer DVC terhadap digest hash konten lokal.",
+          "Dependensi Pustaka Ilmiah: hashlib",
+          "Keluaran Terverifikasi: BERKAS POINTER DVC (Ukuran Ringan Dilacak Git):"
         ],
-        "keyFormulaOrDiagram": "BERKAS POINTER DVC (Ukuran Ringan Dilacak Git): | Path Berkas : data/rail_cracks | Tercata..."
+        "keyFormulaOrDiagram": "BERKAS POINTER DVC (Ukuran Ringan Dilacak Git):\nPath Berkas : data/rail_cracks\nTercatat MD5: f2d5bcf742964aee2d93e507b5a5bce9\nUkuran Data : 76 bytes\n-------------------------------------------------------",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 30,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menambahkan berkas biner besar langsung ke Git menggunakan \"git add\" tanpa melalui \"dvc add\" terlebih dahulu.",
-          "Perangkap: Lupa menjalankan \"dvc push\" setelah melakukan \"git push\", sehingga rekan kolaborator tidak dapat mengunduh ber...",
-          "Perangkap: Mengubah isi data mentah secara manual di folder lokal tanpa melakukan komit pointer DVC baru."
-        ]
+          "[warning: Perangkap] Menambahkan berkas biner besar langsung ke Git menggunakan \"git add\" tanpa melalui \"dvc add\" terlebih dahulu.",
+          "[warning: Perangkap] Lupa menjalankan \"dvc push\" setelah melakukan \"git push\", sehingga rekan kolaborator tidak dapat mengunduh berkas data fisik.",
+          "[warning: Perangkap] Mengubah isi data mentah secara manual di folder lokal tanpa melakukan komit pointer DVC baru."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan uji kloning di lingkungan mesin virtual bersih: jalankan \"git clone\" diikuti \"dvc pull\" dan pastikan s...",
+          "Prosedur: Lakukan uji kloning di lingkungan mesin virtual bersih: jalankan \"git clone\" diikuti \"dvc pull\" dan pastikan seluruh pipeline dapat berjalan tanpa error.",
           "Prosedur: Sertakan berkas dvc.lock di dalam repositori Git untuk mengunci versi hash seluruh artefak tahapan pipeline."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa fungsi dari berkas \"dvc.lock\" dalam sebuah repositori proyek penelitian berbasis DVC?",
-          "Petunjuk: Perhatikan pencatatan status hash input, parameter, kode, dan output dari seluruh tahapan pipeline.",
-          "Solusi Kunci: Berkas dvc.lock bertindak sebagai catatan manifes keadaan terkini dari pipeline komputasi. Berkas ini merekam nilai hash..."
-        ]
+          "Petunjuk Analitis: Perhatikan pencatatan status hash input, parameter, kode, dan output dari seluruh tahapan pipeline.",
+          "Solusi Kunci: Berkas dvc.lock bertindak sebagai catatan manifes keadaan terkini dari pipeline komputasi. Berkas ini merekam nilai hash pasti dari kode eksekusi, dependensi data input, parameter hiper, dan metrik hasil luaran. Berkas ini menjamin bahwa sistem dapat mendeteksi apakah suatu tahapan perlu dihitung ulang atau cukup diambil dari cache komputasi sebelumnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -491,9 +593,9 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     "workedExample": {
       "problemStatement": "Pada pengujian sensor getaran di Laboratorium ITERA, dihasilkan berkas \"vibration_raw_20251123.dat\". Rancang protokol 3 lapis untuk mengamankan imutabilitas berkas tersebut di sistem operasi Linux sebelum analisis data dimulai.",
       "stepByStepSolution": [
-        "Langkah 1 (Generasi Sidik Jari Kriptografis): Hitung dan catat nilai hash SHA-256 ke dalam berkas manifest manifes_checksum.sha256:\n$ sha256sum vibration_raw_20251123.dat >> CHECKSUMS.sha256",
-        "Langkah 2 (Penguncian Hak Akses Sistem Berkas): Ubah perizinan berkas menjadi read-only untuk seluruh pengguna:\n$ chmod 444 vibration_raw_20251123.dat",
-        "Langkah 3 (Pemisahan Direktori Kerja): Buat salinan kerja ke direktori data/interim/ dan jalankan script transformasi Python hanya terhadap salinan kerja tersebut:\n$ cp vibration_raw_20251123.dat ../interim/vibration_working.dat"
+        "Langkah 1 (Generasi Sidik Jari Kriptografis): Hitung dan catat nilai hash SHA-256 ke dalam berkas manifest manifes_checksum.sha256:\nsha256sum vibration_raw_20251123.dat >> CHECKSUMS.sha256",
+        "Langkah 2 (Penguncian Hak Akses Sistem Berkas): Ubah perizinan berkas menjadi read-only untuk seluruh pengguna:\nchmod 444 vibration_raw_20251123.dat",
+        "Langkah 3 (Pemisahan Direktori Kerja): Buat salinan kerja ke direktori data/interim/ dan jalankan script transformasi Python hanya terhadap salinan kerja tersebut:\ncp vibration_raw_20251123.dat ../interim/vibration_working.dat"
       ],
       "resultInterpretation": "Melalui 3 lapis proteksi ini, berkas data mentah asli terlindungi dari manipulasi sengaja maupun ketidaksengajaan klik mouse pada aplikasi GUI."
     },
@@ -534,100 +636,136 @@ export const CH14_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prinsip Penyimpanan Data Mentah Abadi (Immutable Raw Da...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prinsip Penyimpanan Data Mentah Abadi (Immutable Raw Data Storage)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.7.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.4.",
-          "Capaian: Memahami aturan baku integritas data ilmiah: Data Mentah Asli Bersifat Imutabel (Tidak Boleh Diubah).",
-          "Capaian: Merancang arsitektur penyimpanan Write-Once-Read-Many (WORM) dan sistem perizinan berkas.",
-          "Capaian: Membangun rantai transformasi reproducible yang memisahkan data mentah, data bersih, dan data fitur."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.7.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami aturan baku integritas data ilmiah: Data Mentah Asli Bersifat Imutabel (Tidak Boleh Diubah).",
+          "Capaian 2: Merancang arsitektur penyimpanan Write-Once-Read-Many (WORM) dan sistem perizinan berkas.",
+          "Capaian 3: Membangun rantai transformasi reproducible yang memisahkan data mentah, data bersih, dan data fitur."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{cleaned}} = f_{\\text{clean}}(\\mathcal{D}_{\\text{raw}}, \\mathbf{\\theta}_{\\text{calib}})$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{cleaned}} = f_{\\text{clean}}(\\mathcal{D}_{\\text{raw}}, \\mathbf{\\theta}_{\\text{calib}})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.7.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prinsip Penyimpanan Data Mentah Abadi (Immutable Raw Da...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prinsip Penyimpanan Data Mentah Abadi (Immutable Raw Data Storage)",
+        "lead": "Prinsip paling fundamental dari seluruh manajemen data penelitian ilmiah adalah: DATA MENTAH ADALAH ENKRIPSI REALITAS EMPIRIS YANG BERSIFAT ABADI DAN IMUTABEL (IMMUTABLE).",
         "bulletPoints": [
-          "Prinsip paling fundamental dari seluruh manajemen data penelitian ilmiah adalah: DATA MENTAH ADALAH ENKRIPSI REALITAS EMPIRIS...",
-          "Kesalahan fatal yang sering dilakukan mahasiswa pemula adalah membuka berkas CSV hasil pengukuran sensor di aplikasi pengolah...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Data mentah (*raw data*) yang dihasilkan langsung dari instrumen laboratorium, sensor telemetri, atau kamera observasi TIDAK PERNAH BOLEH DIUBAH, diedit, dinormalisasi, atau ditimpa (*overwritten*) secara langsung dengan alasan apa pun.",
+          "Kesalahan fatal yang sering dilakukan mahasiswa pemula adalah membuka berkas CSV hasil pengukuran sensor di aplikasi pengolah lembar kerja (Excel), lalu secara manual menghapus baris-baris data yang tampak aneh atau mengoreksi angka desimal yang salah format, kemudian menyimpannya kembali menimpa berkas lama (*destructive editing*).",
+          "Praktik ini menghancurkan jejak audit ilmiah (*audit trail*) dan membatalkan keabsahan data eksperimen secara permanen."
         ],
-        "keyFormulaOrDiagram": "Arsitektur penyimpanan data ilmiah yang benar menerapkan aturan Write-Once-Read-Many (WORM..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Arsitektur penyimpanan data ilmiah yang benar menerapkan aturan Write-Once-Read-Many (WORM): 1.",
         "bulletPoints": [
-          "Arsitektur penyimpanan data ilmiah yang benar menerapkan aturan Write-Once-Read-Many (WORM): 1. Salinan Master Data Mentah (R...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Salinan Master Data Mentah (Raw Master): Disimpan di folder khusus dengan hak akses *read-only* (hanya baca).",
+          "Segera setelah data terkumpul, dihitung nilai checksum kriptografis SHA-256 dan berkas dikunci secara permanen."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Aliran Data Fungsional Murni (*Pure Functional Data Pipeline*):",
         "bulletPoints": [
-          "Model Aliran Data Fungsional Murni (*Pure Functional Data Pipeline*):",
-          "Diberikan dataset mentah imutabel $\\mathcal{D}_{\\text{raw}}$. Seluruh tahapan pembersihan dan transformasi dim...",
-          "Properti Imutabilitas dan Ketertransparanan:"
+          "Diberikan dataset mentah imutabel $\\mathcal{D}_{\\text{raw}}$. Seluruh tahapan pembersihan dan transformasi dimodelkan sebagai fungsi deterministik:",
+          "Properti Imutabilitas dan Ketertransparanan:",
+          "Integritas rantai audit terbukti jika dan hanya jika:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{cleaned}} = f_{\\text{clean}}(\\mathcal{D}_{\\text{raw}}, \\mathbf{\\theta}_{\\text{calib}})$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{D}_{\\text{cleaned}} = f_{\\text{clean}}(\\mathcal{D}_{\\text{raw}}, \\mathbf{\\theta}_{\\text{calib}})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian sensor getaran di Laboratorium ITERA, dihasilkan berkas \"vibration_raw_20251123.dat\". Rancang protokol 3 lapis untuk mengaman...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1 (Generasi Sidik Jari Kriptografis): Hitung dan catat nilai hash SHA-256 ke dalam berkas manifest man...",
-          "Langkah 2 (Penguncian Hak Akses Sistem Berkas): Ubah perizinan berkas menjadi read-only untuk seluruh pengguna...",
-          "Langkah 3 (Pemisahan Direktori Kerja): Buat salinan kerja ke direktori data/interim/ dan jalankan script trans...",
-          "Interpretasi: Melalui 3 lapis proteksi ini, berkas data mentah asli terlindungi dari manipulasi sengaja maupun ketidaksengajaan klik m..."
+          "Konteks Kasus: Pada pengujian sensor getaran di Laboratorium ITERA, dihasilkan berkas \"vibration_raw_20251123.dat\". Rancang protokol 3 lapis untuk mengamankan imutabilitas berkas tersebut di sistem operasi Linux sebelum analisis data dimulai.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3 (Pemisahan Direktori Kerja): Buat salinan kerja ke direktori data/interim/ dan j..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1 (Generasi Sidik Jari Kriptografis): Hitung dan catat nilai hash SHA-256 ke dalam berkas manifest manifes_checksum.sha256:\nsha256sum vibration_raw_20251123.dat >> CHECKSUMS.sha256",
+          "Langkah 2 (Penguncian Hak Akses Sistem Berkas): Ubah perizinan berkas menjadi read-only untuk seluruh pengguna:\nchmod 444 vibration_raw_20251123.dat"
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Pemisahan Direktori Kerja): Buat salinan kerja ke direktori data/interim/ dan jalankan script transformasi Python hanya terhadap salinan kerja tersebut:\ncp vibration_raw_20251123.dat ../interim/vibration_working.dat",
+          "[result: Interpretasi Ilmiah] Melalui 3 lapis proteksi ini, berkas data mentah asli terlindungi dari manipulasi sengaja maupun ketidaksengajaan klik mouse pada aplikasi GUI."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Skrip audit integritas imutabilitas direktori data mentah berbasis pengecekan berkas checksum SHA-256.",
         "bulletPoints": [
-          "Deskripsi: Skrip audit integritas imutabilitas direktori data mentah berbasis pengecekan berkas checksum SHA-256.",
-          "Dependensi Pustaka: hashlib, os",
-          "Keluaran Diharapkan: Hash Master Terkunci : a73489fe207c469b82142d765fe65825bc5cb47be99fa14e7a858ea6e86488eb"
+          "Tujuan Algoritma: Skrip audit integritas imutabilitas direktori data mentah berbasis pengecekan berkas checksum SHA-256.",
+          "Dependensi Pustaka Ilmiah: hashlib, os",
+          "Keluaran Terverifikasi: Hash Master Terkunci : a73489fe207c469b82142d765fe65825bc5cb47be99fa14e7a858ea6e86488eb"
         ],
-        "keyFormulaOrDiagram": "Hash Master Terkunci : a73489fe207c469b82142d765fe65825bc5cb47be99fa14e7a858ea6e86488eb |..."
+        "keyFormulaOrDiagram": "Hash Master Terkunci : a73489fe207c469b82142d765fe65825bc5cb47be99fa14e7a858ea6e86488eb\nHash Audit Terkini   : a73489fe207c469b82142d765fe65825bc5cb47be99fa14e7a858ea6e86488eb\nStatus Integritas    : UTUH DAN IMUTABEL (Lolos)\n\nSimulasi Modifikasi Data Mentah:",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyunting berkas data mentah secara manual di editor teks tanpa meninggalkan jejak skrip audit transformasi.",
-          "Perangkap: Menyimpan hanya berkas data yang telah dinormalisasi atau difilter, sehingga data mentah asli hilang selamanya...",
-          "Perangkap: Menimpa berkas lama dengan nama yang sama setiap kali eksperimen diulang."
-        ]
+          "[warning: Perangkap] Menyunting berkas data mentah secara manual di editor teks tanpa meninggalkan jejak skrip audit transformasi.",
+          "[warning: Perangkap] Menyimpan hanya berkas data yang telah dinormalisasi atau difilter, sehingga data mentah asli hilang selamanya.",
+          "[warning: Perangkap] Menimpa berkas lama dengan nama yang sama setiap kali eksperimen diulang."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Jalankan pipeline audit checksum SHA-256 otomatis pada sistem Continuous Integration (CI) sebelum skrip pemode...",
-          "Prosedur: Pastikan seluruh transformasi data dari mentah ke bersih tertulis secara eksplisit dalam skrip Python/R yang d..."
-        ]
+          "Prosedur: Jalankan pipeline audit checksum SHA-256 otomatis pada sistem Continuous Integration (CI) sebelum skrip pemodelan dijalankan.",
+          "Prosedur: Pastikan seluruh transformasi data dari mentah ke bersih tertulis secara eksplisit dalam skrip Python/R yang dapat dijalankan ulang dari baris perintah (*single command execution*)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa penghapusan pencilan (outliers) dilarang keras dilakukan langsung di dalam berkas data mentah asli?",
-          "Petunjuk: Perhatikan apakah pencilan tersebut mungkin di masa depan diidentifikasi sebagai fenomena fisika bar...",
-          "Solusi Kunci: Apa yang saat ini dianggap sebagai pencilan (outlier) oleh seorang peneliti mungkin di masa depan terbukti sebagai fenom..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah pencilan tersebut mungkin di masa depan diidentifikasi sebagai fenomena fisika baru yang sah.",
+          "Solusi Kunci: Apa yang saat ini dianggap sebagai pencilan (outlier) oleh seorang peneliti mungkin di masa depan terbukti sebagai fenomena fisika baru yang nyata atau indikasi awal keruntuhan material sistem. Menghapus data mentah asli memusnahkan bukti empiris selamanya. Penghapusan pencilan hanya boleh dilakukan di memori pemrosesan atau disimpan di berkas turunan sekunder dengan justifikasi ilmiah tertulis."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

@@ -62,100 +62,137 @@ export const CH23_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prinsip Perseptual Visualisasi Data: Akurasi Dekoding V...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prinsip Perseptual Visualisasi Data: Akurasi Dekoding Visual dan Hirarki Grafik",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.8.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.1.",
-          "Capaian: Menerapkan hierarki tugas perseptual dasar Cleveland-McGill dalam perancangan grafik saintifik.",
-          "Capaian: Menghitung dan mengoptimalkan Rasio Data-Tinta (Data-Ink Ratio) Edward Tufte.",
-          "Capaian: Mencegah distorsi visual melalui pengendalian Lie Factor pada figur publikasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan hierarki tugas perseptual dasar Cleveland-McGill dalam perancangan grafik saintifik.",
+          "Capaian 2: Menghitung dan mengoptimalkan Rasio Data-Tinta (Data-Ink Ratio) Edward Tufte.",
+          "Capaian 3: Mencegah distorsi visual melalui pengendalian Lie Factor pada figur publikasi."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Data-Ink Ratio} = \\frac{\\text{Tinta data (data-ink)}}{\\text{Total tinta grafik (total ink)}} = 1.0 - \\text{Proporsi chartjunk}$$"
+        "keyFormulaOrDiagram": "$$\\text{Data-Ink Ratio} = \\frac{\\text{Tinta data (data-ink)}}{\\text{Total tinta grafik (total ink)}} = 1.0 - \\text{Proporsi chartjunk}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.8.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prinsip Perseptual Visualisasi Data: Akurasi Dekoding V...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prinsip Perseptual Visualisasi Data: Akurasi Dekoding Visual dan Hirarki Grafik",
+        "lead": "Visualisasi data ilmiah bukanlah sekadar seni mempercantik tampilan, melainkan cabang ilmu kognitif terapan yang bertujuan mentransfer informasi kuantitatif dari grafik ke pikiran pembaca dengan distorsi minimum.",
         "bulletPoints": [
-          "Visualisasi data ilmiah bukanlah sekadar seni mempercantik tampilan, melainkan cabang ilmu kognitif terapan yang bertujuan me...",
-          "Dalam studi empiris legendaris mereka, William S. Cleveland dan Robert McGill (1984) menetapkan Hierarki Tugas Perseptual Das...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Efektivitas sebuah grafik ditentukan oleh seberapa akurat sistem persepsi visual manusia dapat memecahkan kode (decode) informasi geometris yang disajikan.",
+          "Dalam studi empiris legendaris mereka, William S.",
+          "Cleveland dan Robert McGill (1984) menetapkan Hierarki Tugas Perseptual Dasar (Elementary Perceptual Tasks) berdasarkan tingkat akurasi decoding kognitif manusia."
         ],
-        "keyFormulaOrDiagram": "Dari hierarki ini, komunitas sains menyimpulkan prinsip fundamental: jika data mengandung..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dari hierarki ini, komunitas sains menyimpulkan prinsip fundamental: jika data mengandung perbedaan kuantitatif presisi, representasikan variabel tersebut menggunakan posisi pada skala umum.",
         "bulletPoints": [
-          "Dari hierarki ini, komunitas sains menyimpulkan prinsip fundamental: jika data mengandung perbedaan kuantitatif presisi, repr...",
-          "Prinsip ini diperkuat oleh filosofi desain Edward Tufte mengenai Rasio Data-Tinta (Data-Ink Ratio). Tufte menegaskan bahwa se...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Hindari representasi kuantitatif presisi menggunakan sudut (pie chart) atau volume 3D, karena mata manusia secara sistematis meremehkan luas dan volume non-linier.",
+          "Prinsip ini diperkuat oleh filosofi desain Edward Tufte mengenai Rasio Data-Tinta (Data-Ink Ratio).",
+          "Tufte menegaskan bahwa sebagian besar \"tinta\" (atau piksel) pada grafik harus didedikasikan untuk menampilkan variasi data substantif."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Rasio Data-Tinta (Data-Ink Ratio) Edward Tufte:",
         "bulletPoints": [
-          "1. Formulasi Rasio Data-Tinta (Data-Ink Ratio) Edward Tufte:",
-          "Grafik saintifik berkualitas tinggi mengoptimalkan rasio ini mendekati 1.0 dengan menghapus elemen non-data ya...",
-          "2. Lie Factor (Faktor Kebohongan Grafik):"
+          "Grafik saintifik berkualitas tinggi mengoptimalkan rasio ini mendekati 1.0 dengan menghapus elemen non-data yang redundan tanpa mengorbankan kejelasan konteks.",
+          "2. Lie Factor (Faktor Kebohongan Grafik):",
+          "di mana:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Data-Ink Ratio} = \\frac{\\text{Tinta data (data-ink)}}{\\text{Total tinta grafik (total ink)}} = 1.0 - \\text{Proporsi chartjunk}$$"
+        "keyFormulaOrDiagram": "$$\\text{Data-Ink Ratio} = \\frac{\\text{Tinta data (data-ink)}}{\\text{Total tinta grafik (total ink)}} = 1.0 - \\text{Proporsi chartjunk}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah artikel media membandingkan efisiensi algoritma A (nilai = 20) dan algoritma B (nilai = 40). Grafik digambarkan sebagai lingkaran den...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah artikel media membandingkan efisiensi algoritma A (nilai = 20) dan algoritma B (nilai = 40). Grafik digambarkan sebagai lingkaran dengan radius algoritma B dibuat dua kali lebih panjang dari radius algoritma A (r_B = 2 * r_A). Hitung efek pada data, efek pada luas grafik, dan tentukan nilai Lie Factor grafik tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung efek data sejati: Efek Data = |40 - 20| / 20 = 20 / 20 = 1.00 (peningkatan 100%).",
-          "Langkah 2: Hitung efek luas grafik: Luas lingkaran berbanding lurus dengan r^2. Luas A = pi * r^2. Luas B = pi...",
-          "Langkah 3: Hitung Lie Factor: Lie Factor = Efek Grafik / Efek Data = 3.00 / 1.00 = 3.00.",
-          "Interpretasi: Grafik memiliki Lie Factor = 3.00. Visualisasi lingkaran tersebut membesar-besarkan perbedaan performa sebesar 300% dari..."
+          "Langkah 1: Hitung efek data sejati:\nEfek Data = |40 - 20| / 20 = 20 / 20 = 1.00 (peningkatan 100%).",
+          "Langkah 2: Hitung efek luas grafik:\nLuas lingkaran berbanding lurus dengan r^2.\nLuas A = pi * r^2.\nLuas B = pi * (2r)^2 = 4 * pi * r^2.\nEfek Grafik = |4 * pi * r^2 - pi * r^2| / (pi * r^2) = 3.00 (peningkatan 300%)."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung Lie Factor: Lie Factor = Efek Grafik / Efek Data = 3.00 / 1.00 = 3.00."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Audit visualisasi: Perhitungan Lie Factor dan implementasi grafik dot-plot Cleveland dengan rasio data-tinta tinggi.",
-          "Dependensi Pustaka: numpy, matplotlib",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Audit Integritas Persepsi Visual"
+          "Langkah 3: Hitung Lie Factor:\nLie Factor = Efek Grafik / Efek Data = 3.00 / 1.00 = 3.00.",
+          "[result: Interpretasi Ilmiah] Grafik memiliki Lie Factor = 3.00. Visualisasi lingkaran tersebut membesar-besarkan perbedaan performa sebesar 300% dari kenyataan data sebenarnya, melanggar etika integritas visualisasi ilmiah."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Integritas Persepsi Visual | Efek Data Sejati : 100.0% | E..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit visualisasi: Perhitungan Lie Factor dan implementasi grafik dot-plot Cleveland dengan rasio data-tinta tinggi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan diagram lingkaran (pie chart) untuk membandingkan lebih dari 3 kategori dengan selisih proporsi ha...",
-          "Perangkap: Menambahkan efek 3D semu pada diagram batang yang mengaburkan titik baca skala vertikal.",
-          "Perangkap: Memotong sumbu Y (truncated axis) pada diagram batang tanpa peringatan eksplisit, sehingga melipatgandakan efe..."
-        ]
+          "Tujuan Algoritma: Audit visualisasi: Perhitungan Lie Factor dan implementasi grafik dot-plot Cleveland dengan rasio data-tinta tinggi.",
+          "Dependensi Pustaka Ilmiah: numpy, matplotlib",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Audit Integritas Persepsi Visual"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Integritas Persepsi Visual\nEfek Data Sejati        : 100.0%\nEfek Grafik Skala Area  : 300.0% (Lie Factor: 3.00)\nEfek Grafik Skala Posisi: 100.0% (Lie Factor: 1.00)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Menggunakan diagram lingkaran (pie chart) untuk membandingkan lebih dari 3 kategori dengan selisih proporsi halus.",
+          "[warning: Perangkap] Menambahkan efek 3D semu pada diagram batang yang mengaburkan titik baca skala vertikal.",
+          "[warning: Perangkap] Memotong sumbu Y (truncated axis) pada diagram batang tanpa peringatan eksplisit, sehingga melipatgandakan efek visual secara manipulatif."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan posisi pada skala umum sebagai pilihan primer untuk membandingkan kuantitas presisi.",
           "Prosedur: Pastikan sumbu Y pada diagram batang dimulai tepat dari nol.",
           "Prosedur: Hapus grid tebal, latar belakang gelap, dan batas kotak tebal untuk memaksimalkan rasio data-tinta."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Menurut hierarki tugas perseptual dasar Cleveland-McGill, mekanisme visual manakah yang paling akurat dipecahkan kodenya...",
-          "Petunjuk: Perhatikan akurasi membaca posisi titik sepanjang sumbu koordinat umum.",
-          "Solusi Kunci: Eksperimen kognitif Cleveland-McGill membuktikan bahwa decoding posisi pada skala umum memiliki tingkat galat terkecil d..."
-        ]
+          "Pertanyaan Uji: Menurut hierarki tugas perseptual dasar Cleveland-McGill, mekanisme visual manakah yang paling akurat dipecahkan kodenya oleh sistem persepsi manusia?",
+          "Petunjuk Analitis: Perhatikan akurasi membaca posisi titik sepanjang sumbu koordinat umum.",
+          "Solusi Kunci: Eksperimen kognitif Cleveland-McGill membuktikan bahwa decoding posisi pada skala umum memiliki tingkat galat terkecil dibandingkan panjang, sudut, luas, atau saturasi warna."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -219,101 +256,137 @@ export const CH23_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Visualisasi Distribusi Lanjutan: Raincloud Plots, Violi...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Visualisasi Distribusi Lanjutan: Raincloud Plots, Violin Plots, dan Strip Plots",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.8.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.2.",
-          "Capaian: Mengidentifikasi bahaya penyembunyian pola data oleh dynamite plots (bar chart mean + SE).",
-          "Capaian: Mengkonstruksi arsitektur Raincloud Plot yang mengintegrasikan raw data, boxplot, dan KDE.",
-          "Capaian: Menggunakan violin plot dan strip plot untuk mendeteksi multimodalitas dan kecondongan data."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi bahaya penyembunyian pola data oleh dynamite plots (bar chart mean + SE).",
+          "Capaian 2: Mengkonstruksi arsitektur Raincloud Plot yang mengintegrasikan raw data, boxplot, dan KDE.",
+          "Capaian 3: Menggunakan violin plot dan strip plot untuk mendeteksi multimodalitas dan kecondongan data."
         ],
-        "keyFormulaOrDiagram": "$$\\hat{f}_h(x) = \\frac{1}{n h} \\sum_{i=1}^n K\\left( \\frac{x - X_i}{h} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\hat{f}_h(x) = \\frac{1}{n h} \\sum_{i=1}^n K\\left( \\frac{x - X_i}{h} \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.8.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Visualisasi Distribusi Lanjutan: Raincloud Plots, Violi...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Visualisasi Distribusi Lanjutan: Raincloud Plots, Violin Plots, dan Strip Plots",
+        "lead": "Selama beberapa dekade, literatur rekayasa dan biomedis didominasi oleh \"Dynamite Plots\", yaitu diagram batang yang mewakili nilai rata-rata sampel dengan garis bilah error (SE atau SD) di puncaknya.",
         "bulletPoints": [
-          "Selama beberapa dekade, literatur rekayasa dan biomedis didominasi oleh \"Dynamite Plots\", yaitu diagram batang yang mewakili...",
-          "Dynamite plots menyembunyikan hampir seluruh informasi penting mengenai distribusi data: 1. Dua dataset dengan distribusi yan...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Gerakan reformasi visualisasi data internasional (seperti inisiatif Kick the Bar Chart) telah membuktikan bahwa dynamite plots adalah salah satu visualisasi paling destruktif dalam sains.",
+          "Dynamite plots menyembunyikan hampir seluruh informasi penting mengenai distribusi data: 1.",
+          "Dua dataset dengan distribusi yang sangat berbeda (misalnya satu kelompok terdistribusi Gaussian simetris dan kelompok lain bimodal terbelah dua) dapat menghasilkan diagram batang mean dan SE yang identik persis."
         ],
-        "keyFormulaOrDiagram": "Sebagai pengganti dynamite plots, metodologi visualisasi modern merekomendasikan hierarki..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Sebagai pengganti dynamite plots, metodologi visualisasi modern merekomendasikan hierarki grafik informatif: - Strip Plot / Jitter Plot: Menampilkan setiap titik data individual secara transparan dengan sedikit jitter acak horizontal untuk mencegah tumpang tindih (overplotting). - Violin Plot: Menggabungkan konsep boxplot dengan Kernel Density Estimation (KDE) yang dipantulkan simetris untuk memperlihatkan kontur kepadatan probabilitas kontinu. - Raincloud Plot (Allen et al., 2019): Merupakan standar emas visualisasi distribusi.",
         "bulletPoints": [
-          "Sebagai pengganti dynamite plots, metodologi visualisasi modern merekomendasikan hierarki grafik informatif: - Strip Plot / J...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Plot ini menyusun tiga lapisan secara harmonis: awan (setengah violin KDE halus di atas), payung (boxplot kompak di tengah), dan tetesan hujan (strip plot titik data mentah ber-jitter di bawah).",
+          "Pembaca disajikan data mentah, statistik ringkasan kuartil, dan kurva kepadatan dalam satu tatapan visual."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Kernel Density Estimation (KDE) pada Violin Plot:",
         "bulletPoints": [
-          "1. Kernel Density Estimation (KDE) pada Violin Plot:",
           "Estimasi fungsi kepadatan probabilitas $\\hat{f}_h(x)$ dari sampel $\\{X_1, \\dots, X_n\\}$:",
-          "di mana $K(u)$ adalah fungsi kernel Gaussian:"
+          "di mana $K(u)$ adalah fungsi kernel Gaussian:",
+          "dan $h$ adalah bandwidth penghalusan (Silverman rule-of-thumb):"
         ],
-        "keyFormulaOrDiagram": "$$\\hat{f}_h(x) = \\frac{1}{n h} \\sum_{i=1}^n K\\left( \\frac{x - X_i}{h} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\hat{f}_h(x) = \\frac{1}{n h} \\sum_{i=1}^n K\\left( \\frac{x - X_i}{h} \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua kelompok pengujian sensor jaringan (n = 20 per kelompok) memiliki rata-rata identik bar{X} = 50.0 ms dan standar deviasi identik s = 10....",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Tinjau representasi Dynamite Plot: Kedua kelompok digambarkan dengan tinggi batang 50.0 ms dan bila...",
-          "Langkah 2: Tinjau lapisan Kepadatan (KDE Cloud) Raincloud Plot: - Kelompok 1: Menampilkan satu puncak halus te...",
-          "Langkah 3: Tinjau lapisan Titik Data Mentah (Rain Drops): - Kelompok 1: Titik-titik mengumpul padat di sekitar...",
-          "Interpretasi: Raincloud plot segera membongkar realitas bahwa Kelompok 2 dikendalikan oleh dua rezim operasional yang berbeda, mencega..."
+          "Konteks Kasus: Dua kelompok pengujian sensor jaringan (n = 20 per kelompok) memiliki rata-rata identik bar{X} = 50.0 ms dan standar deviasi identik s = 10.0 ms. Namun Kelompok 1 terdistribusi normal unimodal, sedangkan Kelompok 2 merupakan campuran bimodal dua sub-proses (sub-proses A di sekitar 40 ms dan sub-proses B di sekitar 60 ms). Jelaskan mengapa dynamite plot gagal membedakannya dan bagaimana Raincloud plot mengungkap realitas fisik ini.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Tinjau lapisan Titik Data Mentah (Rain Drops): - Kelompok 1: Titik-titik mengum..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Tinjau representasi Dynamite Plot:\nKedua kelompok digambarkan dengan tinggi batang 50.0 ms dan bilah error s / sqrt(20) = 2.24 ms.\nBagi pembaca, kedua kelompok tampak berperilaku identik sempurna.",
+          "Langkah 2: Tinjau lapisan Kepadatan (KDE Cloud) Raincloud Plot:\n- Kelompok 1: Menampilkan satu puncak halus terpusat di 50.0 ms (unimodal Gaussian).\n- Kelompok 2: Menampilkan kurva berbentuk pelana dengan dua puncak jelas di 40 ms dan 60 ms serta lembah kosong di 50 ms."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Tinjau lapisan Titik Data Mentah (Rain Drops):\n- Kelompok 1: Titik-titik mengumpul padat di sekitar 50 ms.\n- Kelompok 2: Titik-titik terbelah ke dalam dua klaster terpisah; hampir tidak ada observasi di angka 50 ms.",
+          "[result: Interpretasi Ilmiah] Raincloud plot segera membongkar realitas bahwa Kelompok 2 dikendalikan oleh dua rezim operasional yang berbeda, mencegah kesimpulan keliru bahwa performa kedua sistem adalah ekuivalen."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Generasi data sintetis bimodal vs unimodal dan demonstrasi komputasi ringkasan distribusi.",
         "bulletPoints": [
-          "Deskripsi: Generasi data sintetis bimodal vs unimodal dan demonstrasi komputasi ringkasan distribusi.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Perbandingan Statistik Ringkasan vs Karakteristik Distribusi"
+          "Tujuan Algoritma: Generasi data sintetis bimodal vs unimodal dan demonstrasi komputasi ringkasan distribusi.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Perbandingan Statistik Ringkasan vs Karakteristik Distribusi"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Statistik Ringkasan vs Karakteristik Distribusi | M..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Statistik Ringkasan vs Karakteristik Distribusi\nMetrik              Kelompok 1 (Unimodal)    Kelompok 2 (Bimodal)     \n----------------------------------------------------------------------\nMean                48.96                    50.05                    \nStd Dev             9.79                     10.37                    ",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Tetap menerbitkan diagram batang untuk data kontinu kontinu non-cacah semata-mata karena kebiasaan lama.",
-          "Perangkap: Menggunakan bandwidth KDE yang terlalu kecil (overfitting noisy bumps) atau terlalu besar (menghilangkan punca...",
-          "Perangkap: Menampilkan violin plot pada sampel sangat kecil (n < 10) di mana estimasi fungsi densitas KDE tidak dapat dia..."
-        ]
+          "[warning: Perangkap] Tetap menerbitkan diagram batang untuk data kontinu kontinu non-cacah semata-mata karena kebiasaan lama.",
+          "[warning: Perangkap] Menggunakan bandwidth KDE yang terlalu kecil (overfitting noisy bumps) atau terlalu besar (menghilangkan puncak bimodal sejati).",
+          "[warning: Perangkap] Menampilkan violin plot pada sampel sangat kecil (n < 10) di mana estimasi fungsi densitas KDE tidak dapat diandalkan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gantikan seluruh dynamite plot dengan violin plot, boxplot, atau raincloud plot.",
           "Prosedur: Sertakan selalu titik data mentah (raw jittered points) ketika n < 100 per kelompok.",
           "Prosedur: Pastikan label sumbu dan skala numerik mencakup seluruh rentang variabilitas teramati."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Tiga komponen utama apakah yang menyusun struktur Raincloud Plot standar publikasi ilmiah?",
-          "Petunjuk: Kombinasi kurva kepadatan halus, ringkasan kuartil, dan titik data empiris.",
-          "Solusi Kunci: Raincloud Plot menggabungkan kurva kepadatan probabilitas kontinu (half-violin KDE), ringkasan kuartil boxplot, dan seba..."
-        ]
+          "Petunjuk Analitis: Kombinasi kurva kepadatan halus, ringkasan kuartil, dan titik data empiris.",
+          "Solusi Kunci: Raincloud Plot menggabungkan kurva kepadatan probabilitas kontinu (half-violin KDE), ringkasan kuartil boxplot, dan sebaran titik data mentah (jittered raw points)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -377,101 +450,141 @@ export const CH23_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Visualisasi Ketidakpastian: Bilah Error (SD vs SE vs CI...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Visualisasi Ketidakpastian: Bilah Error (SD vs SE vs CI) dan Pita Kepercayaan",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.8.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.3.",
-          "Capaian: Membedakan fungsi konseptual Standar Deviasi (SD), Standar Error (SE), dan Interval Kepercayaan (CI) pada bila...",
-          "Capaian: Menguasai aturan heuristik inferensi visual mengenai tumpang tindih (overlap) bilah error.",
-          "Capaian: Membangun pita kepercayaan (confidence bands) dan pita prediksi (prediction bands) pada model regresi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan fungsi konseptual Standar Deviasi (SD), Standar Error (SE), dan Interval Kepercayaan (CI) pada bilah error.",
+          "Capaian 2: Menguasai aturan heuristik inferensi visual mengenai tumpang tindih (overlap) bilah error.",
+          "Capaian 3: Membangun pita kepercayaan (confidence bands) dan pita prediksi (prediction bands) pada model regresi."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Panjang } \\text{SD} = s$$"
+        "keyFormulaOrDiagram": "$$\\text{Panjang } \\text{SD} = s$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.8.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Visualisasi Ketidakpastian: Bilah Error (SD vs SE vs CI...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Visualisasi Ketidakpastian: Bilah Error (SD vs SE vs CI) dan Pita Kepercayaan",
+        "lead": "Salah satu kelalaian paling sering dalam publikasi ilmiah adalah menyajikan bilah error (error bars) tanpa mendefinisikan secara eksplisit apa yang diwakili oleh bilah tersebut pada keterangan gambar (caption).",
         "bulletPoints": [
-          "Salah satu kelalaian paling sering dalam publikasi ilmiah adalah menyajikan bilah error (error bars) tanpa mendefinisikan sec...",
-          "1. Standar Deviasi (SD): Mengukur variabilitas deskriptif di antara subjek dalam sampel. SD mencerminkan seberapa tersebar da...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Pembaca sering dibiarkan menebak apakah bilah error tersebut menunjukkan Standar Deviasi (SD), Standar Error dari Rata-rata (SE), atau Interval Kepercayaan 95% (95% CI).",
+          "Ketiga metrik ini memiliki makna ilmiah dan besaran numerik yang sangat berbeda:",
+          "1.",
+          "Standar Deviasi (SD): Mengukur variabilitas deskriptif di antara subjek dalam sampel."
         ],
-        "keyFormulaOrDiagram": "Ketidaktahuan mengenai perbedaan ini memicu kesalahan fatal dalam inferensi visual (eyebal..."
+        "keyFormulaOrDiagram": "$p < 0.05$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Ketidaktahuan mengenai perbedaan ini memicu kesalahan fatal dalam inferensi visual (eyeball inferencing).",
         "bulletPoints": [
-          "Ketidaktahuan mengenai perbedaan ini memicu kesalahan fatal dalam inferensi visual (eyeball inferencing). Banyak peneliti ber...",
-          "Pada grafik kurva model atau regresi, ketidakpastian harus divisualisasikan menggunakan pita berbayang (shaded bands). Pita K...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Banyak peneliti berasumsi bahwa jika bilah error dari dua kelompok tidak saling bertumpukan (non-overlapping), maka perbedaannya otomatis signifikan secara statistik ($p < 0.05$).",
+          "Aturan ini hanya benar untuk jenis bilah tertentu: - Jika bilah error adalah $\\pm 1 \\text{ SE}$: Dua kelompok yang bilah SE-nya bersentuhan ujung ke ujung (gap = 0) sebenarnya memiliki selisih sekitar $2 \\times \\text{SE}$, yang berkorespondensi dengan nilai $p \\approx 0.05$.",
+          "Pada grafik kurva model atau regresi, ketidakpastian harus divisualisasikan menggunakan pita berbayang (shaded bands).",
+          "Pita Kepercayaan (Confidence Band) mengukur ketidakpastian posisi garis fungsi rata-rata sejati, sedangkan Pita Prediksi (Prediction Band) mengukur rentang variasi titik pengamatan baru individu."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Rasio Numerik Bilah Error untuk Sampel Berukuran $n$:",
         "bulletPoints": [
-          "1. Rasio Numerik Bilah Error untuk Sampel Berukuran $n$:",
           "Rasio perbandingan:",
-          "2. Heuristik Matematika Tumpang Tindih 95% CI Dua Sampel Independen:"
+          "2. Heuristik Matematika Tumpang Tindih 95% CI Dua Sampel Independen:",
+          "Misalkan dua kelompok memiliki varians sama $\\sigma_1 = \\sigma_2 = s$ dan ukuran sampel sama $n_1 = n_2 = n$."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Panjang } \\text{SD} = s$$"
+        "keyFormulaOrDiagram": "$$\\text{Panjang } \\text{SD} = s$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua kelompok pengujian material (n = 36 per kelompok) memiliki rata-rata bar{X}_1 = 100 MPa dan bar{X}_2 = 105 MPa dengan standar deviasi id...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung panjang bilah untuk tiap kelompok (n = 36): - SD = 12.0 MPa. - SE = s / sqrt(n) = 12.0 / 6 =...",
-          "Langkah 2: Tentukan rentang interval untuk kedua kelompok: - Rentang SE Kelompok 1: [98.0, 102.0]; Kelompok 2:...",
-          "Langkah 3: Hitung uji t independen dua sampel: SE_diff = sqrt(2.0^2 + 2.0^2) = sqrt(8.0) = 2.828 MPa. t = (105...",
-          "Interpretasi: Bilah SE tampak tidak bertumpukan, namun pengujian formal menghasilkan p = 0.081 (tidak signifikan pada alpha = 0.05). K..."
+          "Konteks Kasus: Dua kelompok pengujian material (n = 36 per kelompok) memiliki rata-rata bar{X}_1 = 100 MPa dan bar{X}_2 = 105 MPa dengan standar deviasi identik s = 12 MPa. Hitung panjang bilah SD, SE, dan 95% CI untuk masing-masing kelompok. Tentukan apakah bilah SE dan bilah CI saling tumpang tindih, lalu verifikasi nilai p-value uji t dua sampel.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung uji t independen dua sampel: SE_diff = sqrt(2.0^2 + 2.0^2) = sqrt(8.0) =..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung panjang bilah untuk tiap kelompok (n = 36):\n- SD = 12.0 MPa.\n- SE = s / sqrt(n) = 12.0 / 6 = 2.0 MPa.\n- Margin of Error 95% CI = 1.96 * SE = 1.96 * 2.0 = 3.92 MPa.",
+          "Langkah 2: Tentukan rentang interval untuk kedua kelompok:\n- Rentang SE Kelompok 1: [98.0, 102.0]; Kelompok 2: [103.0, 107.0].\nBilah SE tidak tumpang tindih (ada celah sebesar 1.0 MPa di antara 102.0 dan 103.0).\n- Rentang 95% CI Kelompok 1: [96.08, 103.92]; Kelompok 2: [101.08, 108.92].\nBilah 95% CI saling tumpang tindih di antara 101.08 hingga 103.92 MPa (tumpang tindih sebesar 2.84 MPa)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung uji t independen dua sampel:\nSE_diff = sqrt(2.0^2 + 2.0^2) = sqrt(8.0) = 2.828 MPa.\nt = (105 - 100) / 2.828 = 5.0 / 2.828 = 1.768.\nDerajat kebebasan df = 36 + 36 - 2 = 70.\nNilai p-value dua arah = 0.0814.",
+          "[result: Interpretasi Ilmiah] Bilah SE tampak tidak bertumpukan, namun pengujian formal menghasilkan p = 0.081 (tidak signifikan pada alpha = 0.05). Kasus ini membuktikan bahaya menyimpulkan signifikansi hanya karena bilah SE tidak saling bersentuhan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit visualisasi ketidakpastian: Komputasi metrik bilah error dan evaluasi tumpang tindih matematis.",
         "bulletPoints": [
-          "Deskripsi: Audit visualisasi ketidakpastian: Komputasi metrik bilah error dan evaluasi tumpang tindih matematis.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Presisi Bilah Error"
+          "Tujuan Algoritma: Audit visualisasi ketidakpastian: Komputasi metrik bilah error dan evaluasi tumpang tindih matematis.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Presisi Bilah Error"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Presisi Bilah Error | Kelompok 1 Mean: 100.0 | SE: [ 98..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Presisi Bilah Error\nKelompok 1 Mean: 100.0 | SE: [ 98.0, 102.0 ] | 95% CI: [ 95.94, 104.06 ]\nKelompok 2 Mean: 105.0 | SE: [ 103.0, 107.0 ] | 95% CI: [ 100.94, 109.06 ]\nTumpang tindih SE    : Tidak tumpang tindih (Celah: 1.0 MPa)\nTumpang tindih CI 95%: Tumpang tindih (3.13 MPa)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menampilkan bilah error tanpa keterangan apakah bilah mewakili SD, SE, atau 95% CI pada caption gambar.",
-          "Perangkap: Menyimpulkan bahwa ketiadaan tumpang tindih pada bilah SE menjamin signifikansi statistik (p < 0.05).",
-          "Perangkap: Mengira bahwa bilah 95% CI yang sedikit tumpang tindih berarti perbedaan kedua kelompok pasti tidak signifikan..."
-        ]
+          "[warning: Perangkap] Menampilkan bilah error tanpa keterangan apakah bilah mewakili SD, SE, atau 95% CI pada caption gambar.",
+          "[warning: Perangkap] Menyimpulkan bahwa ketiadaan tumpang tindih pada bilah SE menjamin signifikansi statistik (p < 0.05).",
+          "[warning: Perangkap] Mengira bahwa bilah 95% CI yang sedikit tumpang tindih berarti perbedaan kedua kelompok pasti tidak signifikan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Tuliskan definisi bilah error secara eksplisit pada setiap caption gambar (misal: \"Bilah error mewakili 95% CI...",
-          "Prosedur: Pilih SD untuk menggambarkan variabilitas populasi, atau 95% CI untuk mengkomunikasikan ketidakpastian inferen...",
+          "Prosedur: Tuliskan definisi bilah error secara eksplisit pada setiap caption gambar (misal: \"Bilah error mewakili 95% CI\").",
+          "Prosedur: Pilih SD untuk menggambarkan variabilitas populasi, atau 95% CI untuk mengkomunikasikan ketidakpastian inferensial.",
           "Prosedur: Gunakan pita berbayang semi-transparan (alpha = 0.2) untuk visualisasi ketidakpastian kurva regresi kontinu."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Jika dua kelompok independen memiliki bilah 95% Confidence Interval yang tumpang tindih sekitar separuh panjang bilah (o...",
-          "Petunjuk: Ingat hubungan matematis antara selisih kritis pada p = 0.05 dan margin of error.",
-          "Solusi Kunci: Secara matematis, untuk dua kelompok dengan varians dan ukuran sampel seimbang, tumpang tindih 95% CI sekitar 50% berkor..."
-        ]
+          "Pertanyaan Uji: Jika dua kelompok independen memiliki bilah 95% Confidence Interval yang tumpang tindih sekitar separuh panjang bilah (overlap ~ 50%), berapakah perkiraan kasar nilai p-value uji selisih rata-rata?",
+          "Petunjuk Analitis: Ingat hubungan matematis antara selisih kritis pada p = 0.05 dan margin of error.",
+          "Solusi Kunci: Secara matematis, untuk dua kelompok dengan varians dan ukuran sampel seimbang, tumpang tindih 95% CI sekitar 50% berkorespondensi tepat dengan p-value sekitar 0.05."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -531,107 +644,148 @@ export const CH23_LESSONS: Record<string, Partial<Lesson>> = {
         "type": "guideline"
       },
       {
-        "citation": "Nu\u00f1ez, J. R., Anderton, C. R., & Renslow, R. S. (2018). Optimizing colormaps with recognition of color vision deficiency to create inclusive visualizations. PLOS ONE, 13(7), e0199239.",
+        "citation": "Nuñez, J. R., Anderton, C. R., & Renslow, R. S. (2018). Optimizing colormaps with recognition of color vision deficiency to create inclusive visualizations. PLOS ONE, 13(7), e0199239.",
         "type": "peer-reviewed-article"
       }
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Standar Figur Publikasi: Palet Ramah Buta Warna, Tipogr...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Standar Figur Publikasi: Palet Ramah Buta Warna, Tipografi Bersih, dan Format Vektor",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.8.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.4.",
-          "Capaian: Merancang visualisasi ilmiah yang sepenuhnya aksesibel bagi pembaca penderita buta warna (CVD).",
-          "Capaian: Menerapkan peta warna perseptual seragam (Viridis, Magma, Plasma) dan palet diskrit Okabe-Ito.",
-          "Capaian: Memproduksi figur multi-panel berstandar penerbit ilmiah internasional (vektor PDF/EPS, 300+ DPI, tipografi hi..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.8.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang visualisasi ilmiah yang sepenuhnya aksesibel bagi pembaca penderita buta warna (CVD).",
+          "Capaian 2: Menerapkan peta warna perseptual seragam (Viridis, Magma, Plasma) dan palet diskrit Okabe-Ito.",
+          "Capaian 3: Memproduksi figur multi-panel berstandar penerbit ilmiah internasional (vektor PDF/EPS, 300+ DPI, tipografi hierarkis)."
         ],
-        "keyFormulaOrDiagram": "$$\\frac{\\Delta E^*_{\\text{ab}}}{\\Delta t} \\approx k \\quad (\\text{konstan untuk seluruh } t)$$"
+        "keyFormulaOrDiagram": "$$\\frac{\\Delta E^*_{\\text{ab}}}{\\Delta t} \\approx k \\quad (\\text{konstan untuk seluruh } t)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.8.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Standar Figur Publikasi: Palet Ramah Buta Warna, Tipogr...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Standar Figur Publikasi: Palet Ramah Buta Warna, Tipografi Bersih, dan Format Vektor",
+        "lead": "Figur ilmiah adalah elemen pertama yang diperiksa oleh editor jurnal bereputasi, reviewer sebaya, dan pembaca.",
         "bulletPoints": [
-          "Figur ilmiah adalah elemen pertama yang diperiksa oleh editor jurnal bereputasi, reviewer sebaya, dan pembaca. Figur yang bur...",
-          "Pilar 1: Aksesibilitas Warna dan Buta Warna (Color Vision Deficiency / CVD): Sekitar 8% pria dan 0.5% wanita keturunan Kaukas...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Figur yang buruk, kabur, atau membingungkan mencerminkan kelonggaran metodologis dari keseluruhan riset.",
+          "Untuk memenuhi standar penerbit internasional terkemuka (seperti IEEE, Nature Portfolio, Elsevier, dan ACM), figur ilmiah harus mematuhi tiga pilar teknis: aksesibilitas warna, tipografi bersih, dan integritas resolusi vektor.",
+          "Pilar 1: Aksesibilitas Warna dan Buta Warna (Color Vision Deficiency / CVD): Sekitar 8% pria dan 0.5% wanita keturunan Kaukasia mengalami defisiensi penglihatan warna (paling umum adalah Deuteranopia dan Protanopia / buta warna merah-hijau).",
+          "Penggunaan palet \"pelangi\" klasik (Jet atau Rainbow) adalah pelanggaran berat dalam visualisasi ilmiah modern: - Palet Jet menciptakan kontras semu (false boundaries) di daerah kuning dan sian yang tidak mencerminkan perubahan gradien nyata pada data. - Bagi penderita buta warna merah-hijau, spektrum merah dan hijau tampak sebagai warna cokelat-kuning yang identik, melumpuhkan interpretasi gambar."
         ],
-        "keyFormulaOrDiagram": "Pilar 2: Tipografi dan Hierarki Visual: Teks pada figur harus terbaca sempurna pada ukuran..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Pilar 2: Tipografi dan Hierarki Visual: Teks pada figur harus terbaca sempurna pada ukuran cetak kolom jurnal (lebar tipikal satu kolom: 85 mm; dua kolom: 175 mm).",
         "bulletPoints": [
-          "Pilar 2: Tipografi dan Hierarki Visual: Teks pada figur harus terbaca sempurna pada ukuran cetak kolom jurnal (lebar tipikal...",
-          "Pilar 3: Format File dan Resolusi Vektor: Figur grafik garis, diagram sebar, dan diagram batang harus diekspor dalam format g...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Gunakan font standar sans-serif (seperti Helvetica, Arial, atau DejaVu Sans) dengan ukuran font final antara 8 pt hingga 10 pt.",
+          "Hindari font berdekorasi atau ukuran font di bawah 6 pt yang tidak terbaca saat diperkecil.",
+          "Pilar 3: Format File dan Resolusi Vektor: Figur grafik garis, diagram sebar, dan diagram batang harus diekspor dalam format grafik vektor murni (PDF, EPS, atau SVG).",
+          "Format vektor mempertahankan ketajaman garis dan teks pada tingkat pembesaran berapapun."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Definisi Matematis Keseragaman Perseptual Warna (Perceptual Uniformity):",
         "bulletPoints": [
-          "1. Definisi Matematis Keseragaman Perseptual Warna (Perceptual Uniformity):",
-          "Sebuah colormap $C(t) = (R(t), G(t), B(t))$ untuk parameter data ternormalisasi $t \\in [0, 1]$ dikatakan serag...",
-          "di mana:"
+          "Sebuah colormap $C(t) = (R(t), G(t), B(t))$ untuk parameter data ternormalisasi $t \\in [0, 1]$ dikatakan seragam perseptual jika perubahan jarak diferensial pada data $\\Delta t$ menghasilkan jarak diferensial yang konstan pada ruang warna persepsi manusia CIELAB ($\\Delta E^*_{\\text{ab}}$):",
+          "di mana:",
+          "Colormap Viridis dirancang secara matematis sehingga komponen Luminansi ($L^*$) meningkat secara monotonik sempurna dari 0 (hitam) hingga 100 (kuning), menjamin keterbacaan sempurna bahkan jika figur dicetak dalam format hitam-putih murni (greyscale)."
         ],
-        "keyFormulaOrDiagram": "$$\\frac{\\Delta E^*_{\\text{ab}}}{\\Delta t} \\approx k \\quad (\\text{konstan untuk seluruh } t)$$"
+        "keyFormulaOrDiagram": "$$\\frac{\\Delta E^*_{\\text{ab}}}{\\Delta t} \\approx k \\quad (\\text{konstan untuk seluruh } t)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah artikel ilmiah membandingkan 3 algoritma pengenalan pola. Penulis menggunakan warna Merah (#FF0000) untuk Algoritma 1, Hijau (#00FF00...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Analisis kelemahan palet RGB klasik: Warna Merah (#FF0000) dan Hijau (#00FF00) memiliki tingkat dis...",
-          "Langkah 2: Rekomendasi Palet Okabe-Ito yang aksesibel: - Algoritma 1: Oranye (#E69F00). - Algoritma 2: Biru La...",
-          "Langkah 3: Penguatan redundansi visual (Dual Encoding): Selain warna, bedakan tiap algoritma menggunakan bentu...",
-          "Interpretasi: Penerapan palet ramah buta warna yang dipadukan dengan dual encoding penanda dan ekspor format vektor menjamin figur mem..."
+          "Konteks Kasus: Sebuah artikel ilmiah membandingkan 3 algoritma pengenalan pola. Penulis menggunakan warna Merah (#FF0000) untuk Algoritma 1, Hijau (#00FF00) untuk Algoritma 2, dan Biru (#0000FF) untuk Algoritma 3. Identifikasi kelemahan kritis pemilihan palet ini dan rekomendasikan konfigurasi palet Okabe-Ito beserta parameter ekspor publikasi untuk jurnal IEEE Transactions.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Parameter ekspor jurnal IEEE Transactions: - Format: PDF atau EPS (vektor murni..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Analisis kelemahan palet RGB klasik:\nWarna Merah (#FF0000) dan Hijau (#00FF00) memiliki tingkat distorsi persepsi parah bagi penderita deuteranopia/protanopia. Keduanya akan tampak sebagai warna zaitun/kuning kecokelatan yang nyaris mustahil dibedakan.",
+          "Langkah 2: Rekomendasi Palet Okabe-Ito yang aksesibel:\n- Algoritma 1: Oranye (#E69F00).\n- Algoritma 2: Biru Langit (#56B4E9).\n- Algoritma 3: Hijau Kebiruan (#009E73).\nKetiga warna ini memiliki kontras luminansi dan kromatisitas yang tinggi bagi semua jenis penglihatan."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Penguatan redundansi visual (Dual Encoding):\nSelain warna, bedakan tiap algoritma menggunakan bentuk penanda (marker style) yang berbeda: Algoritma 1 (lingkaran padat), Algoritma 2 (bujursangkar), Algoritma 3 (segitiga). Jika gambar dicetak fotokopi hitam-putih, data tetap terbaca sempurna.",
+          "Langkah 4: Parameter ekspor jurnal IEEE Transactions:\n- Format: PDF atau EPS (vektor murni).\n- Lebar gambar: 85 mm (kolom tunggal).\n- Tipografi: Arial / Helvetica 9 pt.\n- Ketebalan garis minimal: 0.75 pt.",
+          "[result: Interpretasi Ilmiah] Penerapan palet ramah buta warna yang dipadukan dengan dual encoding penanda dan ekspor format vektor menjamin figur memenuhi standar integritas penerbit ilmiah kelas dunia."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Template Python Matplotlib untuk menghasilkan figur publikasi berstandar internasional dengan palet Okabe-Ito dan format vektor.",
         "bulletPoints": [
-          "Deskripsi: Template Python Matplotlib untuk menghasilkan figur publikasi berstandar internasional dengan palet Okabe-Ito dan format vektor.",
-          "Dependensi Pustaka: numpy, matplotlib",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Konfigurasi Parameter Styling Publikasi"
+          "Tujuan Algoritma: Template Python Matplotlib untuk menghasilkan figur publikasi berstandar internasional dengan palet Okabe-Ito dan format vektor.",
+          "Dependensi Pustaka Ilmiah: numpy, matplotlib",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Konfigurasi Parameter Styling Publikasi"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Konfigurasi Parameter Styling Publikasi | font.family : sans-ser..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Konfigurasi Parameter Styling Publikasi\n  font.family          : sans-serif\n  font.sans-serif      : ['DejaVu Sans', 'Arial', 'Helvetica']\n  font.size            : 8\n  axes.labelsize       : 9",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan colormap Jet atau Rainbow yang mendistorsi gradien data dan tidak terbaca oleh penderita buta warn...",
-          "Perangkap: Mengekspor grafik dalam format bitmap kompresi JPEG dengan resolusi 72 DPI yang buram dan pecah saat dicetak.",
-          "Perangkap: Menyematkan teks dengan ukuran font sangat kecil (< 6 pt) sehingga lenyap saat gambar diperkecil ke lebar kolo..."
-        ]
+          "[warning: Perangkap] Menggunakan colormap Jet atau Rainbow yang mendistorsi gradien data dan tidak terbaca oleh penderita buta warna.",
+          "[warning: Perangkap] Mengekspor grafik dalam format bitmap kompresi JPEG dengan resolusi 72 DPI yang buram dan pecah saat dicetak.",
+          "[warning: Perangkap] Menyematkan teks dengan ukuran font sangat kecil (< 6 pt) sehingga lenyap saat gambar diperkecil ke lebar kolom jurnal."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan palet seragam perseptual (Viridis/Plasma) atau palet diskrit Okabe-Ito.",
           "Prosedur: Terapkan pengkodean ganda (dual encoding: warna + bentuk penanda / tipe garis).",
-          "Prosedur: Ekspor seluruh grafik dalam format vektor (PDF/EPS) dengan font tersemat (Type 42 / TrueType)."
-        ]
+          "Prosedur: Ekspor seluruh grafik dalam format vektor (PDF/EPS) dengan font tersemat (Type 42 / TrueType).",
+          "Prosedur: Uji visualisasi menggunakan simulator buta warna (Coblis atau modul DaltonLens)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa penggunaan peta warna klasik Jet (Rainbow) secara tegas dilarang dalam panduan penulisan jurnal ilmiah modern?",
-          "Petunjuk: Perhatikan keseragaman perseptual dan aksesibilitas bagi penderita buta warna.",
-          "Solusi Kunci: Colormap Jet tidak seragam secara perseptual (menciptakan ilusi batas diskrit pada rentang kuning dan sian) serta menyat..."
-        ]
+          "Petunjuk Analitis: Perhatikan keseragaman perseptual dan aksesibilitas bagi penderita buta warna.",
+          "Solusi Kunci: Colormap Jet tidak seragam secara perseptual (menciptakan ilusi batas diskrit pada rentang kuning dan sian) serta menyatu menjadi warna cokelat serupa bagi 8% pembaca penderita defisiensi warna merah-hijau."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

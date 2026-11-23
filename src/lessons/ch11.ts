@@ -61,99 +61,134 @@ export const CH11_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konsep Metrologi: Akurasi (Trueness), Presisi, dan Rant...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konsep Metrologi: Akurasi (Trueness), Presisi, dan Rantai Ketertelusuran SI",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.4.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.1.",
-          "Capaian: Membedakan secara formal konsep Akurasi (Trueness), Presisi (Repeatability/Reproducibility), dan Error.",
-          "Capaian: Memahami rantai ketertelusuran metrologis (metrological traceability chain) menuju definisi satuan dasar SI.",
-          "Capaian: Menganalisis dampak degradasi kalibrasi terhadap validitas pengukuran laboratorium."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan secara formal konsep Akurasi (Trueness), Presisi (Repeatability/Reproducibility), dan Error.",
+          "Capaian 2: Memahami rantai ketertelusuran metrologis (metrological traceability chain) menuju definisi satuan dasar SI.",
+          "Capaian 3: Menganalisis dampak degradasi kalibrasi terhadap validitas pengukuran laboratorium."
         ],
-        "keyFormulaOrDiagram": "$$Y_k = Y_{\\text{true}} + \\beta + \\epsilon_k$$"
+        "keyFormulaOrDiagram": "$$Y_k = Y_{\\text{true}} + \\beta + \\epsilon_k$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.4.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konsep Metrologi: Akurasi (Trueness), Presisi, dan Rant...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konsep Metrologi: Akurasi (Trueness), Presisi, dan Rantai Ketertelusuran SI",
+        "lead": "Metrologi adalah ilmu pengukuran dan penerapannya.",
         "bulletPoints": [
-          "Metrologi adalah ilmu pengukuran dan penerapannya. Dalam disiplin rekayasa, setiap keputusan teknis (seperti kelayakan pelepa...",
-          "Berdasarkan Kosakata Metrologi Internasional (VIM - JCGM 200:2012), terdapat pembedaan tegas antara istilah-istilah yang seri...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam disiplin rekayasa, setiap keputusan teknis (seperti kelayakan pelepasan batch produk, analisis tegangan jembatan, atau efisiensi panel surya) bergantung pada data numerik.",
+          "Jika data tersebut tidak memiliki ketertelusuran metrologis, maka hasil pengujian tersebut tidak dapat diakui secara hukum maupun ilmiah internasional.",
+          "Berdasarkan Kosakata Metrologi Internasional (VIM - JCGM 200:2012), terdapat pembedaan tegas antara istilah-istilah yang sering dicampuradukkan secara keliru: 1.",
+          "Kebenaran Pengukuran (*Trueness / Akurasi Rata-rata*): Derajat kedekatan antara rata-rata dari tak terhingga jumlah hasil pengukuran berulang dengan nilai acuan sejati (*true quantity value*)."
         ],
-        "keyFormulaOrDiagram": "Sebuah sensor dapat memiliki presisi yang sangat tinggi (selalu menghasilkan angka 10.001..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Sebuah sensor dapat memiliki presisi yang sangat tinggi (selalu menghasilkan angka 10.001 Volt berulang kali), namun memiliki...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Sebuah sensor dapat memiliki presisi yang sangat tinggi (selalu menghasilkan angka 10.001 Volt berulang kali), namun memiliki akurasi yang sangat buruk jika tegangan sejati baterai sebenarnya adalah 12.000 Volt (mengalami bias kalibrasi).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Dekomposisi Galat Pengukuran menurut VIM:",
         "bulletPoints": [
-          "Dekomposisi Galat Pengukuran menurut VIM:",
           "Pengukuran ke-$k$ dari besaran sejati $Y_{\\text{true}}$:",
-          "Di mana:"
+          "Di mana:",
+          "- $\\beta$ adalah galat sistematis (Bias): $\\beta = \\mathbb{E}[Y] - Y_{\\text{true}}$ (mempengaruhi *Trueness*)."
         ],
-        "keyFormulaOrDiagram": "$$Y_k = Y_{\\text{true}} + \\beta + \\epsilon_k$$"
+        "keyFormulaOrDiagram": "$$Y_k = Y_{\\text{true}} + \\beta + \\epsilon_k$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua multimeter digital (DMM A dan DMM B) digunakan untuk mengukur tegangan sel standar 5.0000 V sebanyak 5 kali. Hasil DMM A: [5.081, 5.082,...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua multimeter digital (DMM A dan DMM B) digunakan untuk mengukur tegangan sel standar 5.0000 V sebanyak 5 kali. Hasil DMM A: [5.081, 5.082, 5.080, 5.081, 5.081] V. Hasil DMM B: [4.950, 5.040, 4.980, 5.030, 5.000] V. Hitung bias dan deviasi standar masing-masing instrumen, lalu evaluasi instrumen mana yang lebih presisi dan mana yang lebih akurat/true.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung statistik DMM A: Rata-rata = 5.0810 V. Bias = 5.0810 - 5.0000 = +0.0810 V. Standar Deviasi s...",
-          "Langkah 2: Hitung statistik DMM B: Rata-rata = 5.0000 V. Bias = 5.0000 - 5.0000 = 0.0000 V. Standar Deviasi s_...",
-          "Langkah 3: Evaluasi presisi: s_A (0.0007 V) jauh lebih kecil dibanding s_B (0.0367 V), sehingga DMM A jauh leb...",
-          "Interpretasi: DMM A memiliki presisi tinggi namun bias sistematis (memerlukan koreksi kalibrasi offset), sedangkan DMM B tidak memilik..."
+          "Langkah 1: Hitung statistik DMM A: Rata-rata = 5.0810 V. Bias = 5.0810 - 5.0000 = +0.0810 V. Standar Deviasi s_A = 0.0007 V.",
+          "Langkah 2: Hitung statistik DMM B: Rata-rata = 5.0000 V. Bias = 5.0000 - 5.0000 = 0.0000 V. Standar Deviasi s_B = 0.0367 V."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi akurasi/trueness: DMM B memiliki bias nol (|bias| = 0.0000 V), sedangk..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Dekomposisi bias dan presisi serta visualisasi target metrologi.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: DMM A -> Rata-rata: 5.0810 V, Bias: +0.0810 V, Deviasi Std: 0.0007 V, RMSE: 0.0810 V"
+          "Langkah 3: Evaluasi presisi: s_A (0.0007 V) jauh lebih kecil dibanding s_B (0.0367 V), sehingga DMM A jauh lebih presisi dibanding DMM B.",
+          "Langkah 4: Evaluasi akurasi/trueness: DMM B memiliki bias nol (|bias| = 0.0000 V), sedangkan DMM A memiliki bias signifikan (+0.0810 V). Jadi DMM B memiliki trueness lebih tinggi dibanding DMM A.",
+          "[result: Interpretasi Ilmiah] DMM A memiliki presisi tinggi namun bias sistematis (memerlukan koreksi kalibrasi offset), sedangkan DMM B tidak memiliki bias namun memiliki derau acak yang lebih besar."
         ],
-        "keyFormulaOrDiagram": "DMM A -> Rata-rata: 5.0810 V, Bias: +0.0810 V, Deviasi Std: 0.0007 V, RMSE: 0.0810 V | DMM..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Dekomposisi bias dan presisi serta visualisasi target metrologi.",
         "bulletPoints": [
-          "Perangkap: Menyebut instrumen yang memiliki banyak angka desimal di layar display sebagai instrumen yang pasti akurat (me...",
-          "Perangkap: Menggunakan alat ukur yang masa berlaku sertifikat kalibrasinya telah kedaluwarsa.",
-          "Perangkap: Mengabaikan koreksi faktor lingkungan (suhu dan tekanan udara) yang disyaratkan dalam sertifikat kalibrasi sta..."
-        ]
+          "Tujuan Algoritma: Dekomposisi bias dan presisi serta visualisasi target metrologi.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: DMM A -> Rata-rata: 5.0810 V, Bias: +0.0810 V, Deviasi Std: 0.0007 V, RMSE: 0.0810 V"
+        ],
+        "keyFormulaOrDiagram": "DMM A -> Rata-rata: 5.0810 V, Bias: +0.0810 V, Deviasi Std: 0.0007 V, RMSE: 0.0810 V\nDMM B -> Rata-rata: 5.0000 V, Bias: +0.0000 V, Deviasi Std: 0.0367 V, RMSE: 0.0367 V",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Periksa nomor akreditasi KAN (Komite Akreditasi Nasional) atau badan setara pada sertifikat kalibrasi laborato...",
-          "Prosedur: Lakukan uji verifikasi antara (*intermediate check*) secara berkala menggunakan benda ukur acuan stabil."
-        ]
+          "[warning: Perangkap] Menyebut instrumen yang memiliki banyak angka desimal di layar display sebagai instrumen yang pasti akurat (mengacaukan resolusi dengan akurasi).",
+          "[warning: Perangkap] Menggunakan alat ukur yang masa berlaku sertifikat kalibrasinya telah kedaluwarsa.",
+          "[warning: Perangkap] Mengabaikan koreksi faktor lingkungan (suhu dan tekanan udara) yang disyaratkan dalam sertifikat kalibrasi standar."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa resolusi layar instrumen (misalnya jangka sorong digital hingga 0.001 mm) tidak sama dengan ketidakpastian pengu...",
-          "Petunjuk: Perhatikan bahwa resolusi hanya menyatakan perubahan kuantitas terkecil yang dapat ditampilkan, buka...",
-          "Solusi Kunci: Resolusi hanya batas visualisasi terkecil tampilan digital. Ketidakpastian pengukuran total mencakup galat kelurusan mek..."
-        ]
+          "Prosedur: Periksa nomor akreditasi KAN (Komite Akreditasi Nasional) atau badan setara pada sertifikat kalibrasi laboratorium penguji.",
+          "Prosedur: Lakukan uji verifikasi antara (*intermediate check*) secara berkala menggunakan benda ukur acuan stabil."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa resolusi layar instrumen (misalnya jangka sorong digital hingga 0.001 mm) tidak sama dengan ketidakpastian pengukuran instrumen tersebut?",
+          "Petunjuk Analitis: Perhatikan bahwa resolusi hanya menyatakan perubahan kuantitas terkecil yang dapat ditampilkan, bukan batas kesalahan total.",
+          "Solusi Kunci: Resolusi hanya batas visualisasi terkecil tampilan digital. Ketidakpastian pengukuran total mencakup galat kelurusan mekanis sensor, histeresis probe, keausan gesekan ujung ukur, ekspansi termal logam benda uji, dan ketidakpastian standar kalibrasi yang nilainya sering kali jauh lebih besar daripada angka resolusi layar."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -215,100 +250,136 @@ export const CH11_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prosedur Kalibrasi Sensor dan Pembentukan Kurva Kalibra...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prosedur Kalibrasi Sensor dan Pembentukan Kurva Kalibrasi Terkoreksi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.4.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.2.",
-          "Capaian: Merancang prosedur kalibrasi multi-titik statis sensor rekayasa.",
-          "Capaian: Mengevaluasi karakteristik histeresis, non-linearitas, rentang mati (deadband), dan sensitivitas.",
-          "Capaian: Membangun model regresi kurva kalibrasi terbalik untuk koreksi pengukuran digital."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang prosedur kalibrasi multi-titik statis sensor rekayasa.",
+          "Capaian 2: Mengevaluasi karakteristik histeresis, non-linearitas, rentang mati (deadband), dan sensitivitas.",
+          "Capaian 3: Membangun model regresi kurva kalibrasi terbalik untuk koreksi pengukuran digital."
         ],
-        "keyFormulaOrDiagram": "$$\\text{NL}_{\\%} = \\frac{\\max_{i} |y_i - (a x_i + b)|}{y_{\\max} - y_{\\min}} \\times 100\\%$$"
+        "keyFormulaOrDiagram": "$$\\text{NL}_{\\%} = \\frac{\\max_{i} |y_i - (a x_i + b)|}{y_{\\max} - y_{\\min}} \\times 100\\%$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.4.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prosedur Kalibrasi Sensor dan Pembentukan Kurva Kalibra...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prosedur Kalibrasi Sensor dan Pembentukan Kurva Kalibrasi Terkoreksi",
+        "lead": "Kalibrasi adalah operasi yang dalam kondisi tertentu, pada tahap pertama, menetapkan hubungan antara nilai besaran beserta ketidakpastian yang diberikan oleh standar pengukuran dengan indikasi yang bersangkutan, dan pada tahap kedua, menggunakan informasi ini untuk menetapkan hubungan untuk memperoleh hasil pengukuran dari suatu indikasi.",
         "bulletPoints": [
-          "Kalibrasi adalah operasi yang dalam kondisi tertentu, pada tahap pertama, menetapkan hubungan antara nilai besaran beserta ke...",
-          "Dalam sensor industri dan laboratorium (seperti load cell, sensor tekanan piezoelektrik, atau termokopel), hubungan fisik ant...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam sensor industri dan laboratorium (seperti load cell, sensor tekanan piezoelektrik, atau termokopel), hubungan fisik antara besaran input terukur ($x$) dan sinyal output elektrik ($y$) tidak pernah ideal sempurna."
         ],
-        "keyFormulaOrDiagram": "Karakteristik statis yang harus dipetakan dalam prosedur kalibrasi meliputi: 1. Kurva Resp..."
+        "keyFormulaOrDiagram": "$S = dy/dx$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Karakteristik statis yang harus dipetakan dalam prosedur kalibrasi meliputi: 1.",
         "bulletPoints": [
-          "Karakteristik statis yang harus dipetakan dalam prosedur kalibrasi meliputi: 1. Kurva Respon dan Sensitivitas ($S = dy/dx$):...",
-          "Setelah kalibrasi multi-titik selesai, peneliti menyusun persamaan kurva kalibrasi terbalik (*inverse calibration function*)...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Kurva Respon dan Sensitivitas ($S = dy/dx$): Gradien perubahan sinyal output per satuan perubahan input fisik.",
+          "2.",
+          "Setelah kalibrasi multi-titik selesai, peneliti menyusun persamaan kurva kalibrasi terbalik (*inverse calibration function*) untuk mengoreksi pembacaan sensor secara otomatis di dalam mikrokontroler."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Perhitungan Non-Linearitas Maksimum (% Full Scale):",
         "bulletPoints": [
-          "1. Perhitungan Non-Linearitas Maksimum (% Full Scale):",
           "Di mana $y = ax + b$ adalah garis regresi linier kuadrat terkecil terbaik (*Best-Fit Straight Line / BFSL*).",
-          "2. Perhitungan Histeresis Maksimum (% Full Scale):"
+          "2. Perhitungan Histeresis Maksimum (% Full Scale):",
+          "3. Model Koreksi Polinomial Terbalik Derajat $P$:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{NL}_{\\%} = \\frac{\\max_{i} |y_i - (a x_i + b)|}{y_{\\max} - y_{\\min}} \\times 100\\%$$"
+        "keyFormulaOrDiagram": "$$\\text{NL}_{\\%} = \\frac{\\max_{i} |y_i - (a x_i + b)|}{y_{\\max} - y_{\\min}} \\times 100\\%$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah sensor tekanan (rentang 0 hingga 10 bar) dikalibrasi terhadap manometer standar. Pada titik uji 5.0 bar, tegangan output saat pembeba...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah sensor tekanan (rentang 0 hingga 10 bar) dikalibrasi terhadap manometer standar. Pada titik uji 5.0 bar, tegangan output saat pembebanan naik adalah 2.52 V, dan saat penurunan beban adalah 2.58 V. Tegangan skala penuh (0 bar ke 10 bar) adalah 0.00 V hingga 5.00 V. Hitung persentase histeresis sensor pada titik tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung selisih tegangan output naik versus turun: Delta y = |2.52 V - 2.58 V| = 0.06 V.",
-          "Langkah 2: Hitung rentang tegangan skala penuh (Span Full Scale): Span = 5.00 V - 0.00 V = 5.00 V.",
+          "Langkah 2: Hitung rentang tegangan skala penuh (Span Full Scale): Span = 5.00 V - 0.00 V = 5.00 V."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung persentase histeresis terhadap Full Scale: Hyst_% = (0.06 V / 5.00 V) * 100% = 1.20% FS.",
-          "Interpretasi: Sensor memiliki histeresis sebesar 1.2% FS. Nilai ini harus dimasukkan sebagai komponen batas ketidakpastian instrumen p..."
+          "[result: Interpretasi Ilmiah] Sensor memiliki histeresis sebesar 1.2% FS. Nilai ini harus dimasukkan sebagai komponen batas ketidakpastian instrumen pada anggaran ketidakpastian Tipe B."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung persentase histeresis terhadap Full Scale: Hyst_% = (0.06 V / 5.00 V) *..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembentukan garis kalibrasi Best-Fit Straight Line (BFSL) dan evaluasi non-linearitas sensor load-cell.",
         "bulletPoints": [
-          "Deskripsi: Pembentukan garis kalibrasi Best-Fit Straight Line (BFSL) dan evaluasi non-linearitas sensor load-cell.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Persamaan BFSL : V = 1.0006 * Beban + (0.0105) mV"
+          "Tujuan Algoritma: Pembentukan garis kalibrasi Best-Fit Straight Line (BFSL) dan evaluasi non-linearitas sensor load-cell.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Persamaan BFSL    : V = 1.0006 * Beban + (0.0105) mV"
         ],
-        "keyFormulaOrDiagram": "Persamaan BFSL : V = 1.0006 * Beban + (0.0105) mV | Sensitivitas (S) : 1.0006 mV/kg | Devi..."
+        "keyFormulaOrDiagram": "Persamaan BFSL    : V = 1.0006 * Beban + (0.0105) mV\nSensitivitas (S)  : 1.0006 mV/kg\nDeviasi Maksimum  : 0.0686 mV\nNon-Linearitas    : 0.68% Full Scale",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya mengkalibrasi sensor pada satu arah pembebanan (naik saja) sehingga efek histeresis tidak terdeteksi.",
-          "Perangkap: Melakukan ekstrapolasi kurva kalibrasi di luar batas rentang minimum dan maksimum yang diuji.",
-          "Perangkap: Mengabaikan pemanasan awal (warm-up) sensor sebelum pencatatan titik nol dilakukan."
-        ]
+          "[warning: Perangkap] Hanya mengkalibrasi sensor pada satu arah pembebanan (naik saja) sehingga efek histeresis tidak terdeteksi.",
+          "[warning: Perangkap] Melakukan ekstrapolasi kurva kalibrasi di luar batas rentang minimum dan maksimum yang diuji.",
+          "[warning: Perangkap] Mengabaikan pemanasan awal (warm-up) sensor sebelum pencatatan titik nol dilakukan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Lakukan pengujian kalibrasi minimal 3 siklus naik-turun lengkap untuk menguji keterulangan (repeatability).",
-          "Prosedur: Hitung koefisien determinasi R^2 dan analisis plot residual untuk mendeteksi kecenderungan kelengkungan orde t..."
-        ]
+          "Prosedur: Hitung koefisien determinasi R^2 dan analisis plot residual untuk mendeteksi kecenderungan kelengkungan orde tinggi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa kalibrasi multi-titik (minimal 5 hingga 10 titik) wajib dilakukan dibanding kalibrasi dua-titik (zero dan span)?",
-          "Petunjuk: Perhatikan apakah respon sensor dijamin linier sempurna di seluruh rentang kerja operasional.",
-          "Solusi Kunci: Kalibrasi dua titik (zero dan span) mengasumsikan bahwa sensor berperilaku linier sempurna di antara kedua titik tersebu..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah respon sensor dijamin linier sempurna di seluruh rentang kerja operasional.",
+          "Solusi Kunci: Kalibrasi dua titik (zero dan span) mengasumsikan bahwa sensor berperilaku linier sempurna di antara kedua titik tersebut. Jika sensor memiliki karakteristik non-linearitas kurvatur (misal respon sigmoid atau kuadratik), kalibrasi dua titik akan menyembunyikan kesalahan deviasi besar di wilayah rentang tengah. Kalibrasi multi-titik memetakan bentuk kelengkungan fungsi respon sejati."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -371,100 +442,136 @@ export const CH11_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Evaluasi Ketidakpastian Pengukuran: Tipe A (Statistik)...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Evaluasi Ketidakpastian Pengukuran: Tipe A (Statistik) vs Tipe B (Spesifikasi/Kalibrasi)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.4.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.3.",
-          "Capaian: Memahami metodologi evaluasi ketidakpastian standar menurut panduan resmi ISO/IEC Guide 98-3 (GUM).",
-          "Capaian: Menghitung ketidakpastian standar Tipe A melalui analisis varians statistik pengamatan berulang.",
-          "Capaian: Menghitung ketidakpastian standar Tipe B dari spesifikasi pabrikan, sertifikat kalibrasi, dan distribusi aprio..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami metodologi evaluasi ketidakpastian standar menurut panduan resmi ISO/IEC Guide 98-3 (GUM).",
+          "Capaian 2: Menghitung ketidakpastian standar Tipe A melalui analisis varians statistik pengamatan berulang.",
+          "Capaian 3: Menghitung ketidakpastian standar Tipe B dari spesifikasi pabrikan, sertifikat kalibrasi, dan distribusi apriori (persegi panjang, segitiga, normal)."
         ],
-        "keyFormulaOrDiagram": "$$u_A(\\bar{q}) = \\frac{s(q)}{\\sqrt{n}}$$"
+        "keyFormulaOrDiagram": "$$u_A(\\bar{q}) = \\frac{s(q)}{\\sqrt{n}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.4.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Evaluasi Ketidakpastian Pengukuran: Tipe A (Statistik)...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Evaluasi Ketidakpastian Pengukuran: Tipe A (Statistik) vs Tipe B (Spesifikasi/Kalibrasi)",
+        "lead": "Dalam sains dan rekayasa modern, tidak ada istilah \"pengukuran yang sempurna tanpa galat\".",
         "bulletPoints": [
-          "Dalam sains dan rekayasa modern, tidak ada istilah \"pengukuran yang sempurna tanpa galat\". Menyatakan hasil eksperimen sebaga...",
-          "1. Evaluasi Ketidakpastian Tipe A: Evaluasi ketidakpastian melalui analisis statistik dari serangkaian observasi berulang di...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Menyatakan hasil eksperimen sebagai satu angka tunggal (misalnya: \"efisiensi motor adalah 85.4%\") tanpa mencantumkan rentang ketidakpastiannya adalah tanda penelitian amatir.",
+          "Standar pelaporan metrologi global ISO/IEC Guide 98-3: Guide to the Expression of Uncertainty in Measurement (GUM) memformalkan evaluasi ketidakpastian ke dalam dua metode klasifikasi:",
+          "1.",
+          "Evaluasi Ketidakpastian Tipe A: Evaluasi ketidakpastian melalui analisis statistik dari serangkaian observasi berulang di laboratorium di bawah kondisi keterulangan yang identik."
         ],
-        "keyFormulaOrDiagram": "Penetapan ketidakpastian Tipe B menuntut konversi rentang toleransi batas $\\pm a$ menjadi..."
+        "keyFormulaOrDiagram": "$\\pm a$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Penetapan ketidakpastian Tipe B menuntut konversi rentang toleransi batas $\\pm a$ menjadi nilai ketidakpastian standar $u$ de...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Penetapan ketidakpastian Tipe B menuntut konversi rentang toleransi batas $\\pm a$ menjadi nilai ketidakpastian standar $u$ dengan membagi rentang tersebut dengan faktor konversi distribusi peluang apriori (dibagi $\\sqrt{3}$ untuk distribusi seragam/persegi panjang, atau dibagi $\\sqrt{6}$ untuk distribusi segitiga).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Evaluasi Tipe A (Sampel Berulang $n$ Kali):",
         "bulletPoints": [
-          "1. Evaluasi Tipe A (Sampel Berulang $n$ Kali):",
           "Rata-rata sampel: $\\bar{q} = \\frac{1}{n} \\sum_{k=1}^n q_k$",
-          "Varians eksperimental: $s^2(q) = \\frac{1}{n-1} \\sum_{k=1}^n (q_k - \\bar{q})^2$"
+          "Varians eksperimental: $s^2(q) = \\frac{1}{n-1} \\sum_{k=1}^n (q_k - \\bar{q})^2$",
+          "Ketidakpastian Standar Tipe A:"
         ],
-        "keyFormulaOrDiagram": "$$u_A(\\bar{q}) = \\frac{s(q)}{\\sqrt{n}}$$"
+        "keyFormulaOrDiagram": "$$u_A(\\bar{q}) = \\frac{s(q)}{\\sqrt{n}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah resistor presisi diukur nilainya sebanyak 10 kali menggunakan ohmmeter digital dengan resolusi 0.01 Ohm. Rata-rata pembacaan adalah 1...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah resistor presisi diukur nilainya sebanyak 10 kali menggunakan ohmmeter digital dengan resolusi 0.01 Ohm. Rata-rata pembacaan adalah 100.25 Ohm dengan deviasi standar s = 0.08 Ohm. Sertifikat kalibrasi ohmmeter menyatakan batas akurasi pabrik adalah +/- 0.05 Ohm dengan distribusi seragam. Hitung ketidakpastian standar Tipe A dan Tipe B komponen resistor tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1 (Ketidakpastian Tipe A): u_A = s / sqrt(n) = 0.08 / sqrt(10) = 0.08 / 3.162 = 0.0253 Ohm.",
-          "Langkah 2 (Ketidakpastian Tipe B - Akurasi Alat): Batas toleransi a = 0.05 Ohm (distribusi persegi panjang). u...",
-          "Langkah 3 (Ketidakpastian Tipe B - Resolusi Layar): Resolusi delta = 0.01 Ohm. u_B2 = (delta / 2) / sqrt(3) =...",
-          "Interpretasi: Komponen ketidakpastian Tipe A (0.0253 Ohm) dan Tipe B (0.0290 Ohm) memiliki orde besaran yang seimbang, membuktikan bah..."
+          "Langkah 2 (Ketidakpastian Tipe B - Akurasi Alat): Batas toleransi a = 0.05 Ohm (distribusi persegi panjang). u_B1 = a / sqrt(3) = 0.05 / 1.7321 = 0.0289 Ohm."
         ],
-        "keyFormulaOrDiagram": "Langkah 4 (Gabungan Tipe B): u_B = sqrt(u_B1^2 + u_B2^2) = sqrt(0.0289^2 + 0.0029^2) = sqr..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Ketidakpastian Tipe B - Resolusi Layar): Resolusi delta = 0.01 Ohm. u_B2 = (delta / 2) / sqrt(3) = 0.005 / 1.7321 = 0.0029 Ohm.",
+          "Langkah 4 (Gabungan Tipe B): u_B = sqrt(u_B1^2 + u_B2^2) = sqrt(0.0289^2 + 0.0029^2) = sqrt(0.000835 + 0.000008) = 0.0290 Ohm.",
+          "[result: Interpretasi Ilmiah] Komponen ketidakpastian Tipe A (0.0253 Ohm) dan Tipe B (0.0290 Ohm) memiliki orde besaran yang seimbang, membuktikan bahwa variasi acak pengukuran dan keterbatasan instrumen sama-sama berkontribusi signifikan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Kalkulator evaluasi ketidakpastian pengukuran Tipe A dan Tipe B menurut ISO GUM.",
         "bulletPoints": [
-          "Deskripsi: Kalkulator evaluasi ketidakpastian pengukuran Tipe A dan Tipe B menurut ISO GUM.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Jumlah Cuplikan (n) : 10"
+          "Tujuan Algoritma: Kalkulator evaluasi ketidakpastian pengukuran Tipe A dan Tipe B menurut ISO GUM.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Jumlah Cuplikan (n)            : 10"
         ],
-        "keyFormulaOrDiagram": "Jumlah Cuplikan (n) : 10 | Rata-rata Pengukuran : 100.2500 Ohm | Deviasi Standar Sampel :..."
+        "keyFormulaOrDiagram": "Jumlah Cuplikan (n)            : 10\nRata-rata Pengukuran           : 100.2500 Ohm\nDeviasi Standar Sampel         : 0.0457 Ohm\nKetidakpastian Tipe A u_A      : 0.0145 Ohm\nKetidakpastian Tipe B u_B      : 0.0290 Ohm",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya menghitung standar deviasi data (Tipe A) dan mengabaikan seluruh ketidakpastian instrumen dan kalibrasi...",
-          "Perangkap: Membagi batas spesifikasi pabrikan dengan akar 3 padahal sertifikat kalibrasi telah menyatakan bahwa batas ter...",
-          "Perangkap: Mengacaukan deviasi standar sampel s dengan ketidakpastian rata-rata s / sqrt(n)."
-        ]
+          "[warning: Perangkap] Hanya menghitung standar deviasi data (Tipe A) dan mengabaikan seluruh ketidakpastian instrumen dan kalibrasi (Tipe B).",
+          "[warning: Perangkap] Membagi batas spesifikasi pabrikan dengan akar 3 padahal sertifikat kalibrasi telah menyatakan bahwa batas tersebut adalah tingkat kepercayaan 95% dengan k=2 (distribusi normal).",
+          "[warning: Perangkap] Mengacaukan deviasi standar sampel s dengan ketidakpastian rata-rata s / sqrt(n)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Periksa apakah dokumen sertifikat kalibrasi mencantumkan faktor cakupan k dan tingkat kepercayaan untuk setiap...",
+          "Prosedur: Periksa apakah dokumen sertifikat kalibrasi mencantumkan faktor cakupan k dan tingkat kepercayaan untuk setiap nilai Tipe B.",
           "Prosedur: Pastikan seluruh komponen Tipe A dan Tipe B telah dikonversi ke satuan ukur yang identik sebelum digabungkan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Kapan distribusi probabilitas apriori seragam (rectangular) digunakan dalam evaluasi ketidakpastian Tipe B?",
-          "Petunjuk: Perhatikan kondisi ketiadaan informasi selain batas maksimum dan minimum toleransi.",
-          "Solusi Kunci: Distribusi seragam digunakan ketika satu-satunya informasi yang dimiliki peneliti adalah rentang batas spesifikasi ekstr..."
-        ]
+          "Petunjuk Analitis: Perhatikan kondisi ketiadaan informasi selain batas maksimum dan minimum toleransi.",
+          "Solusi Kunci: Distribusi seragam digunakan ketika satu-satunya informasi yang dimiliki peneliti adalah rentang batas spesifikasi ekstrem [-a, +a] (misalnya pernyataan pabrikan bahwa instrumen memiliki akurasi +/- 1%), tanpa adanya data riwayat kalibrasi atau sertifikat statistik yang menunjukkan bahwa nilai lebih terkonsentrasi di tengah rentang."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -530,100 +637,139 @@ export const CH11_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penyusunan Anggaran Ketidakpastian (Uncertainty Budget)...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penyusunan Anggaran Ketidakpastian (Uncertainty Budget) dan Expanded Uncertainty (U)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.4.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.4.",
-          "Capaian: Menyusun tabel Anggaran Ketidakpastian (Uncertainty Budget) terstandarisasi menurut kaidah GUM.",
-          "Capaian: Menerapkan Hukum Perambatan Ketidakpastian untuk model fungsi pengukuran multivariat.",
-          "Capaian: Menghitung derajat kebebasan efektif Welch-Satterthwaite dan Ketidakpastian Diperluas (Expanded Uncertainty $U..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.4.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun tabel Anggaran Ketidakpastian (Uncertainty Budget) terstandarisasi menurut kaidah GUM.",
+          "Capaian 2: Menerapkan Hukum Perambatan Ketidakpastian untuk model fungsi pengukuran multivariat.",
+          "Capaian 3: Menghitung derajat kebebasan efektif Welch-Satterthwaite dan Ketidakpastian Diperluas (Expanded Uncertainty $U$)."
         ],
-        "keyFormulaOrDiagram": "$$u_c^2(y) = \\sum_{i=1}^N c_i^2 u^2(x_i) + 2 \\sum_{i=1}^{N-1}\\sum_{j=i+1}^N c_i c_j u(x_i, x_j)$$"
+        "keyFormulaOrDiagram": "$$u_c^2(y) = \\sum_{i=1}^N c_i^2 u^2(x_i) + 2 \\sum_{i=1}^{N-1}\\sum_{j=i+1}^N c_i c_j u(x_i, x_j)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.4.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penyusunan Anggaran Ketidakpastian (Uncertainty Budget)...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penyusunan Anggaran Ketidakpastian (Uncertainty Budget) dan Expanded Uncertainty (U)",
+        "lead": "Hasil akhir dari evaluasi metrologi adalah penetapan Anggaran Ketidakpastian (*Uncertainty Budget*) dan pelaporan nilai Ketidakpastian Diperluas (*Expanded Uncertainty*).",
         "bulletPoints": [
-          "Hasil akhir dari evaluasi metrologi adalah penetapan Anggaran Ketidakpastian (*Uncertainty Budget*) dan pelaporan nilai Ketid...",
-          "$$Y = f(X_1, X_2, \\dots, X_N)$$",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Pada banyak fenomena rekayasa, besaran yang ingin diketahui ($Y$) tidak diukur secara langsung, melainkan dihitung secara tidak langsung melalui hubungan fungsional fisis dari beberapa besaran input terukur ($X_1, X_2, \\dots, X_N$):",
+          "$$Y = f(X_1, X_2, \\dots, X_N)$$"
         ],
-        "keyFormulaOrDiagram": "Sebagai contoh, daya listrik $P$ dihitung dari tegangan $V$ dan arus $I$ ($P = V \\times I$..."
+        "keyFormulaOrDiagram": "$P$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Sebagai contoh, daya listrik $P$ dihitung dari tegangan $V$ dan arus $I$ ($P = V \\times I$), atau modulus elastisitas dihitung dari beban, panjang regangan, dan luas penampang.",
         "bulletPoints": [
-          "Sebagai contoh, daya listrik $P$ dihitung dari tegangan $V$ dan arus $I$ ($P = V \\times I$), atau modulus elastisitas dihitun...",
-          "Hukum Perambatan Ketidakpastian (*Law of Propagation of Uncertainty*) menetapkan bagaimana ketidakpastian masing-masing varia...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Hukum Perambatan Ketidakpastian (*Law of Propagation of Uncertainty*) menetapkan bagaimana ketidakpastian masing-masing variabel input merambat melewati fungsi matematika $f$ menuju ketidakpastian gabungan luaran ($u_c(y)$) menggunakan turunan parsial koefisien sensitivitas ($c_i = \\partial f / \\partial x_i$)."
+        ],
+        "keyFormulaOrDiagram": "$f$",
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Hukum Perambatan Ketidakpastian GUM:",
         "bulletPoints": [
-          "1. Hukum Perambatan Ketidakpastian GUM:",
-          "Di mana koefisien sensitivitas: $c_i = \\left. \\frac{\\partial f}{\\partial x_i} \\right|_{\\mathbf{x} = \\bar{\\math...",
-          "2. Rumus Derajat Kebebasan Efektif Welch-Satterthwaite:"
+          "Di mana koefisien sensitivitas: $c_i = \\left. \\frac{\\partial f}{\\partial x_i} \\right|_{\\mathbf{x} = \\bar{\\mathbf{x}}}$ dan $u(x_i, x_j) = r(x_i, x_j) u(x_i) u(x_j)$ adalah kovarians.",
+          "2. Rumus Derajat Kebebasan Efektif Welch-Satterthwaite:",
+          "3. Ketidakpastian Diperluas (*Expanded Uncertainty*):"
         ],
-        "keyFormulaOrDiagram": "$$u_c^2(y) = \\sum_{i=1}^N c_i^2 u^2(x_i) + 2 \\sum_{i=1}^{N-1}\\sum_{j=i+1}^N c_i c_j u(x_i, x_j)$$"
+        "keyFormulaOrDiagram": "$$u_c^2(y) = \\sum_{i=1}^N c_i^2 u^2(x_i) + 2 \\sum_{i=1}^{N-1}\\sum_{j=i+1}^N c_i c_j u(x_i, x_j)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Daya listrik searah DC diserap oleh beban resistor dihitung dengan rumus P = V * I. Tegangan terukur V = (24.0 +/- 0.2) V dengan u(V) = 0.10...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Daya listrik searah DC diserap oleh beban resistor dihitung dengan rumus P = V * I. Tegangan terukur V = (24.0 +/- 0.2) V dengan u(V) = 0.10 V (df = 50). Arus terukur I = (2.50 +/- 0.05) A dengan u(I) = 0.02 A (df = 20). Korelasi antar-pengukuran adalah nol. Susun anggaran ketidakpastian, hitung ketidakpastian gabungan u_c(P), derajat kebebasan efektif, dan ketidakpastian diperluas U (k=2, 95%).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1 (Nilai Daya Nominal): P = V * I = 24.0 V * 2.50 A = 60.0 Watt.",
           "Langkah 2 (Koefisien Sensitivitas Parsial): c_V = dP/dV = I = 2.50 A; c_I = dP/dI = V = 24.0 V.",
-          "Langkah 3 (Komponen Kontribusi Ketidakpastian): u_P(V) = c_V * u(V) = 2.50 * 0.10 = 0.25 W; u_P(I) = c_I * u(I...",
-          "Interpretasi: Daya beban dilaporkan sebagai P = (60.0 +/- 1.1) Watt dengan faktor cakupan k = 2 pada tingkat kepercayaan 95%. Variabel..."
+          "Langkah 3 (Komponen Kontribusi Ketidakpastian): u_P(V) = c_V * u(V) = 2.50 * 0.10 = 0.25 W; u_P(I) = c_I * u(I) = 24.0 * 0.02 = 0.48 W."
         ],
-        "keyFormulaOrDiagram": "Langkah 6 (Ketidakpastian Diperluas): U = k * u_c(P) = 2.0 * 0.5412 W = 1.08 Watt."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4 (Ketidakpastian Gabungan): u_c(P) = sqrt(u_P(V)^2 + u_P(I)^2) = sqrt(0.25^2 + 0.48^2) = sqrt(0.0625 + 0.2304) = sqrt(0.2929) = 0.5412 W.",
+          "Langkah 5 (Welch-Satterthwaite): nu_eff = 0.5412^4 / [ (0.25^4 / 50) + (0.48^4 / 20) ] = 0.0858 / [ (0.0039 / 50) + (0.0531 / 20) ] = 0.0858 / (0.000078 + 0.002655) = 31.4 -> df efektif > 30.",
+          "Langkah 6 (Ketidakpastian Diperluas): U = k * u_c(P) = 2.0 * 0.5412 W = 1.08 Watt.",
+          "[result: Interpretasi Ilmiah] Daya beban dilaporkan sebagai P = (60.0 +/- 1.1) Watt dengan faktor cakupan k = 2 pada tingkat kepercayaan 95%. Variabel arus listrik (I) menyumbang kontribusi terbesar (78% dari total varians ketidakpastian)."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Penyusunan tabel Anggaran Ketidakpastian (Uncertainty Budget) otomatis untuk perhitungan daya P = V * I.",
         "bulletPoints": [
-          "Deskripsi: Penyusunan tabel Anggaran Ketidakpastian (Uncertainty Budget) otomatis untuk perhitungan daya P = V * I.",
-          "Dependensi Pustaka: pandas, numpy",
-          "Keluaran Diharapkan: TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET):"
+          "Tujuan Algoritma: Penyusunan tabel Anggaran Ketidakpastian (Uncertainty Budget) otomatis untuk perhitungan daya P = V * I.",
+          "Dependensi Pustaka Ilmiah: pandas, numpy",
+          "Keluaran Terverifikasi: TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET):"
         ],
-        "keyFormulaOrDiagram": "TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET): | Besaran Input Nilai Satuan Kontr..."
+        "keyFormulaOrDiagram": "TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET):\nBesaran Input  Nilai  Satuan  Kontribusi ui(y)  Bobot Varians (%)\nTegangan (V)   24.0    Volt              0.25              21.34\n     Arus (I)    2.5  Ampere              0.48              78.66\n-----------------------------------------------------------------",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menjumlahkan ketidakpastian secara linier biasa (u1 + u2) alih-alih penjumlahan kuadratur akar kuadrat (root-s...",
-          "Perangkap: Mengabaikan turunan parsial koefisien sensitivitas sehingga langsung menjumlahkan ketidakpastian besaran yang...",
-          "Perangkap: Mengasumsikan kovarians selalu nol padahal dua instrumen dikalibrasi terhadap sumber tegangan atau termostat a..."
-        ]
+          "[warning: Perangkap] Menjumlahkan ketidakpastian secara linier biasa (u1 + u2) alih-alih penjumlahan kuadratur akar kuadrat (root-sum-squares).",
+          "[warning: Perangkap] Mengabaikan turunan parsial koefisien sensitivitas sehingga langsung menjumlahkan ketidakpastian besaran yang memiliki satuan fisik berbeda.",
+          "[warning: Perangkap] Mengasumsikan kovarians selalu nol padahal dua instrumen dikalibrasi terhadap sumber tegangan atau termostat acuan yang sama."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan audit dimensi satuan: pastikan perkalian koefisien sensitivitas dengan ketidakpastian input menghasilk...",
-          "Prosedur: Gunakan simulasi Monte Carlo GUM Supplement 1 (JCGM 101:2008) untuk memvalidasi model jika fungsi pengukuran m..."
-        ]
+          "Prosedur: Lakukan audit dimensi satuan: pastikan perkalian koefisien sensitivitas dengan ketidakpastian input menghasilkan satuan fisik besaran luaran.",
+          "Prosedur: Gunakan simulasi Monte Carlo GUM Supplement 1 (JCGM 101:2008) untuk memvalidasi model jika fungsi pengukuran memiliki non-linearitas ekstrem."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Dalam rumus perambatan ketidakpastian, mengapa dua variabel input yang berkorelasi positif kuat (misal r = +0.8) dapat m...",
-          "Petunjuk: Perhatikan suku kovarians 2 * c1 * c2 * u(x1, x2) dalam hukum perambatan GUM.",
-          "Solusi Kunci: Jika salah satu koefisien sensitivitas bernilai negatif (misal c1 > 0 dan c2 < 0 seperti pada pengukuran selisih panjang..."
-        ]
+          "Pertanyaan Uji: Dalam rumus perambatan ketidakpastian, mengapa dua variabel input yang berkorelasi positif kuat (misal r = +0.8) dapat menghasilkan ketidakpastian gabungan yang lebih kecil jika salah satu koefisien sensitivitasnya bernilai negatif?",
+          "Petunjuk Analitis: Perhatikan suku kovarians 2 * c1 * c2 * u(x1, x2) dalam hukum perambatan GUM.",
+          "Solusi Kunci: Jika salah satu koefisien sensitivitas bernilai negatif (misal c1 > 0 dan c2 < 0 seperti pada pengukuran selisih panjang atau resistansi diferensial), perkalian c1 * c2 menjadi negatif. Akibatnya, suku kovarians 2 * c1 * c2 * Cov(x1, x2) bernilai negatif dan mengurangi total varians ketidakpastian (terjadi efek pembatalan galat sistematis timbal-balik)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

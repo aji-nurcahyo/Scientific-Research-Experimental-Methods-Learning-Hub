@@ -67,100 +67,136 @@ export const CH47_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Standar Electronic Lab Notebooks (ELN) untuk Pencatatan...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Standar Electronic Lab Notebooks (ELN) untuk Pencatatan Audit Riset Forensik",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.3.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.1.",
-          "Capaian: Memahami pergeseran metodologis dari buku catatan laboratorium kertas ke Electronic Lab Notebooks (ELN).",
-          "Capaian: Menerapkan standar audit integritas data (Audit Trail, Immutability, Cryptographic Timestamps).",
-          "Capaian: Mematuhi regulasi integritas data internasional (seperti FDA 21 CFR Part 11 dan standar ALCOA+)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami pergeseran metodologis dari buku catatan laboratorium kertas ke Electronic Lab Notebooks (ELN).",
+          "Capaian 2: Menerapkan standar audit integritas data (Audit Trail, Immutability, Cryptographic Timestamps).",
+          "Capaian 3: Mematuhi regulasi integritas data internasional (seperti FDA 21 CFR Part 11 dan standar ALCOA+)."
         ],
-        "keyFormulaOrDiagram": "$$H_k = \\text{SHA-256}(H_{k-1} \\parallel D_k \\parallel U_k \\parallel T_k)$$"
+        "keyFormulaOrDiagram": "$$H_k = \\text{SHA-256}(H_{k-1} \\parallel D_k \\parallel U_k \\parallel T_k)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.3.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Standar Electronic Lab Notebooks (ELN) untuk Pencatatan...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Standar Electronic Lab Notebooks (ELN) untuk Pencatatan Audit Riset Forensik",
+        "lead": "Dalam sejarah penelitian ilmiah, buku catatan laboratorium (paper lab notebook) adalah dokumen hukum dan saintifik paling berharga yang mencatat kronologi ide, kegagalan eksperimen, kalibrasi alat, dan data mentah.",
         "bulletPoints": [
-          "Dalam sejarah penelitian ilmiah, buku catatan laboratorium (paper lab notebook) adalah dokumen hukum dan saintifik paling ber...",
-          "Standar Electronic Lab Notebooks (ELN): ELN adalah platform perangkat lunak terintegrasi yang dirancang khusus untuk mencatat...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun pada era digital, buku kertas memiliki kelemahan fatal: tidak dapat dicari secara otomatis, rentan rusak fisik, tidak dapat menyimpan data biner sensor atau kode komputasi, dan rentan terhadap tuduhan pemalsuan tanggal (backdating) ketika timbul sengketa paten atau integritas akademik.",
+          "Standar Electronic Lab Notebooks (ELN): ELN adalah platform perangkat lunak terintegrasi yang dirancang khusus untuk mencatat seluruh siklus hidup eksperimen ilmiah digital dengan tingkat kepatuhan hukum dan forensik yang ketat.",
+          "ELN modern tidak sekadar berfungsi seperti aplikasi pencatat teks biasa (seperti Google Docs atau Notion), melainkan wajib memenuhi kriteria kepatuhan integritas data (misalnya prinsip ALCOA+ dan standar FDA 21 CFR Part 11)."
         ],
-        "keyFormulaOrDiagram": "Prinsip Integritas Data ALCOA+: 1. Attributable: Setiap catatan atau modifikasi wajib terh..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Prinsip Integritas Data ALCOA+: 1.",
         "bulletPoints": [
-          "Prinsip Integritas Data ALCOA+: 1. Attributable: Setiap catatan atau modifikasi wajib terhubung secara otentik ke identitas d...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Attributable: Setiap catatan atau modifikasi wajib terhubung secara otentik ke identitas digital peneliti (digital signature).",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Arsitektur Jejak Audit Kriptografi (Cryptographic Audit Trail):",
         "bulletPoints": [
-          "Arsitektur Jejak Audit Kriptografi (Cryptographic Audit Trail):",
-          "Dalam sistem ELN berstandar forensik, catatan eksperimen tidak pernah ditimpa (overwritten) atau dihapus secar...",
-          "Diberikan entri catatan ke-$k$ ($E_k$) dengan data $D_k$, identitas peneliti $U_k$, dan stempel waktu terverif..."
+          "Dalam sistem ELN berstandar forensik, catatan eksperimen tidak pernah ditimpa (overwritten) atau dihapus secara destruktif. Setiap modifikasi dicatat sebagai blok peristiwa baru yang diikat secara kriptografi mirip dengan rantai blok (append-only cryptographic hash chain):",
+          "Diberikan entri catatan ke-$k$ ($E_k$) dengan data $D_k$, identitas peneliti $U_k$, dan stempel waktu terverifikasi $T_k$:",
+          "di mana $\\parallel$ adalah operator penggabungan string (concatenation)."
         ],
-        "keyFormulaOrDiagram": "$$H_k = \\text{SHA-256}(H_{k-1} \\parallel D_k \\parallel U_k \\parallel T_k)$$"
+        "keyFormulaOrDiagram": "$$H_k = \\text{SHA-256}(H_{k-1} \\parallel D_k \\parallel U_k \\parallel T_k)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua peneliti memperebutkan hak paten atas sintesis material superkonduktor baru di ITERA. Peneliti A menunjukkan buku catatan kertas dengan...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua peneliti memperebutkan hak paten atas sintesis material superkonduktor baru di ITERA. Peneliti A menunjukkan buku catatan kertas dengan tulisan tangan tanggal 10 Januari 2025. Peneliti B menunjukkan entri ELN yang tersimpan dengan stempel waktu kriptografi server RFC 3161 bertanggal 15 Januari 2025. Jelaskan mengapa komite etik dan paten internasional memberikan bobot hukum forensik yang jauh lebih tinggi kepada Peneliti B.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Analisis kerentanan buku kertas Peneliti A: Tulisan tangan di buku kertas dapat ditulis kapan saja...",
-          "Langkah 2: Analisis stempel waktu kriptografi Peneliti B: Protokol RFC 3161 menggunakan Otoritas Stempel Waktu...",
-          "Langkah 3: Pembuktian matematis: Mustahil bagi Peneliti B untuk memalsukan stempel waktu tersebut secara mundu...",
-          "Interpretasi: Catatan ELN Peneliti B memiliki integritas hukum forensik yang sah secara mutlak (unquestionable legal provenance), seda..."
+          "Langkah 1: Analisis kerentanan buku kertas Peneliti A: Tulisan tangan di buku kertas dapat ditulis kapan saja (misal ditulis pada bulan Maret 2025 namun diberi tanggal mundur 10 Januari 2025). Tidak ada mekanisme fisik independen yang membuktikan kapan tinta benar-benar digoreskan.",
+          "Langkah 2: Analisis stempel waktu kriptografi Peneliti B: Protokol RFC 3161 menggunakan Otoritas Stempel Waktu Pihak Ketiga (Time Stamping Authority / TSA) independen. TSA menandatangani hash berkas eksperimen menggunakan kunci privat kriptografi bersama jam atomik terkalibrasi."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Pembuktian matematis: Mustahil bagi Peneliti B untuk memalsukan stempel waktu t..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Implementasi append-only cryptographic audit trail untuk pencatatan laboratorium digital.",
-          "Dependensi Pustaka: hashlib, datetime",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Jejak Audit Kriptografi ELN Berstandar Forensik:"
+          "Langkah 3: Pembuktian matematis: Mustahil bagi Peneliti B untuk memalsukan stempel waktu tersebut secara mundur tanpa meretas kunci privat RSA otoritas sertifikasi global.",
+          "[result: Interpretasi Ilmiah] Catatan ELN Peneliti B memiliki integritas hukum forensik yang sah secara mutlak (unquestionable legal provenance), sedangkan catatan kertas Peneliti A rentan gugur dalam pembuktian hukum."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Jejak Audit Kriptografi ELN Berstandar Forensik: | Blok 1 | Wakt..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi append-only cryptographic audit trail untuk pencatatan laboratorium digital.",
         "bulletPoints": [
-          "Perangkap: Menyimpan catatan laboratorium penting di aplikasi catatan konsumen pribadi yang tidak memiliki audit trail ya...",
-          "Perangkap: Menghapus atau menimpa berkas catatan saat eksperimen gagal (kegagalan eksperimen wajib tercatat sebagai bagia...",
-          "Perangkap: Berbagi akun ELN bersama antar anggota laboratorium (melanggar prinsip keterlacakan Attributable)."
-        ]
+          "Tujuan Algoritma: Implementasi append-only cryptographic audit trail untuk pencatatan laboratorium digital.",
+          "Dependensi Pustaka Ilmiah: hashlib, datetime",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Jejak Audit Kriptografi ELN Berstandar Forensik:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Jejak Audit Kriptografi ELN Berstandar Forensik:\nBlok 1 | Waktu: 2026-11-23T03:48:00.000000Z | Peneliti: AJI_PAMUNGKAS_ITERA\n       Aksi: Kalibrasi sensor getaran optik: Offset = 0.02 mV\n       Hash: a9f8e7d6c5b4a3... (Prev: 000000000000...)\nBlok 2 | Waktu: 2026-11-23T03:48:00.000000Z | Peneliti: AJI_PAMUNGKAS_ITERA",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Verifikasi bahwa sistem ELN mendukung ekspor data terbuka (Open Export XML/JSON) untuk mencegah vendor lock-in...",
-          "Prosedur: Pastikan seluruh entri ditandatangani secara digital dengan sertifikat PKI yang valid.",
-          "Prosedur: Lakukan audit berkala terhadap kelengkapan catatan parameter lingkungan laboratorium (suhu, kelembapan, ID ala..."
-        ]
+          "[warning: Perangkap] Menyimpan catatan laboratorium penting di aplikasi catatan konsumen pribadi yang tidak memiliki audit trail yang tidak dapat diubah.",
+          "[warning: Perangkap] Menghapus atau menimpa berkas catatan saat eksperimen gagal (kegagalan eksperimen wajib tercatat sebagai bagian dari integritas sains).",
+          "[warning: Perangkap] Berbagi akun ELN bersama antar anggota laboratorium (melanggar prinsip keterlacakan Attributable)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa dalam standar integritas data ALCOA+, kegagalan eksperimen (negative results atau anomalous runs) dilarang keras...",
-          "Petunjuk: Perhatikan bahaya Publication Bias dan pelaporan selektif (selective reporting).",
-          "Solusi Kunci: Menghapus eksperimen yang gagal adalah bentuk pemalsuan data terselubung (cherry-picking / falsification). Kegagalan men..."
-        ]
+          "Prosedur: Verifikasi bahwa sistem ELN mendukung ekspor data terbuka (Open Export XML/JSON) untuk mencegah vendor lock-in.",
+          "Prosedur: Pastikan seluruh entri ditandatangani secara digital dengan sertifikat PKI yang valid.",
+          "Prosedur: Lakukan audit berkala terhadap kelengkapan catatan parameter lingkungan laboratorium (suhu, kelembapan, ID alat)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa dalam standar integritas data ALCOA+, kegagalan eksperimen (negative results atau anomalous runs) dilarang keras untuk dihapus dari ELN?",
+          "Petunjuk Analitis: Perhatikan bahaya Publication Bias dan pelaporan selektif (selective reporting).",
+          "Solusi Kunci: Menghapus eksperimen yang gagal adalah bentuk pemalsuan data terselubung (cherry-picking / falsification). Kegagalan mencatat kondisi batas atau cacat fisik nyata dari metode. Menghapus kegagalan eksperimen menyebabkan estimasi variabilitas dan laju keberhasilan sistem dilaporkan terlalu optimis secara palsu dalam publikasi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -224,107 +260,144 @@ export const CH47_LESSONS: Record<string, Partial<Lesson>> = {
         "type": "formal-standard"
       },
       {
-        "citation": "Missier, P., Dey, S., Belhajjame, K., Cuevas-Vicentt\u00edn, V., & Lud\u00e4scher, B. (2013). D-PROV: A high-level provenance model for scientific workflows. eScience.",
+        "citation": "Missier, P., Dey, S., Belhajjame, K., Cuevas-Vicenttín, V., & Ludäscher, B. (2013). D-PROV: A high-level provenance model for scientific workflows. eScience.",
         "type": "peer-reviewed-article"
       }
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Implementasi Model Silsilah Data W3C PROV untuk Melacak...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Implementasi Model Silsilah Data W3C PROV untuk Melacak Transformasi Data Mentah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.3.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.2.",
-          "Capaian: Memahami spesifikasi standar internasional silsilah data W3C PROV-Data Model.",
-          "Capaian: Memetakan hubungan tripartit: Entities, Activities, dan Agents dalam alur kerja komputasi.",
-          "Capaian: Membangkitkan graf provenance berstandar W3C PROV-JSON untuk audit transparansi ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami spesifikasi standar internasional silsilah data W3C PROV-Data Model.",
+          "Capaian 2: Memetakan hubungan tripartit: Entities, Activities, dan Agents dalam alur kerja komputasi.",
+          "Capaian 3: Membangkitkan graf provenance berstandar W3C PROV-JSON untuk audit transparansi ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$\\text{wasGeneratedBy}(e, a, t)$$"
+        "keyFormulaOrDiagram": "$$\\text{wasGeneratedBy}(e, a, t)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.3.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Implementasi Model Silsilah Data W3C PROV untuk Melacak...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Implementasi Model Silsilah Data W3C PROV untuk Melacak Transformasi Data Mentah",
+        "lead": "Dalam riset ilmiah komputasi yang rumit, sebuah angka atau tabel yang ditampilkan di dalam naskah akhir seringkali telah melewati puluhan tahapan pemrosesan: filtering sinyal, normalisasi, kalibrasi sensor, penggabungan database, pembersihan outlier, dan inferensi model pembelajaran mesin.",
         "bulletPoints": [
-          "Dalam riset ilmiah komputasi yang rumit, sebuah angka atau tabel yang ditampilkan di dalam naskah akhir seringkali telah mele...",
-          "Standar Silsilah Data W3C PROV (W3C Provenance Data Model): Konsorsium World Wide Web (W3C) menerbitkan rekomendasi standar r...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Ketika seorang pembaca bertanya: \"Bagaimana tepatnya angka 89.4% pada Tabel 2 diturunkan dari data mentah sensor?\", sebagian besar peneliti tidak mampu melacak kembali alur silsilahnya secara eksak.",
+          "Standar Silsilah Data W3C PROV (W3C Provenance Data Model): Konsorsium World Wide Web (W3C) menerbitkan rekomendasi standar resmi W3C PROV untuk merepresentasikan silsilah data (data provenance) secara interoperabel di seluruh platform komputasi.",
+          "PROV memodelkan sejarah penciptaan dan transformasi data sebagai sebuah Graf Terarah (Directed Graph) yang menghubungkan tiga konsep ontologi inti:"
         ],
-        "keyFormulaOrDiagram": "1. Entity (Entitas Fisik atau Digital): Objek data fisik atau digital dalam kondisi terten..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "1.",
         "bulletPoints": [
-          "1. Entity (Entitas Fisik atau Digital): Objek data fisik atau digital dalam kondisi tertentu (misalnya berkas CSV mentah, mod...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Entity (Entitas Fisik atau Digital): Objek data fisik atau digital dalam kondisi tertentu (misalnya berkas CSV mentah, model terlatih berbobot .pt, atau grafik PDF).",
+          "Dilambangkan sebagai elips."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Relasi Inti Graf Silsilah W3C PROV:",
         "bulletPoints": [
-          "Relasi Inti Graf Silsilah W3C PROV:",
           "Graf provenance adalah graf asiklik berarah yang menunjuk ke masa lalu (menunjuk ke asal usul):",
-          "1. wasGeneratedBy: Menghubungkan Entity dengan Activity yang menciptakannya."
+          "1. wasGeneratedBy: Menghubungkan Entity dengan Activity yang menciptakannya.",
+          "2. used: Menghubungkan Activity dengan Entity masukan yang dikonsumsinya."
         ],
-        "keyFormulaOrDiagram": "$$\\text{wasGeneratedBy}(e, a, t)$$"
+        "keyFormulaOrDiagram": "$$\\text{wasGeneratedBy}(e, a, t)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan alur riset sederhana: Peneliti Aji menjalankan skrip Python clean_data.py pada pukul 09:00 menggunakan berkas mentah raw_sensor.cs...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan alur riset sederhana: Peneliti Aji menjalankan skrip Python clean_data.py pada pukul 09:00 menggunakan berkas mentah raw_sensor.csv (hash SHA: a1b2) dan menghasilkan berkas clean_sensor.parquet (hash SHA: c3d4) pada pukul 09:05. Petakan skenario ini ke dalam relasi ontologi formal W3C PROV.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi Entities: Entity 1 = e_raw (raw_sensor.csv, hash: a1b2); Entity 2 = e_clean (clean_sen...",
-          "Langkah 2: Identifikasi Activity: Activity 1 = a_clean (Eksekusi skrip clean_data.py, waktu mulai: 09:00, wakt...",
+          "Langkah 1: Identifikasi Entities: Entity 1 = e_raw (raw_sensor.csv, hash: a1b2); Entity 2 = e_clean (clean_sensor.parquet, hash: c3d4).",
+          "Langkah 2: Identifikasi Activity: Activity 1 = a_clean (Eksekusi skrip clean_data.py, waktu mulai: 09:00, waktu selesai: 09:05)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Identifikasi Agent: Agent 1 = ag_aji (Aji Pamungkas Tri Nurcahyo, Afiliasi: ITERA).",
-          "Interpretasi: Model ontologi W3C PROV menyediakan bukti rantai kausalitas digital lengkap yang dapat diaudit secara otomatis oleh mesi..."
+          "Langkah 4: Petakan relasi struktural W3C: used(a_clean, e_raw); wasGeneratedBy(e_clean, a_clean); wasDerivedFrom(e_clean, e_raw); wasAssociatedWith(a_clean, ag_aji); wasAttributedTo(e_clean, ag_aji).",
+          "[result: Interpretasi Ilmiah] Model ontologi W3C PROV menyediakan bukti rantai kausalitas digital lengkap yang dapat diaudit secara otomatis oleh mesin untuk memverifikasi asal usul data."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Petakan relasi struktural W3C: used(a_clean, e_raw); wasGeneratedBy(e_clean, a_..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembangkitan dokumen silsilah data W3C PROV dalam format terstandarisasi PROV-JSON.",
         "bulletPoints": [
-          "Deskripsi: Pembangkitan dokumen silsilah data W3C PROV dalam format terstandarisasi PROV-JSON.",
-          "Dependensi Pustaka: json, datetime",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Dokumen Silsilah W3C PROV-JSON:"
+          "Tujuan Algoritma: Pembangkitan dokumen silsilah data W3C PROV dalam format terstandarisasi PROV-JSON.",
+          "Dependensi Pustaka Ilmiah: json, datetime",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Dokumen Silsilah W3C PROV-JSON:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Dokumen Silsilah W3C PROV-JSON: | { | \"prefix\": {"
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Dokumen Silsilah W3C PROV-JSON:\n{\n  \"prefix\": {\n    \"itera\": \"https://www.itera.ac.id/research/\",\n    \"prov\": \"http://www.w3.org/ns/prov#\"",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpan silsilah data hanya dalam bentuk catatan naratif informal di berkas teks bebas (tidak dapat di-parse...",
-          "Perangkap: Mengabaikan pencatatan parameter spesifik (seperti nilai threshold atau nomor versi skrip) pada simpul Activit...",
-          "Perangkap: Membuat siklus lingkaran setan (circular cycles) dalam graf silsilah (melanggar sifat Directed Acyclic Graph)."
-        ]
+          "[warning: Perangkap] Menyimpan silsilah data hanya dalam bentuk catatan naratif informal di berkas teks bebas (tidak dapat di-parse mesin).",
+          "[warning: Perangkap] Mengabaikan pencatatan parameter spesifik (seperti nilai threshold atau nomor versi skrip) pada simpul Activity.",
+          "[warning: Perangkap] Membuat siklus lingkaran setan (circular cycles) dalam graf silsilah (melanggar sifat Directed Acyclic Graph)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan validator W3C PROV resmi (seperti prov-check atau pustaka python-prov).",
           "Prosedur: Ekspor graf silsilah ke dalam format visual SVG atau PDF menggunakan prov-dot.",
           "Prosedur: Sertakan metadata silsilah data W3C PROV-JSON di samping berkas artefak data primer."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa panah relasi dalam diagram W3C PROV (seperti wasDerivedFrom atau wasGeneratedBy) mengarah mundur ke masa lalu da...",
-          "Petunjuk: Perhatikan tujuan utama silsilah: menjawab pertanyaan dari mana data ini berasal.",
-          "Solusi Kunci: Dalam ontologi silsilah data, fokus utama adalah investigasi forensik asal usul (\"Dari mana entitas data ini berasal?\")...."
-        ]
+          "Pertanyaan Uji: Mengapa panah relasi dalam diagram W3C PROV (seperti wasDerivedFrom atau wasGeneratedBy) mengarah mundur ke masa lalu dan bukan maju ke masa depan?",
+          "Petunjuk Analitis: Perhatikan tujuan utama silsilah: menjawab pertanyaan dari mana data ini berasal.",
+          "Solusi Kunci: Dalam ontologi silsilah data, fokus utama adalah investigasi forensik asal usul (\"Dari mana entitas data ini berasal?\"). Oleh karena itu, panah menghubungkan entitas turunan ke entitas induknya (e_child -> e_parent). Hal ini juga menjamin bahwa entitas baru dapat merujuk ke entitas lama tanpa memerlukan pembaruan retrospektif terhadap metadata entitas lama yang sudah terkunci (immutable)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -394,101 +467,136 @@ export const CH47_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pengelolaan Repositori Riset Terbuka Menggunakan Open S...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pengelolaan Repositori Riset Terbuka Menggunakan Open Science Framework (OSF) dan Zenodo",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.3.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.3.",
-          "Capaian: Memahami fungsi repositori data terbuka terkurasi dalam ekosistem Open Science.",
-          "Capaian: Membedakan peran GitHub/GitLab (pengembangan aktif) vs Zenodo/OSF (pengarsipan statis permanen).",
-          "Capaian: Menerbitkan Digital Object Identifier (DOI) permanen yang memenuhi prinsip FAIR data."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami fungsi repositori data terbuka terkurasi dalam ekosistem Open Science.",
+          "Capaian 2: Membedakan peran GitHub/GitLab (pengembangan aktif) vs Zenodo/OSF (pengarsipan statis permanen).",
+          "Capaian 3: Menerbitkan Digital Object Identifier (DOI) permanen yang memenuhi prinsip FAIR data."
         ],
-        "keyFormulaOrDiagram": "$$\\text{DOI: } 10.5281/\\text{zenodo}.XXXXXXX$$"
+        "keyFormulaOrDiagram": "$$\\text{DOI: } 10.5281/\\text{zenodo}.XXXXXXX$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.3.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pengelolaan Repositori Riset Terbuka Menggunakan Open S...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pengelolaan Repositori Riset Terbuka Menggunakan Open Science Framework (OSF) dan Zenodo",
+        "lead": "Dalam mempublikasikan kode dan data eksperimen, kesalahan paling lazim di kalangan peneliti rekayasa adalah menaruh tautan repositori GitHub di dalam catatan kaki makalah, lalu menganggap kewajiban keterbukaan data telah terpenuhi.",
         "bulletPoints": [
-          "Dalam mempublikasikan kode dan data eksperimen, kesalahan paling lazim di kalangan peneliti rekayasa adalah menaruh tautan re...",
-          "Kerapuhan Repositori Kode Aktif (Link Rot & Code Volatility): 1. Link Rot: Repositori GitHub pribadi dapat diubah namanya, di...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Praktik ini sangat rapuh dan ditolak oleh standar perpustakaan ilmiah modern.",
+          "Kerapuhan Repositori Kode Aktif (Link Rot & Code Volatility): 1.",
+          "Link Rot: Repositori GitHub pribadi dapat diubah namanya, dijadikan privat, atau dihapus sewaktu-waktu oleh pemiliknya."
         ],
-        "keyFormulaOrDiagram": "Repositori Pengarsipan Permanen: Zenodo dan OSF: Untuk menjamin retensi jangka panjang, ko..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Repositori Pengarsipan Permanen: Zenodo dan OSF: Untuk menjamin retensi jangka panjang, komunitas ilmiah global mengandalkan...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Repositori Pengarsipan Permanen: Zenodo dan OSF: Untuk menjamin retensi jangka panjang, komunitas ilmiah global mengandalkan repositori arsip terbuka terkurasi seperti Zenodo (dikelola oleh CERN di bawah mandat Uni Eropa) dan Open Science Framework (OSF). - Jaminan Retensi Abadi (Long-Term Preservation): Zenodo menjamin bahwa data yang diunggah akan disimpan di media penyimpanan redundan CERN minimal selama masa operasional laboratorium (dijamin lebih dari 20-50 tahun ke depan). - Penerbitan DOI Permanen: Setiap rilis snapshot arsip diberikan Digital Object Identifier (DOI) resmi yang dapat disitasi secara terindeks dalam bibliografi akademik formal. - Kebal Modifikasi (Immutability): Begitu sebuah rilis snapshot diterbitkan dan mendapatkan DOI, berkas tersebut tidak dapat diubah atau dihapus, menjaga keaslian bukti sejarah sains.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Penerapan Prinsip FAIR Data pada Repositori Terbuka:",
         "bulletPoints": [
-          "Penerapan Prinsip FAIR Data pada Repositori Terbuka:",
           "Wilkinson et al. (2016) merumuskan empat pilar wajib data sains modern:",
-          "1. Findable (Dapat Ditemukan):"
+          "1. Findable (Dapat Ditemukan):",
+          "Data dan artefak diberi pengenal unik global yang persisten (Persistent Identifier / DOI):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{DOI: } 10.5281/\\text{zenodo}.XXXXXXX$$"
+        "keyFormulaOrDiagram": "$$\\text{DOI: } 10.5281/\\text{zenodo}.XXXXXXX$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim peneliti di ITERA menyelesaikan penelitian visi komputer dan ingin menghubungkan repositori GitHub dengan Zenodo. Rancang alur ke...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hubungkan akun: Peneliti masuk ke situs zenodo.org, mengaktifkan integrasi GitHub, dan mengaktifkan...",
-          "Langkah 2: Pembuatan rilis Git (Release Tag): Di repositori GitHub, peneliti membuat Git Tag dan Release resmi...",
-          "Langkah 3: Pemicuan Webhook otomatis: GitHub secara instan mengirimkan webhook ke Zenodo. Zenodo mengunduh ars...",
-          "Interpretasi: Integrasi ini mengunci status artefak komputasi pada saat publikasi, menjamin aksesibilitas abadi dan sitabilitas formal..."
+          "Konteks Kasus: Sebuah tim peneliti di ITERA menyelesaikan penelitian visi komputer dan ingin menghubungkan repositori GitHub dengan Zenodo. Rancang alur kerja resmi integrasi otomatis GitHub-Zenodo untuk menerbitkan DOI rilis versi v1.0.0 makalah.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Penyematan sitasi: Peneliti menyematkan badge DOI dan teks sitasi BibTeX resmi..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hubungkan akun: Peneliti masuk ke situs zenodo.org, mengaktifkan integrasi GitHub, dan mengaktifkan toggle switch pada repositori proyek riset.",
+          "Langkah 2: Pembuatan rilis Git (Release Tag): Di repositori GitHub, peneliti membuat Git Tag dan Release resmi bernama v1.0.0 dengan judul \"Initial Publication Release Artifacts\".",
+          "Langkah 3: Pemicuan Webhook otomatis: GitHub secara instan mengirimkan webhook ke Zenodo. Zenodo mengunduh arsip zip repositori, memvalidasi integritas berkas, dan menyimpannya di cluster penyimpanan permanen CERN."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Penerbitan DOI: Zenodo menerbitkan DOI unik (misal 10.5281/zenodo.1234567) dan mencatat metadata penulis, afiliasi ITERA, dan lisensi terbuka.",
+          "Langkah 5: Penyematan sitasi: Peneliti menyematkan badge DOI dan teks sitasi BibTeX resmi di dalam naskah makalah ilmiah.",
+          "[result: Interpretasi Ilmiah] Integrasi ini mengunci status artefak komputasi pada saat publikasi, menjamin aksesibilitas abadi dan sitabilitas formal yang diakui indeks Scopus dan WoS."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembangkitan berkas metadata sitasi terstandarisasi CITATION.cff untuk repositori ilmiah terbuka.",
         "bulletPoints": [
-          "Deskripsi: Pembangkitan berkas metadata sitasi terstandarisasi CITATION.cff untuk repositori ilmiah terbuka.",
-          "Dependensi Pustaka: datetime",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Berkas CITATION.cff Terstandarisasi:"
+          "Tujuan Algoritma: Pembangkitan berkas metadata sitasi terstandarisasi CITATION.cff untuk repositori ilmiah terbuka.",
+          "Dependensi Pustaka Ilmiah: datetime",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Berkas CITATION.cff Terstandarisasi:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Berkas CITATION.cff Terstandarisasi: | -------------------------..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Berkas CITATION.cff Terstandarisasi:\n-------------------------------------------------------\ncff-version: 1.2.0\nmessage: \"If you use this research software or dataset, please cite it as below.\"\nauthors:",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya mengandalkan tautan GitHub dinamis tanpa mengarsipkan rilis snapshot ke Zenodo/OSF.",
-          "Perangkap: Mengunggah berkas data dalam format software berpemilik eksklusif (seperti .mat atau .xlsx yang membutuhkan li...",
-          "Perangkap: Tidak menyertakan berkas CITATION.cff yang memudahkan peneliti lain mengutip perangkat lunak riset secara bena..."
-        ]
+          "[warning: Perangkap] Hanya mengandalkan tautan GitHub dinamis tanpa mengarsipkan rilis snapshot ke Zenodo/OSF.",
+          "[warning: Perangkap] Mengunggah berkas data dalam format software berpemilik eksklusif (seperti .mat atau .xlsx yang membutuhkan lisensi mahal).",
+          "[warning: Perangkap] Tidak menyertakan berkas CITATION.cff yang memudahkan peneliti lain mengutip perangkat lunak riset secara benar."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan repositori Zenodo memiliki status pengarsipan permanen dengan nomor DOI terdaftar aktif di DataCite.",
           "Prosedur: Uji tautan DOI menggunakan URL resolver resmi: https://doi.org/<DOI_ANDA>.",
           "Prosedur: Verifikasi kepatuhan terhadap prinsip FAIR menggunakan checklist automated FAIR-checker."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa sebuah rilis snapshot yang telah diterbitkan di Zenodo tidak dapat diedit atau dihapus oleh peneliti yang mengun...",
-          "Petunjuk: Perhatikan integritas catatan sejarah ilmiah dan pencegahan manipulasi bukti retrospektif.",
-          "Solusi Kunci: Imutabilitas adalah pilar utama integritas ilmiah. Begitu sebuah artefak diterbitkan dengan DOI, artefak tersebut telah..."
-        ]
+          "Pertanyaan Uji: Mengapa sebuah rilis snapshot yang telah diterbitkan di Zenodo tidak dapat diedit atau dihapus oleh peneliti yang mengunggahnya?",
+          "Petunjuk Analitis: Perhatikan integritas catatan sejarah ilmiah dan pencegahan manipulasi bukti retrospektif.",
+          "Solusi Kunci: Imutabilitas adalah pilar utama integritas ilmiah. Begitu sebuah artefak diterbitkan dengan DOI, artefak tersebut telah menjadi bagian permanen dari catatan sejarah sains global. Jika peneliti dapat mengubah berkas tersebut secara bebas, pembaca tidak dapat memastikan apakah kode yang mereka periksa hari ini adalah kode yang sama yang digunakan untuk menghasilkan angka di dalam makalah yang diterbitkan 5 tahun lalu."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -556,99 +664,137 @@ export const CH47_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pemilihan Lisensi Terbuka: Perbedaan Lisensi Kode (MIT,...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pemilihan Lisensi Terbuka: Perbedaan Lisensi Kode (MIT, Apache 2.0) vs Lisensi Data (CC-BY)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.3.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.4.",
-          "Capaian: Memahami implikasi hukum hak cipta intelektual (Intellectual Property / IP) pada publikasi ilmiah terbuka.",
-          "Capaian: Membedakan lisensi perangkat lunak (Permissive vs Copyleft: MIT, Apache 2.0, GPLv3).",
-          "Capaian: Memilih lisensi data terbuka Creative Commons (CC0 vs CC-BY 4.0) untuk dataset rekayasa."
-        ]
-      },
-      {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pemilihan Lisensi Terbuka: Perbedaan Lisensi Kode (MIT,...",
-        "bulletPoints": [
-          "Salah satu kesalahpahaman paling berbahaya di kalangan peneliti adalah anggapan bahwa \"mengunggah kode dan data ke repositori...",
-          "Dikotomi Fundamental Lisensi Kode vs Lisensi Data: Perangkat lunak dan dataset memiliki sifat ontologi hukum yang berbeda: -...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.3.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami implikasi hukum hak cipta intelektual (Intellectual Property / IP) pada publikasi ilmiah terbuka.",
+          "Capaian 2: Membedakan lisensi perangkat lunak (Permissive vs Copyleft: MIT, Apache 2.0, GPLv3).",
+          "Capaian 3: Memilih lisensi data terbuka Creative Commons (CC0 vs CC-BY 4.0) untuk dataset rekayasa."
         ],
-        "keyFormulaOrDiagram": "Taksonomi Lisensi Perangkat Lunak Ilmiah: 1. Lisensi Permisif (Permissive: MIT, Apache 2.0..."
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.3.4."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pemilihan Lisensi Terbuka: Perbedaan Lisensi Kode (MIT, Apache 2.0) vs Lisensi Data (CC-BY)",
+        "lead": "Salah satu kesalahpahaman paling berbahaya di kalangan peneliti adalah anggapan bahwa \"mengunggah kode dan data ke repositori publik di internet otomatis menjadikannya domain publik bebas pakai\".",
         "bulletPoints": [
-          "Taksonomi Lisensi Perangkat Lunak Ilmiah: 1. Lisensi Permisif (Permissive: MIT, Apache 2.0, BSD-3-Clause): Memberikan kebebas...",
-          "Lisensi Data Terbuka (Creative Commons): - CC0 1.0 (Public Domain Dedication): Melepaskan seluruh hak cipta ke domain publik...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Dalam hukum hak cipta internasional (Konvensi Bern), jika sebuah repositori tidak memiliki berkas lisensi hukum eksplisit, status hukumnya adalah \"All Rights Reserved\" (Seluruh Hak Cipta Dilindungi).",
+          "Peneliti lain yang mengunduh dan menjalankan kode Anda secara teknis melakukan pelanggaran hak cipta ilegal!",
+          "Dikotomi Fundamental Lisensi Kode vs Lisensi Data: Perangkat lunak dan dataset memiliki sifat ontologi hukum yang berbeda: - Kode Perangkat Lunak adalah karya logika instruksi yang dapat dieksekusi (functional text). - Data Pengukuran adalah kumpulan fakta empiris alam (facts and observations).",
+          "Oleh karena itu, lisensi perangkat lunak (seperti MIT atau GPL) TIDAK BOLEH digunakan untuk melisensikan data, dan lisensi dokumen kreatif (seperti Creative Commons) TIDAK BOLEH digunakan untuk melisensikan kode perangkat lunak."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Taksonomi Lisensi Perangkat Lunak Ilmiah: 1.",
+        "bulletPoints": [
+          "Lisensi Permisif (Permissive: MIT, Apache 2.0, BSD-3-Clause): Memberikan kebebasan maksimum kepada siapa pun untuk menggunakan, memodifikasi, dan mengintegrasikan kode ke dalam perangkat lunak komersial tertutup dengan syarat mencantumkan atribusi penulis asli.",
+          "Apache 2.0 menyertakan klausul perlindungan paten eksplisit yang sangat ideal untuk riset inovasi teknologi rekayasa.",
+          "Lisensi Data Terbuka (Creative Commons): - CC0 1.0 (Public Domain Dedication): Melepaskan seluruh hak cipta ke domain publik (standar emas untuk data mentah sensor dan benchmark publik). - CC-BY 4.0 (Attribution): Mengizinkan siapa pun menyebarkan dan memodifikasi data dengan syarat wajib mencantumkan sitasi kredit kepada peneliti asli."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
+      },
+      {
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Matriks Komparasi Hukum Lisensi Ilmiah:",
         "bulletPoints": [
-          "Matriks Komparasi Hukum Lisensi Ilmiah:",
           "| Kategori Lisensi | Jenis Lisensi | Hak Penggunaan | Hak Komersial | Perlindungan Paten | Syarat Copyleft |",
-          "| :--- | :--- | :--- | :--- | :--- | :--- |"
-        ]
+          "| :--- | :--- | :--- | :--- | :--- | :--- |",
+          "| **Software** | **MIT License** | Bebas | Ya | Implisit | Tidak Ada |"
+        ],
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah laboratorium di ITERA merilis paket riset yang memuat: (1) Skrip algoritma ekstraksi fitur gelombang, (2) Dataset pengukuran getaran...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Pemilihan lisensi artefak (1) Skrip Algoritma: Mengingat kode memuat algoritma baru yang berpotensi...",
-          "Langkah 2: Pemilihan lisensi artefak (2) Dataset Pengukuran 100 GB: Dataset adalah kumpulan fakta fisik. Pilih...",
-          "Langkah 3: Pemilihan lisensi artefak (3) Buku Panduan PDF: Untuk dokumen narasi teks ilmiah, gunakan Creative...",
-          "Interpretasi: Pemisahan lisensi ganda (Dual-Licensing Strategy: Apache 2.0 untuk kode + CC-BY untuk data) memberikan kepastian hukum y..."
+          "Konteks Kasus: Sebuah laboratorium di ITERA merilis paket riset yang memuat: (1) Skrip algoritma ekstraksi fitur gelombang, (2) Dataset pengukuran getaran mesin 100 GB, dan (3) Buku panduan laporan teknis PDF. Tentukan lisensi hukum yang paling tepat untuk masing-masing dari ketiga artefak tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Pemilihan lisensi artefak (3) Buku Panduan PDF: Untuk dokumen narasi teks ilmia..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Pemilihan lisensi artefak (1) Skrip Algoritma: Mengingat kode memuat algoritma baru yang berpotensi dipatenkan dan peneliti ingin adopsi seluas-luasnya oleh industri, pilih lisensi perangkat lunak permisif dengan perlindungan paten: Apache License 2.0.",
+          "Langkah 2: Pemilihan lisensi artefak (2) Dataset Pengukuran 100 GB: Dataset adalah kumpulan fakta fisik. Pilih Creative Commons Attribution 4.0 International (CC-BY 4.0) agar siapa pun yang menggunakan data wajib mengutip naskah ilmiah ITERA."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Pemilihan lisensi artefak (3) Buku Panduan PDF: Untuk dokumen narasi teks ilmiah, gunakan Creative Commons Attribution-NoDerivatives (CC-BY-ND 4.0) jika teks tidak boleh diubah sembarangan, atau CC-BY 4.0 untuk keterbukaan penuh.",
+          "[result: Interpretasi Ilmiah] Pemisahan lisensi ganda (Dual-Licensing Strategy: Apache 2.0 untuk kode + CC-BY untuk data) memberikan kepastian hukum yang sempurna bagi kolaborator dan industri."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit otomatis keberadaan dan kepatuhan lisensi terbuka (License Compliance Checker) pada proyek riset.",
         "bulletPoints": [
-          "Deskripsi: Audit otomatis keberadaan dan kepatuhan lisensi terbuka (License Compliance Checker) pada proyek riset.",
-          "Dependensi Pustaka: os",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Audit Kepatuhan Hukum Lisensi Terbuka Proyek:"
+          "Tujuan Algoritma: Audit otomatis keberadaan dan kepatuhan lisensi terbuka (License Compliance Checker) pada proyek riset.",
+          "Dependensi Pustaka Ilmiah: os",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Audit Kepatuhan Hukum Lisensi Terbuka Proyek:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Kepatuhan Hukum Lisensi Terbuka Proyek: | ----------------..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Kepatuhan Hukum Lisensi Terbuka Proyek:\n-------------------------------------------------------\nCode_License_Present  : True\nData_License_Present  : True\nStatus                : COMPLIANT",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Tidak menyertakan berkas LICENSE sama sekali di repositori (menjadikannya berstatus All Rights Reserved secara...",
-          "Perangkap: Menggunakan lisensi Creative Commons (seperti CC-BY) untuk kode perangkat lunak (Creative Commons secara ekspl...",
-          "Perangkap: Menggunakan lisensi Non-Commercial (CC-BY-NC) yang melarang adopsi data oleh laboratorium komersial atau rumah..."
-        ]
+          "[warning: Perangkap] Tidak menyertakan berkas LICENSE sama sekali di repositori (menjadikannya berstatus All Rights Reserved secara ilegal).",
+          "[warning: Perangkap] Menggunakan lisensi Creative Commons (seperti CC-BY) untuk kode perangkat lunak (Creative Commons secara eksplisit menolak penggunaannya untuk software).",
+          "[warning: Perangkap] Menggunakan lisensi Non-Commercial (CC-BY-NC) yang melarang adopsi data oleh laboratorium komersial atau rumah sakit industri."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Sertakan berkas teks LICENSE lengkap di direktori akar repositori.",
-          "Prosedur: Tambahkan header lisensi singkat (SPDX License Identifier) di baris pertama setiap berkas kode sumber Python:...",
+          "Prosedur: Tambahkan header lisensi singkat (SPDX License Identifier) di baris pertama setiap berkas kode sumber Python: # SPDX-License-Identifier: Apache-2.0.",
           "Prosedur: Dokumentasikan lisensi dataset secara eksplisit di berkas README data."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa komunitas Open Science sangat tidak menganjurkan penggunaan klausul Non-Commercial (misalnya lisensi CC-BY-NC) u...",
-          "Petunjuk: Perhatikan ambiguitas hukum dari istilah \"non-komersial\" dan hambatan integrasi dengan riset industr...",
-          "Solusi Kunci: Istilah \"Non-Commercial\" sangat kabur secara hukum. Apakah seorang peneliti di universitas negeri yang didanai oleh hiba..."
-        ]
+          "Pertanyaan Uji: Mengapa komunitas Open Science sangat tidak menganjurkan penggunaan klausul Non-Commercial (misalnya lisensi CC-BY-NC) untuk dataset riset terbuka?",
+          "Petunjuk Analitis: Perhatikan ambiguitas hukum dari istilah \"non-komersial\" dan hambatan integrasi dengan riset industri.",
+          "Solusi Kunci: Istilah \"Non-Commercial\" sangat kabur secara hukum. Apakah seorang peneliti di universitas negeri yang didanai oleh hibah industri dianggap komersial? Apakah penggunaan data untuk pelatihan dokter di rumah sakit swasta dianggap komersial? Ambiguitas ini menakut-nakuti banyak peneliti dan memblokir integrasi dataset ke proyek-proyek open-source global seperti Wikipedia atau database internasional."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

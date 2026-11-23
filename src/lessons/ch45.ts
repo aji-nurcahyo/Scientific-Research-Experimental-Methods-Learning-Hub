@@ -68,100 +68,136 @@ export const CH45_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prinsip RSE: Mengapa Skrip Riset Kriptik Sekali-Pakai B...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prinsip RSE: Mengapa Skrip Riset Kriptik Sekali-Pakai Berbahaya bagi Sains",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.1.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.1.",
-          "Capaian: Memahami filosofi gerakan Research Software Engineering (RSE) global.",
-          "Capaian: Menganalisis dampak negatif kode ilmiah yang tidak terstruktur terhadap krisis reproduksibilitas.",
-          "Capaian: Menerapkan prinsip parsimoni kode, clean architecture, dan modularitas dalam penulisan algoritma riset."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami filosofi gerakan Research Software Engineering (RSE) global.",
+          "Capaian 2: Menganalisis dampak negatif kode ilmiah yang tidak terstruktur terhadap krisis reproduksibilitas.",
+          "Capaian 3: Menerapkan prinsip parsimoni kode, clean architecture, dan modularitas dalam penulisan algoritma riset."
         ],
-        "keyFormulaOrDiagram": "$$M = E - N + 2P$$"
+        "keyFormulaOrDiagram": "$$M = E - N + 2P$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.1.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prinsip RSE: Mengapa Skrip Riset Kriptik Sekali-Pakai B...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prinsip RSE: Mengapa Skrip Riset Kriptik Sekali-Pakai Berbahaya bagi Sains",
+        "lead": "Dalam beberapa dekade terakhir, komputasi telah menjadi pilar ketiga metode ilmiah di samping teori dan eksperimen laboratorium.",
         "bulletPoints": [
-          "Dalam beberapa dekade terakhir, komputasi telah menjadi pilar ketiga metode ilmiah di samping teori dan eksperimen laboratori...",
-          "Bahaya Epistemologis Kode Kriptik: 1. Kesalahan Tersembunyi (Undetected Scientific Bugs): Studi Merali (2010) di jurnal Natur...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, sebagian besar perangkat lunak yang digunakan dalam publikasi ilmiah bereputasi tinggi ditulis oleh mahasiswa pascasarjana atau peneliti tanpa pelatihan formal dalam rekayasa perangkat lunak (software engineering).",
+          "Akibatnya, ekosistem sains dipenuhi oleh apa yang disebut skrip sekali-pakai kriptik (\"spaghetti research scripts\"): skrip Python atau MATLAB sepanjang 3.000 baris dalam satu berkas, variabel bernama a1, temp2, final_fix_v3, jalur direktori yang di-hardcode ke komputer pribadi peneliti, dan ketiadaan pengujian otomatis.",
+          "Bahaya Epistemologis Kode Kriptik: 1.",
+          "Kesalahan Tersembunyi (Undetected Scientific Bugs): Studi Merali (2010) di jurnal Nature mengungkapkan bahwa sebagian besar kesalahan dalam kalkulasi ilmiah terjadi bukan karena kesalahan teori matematika, melainkan karena kesalahan indeks array, off-by-one errors, atau mutasi variabel global tersembunyi."
         ],
-        "keyFormulaOrDiagram": "Gerakan Research Software Engineering (RSE): Gerakan RSE menetapkan bahwa kode ilmiah buka..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Gerakan Research Software Engineering (RSE): Gerakan RSE menetapkan bahwa kode ilmiah bukan sekadar catatan kasar pribadi, me...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Gerakan Research Software Engineering (RSE): Gerakan RSE menetapkan bahwa kode ilmiah bukan sekadar catatan kasar pribadi, melainkan artefak ilmiah kelas satu (first-class research artifact) yang wajib memenuhi standar keterbacaan, keandalan, dan modularitas yang setara dengan penulisan artikel ilmiah itu sendiri.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Metrik Kompleksitas Kode Ilmiah:",
         "bulletPoints": [
-          "Metrik Kompleksitas Kode Ilmiah:",
           "1. Kompleksitas Siklomatis Thomas McCabe (Cyclomatic Complexity, $M$):",
-          "Mengukur jumlah jalur independen linier yang melintasi graf alur kendali kode:"
+          "Mengukur jumlah jalur independen linier yang melintasi graf alur kendali kode:",
+          "di mana:"
         ],
-        "keyFormulaOrDiagram": "$$M = E - N + 2P$$"
+        "keyFormulaOrDiagram": "$$M = E - N + 2P$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan skrip riset analisis getaran sensor dengan kompleksitas siklomatis M = 22 yang memuat pembacaan berkas CSV, kalkulasi FFT, filteri...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan skrip riset analisis getaran sensor dengan kompleksitas siklomatis M = 22 yang memuat pembacaan berkas CSV, kalkulasi FFT, filtering sinyal, pencarian puncak spektrum, dan penggambaran plot Matplotlib dalam satu fungsi tunggal setebal 250 baris. Rancang dekomposisi modularitas RSE untuk mereduksi kompleksitas siklomatis menjadi M <= 4 pada setiap sub-fungsi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi batas tanggung jawab domain: Terdapat 4 domain ortogonal: (1) I/O Data, (2) Pemrosesan...",
-          "Langkah 2: Dekomposisi Modul 1 (I/O Data): Fungsi load_sensor_stream(filepath) -> pd.DataFrame. Tugas tunggal:...",
-          "Langkah 3: Dekomposisi Modul 2 (Pemrosesan Sinyal): Fungsi compute_fft_spectrum(signal, sampling_rate) -> (fre...",
-          "Interpretasi: Dekomposisi modular berhasil memangkas fungsi monolitik berisiko tinggi (M=22) menjadi lima fungsi atomik terisolasi yan..."
+          "Langkah 1: Identifikasi batas tanggung jawab domain: Terdapat 4 domain ortogonal: (1) I/O Data, (2) Pemrosesan Sinyal, (3) Analisis Statistik Puncak, (4) Presentasi Visual.",
+          "Langkah 2: Dekomposisi Modul 1 (I/O Data): Fungsi load_sensor_stream(filepath) -> pd.DataFrame. Tugas tunggal: parsing CSV dan validasi skema (M=2).",
+          "Langkah 3: Dekomposisi Modul 2 (Pemrosesan Sinyal): Fungsi compute_fft_spectrum(signal, sampling_rate) -> (freqs, power). Fungsi bandpass_filter(signal, low, high) -> signal (M=2)."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Dekomposisi Modul 4 (Visualisasi): Fungsi plot_frequency_diagnostics(freqs, pow..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Refactoring skrip riset kriptik monolitik menjadi modul RSE clean architecture berorientasi fungsi atomik.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Eksekusi Arsitektur Modular RSE:"
+          "Langkah 4: Dekomposisi Modul 3 (Deteksi Anomali): Fungsi identify_spectral_peaks(freqs, power, threshold) -> peak_indices (M=3).",
+          "Langkah 5: Dekomposisi Modul 4 (Visualisasi): Fungsi plot_frequency_diagnostics(freqs, power, peaks, output_path) -> None (M=2).",
+          "[result: Interpretasi Ilmiah] Dekomposisi modular berhasil memangkas fungsi monolitik berisiko tinggi (M=22) menjadi lima fungsi atomik terisolasi yang mudah diuji dengan unit testing mandiri."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Eksekusi Arsitektur Modular RSE: | Jumlah Titik Sinyal Terproses..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Refactoring skrip riset kriptik monolitik menjadi modul RSE clean architecture berorientasi fungsi atomik.",
         "bulletPoints": [
-          "Perangkap: Menyimpan seluruh alur riset dalam satu notebook Jupyter raksasa tanpa mengekstrak modul Python.",
-          "Perangkap: Menggunakan variabel global yang dapat dimutasi secara implisit oleh berbagai fungsi berbeda.",
-          "Perangkap: Menulis jalur berkas lokal absolut (seperti C:\\Users\\NamaSaya\\Desktop\\data.csv)."
-        ]
+          "Tujuan Algoritma: Refactoring skrip riset kriptik monolitik menjadi modul RSE clean architecture berorientasi fungsi atomik.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Eksekusi Arsitektur Modular RSE:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Eksekusi Arsitektur Modular RSE:\nJumlah Titik Sinyal Terproses : 200\nFrekuensi Dominan Terdeteksi  : 12.50 Hz (Eksak: 12.50 Hz)\nKarakteristik Kode: Bebas variabel global, fungsi murni tanpa efek samping.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Audit kode menggunakan static linter (seperti flake8, ruff, atau pylint).",
-          "Prosedur: Ukur kompleksitas siklomatis fungsi menggunakan pustaka radon: pastikan seluruh fungsi memiliki nilai M < 10.",
-          "Prosedur: Gunakan pathlib.Path untuk seluruh penanganan berkas agar portabel lintas sistem operasi (Linux, Windows, macO..."
-        ]
+          "[warning: Perangkap] Menyimpan seluruh alur riset dalam satu notebook Jupyter raksasa tanpa mengekstrak modul Python.",
+          "[warning: Perangkap] Menggunakan variabel global yang dapat dimutasi secara implisit oleh berbagai fungsi berbeda.",
+          "[warning: Perangkap] Menulis jalur berkas lokal absolut (seperti C:\\Users\\NamaSaya\\Desktop\\data.csv)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa penggunaan notebook Jupyter (.ipynb) saja tanpa modul kode (.py) yang terpisah dianggap sebagai praktik berisiko...",
-          "Petunjuk: Perhatikan masalah pelacakan versi Git diff dan urutan eksekusi sel (hidden state).",
-          "Solusi Kunci: Notebook Jupyter rentan terhadap masalah eksekusi sel di luar urutan (out-of-order execution) yang menciptakan variabel..."
-        ]
+          "Prosedur: Audit kode menggunakan static linter (seperti flake8, ruff, atau pylint).",
+          "Prosedur: Ukur kompleksitas siklomatis fungsi menggunakan pustaka radon: pastikan seluruh fungsi memiliki nilai M < 10.",
+          "Prosedur: Gunakan pathlib.Path untuk seluruh penanganan berkas agar portabel lintas sistem operasi (Linux, Windows, macOS)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa penggunaan notebook Jupyter (.ipynb) saja tanpa modul kode (.py) yang terpisah dianggap sebagai praktik berisiko tinggi untuk proyek riset jangka panjang?",
+          "Petunjuk Analitis: Perhatikan masalah pelacakan versi Git diff dan urutan eksekusi sel (hidden state).",
+          "Solusi Kunci: Notebook Jupyter rentan terhadap masalah eksekusi sel di luar urutan (out-of-order execution) yang menciptakan variabel tersembunyi (hidden states) yang tidak dapat direproduksi. Selain itu, berkas JSON notebook menghasilkan git diff yang sangat berantakan dan sulit ditinjau oleh reviewer. Praktik RSE baku adalah mengekstrak logika inti ke modul .py dan hanya menggunakan notebook untuk visualisasi pelaporan akhir."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -231,100 +267,127 @@ export const CH45_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Modularitas Kode Ilmiah: Memisahkan Logika Matematika,...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Modularitas Kode Ilmiah: Memisahkan Logika Matematika, Data Pipeline, dan Visualisasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.1.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.2.",
-          "Capaian: Merancang arsitektur perangkat lunak riset modular berbasis pola Model-View-Controller teradaptasi.",
-          "Capaian: Memisahkan logika matematika murni (core engine) dari manipulasi I/O dan visualisasi presentasi.",
-          "Capaian: Menerapkan antarmuka API fungsional yang stabil untuk memfasilitasi interoperabilitas komputasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang arsitektur perangkat lunak riset modular berbasis pola Model-View-Controller teradaptasi.",
+          "Capaian 2: Memisahkan logika matematika murni (core engine) dari manipulasi I/O dan visualisasi presentasi.",
+          "Capaian 3: Menerapkan antarmuka API fungsional yang stabil untuk memfasilitasi interoperabilitas komputasi."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{V} \\longrightarrow \\mathcal{M} \\longleftarrow \\mathcal{D}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{V} \\longrightarrow \\mathcal{M} \\longleftarrow \\mathcal{D}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.1.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Modularitas Kode Ilmiah: Memisahkan Logika Matematika,...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Modularitas Kode Ilmiah: Memisahkan Logika Matematika, Data Pipeline, dan Visualisasi",
+        "lead": "Salah satu cacat struktural yang paling umum dalam kode riset pemula adalah percampuran aduk antara tiga lapisan operasional: membaca data dari sensor, melakukan pemfilteran matematika, dan memplot grafik matplotlib dalam satu blok kode yang saling terikat erat.",
         "bulletPoints": [
-          "Salah satu cacat struktural yang paling umum dalam kode riset pemula adalah percampuran aduk antara tiga lapisan operasional:...",
-          "Arsitektur Tiga Lapisan RSE (Three-Tier Scientific Architecture): Sistem komputasi riset profesional wajib memisahkan kode ke...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Akibatnya, jika peneliti ingin menguji algoritma matematika pada data baru, peneliti terpaksa menyalin-tempel (copy-paste) ratusan baris kode, melipatgandakan redundansi dan risiko bug.",
+          "Arsitektur Tiga Lapisan RSE (Three-Tier Scientific Architecture): Sistem komputasi riset profesional wajib memisahkan kode ke dalam tiga direktori modul yang independen: 1.",
+          "Lapisan Data Pipeline (Ingestion & Preprocessing): Bertanggung jawab secara eksklusif untuk parsing format berkas mentah (CSV, HDF5, Parquet, citra), menangani data hilang, dan validasi skema tipe data."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Salah satu cacat struktural yang paling umum dalam kode riset pemula adalah percampuran aduk antara tiga lapisan operasional:...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pemisahan Dependensi Grafis (Dependency Inversion Principle):",
         "bulletPoints": [
-          "Pemisahan Dependensi Grafis (Dependency Inversion Principle):",
-          "Misalkan $\\mathcal{D}$ adalah modul I/O Data, $\\mathcal{M}$ adalah modul Inti Matematika, dan $\\mathcal{V}$ ad...",
-          "Arah Dependensi yang Sah Secara Ilmiah:"
+          "Misalkan $\\mathcal{D}$ adalah modul I/O Data, $\\mathcal{M}$ adalah modul Inti Matematika, dan $\\mathcal{V}$ adalah modul Visualisasi.",
+          "Arah Dependensi yang Sah Secara Ilmiah:",
+          "Kedua modul pendukung (Data dan Visualisasi) bergantung pada modul matematika atau abstraksi antarmuka bersama, namun modul inti matematika $\\mathcal{M}$ sama sekali tidak bergantung pada modul lain (Zero External Side-Effect Dependencies)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{V} \\longrightarrow \\mathcal{M} \\longleftarrow \\mathcal{D}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{V} \\longrightarrow \\mathcal{M} \\longleftarrow \\mathcal{D}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah fungsi monolitik analyze_and_plot_ecg(filename) membaca berkas sinyal jantung, mendeteksi puncak gelombang R, dan langsung memanggil...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi bottleneck eksekusi: Pemanggilan plt.show() memblokir alur komputasi (intervensi grafi...",
-          "Langkah 2: Evaluasi redundansi I/O: Setiap kali hyperparameter diubah, fungsi membaca ulang berkas dari disk b...",
-          "Langkah 3: Pelanggaran testability: Algoritma deteksi puncak tidak dapat diuji secara otomatis dengan unit tes...",
-          "Interpretasi: Pemisahan modular memungkinkan fungsi deteksi puncak dievaluasi 10.000 kali dalam memori RAM murni dalam hitungan detik..."
+          "Konteks Kasus: Sebuah fungsi monolitik analyze_and_plot_ecg(filename) membaca berkas sinyal jantung, mendeteksi puncak gelombang R, dan langsung memanggil plt.show(). Jelaskan mengapa desain ini melanggar prinsip modularitas RSE jika peneliti ingin menjalankan optimasi hyperparameter ambang deteksi pada 10.000 rekaman pasien.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Rekomendasi restrukturisasi: Pisahkan menjadi 3 fungsi: load_ecg_record(filenam..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi bottleneck eksekusi: Pemanggilan plt.show() memblokir alur komputasi (intervensi grafis manual), menghentikan eksekusi batch otomatis.",
+          "Langkah 2: Evaluasi redundansi I/O: Setiap kali hyperparameter diubah, fungsi membaca ulang berkas dari disk berulang kali (disk I/O thrashing)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Pelanggaran testability: Algoritma deteksi puncak tidak dapat diuji secara otomatis dengan unit testing karena hasilnya terkunci di dalam grafik visual alih-alih mengembalikan array indeks numerik.",
+          "Langkah 4: Rekomendasi restrukturisasi: Pisahkan menjadi 3 fungsi: load_ecg_record(filename), detect_r_peaks(signal, threshold) -> indices, dan plot_ecg_annotated(signal, peaks).",
+          "[result: Interpretasi Ilmiah] Pemisahan modular memungkinkan fungsi deteksi puncak dievaluasi 10.000 kali dalam memori RAM murni dalam hitungan detik untuk optimasi parameter tanpa hambatan I/O dan grafik."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi struktur paket modular RSE: pemisahan I/O, matematika analitis, dan pelaporan.",
         "bulletPoints": [
-          "Deskripsi: Implementasi struktur paket modular RSE: pemisahan I/O, matematika analitis, dan pelaporan.",
-          "Dependensi Pustaka: numpy, dataclasses",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Eksekusi Pemisahan Modular:"
+          "Tujuan Algoritma: Implementasi struktur paket modular RSE: pemisahan I/O, matematika analitis, dan pelaporan.",
+          "Dependensi Pustaka Ilmiah: numpy, dataclasses",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Eksekusi Pemisahan Modular:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Eksekusi Pemisahan Modular: | Hasil RMS Matematis : 220.04..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Eksekusi Pemisahan Modular:\nHasil RMS Matematis          : 220.04 V\nHasil Crest Factor Matematis : 1.4880\nFormat Pelaporan LaTeX       : Jaringan Listrik ITERA & 220.041 \\text{ V} & 1.488 \\\\",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengimpor pustaka matplotlib di dalam modul kalkulasi algoritma inti.",
-          "Perangkap: Menulis fungsi yang melakukan kalkulasi matematika sekaligus mencetak hasil ke layar menggunakan print() tanpa...",
-          "Perangkap: Mengubah struktur data masukan di dalam fungsi secara mutatif (in-place modification) tanpa memberi tahu peman..."
-        ]
+          "[warning: Perangkap] Mengimpor pustaka matplotlib di dalam modul kalkulasi algoritma inti.",
+          "[warning: Perangkap] Menulis fungsi yang melakukan kalkulasi matematika sekaligus mencetak hasil ke layar menggunakan print() tanpa return value.",
+          "[warning: Perangkap] Mengubah struktur data masukan di dalam fungsi secara mutatif (in-place modification) tanpa memberi tahu pemanggil."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan modul matematika inti dapat berjalan di lingkungan server headless (tanpa GUI/Display server).",
           "Prosedur: Gunakan dataclass atau NamedTuple untuk membungkus parameter masukan dan keluaran secara terstruktur.",
           "Prosedur: Verifikasi bahwa fungsi visualisasi menerima data mentah hasil kalkulasi, bukan membaca ulang dari disk."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa modul matematika inti (Core Engine) dalam proyek riset ilmiah dilarang keras mengimpor pustaka matplotlib atau s...",
-          "Petunjuk: Perhatikan lingkungan eksekusi komputasi klaster HPC (High Performance Computing) headless.",
-          "Solusi Kunci: Lingkungan komputasi klaster (HPC cluster atau cloud runner) seringkali berjalan tanpa server tampilan grafis (headless)..."
-        ]
+          "Pertanyaan Uji: Mengapa modul matematika inti (Core Engine) dalam proyek riset ilmiah dilarang keras mengimpor pustaka matplotlib atau seaborn?",
+          "Petunjuk Analitis: Perhatikan lingkungan eksekusi komputasi klaster HPC (High Performance Computing) headless.",
+          "Solusi Kunci: Lingkungan komputasi klaster (HPC cluster atau cloud runner) seringkali berjalan tanpa server tampilan grafis (headless). Mengimpor modul visualisasi di dalam modul inti dapat memicu kesalahan konfigurasi display backend (seperti RuntimeError: Invalid DISPLAY variable) dan menggagalkan seluruh pekerjaan komputasi paralel yang memakan waktu lama."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -394,101 +457,139 @@ export const CH45_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pengujian Unit (Unit Testing) untuk Model Matematika Me...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pengujian Unit (Unit Testing) untuk Model Matematika Menggunakan pytest",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.1.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.3.",
-          "Capaian: Memahami fungsi penjaminan mutu ilmiah pengujian otomatis (Automated Unit Testing).",
-          "Capaian: Merancang kasus uji batas matematis (Edge Cases, Invariants, Symmetries) menggunakan pustaka pytest.",
-          "Capaian: Menerapkan pengujian berbasis properti (Property-Based Testing) dengan toleransi presisi numerik."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami fungsi penjaminan mutu ilmiah pengujian otomatis (Automated Unit Testing).",
+          "Capaian 2: Merancang kasus uji batas matematis (Edge Cases, Invariants, Symmetries) menggunakan pustaka pytest.",
+          "Capaian 3: Menerapkan pengujian berbasis properti (Property-Based Testing) dengan toleransi presisi numerik."
         ],
-        "keyFormulaOrDiagram": "$$|a - b| \\leq \\text{atol} + \\text{rtol} \\cdot |b|$$"
+        "keyFormulaOrDiagram": "$$|a - b| \\leq \\text{atol} + \\text{rtol} \\cdot |b|$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.1.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pengujian Unit (Unit Testing) untuk Model Matematika Me...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pengujian Unit (Unit Testing) untuk Model Matematika Menggunakan pytest",
+        "lead": "Dalam rekayasa perangkat lunak komersial, unit testing dirancang untuk memverifikasi fungsionalitas bisnis (misal apakah keranjang belanja menghitung total harga dengan benar).",
         "bulletPoints": [
-          "Dalam rekayasa perangkat lunak komersial, unit testing dirancang untuk memverifikasi fungsionalitas bisnis (misal apakah kera...",
-          "Mengapa Menguji Kode Ilmiah Sangat Menantang? Dalam komputasi ilmiah, kita seringkali tidak mengetahui solusi sejati dari mas...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun dalam sains komputasi, Pengujian Unit Ilmiah (Scientific Unit Testing) memiliki fungsi epistemologis yang jauh lebih sakral: membuktikan bahwa implementasi kode patuh secara eksak terhadap hukum-hukum matematika dan prinsip kekekalan fisika.",
+          "Mengapa Menguji Kode Ilmiah Sangat Menantang?",
+          "Dalam komputasi ilmiah, kita seringkali tidak mengetahui solusi sejati dari masalah riset baru (The Oracle Problem): \"Jika kita tahu berapa solusi eksak dari persamaan non-linier baru tersebut, kita tidak perlu repot-repot menulis program komputasi untuk menyelesaikannya!\""
         ],
-        "keyFormulaOrDiagram": "Tiga Strategi Pengujian Matematika Tanpa Solusi Analitis (Oracle-Free Testing): 1. Penguji..."
+        "keyFormulaOrDiagram": "$d(a, b)$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Tiga Strategi Pengujian Matematika Tanpa Solusi Analitis (Oracle-Free Testing): 1.",
         "bulletPoints": [
-          "Tiga Strategi Pengujian Matematika Tanpa Solusi Analitis (Oracle-Free Testing): 1. Pengujian Nilai Batas dan Solusi Trivial (...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Pengujian Nilai Batas dan Solusi Trivial (Trivial Known Cases): Meskipun solusi umum tidak diketahui, sistem selalu memiliki kasus khusus di mana solusinya diketahui secara sepele.",
+          "Contoh: Untuk kode simulasi fluida Navier-Stokes yang rumit, jika viskositas dan kecepatan fluida nol, tekanan di seluruh ruang harus bernilai konstan seragam."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Asersi Toleransi Numerik:",
         "bulletPoints": [
-          "Formulasi Asersi Toleransi Numerik:",
-          "Karena aritmatika floating-point IEEE 754 memiliki galat pembulatan alami, pengujian matematika tidak boleh me...",
-          "- atol (Absolute Tolerance): Melindungi perbandingan saat $b$ mendekati nol."
+          "Karena aritmatika floating-point IEEE 754 memiliki galat pembulatan alami, pengujian matematika tidak boleh menggunakan perbandingan eksak $a == b$. Asersi wajib menggunakan uji toleransi ganda (relatif dan absolut):",
+          "- atol (Absolute Tolerance): Melindungi perbandingan saat $b$ mendekati nol.",
+          "- rtol (Relative Tolerance): Menjamin toleransi persentase proporsional pada angka besar."
         ],
-        "keyFormulaOrDiagram": "$$|a - b| \\leq \\text{atol} + \\text{rtol} \\cdot |b|$$"
+        "keyFormulaOrDiagram": "$$|a - b| \\leq \\text{atol} + \\text{rtol} \\cdot |b|$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah fungsi softmax_stable(logits) menerima vektor logit x dan menghasilkan probabilitas p_i. Rancang 3 asersi unit testing matematis yang...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Asersi Invarian Akumulasi Probabilitas (Unit Sum Invariant): Jumlah total probabilitas di seluruh k...",
-          "Langkah 2: Asersi Rentang Probabilitas (Range Bound): Setiap elemen probabilitas wajib berada dalam rentang pr...",
-          "Langkah 3: Asersi Monotonitas Pengurutan (Monotonicity Invariant): Jika x_i > x_j pada vektor masukan logit, m...",
-          "Interpretasi: Keempat pengujian properti matematika ini secara komprehensif membuktikan kebenaran implementasi fungsi Softmax tanpa pe..."
+          "Konteks Kasus: Sebuah fungsi softmax_stable(logits) menerima vektor logit x dan menghasilkan probabilitas p_i. Rancang 3 asersi unit testing matematis yang wajib dipenuhi oleh fungsi tersebut tanpa bergantung pada nilai numerik masukan acak apa pun.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Asersi Invariansi Translasi (Shift Invariance): Menambahkan konstanta c ke selu..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Asersi Invarian Akumulasi Probabilitas (Unit Sum Invariant): Jumlah total probabilitas di seluruh kelas wajib bernilai tepat 1.0 (dengan toleransi numerik): sum(p_i) == 1.0 (pytest.approx).",
+          "Langkah 2: Asersi Rentang Probabilitas (Range Bound): Setiap elemen probabilitas wajib berada dalam rentang probabilitas yang sah: 0.0 <= p_i <= 1.0 untuk semua i."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Asersi Monotonitas Pengurutan (Monotonicity Invariant): Jika x_i > x_j pada vektor masukan logit, maka probabilitas hasil wajib memenuhi p_i > p_j.",
+          "Langkah 4: Asersi Invariansi Translasi (Shift Invariance): Menambahkan konstanta c ke seluruh elemen logit tidak boleh mengubah probabilitas keluaran: softmax(x + c) == softmax(x).",
+          "[result: Interpretasi Ilmiah] Keempat pengujian properti matematika ini secara komprehensif membuktikan kebenaran implementasi fungsi Softmax tanpa perlu membandingkannya dengan output acuan eksternal."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi unit test pytest untuk memvalidasi invarian fisika kekekalan massa dan stabilitas Softmax.",
         "bulletPoints": [
-          "Deskripsi: Implementasi unit test pytest untuk memvalidasi invarian fisika kekekalan massa dan stabilitas Softmax.",
-          "Dependensi Pustaka: numpy, pytest",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Menjalankan Unit Testing Matematis..."
+          "Tujuan Algoritma: Implementasi unit test pytest untuk memvalidasi invarian fisika kekekalan massa dan stabilitas Softmax.",
+          "Dependensi Pustaka Ilmiah: numpy, pytest",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Menjalankan Unit Testing Matematis..."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Menjalankan Unit Testing Matematis... | Hasil: SELURUH 4 UNIT TE..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Menjalankan Unit Testing Matematis...\nHasil: SELURUH 4 UNIT TEST MATEMATIKA LOLOS 100% SECARA VALID!",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 30,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menulis unit test yang menggunakan assert a == b pada bilangan riil pecahan (selalu gunakan np.isclose atau py...",
-          "Perangkap: Menguji kode ilmiah hanya pada data bersih yang ideal tanpa menguji kasus batas (seperti matriks singular, arr...",
-          "Perangkap: Membiarkan unit test bergantung pada jaringan internet eksternal atau berkas lokal yang tidak disertakan dalam..."
-        ]
+          "[warning: Perangkap] Menulis unit test yang menggunakan assert a == b pada bilangan riil pecahan (selalu gunakan np.isclose atau pytest.approx).",
+          "[warning: Perangkap] Menguji kode ilmiah hanya pada data bersih yang ideal tanpa menguji kasus batas (seperti matriks singular, array kosong, atau nilai tak terhingga).",
+          "[warning: Perangkap] Membiarkan unit test bergantung pada jaringan internet eksternal atau berkas lokal yang tidak disertakan dalam repositori."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Jalankan eksekusi pengujian otomatis dengan memanggil pytest tests/ pada terminal.",
-          "Prosedur: Ukur cakupan pengujian (Code Coverage) menggunakan pytest-cov: targetkan minimal > 85% cakupan baris pada modu...",
+          "Prosedur: Ukur cakupan pengujian (Code Coverage) menggunakan pytest-cov: targetkan minimal > 85% cakupan baris pada modul matematika inti.",
           "Prosedur: Sertakan pengujian regresi (Regression Tests) setiap kali bug matematika berhasil diperbaiki."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Bagaimana cara seorang insinyur melakukan unit testing pada algoritma integrasi fisika (seperti simulasi orbit satelit)...",
-          "Petunjuk: Perhatikan hukum kekekalan momentum sudut dan energi mekanik total.",
-          "Solusi Kunci: Insinyur dapat menguji hukum kekekalan fisika (Invariance Testing). Pada medan gravitasi sentral, energi mekanik total (..."
-        ]
+          "Pertanyaan Uji: Bagaimana cara seorang insinyur melakukan unit testing pada algoritma integrasi fisika (seperti simulasi orbit satelit) ketika solusi persamaan diferensial analitisnya tidak diketahui?",
+          "Petunjuk Analitis: Perhatikan hukum kekekalan momentum sudut dan energi mekanik total.",
+          "Solusi Kunci: Insinyur dapat menguji hukum kekekalan fisika (Invariance Testing). Pada medan gravitasi sentral, energi mekanik total (kinetik + potensial) dan momentum sudut orbital satelit wajib bernilai konstan sepanjang waktu. Unit test dapat memverifikasi bahwa deviasi relatif energi total setelah 10.000 langkah waktu berada di bawah ambang batas toleransi integrator (misal < 10^-5)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -537,7 +638,7 @@ export const CH45_LESSONS: Record<string, Partial<Lesson>> = {
       {
         "question": "Mengapa mencantumkan satuan fisik (Physical Units) pada setiap parameter di dalam docstrings ilmiah bersifat kritis bagi keselamatan rekayasa?",
         "hint": "Ingat kembali insiden Mars Climate Orbiter NASA tahun 1999.",
-        "answerExplanation": "Insiden hilangnya wahana antariksa Mars Climate Orbiter ($125 juta) disebabkan oleh ketidakcocokan satuan: satu modul perangkat lunak menghasilkan gaya dalam satuan Imperial (Pound-force detik), sementara modul navigasi lain mengasumsikan satuan Metrik (Newton detik). Mencantumkan satuan internasional [SI] secara eksplisit pada setiap parameter docstring mencegah bencana konversi antar tim peneliti."
+        "answerExplanation": "Insiden hilangnya wahana antariksa Mars Climate Orbiter (USD 125 juta) disebabkan oleh ketidakcocokan satuan: satu modul perangkat lunak menghasilkan gaya dalam satuan Imperial (Pound-force detik), sementara modul navigasi lain mengasumsikan satuan Metrik (Newton detik). Mencantumkan satuan internasional [SI] secara eksplisit pada setiap parameter docstring mencegah bencana konversi antar tim peneliti."
       },
       {
         "question": "Apa fungsi dari modul doctest dalam ekosistem pengujian perangkat lunak ilmiah Python?",
@@ -557,99 +658,136 @@ export const CH45_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Dokumentasi Kode Otomatis dan Standar Docstrings Standa...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Dokumentasi Kode Otomatis dan Standar Docstrings Standar Ilmiah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.1.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.4.",
-          "Capaian: Menerapkan format docstrings standar industri ilmiah (NumPy/SciPy format atau Google style).",
-          "Capaian: Mendokumentasikan landasan teori matematika, parameter tipe, dan persamaan KaTeX langsung di dalam kode sumber...",
-          "Capaian: Membangun portal dokumentasi ilmiah otomatis menggunakan Sphinx atau MkDocs."
-        ]
-      },
-      {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Dokumentasi Kode Otomatis dan Standar Docstrings Standa...",
-        "bulletPoints": [
-          "Sebuah modul perangkat lunak riset yang tidak memiliki dokumentasi adalah modul yang tidak dapat digunakan oleh komunitas ilm...",
-          "Format Docstrings Standar Ilmiah (NumPy/SciPy Style): Komunitas rekayasa komputasi dan sains data global telah menstandarisas...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.1.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan format docstrings standar industri ilmiah (NumPy/SciPy format atau Google style).",
+          "Capaian 2: Mendokumentasikan landasan teori matematika, parameter tipe, dan persamaan KaTeX langsung di dalam kode sumber.",
+          "Capaian 3: Membangun portal dokumentasi ilmiah otomatis menggunakan Sphinx atau MkDocs."
         ],
-        "keyFormulaOrDiagram": "Anatomi Docstring Ilmiah yang Lengkap: 1. One-line Summary: Ringkasan satu baris mengenai..."
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.1.4."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Dokumentasi Kode Otomatis dan Standar Docstrings Standar Ilmiah",
+        "lead": "Sebuah modul perangkat lunak riset yang tidak memiliki dokumentasi adalah modul yang tidak dapat digunakan oleh komunitas ilmiah (\"undocumented code is unusable code\").",
         "bulletPoints": [
-          "Anatomi Docstring Ilmiah yang Lengkap: 1. One-line Summary: Ringkasan satu baris mengenai fungsi matematis modul. 2. Extended...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Peneliti lain yang tertarik menggunakan algoritma Anda tidak akan mau membaca ribuan baris implementasi batiniah hanya untuk mengetahui apa format masukan yang diharapkan dan apa batasan fisik dari fungsi tersebut.",
+          "Format Docstrings Standar Ilmiah (NumPy/SciPy Style): Komunitas rekayasa komputasi dan sains data global telah menstandarisasi format dokumentasi menggunakan NumPy Docstring Standard.",
+          "Format ini dirancang khusus untuk memenuhi kebutuhan investigasi kuantitatif, memisahkan parameter masukan, dimensi tensor, tipe data, dan catatan persamaan matematika."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Anatomi Docstring Ilmiah yang Lengkap: 1.",
+        "bulletPoints": [
+          "One-line Summary: Ringkasan satu baris mengenai fungsi matematis modul.",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
+      },
+      {
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Struktur Standar NumPy Docstring dengan Notasi KaTeX:",
         "bulletPoints": [
-          "Struktur Standar NumPy Docstring dengan Notasi KaTeX:",
-          "Dokumentasi ilmiah memungkinkan generator otomatis (seperti Sphinx atau MkDocs dengan ekstensi mathjax) untuk...",
-          "```python"
-        ]
+          "Dokumentasi ilmiah memungkinkan generator otomatis (seperti Sphinx atau MkDocs dengan ekstensi mathjax) untuk merender persamaan matematika langsung dari kode sumber:",
+          "```python",
+          "def generalized_reynolds_number(velocity: float, diameter: float, density: float, viscosity: float) -> float:"
+        ],
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan fungsi perhitungan koefisien gesek pipa colebrook_white(reynolds, roughness, diameter). Tuliskan seksi Parameters dan Notes dari N...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Tulis seksi deskripsi: Persamaan implisit Colebrook (1939) untuk menentukan faktor gesekan Darcy f...",
-          "Langkah 2: Tulis seksi persamaan matematika: 1 / sqrt(f) = -2.0 * log10((epsilon / (3.7 * D)) + (2.51 / (Re *...",
-          "Langkah 3: Tulis seksi parameter: reynolds (float, bilangan tanpa dimensi Re >= 4000); roughness (float, kekas...",
-          "Interpretasi: Docstring tersebut memberikan seluruh informasi fisika, satuan ukur, dan referensi literatur yang dibutuhkan oleh peneli..."
+          "Konteks Kasus: Diberikan fungsi perhitungan koefisien gesek pipa colebrook_white(reynolds, roughness, diameter). Tuliskan seksi Parameters dan Notes dari NumPy docstring yang mendokumentasikan persamaan implisit Colebrook-White secara lengkap dengan satuan internasional.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Tulis seksi referensi: Colebrook, C. F. (1939). Turbulent flow in pipes. Journa..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Tulis seksi deskripsi: Persamaan implisit Colebrook (1939) untuk menentukan faktor gesekan Darcy f pada rezim aliran turbulen transisi dan kasar.",
+          "Langkah 2: Tulis seksi persamaan matematika: 1 / sqrt(f) = -2.0 * log10((epsilon / (3.7 * D)) + (2.51 / (Re * sqrt(f))))."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Tulis seksi parameter: reynolds (float, bilangan tanpa dimensi Re >= 4000); roughness (float, kekasaran mutlak permukaan pipa epsilon [m]); diameter (float, diameter hidrolik internal pipa D [m]).",
+          "Langkah 4: Tulis seksi referensi: Colebrook, C. F. (1939). Turbulent flow in pipes. Journal of the ICE, 11(4), 133-156.",
+          "[result: Interpretasi Ilmiah] Docstring tersebut memberikan seluruh informasi fisika, satuan ukur, dan referensi literatur yang dibutuhkan oleh peneliti lain untuk memverifikasi dan menggunakan fungsi tanpa keraguan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi fungsi ilmiah teranotasi lengkap dengan NumPy docstring dan eksekusi doctest.",
         "bulletPoints": [
-          "Deskripsi: Implementasi fungsi ilmiah teranotasi lengkap dengan NumPy docstring dan eksekusi doctest.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Verifikasi Dokumentasi Docstring Otomatis:"
+          "Tujuan Algoritma: Implementasi fungsi ilmiah teranotasi lengkap dengan NumPy docstring dan eksekusi doctest.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Verifikasi Dokumentasi Docstring Otomatis:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Verifikasi Dokumentasi Docstring Otomatis: | Hasil Kalkulasi Ene..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Verifikasi Dokumentasi Docstring Otomatis:\nHasil Kalkulasi Energi Kinetik : 25.00 Joule\nDocstring Tersemat (First line) : Menghitung energi kinetik translasi dari sebuah benda bermassa m.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menulis docstring tanpa mencantumkan satuan fisik variabel (misal menulis sudut tanpa keterangan radian vs der...",
-          "Perangkap: Tidak mencantumkan dimensi/shape array (misal tidak menjelaskan apakah masukan berupa matriks (N, D) atau (D,...",
-          "Perangkap: Mengabaikan pembaruan docstring saat implementasi matematika fungsi diperbarui."
-        ]
+          "[warning: Perangkap] Menulis docstring tanpa mencantumkan satuan fisik variabel (misal menulis sudut tanpa keterangan radian vs derajat).",
+          "[warning: Perangkap] Tidak mencantumkan dimensi/shape array (misal tidak menjelaskan apakah masukan berupa matriks (N, D) atau (D, N)).",
+          "[warning: Perangkap] Mengabaikan pembaruan docstring saat implementasi matematika fungsi diperbarui."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan perkakas pydocstyle untuk mengaudit kepatuhan format NumPy/Google docstring.",
-          "Prosedur: Jalankan doctest otomatis menggunakan pytest --doctest-modules untuk memastikan contoh kode di docstring selal...",
+          "Prosedur: Jalankan doctest otomatis menggunakan pytest --doctest-modules untuk memastikan contoh kode di docstring selalu valid.",
           "Prosedur: Bangun portal dokumentasi HTML menggunakan MkDocs Material atau Sphinx secara otomatis via CI/CD."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa mencantumkan satuan fisik (Physical Units) pada setiap parameter di dalam docstrings ilmiah bersifat kritis bagi...",
-          "Petunjuk: Ingat kembali insiden Mars Climate Orbiter NASA tahun 1999.",
-          "Solusi Kunci: Insiden hilangnya wahana antariksa Mars Climate Orbiter ($125 juta) disebabkan oleh ketidakcocokan satuan: satu modul pe..."
-        ]
+          "Pertanyaan Uji: Mengapa mencantumkan satuan fisik (Physical Units) pada setiap parameter di dalam docstrings ilmiah bersifat kritis bagi keselamatan rekayasa?",
+          "Petunjuk Analitis: Ingat kembali insiden Mars Climate Orbiter NASA tahun 1999.",
+          "Solusi Kunci: Insiden hilangnya wahana antariksa Mars Climate Orbiter (USD 125 juta) disebabkan oleh ketidakcocokan satuan: satu modul perangkat lunak menghasilkan gaya dalam satuan Imperial (Pound-force detik), sementara modul navigasi lain mengasumsikan satuan Metrik (Newton detik). Mencantumkan satuan internasional [SI] secara eksplisit pada setiap parameter docstring mencegah bencana konversi antar tim peneliti."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

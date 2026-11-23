@@ -68,100 +68,139 @@ export const CH34_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kesalahan Metodologis Uji t Berpasangan pada Evaluasi M...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kesalahan Metodologis Uji t Berpasangan pada Evaluasi Multi-Dataset (Demšar, 2006)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.3.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.1.",
-          "Capaian: Memahami mengapa paired t-test melanggar asumsi statistik dasar saat membandingkan algoritma pada multi-datase...",
-          "Capaian: Menganalisis dampak non-normalitas selisih akurasi dan heteroskedastisitas varians antar dataset.",
-          "Capaian: Mengadopsi panduan kanonikal Demšar (2006) untuk perbandingan algoritma machine learning."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami mengapa paired t-test melanggar asumsi statistik dasar saat membandingkan algoritma pada multi-dataset.",
+          "Capaian 2: Menganalisis dampak non-normalitas selisih akurasi dan heteroskedastisitas varians antar dataset.",
+          "Capaian 3: Mengadopsi panduan kanonikal Demšar (2006) untuk perbandingan algoritma machine learning."
         ],
-        "keyFormulaOrDiagram": "$$d_i = x_{A, i} - x_{B, i}, \\quad i = 1, \\dots, N$$"
+        "keyFormulaOrDiagram": "$$d_i = x_{A, i} - x_{B, i}, \\quad i = 1, \\dots, N$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.3.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kesalahan Metodologis Uji t Berpasangan pada Evaluasi M...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kesalahan Metodologis Uji t Berpasangan pada Evaluasi Multi-Dataset (Demšar, 2006)",
+        "lead": "Dalam makalah ilmiah klasik yang merevolusi metodologi evaluasi kecerdasan buatan, Janez Demšar (2006) membuktikan bahwa penggunaan uji-t berpasangan (paired t-test) untuk membandingkan dua algoritma pada sekumpulan dataset adalah kesalahan inferensial fatal.",
         "bulletPoints": [
-          "Dalam makalah ilmiah klasik yang merevolusi metodologi evaluasi kecerdasan buatan, Janez Demšar (2006) membuktikan bahwa peng...",
-          "Tiga Pelanggaran Asumsi Utama Uji-t pada Multi-Dataset: 1. Pelanggaran Asumsi Normalitas Selisih (Non-Normality): Uji-t berpa...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Meskipun demikian, praktik yang salah ini masih sering dilakukan oleh peneliti pemula.",
+          "Tiga Pelanggaran Asumsi Utama Uji-t pada Multi-Dataset: 1.",
+          "Pelanggaran Asumsi Normalitas Selisih (Non-Normality): Uji-t berpasangan mengasumsikan bahwa selisih skor kinerja antara dua algoritma $d_i = y_{1, i} - y_{2, i}$ terdistribusi normal."
         ],
-        "keyFormulaOrDiagram": "2. Masalah Ketidakterbandingan Skala (Commensurability): Perbedaan akurasi 1% pada dataset..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Masalah Ketidakterbandingan Skala (Commensurability): Perbedaan akurasi 1% pada dataset yang sangat sulit (misal dari 50%...",
-          "3. Ketergantungan Sampel Semu (Pseudo-Independence): Jika skor berasal dari cross-validation berulang, varians estimasi antar...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Masalah Ketidakterbandingan Skala (Commensurability): Perbedaan akurasi 1% pada dataset yang sangat sulit (misal dari 50% ke 51%) memiliki signifikansi fisis dan statistik yang sama sekali berbeda dengan perbedaan 1% pada dataset yang mudah (misal dari 98% ke 99%).",
+          "Uji-t memperlakukan kedua selisih 1% ini secara identik tanpa memperhatikan skala kesulitan alami dataset.",
+          "3.",
+          "Ketergantungan Sampel Semu (Pseudo-Independence): Jika skor berasal dari cross-validation berulang, varians estimasi antar fold tidak independen, menyebabkan underestimasi kesalahan baku dan inflasi dramatis terhadap laju kesalahan Tipe I (False Positive)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Pelanggaran Paired t-Test pada Multi-Dataset:",
         "bulletPoints": [
-          "Formulasi Pelanggaran Paired t-Test pada Multi-Dataset:",
-          "Misalkan $N$ adalah jumlah dataset independen, dan $x_{A, i}$ serta $x_{B, i}$ adalah skor akurasi algoritma $...",
-          "Selisih performa:"
+          "Misalkan $N$ adalah jumlah dataset independen, dan $x_{A, i}$ serta $x_{B, i}$ adalah skor akurasi algoritma $A$ dan $B$ pada dataset ke-$i$.",
+          "Selisih performa:",
+          "Statistik uji-t klasik:"
         ],
-        "keyFormulaOrDiagram": "$$d_i = x_{A, i} - x_{B, i}, \\quad i = 1, \\dots, N$$"
+        "keyFormulaOrDiagram": "$$d_i = x_{A, i} - x_{B, i}, \\quad i = 1, \\dots, N$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada 10 dataset benchmark, Algoritma A mengalahkan Algoritma B pada 9 dataset dengan selisih akurasi +2.0%. Namun pada 1 dataset spesifik, A...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada 10 dataset benchmark, Algoritma A mengalahkan Algoritma B pada 9 dataset dengan selisih akurasi +2.0%. Namun pada 1 dataset spesifik, Algoritma A gagal konvergen sehingga selisihnya -20.0%. Hitung rata-rata selisih dan buktikan bagaimana uji-t menghasilkan kesimpulan yang menyesatkan dibandingkan uji non-parametrik tanda (Sign Test).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung selisih performa 10 dataset: sembilan nilai bernilai +0.02, satu nilai bernilai -0.20.",
-          "Langkah 2: Hitung mean selisih: mean = (9 * 0.02 - 0.20) / 10 = (0.18 - 0.20) / 10 = -0.02 / 10 = -0.002 (-0.2...",
-          "Langkah 3: Evaluasi uji-t: Karena rata-rata negatif (-0.2%), uji-t akan menyimpulkan bahwa Algoritma A tidak l...",
-          "Interpretasi: Uji non-parametrik berhasil mencerminkan dominasi Algoritma A pada 90% domain masalah tanpa terdistorsi secara fatal ole..."
+          "Langkah 2: Hitung mean selisih: mean = (9 * 0.02 - 0.20) / 10 = (0.18 - 0.20) / 10 = -0.02 / 10 = -0.002 (-0.2%)."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi uji non-parametrik (Sign Test): Algoritma A menang 9 kali dari 10 pert..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Komparasi empiris kegagalan uji-t berpasangan vs keandalan Wilcoxon signed-rank test.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Forensik Metodologis Komparasi Multi-Dataset:"
+          "Langkah 3: Evaluasi uji-t: Karena rata-rata negatif (-0.2%), uji-t akan menyimpulkan bahwa Algoritma A tidak lebih baik daripada B, atau bahkan cenderung lebih buruk.",
+          "Langkah 4: Evaluasi uji non-parametrik (Sign Test): Algoritma A menang 9 kali dari 10 pertandingan. Probabilitas binomial di bawah hipotesis nol (p=0.5): P(X >= 9) = 10 * (0.5)^10 + (0.5)^10 = 11 / 1024 = 0.0107 (signifikan pada taraf alpha=0.05).",
+          "[result: Interpretasi Ilmiah] Uji non-parametrik berhasil mencerminkan dominasi Algoritma A pada 90% domain masalah tanpa terdistorsi secara fatal oleh satu pencilan numerik tunggal."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Metodologis Komparasi Multi-Dataset: | Rata-rata Selisi..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komparasi empiris kegagalan uji-t berpasangan vs keandalan Wilcoxon signed-rank test.",
         "bulletPoints": [
-          "Perangkap: Menggunakan uji-t berpasangan pada data akurasi yang diakumulasi dari banyak dataset berbeda.",
-          "Perangkap: Melakukan rata-rata mentah akurasi lintas dataset dengan tingkat kesulitan dan jumlah kelas yang berbeda.",
-          "Perangkap: Mengabaikan ketergantungan antar fold pada repeated cross-validation."
-        ]
+          "Tujuan Algoritma: Komparasi empiris kegagalan uji-t berpasangan vs keandalan Wilcoxon signed-rank test.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Forensik Metodologis Komparasi Multi-Dataset:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Metodologis Komparasi Multi-Dataset:\nRata-rata Selisih Performa        : 0.0000\nUji Normalitas Shapiro-Wilk (p)   : 5.7956e-07 (Asumsi Normalitas Ditolak!)\nPaired t-test P-value             : 1.0000 (Gagal membuktikan keunggulan A)\nWilcoxon Signed-Rank P-value      : 0.0002 (Signifikan: A unggul konsisten!)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Menggunakan uji-t berpasangan pada data akurasi yang diakumulasi dari banyak dataset berbeda.",
+          "[warning: Perangkap] Melakukan rata-rata mentah akurasi lintas dataset dengan tingkat kesulitan dan jumlah kelas yang berbeda.",
+          "[warning: Perangkap] Mengabaikan ketergantungan antar fold pada repeated cross-validation."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Uji normalitas selisih akurasi dengan uji Shapiro-Wilk sebelum mempertimbangkan metode parametrik.",
           "Prosedur: Gunakan Wilcoxon Signed-Rank Test untuk perbandingan 2 algoritma pada multi-dataset.",
           "Prosedur: Gunakan Friedman Test untuk perbandingan k algoritma (k >= 3) pada multi-dataset."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa merata-ratakan skor akurasi mentah dari 30 dataset yang berbeda (misal Dataset MNIST, CIFAR, dan Deteksi Kanker)...",
-          "Petunjuk: Perhatikan varians dasar dan skala metrik pada setiap domain masalah.",
-          "Solusi Kunci: Setiap dataset memiliki distribusi probabilitas, kompleksitas fisis, jumlah kelas, dan tingkat kesulitan yang sama sekal..."
-        ]
+          "Pertanyaan Uji: Mengapa merata-ratakan skor akurasi mentah dari 30 dataset yang berbeda (misal Dataset MNIST, CIFAR, dan Deteksi Kanker) secara ilmiah tidak bermakna?",
+          "Petunjuk Analitis: Perhatikan varians dasar dan skala metrik pada setiap domain masalah.",
+          "Solusi Kunci: Setiap dataset memiliki distribusi probabilitas, kompleksitas fisis, jumlah kelas, dan tingkat kesulitan yang sama sekali berbeda. Merata-ratakan persentase mentah lintas domain mengasumsikan satuan ukur yang komensurabel, padahal kenaikan 1% pada dataset sulit membutuhkan inovasi yang jauh lebih besar daripada 5% pada dataset mudah."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -232,101 +271,140 @@ export const CH34_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Uji Non-Parametrik Multi-Algoritma: Friedman Test dan I...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Uji Non-Parametrik Multi-Algoritma: Friedman Test dan Iman-Davenport Correction",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.3.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.2.",
-          "Capaian: Menerapkan uji Friedman berbasis peringkat (rank-based) untuk membandingkan k algoritma pada N dataset.",
-          "Capaian: Menghitung statistik koreksi Iman-Davenport yang lebih konservatif terhadap kesalahan Tipe I.",
-          "Capaian: Menginterpretasikan penolakan hipotesis nol kesetaraan performa multi-algoritma."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan uji Friedman berbasis peringkat (rank-based) untuk membandingkan k algoritma pada N dataset.",
+          "Capaian 2: Menghitung statistik koreksi Iman-Davenport yang lebih konservatif terhadap kesalahan Tipe I.",
+          "Capaian 3: Menginterpretasikan penolakan hipotesis nol kesetaraan performa multi-algoritma."
         ],
-        "keyFormulaOrDiagram": "$$R_j = \\frac{1}{N} \\sum_{i=1}^N r_i^j$$"
+        "keyFormulaOrDiagram": "$$R_j = \\frac{1}{N} \\sum_{i=1}^N r_i^j$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.3.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Uji Non-Parametrik Multi-Algoritma: Friedman Test dan I...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Uji Non-Parametrik Multi-Algoritma: Friedman Test dan Iman-Davenport Correction",
+        "lead": "Ketika seorang peneliti ingin membandingkan kinerja tiga atau lebih algoritma (k >= 3) pada sekumpulan dataset benchmark (N dataset), metode statistik parametrik seperti Repeated Measures ANOVA seringkali tidak valid karena pelanggaran asumsi sferisitas (sphericity) dan normalitas multivariat.",
         "bulletPoints": [
-          "Ketika seorang peneliti ingin membandingkan kinerja tiga atau lebih algoritma (k >= 3) pada sekumpulan dataset benchmark (N d...",
-          "Mekanisme Pemeringkatan Friedman: Pada setiap dataset i, seluruh k algoritma diperingkat berdasarkan skor performanya dari ya...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Solusi kanonikal yang ditetapkan dalam literatur sains komputasi adalah Uji Friedman (Friedman Test).",
+          "Mekanisme Pemeringkatan Friedman: Pada setiap dataset i, seluruh k algoritma diperingkat berdasarkan skor performanya dari yang terbaik (peringkat 1) hingga yang terburuk (peringkat k).",
+          "Jika terjadi skor seri (ties), nilai peringkat dirata-ratakan."
         ],
-        "keyFormulaOrDiagram": "Koreksi Iman dan Davenport (1980): Uji Friedman klasik menghasilkan statistik chi-kuadrat..."
+        "keyFormulaOrDiagram": "$\\chi_F^2$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Koreksi Iman dan Davenport (1980): Uji Friedman klasik menghasilkan statistik chi-kuadrat $\\chi_F^2$ yang terbukti secara matematis terlalu konservatif dan rentan terhadap kesalahan Tipe II pada ukuran sampel kecil.",
         "bulletPoints": [
-          "Koreksi Iman dan Davenport (1980): Uji Friedman klasik menghasilkan statistik chi-kuadrat $\\chi_F^2$ yang terbukti secara mat...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Iman dan Davenport menurunkan statistik koreksi $F_F$ yang terdistribusi sesuai distribusi Snedecor F dengan derajat kebebasan $(k-1)$ dan $(k-1)(N-1)$.",
+          "Statistik $F_F$ memiliki kekuatan statistik (power) yang jauh lebih tinggi dan menjadi standar baku pelaporan makalah ilmiah internasional."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Derivasi Matematis Uji Friedman dan Koreksi Iman-Davenport:",
         "bulletPoints": [
-          "Derivasi Matematis Uji Friedman dan Koreksi Iman-Davenport:",
-          "Misalkan $r_i^j$ adalah peringkat algoritma ke-$j$ pada dataset ke-$i$ ($j \\in \\{1, \\dots, k\\}; i \\in \\{1, \\do...",
-          "Peringkat rata-rata algoritma ke-$j$:"
+          "Misalkan $r_i^j$ adalah peringkat algoritma ke-$j$ pada dataset ke-$i$ ($j \\in \\{1, \\dots, k\\}; i \\in \\{1, \\dots, N\\}$).",
+          "Peringkat rata-rata algoritma ke-$j$:",
+          "1. Statistik Chi-Kuadrat Friedman Klasik:"
         ],
-        "keyFormulaOrDiagram": "$$R_j = \\frac{1}{N} \\sum_{i=1}^N r_i^j$$"
+        "keyFormulaOrDiagram": "$$R_j = \\frac{1}{N} \\sum_{i=1}^N r_i^j$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan evaluasi 4 algoritma (k=4) pada 10 dataset (N=10). Peringkat rata-rata yang diperoleh adalah R_1 = 1.2, R_2 = 2.4, R_3 = 3.1, R_4...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan evaluasi 4 algoritma (k=4) pada 10 dataset (N=10). Peringkat rata-rata yang diperoleh adalah R_1 = 1.2, R_2 = 2.4, R_3 = 3.1, R_4 = 3.3. Hitung statistik chi-kuadrat Friedman dan statistik Iman-Davenport F_F. Tentukan apakah terdapat perbedaan signifikan pada taraf alpha = 0.05 (F_kritis(3, 27) = 2.96).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung jumlah kuadrat peringkat: sum(R_j^2) = 1.2^2 + 2.4^2 + 3.1^2 + 3.3^2 = 1.44 + 5.76 + 9.61 +...",
+          "Langkah 1: Hitung jumlah kuadrat peringkat: sum(R_j^2) = 1.2^2 + 2.4^2 + 3.1^2 + 3.3^2 = 1.44 + 5.76 + 9.61 + 10.89 = 27.70.",
           "Langkah 2: Hitung faktor konstanta: k(k+1)^2 / 4 = 4 * (5)^2 / 4 = 25.0.",
-          "Langkah 3: Hitung chi-kuadrat Friedman: chi_F^2 = [12 * 10 / (4 * 5)] * [27.70 - 25.0] = [120 / 20] * 2.70 = 6...",
-          "Interpretasi: Hipotesis nol ditolak secara sangat meyakinkan. Terdapat perbedaan kinerja statistik yang signifikan di antara keempat a..."
+          "Langkah 3: Hitung chi-kuadrat Friedman: chi_F^2 = [12 * 10 / (4 * 5)] * [27.70 - 25.0] = [120 / 20] * 2.70 = 6 * 2.70 = 16.20."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Bandingkan dengan F kritis: F_F = 10.565 > 2.96 (p < 0.001)."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung statistik Iman-Davenport F_F: F_F = [(10 - 1) * 16.20] / [10 * (4 - 1) - 16.20] = [9 * 16.20] / [30 - 16.20] = 145.80 / 13.80 = 10.565.",
+          "Langkah 5: Bandingkan dengan F kritis: F_F = 10.565 > 2.96 (p < 0.001).",
+          "[result: Interpretasi Ilmiah] Hipotesis nol ditolak secara sangat meyakinkan. Terdapat perbedaan kinerja statistik yang signifikan di antara keempat algoritma."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi mandiri Uji Friedman dan Koreksi Iman-Davenport.",
         "bulletPoints": [
-          "Deskripsi: Implementasi mandiri Uji Friedman dan Koreksi Iman-Davenport.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Uji Friedman & Iman-Davenport:"
+          "Tujuan Algoritma: Implementasi mandiri Uji Friedman dan Koreksi Iman-Davenport.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Uji Friedman & Iman-Davenport:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Uji Friedman & Iman-Davenport: | Peringkat Rata-rata (Avg..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Uji Friedman & Iman-Davenport:\nPeringkat Rata-rata (Avg Ranks)   : [1. 2. 3. 4.]\nStatistik Chi-Kuadrat Friedman    : 30.0000 (p = 1.3801e-06)\nStatistik Iman-Davenport F_F      : inf (p = 0.0000e+00, df1=3, df2=27)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan algoritma mana yang saling berbeda hanya dari uji Friedman tanpa analisis post-hoc.",
-          "Perangkap: Menggunakan uji Friedman klasik dengan tabel chi-kuadrat saat jumlah dataset sedikit (N < 15).",
-          "Perangkap: Membalik urutan peringkat (skor terbaik diberi peringkat terbesar tanpa konsistensi)."
-        ]
+          "[warning: Perangkap] Menyimpulkan algoritma mana yang saling berbeda hanya dari uji Friedman tanpa analisis post-hoc.",
+          "[warning: Perangkap] Menggunakan uji Friedman klasik dengan tabel chi-kuadrat saat jumlah dataset sedikit (N < 15).",
+          "[warning: Perangkap] Membalik urutan peringkat (skor terbaik diberi peringkat terbesar tanpa konsistensi)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Selalu laporkan peringkat rata-rata (Average Ranks) di samping nilai statistik F.",
           "Prosedur: Gunakan statistik Iman-Davenport F_F sebagai metrik uji primer.",
           "Prosedur: Lanjutkan ke uji post-hoc hanya jika hipotesis nol Friedman ditolak pada taraf alpha yang ditentukan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa Iman-Davenport F-test lebih unggul dibandingkan Chi-Square Friedman test klasik?",
-          "Petunjuk: Perhatikan aproksimasi asimtotik distribusi chi-kuadrat pada sampel dataset terbatas.",
-          "Solusi Kunci: Uji Friedman klasik mengasumsikan bahwa jumlah dataset mendekati tak terhingga untuk mendekati distribusi chi-kuadrat. P..."
-        ]
+          "Petunjuk Analitis: Perhatikan aproksimasi asimtotik distribusi chi-kuadrat pada sampel dataset terbatas.",
+          "Solusi Kunci: Uji Friedman klasik mengasumsikan bahwa jumlah dataset mendekati tak terhingga untuk mendekati distribusi chi-kuadrat. Pada praktiknya di mana N seringkali kurang dari 30, chi-kuadrat terlalu konservatif (daya uji lemah). Iman-Davenport menggunakan distribusi F yang mencerminkan derajat kebebasan finite-sample secara eksak."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -397,101 +475,140 @@ export const CH34_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Analisis Post-Hoc: Nemenyi Test, Bonferroni-Dunn, dan W...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Analisis Post-Hoc: Nemenyi Test, Bonferroni-Dunn, dan Wilcoxon Signed-Rank dengan Koreksi FDR",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.3.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.3.",
-          "Capaian: Memilih prosedur pengujian post-hoc yang tepat sesuai dengan tujuan hipotesis riset.",
-          "Capaian: Membedakan skenario all-to-all comparisons (Nemenyi Test) vs one-to-all comparisons (Bonferroni-Dunn Test).",
-          "Capaian: Menerapkan uji berpasangan Wilcoxon Signed-Rank dengan pengendalian False Discovery Rate (Benjamini-Hochberg)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memilih prosedur pengujian post-hoc yang tepat sesuai dengan tujuan hipotesis riset.",
+          "Capaian 2: Membedakan skenario all-to-all comparisons (Nemenyi Test) vs one-to-all comparisons (Bonferroni-Dunn Test).",
+          "Capaian 3: Menerapkan uji berpasangan Wilcoxon Signed-Rank dengan pengendalian False Discovery Rate (Benjamini-Hochberg)."
         ],
-        "keyFormulaOrDiagram": "$$\\text{CD} = q_\\alpha \\sqrt{\\frac{k(k + 1)}{6N}}$$"
+        "keyFormulaOrDiagram": "$$\\text{CD} = q_\\alpha \\sqrt{\\frac{k(k + 1)}{6N}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.3.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Analisis Post-Hoc: Nemenyi Test, Bonferroni-Dunn, dan W...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Analisis Post-Hoc: Nemenyi Test, Bonferroni-Dunn, dan Wilcoxon Signed-Rank dengan Koreksi FDR",
+        "lead": "Setelah hipotesis nol pada Uji Friedman ditolak, langkah berikutnya adalah mengidentifikasi secara spesifik pasangan algoritma mana yang memiliki perbedaan kinerja signifikan secara statistik.",
         "bulletPoints": [
-          "Setelah hipotesis nol pada Uji Friedman ditolak, langkah berikutnya adalah mengidentifikasi secara spesifik pasangan algoritm...",
-          "Dua Arsitektur Komparasi Post-Hoc: 1. Pembandingan Semua-ke-Semua (All-to-All Comparisons): Jika tujuan riset adalah membandi...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Menjalankan uji perbandingan berganda tanpa penyesuaian nilai p-value akan melipatgandakan tingkat kesalahan keluarga (Family-Wise Error Rate / FWER) secara tidak terkendali.",
+          "Dua Arsitektur Komparasi Post-Hoc: 1.",
+          "Pembandingan Semua-ke-Semua (All-to-All Comparisons): Jika tujuan riset adalah membandingkan setiap algoritma dengan seluruh algoritma lainnya (misal menyusun tabel keunggulan menyeluruh untuk k(k-1)/2 pasang perbandingan), Nemenyi Test adalah metode kanonikal."
         ],
-        "keyFormulaOrDiagram": "2. Pembandingan Satu-ke-Semua (One-to-All / Control Comparisons): Dalam sebagian besar pen..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Pembandingan Satu-ke-Semua (One-to-All / Control Comparisons): Dalam sebagian besar penelitian rekayasa, peneliti sebenarn...",
-          "Alternatif Kontemporer Berdaya Tinggi: Garcia & Herrera (2008) membuktikan bahwa menjalankan uji Wilcoxon Signed-Rank berpasa...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Pembandingan Satu-ke-Semua (One-to-All / Control Comparisons): Dalam sebagian besar penelitian rekayasa, peneliti sebenarnya tidak tertarik membandingkan Baseline A dengan Baseline B.",
+          "Fokus utama adalah membuktikan apakah Metode Baru Usulan (Proposed Method) mengungguli seluruh baseline yang ada (k-1 perbandingan).",
+          "Alternatif Kontemporer Berdaya Tinggi: Garcia & Herrera (2008) membuktikan bahwa menjalankan uji Wilcoxon Signed-Rank berpasangan untuk setiap baseline yang dilanjutkan dengan koreksi Benjamini-Hochberg (FDR control) atau Holm-Bonferroni memberikan kekuatan deteksi yang lebih superior dibandingkan Bonferroni-Dunn klasik."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Uji Post-Hoc:",
         "bulletPoints": [
-          "Formulasi Matematis Uji Post-Hoc:",
           "1. Critical Difference (CD) Uji Nemenyi:",
-          "di mana $q_\\alpha$ adalah nilai kritis tabel Studentized Range Statistics dibagi $\\sqrt{2}$."
+          "di mana $q_\\alpha$ adalah nilai kritis tabel Studentized Range Statistics dibagi $\\sqrt{2}$.",
+          "2. Uji Bonferroni-Dunn (Perbandingan Terhadap Kontrol):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{CD} = q_\\alpha \\sqrt{\\frac{k(k + 1)}{6N}}$$"
+        "keyFormulaOrDiagram": "$$\\text{CD} = q_\\alpha \\sqrt{\\frac{k(k + 1)}{6N}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan k = 4 algoritma pada N = 20 dataset. Nilai kritis q_0.05 untuk k=4 adalah 2.569. Hitung nilai Critical Difference (CD) Nemenyi. Ji...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan k = 4 algoritma pada N = 20 dataset. Nilai kritis q_0.05 untuk k=4 adalah 2.569. Hitung nilai Critical Difference (CD) Nemenyi. Jika peringkat rata-rata model usulan adalah R_ours = 1.30 dan model SOTA adalah R_sota = 2.15, tentukan apakah model usulan mengungguli SOTA secara signifikan menurut uji Nemenyi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung faktor varians peringkat: k(k + 1) / (6N) = 4 * 5 / (6 * 20) = 20 / 120 = 0.1667.",
           "Langkah 2: Hitung akar standar error: sqrt(0.1667) = 0.4082.",
-          "Langkah 3: Hitung CD Nemenyi: CD = 2.569 * 0.4082 = 1.0487.",
-          "Interpretasi: Menurut uji Nemenyi, perbedaan antara model usulan dan SOTA belum mencapai ambang perbedaan kritis yang signifikan pada..."
+          "Langkah 3: Hitung CD Nemenyi: CD = 2.569 * 0.4082 = 1.0487."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Bandingkan selisih dengan CD: 0.85 < 1.0487."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung selisih peringkat riil: |R_sota - R_ours| = |2.15 - 1.30| = 0.85.",
+          "Langkah 5: Bandingkan selisih dengan CD: 0.85 < 1.0487.",
+          "[result: Interpretasi Ilmiah] Menurut uji Nemenyi, perbedaan antara model usulan dan SOTA belum mencapai ambang perbedaan kritis yang signifikan pada alpha=0.05, meskipun model usulan memiliki peringkat rata-rata yang lebih unggul secara nominal."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi uji post-hoc Bonferroni-Dunn dan Holm step-down procedure.",
         "bulletPoints": [
-          "Deskripsi: Implementasi uji post-hoc Bonferroni-Dunn dan Holm step-down procedure.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Analisis Post-Hoc Holm Step-Down (SE = 0.3651):"
+          "Tujuan Algoritma: Implementasi uji post-hoc Bonferroni-Dunn dan Holm step-down procedure.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Analisis Post-Hoc Holm Step-Down (SE = 0.3651):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Post-Hoc Holm Step-Down (SE = 0.3651): | Ours vs Algo 3..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Post-Hoc Holm Step-Down (SE = 0.3651):\nOurs vs Algo 3 : p-raw = 4.1950e-10 | Target Alpha = 0.0167 | Signifikan: True\nOurs vs Algo 2 : p-raw = 3.6548e-06 | Target Alpha = 0.0250 | Signifikan: True\nOurs vs Algo 1 : p-raw = 4.0204e-03 | Target Alpha = 0.0500 | Signifikan: True",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan uji Nemenyi saat peneliti hanya ingin membuktikan metode usulan lebih baik dari kontrol.",
-          "Perangkap: Melakukan uji t berganda tanpa koreksi FWER setelah uji Friedman.",
-          "Perangkap: Melaporkan p-value yang belum disesuaikan (unadjusted p-value) sebagai bukti konklusif keunggulan."
-        ]
+          "[warning: Perangkap] Menggunakan uji Nemenyi saat peneliti hanya ingin membuktikan metode usulan lebih baik dari kontrol.",
+          "[warning: Perangkap] Melakukan uji t berganda tanpa koreksi FWER setelah uji Friedman.",
+          "[warning: Perangkap] Melaporkan p-value yang belum disesuaikan (unadjusted p-value) sebagai bukti konklusif keunggulan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Bonferroni-Dunn atau Holm procedure jika ada satu algoritma kontrol spesifik.",
           "Prosedur: Gunakan Nemenyi hanya jika matriks komparasi lengkap antar seluruh pasangan dibutuhkan.",
           "Prosedur: Laporkan tabel nilai p mentah beserta nilai p terkoreksi (adjusted p-values)."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa uji Bonferroni-Dunn memiliki kekuatan uji (power) yang lebih tinggi dibandingkan uji Nemenyi pada riset komparas...",
-          "Petunjuk: Perhatikan jumlah hipotesis yang diuji pada masing-masing metode.",
-          "Solusi Kunci: Uji Nemenyi mengontrol tingkat kesalahan keluarga untuk seluruh pasangan k(k-1)/2, sehingga ambang kritisnya sangat kons..."
-        ]
+          "Pertanyaan Uji: Mengapa uji Bonferroni-Dunn memiliki kekuatan uji (power) yang lebih tinggi dibandingkan uji Nemenyi pada riset komparasi algoritma baru?",
+          "Petunjuk Analitis: Perhatikan jumlah hipotesis yang diuji pada masing-masing metode.",
+          "Solusi Kunci: Uji Nemenyi mengontrol tingkat kesalahan keluarga untuk seluruh pasangan k(k-1)/2, sehingga ambang kritisnya sangat konservatif. Bonferroni-Dunn hanya menguji k-1 hipotesis (perbandingan terhadap algoritma kontrol), sehingga penalti koreksinya jauh lebih ringan dan daya deteksi signifikansinya lebih tinggi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -561,100 +678,128 @@ export const CH34_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pembuatan Diagram Perbedaan Kritis (Critical Difference...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pembuatan Diagram Perbedaan Kritis (Critical Difference Diagrams) Berstandar Publikasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.3.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.4.",
-          "Capaian: Memahami anatomi dan konvensi visual Critical Difference (CD) Diagrams versi Demšar.",
-          "Capaian: Menginterpretasikan garis penghubung tebal (clique bars) sebagai kelompok algoritma yang ekuivalen secara stat...",
-          "Capaian: Membangkitkan CD Diagram siap cetak berstandar IEEE/ACM menggunakan Python."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.3.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami anatomi dan konvensi visual Critical Difference (CD) Diagrams versi Demšar.",
+          "Capaian 2: Menginterpretasikan garis penghubung tebal (clique bars) sebagai kelompok algoritma yang ekuivalen secara statistik.",
+          "Capaian 3: Membangkitkan CD Diagram siap cetak berstandar IEEE/ACM menggunakan Python."
         ],
-        "keyFormulaOrDiagram": "$$R(A_1) \\leq R(A_2) \\leq \\dots \\leq R(A_k)$$"
+        "keyFormulaOrDiagram": "$$R(A_1) \\leq R(A_2) \\leq \\dots \\leq R(A_k)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.3.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pembuatan Diagram Perbedaan Kritis (Critical Difference...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pembuatan Diagram Perbedaan Kritis (Critical Difference Diagrams) Berstandar Publikasi",
+        "lead": "Critical Difference (CD) Diagram adalah format visualisasi standar baku yang diadopsi oleh komunitas pembelajaran mesin dan kecerdasan artifisial internasional untuk mempublikasikan hasil evaluasi multi-algoritma pada multi-dataset.",
         "bulletPoints": [
-          "Critical Difference (CD) Diagram adalah format visualisasi standar baku yang diadopsi oleh komunitas pembelajaran mesin dan k...",
-          "Anatomi Visual CD Diagram: - Sumbu Horizontal: Memiliki rentang dari 1 (terbaik) hingga k (terburuk). - Penempatan Label: Alg...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Dipopulerkan oleh Janez Demšar pada tahun 2006, diagram ini merangkum tiga informasi penting sekaligus dalam satu grafik elegan: 1.",
+          "Peringkat rata-rata (Average Rank) setiap algoritma pada sumbu horizontal terkalibrasi.",
+          "Anatomi Visual CD Diagram: - Sumbu Horizontal: Memiliki rentang dari 1 (terbaik) hingga k (terburuk). - Penempatan Label: Algoritma dengan peringkat terbaik ditempatkan di sisi kiri (atau atas), sedangkan algoritma terburuk di sisi kanan (atau bawah). - Batang CD di Bagian Atas: Menampilkan panjang segmen garis bernilai CD. - Garis Penghubung (Clique Line): Jika jarak antara dua atau lebih algoritma lebih kecil daripada nilai CD, garis horizontal tebal ditarik di bawah label mereka.",
+          "Garis ini memberi tahu pembaca secara visual: \"Meskipun model A memiliki peringkat lebih baik dari model B, data empiris tidak memiliki bukti statistik yang cukup untuk membedakan keduanya pada taraf signifikansi alpha = 0.05\"."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Critical Difference (CD) Diagram adalah format visualisasi standar baku yang diadopsi oleh komunitas pembelajaran mesin dan k...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Prinsip Grafis Pembentukan Clique pada CD Diagram:",
         "bulletPoints": [
-          "Prinsip Grafis Pembentukan Clique pada CD Diagram:",
-          "Misalkan $\\mathcal{A} = \\{A_1, A_2, \\dots, A_k\\}$ adalah himpunan algoritma yang diurutkan berdasarkan peringk...",
-          "Kondisi Pembentukan Clique $\\mathcal{C} \\subseteq \\mathcal{A}$:"
+          "Misalkan $\\mathcal{A} = \\{A_1, A_2, \\dots, A_k\\}$ adalah himpunan algoritma yang diurutkan berdasarkan peringkat rata-rata menaik:",
+          "Kondisi Pembentukan Clique $\\mathcal{C} \\subseteq \\mathcal{A}$:",
+          "Subhimpunan algoritma $\\mathcal{C} = \\{A_i, A_{i+1}, \\dots, A_j\\}$ membentuk sebuah klik ekuivalensi jika dan hanya jika:"
         ],
-        "keyFormulaOrDiagram": "$$R(A_1) \\leq R(A_2) \\leq \\dots \\leq R(A_k)$$"
+        "keyFormulaOrDiagram": "$$R(A_1) \\leq R(A_2) \\leq \\dots \\leq R(A_k)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan peringkat rata-rata 5 algoritma: A1 (1.4), A2 (1.9), A3 (2.5), A4 (3.8), A5 (4.4). Nilai CD dihitung sebesar 1.0. Tentukan klik-kl...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan peringkat rata-rata 5 algoritma: A1 (1.4), A2 (1.9), A3 (2.5), A4 (3.8), A5 (4.4). Nilai CD dihitung sebesar 1.0. Tentukan klik-klik ekuivalensi statistik yang terbentuk dan jelaskan cara menggambarkannya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Evaluasi A1 (1.4): Jarak ke A2 = |1.9 - 1.4| = 0.5 (< 1.0); Jarak ke A3 = |2.5 - 1.4| = 1.1 (> 1.0)...",
-          "Langkah 2: Evaluasi A2 (1.9): Jarak ke A3 = |2.5 - 1.9| = 0.6 (< 1.0). Maka {A2, A3} membentuk klik kedua.",
+          "Langkah 1: Evaluasi A1 (1.4): Jarak ke A2 = |1.9 - 1.4| = 0.5 (< 1.0); Jarak ke A3 = |2.5 - 1.4| = 1.1 (> 1.0). Maka {A1, A2} membentuk klik pertama.",
+          "Langkah 2: Evaluasi A2 (1.9): Jarak ke A3 = |2.5 - 1.9| = 0.6 (< 1.0). Maka {A2, A3} membentuk klik kedua."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Evaluasi A4 (3.8): Jarak ke A5 = |4.4 - 3.8| = 0.6 (< 1.0). Maka {A4, A5} membentuk klik ketiga.",
-          "Interpretasi: A1 berbeda signifikan terhadap A3, A4, dan A5. A2 berada dalam zona transisi (tidak berbeda signifikan dengan A1 maupun..."
+          "Langkah 4: Konstruksi garis diagram: Tarik garis horizontal tebal menghubungkan A1 dan A2; tarik garis horizontal kedua menghubungkan A2 dan A3; tarik garis horizontal ketiga menghubungkan A4 dan A5.",
+          "[result: Interpretasi Ilmiah] A1 berbeda signifikan terhadap A3, A4, dan A5. A2 berada dalam zona transisi (tidak berbeda signifikan dengan A1 maupun A3). A4 dan A5 terisolasi sebagai kelompok berkinerja paling buruk."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Konstruksi garis diagram: Tarik garis horizontal tebal menghubungkan A1 dan A2;..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Generasi representasi data tabular untuk konstruksi Critical Difference Diagram.",
         "bulletPoints": [
-          "Deskripsi: Generasi representasi data tabular untuk konstruksi Critical Difference Diagram.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Parameter CD Diagram:"
+          "Tujuan Algoritma: Generasi representasi data tabular untuk konstruksi Critical Difference Diagram.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Parameter CD Diagram:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Parameter CD Diagram: | Jumlah Algoritma (k) : 5 | Jumlah Datase..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Parameter CD Diagram:\nJumlah Algoritma (k)     : 5\nJumlah Dataset (N)       : 30\nCritical Difference (CD) : 1.1137\n",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggambar CD Diagram tanpa terlebih dahulu memverifikasi bahwa uji Friedman menunjukkan nilai p < 0.05.",
-          "Perangkap: Membalik orientasi peringkat (angka 1 di kanan dan angka 5 di kiri tanpa keterangan sumbu).",
-          "Perangkap: Menghilangkan batang skala CD di bagian atas diagram."
-        ]
+          "[warning: Perangkap] Menggambar CD Diagram tanpa terlebih dahulu memverifikasi bahwa uji Friedman menunjukkan nilai p < 0.05.",
+          "[warning: Perangkap] Membalik orientasi peringkat (angka 1 di kanan dan angka 5 di kiri tanpa keterangan sumbu).",
+          "[warning: Perangkap] Menghilangkan batang skala CD di bagian atas diagram."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan sumbu angka berorientasi jelas: nilai peringkat kecil = performa terbaik.",
           "Prosedur: Sertakan nilai eksak CD pada caption atau label grafik.",
           "Prosedur: Gunakan format grafik vektor (PDF atau SVG) untuk kejelasan publikasi berkas akhir."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Jika model usulan Anda terhubung oleh clique bar dengan model SOTA pada CD diagram, apakah Anda berhak mengklaim bahwa m...",
-          "Petunjuk: Perhatikan arti dari garis penghubung tebal pada CD diagram.",
-          "Solusi Kunci: Sama sekali tidak berhak. Garis penghubung tebal (clique bar) secara eksplisit menandakan bahwa secara statistik tidak a..."
-        ]
+          "Pertanyaan Uji: Jika model usulan Anda terhubung oleh clique bar dengan model SOTA pada CD diagram, apakah Anda berhak mengklaim bahwa model Anda \"secara signifikan mengalahkan SOTA\"?",
+          "Petunjuk Analitis: Perhatikan arti dari garis penghubung tebal pada CD diagram.",
+          "Solusi Kunci: Sama sekali tidak berhak. Garis penghubung tebal (clique bar) secara eksplisit menandakan bahwa secara statistik tidak ada perbedaan yang signifikan antara kedua model tersebut pada taraf kepercayaan yang diuji."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

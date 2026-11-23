@@ -69,99 +69,129 @@ export const CH39_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Paradigma Bayesian: Prior Distribution, Likelihood Func...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Paradigma Bayesian: Prior Distribution, Likelihood Function, dan Posterior Distribution",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.2.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.1.",
-          "Capaian: Memahami pergeseran filosofis mendasar antara paradigma Frequentist dan paradigma Bayesian.",
-          "Capaian: Menurunkan Teorema Bayes dalam konteks inferensi probabilitas parameter kontinu.",
-          "Capaian: Menginterpretasikan distribusi posterior sebagai pembaruan keadaan pengetahuan (state of knowledge)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami pergeseran filosofis mendasar antara paradigma Frequentist dan paradigma Bayesian.",
+          "Capaian 2: Menurunkan Teorema Bayes dalam konteks inferensi probabilitas parameter kontinu.",
+          "Capaian 3: Menginterpretasikan distribusi posterior sebagai pembaruan keadaan pengetahuan (state of knowledge)."
         ],
-        "keyFormulaOrDiagram": "$$p(\\boldsymbol{\\theta} \\mid \\mathbf{y}) = \\frac{p(\\mathbf{y} \\mid \\boldsymbol{\\theta}) \\, p(\\boldsymbol{\\theta})}{p(\\mathbf{y})}$$"
+        "keyFormulaOrDiagram": "$$p(\\boldsymbol{\\theta} \\mid \\mathbf{y}) = \\frac{p(\\mathbf{y} \\mid \\boldsymbol{\\theta}) \\, p(\\boldsymbol{\\theta})}{p(\\mathbf{y})}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.2.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Paradigma Bayesian: Prior Distribution, Likelihood Func...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Paradigma Bayesian: Prior Distribution, Likelihood Function, dan Posterior Distribution",
+        "lead": "Dalam epistemologi sains eksperimental, terdapat dua mazhab filosofis utama dalam memandang probabilitas: 1.",
         "bulletPoints": [
-          "Dalam epistemologi sains eksperimental, terdapat dua mazhab filosofis utama dalam memandang probabilitas: 1. Mazhab Frequenti...",
-          "Triad Teorema Bayes: Inferensi Bayesian mengintegrasikan tiga komponen utama: 1. Distribusi Prior $P(\\theta)$: Pengetahuan, t...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Mazhab Frequentist: Memandang probabilitas sebagai frekuensi relatif jangka panjang dari suatu peristiwa dalam pengulangan eksperimen yang identik hingga tak terhingga.",
+          "Parameter fisik alam (seperti massa partikel, konstanta pegas, atau rata-rata kekuatan material $\\theta$) dianggap sebagai bilangan konstan tetap yang tidak diketahui.",
+          "Triad Teorema Bayes: Inferensi Bayesian mengintegrasikan tiga komponen utama: 1.",
+          "Distribusi Prior $P(\\theta)$: Pengetahuan, teori fisika, atau bukti historis mengenai parameter $\\theta$ sebelum eksperimen saat ini dilakukan."
+        ],
+        "keyFormulaOrDiagram": "$\\theta$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "derivation",
+        "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Teorema Bayes Kontinu:",
         "bulletPoints": [
-          "Dalam epistemologi sains eksperimental, terdapat dua mazhab filosofis utama dalam memandang probabilitas: 1. Mazhab Frequenti...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Misalkan $\\boldsymbol{\\theta} \\in \\Theta \\subset \\mathbb{R}^k$ adalah vektor parameter, dan $\\mathbf{y} = (y_1, \\dots, y_n)$ adalah data eksperimen teramati.",
+          "Bentuk Kontinu Teorema Bayes:",
+          "Komponen-komponen:"
+        ],
+        "keyFormulaOrDiagram": "$$p(\\boldsymbol{\\theta} \\mid \\mathbf{y}) = \\frac{p(\\mathbf{y} \\mid \\boldsymbol{\\theta}) \\, p(\\boldsymbol{\\theta})}{p(\\mathbf{y})}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 4,
-        "title": "Formulasi Matematis & Notasi Formal",
+        "layout": "example",
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Formulasi Matematis Teorema Bayes Kontinu:",
-          "Misalkan $\\boldsymbol{\\theta} \\in \\Theta \\subset \\mathbb{R}^k$ adalah vektor parameter, dan $\\mathbf{y} = (y_1...",
-          "Bentuk Kontinu Teorema Bayes:"
+          "Konteks Kasus: Sebuah sensor optik menguji proporsi cacat mikro chip silikon (theta). Informasi prior dari pabrikan manufaktur menyatakan bahwa theta berdistribusi Beta(alpha=2, beta=18) (ekspektasi cacat prior = 10%). Dalam batch uji baru berukuran n = 50 chip, ditemukan k = 2 chip yang cacat. Turunkan distribusi posterior untuk theta dan hitung rata-rata posteriornya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "$$p(\\boldsymbol{\\theta} \\mid \\mathbf{y}) = \\frac{p(\\mathbf{y} \\mid \\boldsymbol{\\theta}) \\, p(\\boldsymbol{\\theta})}{p(\\mathbf{y})}$$"
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 5,
-        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah sensor optik menguji proporsi cacat mikro chip silikon (theta). Informasi prior dari pabrikan manufaktur menyatakan bahwa theta berdi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Langkah 1: Tuliskan fungsi prior: Prior berdistribusi Beta(2, 18): p(theta) proportional theta^(2-1) * (1-theta)^(18-1) = theta^1 * (1-theta)^17.",
+          "Langkah 2: Tuliskan fungsi likelihood Binomial: Dengan n=50 dan k=2: p(data|theta) proportional theta^2 * (1-theta)^(50-2) = theta^2 * (1-theta)^48.",
+          "Langkah 3: Kalikan Prior dan Likelihood untuk memperoleh Posterior: p(theta|data) proportional [theta^1 * (1-theta)^17] * [theta^2 * (1-theta)^48] = theta^(1+2) * (1-theta)^(17+48) = theta^3 * (1-theta)^65."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Langkah 1: Tuliskan fungsi prior: Prior berdistribusi Beta(2, 18): p(theta) proportional theta^(2-1) * (1-thet...",
-          "Langkah 2: Tuliskan fungsi likelihood Binomial: Dengan n=50 dan k=2: p(data|theta) proportional theta^2 * (1-t...",
-          "Langkah 3: Kalikan Prior dan Likelihood untuk memperoleh Posterior: p(theta|data) proportional [theta^1 * (1-t...",
-          "Interpretasi: Ekspektasi prior adalah 10.0%, data baru menunjukkan 4.0% (2/50). Distribusi posterior secara elegan mengompromikan kedu..."
+          "Langkah 4: Identifikasi keluarga posterior: Bentuk ini adalah distribusi Beta dengan parameter baru alpha_post = 3 + 1 = 4, dan beta_post = 65 + 1 = 66.",
+          "Langkah 5: Hitung rata-rata posterior: E[theta|data] = alpha_post / (alpha_post + beta_post) = 4 / (4 + 66) = 4 / 70 = 0.05714 (5.71%).",
+          "[result: Interpretasi Ilmiah] Ekspektasi prior adalah 10.0%, data baru menunjukkan 4.0% (2/50). Distribusi posterior secara elegan mengompromikan kedua sumber informasi menghasilkan estimasi kompromi rasional sebesar 5.71%."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung rata-rata posterior: E[theta|data] = alpha_post / (alpha_post + beta_pos..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 7,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembaruan analitis Bayesian Beta-Binomial: visualisasi pergeseran kurva Prior, Likelihood, dan Posterior.",
         "bulletPoints": [
-          "Deskripsi: Pembaruan analitis Bayesian Beta-Binomial: visualisasi pergeseran kurva Prior, Likelihood, dan Posterior.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Inferensi Paradigma Bayesian (Beta-Binomial):"
+          "Tujuan Algoritma: Pembaruan analitis Bayesian Beta-Binomial: visualisasi pergeseran kurva Prior, Likelihood, dan Posterior.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Inferensi Paradigma Bayesian (Beta-Binomial):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Inferensi Paradigma Bayesian (Beta-Binomial): | Rata-rata Prior..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Inferensi Paradigma Bayesian (Beta-Binomial):\nRata-rata Prior E[theta]          : 10.00% (Informasi Pabrik Historis)\nEstimasi Likelihood MLE (Data Baru): 4.00% (2 cacat dari 50 uji)\nRata-rata Posterior E[theta|Data] : 5.71% (Sintesis Rasional Terbarui)\n95% Posterior Credible Interval    : [1.58%, 12.22%]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 8,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menafsirkan nilai p(data|theta) sebagai probabilitas bahwa hipotesis benar (kesalahan pembalikan kondisional).",
-          "Perangkap: Mengabaikan penyebut konstanta normalisasi p(y) saat melakukan komparasi model probabilistik.",
-          "Perangkap: Menggunakan prior yang sangat sempit dan dogmatis sehingga data eksperimen sebesar apa pun tidak mampu menguba..."
-        ]
+          "[warning: Perangkap] Menafsirkan nilai p(data|theta) sebagai probabilitas bahwa hipotesis benar (kesalahan pembalikan kondisional).",
+          "[warning: Perangkap] Mengabaikan penyebut konstanta normalisasi p(y) saat melakukan komparasi model probabilistik.",
+          "[warning: Perangkap] Menggunakan prior yang sangat sempit dan dogmatis sehingga data eksperimen sebesar apa pun tidak mampu mengubah opini model."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 9,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Sajikan formulasi fungsi Likelihood dan Prior secara eksplisit dalam bab metodologi.",
           "Prosedur: Lakukan analisis sensitivitas prior (Prior Sensitivity Analysis) untuk membuktikan stabilitas posterior.",
           "Prosedur: Laporkan interval kredibel 95% bersama dengan nilai mean/median posterior."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
         "slideNumber": 10,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa arti filosofis dari pernyataan bahwa \"Probabilitas Bayesian adalah ukuran keadaan ketidaktahuan kita, bukan sifat in...",
-          "Petunjuk: Pikirkan eksperimen pelemparan koin yang sudah jatuh tetapi ditutup tangan.",
-          "Solusi Kunci: Jika sebuah koin telah dilempar dan hasilnya ditutup tangan, hasilnya di dunia fisik sudah pasti Gambar atau Angka (buka..."
-        ]
+          "Pertanyaan Uji: Apa arti filosofis dari pernyataan bahwa \"Probabilitas Bayesian adalah ukuran keadaan ketidaktahuan kita, bukan sifat intrinsik objek fisik\"?",
+          "Petunjuk Analitis: Pikirkan eksperimen pelemparan koin yang sudah jatuh tetapi ditutup tangan.",
+          "Solusi Kunci: Jika sebuah koin telah dilempar dan hasilnya ditutup tangan, hasilnya di dunia fisik sudah pasti Gambar atau Angka (bukan probabilitas). Namun bagi manusia yang belum melihatnya, probabilitasnya adalah 50%. Ketidakpastian berada di dalam pikiran pengamat akibat ketidaklengkapan informasi, bukan di dalam koin fisik tersebut."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -232,101 +262,140 @@ export const CH39_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pemilihan Prior: Conjugate Priors, Uninformative Priors...",
+        "slideNumber": 11,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pemilihan Prior: Conjugate Priors, Uninformative Priors, dan Informative Priors",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.2.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.2.",
-          "Capaian: Memahami sifat matematika pasangan sekawan (Conjugate Priors) pada keluarga eksponensial.",
-          "Capaian: Menganalisis bahaya prior seragam naif dan menggunakan Prior Jeffreys yang invarian reparameterisasi.",
-          "Capaian: Merancang Prior Terinformasi Lemah (Weakly Informative Priors) untuk regularisasi rekayasa."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami sifat matematika pasangan sekawan (Conjugate Priors) pada keluarga eksponensial.",
+          "Capaian 2: Menganalisis bahaya prior seragam naif dan menggunakan Prior Jeffreys yang invarian reparameterisasi.",
+          "Capaian 3: Merancang Prior Terinformasi Lemah (Weakly Informative Priors) untuk regularisasi rekayasa."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{I}_{ij}(\\boldsymbol{\\theta}) = -\\mathbb{E}_{\\mathbf{y} \\mid \\boldsymbol{\\theta}} \\left[ \\frac{\\partial^2 \\log p(\\mathbf{y} \\mid \\boldsymbol{\\theta})}{\\partial \\theta_i \\, \\partial \\theta_j} \\right]$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{I}_{ij}(\\boldsymbol{\\theta}) = -\\mathbb{E}_{\\mathbf{y} \\mid \\boldsymbol{\\theta}} \\left[ \\frac{\\partial^2 \\log p(\\mathbf{y} \\mid \\boldsymbol{\\theta})}{\\partial \\theta_i \\, \\partial \\theta_j} \\right]$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.2.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pemilihan Prior: Conjugate Priors, Uninformative Priors...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pemilihan Prior: Conjugate Priors, Uninformative Priors, dan Informative Priors",
+        "lead": "Kritik paling tajam yang sering dilontarkan oleh penentang metode Bayesian adalah subjektivitas pemilihan distribusi prior: \"Jika dua peneliti memilih prior yang berbeda, mereka akan mendapatkan hasil yang berbeda dari data yang sama.\" Oleh karena itu, perancangan distribusi prior dalam penelitian rekayasa wajib mematuhi kaidah matematis dan justifikasi fisik yang ketat.",
         "bulletPoints": [
-          "Kritik paling tajam yang sering dilontarkan oleh penentang metode Bayesian adalah subjektivitas pemilihan distribusi prior: \"...",
-          "Taksonomi Tiga Kategori Prior Ilmiah: 1. Pasangan Sekawan (Conjugate Priors): Distribusi prior dikatakan sekawan terhadap sua...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Taksonomi Tiga Kategori Prior Ilmiah: 1.",
+          "Pasangan Sekawan (Conjugate Priors): Distribusi prior dikatakan sekawan terhadap suatu fungsi likelihood jika distribusi posterior yang dihasilkan berada dalam keluarga distribusi parametrik yang sama dengan prior tersebut."
         ],
-        "keyFormulaOrDiagram": "2. Prior Tanpa Informasi Objektif (Uninformative / Objective Priors): Digunakan ketika pen..."
+        "keyFormulaOrDiagram": "$U(0, 1)$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Prior Tanpa Informasi Objektif (Uninformative / Objective Priors): Digunakan ketika peneliti ingin meminimalkan pengaruh p...",
-          "3. Prior Terinformasi Lemah (Weakly Informative Priors, Gelman): Standar modern yang direkomendasikan dalam pemodelan rekayas...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Prior Tanpa Informasi Objektif (Uninformative / Objective Priors): Digunakan ketika peneliti ingin meminimalkan pengaruh prior dan membiarkan data sepenuhnya berbicara sendiri. - Bahaya Prior Seragam (Uniform Prior): Menggunakan distribusi seragam $U(0, 1)$ untuk proporsi $\\theta$ tampak netral, namun jika kita mengubah parameter menjadi rasio odds $\\phi = \\theta / (1 - \\theta)$, prior untuk $\\phi$ menjadi tidak seragam secara asimetris. - Prior Jeffreys (1946): Prior objektif yang invarian terhadap sembarang transformasi satu-satu yang dapat didefinisikan secara mulus (reparameterization invariant), diturunkan dari akar determinan Informasi Fisher.",
+          "3.",
+          "Prior Terinformasi Lemah (Weakly Informative Priors, Gelman): Standar modern yang direkomendasikan dalam pemodelan rekayasa."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Prior Jeffreys:",
         "bulletPoints": [
-          "Formulasi Matematis Prior Jeffreys:",
-          "Misalkan $p(\\mathbf{y} \\mid \\boldsymbol{\\theta})$ adalah fungsi likelihood dengan parameter $\\boldsymbol{\\thet...",
-          "Matriks Informasi Fisher (Fisher Information Matrix, $\\mathcal{I}(\\boldsymbol{\\theta})$):"
+          "Misalkan $p(\\mathbf{y} \\mid \\boldsymbol{\\theta})$ adalah fungsi likelihood dengan parameter $\\boldsymbol{\\theta} \\in \\mathbb{R}^k$.",
+          "Matriks Informasi Fisher (Fisher Information Matrix, $\\mathcal{I}(\\boldsymbol{\\theta})$):",
+          "Prior Jeffreys Didefinisikan Sebagai:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{I}_{ij}(\\boldsymbol{\\theta}) = -\\mathbb{E}_{\\mathbf{y} \\mid \\boldsymbol{\\theta}} \\left[ \\frac{\\partial^2 \\log p(\\mathbf{y} \\mid \\boldsymbol{\\theta})}{\\partial \\theta_i \\, \\partial \\theta_j} \\right]$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{I}_{ij}(\\boldsymbol{\\theta}) = -\\mathbb{E}_{\\mathbf{y} \\mid \\boldsymbol{\\theta}} \\left[ \\frac{\\partial^2 \\log p(\\mathbf{y} \\mid \\boldsymbol{\\theta})}{\\partial \\theta_i \\, \\partial \\theta_j} \\right]$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan proses Poisson untuk cacat pengelasan per meter: y ~ Poisson(lambda). Fungsi likelihood adalah p(y|lambda) = (lambda^y * e^-lambda...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan proses Poisson untuk cacat pengelasan per meter: y ~ Poisson(lambda). Fungsi likelihood adalah p(y|lambda) = (lambda^y * e^-lambda) / y!. Turunkan Prior Jeffreys untuk parameter laju lambda. Tunjukkan bentuk distribusi posterior jika diamati total k cacat pada n pengukuran.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Tuliskan log-likelihood untuk satu observasi: log p(y|lambda) = y * log(lambda) - lambda - log(y!).",
           "Langkah 2: Turunkan turunan kedua terhadap lambda: d/dlambda [y/lambda - 1] = -y / lambda^2.",
-          "Langkah 3: Hitung Informasi Fisher: I(lambda) = -E[-y / lambda^2] = E[y] / lambda^2. Karena E[y] = lambda untu...",
-          "Interpretasi: Posterior berbentuk distribusi Gamma(alpha = k + 0.5, beta = n), membuktikan perpaduan elegan antara prior objektif murn..."
+          "Langkah 3: Hitung Informasi Fisher: I(lambda) = -E[-y / lambda^2] = E[y] / lambda^2. Karena E[y] = lambda untuk Poisson, maka I(lambda) = lambda / lambda^2 = 1 / lambda."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung Posterior dengan n observasi (total cacat k): p(lambda|data) proportiona..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung Prior Jeffreys: p(lambda) proportional sqrt(I(lambda)) = sqrt(1 / lambda) = lambda^(-1/2). (Ini setara dengan distribusi Gamma tak wajar dengan alpha=0.5, beta=0).",
+          "Langkah 5: Hitung Posterior dengan n observasi (total cacat k): p(lambda|data) proportional lambda^(k) * e^(-n*lambda) * lambda^(-1/2) = lambda^(k - 0.5) * e^(-n*lambda).",
+          "[result: Interpretasi Ilmiah] Posterior berbentuk distribusi Gamma(alpha = k + 0.5, beta = n), membuktikan perpaduan elegan antara prior objektif murni dengan data observasi."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Analisis sensitivitas prior: membandingkan dampak Prior Informatif, Weakly Informative, dan Jeffreys.",
         "bulletPoints": [
-          "Deskripsi: Analisis sensitivitas prior: membandingkan dampak Prior Informatif, Weakly Informative, dan Jeffreys.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Analisis Sensitivitas Prior (Sample Mean = 5.28 mA):"
+          "Tujuan Algoritma: Analisis sensitivitas prior: membandingkan dampak Prior Informatif, Weakly Informative, dan Jeffreys.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Analisis Sensitivitas Prior (Sample Mean = 5.28 mA):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Sensitivitas Prior (Sample Mean = 5.28 mA): | Rata-rata..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Sensitivitas Prior (Sample Mean = 5.28 mA):\nRata-rata Sampel Teramati (MLE) : 5.2794 mA\nPosterior Mean (Prior Informatif) : 3.1250 mA (Terdistorsi oleh Prior Keras!)\nPosterior Mean (Weakly Informative): 5.2741 mA (Mendekati Data + Regularisasi)\nPosterior Mean (Jeffreys Prior)   : 5.2794 mA (Identik dengan Frekuensi)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan prior informatif yang sangat sempit tanpa justifikasi data historis yang sah.",
-          "Perangkap: Mengasumsikan bahwa distribusi seragam selalu tidak berpihak (uninformative) pada semua parameterisasi.",
-          "Perangkap: Tidak melakukan uji sensitivitas prior dalam manuskrip publikasi."
-        ]
+          "[warning: Perangkap] Menggunakan prior informatif yang sangat sempit tanpa justifikasi data historis yang sah.",
+          "[warning: Perangkap] Mengasumsikan bahwa distribusi seragam selalu tidak berpihak (uninformative) pada semua parameterisasi.",
+          "[warning: Perangkap] Tidak melakukan uji sensitivitas prior dalam manuskrip publikasi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Weakly Informative Prior sebagai pilihan standar untuk menjamin regularisasi tanpa distorsi bias.",
           "Prosedur: Tampilkan visualisasi perbandingan posterior di bawah 3 variasi prior yang berbeda (Prior Sensitivity Plot).",
           "Prosedur: Dokumentasikan asal-usul data historis jika menggunakan Prior Informatif penuh."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa distribusi seragam Uniform(0, 1000) pada parameter standar deviasi sigma bukanlah prior yang benar-benar tidak b...",
-          "Petunjuk: Perhatikan bagaimana massa probabilitas terdistribusi pada nilai-nilai yang sangat besar.",
-          "Solusi Kunci: Distribusi Uniform(0, 1000) menempatkan 99% dari seluruh massa probabilitasnya pada rentang nilai [10, 1000]. Prior ini..."
-        ]
+          "Pertanyaan Uji: Mengapa distribusi seragam Uniform(0, 1000) pada parameter standar deviasi sigma bukanlah prior yang benar-benar tidak berpihak?",
+          "Petunjuk Analitis: Perhatikan bagaimana massa probabilitas terdistribusi pada nilai-nilai yang sangat besar.",
+          "Solusi Kunci: Distribusi Uniform(0, 1000) menempatkan 99% dari seluruh massa probabilitasnya pada rentang nilai [10, 1000]. Prior ini secara agresif mendukung nilai standar deviasi yang sangat masif dan secara implisit mendiskriminasi variabilitas kecil, sehingga sangat informatif ke arah varians ekstrem."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -395,101 +464,139 @@ export const CH39_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Sampling MCMC: Algoritma Metropolis-Hastings, Gibbs Sam...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Sampling MCMC: Algoritma Metropolis-Hastings, Gibbs Sampling, dan NUTS via PyMC",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.2.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.3.",
-          "Capaian: Memahami mekanisme dasar sampling Markov Chain Monte Carlo (MCMC) untuk menghitung integral dimensi tinggi.",
-          "Capaian: Menurunkan aturan penerimaan Metropolis-Hastings (Detailed Balance Condition).",
-          "Capaian: Mendiagnosis konvergensi rantai MCMC menggunakan indikator Rank-Normalized R-hat dan Effective Sample Size (ES..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami mekanisme dasar sampling Markov Chain Monte Carlo (MCMC) untuk menghitung integral dimensi tinggi.",
+          "Capaian 2: Menurunkan aturan penerimaan Metropolis-Hastings (Detailed Balance Condition).",
+          "Capaian 3: Mendiagnosis konvergensi rantai MCMC menggunakan indikator Rank-Normalized R-hat dan Effective Sample Size (ESS)."
         ],
-        "keyFormulaOrDiagram": "$$\\alpha(\\boldsymbol{\\theta}^{(t)}, \\boldsymbol{\\theta}^*) = \\min\\left( 1, \\; \\frac{p(\\boldsymbol{\\theta}^* \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^{(t)} \\mid \\boldsymbol{\\theta}^*)}{p(\\boldsymbol{\\theta}^{(t)} \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^* \\mid \\boldsymbol{\\theta}^{(t)})} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\alpha(\\boldsymbol{\\theta}^{(t)}, \\boldsymbol{\\theta}^*) = \\min\\left( 1, \\; \\frac{p(\\boldsymbol{\\theta}^* \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^{(t)} \\mid \\boldsymbol{\\theta}^*)}{p(\\boldsymbol{\\theta}^{(t)} \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^* \\mid \\boldsymbol{\\theta}^{(t)})} \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.2.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Sampling MCMC: Algoritma Metropolis-Hastings, Gibbs Sam...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Sampling MCMC: Algoritma Metropolis-Hastings, Gibbs Sampling, dan NUTS via PyMC",
+        "lead": "Dalam model Bayesian hierarkis atau non-linier terapan di dunia rekayasa, integral penyebut Teorema Bayes $p(\\mathbf{y}) = \\int p(\\mathbf{y}|\\boldsymbol{\\theta}) p(\\boldsymbol{\\theta}) d\\boldsymbol{\\theta}$ hampir tidak pernah dapat diselesaikan secara analitis karena dimensi parameter yang mencapai puluhan hingga ribuan.",
         "bulletPoints": [
-          "Dalam model Bayesian hierarkis atau non-linier terapan di dunia rekayasa, integral penyebut Teorema Bayes $p(\\mathbf{y}) = \\i...",
-          "Revolusi Markov Chain Monte Carlo (MCMC): Solusi terobosan abad ke-20 adalah membangun sebuah rantai Markov (Markov Chain) ya...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Sebelum tahun 1990-an, kendala integrasi numerik ini membatasi penerapan praktis analisis Bayesian.",
+          "Revolusi Markov Chain Monte Carlo (MCMC): Solusi terobosan abad ke-20 adalah membangun sebuah rantai Markov (Markov Chain) yang memiliki distribusi stasioner (stationary distribution) yang sama persis dengan distribusi posterior target $p(\\boldsymbol{\\theta}|\\mathbf{y})$.",
+          "Setelah rantai mencapai kondisi ekuilibrium (fase warm-up / burn-in), setiap keadaan baru yang dikunjungi oleh rantai tersebut merupakan sampel empiris yang ditarik dari distribusi posterior."
         ],
-        "keyFormulaOrDiagram": "Evolusi Algoritma MCMC: 1. Metropolis-Hastings (MH, 1953/1970): Mengusulkan kandidat titik..."
+        "keyFormulaOrDiagram": "$-\\nabla \\log p(\\boldsymbol{\\theta}|\\mathbf{y})$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Evolusi Algoritma MCMC: 1.",
         "bulletPoints": [
-          "Evolusi Algoritma MCMC: 1. Metropolis-Hastings (MH, 1953/1970): Mengusulkan kandidat titik baru dari distribusi proposal sime...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Metropolis-Hastings (MH, 1953/1970): Mengusulkan kandidat titik baru dari distribusi proposal simetris atau asimetris, lalu menerima kandidat tersebut dengan probabilitas penerimaan tertentu.",
+          "Kelemahan: Berperilaku seperti random walk lambat pada dimensi tinggi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Algoritma Metropolis-Hastings:",
         "bulletPoints": [
-          "Formulasi Matematis Algoritma Metropolis-Hastings:",
           "Misalkan parameter saat ini adalah $\\boldsymbol{\\theta}^{(t)}$.",
-          "Kandidat titik baru $\\boldsymbol{\\theta}^*$ ditarik dari distribusi proposal $q(\\boldsymbol{\\theta}^* \\mid \\bo..."
+          "Kandidat titik baru $\\boldsymbol{\\theta}^*$ ditarik dari distribusi proposal $q(\\boldsymbol{\\theta}^* \\mid \\boldsymbol{\\theta}^{(t)})$.",
+          "Rasio Penerimaan Metropolis-Hastings (Hastings Ratio, $\\alpha$):"
         ],
-        "keyFormulaOrDiagram": "$$\\alpha(\\boldsymbol{\\theta}^{(t)}, \\boldsymbol{\\theta}^*) = \\min\\left( 1, \\; \\frac{p(\\boldsymbol{\\theta}^* \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^{(t)} \\mid \\boldsymbol{\\theta}^*)}{p(\\boldsymbol{\\theta}^{(t)} \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^* \\mid \\boldsymbol{\\theta}^{(t)})} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\alpha(\\boldsymbol{\\theta}^{(t)}, \\boldsymbol{\\theta}^*) = \\min\\left( 1, \\; \\frac{p(\\boldsymbol{\\theta}^* \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^{(t)} \\mid \\boldsymbol{\\theta}^*)}{p(\\boldsymbol{\\theta}^{(t)} \\mid \\mathbf{y}) \\, q(\\boldsymbol{\\theta}^* \\mid \\boldsymbol{\\theta}^{(t)})} \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada langkah iterasi t, posisi rantai berada pada theta = 2.0. Likelihood x Prior pada titik ini bernilai 0.05. Algoritma mengusulkan titik...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada langkah iterasi t, posisi rantai berada pada theta = 2.0. Likelihood x Prior pada titik ini bernilai 0.05. Algoritma mengusulkan titik baru theta^* = 2.5 menggunakan proposal simetris Gaussian q(theta*|theta) = q(theta|theta*). Nilai Likelihood x Prior pada theta^* adalah 0.08. Hitung probabilitas penerimaan alpha. Apakah titik baru diterima?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi simetri proposal: Karena proposal simetris (Random Walk Metropolis), faktor q(theta|th...",
-          "Langkah 2: Hitung rasio posterior: Rasio = [p(y|theta*) * p(theta*)] / [p(y|theta) * p(theta)] = 0.08 / 0.05 =...",
+          "Langkah 1: Identifikasi simetri proposal: Karena proposal simetris (Random Walk Metropolis), faktor q(theta|theta*) / q(theta*|theta) = 1.0.",
+          "Langkah 2: Hitung rasio posterior: Rasio = [p(y|theta*) * p(theta*)] / [p(y|theta) * p(theta)] = 0.08 / 0.05 = 1.60."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung probabilitas penerimaan alpha: alpha = min(1.0, 1.60) = 1.0.",
-          "Interpretasi: Setiap kandidat yang memiliki densitas posterior lebih tinggi dari posisi saat ini akan selalu diterima secara pasti, me..."
+          "Langkah 4: Tentukan status transisi: Karena alpha = 1.0, titik baru theta^* = 2.5 diterima secara pasti (probabilitas 100%). Posisi rantai pada iterasi t+1 menjadi 2.5.",
+          "[result: Interpretasi Ilmiah] Setiap kandidat yang memiliki densitas posterior lebih tinggi dari posisi saat ini akan selalu diterima secara pasti, mengarahkan rantai menuju wilayah berprobabilitas tinggi."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Tentukan status transisi: Karena alpha = 1.0, titik baru theta^* = 2.5 diterima..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi 1D Random-Walk Metropolis-Hastings Sampler dan kalkulasi diagnostik ESS.",
         "bulletPoints": [
-          "Deskripsi: Implementasi 1D Random-Walk Metropolis-Hastings Sampler dan kalkulasi diagnostik ESS.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil MCMC Metropolis-Hastings:"
+          "Tujuan Algoritma: Implementasi 1D Random-Walk Metropolis-Hastings Sampler dan kalkulasi diagnostik ESS.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil MCMC Metropolis-Hastings:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil MCMC Metropolis-Hastings: | Total Iterasi : 10000 (Burn-in..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil MCMC Metropolis-Hastings:\nTotal Iterasi              : 10000 (Burn-in = 2000)\nLaju Penerimaan (Acc Rate) : 38.64% (Optimal 20%-50%)\nRata-rata Sampel Posterior : 0.8845\nStandar Deviasi Posterior  : 1.9567",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 30,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyertakan sampel warm-up/burn-in ke dalam estimasi posterior akhir.",
-          "Perangkap: Melaporkan hasil dari rantai MCMC tunggal tanpa memverifikasi R-hat antar rantai independen.",
-          "Perangkap: Mengabaikan peringatan divergensi numerik (divergent transitions) pada sampler HMC/NUTS."
-        ]
+          "[warning: Perangkap] Menyertakan sampel warm-up/burn-in ke dalam estimasi posterior akhir.",
+          "[warning: Perangkap] Melaporkan hasil dari rantai MCMC tunggal tanpa memverifikasi R-hat antar rantai independen.",
+          "[warning: Perangkap] Mengabaikan peringatan divergensi numerik (divergent transitions) pada sampler HMC/NUTS."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Jalankan minimal 4 rantai MCMC independen dengan titik inisialisasi yang tersebar luas.",
           "Prosedur: Verifikasi bahwa seluruh parameter memenuhi R-hat < 1.01 dan ESS > 400.",
-          "Prosedur: Periksa trace plot dan rank-plot: rantai harus tampak seperti ulat bulu homogen (fuzzy caterpillar) yang salin..."
-        ]
+          "Prosedur: Periksa trace plot dan rank-plot: rantai harus tampak seperti ulat bulu homogen (fuzzy caterpillar) yang saling bertumpukan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa indikasi metodologis jika laju penerimaan (acceptance rate) pada Random Walk Metropolis hanya 2%?",
-          "Petunjuk: Perhatikan lebar langkah distribusi proposal.",
-          "Solusi Kunci: Laju penerimaan yang terlalu rendah (2%) menandakan bahwa lebar langkah proposal (proposal step size) terlalu besar. Tit..."
-        ]
+          "Petunjuk Analitis: Perhatikan lebar langkah distribusi proposal.",
+          "Solusi Kunci: Laju penerimaan yang terlalu rendah (2%) menandakan bahwa lebar langkah proposal (proposal step size) terlalu besar. Titik kandidat yang diusulkan hampir selalu mendarat di wilayah dengan densitas posterior yang sangat rendah di luar kurva, sehingga rantai menolak mayoritas usulan dan terjebak diam di satu tempat."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -560,101 +667,141 @@ export const CH39_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Interval Kredibel Bayesian (Highest Posterior Density -...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Interval Kredibel Bayesian (Highest Posterior Density - HPD) vs Frequentist Confidence Interval",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.2.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.4.",
-          "Capaian: Membedakan interpretasi epistemologis Interval Kredibel Bayesian vs Interval Kepercayaan Frequentist.",
-          "Capaian: Memahami formulasi Equal-Tailed Interval (ETI) vs Highest Posterior Density Interval (HPDI).",
-          "Capaian: Menginterpretasikan probabilitas langsung pada pernyataan interval kredibel ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.2.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan interpretasi epistemologis Interval Kredibel Bayesian vs Interval Kepercayaan Frequentist.",
+          "Capaian 2: Memahami formulasi Equal-Tailed Interval (ETI) vs Highest Posterior Density Interval (HPDI).",
+          "Capaian 3: Menginterpretasikan probabilitas langsung pada pernyataan interval kredibel ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$\\int_{-\\infty}^{L_{\\text{ETI}}} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}, \\quad \\int_{U_{\\text{ETI}}}^{\\infty} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}$$"
+        "keyFormulaOrDiagram": "$$\\int_{-\\infty}^{L_{\\text{ETI}}} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}, \\quad \\int_{U_{\\text{ETI}}}^{\\infty} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.2.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Interval Kredibel Bayesian (Highest Posterior Density -...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Interval Kredibel Bayesian (Highest Posterior Density - HPD) vs Frequentist Confidence Interval",
+        "lead": "Salah satu keunggulan terbesar dari paradigma Bayesian dalam komunikasi ilmiah adalah kealamian dan kejujuran interpretasi dari interval estimasinya.",
         "bulletPoints": [
-          "Salah satu keunggulan terbesar dari paradigma Bayesian dalam komunikasi ilmiah adalah kealamian dan kejujuran interpretasi da...",
-          "Perbandingan Interpretasi Filosofis: 1. Frequentist 95% Confidence Interval (CI): Parameter $\\theta$ adalah konstanta tetap,...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam statistika Frequentist, interval kepercayaan 95% seringkali disalahartikan oleh 90% peneliti pemula.",
+          "Kalimat: \"Terdapat probabilitas 95% bahwa parameter sejati berada dalam rentang [10, 15]\" adalah pernyataan yang salah secara metodologis dalam pandangan Frequentist, namun pernyataan tersebut adalah definisi eksak dan sah dalam pandangan Bayesian.",
+          "Perbandingan Interpretasi Filosofis: 1.",
+          "Frequentist 95% Confidence Interval (CI): Parameter $\\theta$ adalah konstanta tetap, sedangkan interval $[L(D), U(D)]$ adalah variabel acak yang bergantung pada sampel data."
         ],
-        "keyFormulaOrDiagram": "Dua Varian Interval Kredibel: - Equal-Tailed Interval (ETI): Memotong probabilitas secara..."
+        "keyFormulaOrDiagram": "$\\alpha/2$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dua Varian Interval Kredibel: - Equal-Tailed Interval (ETI): Memotong probabilitas secara simetris $\\alpha/2$ di kedua ujung ekor (misal persentil 2.5% dan 97.5%). - Highest Posterior Density Interval (HPDI / HDI): Rentang interval terpendek yang memuat $(1 - \\alpha)$ massa probabilitas.",
         "bulletPoints": [
-          "Dua Varian Interval Kredibel: - Equal-Tailed Interval (ETI): Memotong probabilitas secara simetris $\\alpha/2$ di kedua ujung...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Setiap titik di dalam HPDI memiliki densitas probabilitas posterior yang lebih tinggi dibandingkan titik mana pun di luar HPDI.",
+          "Sangat ideal untuk distribusi yang sangat menceng atau multimodal."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis ETI vs HPDI:",
         "bulletPoints": [
-          "Formulasi Matematis ETI vs HPDI:",
           "Diberikan distribusi posterior $p(\\theta \\mid \\mathbf{y})$ untuk parameter skalar $\\theta$.",
-          "1. Equal-Tailed Interval (ETI) $(1 - \\alpha)$:"
+          "1. Equal-Tailed Interval (ETI) $(1 - \\alpha)$:",
+          "Didefinisikan oleh batas kuantil $q_{\\alpha/2}$ dan $q_{1 - \\alpha/2}$:"
         ],
-        "keyFormulaOrDiagram": "$$\\int_{-\\infty}^{L_{\\text{ETI}}} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}, \\quad \\int_{U_{\\text{ETI}}}^{\\infty} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}$$"
+        "keyFormulaOrDiagram": "$$\\int_{-\\infty}^{L_{\\text{ETI}}} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}, \\quad \\int_{U_{\\text{ETI}}}^{\\infty} p(\\theta \\mid \\mathbf{y}) \\, d\\theta = \\frac{\\alpha}{2}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah distribusi posterior berdistribusi Eksponensial Exp(lambda=1): p(theta|y) = e^-theta untuk theta >= 0. Hitung 95% Equal-Tailed Interv...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah distribusi posterior berdistribusi Eksponensial Exp(lambda=1): p(theta|y) = e^-theta untuk theta >= 0. Hitung 95% Equal-Tailed Interval (ETI) dan 95% Highest Posterior Density Interval (HPDI). Buktikan bahwa HPDI memiliki lebar yang lebih sempit dan mencakup titik dengan densitas tertinggi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: CDF dari Exp(1) adalah F(theta) = 1 - e^-theta.",
-          "Langkah 2: Hitung ETI 95%: Batas bawah L_ETI: 1 - e^-L = 0.025 => e^-L = 0.975 => L = -ln(0.975) = 0.0253. Bat...",
-          "Langkah 3: Hitung HPDI 95%: Karena distribusi eksponensial monoton turun dari theta=0, titik dengan densitas t...",
-          "Interpretasi: HPDI mencakup nilai modus (theta=0) dan memiliki rentang 18% lebih efisien/sempit dibandingkan ETI pada distribusi asime..."
+          "Langkah 2: Hitung ETI 95%: Batas bawah L_ETI: 1 - e^-L = 0.025 => e^-L = 0.975 => L = -ln(0.975) = 0.0253. Batas atas U_ETI: 1 - e^-U = 0.975 => e^-U = 0.025 => U = -ln(0.025) = 3.6889. Maka ETI = [0.0253, 3.6889] dengan lebar = 3.6636.",
+          "Langkah 3: Hitung HPDI 95%: Karena distribusi eksponensial monoton turun dari theta=0, titik dengan densitas tertinggi adalah theta=0. Maka HPDI wajib dimulai dari L_HPDI = 0."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Bandingkan lebar: Lebar HPDI (2.9957) jauh lebih sempit dibandingkan lebar ETI..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung batas atas U_HPDI: F(U_HPDI) - F(0) = 0.95 => 1 - e^-U = 0.95 => e^-U = 0.05 => U = -ln(0.05) = 2.9957. Maka HPDI = [0.0000, 2.9957] dengan lebar = 2.9957.",
+          "Langkah 5: Bandingkan lebar: Lebar HPDI (2.9957) jauh lebih sempit dibandingkan lebar ETI (3.6636).",
+          "[result: Interpretasi Ilmiah] HPDI mencakup nilai modus (theta=0) dan memiliki rentang 18% lebih efisien/sempit dibandingkan ETI pada distribusi asimetris."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komparasi komputasi Equal-Tailed Interval (ETI) vs Highest Posterior Density Interval (HPDI) dari sampel MCMC.",
         "bulletPoints": [
-          "Deskripsi: Komparasi komputasi Equal-Tailed Interval (ETI) vs Highest Posterior Density Interval (HPDI) dari sampel MCMC.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Komparasi Interval Kredibel Bayesian:"
+          "Tujuan Algoritma: Komparasi komputasi Equal-Tailed Interval (ETI) vs Highest Posterior Density Interval (HPDI) dari sampel MCMC.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Komparasi Interval Kredibel Bayesian:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Komparasi Interval Kredibel Bayesian: | Equal-Tailed Interval (E..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Komparasi Interval Kredibel Bayesian:\nEqual-Tailed Interval (ETI 95%) : [0.730, 16.904] | Lebar = 16.175\nHighest Density Interval (HDI)  : [0.243, 15.421] | Lebar = 15.178 (Lebih Kompak!)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menafsirkan Frequentist Confidence Interval sebagai probabilitas bahwa parameter berada dalam rentang.",
-          "Perangkap: Menggunakan HPDI pada distribusi multimodal yang terpecah menjadi beberapa interval terpisah tanpa memeriksa d...",
-          "Perangkap: Membandingkan batas ETI dengan CI secara langsung tanpa mempertimbangkan pengaruh pemilihan prior."
-        ]
+          "[warning: Perangkap] Menafsirkan Frequentist Confidence Interval sebagai probabilitas bahwa parameter berada dalam rentang.",
+          "[warning: Perangkap] Menggunakan HPDI pada distribusi multimodal yang terpecah menjadi beberapa interval terpisah tanpa memeriksa densitas grafis.",
+          "[warning: Perangkap] Membandingkan batas ETI dengan CI secara langsung tanpa mempertimbangkan pengaruh pemilihan prior."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Nyatakan secara eksplisit jenis interval yang dilaporkan: ETI atau HPDI.",
           "Prosedur: Gunakan HPDI saat distribusi posterior memiliki kemencengan (skewness) tinggi.",
           "Prosedur: Gunakan ETI jika invarian terhadap transformasi monoton parameter sangat diprioritaskan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa Highest Posterior Density Interval (HPDI) selalu memiliki lebar rentang yang lebih pendek atau sama dengan Equal...",
-          "Petunjuk: Perhatikan kriteria pemotongan ketinggian densitas horizontal k_alpha.",
-          "Solusi Kunci: HPDI secara matematis dirancang untuk memilih kumpulan titik dengan kepadatan posterior tertinggi. Dengan memasukkan tit..."
-        ]
+          "Pertanyaan Uji: Mengapa Highest Posterior Density Interval (HPDI) selalu memiliki lebar rentang yang lebih pendek atau sama dengan Equal-Tailed Interval (ETI)?",
+          "Petunjuk Analitis: Perhatikan kriteria pemotongan ketinggian densitas horizontal k_alpha.",
+          "Solusi Kunci: HPDI secara matematis dirancang untuk memilih kumpulan titik dengan kepadatan posterior tertinggi. Dengan memasukkan titik-titik yang memiliki densitas tinggi dan membuang titik-titik dengan densitas terendah di ekor distribusi, volume atau lebar interval yang dibutuhkan untuk mencakup akumulasi 95% probabilitas dijamin menjadi yang paling minimum."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

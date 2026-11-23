@@ -62,99 +62,133 @@ export const CH06_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Perbedaan Hipotesis Konseptual (Riset) vs Hipotesis Sta...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Perbedaan Hipotesis Konseptual (Riset) vs Hipotesis Statistik (H0 / H1)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.6.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.1.",
-          "Capaian: Membedakan peran epistemologis hipotesis riset konseptual dan pasangan hipotesis statistik formal.",
-          "Capaian: Mentransformasikan proposisi teoretis abstrak menjadi parameter statistik teruji.",
-          "Capaian: Menghindari kesalahan umum penulisan hipotesis riset yang tidak dapat difalsifikasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan peran epistemologis hipotesis riset konseptual dan pasangan hipotesis statistik formal.",
+          "Capaian 2: Mentransformasikan proposisi teoretis abstrak menjadi parameter statistik teruji.",
+          "Capaian 3: Menghindari kesalahan umum penulisan hipotesis riset yang tidak dapat difalsifikasi."
         ],
-        "keyFormulaOrDiagram": "$$\\Phi: \\mathcal{H}_{\\text{konsep}} \\longrightarrow \\left( \\Theta_0, \\Theta_1 \\right)$$"
+        "keyFormulaOrDiagram": "$$\\Phi: \\mathcal{H}_{\\text{konsep}} \\longrightarrow \\left( \\Theta_0, \\Theta_1 \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.6.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Perbedaan Hipotesis Konseptual (Riset) vs Hipotesis Sta...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Perbedaan Hipotesis Konseptual (Riset) vs Hipotesis Statistik (H0 / H1)",
+        "lead": "Perumusan hipotesis adalah jembatan yang menghubungkan penalaran teoretis abstrak dengan eksperimen empiris konkret.",
         "bulletPoints": [
-          "Perumusan hipotesis adalah jembatan yang menghubungkan penalaran teoretis abstrak dengan eksperimen empiris konkret. Salah sa...",
-          "1. Hipotesis Riset (Research Hypothesis): Proposisi deklaratif berbasis teori yang meramalkan adanya hubungan kausal atau mek...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Salah satu kebingungan konseptual yang paling sering melanda mahasiswa tingkat sarjana dan peneliti pemula adalah kerancuan antara Hipotesis Riset (Konseptual) dengan Hipotesis Statistik ($H_0$ dan $H_1$).",
+          "1.",
+          "Hipotesis Riset (Research Hypothesis): Proposisi deklaratif berbasis teori yang meramalkan adanya hubungan kausal atau mekanistik spesifik antara dua atau lebih konsep ilmiah."
         ],
-        "keyFormulaOrDiagram": "Eksperimen tidak pernah secara langsung \"membuktikan\" hipotesis riset secara mutlak, melai..."
+        "keyFormulaOrDiagram": "$H_0$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Eksperimen tidak pernah secara langsung \"membuktikan\" hipotesis riset secara mutlak, melainkan mengevaluasi apakah bukti empi...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Eksperimen tidak pernah secara langsung \"membuktikan\" hipotesis riset secara mutlak, melainkan mengevaluasi apakah bukti empiris cukup kuat untuk menolak hipotesis nol $H_0$ pada tingkat signifikansi $\\alpha$ tertentu.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pemetaan formal dari ruang hipotesis konseptual $\\mathcal{H}_{\\text{konsep}}$ menuju ruang parameter statistik $\\Theta$:",
         "bulletPoints": [
-          "Pemetaan formal dari ruang hipotesis konseptual $\\mathcal{H}_{\\text{konsep}}$ menuju ruang parameter statistik...",
-          "Di mana parameter $\\theta \\in \\Theta$ merepresentasikan kuantitas populasi teramati (seperti selisih rata-rata...",
+          "Di mana parameter $\\theta \\in \\Theta$ merepresentasikan kuantitas populasi teramati (seperti selisih rata-rata $\\Delta\\mu$, koefisien regresi $\\beta_1$, atau rasio varians). Ruang parameter terpartisi secara tegas:",
           "Tingkat signifikansi statistik (Type I Error Rate):"
         ],
-        "keyFormulaOrDiagram": "$$\\Phi: \\mathcal{H}_{\\text{konsep}} \\longrightarrow \\left( \\Theta_0, \\Theta_1 \\right)$$"
+        "keyFormulaOrDiagram": "$$\\Phi: \\mathcal{H}_{\\text{konsep}} \\longrightarrow \\left( \\Theta_0, \\Theta_1 \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang peneliti memiliki hipotesis riset: \"Algoritma kompresi data adaptif yang diusulkan dapat memperpanjang masa pakai baterai node senso...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang peneliti memiliki hipotesis riset: \"Algoritma kompresi data adaptif yang diusulkan dapat memperpanjang masa pakai baterai node sensor nirkabel IoT di perkebunan sawit ITERA\". Rumuskan pasangan hipotesis statistik formal untuk menguji proposisi ini.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1 (Identifikasi Parameter Operasional): Definisikan metrik terukur masa pakai baterai sebagai rata-rat...",
-          "Langkah 2 (Definisikan Parameter Diferensial): $\\theta = \\mu_{\\text{usulan}} - \\mu_{\\text{standar}}$ (dalam sa...",
-          "Langkah 3 (Formulasi Hipotesis Nol $H_0$): Algoritma baru tidak memberikan perpanjangan durasi operasional ata...",
-          "Interpretasi: Pemisahan ini memungkinkan uji statistik satu arah (one-tailed t-test) untuk mengonfirmasi klaim keunggulan algoritma se..."
+          "Langkah 1 (Identifikasi Parameter Operasional): Definisikan metrik terukur masa pakai baterai sebagai rata-rata durasi operasional hingga tegangan turun ke 2.8V, dinotasikan $\\mu_{\\text{usulan}}$ untuk algoritma baru dan $\\mu_{\\text{standar}}$ untuk algoritma acuan.",
+          "Langkah 2 (Definisikan Parameter Diferensial): $\\theta = \\mu_{\\text{usulan}} - \\mu_{\\text{standar}}$ (dalam satuan jam)."
         ],
-        "keyFormulaOrDiagram": "Langkah 4 (Formulasi Hipotesis Alternatif $H_1$): Algoritma baru menghasilkan perpanjangan..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi uji hipotesis komparasi dua rata-rata independen untuk mengevaluasi H0 versus H1.",
-          "Dependensi Pustaka: scipy.stats, numpy",
-          "Keluaran Diharapkan: Rata-rata Algoritma Standar: 118.84 jam"
+          "Langkah 3 (Formulasi Hipotesis Nol $H_0$): Algoritma baru tidak memberikan perpanjangan durasi operasional atau bahkan lebih boros: $H_0: \\theta \\le 0$.",
+          "Langkah 4 (Formulasi Hipotesis Alternatif $H_1$): Algoritma baru menghasilkan perpanjangan durasi operasional yang signifikan: $H_1: \\theta > 0$.",
+          "[result: Interpretasi Ilmiah] Pemisahan ini memungkinkan uji statistik satu arah (one-tailed t-test) untuk mengonfirmasi klaim keunggulan algoritma secara matematis."
         ],
-        "keyFormulaOrDiagram": "Rata-rata Algoritma Standar: 118.84 jam | Rata-rata Algoritma Usulan : 127.32 jam | Nilai..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi uji hipotesis komparasi dua rata-rata independen untuk mengevaluasi H0 versus H1.",
         "bulletPoints": [
-          "Perangkap: Menuliskan hipotesis nol sebagai dugaan pribadi yang diharapkan terjadi, padahal hipotesis nol adalah baseline...",
-          "Perangkap: Merumuskan hipotesis riset yang bersifat sirkular atau tautologis (pernyataan yang selalu benar secara definis...",
-          "Perangkap: Mengubah rumusan hipotesis setelah melihat data eksperimen tanpa mencatat bahwa prosedur tersebut berubah menj..."
-        ]
+          "Tujuan Algoritma: Simulasi uji hipotesis komparasi dua rata-rata independen untuk mengevaluasi H0 versus H1.",
+          "Dependensi Pustaka Ilmiah: scipy.stats, numpy",
+          "Keluaran Terverifikasi: Rata-rata Algoritma Standar: 118.84 jam"
+        ],
+        "keyFormulaOrDiagram": "Rata-rata Algoritma Standar: 118.84 jam\nRata-rata Algoritma Usulan : 127.32 jam\nNilai t-statistik: 3.968\nNilai p-value (satu arah): 1.1895e-04\nHasil Uji: Tolak H0 pada tingkat signifikansi alpha=0.01. Bukti empiris mendukung H1.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Verifikasi apakah parameter dalam hipotesis statistik dapat diukur secara langsung oleh instrumen eksperimen.",
-          "Prosedur: Pastikan arah pengujian (satu arah vs dua arah) telah dikunci sebelum pengumpulan data dimulai."
-        ]
+          "[warning: Perangkap] Menuliskan hipotesis nol sebagai dugaan pribadi yang diharapkan terjadi, padahal hipotesis nol adalah baseline yang ingin difalsifikasi.",
+          "[warning: Perangkap] Merumuskan hipotesis riset yang bersifat sirkular atau tautologis (pernyataan yang selalu benar secara definisi logis).",
+          "[warning: Perangkap] Mengubah rumusan hipotesis setelah melihat data eksperimen tanpa mencatat bahwa prosedur tersebut berubah menjadi eksplorasi post-hoc (HARKing)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
+        "bulletPoints": [
+          "Prosedur: Verifikasi apakah parameter dalam hipotesis statistik dapat diukur secara langsung oleh instrumen eksperimen.",
+          "Prosedur: Pastikan arah pengujian (satu arah vs dua arah) telah dikunci sebelum pengumpulan data dimulai."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa hipotesis riset \"Metode pembelajaran mesin ini sangat efektif\" tidak dapat diterima sebagai hipotesis ilmiah?",
-          "Petunjuk: Perhatikan apakah kata \"efektif\" terdefinisi secara operasional dan memiliki kriteria ambang numerik...",
-          "Solusi Kunci: Pernyataan tersebut tidak memenuhi syarat falsifikasi Popperian. Kata \"sangat efektif\" bersifat kualitatif ambigu dan ti..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah kata \"efektif\" terdefinisi secara operasional dan memiliki kriteria ambang numerik yang dapat digugurkan.",
+          "Solusi Kunci: Pernyataan tersebut tidak memenuhi syarat falsifikasi Popperian. Kata \"sangat efektif\" bersifat kualitatif ambigu dan tidak memiliki batasan operasional. Hipotesis harus menyatakan variabel terukur spesifik dan ambang batas yang jelas, misalnya: \"menghasilkan nilai AUC-ROC lebih besar dari 0.90 pada dataset uji\"."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -217,100 +251,134 @@ export const CH06_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Hipotesis Terarah (Directional) vs Tak Terarah (Non-Dir...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Hipotesis Terarah (Directional) vs Tak Terarah (Non-Directional)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.6.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.2.",
-          "Capaian: Membedakan landasan teoretis penggunaan hipotesis terarah (directional) dan tak terarah (non-directional).",
-          "Capaian: Memahami konsekuensi alokasi wilayah kritis alpha pada uji statistik satu arah versus dua arah.",
-          "Capaian: Menghindari bias konfirmasi saat memilih arah pengujian hipotesis."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan landasan teoretis penggunaan hipotesis terarah (directional) dan tak terarah (non-directional).",
+          "Capaian 2: Memahami konsekuensi alokasi wilayah kritis alpha pada uji statistik satu arah versus dua arah.",
+          "Capaian 3: Menghindari bias konfirmasi saat memilih arah pengujian hipotesis."
         ],
-        "keyFormulaOrDiagram": "$$H_0: \\theta = \\theta_0 \\quad \\text{vs} \\quad H_1: \\theta \\neq \\theta_0$$"
+        "keyFormulaOrDiagram": "$$H_0: \\theta = \\theta_0 \\quad \\text{vs} \\quad H_1: \\theta \\neq \\theta_0$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.6.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Hipotesis Terarah (Directional) vs Tak Terarah (Non-Dir...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Hipotesis Terarah (Directional) vs Tak Terarah (Non-Directional)",
+        "lead": "Dalam merancang hipotesis eksperimental, peneliti harus memutuskan apakah hubungan yang diprediksi memiliki arah spesifik (directional) atau sekadar memprediksi adanya perbedaan tanpa menentukan arah kutubnya (non-directional).",
         "bulletPoints": [
-          "Dalam merancang hipotesis eksperimental, peneliti harus memutuskan apakah hubungan yang diprediksi memiliki arah spesifik (di...",
-          "1. Hipotesis Terarah (Directional / One-tailed): Digunakan jika dan hanya jika terdapat landasan teoretis fisis atau temuan l...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Keputusan ini memiliki dampak matematis langsung terhadap sensitivitas dan daya uji statistik (*statistical power*) dari analisis yang akan dilakukan.",
+          "1.",
+          "Hipotesis Terarah (Directional / One-tailed): Digunakan jika dan hanya jika terdapat landasan teoretis fisis atau temuan literatur yang sangat kuat yang memprediksi arah perubahan tertentu."
         ],
-        "keyFormulaOrDiagram": "Penggunaan uji terarah menghasilkan daya uji yang lebih tinggi untuk mendeteksi efek pada..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Penggunaan uji terarah menghasilkan daya uji yang lebih tinggi untuk mendeteksi efek pada arah yang diramalkan, namun membuat...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Penggunaan uji terarah menghasilkan daya uji yang lebih tinggi untuk mendeteksi efek pada arah yang diramalkan, namun membuat peneliti buta total terhadap kemungkinan munculnya efek anomali ekstrem pada arah sebaliknya.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Distribusi statistik uji $T$ di bawah asumsi kebenaran $H_0$:",
         "bulletPoints": [
-          "Distribusi statistik uji $T$ di bawah asumsi kebenaran $H_0$:",
           "1. Pengujian Dua Arah (Non-Directional):",
-          "Wilayah Kritis Penolakan $\\mathcal{W}_{\\text{two}}$:"
+          "Wilayah Kritis Penolakan $\\mathcal{W}_{\\text{two}}$:",
+          "2. Pengujian Satu Arah (Directional - Kanan):"
         ],
-        "keyFormulaOrDiagram": "$$H_0: \\theta = \\theta_0 \\quad \\text{vs} \\quad H_1: \\theta \\neq \\theta_0$$"
+        "keyFormulaOrDiagram": "$$H_0: \\theta = \\theta_0 \\quad \\text{vs} \\quad H_1: \\theta \\neq \\theta_0$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada derajat kebebasan df = 30 dan tingkat signifikansi alpha = 0.05, bandingkan nilai kritis t untuk uji satu arah dan uji dua arah. Berika...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada derajat kebebasan df = 30 dan tingkat signifikansi alpha = 0.05, bandingkan nilai kritis t untuk uji satu arah dan uji dua arah. Berikan analisis risiko jika peneliti salah memilih uji satu arah padahal metode baru justru memperburuk performa.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Cari nilai kritis uji dua arah dari tabel t-Student: t_(0.025, 30) = 2.042.",
-          "Langkah 2: Cari nilai kritis uji satu arah: t_(0.05, 30) = 1.697.",
-          "Langkah 3: Amati perbedaan ambang batas: Pada uji satu arah, statistik t sebesar 1.85 sudah cukup untuk menola...",
-          "Interpretasi: Uji satu arah hanya boleh diterapkan jika hasil pada arah sebaliknya secara konseptual tidak memiliki arti atau mustahil..."
+          "Langkah 2: Cari nilai kritis uji satu arah: t_(0.05, 30) = 1.697."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Analisis risiko: Jika ternyata metode baru menghasilkan t = -3.20 (penurunan dr..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Amati perbedaan ambang batas: Pada uji satu arah, statistik t sebesar 1.85 sudah cukup untuk menolak H0, sementara pada uji dua arah statistik tersebut gagal menolak H0.",
+          "Langkah 4: Analisis risiko: Jika ternyata metode baru menghasilkan t = -3.20 (penurunan drastis performa), uji satu arah kanan secara formal gagal menolak H0 dan tidak dapat menyimpulkan bahwa metode tersebut berbahaya secara statistik.",
+          "[result: Interpretasi Ilmiah] Uji satu arah hanya boleh diterapkan jika hasil pada arah sebaliknya secara konseptual tidak memiliki arti atau mustahil terjadi."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komparasi nilai kritis distribusi t-Student untuk pengujian satu arah versus dua arah.",
         "bulletPoints": [
-          "Deskripsi: Komparasi nilai kritis distribusi t-Student untuk pengujian satu arah versus dua arah.",
-          "Dependensi Pustaka: scipy.stats",
-          "Keluaran Diharapkan: Derajat Kebebasan (df) : 30"
+          "Tujuan Algoritma: Komparasi nilai kritis distribusi t-Student untuk pengujian satu arah versus dua arah.",
+          "Dependensi Pustaka Ilmiah: scipy.stats",
+          "Keluaran Terverifikasi: Derajat Kebebasan (df) : 30"
         ],
-        "keyFormulaOrDiagram": "Derajat Kebebasan (df) : 30 | Alpha : 0.05 | Nilai Kritis Satu Arah (Right): 1.6973"
+        "keyFormulaOrDiagram": "Derajat Kebebasan (df) : 30\nAlpha                     : 0.05\nNilai Kritis Satu Arah (Right): 1.6973\nNilai Kritis Dua Arah (Symmetric): +/- 2.0423\nSelisih Ambang Penolakan  : 0.3450",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memilih uji satu arah semata-mata karena p-value uji dua arah berada sedikit di atas 0.05 (praktik p-hacking t...",
-          "Perangkap: Mengabaikan kemungkinan efek samping negatif yang berlawanan arah dengan hipotesis peneliti.",
-          "Perangkap: Tidak mencatat justifikasi teoritis pemilihan arah hipotesis di bagian metodologi naskah."
-        ]
+          "[warning: Perangkap] Memilih uji satu arah semata-mata karena p-value uji dua arah berada sedikit di atas 0.05 (praktik p-hacking terlarang).",
+          "[warning: Perangkap] Mengabaikan kemungkinan efek samping negatif yang berlawanan arah dengan hipotesis peneliti.",
+          "[warning: Perangkap] Tidak mencatat justifikasi teoritis pemilihan arah hipotesis di bagian metodologi naskah."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Kunci keputusan pemilihan satu arah atau dua arah pada fase registrasi protokol riset sebelum analisis data di...",
-          "Prosedur: Jika ragu terhadap kepastian arah efek, gunakan uji dua arah sebagai pendekatan yang lebih konservatif dan ama..."
-        ]
+          "Prosedur: Kunci keputusan pemilihan satu arah atau dua arah pada fase registrasi protokol riset sebelum analisis data dijalankan.",
+          "Prosedur: Jika ragu terhadap kepastian arah efek, gunakan uji dua arah sebagai pendekatan yang lebih konservatif dan aman."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa uji dua arah dianggap sebagai standar baku (default) yang lebih disukai oleh reviewer jurnal internasional?",
-          "Petunjuk: Perhatikan asas kehati-hatian ilmiah dan pencegahan bias konfirmasi.",
-          "Solusi Kunci: Uji dua arah bersikap netral terhadap arah hasil empiris. Pendekatan ini melindungi peneliti dari bias konfirmasi dan ma..."
-        ]
+          "Petunjuk Analitis: Perhatikan asas kehati-hatian ilmiah dan pencegahan bias konfirmasi.",
+          "Solusi Kunci: Uji dua arah bersikap netral terhadap arah hasil empiris. Pendekatan ini melindungi peneliti dari bias konfirmasi dan mampu mendeteksi kegagalan tak terduga di mana modifikasi metode justru menghasilkan penurunan kinerja yang signifikan secara statistik."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -371,100 +439,134 @@ export const CH06_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konstruksi Kerangka Konseptual Menggunakan Directed Acy...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konstruksi Kerangka Konseptual Menggunakan Directed Acyclic Graphs (DAGs)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.6.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.3.",
-          "Capaian: Memodelkan asumsi kausalitas struktural menggunakan Directed Acyclic Graphs (DAGs).",
-          "Capaian: Memahami kriteria d-separation untuk menganalisis independensi bersyarat antarvariabel.",
-          "Capaian: Mendeteksi dan mengeliminasi jalur kolisi (collider paths) yang berpotensi memicu bias seleksi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memodelkan asumsi kausalitas struktural menggunakan Directed Acyclic Graphs (DAGs).",
+          "Capaian 2: Memahami kriteria d-separation untuk menganalisis independensi bersyarat antarvariabel.",
+          "Capaian 3: Mendeteksi dan mengeliminasi jalur kolisi (collider paths) yang berpotensi memicu bias seleksi."
         ],
-        "keyFormulaOrDiagram": "$$P(V_1, V_2, \\dots, V_m) = \\prod_{i=1}^m P(V_i \\mid \\text{Parents}_{\\mathcal{G}}(V_i))$$"
+        "keyFormulaOrDiagram": "$$P(V_1, V_2, \\dots, V_m) = \\prod_{i=1}^m P(V_i \\mid \\text{Parents}_{\\mathcal{G}}(V_i))$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.6.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konstruksi Kerangka Konseptual Menggunakan Directed Acy...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konstruksi Kerangka Konseptual Menggunakan Directed Acyclic Graphs (DAGs)",
+        "lead": "Kerangka konseptual yang disajikan sekadar dalam bentuk diagram kotak-panah informal sering kali menyembunyikan kelemahan logika kausal yang fatal.",
         "bulletPoints": [
-          "Kerangka konseptual yang disajikan sekadar dalam bentuk diagram kotak-panah informal sering kali menyembunyikan kelemahan log...",
-          "Sebuah DAG terdiri atas: 1. Simpul (Nodes): Mewakili variabel acak sistem, baik yang dapat diobservasi secara langsung maupun...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam sains modern dan kausalitas komputasional (dipelopori oleh Judea Pearl), Directed Acyclic Graphs (DAGs) telah menjadi instrumen matematika standar untuk memformalkan kerangka konseptual riset.",
+          "Sebuah DAG terdiri atas: 1.",
+          "Simpul (Nodes): Mewakili variabel acak sistem, baik yang dapat diobservasi secara langsung maupun variabel laten tersembunyi."
         ],
-        "keyFormulaOrDiagram": "Keunggulan utama pemodelan DAG adalah kemampuannya menentukan secara matematis variabel ma..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Keunggulan utama pemodelan DAG adalah kemampuannya menentukan secara matematis variabel mana yang wajib dikontrol dalam anali...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Keunggulan utama pemodelan DAG adalah kemampuannya menentukan secara matematis variabel mana yang wajib dikontrol dalam analisis statistik, dan variabel mana yang justru dilarang untuk dikontrol agar tidak menimbulkan bias kolisi (*collider stratification bias*).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "DAG kausal $\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$ menginduksi faktorisasi probabilitas bersama (Markov Compatibility):",
         "bulletPoints": [
-          "DAG kausal $\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$ menginduksi faktorisasi probabilitas bersama (Markov Com...",
           "Kriteria d-Separation (Directional Separation):",
-          "Jalur tak berarah $p$ antar simpul $X$ dan $Y$ dikatakan terblokir oleh himpunan pengondisian $Z$ jika dan han..."
+          "Jalur tak berarah $p$ antar simpul $X$ dan $Y$ dikatakan terblokir oleh himpunan pengondisian $Z$ jika dan hanya jika:",
+          "1. Jalur $p$ memuat rantai $A \\rightarrow B \\rightarrow C$ atau garpu $A \\leftarrow B \\rightarrow C$ di mana simpul tengah $B \\in Z$."
         ],
-        "keyFormulaOrDiagram": "$$P(V_1, V_2, \\dots, V_m) = \\prod_{i=1}^m P(V_i \\mid \\text{Parents}_{\\mathcal{G}}(V_i))$$"
+        "keyFormulaOrDiagram": "$$P(V_1, V_2, \\dots, V_m) = \\prod_{i=1}^m P(V_i \\mid \\text{Parents}_{\\mathcal{G}}(V_i))$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dalam sistem pengujian visi otonom, variabel Perlakuan X adalah Algoritma Denoising, Hasil Y adalah Akurasi Deteksi Objek. Variabel Z adalah...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dalam sistem pengujian visi otonom, variabel Perlakuan X adalah Algoritma Denoising, Hasil Y adalah Akurasi Deteksi Objek. Variabel Z adalah Waktu Pemrosesan. Algoritma Denoising mempengaruhi Akurasi (X -> Y) dan juga mempengaruhi Waktu Pemrosesan (X -> Z). Akurasi juga mempengaruhi Waktu Pemrosesan (Y -> Z). Tentukan peran variabel Z dan apakah peneliti boleh mengontrol variabel Z dalam regresi untuk mengukur efek murni X terhadap Y.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Petakan topologi busur kausal: X -> Z dan Y -> Z. Pola ini membentuk struktur kolisi: X -> Z <- Y.",
-          "Langkah 2: Periksa status pemblokiran awal: Simpul Z adalah kolisi. Tanpa pengondisian (Z tidak dikontrol), ja...",
-          "Langkah 3: Evaluasi dampak jika Z dikontrol (dimasukkan sebagai kovariat regresi): Mengontrol simpul kolisi Z...",
-          "Interpretasi: Pemodelan DAG membuktikan bahwa memasukkan semua variabel ke dalam model regresi adalah praktik keliru yang dapat mencip..."
+          "Langkah 2: Periksa status pemblokiran awal: Simpul Z adalah kolisi. Tanpa pengondisian (Z tidak dikontrol), jalur X -> Z <- Y secara alami terblokir."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Kesimpulan metodologis: Peneliti dilarang mengontrol Waktu Pemrosesan Z saat me..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi dampak jika Z dikontrol (dimasukkan sebagai kovariat regresi): Mengontrol simpul kolisi Z akan membuka jalur semu (spurious path) antara X dan Y.",
+          "Langkah 4: Kesimpulan metodologis: Peneliti dilarang mengontrol Waktu Pemrosesan Z saat mengukur efek Denoising X terhadap Akurasi Y untuk menghindari bias kolisi.",
+          "[result: Interpretasi Ilmiah] Pemodelan DAG membuktikan bahwa memasukkan semua variabel ke dalam model regresi adalah praktik keliru yang dapat menciptakan ilusi asosiasi palsu."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Verifikasi independensi bersyarat pada struktur graf kausal sederhana menggunakan matriks ketetanggaan.",
         "bulletPoints": [
-          "Deskripsi: Verifikasi independensi bersyarat pada struktur graf kausal sederhana menggunakan matriks ketetanggaan.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: Analisis Struktur Kausal:"
+          "Tujuan Algoritma: Verifikasi independensi bersyarat pada struktur graf kausal sederhana menggunakan matriks ketetanggaan.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: Analisis Struktur Kausal:"
         ],
-        "keyFormulaOrDiagram": "Analisis Struktur Kausal: | Apakah Z_Waktu merupakan simpul kolisi? True | Aturan Kausalit..."
+        "keyFormulaOrDiagram": "Analisis Struktur Kausal:\nApakah Z_Waktu merupakan simpul kolisi? True\nAturan Kausalitas Pearl: Mengontrol Z_Waktu akan menginduksi korelasi palsu antara X dan Y!",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Membuat grafik dengan siklus tertutup timbal balik (feedback loops) pada analisis statis non-temporal.",
-          "Perangkap: Mengasumsikan bahwa memasukkan semakin banyak variabel pengontrol ke dalam model statistik akan selalu membuat...",
-          "Perangkap: Mengabaikan variabel perancu tak terukur (unobserved confounders) yang menghubungkan perlakuan dan luaran."
-        ]
+          "[warning: Perangkap] Membuat grafik dengan siklus tertutup timbal balik (feedback loops) pada analisis statis non-temporal.",
+          "[warning: Perangkap] Mengasumsikan bahwa memasukkan semakin banyak variabel pengontrol ke dalam model statistik akan selalu membuat model semakin akurat.",
+          "[warning: Perangkap] Mengabaikan variabel perancu tak terukur (unobserved confounders) yang menghubungkan perlakuan dan luaran."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Uji aciklisitas graf menggunakan algoritma penelusuran topologi (topological sort) untuk memastikan tidak ada...",
-          "Prosedur: Gunakan kriteria pintu belakang (backdoor criterion) untuk menetapkan himpunan penyesuaian kovariat yang minim..."
-        ]
+          "Prosedur: Uji aciklisitas graf menggunakan algoritma penelusuran topologi (topological sort) untuk memastikan tidak ada siklus.",
+          "Prosedur: Gunakan kriteria pintu belakang (backdoor criterion) untuk menetapkan himpunan penyesuaian kovariat yang minimal dan mencukupi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa konsekuensi metodologis jika seorang peneliti mengontrol variabel mediator yang berada di tengah jalur kausal antara...",
-          "Petunjuk: Perhatikan apakah efek total atau efek langsung yang diukur saat mediator dikunci.",
-          "Solusi Kunci: Mengontrol variabel mediator M akan memblokir jalur kausal tidak langsung, sehingga analisis hanya mengukur efek kausal..."
-        ]
+          "Pertanyaan Uji: Apa konsekuensi metodologis jika seorang peneliti mengontrol variabel mediator yang berada di tengah jalur kausal antara perlakuan dan luaran (X -> M -> Y)?",
+          "Petunjuk Analitis: Perhatikan apakah efek total atau efek langsung yang diukur saat mediator dikunci.",
+          "Solusi Kunci: Mengontrol variabel mediator M akan memblokir jalur kausal tidak langsung, sehingga analisis hanya mengukur efek kausal langsung (direct effect) dan menghilangkan porsi efek yang dimediasi oleh M. Jika tujuan penelitian adalah mengukur efek kausal total dari X terhadap Y, mediator M tidak boleh dikontrol."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -527,100 +629,134 @@ export const CH06_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Identifikasi Variabel Bebas, Terikat, Perancu, dan Medi...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Identifikasi Variabel Bebas, Terikat, Perancu, dan Mediator pada Kerangka Riset",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.6.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.4.",
-          "Capaian: Mengklasifikasikan variabel penelitian ke dalam 4 peran fungsional utama secara akurat.",
-          "Capaian: Mengisolasi efek kausal variabel bebas dari distorsi variabel perancu (confounders).",
-          "Capaian: Merancang strategi pengontrolan eksperimental dan statistikal terhadap variabel gangguan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.6.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengklasifikasikan variabel penelitian ke dalam 4 peran fungsional utama secara akurat.",
+          "Capaian 2: Mengisolasi efek kausal variabel bebas dari distorsi variabel perancu (confounders).",
+          "Capaian 3: Merancang strategi pengontrolan eksperimental dan statistikal terhadap variabel gangguan."
         ],
-        "keyFormulaOrDiagram": "$$X = \\gamma_0 + \\gamma_1 C + \\epsilon_X$$"
+        "keyFormulaOrDiagram": "$$X = \\gamma_0 + \\gamma_1 C + \\epsilon_X$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.6.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Identifikasi Variabel Bebas, Terikat, Perancu, dan Medi...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Identifikasi Variabel Bebas, Terikat, Perancu, dan Mediator pada Kerangka Riset",
+        "lead": "Keberhasilan sebuah eksperimen ilmiah bergantung pada ketelitian peneliti dalam mengisolasi variabel sasaran dari pengaruh variabel lain di lingkungan sekitar.",
         "bulletPoints": [
-          "Keberhasilan sebuah eksperimen ilmiah bergantung pada ketelitian peneliti dalam mengisolasi variabel sasaran dari pengaruh va...",
-          "1. Variabel Bebas (Independent Variable / Treatment): Faktor atau kondisi yang secara sengaja dimanipulasi, diubah, atau dipi...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam merancang kerangka operasional penelitian, setiap variabel yang terlibat harus diklasifikasikan ke dalam peran fungsionalnya:",
+          "1.",
+          "Variabel Bebas (Independent Variable / Treatment): Faktor atau kondisi yang secara sengaja dimanipulasi, diubah, atau dipilih oleh peneliti untuk menguji pengaruh kausalnya terhadap sistem."
         ],
-        "keyFormulaOrDiagram": "Memahami peran masing-masing variabel mencegah peneliti menarik kesimpulan kausal palsu da..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Memahami peran masing-masing variabel mencegah peneliti menarik kesimpulan kausal palsu dari pola data empiris yang teramati.",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Memahami peran masing-masing variabel mencegah peneliti menarik kesimpulan kausal palsu dari pola data empiris yang teramati.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Dalam model regresi struktural linier, dekomposisi efek kausal dan perancu dinyatakan sebagai:",
         "bulletPoints": [
-          "Dalam model regresi struktural linier, dekomposisi efek kausal dan perancu dinyatakan sebagai:",
           "Sistem struktural sejati:",
-          "Jika perancu $C$ diabaikan (dikeluarkan dari model regresi), penduga kuadrat terkecil biasa (OLS) untuk efek $..."
+          "Jika perancu $C$ diabaikan (dikeluarkan dari model regresi), penduga kuadrat terkecil biasa (OLS) untuk efek $X$ terhadap $Y$ menjadi bias:",
+          "Suku bias $\\beta_2 \\frac{\\text{Cov}(X, C)}{\\text{Var}(X)}$ disebut sebagai Omitted Variable Bias (Bias Variabel yang Dihilangkan). Bias ini bernilai nol jika dan hanya jika $C$ tidak berkorelasi dengan $X$ (misalnya melalui randomisasi perlakuan yang sempurna) atau $C$ tidak mempengaruhi $Y$."
         ],
-        "keyFormulaOrDiagram": "$$X = \\gamma_0 + \\gamma_1 C + \\epsilon_X$$"
+        "keyFormulaOrDiagram": "$$X = \\gamma_0 + \\gamma_1 C + \\epsilon_X$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian kinerja pendinginan heatsink prosesor, variabel bebas X adalah Kecepatan Putar Kipas (RPM), variabel terikat Y adalah Suhu In...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi relasi Suhu Lingkungan (C) terhadap Variabel Terikat (Y): Suhu lingkungan yang naik la...",
-          "Langkah 2: Identifikasi relasi Suhu Lingkungan (C) terhadap Variabel Bebas (X): Jika kipas menggunakan kontrol...",
-          "Langkah 3: Evaluasi dampak: Terjadi struktur perancu C -> X dan C -> Y. Hal ini dapat menimbulkan ilusi aneh b...",
-          "Interpretasi: Melalui isolasi kontrol eksperimental, bias perancu suhu lingkungan dapat dieliminasi secara total."
+          "Konteks Kasus: Pada pengujian kinerja pendinginan heatsink prosesor, variabel bebas X adalah Kecepatan Putar Kipas (RPM), variabel terikat Y adalah Suhu Inti CPU (°C). Pengujian dilakukan selama 12 jam dari pagi hingga malam di laboratorium tanpa pengatur suhu. Jelaskan mengapa Suhu Lingkungan Laboratorium bertindak sebagai perancu dan bagaimana cara mengatasinya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Solusi mitigasi: (A) Kontrol fisik: lakukan pengujian di dalam ruang terkontrol..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi relasi Suhu Lingkungan (C) terhadap Variabel Terikat (Y): Suhu lingkungan yang naik langsung menaikkan suhu dasar CPU (C -> Y).",
+          "Langkah 2: Identifikasi relasi Suhu Lingkungan (C) terhadap Variabel Bebas (X): Jika kipas menggunakan kontrol PWM termal otomatis, suhu lingkungan yang panas akan memicu kipas berputar lebih cepat (C -> X)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi dampak: Terjadi struktur perancu C -> X dan C -> Y. Hal ini dapat menimbulkan ilusi aneh bahwa putaran kipas yang lebih tinggi berkorelasi dengan suhu CPU yang lebih panas.",
+          "Langkah 4: Solusi mitigasi: (A) Kontrol fisik: lakukan pengujian di dalam ruang terkontrol (climatic chamber) dengan suhu konstan, atau (B) Kontrol operasional: matikan fungsi PWM otomatis dan atur putaran kipas secara manual tetap pada level uji tertentu.",
+          "[result: Interpretasi Ilmiah] Melalui isolasi kontrol eksperimental, bias perancu suhu lingkungan dapat dieliminasi secara total."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Demonstrasi komputasional munculnya bias regresi akibat pengabaian variabel perancu (Omitted Variable Bias).",
         "bulletPoints": [
-          "Deskripsi: Demonstrasi komputasional munculnya bias regresi akibat pengabaian variabel perancu (Omitted Variable Bias).",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Koefisien Sejati Efek X terhadap Y : -0.0500"
+          "Tujuan Algoritma: Demonstrasi komputasional munculnya bias regresi akibat pengabaian variabel perancu (Omitted Variable Bias).",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Koefisien Sejati Efek X terhadap Y : -0.0500"
         ],
-        "keyFormulaOrDiagram": "Koefisien Sejati Efek X terhadap Y : -0.0500 | Koefisien Estimasi Naif (Tanpa C) : -0.0261..."
+        "keyFormulaOrDiagram": "Koefisien Sejati Efek X terhadap Y : -0.0500\nKoefisien Estimasi Naif (Tanpa C)  : -0.0261\nKesimpulan: Kegagalan mengontrol perancu menghasilkan estimasi bias yang mereduksi besaran efek sejati!",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menetapkan variabel terikat sebagai variabel bebas karena kebingungan mengenai urutan waktu temporal terjadiny...",
-          "Perangkap: Mengabaikan variabel pengganggu lingkungan fisis (kelembaban udara, tegangan jala-jala listrik) selama eksperi...",
-          "Perangkap: Memperlakukan variabel kontrol sebagai variabel perlakuan utama dalam penarikan kesimpulan."
-        ]
+          "[warning: Perangkap] Menetapkan variabel terikat sebagai variabel bebas karena kebingungan mengenai urutan waktu temporal terjadinya efek.",
+          "[warning: Perangkap] Mengabaikan variabel pengganggu lingkungan fisis (kelembaban udara, tegangan jala-jala listrik) selama eksperimen jangka panjang.",
+          "[warning: Perangkap] Memperlakukan variabel kontrol sebagai variabel perlakuan utama dalam penarikan kesimpulan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan teknik randomisasi alokasi perlakuan untuk memutus korelasi antara variabel bebas dan potensi variabel...",
-          "Prosedur: Susun tabel operasionalisasi variabel yang mencantumkan skala pengukuran, instrumen, dan batas toleransi instr..."
-        ]
+          "Prosedur: Gunakan teknik randomisasi alokasi perlakuan untuk memutus korelasi antara variabel bebas dan potensi variabel perancu tersembunyi.",
+          "Prosedur: Susun tabel operasionalisasi variabel yang mencantumkan skala pengukuran, instrumen, dan batas toleransi instrumen untuk setiap variabel."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Bagaimana randomisasi (pengacakan alokasi unit eksperimen) mampu menetralisir pengaruh variabel perancu yang bahkan tida...",
-          "Petunjuk: Perhatikan ekspektasi matematis dari distribusi variabel pengganggu pada kelompok perlakuan dan kelo...",
-          "Solusi Kunci: Melalui alokasi acak berskala memadai, nilai ekspektasi dari seluruh karakteristik bawaan unit eksperimen (baik yang ter..."
-        ]
+          "Pertanyaan Uji: Bagaimana randomisasi (pengacakan alokasi unit eksperimen) mampu menetralisir pengaruh variabel perancu yang bahkan tidak diketahui oleh peneliti?",
+          "Petunjuk Analitis: Perhatikan ekspektasi matematis dari distribusi variabel pengganggu pada kelompok perlakuan dan kelompok kontrol.",
+          "Solusi Kunci: Melalui alokasi acak berskala memadai, nilai ekspektasi dari seluruh karakteristik bawaan unit eksperimen (baik yang terukur maupun yang tidak teramati) terdistribusi secara seimbang dan setara antara kelompok perlakuan dan kelompok kontrol. Hal ini memutus kovarians antara perancu dengan variabel bebas (Cov(X, C) = 0), sehingga mengeliminasi bias estimasi kausal."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

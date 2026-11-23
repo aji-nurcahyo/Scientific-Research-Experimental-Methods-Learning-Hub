@@ -61,99 +61,134 @@ export const CH07_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
+        "layout": "concept",
         "title": "Tinjauan & Capaian: Standar Integritas COPE dan Pencegahan Misconduct (FFP)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.7.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.1.",
-          "Capaian: Memahami taksonomi pelanggaran integritas ilmiah berat: Fabrikasi, Falsifikasi, dan Plagiarisme (FFP).",
-          "Capaian: Menerapkan pedoman Committee on Publication Ethics (COPE) dalam pengelolaan data dan pelaporan riset.",
-          "Capaian: Membangun sistem pencegahan kesalahan metodologis dan kelalaian pencatatan laboratorium."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami taksonomi pelanggaran integritas ilmiah berat: Fabrikasi, Falsifikasi, dan Plagiarisme (FFP).",
+          "Capaian 2: Menerapkan pedoman Committee on Publication Ethics (COPE) dalam pengelolaan data dan pelaporan riset.",
+          "Capaian 3: Membangun sistem pencegahan kesalahan metodologis dan kelalaian pencatatan laboratorium."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Batas Bawah} = Q_1 - 1.5 \\times \\text{IQR}$$"
+        "keyFormulaOrDiagram": "$$\\text{Batas Bawah} = Q_1 - 1.5 \\times \\text{IQR}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.7.1."
       },
       {
         "slideNumber": 2,
+        "layout": "concept",
         "title": "Fondasi Konseptual: Standar Integritas COPE dan Pencegahan Misconduct (FFP)",
+        "lead": "Integritas akademik adalah fondasi paling mendasar dari seluruh usaha ilmiah.",
         "bulletPoints": [
-          "Integritas akademik adalah fondasi paling mendasar dari seluruh usaha ilmiah. Sains berkembang atas dasar rasa percaya bahwa...",
-          "Komunitas ilmiah internasional melalui badan-badan seperti Committee on Publication Ethics (COPE) dan National Science Founda...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Sains berkembang atas dasar rasa percaya bahwa data, prosedur, dan hasil yang dipublikasikan oleh para ilmuwan merupakan representasi jujur dari realitas empiris.",
+          "Ketika integritas ini dikompromikan, seluruh bangunan keilmuan yang berdiri di atas temuan tersebut terancam runtuh.",
+          "Komunitas ilmiah internasional melalui badan-badan seperti Committee on Publication Ethics (COPE) dan National Science Foundation (NSF) mendefinisikan tiga pelanggaran integritas ilmiah paling berat (The Big Three Misconducts): 1.",
+          "Fabrikasi (Fabrication): Tindakan mengarang data mentah, rekaman sensor, atau hasil pengujian yang sebenarnya tidak pernah dilakukan dalam eksperimen nyata."
         ],
-        "keyFormulaOrDiagram": "Selain ketiga pelanggaran fatal di atas, praktik ilmiah yang meragukan (Questionable Resea..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Selain ketiga pelanggaran fatal di atas, praktik ilmiah yang meragukan (Questionable Research Practices / QRP) seperti p-hack...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Selain ketiga pelanggaran fatal di atas, praktik ilmiah yang meragukan (Questionable Research Practices / QRP) seperti p-hacking, pelaporan hasil selektif, dan publikasi ganda (salami slicing) juga merusak reliabilitas literatur rekayasa.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pencegahan falsifikasi selektif terhadap pencilan (outliers) diatur melalui kriteria eliminasi data statistik formal, seperti Uji Grubbs atau Rentang Interkuartil (IQR):",
         "bulletPoints": [
-          "Pencegahan falsifikasi selektif terhadap pencilan (outliers) diatur melalui kriteria eliminasi data statistik...",
           "Batas eliminasi data berdasarkan kriteria Tukey:",
-          "Di mana $\\text{IQR} = Q_3 - Q_1$."
+          "Di mana $\\text{IQR} = Q_3 - Q_1$.",
+          "Protokol Integritas: Pengeluaran titik data $x_i$ di luar rentang tersebut hanya sah jika:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Batas Bawah} = Q_1 - 1.5 \\times \\text{IQR}$$"
+        "keyFormulaOrDiagram": "$$\\text{Batas Bawah} = Q_1 - 1.5 \\times \\text{IQR}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian 50 sampel beton geopolimer, 48 sampel menunjukkan kuat tekan rata-rata 32 MPa dengan deviasi standar 1.8 MPa. Dua sampel lain...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian 50 sampel beton geopolimer, 48 sampel menunjukkan kuat tekan rata-rata 32 MPa dengan deviasi standar 1.8 MPa. Dua sampel lainnya hanya mencapai 18 MPa. Peneliti ingin menghapus kedua data rendah tersebut agar rata-rata grup mencapai target spesifikasi 30 MPa. Evaluasi tindakan ini berdasarkan etika integritas data ilmiah.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi tindakan yang diusulkan: Menghapus dua titik data rendah tanpa investigasi fisik indep...",
-          "Langkah 2: Evaluasi status etik: Menghapus data semata-mata agar hasil eksperimen memenuhi target desain adala...",
-          "Langkah 3: Tindakan ilmiah yang benar: Periksa log pencampuran material. Apakah kedua sampel tersebut mengalam...",
-          "Interpretasi: Integritas menuntut transparansi penuh atas variabilitas data, karena kegagalan material di lapangan sering bersumber da..."
+          "Langkah 1: Identifikasi tindakan yang diusulkan: Menghapus dua titik data rendah tanpa investigasi fisik independen.",
+          "Langkah 2: Evaluasi status etik: Menghapus data semata-mata agar hasil eksperimen memenuhi target desain adalah bentuk falsifikasi data (manipulasi hasil empiris)."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Pelaporan transparan: Jika terdapat anomali fisik terdokumentasi, laporkan alas..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Pemeriksaan integritas logbook data eksperimen untuk mendeteksi penyimpangan dan mencatat jejak audit.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Kuartil 1: 31.78, Kuartil 3: 32.72, IQR: 0.95"
+          "Langkah 3: Tindakan ilmiah yang benar: Periksa log pencampuran material. Apakah kedua sampel tersebut mengalami retak cetakan atau gelembung udara berlebih saat pengecoran?",
+          "Langkah 4: Pelaporan transparan: Jika terdapat anomali fisik terdokumentasi, laporkan alasan pengeluaran sampel secara eksplisit di naskah. Jika tidak ditemukan anomali fisik, kedua sampel wajib dipertahankan dan fenomena variabilitas tersebut harus dibahas secara jujur sebagai keterbatasan kestabilan formula beton.",
+          "[result: Interpretasi Ilmiah] Integritas menuntut transparansi penuh atas variabilitas data, karena kegagalan material di lapangan sering bersumber dari sampel-sampel outlier yang diabaikan."
         ],
-        "keyFormulaOrDiagram": "Kuartil 1: 31.78, Kuartil 3: 32.72, IQR: 0.95 | Ambang Batas Wajar: [30.35, 34.15] | Data..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemeriksaan integritas logbook data eksperimen untuk mendeteksi penyimpangan dan mencatat jejak audit.",
         "bulletPoints": [
-          "Perangkap: Menghapus titik data pengujian yang tidak sesuai dengan hipotesis tanpa dokumentasi dan justifikasi metodologi...",
-          "Perangkap: Melakukan parafrase dangkal terhadap naskah orang lain tanpa mencantumkan sitasi sumber asli (plagiarisme mosa...",
-          "Perangkap: Menggunakan perangkat lunak pengolah gambar untuk menghilangkan noise atau artefak pada citra eksperimental ta..."
-        ]
+          "Tujuan Algoritma: Pemeriksaan integritas logbook data eksperimen untuk mendeteksi penyimpangan dan mencatat jejak audit.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Kuartil 1: 31.78, Kuartil 3: 32.72, IQR: 0.95"
+        ],
+        "keyFormulaOrDiagram": "Kuartil 1: 31.78, Kuartil 3: 32.72, IQR: 0.95\nAmbang Batas Wajar: [30.35, 34.15]\nData Pencilan Teridentifikasi: [18.2 17.9]\nProtokol Etik: Titik pencilan wajib diinvestigasi penyebab fisiknya dan dilaporkan secara transparan.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Simpan salinan berkas data mentah primer (raw data) yang bersifat *read-only* segera setelah pengujian laborat...",
-          "Prosedur: Gunakan perangkat lunak pengecek kesamaan teks resmi sebelum mengirimkan naskah ke jurnal atau dewan penguji."
-        ]
+          "[warning: Perangkap] Menghapus titik data pengujian yang tidak sesuai dengan hipotesis tanpa dokumentasi dan justifikasi metodologis terbuka.",
+          "[warning: Perangkap] Melakukan parafrase dangkal terhadap naskah orang lain tanpa mencantumkan sitasi sumber asli (plagiarisme mosaik).",
+          "[warning: Perangkap] Menggunakan perangkat lunak pengolah gambar untuk menghilangkan noise atau artefak pada citra eksperimental tanpa mendeklarasikan proses filter tersebut."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa perbedaan antara kesalahan ilmiah yang tidak disengaja (honest scientific error) dengan tindakan pemalsuan (falsific...",
-          "Petunjuk: Perhatikan unsur niat (intent) dan transparansi prosedur.",
-          "Solusi Kunci: Kesalahan ilmiah jujur terjadi akibat keterbatasan instrumen yang tidak diketahui, galat matematis yang tidak disengaja,..."
-        ]
+          "Prosedur: Simpan salinan berkas data mentah primer (raw data) yang bersifat *read-only* segera setelah pengujian laboratorium selesai.",
+          "Prosedur: Gunakan perangkat lunak pengecek kesamaan teks resmi sebelum mengirimkan naskah ke jurnal atau dewan penguji."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Apa perbedaan antara kesalahan ilmiah yang tidak disengaja (honest scientific error) dengan tindakan pemalsuan (falsification)?",
+          "Petunjuk Analitis: Perhatikan unsur niat (intent) dan transparansi prosedur.",
+          "Solusi Kunci: Kesalahan ilmiah jujur terjadi akibat keterbatasan instrumen yang tidak diketahui, galat matematis yang tidak disengaja, atau asumsi yang belakangan terbukti keliru. Peneliti yang membuat kesalahan jujur akan secara terbuka menerbitkan koreksi (erratum). Sebaliknya, falsifikasi melibatkan niat sadar untuk memanipulasi, menyembunyikan, atau mendistorsi data agar mencapai kesimpulan tertentu."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -215,100 +250,136 @@ export const CH07_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kriteria Kepengarangan Formal ICMJE dan Etika Kolaboras...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kriteria Kepengarangan Formal ICMJE dan Etika Kolaborasi Ilmiah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.7.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.2.",
-          "Capaian: Menerapkan 4 kriteria kepengarangan formal International Committee of Medical Journal Editors (ICMJE).",
-          "Capaian: Mengidentifikasi dan mencegah praktik penulisan kehormatan (gift/honorary authorship) dan penulisan siluman (g...",
-          "Capaian: Menetapkan urutan kepengarangan (author ordering) berbasis kontribusi objektif dan transparan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan 4 kriteria kepengarangan formal International Committee of Medical Journal Editors (ICMJE).",
+          "Capaian 2: Mengidentifikasi dan mencegah praktik penulisan kehormatan (gift/honorary authorship) dan penulisan siluman (ghost authorship).",
+          "Capaian 3: Menetapkan urutan kepengarangan (author ordering) berbasis kontribusi objektif dan transparan."
         ],
-        "keyFormulaOrDiagram": "$$\\text{AuthorEligibility}(i) = C_{1}(i) \\land C_{2}(i) \\land C_{3}(i) \\land C_{4}(i)$$"
+        "keyFormulaOrDiagram": "$$\\text{AuthorEligibility}(i) = C_{1}(i) \\land C_{2}(i) \\land C_{3}(i) \\land C_{4}(i)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.7.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kriteria Kepengarangan Formal ICMJE dan Etika Kolaboras...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kriteria Kepengarangan Formal ICMJE dan Etika Kolaborasi Ilmiah",
+        "lead": "Penetapan daftar penulis pada artikel ilmiah bukan sekadar persoalan pembagian prestise atau penghargaan sosial, melainkan penetapan akuntabilitas publik atas kebenaran ilmiah yang tertulis.",
         "bulletPoints": [
-          "Penetapan daftar penulis pada artikel ilmiah bukan sekadar persoalan pembagian prestise atau penghargaan sosial, melainkan pe...",
-          "Standar kepengarangan yang diakui secara global dirumuskan oleh International Committee of Medical Journal Editors (ICMJE), y...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Nama yang tercantum pada naskah bertanggung jawab secara etis dan hukum atas integritas karya tersebut.",
+          "Standar kepengarangan yang diakui secara global dirumuskan oleh International Committee of Medical Journal Editors (ICMJE), yang menetapkan bahwa kepengarangan sah jika dan hanya jika seseorang memenuhi keempat kriteria secara simultan: 1.",
+          "Kontribusi substansial terhadap konsepsi atau desain karya, ATAU akuisisi, analisis, atau interpretasi data penelitian."
         ],
-        "keyFormulaOrDiagram": "Seseorang yang hanya menyediakan pendanaan, menyediakan fasilitas laboratorium, atau sekad..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Seseorang yang hanya menyediakan pendanaan, menyediakan fasilitas laboratorium, atau sekadar melakukan pengoreksian tata bahasa tanpa keterlibatan intelektual TIDAK berhak menjadi penulis.",
         "bulletPoints": [
-          "Seseorang yang hanya menyediakan pendanaan, menyediakan fasilitas laboratorium, atau sekadar melakukan pengoreksian tata baha...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Kontribusi teknis semacam itu harus dicatat secara terhormat pada bagian Ucapan Terima Kasih (Acknowledgments)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Status kelayakan kepengarangan individu $i$ dinyatakan sebagai konjungsi logika biner dari keempat kriteria ICMJE:",
         "bulletPoints": [
-          "Status kelayakan kepengarangan individu $i$ dinyatakan sebagai konjungsi logika biner dari keempat kriteria IC...",
           "Di mana $C_k(i) \\in \\{0, 1\\}$.",
-          "Jika $\\exists k \\in \\{1, 2, 3, 4\\}$ sedemikian rupa sehingga $C_k(i) = 0$, maka individu $i$ dialokasikan ke h..."
+          "Jika $\\exists k \\in \\{1, 2, 3, 4\\}$ sedemikian rupa sehingga $C_k(i) = 0$, maka individu $i$ dialokasikan ke himpunan kontributor non-penulis:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{AuthorEligibility}(i) = C_{1}(i) \\land C_{2}(i) \\land C_{3}(i) \\land C_{4}(i)$$"
+        "keyFormulaOrDiagram": "$$\\text{AuthorEligibility}(i) = C_{1}(i) \\land C_{2}(i) \\land C_{3}(i) \\land C_{4}(i)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dalam sebuah proyek riset di laboratorium, Kepala Laboratorium menyediakan instrumen spektrometer dan dana operasional, namun tidak pernah m...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dalam sebuah proyek riset di laboratorium, Kepala Laboratorium menyediakan instrumen spektrometer dan dana operasional, namun tidak pernah membaca draf naskah dan tidak terlibat dalam interpretasi data. Apakah Kepala Laboratorium memenuhi syarat sebagai co-author menurut standar ICMJE?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Evaluasi Kriteria 1 (Kontribusi Intelektual): Menyediakan alat dan dana tidak memenuhi definisi kon...",
+          "Langkah 1: Evaluasi Kriteria 1 (Kontribusi Intelektual): Menyediakan alat dan dana tidak memenuhi definisi kontribusi intelektual desain atau analisis data (C1 = 0).",
           "Langkah 2: Evaluasi Kriteria 2 (Penyusunan/Revisi Kritis): Tidak terlibat dalam draf naskah (C2 = 0).",
-          "Langkah 3: Evaluasi Kriteria 3 (Persetujuan Akhir): Tidak membaca naskah final (C3 = 0).",
-          "Interpretasi: Penerapan standar ICMJE melindungi peneliti dari tekanan hierarkis institusional dan menjaga keadilan kontribusi ilmiah."
+          "Langkah 3: Evaluasi Kriteria 3 (Persetujuan Akhir): Tidak membaca naskah final (C3 = 0)."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Kesimpulan kepengarangan: Kepala Laboratorium tidak memenuhi syarat sebagai pen..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Evaluasi Kriteria 4 (Akuntabilitas): Tidak dapat mempertanggungjawabkan rincian hasil eksperimen (C4 = 0).",
+          "Langkah 5: Kesimpulan kepengarangan: Kepala Laboratorium tidak memenuhi syarat sebagai penulis. Memasukkan namanya merupakan pelanggaran etika berupa kepengarangan kehormatan (gift/honorary authorship). Kontribusi fasilitas beliau wajib diakui pada bagian Acknowledgments.",
+          "[result: Interpretasi Ilmiah] Penerapan standar ICMJE melindungi peneliti dari tekanan hierarkis institusional dan menjaga keadilan kontribusi ilmiah."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Evaluasi kelayakan daftar penulis berdasarkan matriks kontribusi taksonomi CRediT (Contributor Roles Taxonomy).",
         "bulletPoints": [
-          "Deskripsi: Evaluasi kelayakan daftar penulis berdasarkan matriks kontribusi taksonomi CRediT (Contributor Roles Taxonomy).",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: Penilaian Kepengarangan Berdasarkan Kontribusi CRediT:"
+          "Tujuan Algoritma: Evaluasi kelayakan daftar penulis berdasarkan matriks kontribusi taksonomi CRediT (Contributor Roles Taxonomy).",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: Penilaian Kepengarangan Berdasarkan Kontribusi CRediT:"
         ],
-        "keyFormulaOrDiagram": "Penilaian Kepengarangan Berdasarkan Kontribusi CRediT: | - Dr. Andi : Layak Menjadi Penuli..."
+        "keyFormulaOrDiagram": "Penilaian Kepengarangan Berdasarkan Kontribusi CRediT:\n- Dr. Andi                 : Layak Menjadi Penulis (Co-Author) (Peran aktif: ['Konseptualisasi', 'Metodologi', 'Penulisan Ulas & Sunting'])\n- Budi (Mahasiswa)         : Layak Menjadi Penulis (Co-Author) (Peran aktif: ['Pemrograman', 'Validasi', 'Penyelidikan', 'Penulisan Draf Asli'])\n- Ir. Citra (Teknisi Lab)  : Dicantumkan pada Acknowledgments (Peran aktif: ['Penyelidikan'])\n- Prof. Doni (Pejabat)     : Dicantumkan pada Acknowledgments (Peran aktif: [])",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menambahkan nama peneliti senior atau pembimbing secara sepihak untuk meningkatkan peluang penerimaan naskah (...",
-          "Perangkap: Menghilangkan nama mahasiswa tingkat sarjana yang berkontribusi menulis kode dan mengambil data lapangan prime...",
-          "Perangkap: Tidak menyepakati urutan nama penulis di awal kolaborasi penelitian sehingga menimbulkan sengketa di akhir mas..."
-        ]
+          "[warning: Perangkap] Menambahkan nama peneliti senior atau pembimbing secara sepihak untuk meningkatkan peluang penerimaan naskah (gift authorship).",
+          "[warning: Perangkap] Menghilangkan nama mahasiswa tingkat sarjana yang berkontribusi menulis kode dan mengambil data lapangan primer (ghost authorship).",
+          "[warning: Perangkap] Tidak menyepakati urutan nama penulis di awal kolaborasi penelitian sehingga menimbulkan sengketa di akhir masa riset."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Susun Kontrak Kepengarangan Tertulis (Authorship Agreement) di awal proyek yang menetapkan peran spesifik meng...",
+          "Prosedur: Susun Kontrak Kepengarangan Tertulis (Authorship Agreement) di awal proyek yang menetapkan peran spesifik menggunakan taksonomi CRediT.",
           "Prosedur: Mintakan konfirmasi persetujuan tertulis dari seluruh calon penulis sebelum naskah diunggah ke sistem jurnal."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa peran dan tanggung jawab utama dari seorang Penulis Korespondensi (Corresponding Author)?",
-          "Petunjuk: Perhatikan komunikasi administratif dengan editor jurnal dan masyarakat ilmiah setelah artikel terbi...",
-          "Solusi Kunci: Penulis Korespondensi bertanggung jawab mengelola seluruh komunikasi formal dengan dewan editor jurnal selama proses pee..."
-        ]
+          "Petunjuk Analitis: Perhatikan komunikasi administratif dengan editor jurnal dan masyarakat ilmiah setelah artikel terbit.",
+          "Solusi Kunci: Penulis Korespondensi bertanggung jawab mengelola seluruh komunikasi formal dengan dewan editor jurnal selama proses peer review, memastikan kelengkapan data administratif dan deklarasi etika tim, serta bertindak sebagai kontak utama bagi publik ilmiah yang membutuhkan klarifikasi data atau materi riset setelah publikasi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -371,100 +442,134 @@ export const CH07_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Etika Penggunaan Generative AI dan LLM dalam Penelitian...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Etika Penggunaan Generative AI dan LLM dalam Penelitian Ilmiah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.7.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.3.",
-          "Capaian: Menerapkan batasan etis penggunaan Large Language Models (LLM) dalam penulisan ilmiah.",
-          "Capaian: Memahami alasan hukum dan etika mengapa AI tidak dapat didaftarkan sebagai penulis (co-author).",
-          "Capaian: Mendeklarasikan penggunaan instrumen AI secara transparan dan akuntabel sesuai pedoman penerbit internasional."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan batasan etis penggunaan Large Language Models (LLM) dalam penulisan ilmiah.",
+          "Capaian 2: Memahami alasan hukum dan etika mengapa AI tidak dapat didaftarkan sebagai penulis (co-author).",
+          "Capaian 3: Mendeklarasikan penggunaan instrumen AI secara transparan dan akuntabel sesuai pedoman penerbit internasional."
         ],
-        "keyFormulaOrDiagram": "$$P(w_t \\mid w_1, w_2, \\dots, w_{t-1}) = \\text{Softmax}\\left( \\frac{\\mathbf{z}_t}{\\tau} \\right)$$"
+        "keyFormulaOrDiagram": "$$P(w_t \\mid w_1, w_2, \\dots, w_{t-1}) = \\text{Softmax}\\left( \\frac{\\mathbf{z}_t}{\\tau} \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.7.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Etika Penggunaan Generative AI dan LLM dalam Penelitian...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Etika Penggunaan Generative AI dan LLM dalam Penelitian Ilmiah",
+        "lead": "Perkembangan pesat Generative Artificial Intelligence dan Large Language Models (LLM) membawa perubahan revolusioner sekaligus tantangan etis besar dalam ekosistem penelitian ilmiah.",
         "bulletPoints": [
-          "Perkembangan pesat Generative Artificial Intelligence dan Large Language Models (LLM) membawa perubahan revolusioner sekaligu...",
-          "Namun, lembaga penerbit ilmiah internasional (seperti Springer Nature, IEEE, Elsevier, dan ACM) telah menetapkan regulasi eti...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Model kecerdasan buatan generatif memiliki kemampuan tinggi untuk merapikan gaya bahasa, menerjemahkan kode komputasi, dan menyusun sintesis informasi teks dengan kecepatan luar biasa.",
+          "Namun, lembaga penerbit ilmiah internasional (seperti Springer Nature, IEEE, Elsevier, dan ACM) telah menetapkan regulasi etika yang tegas terkait pemanfaatan AI: 1.",
+          "AI Tidak Boleh Menjadi Penulis: Model AI tidak dapat memenuhi kriteria kepengarangan ICMJE/COPE karena model AI tidak memiliki kepribadian hukum, tidak dapat menandatangani dokumen konflik kepentingan, dan tidak dapat memikul tanggung jawab pidana maupun perdata atas integritas data yang dihasilkannya."
         ],
-        "keyFormulaOrDiagram": "AI harus diposisikan secara tepat sebagai instrumen bantuan penulisan dan produktivitas ko..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "AI harus diposisikan secara tepat sebagai instrumen bantuan penulisan dan produktivitas komputasional, bukan sebagai entitas...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "AI harus diposisikan secara tepat sebagai instrumen bantuan penulisan dan produktivitas komputasional, bukan sebagai entitas pemikir ilmiah independen.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model halusinasi LLM dapat dipahami secara probabilistik sebagai generasi autoregresif rantai Markov berorde tinggi:",
         "bulletPoints": [
-          "Model halusinasi LLM dapat dipahami secara probabilistik sebagai generasi autoregresif rantai Markov berorde t...",
-          "Di mana model mengoptimalkan kemiripan distribusi linguistik (*statistical plausibility*), BUKAN kebenaran fak...",
-          "Probabilitas munculnya setidaknya satu referensi halusinasi dalam daftar pustaka berisi $N$ entitas dengan tin..."
+          "Di mana model mengoptimalkan kemiripan distribusi linguistik (*statistical plausibility*), BUKAN kebenaran faktual ilmiah (*factual truth*).",
+          "Probabilitas munculnya setidaknya satu referensi halusinasi dalam daftar pustaka berisi $N$ entitas dengan tingkat galat halusinasi model $\\epsilon$:",
+          "Jika $\\epsilon = 0.08$ dan $N = 30$, maka $P(\\text{Halusinasi} \\ge 1) = 1 - (0.92)^{30} \\approx 0.918$ (lebih dari 91% kemungkinan terdapat referensi fiktif)."
         ],
-        "keyFormulaOrDiagram": "$$P(w_t \\mid w_1, w_2, \\dots, w_{t-1}) = \\text{Softmax}\\left( \\frac{\\mathbf{z}_t}{\\tau} \\right)$$"
+        "keyFormulaOrDiagram": "$$P(w_t \\mid w_1, w_2, \\dots, w_{t-1}) = \\text{Softmax}\\left( \\frac{\\mathbf{z}_t}{\\tau} \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang mahasiswa menggunakan LLM untuk mencari referensi mengenai rumus redaman gelombang akustik pada lumpur panas. AI memberikan satu sit...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi fenomena: Terjadi halusinasi literatur (bibliographic hallucination). Model AI merangk...",
-          "Langkah 2: Evaluasi dampak: Memasukkan referensi fiktif ke dalam proposal atau skripsi merupakan pelanggaran f...",
-          "Langkah 3: Tindakan perbaikan: Hapus sitasi tersebut secara permanen. Lakukan pencarian ulang secara langsung...",
-          "Interpretasi: Verifikasi faktual oleh manusia adalah filter mutlak yang tidak boleh dilewati dalam penggunaan AI generatif."
+          "Konteks Kasus: Seorang mahasiswa menggunakan LLM untuk mencari referensi mengenai rumus redaman gelombang akustik pada lumpur panas. AI memberikan satu sitasi jurnal yang tampak meyakinkan: \"Pratama, B. (2021). Acoustic Attenuation in Geothermal Slurry. IEEE Trans. Geosci., 45(3), 112-120.\" Setelah dicari di Scopus dan IEEE Xplore, artikel tersebut tidak pernah ada. Jelaskan mekanisme terjadinya fenomena ini dan tindakan etis yang wajib dilakukan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Aturan verifikasi: Jangan pernah mencantumkan referensi apa pun yang belum pern..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi fenomena: Terjadi halusinasi literatur (bibliographic hallucination). Model AI merangkai nama penulis Indonesia, topik yang diminta, dan nama jurnal IEEE yang terdengar realistis berdasarkan probabilitas kemunculan kata.",
+          "Langkah 2: Evaluasi dampak: Memasukkan referensi fiktif ke dalam proposal atau skripsi merupakan pelanggaran fabrikasi data kepustakaan."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Tindakan perbaikan: Hapus sitasi tersebut secara permanen. Lakukan pencarian ulang secara langsung pada pangkalan data resmi (IEEE Xplore/Scopus) untuk menemukan artikel empiris riil.",
+          "Langkah 4: Aturan verifikasi: Jangan pernah mencantumkan referensi apa pun yang belum pernah diverifikasi keberadaan berkas digital DOI aslinya oleh mata manusia.",
+          "[result: Interpretasi Ilmiah] Verifikasi faktual oleh manusia adalah filter mutlak yang tidak boleh dilewati dalam penggunaan AI generatif."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Program verifikasi format pengenal DOI untuk mendeteksi anomali pada daftar referensi hasil generasi otomatis.",
         "bulletPoints": [
-          "Deskripsi: Program verifikasi format pengenal DOI untuk mendeteksi anomali pada daftar referensi hasil generasi otomatis.",
-          "Dependensi Pustaka: re",
-          "Keluaran Diharapkan: Audit Kredensial DOI Referensi:"
+          "Tujuan Algoritma: Program verifikasi format pengenal DOI untuk mendeteksi anomali pada daftar referensi hasil generasi otomatis.",
+          "Dependensi Pustaka Ilmiah: re",
+          "Keluaran Terverifikasi: Audit Kredensial DOI Referensi:"
         ],
-        "keyFormulaOrDiagram": "Audit Kredensial DOI Referensi: | - Karakterisasi Akustik | DOI: 10.1109/tgrs.2021.3051234..."
+        "keyFormulaOrDiagram": "Audit Kredensial DOI Referensi:\n- Karakterisasi Akustik     | DOI: 10.1109/tgrs.2021.3051234             -> Format Valid (Perlu Uji Lanjut Resolver)\n- Halusinasi AI Model       | DOI: 10.9999/bukan-doi-asli-hanya-teks     -> Format Valid (Perlu Uji Lanjut Resolver)\n- Jaringan Syaraf Tiruan    | DOI: invalid_doi_format                    -> FORMAT CACAT / INDIKASI HALUSINASI\n- Sensor IoT Perkebunan     | DOI: 10.1016/j.compag.2022.106890         -> Format Valid (Perlu Uji Lanjut Resolver)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyalin mentah-mentah teks paragraf dari prompt AI ke dalam naskah ilmiah tanpa penyuntingan dan verifikasi m...",
-          "Perangkap: Mempercayai angka statistik, konstanta fisis, atau ringkasan literatur dari LLM tanpa mengecek sumber primer.",
-          "Perangkap: Merasa tidak perlu mendeklarasikan penggunaan AI jika hasilnya telah diedit ulang sebagian oleh penulis."
-        ]
+          "[warning: Perangkap] Menyalin mentah-mentah teks paragraf dari prompt AI ke dalam naskah ilmiah tanpa penyuntingan dan verifikasi mendalam.",
+          "[warning: Perangkap] Mempercayai angka statistik, konstanta fisis, atau ringkasan literatur dari LLM tanpa mengecek sumber primer.",
+          "[warning: Perangkap] Merasa tidak perlu mendeklarasikan penggunaan AI jika hasilnya telah diedit ulang sebagian oleh penulis."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan resolver resmi DOI (https://doi.org) untuk memvalidasi bahwa setiap artikel yang disitasi benar-benar...",
-          "Prosedur: Sertakan teks pernyataan keterbukaan AI (AI statement) pada bab metodologi yang merinci prompt inti dan tujuan..."
-        ]
+          "Prosedur: Gunakan resolver resmi DOI (https://doi.org) untuk memvalidasi bahwa setiap artikel yang disitasi benar-benar terdaftar di CrossRef.",
+          "Prosedur: Sertakan teks pernyataan keterbukaan AI (AI statement) pada bab metodologi yang merinci prompt inti dan tujuan penggunaannya."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apakah diperbolehkan menggunakan AI generatif untuk memperbaiki tata bahasa (grammar polishing) pada naskah artikel yang...",
-          "Petunjuk: Perhatikan batas antara perbaikan linguistik versus penciptaan konten intelektual baru.",
-          "Solusi Kunci: Sebagian besar penerbit ilmiah internasional memperbolehkan penggunaan AI untuk perbaikan tata bahasa, kejelasan ekspres..."
-        ]
+          "Pertanyaan Uji: Apakah diperbolehkan menggunakan AI generatif untuk memperbaiki tata bahasa (grammar polishing) pada naskah artikel yang ditulis oleh peneliti yang bukan penutur asli bahasa Inggris?",
+          "Petunjuk Analitis: Perhatikan batas antara perbaikan linguistik versus penciptaan konten intelektual baru.",
+          "Solusi Kunci: Sebagian besar penerbit ilmiah internasional memperbolehkan penggunaan AI untuk perbaikan tata bahasa, kejelasan ekspresi kalimat, dan ejaan. Hal ini dipandang setara dengan menggunakan jasa penyunting bahasa profesional. Namun, penggunaan tersebut tetap wajib dideklarasikan secara transparan, dan penulis tetap bertanggung jawab penuh atas makna kalimat yang dihasilkan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -527,100 +632,135 @@ export const CH07_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Model Silsilah Data (Data Provenance) dan Verifikasi Ha...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Model Silsilah Data (Data Provenance) dan Verifikasi Hash Kriptografis Dataset",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.7.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.4.",
-          "Capaian: Membangun model silsilah data (data provenance graph) yang mencatat seluruh transformasi data eksperimen.",
-          "Capaian: Menerapkan fungsi hash kriptografis SHA-256 untuk menjamin integritas dan imutabilitas artefak data.",
-          "Capaian: Memenuhi standar prinsip FAIR (Findable, Accessible, Interoperable, Reusable) dalam manajemen data riset."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.7.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membangun model silsilah data (data provenance graph) yang mencatat seluruh transformasi data eksperimen.",
+          "Capaian 2: Menerapkan fungsi hash kriptografis SHA-256 untuk menjamin integritas dan imutabilitas artefak data.",
+          "Capaian 3: Memenuhi standar prinsip FAIR (Findable, Accessible, Interoperable, Reusable) dalam manajemen data riset."
         ],
-        "keyFormulaOrDiagram": "$$H(M) = h \\quad [\\mathcal{O}(2^{256}) \\text{ operasi}]$$"
+        "keyFormulaOrDiagram": "$$H(M) = h \\quad [\\mathcal{O}(2^{256}) \\text{ operasi}]$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.7.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Model Silsilah Data (Data Provenance) dan Verifikasi Ha...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Model Silsilah Data (Data Provenance) dan Verifikasi Hash Kriptografis Dataset",
+        "lead": "Reproduksibilitas sains modern menuntut agar data eksperimen tidak hanya disimpan sebagai berkas mati, melainkan disertai dengan catatan silsilah data (data provenance).",
         "bulletPoints": [
-          "Reproduksibilitas sains modern menuntut agar data eksperimen tidak hanya disimpan sebagai berkas mati, melainkan disertai den...",
-          "Tanpa silsilah data yang jelas, muncul fenomena \"data amnesia\": enam bulan setelah eksperimen selesai, peneliti sendiri tidak...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Silsilah data adalah rekaman kronologis formal mengenai asal-usul data, tahapan transformasi pembersihan apa yang telah diterapkan, perangkat lunak serta versi algoritma apa yang mengeksekusinya, dan siapa operator yang bertanggung jawab.",
+          "Tanpa silsilah data yang jelas, muncul fenomena \"data amnesia\": enam bulan setelah eksperimen selesai, peneliti sendiri tidak mampu merekonstruksi berkas excel mana yang menghasilkan grafik pada Gambar 4 naskah ilmiah mereka."
         ],
-        "keyFormulaOrDiagram": "Untuk memastikan data tidak termutasi atau termanipulasi secara tidak sengaja seiring berj..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Untuk memastikan data tidak termutasi atau termanipulasi secara tidak sengaja seiring berjalannya waktu, digunakan instrumen kriptografi berupa Fungsi Hash Satu Arah (Cryptographic Hash Function), khususnya algoritma Secure Hash Algorithm 256-bit (SHA-256). - Fungsi hash memetakan berkas data berukuran berapa pun (dari 1 kilobita hingga 10 terabita) menjadi string heksadesimal unik berpanjang tepat 64 karakter. - Sifat sensitivitas ekstrem (Avalanche Effect): Pengubahan satu bit data saja pada berkas sebesar 1 gigabita akan mengubah lebih dari 50% karakter nilai hash output.",
         "bulletPoints": [
-          "Untuk memastikan data tidak termutasi atau termanipulasi secara tidak sengaja seiring berjalannya waktu, digunakan instrumen...",
-          "Dengan mencantumkan nilai checksum hash pada laporan penelitian atau repositori publik, peneliti memberikan jaminan matematis...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Dengan mencantumkan nilai checksum hash pada laporan penelitian atau repositori publik, peneliti memberikan jaminan matematis bahwa dataset yang diperiksa oleh pembaca identik sempurna dengan data saat eksperimen dijalankan."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Fungsi hash kriptografis $H: \\{0, 1\\}^* \\longrightarrow \\{0, 1\\}^{256}$ dengan sifat matematis:",
         "bulletPoints": [
-          "Fungsi hash kriptografis $H: \\{0, 1\\}^* \\longrightarrow \\{0, 1\\}^{256}$ dengan sifat matematis:",
           "1. Ketahanan Pre-image (Pre-image Resistance):",
-          "Diberikan nilai hash $h$, secara komputasional mustahil menemukan pesan $M$ sedemikian sehingga:"
+          "Diberikan nilai hash $h$, secara komputasional mustahil menemukan pesan $M$ sedemikian sehingga:",
+          "2. Ketahanan Kolisi (Collision Resistance):"
         ],
-        "keyFormulaOrDiagram": "$$H(M) = h \\quad [\\mathcal{O}(2^{256}) \\text{ operasi}]$$"
+        "keyFormulaOrDiagram": "$$H(M) = h \\quad [\\mathcal{O}(2^{256}) \\text{ operasi}]$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah laboratorium ITERA mengumpulkan data rekaman getaran jembatan berukuran 4.5 GB. Sebelum disimpan di repositori cloud bersama, dihitun...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Analisis nilai hash: Karakteristik fungsi hash kriptografis menyatakan bahwa kecocokan harus 100% i...",
-          "Langkah 2: Evaluasi perubahan satu karakter hash: Perbedaan nilai hash (bahkan hanya pada satu karakter heksad...",
-          "Langkah 3: Identifikasi potensi penyebab: Kerusakan sektor penyimpanan (bit-rot), interupsi pengunggahan tidak...",
-          "Interpretasi: Verifikasi hash kriptografis memberikan kepastian integritas data biner mutlak yang tidak dapat dipalsukan oleh ukuran b..."
+          "Konteks Kasus: Sebuah laboratorium ITERA mengumpulkan data rekaman getaran jembatan berukuran 4.5 GB. Sebelum disimpan di repositori cloud bersama, dihitung nilai SHA-256 berkas tersebut. Dua minggu kemudian, ukuran berkas di cloud tetap tertulis 4.5 GB, namun nilai SHA-256 berbeda satu karakter pada digit terakhir. Apakah data tersebut masih valid untuk dianalisis?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Keputusan metodologis: Data di cloud dinyatakan cacat dan tidak sah untuk diana..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Analisis nilai hash: Karakteristik fungsi hash kriptografis menyatakan bahwa kecocokan harus 100% identik dari karakter pertama hingga ke-64.",
+          "Langkah 2: Evaluasi perubahan satu karakter hash: Perbedaan nilai hash (bahkan hanya pada satu karakter heksadesimal) membuktikan bahwa isi biner berkas di dalam penyimpanan telah termutasi."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Identifikasi potensi penyebab: Kerusakan sektor penyimpanan (bit-rot), interupsi pengunggahan tidak sempurna, atau manipulasi data oleh pihak lain.",
+          "Langkah 4: Keputusan metodologis: Data di cloud dinyatakan cacat dan tidak sah untuk dianalisis. Peneliti wajib memulihkan berkas dari salinan cadangan dingin (cold offline backup) dan memverifikasi ulang nilai hash aslinya.",
+          "[result: Interpretasi Ilmiah] Verifikasi hash kriptografis memberikan kepastian integritas data biner mutlak yang tidak dapat dipalsukan oleh ukuran berkas permukaan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Program komputasi nilai hash SHA-256 untuk memverifikasi integritas berkas data penelitian.",
         "bulletPoints": [
-          "Deskripsi: Program komputasi nilai hash SHA-256 untuk memverifikasi integritas berkas data penelitian.",
-          "Dependensi Pustaka: hashlib",
-          "Keluaran Diharapkan: Hash Data Asli : 3f5d506990d1f95d8869c9dc8bbff8c0a06fae98e9b6264ffdfb88cfa0f26229"
+          "Tujuan Algoritma: Program komputasi nilai hash SHA-256 untuk memverifikasi integritas berkas data penelitian.",
+          "Dependensi Pustaka Ilmiah: hashlib",
+          "Keluaran Terverifikasi: Hash Data Asli : 3f5d506990d1f95d8869c9dc8bbff8c0a06fae98e9b6264ffdfb88cfa0f26229"
         ],
-        "keyFormulaOrDiagram": "Hash Data Asli : 3f5d506990d1f95d8869c9dc8bbff8c0a06fae98e9b6264ffdfb88cfa0f26229 | Hash D..."
+        "keyFormulaOrDiagram": "Hash Data Asli : 3f5d506990d1f95d8869c9dc8bbff8c0a06fae98e9b6264ffdfb88cfa0f26229\nHash Data Rusak: e39045b85d38f8cf6ae13bb01a750059c381c5fdf44181ba4c9ff3f317ee92a2\nApakah Data Identik Sempurna? False",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpan dataset akhir dalam format biner tertutup (proprietary) yang bergantung pada versi perangkat lunak t...",
-          "Perangkap: Tidak mencatat versi dependensi pustaka perangkat lunak pengolah data (seperti file requirements.txt atau Dock...",
-          "Perangkap: Mengganti nama kolom atau menghapus baris data tanpa mencatat perubahan tersebut dalam skrip terotomasi atau b..."
-        ]
+          "[warning: Perangkap] Menyimpan dataset akhir dalam format biner tertutup (proprietary) yang bergantung pada versi perangkat lunak tertentu yang belum tentu dapat dibuka di masa depan.",
+          "[warning: Perangkap] Tidak mencatat versi dependensi pustaka perangkat lunak pengolah data (seperti file requirements.txt atau Dockerfile).",
+          "[warning: Perangkap] Mengganti nama kolom atau menghapus baris data tanpa mencatat perubahan tersebut dalam skrip terotomasi atau berkas metadata README."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Sertakan berkas manifest checksum SHA-256 untuk seluruh dataset mentah sebelum memulai fase analisis apa pun.",
-          "Prosedur: Uji replikabilitas alur data dari mentah hingga grafik akhir menggunakan skrip eksekusi satu-perintah (*single..."
-        ]
+          "Prosedur: Uji replikabilitas alur data dari mentah hingga grafik akhir menggunakan skrip eksekusi satu-perintah (*single-command reproduction pipeline*)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa prinsip FAIR (Findable, Accessible, Interoperable, Reusable) merekomendasikan penyimpanan data ilmiah mentah dal...",
-          "Petunjuk: Perhatikan keberlanjutan akses jangka panjang dan kompatibilitas lintas sistem operasi.",
-          "Solusi Kunci: Format teks terbuka seperti .csv dan .json tidak terikat pada vendor perangkat lunak tertentu, kebal terhadap perubahan..."
-        ]
+          "Pertanyaan Uji: Mengapa prinsip FAIR (Findable, Accessible, Interoperable, Reusable) merekomendasikan penyimpanan data ilmiah mentah dalam format teks terbuka (seperti .csv atau .json) dibanding format lembar kerja tertutup (.xlsx)?",
+          "Petunjuk Analitis: Perhatikan keberlanjutan akses jangka panjang dan kompatibilitas lintas sistem operasi.",
+          "Solusi Kunci: Format teks terbuka seperti .csv dan .json tidak terikat pada vendor perangkat lunak tertentu, kebal terhadap perubahan versi sistem operasi, mudah dikelola menggunakan sistem kontrol versi (seperti Git), dan dapat di-parsing secara efisien oleh berbagai bahasa pemrograman ilmiah kapan pun di masa depan tanpa hambatan lisensi perangkat lunak."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

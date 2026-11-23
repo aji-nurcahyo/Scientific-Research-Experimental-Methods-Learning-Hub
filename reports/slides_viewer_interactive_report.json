@@ -1,0 +1,72 @@
+[
+  {
+    "chapter": "CH-01",
+    "lesson": "1.1.1",
+    "status": "PASSED",
+    "checks": {
+      "katexCount": 0,
+      "katexErrorsCount": 0,
+      "semanticPillsCount": 0,
+      "bulletsCount": 3,
+      "title": "Fondasi Konseptual: Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi dalam Rekayasa",
+      "rawMarkdownDetected": false
+    },
+    "console_errors": []
+  },
+  {
+    "chapter": "CH-16",
+    "lesson": "3.1.1",
+    "status": "PASSED",
+    "checks": {
+      "katexCount": 0,
+      "katexErrorsCount": 0,
+      "semanticPillsCount": 0,
+      "bulletsCount": 2,
+      "title": "Fondasi Konseptual: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum Pemodelan Statistik",
+      "rawMarkdownDetected": false
+    },
+    "console_errors": []
+  },
+  {
+    "chapter": "CH-24",
+    "lesson": "4.1.1",
+    "status": "PASSED",
+    "checks": {
+      "katexCount": 0,
+      "katexErrorsCount": 0,
+      "semanticPillsCount": 0,
+      "bulletsCount": 3,
+      "title": "Fondasi Konseptual: Model Regresi Linier Sederhana dan Berganda: Penurunan Matriks OLS",
+      "rawMarkdownDetected": false
+    },
+    "console_errors": []
+  },
+  {
+    "chapter": "CH-38",
+    "lesson": "6.1.1",
+    "status": "PASSED",
+    "checks": {
+      "katexCount": 6,
+      "katexErrorsCount": 0,
+      "semanticPillsCount": 0,
+      "bulletsCount": 2,
+      "title": "Fondasi Konseptual: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Empiris sebagai Pengganti Populasi",
+      "rawMarkdownDetected": false
+    },
+    "console_errors": []
+  },
+  {
+    "chapter": "CH-51",
+    "lesson": "7.7.1",
+    "status": "PASSED",
+    "checks": {
+      "katexCount": 0,
+      "katexErrorsCount": 0,
+      "semanticPillsCount": 0,
+      "bulletsCount": 4,
+      "title": "Fondasi Konseptual: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanyaan hingga Desain Uji",
+      "rawMarkdownDetected": false
+    },
+    "console_errors": []
+  }
+]

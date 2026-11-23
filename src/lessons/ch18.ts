@@ -61,99 +61,136 @@ export const CH18_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konsep Sampling Distribution dan Perbedaan Standar Devi...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konsep Sampling Distribution dan Perbedaan Standar Deviasi vs Standar Error",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.3.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.1.",
-          "Capaian: Membedakan secara konseptual dan matematis antara Distribusi Populasi, Distribusi Sampel, dan Distribusi Sampl...",
-          "Capaian: Menghitung dan membedakan Standar Deviasi (s) versus Standar Error of the Mean (SE).",
-          "Capaian: Mencegah kesalahan interpretasi variabilitas individual versus presisi estimasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan secara konseptual dan matematis antara Distribusi Populasi, Distribusi Sampel, dan Distribusi Sampling.",
+          "Capaian 2: Menghitung dan membedakan Standar Deviasi (s) versus Standar Error of the Mean (SE).",
+          "Capaian 3: Mencegah kesalahan interpretasi variabilitas individual versus presisi estimasi."
         ],
-        "keyFormulaOrDiagram": "$$s = \\sqrt{\\frac{1}{n - 1} \\sum_{i=1}^n (X_i - \\bar{X})^2}$$"
+        "keyFormulaOrDiagram": "$$s = \\sqrt{\\frac{1}{n - 1} \\sum_{i=1}^n (X_i - \\bar{X})^2}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.3.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konsep Sampling Distribution dan Perbedaan Standar Devi...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konsep Sampling Distribution dan Perbedaan Standar Deviasi vs Standar Error",
+        "lead": "Salah satu kerancuan paling kronis dalam pelaporan artikel ilmiah rekayasa adalah pencampuran antara Standar Deviasi (*Standard Deviation* / SD) dan Standar Error (*Standard Error of the Mean* / SE).",
         "bulletPoints": [
-          "Salah satu kerancuan paling kronis dalam pelaporan artikel ilmiah rekayasa adalah pencampuran antara Standar Deviasi (*Standa...",
-          "Untuk memahami perbedaan keduanya, peneliti harus membedakan tiga tingkatan distribusi: 1. Distribusi Populasi: Sebaran selur...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Banyak penulis secara sengaja atau tidak sengaja menyajikan SE alih-alih SD dalam tabel mereka semata-mata karena angka SE selalu jauh lebih kecil, sehingga memberi ilusi palsu bahwa instrumen mereka memiliki variabilitas yang sangat sempit.",
+          "Untuk memahami perbedaan keduanya, peneliti harus membedakan tiga tingkatan distribusi: 1.",
+          "Distribusi Populasi: Sebaran seluruh individu atau komponen fisik di alam nyata (memiliki rata-rata parameter sejati $\\mu$ dan deviasi standar populasi $\\sigma$)."
         ],
-        "keyFormulaOrDiagram": "Standar Deviasi ($s$) tidak mengecil saat ukuran sampel $n$ ditambah (nilainya berfluktuas..."
+        "keyFormulaOrDiagram": "$s$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Standar Deviasi ($s$) tidak mengecil saat ukuran sampel $n$ ditambah (nilainya berfluktuasi stabil di sekitar $\\sigma$).",
         "bulletPoints": [
-          "Standar Deviasi ($s$) tidak mengecil saat ukuran sampel $n$ ditambah (nilainya berfluktuasi stabil di sekitar $\\sigma$). Seba...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Sebaliknya, Standar Error ($\text{SE} = s / \\sqrt{n}$) mengecil mendekati nol seiring bertambahnya ukuran sampel $n$."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Standar Deviasi Sampel ($s$): Mengukur dispersi data individual:",
         "bulletPoints": [
-          "1. Standar Deviasi Sampel ($s$): Mengukur dispersi data individual:",
           "2. Standar Error Rata-rata (SE / $\\sigma_{\\bar{X}}$): Mengukur ketidakpastian penduga rata-rata:",
-          "Estimasi Standar Error dari Sampel:"
+          "Estimasi Standar Error dari Sampel:",
+          "Kaidah Pelaporan Metrologis:"
         ],
-        "keyFormulaOrDiagram": "$$s = \\sqrt{\\frac{1}{n - 1} \\sum_{i=1}^n (X_i - \\bar{X})^2}$$"
+        "keyFormulaOrDiagram": "$$s = \\sqrt{\\frac{1}{n - 1} \\sum_{i=1}^n (X_i - \\bar{X})^2}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian kuat tarik 100 sampel serat nanokomposit di Lab Material ITERA, diperoleh rata-rata 450 MPa dengan deviasi standar s = 30 MPa...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian kuat tarik 100 sampel serat nanokomposit di Lab Material ITERA, diperoleh rata-rata 450 MPa dengan deviasi standar s = 30 MPa. Hitung: (a) Standar Error of the Mean, (b) Jelaskan arti fisis s = 30 MPa vs SE = 3 MPa, dan mengapa menyajikan angka \"450 +/- 3 MPa\" tanpa keterangan dapat menyesatkan dewan penguji.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung Standar Error: SE = s / sqrt(n) = 30 / sqrt(100) = 30 / 10 = 3.0 MPa.",
-          "Langkah 2: Makna fisis Standar Deviasi s = 30 MPa: Sekitar 68% serat individu di dalam populasi memiliki kekua...",
-          "Langkah 3: Makna fisis Standar Error SE = 3.0 MPa: Nilai rata-rata sejati mu diestimasikan berada pada rentang...",
-          "Interpretasi: Pembedaan eksplisit antara SD (sebaran produk) dan SE (presisi pengukuran) adalah syarat kejujuran pelaporan ilmiah."
+          "Langkah 2: Makna fisis Standar Deviasi s = 30 MPa: Sekitar 68% serat individu di dalam populasi memiliki kekuatan tarik yang tersebar antara 420 MPa hingga 480 MPa (variabilitas produk)."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi kesalahan pelaporan: Menuliskan \"450 +/- 3 MPa\" tanpa label membuat pe..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi empiris membuktikan bahwa standar deviasi stabil sementara standar error mengecil seiring ukuran n.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Deviasi Standar Sejati Populasi (Sigma): 20.0"
+          "Langkah 3: Makna fisis Standar Error SE = 3.0 MPa: Nilai rata-rata sejati mu diestimasikan berada pada rentang 450 +/- 3 MPa dengan ketidakpastian 1-sigma (presisi estimasi peneliti).",
+          "Langkah 4: Evaluasi kesalahan pelaporan: Menuliskan \"450 +/- 3 MPa\" tanpa label membuat pembaca mengira serat tersebut diproduksi dengan toleransi presisi luar biasa (hanya bervariasi +/- 3 MPa), padahal variasi riil antar-serat adalah sepuluh kali lebih lebar (+/- 30 MPa).",
+          "[result: Interpretasi Ilmiah] Pembedaan eksplisit antara SD (sebaran produk) dan SE (presisi pengukuran) adalah syarat kejujuran pelaporan ilmiah."
         ],
-        "keyFormulaOrDiagram": "Deviasi Standar Sejati Populasi (Sigma): 20.0 | | Ukuran Sampel (n) | Standar Deviasi (s)..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi empiris membuktikan bahwa standar deviasi stabil sementara standar error mengecil seiring ukuran n.",
         "bulletPoints": [
-          "Perangkap: Menyajikan grafik batang dengan error bar tanpa memberi keterangan di keterangan gambar apakah error bar terse...",
-          "Perangkap: Memilih SE semata-mata agar grafik tampak memiliki error bar yang lebih pendek dan meyakinkan.",
-          "Perangkap: Mengalikan SE dengan n alih-alih akar n saat merekonstruksi varians dari artikel literatur orang lain."
-        ]
+          "Tujuan Algoritma: Simulasi empiris membuktikan bahwa standar deviasi stabil sementara standar error mengecil seiring ukuran n.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Deviasi Standar Sejati Populasi (Sigma): 20.0"
+        ],
+        "keyFormulaOrDiagram": "Deviasi Standar Sejati Populasi (Sigma): 20.0\n\nUkuran Sampel (n)  | Standar Deviasi (s)    | Standar Error (SE)  \n-----------------------------------------------------------------\nn =    10           |                 17.653 |                5.582",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Pastikan setiap tabel dan grafik memuat keterangan eksplisit: \"Nilai disajikan sebagai Rata-rata +/- SD (Stand...",
-          "Prosedur: Verifikasi bahwa rasio SD terhadap SE sama persis dengan akar kuadrat ukuran sampel: SD / SE = sqrt(n)."
-        ]
+          "[warning: Perangkap] Menyajikan grafik batang dengan error bar tanpa memberi keterangan di keterangan gambar apakah error bar tersebut SD, SE, atau 95% CI.",
+          "[warning: Perangkap] Memilih SE semata-mata agar grafik tampak memiliki error bar yang lebih pendek dan meyakinkan.",
+          "[warning: Perangkap] Mengalikan SE dengan n alih-alih akar n saat merekonstruksi varians dari artikel literatur orang lain."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Sebuah artikel ilmiah melaporkan rata-rata waktu respons server adalah 120 ms dengan error bar +/- 2 ms dari 10.000 perm...",
-          "Petunjuk: Perhatikan apakah +/- 2 ms tersebut adalah SD (variabilitas permintaan) ataukah SE (ketidakpastian r...",
-          "Solusi Kunci: Sangat berbahaya dan tidak aman. Nilai +/- 2 ms dengan n = 10.000 hampir dipastikan adalah Standar Error (SE = 2 ms). De..."
-        ]
+          "Prosedur: Pastikan setiap tabel dan grafik memuat keterangan eksplisit: \"Nilai disajikan sebagai Rata-rata +/- SD (Standar Deviasi)\" atau \"Rata-rata +/- SE\".",
+          "Prosedur: Verifikasi bahwa rasio SD terhadap SE sama persis dengan akar kuadrat ukuran sampel: SD / SE = sqrt(n)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Sebuah artikel ilmiah melaporkan rata-rata waktu respons server adalah 120 ms dengan error bar +/- 2 ms dari 10.000 permintaan data. Apakah aman bagi seorang insinyur untuk merancang batas timeout sistem pada 125 ms?",
+          "Petunjuk Analitis: Perhatikan apakah +/- 2 ms tersebut adalah SD (variabilitas permintaan) ataukah SE (ketidakpastian rata-rata).",
+          "Solusi Kunci: Sangat berbahaya dan tidak aman. Nilai +/- 2 ms dengan n = 10.000 hampir dipastikan adalah Standar Error (SE = 2 ms). Deviasi standar individualnya adalah s = SE * sqrt(n) = 2 * 100 = 200 ms! Artinya, banyak permintaan individual yang membutuhkan waktu di atas 300 ms atau 500 ms. Merancang timeout pada 125 ms akan menyebabkan puluhan persen permintaan mengalami kegagalan timeout."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -166,10 +203,10 @@ export const CH18_LESSONS: Record<string, Partial<Lesson>> = {
     "learningObjectives": [
       "Mendefinisikan tiga sifat matematis fundamental dari penduga parameter statistik.",
       "Membuktikan mengapa pembagi varians sampel menggunakan (n - 1) melalui Koreksi Bessel.",
-      "Memahami batas bawah varians Cram\u00e9r-Rao Lower Bound (CRLB) untuk efisiensi estimator."
+      "Memahami batas bawah varians Cramér-Rao Lower Bound (CRLB) untuk efisiensi estimator."
     ],
-    "content": "Dalam inferensi statistik, sebuah parameter populasi sejati $\\theta$ (seperti rata-rata $\\mu$, varians $\\sigma^2$, atau konstanta redaman) tidak pernah dapat diamati secara langsung. Peneliti menggunakan fungsi dari data sampel, yang disebut sebagai Penduga (*Estimator* $\\hat{\\theta} = g(X_1, X_2, \\dots, X_n)$), untuk menebak nilai $\\theta$.\n\nNamun, tidak semua rumus penduga memiliki mutu matematika yang sama. Statistika matematika menetapkan tiga kriteria mutu formal bagi sebuah estimator:\n1. Ketakbiasan (Unbiasedness): Ekspektasi matematis dari penduga sama persis dengan parameter populasi sejati: $\\mathbb{E}[\\hat{\\theta}] = \\theta$. Jika sebuah penduga dihitung pada jutaan sampel acak independen, rata-rata dari seluruh tebakan tersebut akan tepat mengenai sasaran tanpa pergeseran sistematis.\n2. Konsistensi (Consistency): Seiring bertambahnya ukuran sampel mendekati tak hingga ($n \\to \\infty$), probabilitas penduga menyimpang dari nilai sejati mengecil menuju nol. Estimator yang konsisten akan menjamin konvergensi peluang: $\\hat{\\theta}_n \\xrightarrow{P} \\theta$.\n3. Efisiensi (Efficiency): Di antara seluruh penduga yang tak bias, penduga yang efisien adalah penduga yang memiliki varians terkecil. Berdasarkan Teorema Cram\u00e9r-Rao, terdapat batas bawah teoretis minimum bagi varians penduga tak bias (CRLB). Estimator yang mencapai batas ini disebut sebagai Minimum Variance Unbiased Estimator (MVUE).",
-    "mathematicalFoundations": "1. Ketakbiasan dan Koreksi Bessel pada Varians Sampel:\nJika varians dihitung dengan pembagi naif $n$:\n$$S_{\\text{naif}}^2 = \\frac{1}{n} \\sum_{i=1}^n (X_i - \\bar{X})^2$$\nNilai ekspektasinya:\n$$\\mathbb{E}[S_{\\text{naif}}^2] = \\frac{n - 1}{n} \\sigma^2 \\neq \\sigma^2 \\quad (\\text{Bias Negatif / Underestimated})$$\n\nKoreksi Bessel mengalikan dengan faktor $\\frac{n}{n - 1}$:\n$$S^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (X_i - \\bar{X})^2 \\implies \\mathbb{E}[S^2] = \\sigma^2 \\quad (\\text{Unbiased})$$\n\n2. Batas Bawah Cram\u00e9r-Rao (Cram\u00e9r-Rao Lower Bound / CRLB):\nUntuk setiap estimator tak bias $\\hat{\\theta}$:\n$$\\text{Var}(\\hat{\\theta}) \\ge \\frac{1}{I_n(\\theta)} = \\frac{1}{n \\cdot I_1(\\theta)}$$\nDi mana Informasi Fisher $I_1(\\theta) = \\mathbb{E}\\left[ \\left( \\frac{\\partial \\ln f(X; \\theta)}{\\partial \\theta} \\right)^2 \\right]$.",
+    "content": "Dalam inferensi statistik, sebuah parameter populasi sejati $\\theta$ (seperti rata-rata $\\mu$, varians $\\sigma^2$, atau konstanta redaman) tidak pernah dapat diamati secara langsung. Peneliti menggunakan fungsi dari data sampel, yang disebut sebagai Penduga (*Estimator* $\\hat{\\theta} = g(X_1, X_2, \\dots, X_n)$), untuk menebak nilai $\\theta$.\n\nNamun, tidak semua rumus penduga memiliki mutu matematika yang sama. Statistika matematika menetapkan tiga kriteria mutu formal bagi sebuah estimator:\n1. Ketakbiasan (Unbiasedness): Ekspektasi matematis dari penduga sama persis dengan parameter populasi sejati: $\\mathbb{E}[\\hat{\\theta}] = \\theta$. Jika sebuah penduga dihitung pada jutaan sampel acak independen, rata-rata dari seluruh tebakan tersebut akan tepat mengenai sasaran tanpa pergeseran sistematis.\n2. Konsistensi (Consistency): Seiring bertambahnya ukuran sampel mendekati tak hingga ($n \\to \\infty$), probabilitas penduga menyimpang dari nilai sejati mengecil menuju nol. Estimator yang konsisten akan menjamin konvergensi peluang: $\\hat{\\theta}_n \\xrightarrow{P} \\theta$.\n3. Efisiensi (Efficiency): Di antara seluruh penduga yang tak bias, penduga yang efisien adalah penduga yang memiliki varians terkecil. Berdasarkan Teorema Cramér-Rao, terdapat batas bawah teoretis minimum bagi varians penduga tak bias (CRLB). Estimator yang mencapai batas ini disebut sebagai Minimum Variance Unbiased Estimator (MVUE).",
+    "mathematicalFoundations": "1. Ketakbiasan dan Koreksi Bessel pada Varians Sampel:\nJika varians dihitung dengan pembagi naif $n$:\n$$S_{\\text{naif}}^2 = \\frac{1}{n} \\sum_{i=1}^n (X_i - \\bar{X})^2$$\nNilai ekspektasinya:\n$$\\mathbb{E}[S_{\\text{naif}}^2] = \\frac{n - 1}{n} \\sigma^2 \\neq \\sigma^2 \\quad (\\text{Bias Negatif / Underestimated})$$\n\nKoreksi Bessel mengalikan dengan faktor $\\frac{n}{n - 1}$:\n$$S^2 = \\frac{1}{n - 1} \\sum_{i=1}^n (X_i - \\bar{X})^2 \\implies \\mathbb{E}[S^2] = \\sigma^2 \\quad (\\text{Unbiased})$$\n\n2. Batas Bawah Cramér-Rao (Cramér-Rao Lower Bound / CRLB):\nUntuk setiap estimator tak bias $\\hat{\\theta}$:\n$$\\text{Var}(\\hat{\\theta}) \\ge \\frac{1}{I_n(\\theta)} = \\frac{1}{n \\cdot I_1(\\theta)}$$\nDi mana Informasi Fisher $I_1(\\theta) = \\mathbb{E}\\left[ \\left( \\frac{\\partial \\ln f(X; \\theta)}{\\partial \\theta} \\right)^2 \\right]$.",
     "workedExample": {
       "problemStatement": "Buktikan secara numerik bahwa varians sampel dengan pembagi n menghasilkan bias meremehkan (underestimation) sebesar (n-1)/n pada sampel berukuran n = 5, sedangkan pembagi (n-1) menghasilkan estimasi varians yang tak bias sempurna.",
       "stepByStepSolution": [
@@ -216,99 +253,127 @@ export const CH18_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Sifat Estimator Statistik: Unbiasedness, Consistency, d...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Sifat Estimator Statistik: Unbiasedness, Consistency, dan Efficiency",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.3.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.2.",
-          "Capaian: Mendefinisikan tiga sifat matematis fundamental dari penduga parameter statistik.",
-          "Capaian: Membuktikan mengapa pembagi varians sampel menggunakan (n - 1) melalui Koreksi Bessel.",
-          "Capaian: Memahami batas bawah varians Cram\u00e9r-Rao Lower Bound (CRLB) untuk efisiensi estimator."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mendefinisikan tiga sifat matematis fundamental dari penduga parameter statistik.",
+          "Capaian 2: Membuktikan mengapa pembagi varians sampel menggunakan (n - 1) melalui Koreksi Bessel.",
+          "Capaian 3: Memahami batas bawah varians Cramér-Rao Lower Bound (CRLB) untuk efisiensi estimator."
         ],
-        "keyFormulaOrDiagram": "$$S_{\\text{naif}}^2 = \\frac{1}{n} \\sum_{i=1}^n (X_i - \\bar{X})^2$$"
+        "keyFormulaOrDiagram": "$$S_{\\text{naif}}^2 = \\frac{1}{n} \\sum_{i=1}^n (X_i - \\bar{X})^2$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.3.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Sifat Estimator Statistik: Unbiasedness, Consistency, d...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Sifat Estimator Statistik: Unbiasedness, Consistency, dan Efficiency",
+        "lead": "Dalam inferensi statistik, sebuah parameter populasi sejati $\\theta$ (seperti rata-rata $\\mu$, varians $\\sigma^2$, atau konstanta redaman) tidak pernah dapat diamati secara langsung.",
         "bulletPoints": [
-          "Dalam inferensi statistik, sebuah parameter populasi sejati $\\theta$ (seperti rata-rata $\\mu$, varians $\\sigma^2$, atau konst...",
-          "Namun, tidak semua rumus penduga memiliki mutu matematika yang sama. Statistika matematika menetapkan tiga kriteria mutu form...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Peneliti menggunakan fungsi dari data sampel, yang disebut sebagai Penduga (*Estimator* $\\hat{\\theta} = g(X_1, X_2, \\dots, X_n)$), untuk menebak nilai $\\theta$.",
+          "Namun, tidak semua rumus penduga memiliki mutu matematika yang sama.",
+          "Statistika matematika menetapkan tiga kriteria mutu formal bagi sebuah estimator: 1."
+        ],
+        "keyFormulaOrDiagram": "$\\theta$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dalam inferensi statistik, sebuah parameter populasi sejati $\\theta$ (seperti rata-rata $\\mu$, varians $\\sigma^2$, atau konst...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Ketakbiasan dan Koreksi Bessel pada Varians Sampel:",
         "bulletPoints": [
-          "1. Ketakbiasan dan Koreksi Bessel pada Varians Sampel:",
           "Jika varians dihitung dengan pembagi naif $n$:",
-          "Nilai ekspektasinya:"
+          "Nilai ekspektasinya:",
+          "Koreksi Bessel mengalikan dengan faktor $\\frac{n}{n - 1}$:"
         ],
-        "keyFormulaOrDiagram": "$$S_{\\text{naif}}^2 = \\frac{1}{n} \\sum_{i=1}^n (X_i - \\bar{X})^2$$"
+        "keyFormulaOrDiagram": "$$S_{\\text{naif}}^2 = \\frac{1}{n} \\sum_{i=1}^n (X_i - \\bar{X})^2$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Buktikan secara numerik bahwa varians sampel dengan pembagi n menghasilkan bias meremehkan (underestimation) sebesar (n-1)/n pada sampel ber...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Buktikan secara numerik bahwa varians sampel dengan pembagi n menghasilkan bias meremehkan (underestimation) sebesar (n-1)/n pada sampel berukuran n = 5, sedangkan pembagi (n-1) menghasilkan estimasi varians yang tak bias sempurna.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Ambil populasi normal standar dengan varians sejati sigma^2 = 1.00.",
-          "Langkah 2: Ambil sampel berulang berukuran n = 5 sebanyak 100.000 kali.",
-          "Langkah 3: Hitung rata-rata varians dengan pembagi n = 5: E[S_naif^2] = (5 - 1) / 5 * 1.00 = 4/5 * 1.00 = 0.80...",
-          "Interpretasi: Koreksi Bessel (n - 1) mengompensasi hilangnya satu derajat kebebasan yang telah digunakan untuk menghitung rata-rata sa..."
+          "Langkah 2: Ambil sampel berulang berukuran n = 5 sebanyak 100.000 kali."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung rata-rata varians dengan pembagi (n - 1) = 4: E[S_unbiased^2] = 5/4 * 0...."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung rata-rata varians dengan pembagi n = 5: E[S_naif^2] = (5 - 1) / 5 * 1.00 = 4/5 * 1.00 = 0.800 (mengalami bias 20% lebih rendah).",
+          "Langkah 4: Hitung rata-rata varians dengan pembagi (n - 1) = 4: E[S_unbiased^2] = 5/4 * 0.800 = 1.000 (tepat sama dengan sigma^2 sejati).",
+          "[result: Interpretasi Ilmiah] Koreksi Bessel (n - 1) mengompensasi hilangnya satu derajat kebebasan yang telah digunakan untuk menghitung rata-rata sampel bar{X}."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Monte Carlo membuktikan ketakbiasan pembagi (n-1) versus bias negatif pembagi n pada varians sampel.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Monte Carlo membuktikan ketakbiasan pembagi (n-1) versus bias negatif pembagi n pada varians sampel.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Varians Sejati Populasi (Sigma^2) : 4.0000"
+          "Tujuan Algoritma: Simulasi Monte Carlo membuktikan ketakbiasan pembagi (n-1) versus bias negatif pembagi n pada varians sampel.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Varians Sejati Populasi (Sigma^2) : 4.0000"
         ],
-        "keyFormulaOrDiagram": "Varians Sejati Populasi (Sigma^2) : 4.0000 | Rata-rata Estimasi Pembagi n : 3.1979 (Teori:..."
+        "keyFormulaOrDiagram": "Varians Sejati Populasi (Sigma^2) : 4.0000\nRata-rata Estimasi Pembagi n      : 3.1979 (Teori: 3.2000)\nRata-rata Estimasi Pembagi (n-1)  : 3.9974 (Unbiased sempurna!)\nPersentase Bias Pembagi n         : -20.05%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan fungsi np.var() default di NumPy tanpa menyadari bahwa defaultnya adalah ddof=0 (pembagi n yang bi...",
-          "Perangkap: Mengira bahwa karena S^2 tak bias untuk sigma^2, maka S (standar deviasi) otomatis tak bias untuk sigma (akar...",
-          "Perangkap: Mengacaukan sifat ketakbiasan (berlaku untuk setiap n) dengan konsistensi (berlaku asimtotik saat n mendekati..."
-        ]
+          "[warning: Perangkap] Menggunakan fungsi np.var() default di NumPy tanpa menyadari bahwa defaultnya adalah ddof=0 (pembagi n yang bias).",
+          "[warning: Perangkap] Mengira bahwa karena S^2 tak bias untuk sigma^2, maka S (standar deviasi) otomatis tak bias untuk sigma (akar kuadrat Jensen membuat S sedikit bias ke bawah).",
+          "[warning: Perangkap] Mengacaukan sifat ketakbiasan (berlaku untuk setiap n) dengan konsistensi (berlaku asimtotik saat n mendekati tak hingga)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan argumen ddof=1 di NumPy/Pandas untuk setiap perhitungan varians dan standar deviasi sampel.",
-          "Prosedur: Periksa apakah estimator yang diusulkan dalam algoritma machine learning memenuhi syarat konsistensi asimtotik..."
-        ]
+          "Prosedur: Periksa apakah estimator yang diusulkan dalam algoritma machine learning memenuhi syarat konsistensi asimtotik."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Jika estimator A memiliki sedikit bias tetapi memiliki varians yang jauh lebih kecil dibandingkan estimator B yang tak b...",
-          "Petunjuk: Perhatikan metrik Mean Squared Error (MSE = Bias^2 + Varians).",
-          "Solusi Kunci: Dalam rekayasa sistem nyata, tujuan akhir adalah meminimalkan total kesalahan kuadrat rata-rata (MSE). Melalui trade-off..."
-        ]
+          "Pertanyaan Uji: Jika estimator A memiliki sedikit bias tetapi memiliki varians yang jauh lebih kecil dibandingkan estimator B yang tak bias murni, mengapa peneliti sering lebih memilih estimator A?",
+          "Petunjuk Analitis: Perhatikan metrik Mean Squared Error (MSE = Bias^2 + Varians).",
+          "Solusi Kunci: Dalam rekayasa sistem nyata, tujuan akhir adalah meminimalkan total kesalahan kuadrat rata-rata (MSE). Melalui trade-off bias-varians, menolerir sedikit bias kecil demi mendapatkan penurunan varians yang masif sering kali menghasilkan estimasi yang jauh lebih stabil dan akurat secara praktis (MSE total lebih rendah). Pendekatan ini merupakan dasar dari regresi Ridge dan regularisasi LASSO."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -374,99 +439,127 @@ export const CH18_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Estimasi Titik: Method of Moments vs Maximum Likelihood...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Estimasi Titik: Method of Moments vs Maximum Likelihood Estimation (MLE)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.3.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.3.",
-          "Capaian: Menurunkan estimator parameter menggunakan Metode Momen (Method of Moments / MoM).",
-          "Capaian: Merumuskan fungsi Likelihood dan Log-Likelihood untuk Maximum Likelihood Estimation (MLE).",
-          "Capaian: Memahami keunggulan asimtotik MLE (konsistensi dan efisiensi CRLB)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menurunkan estimator parameter menggunakan Metode Momen (Method of Moments / MoM).",
+          "Capaian 2: Merumuskan fungsi Likelihood dan Log-Likelihood untuk Maximum Likelihood Estimation (MLE).",
+          "Capaian 3: Memahami keunggulan asimtotik MLE (konsistensi dan efisiensi CRLB)."
         ],
-        "keyFormulaOrDiagram": "$$L(\\theta; \\mathbf{X}) = \\prod_{i=1}^n f(x_i; \\theta)$$"
+        "keyFormulaOrDiagram": "$$L(\\theta; \\mathbf{X}) = \\prod_{i=1}^n f(x_i; \\theta)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.3.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Estimasi Titik: Method of Moments vs Maximum Likelihood...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Estimasi Titik: Method of Moments vs Maximum Likelihood Estimation (MLE)",
+        "lead": "Ketika kita telah menetapkan keluarga distribusi parametrik bagi suatu proses fisik (misalnya memutuskan bahwa waktu hidup sensor mengikuti distribusi Weibull atau kedatangan paket mengikuti Poisson), langkah krusial berikutnya adalah mengestimasi parameter numerik spesifik dari distribusi tersebut berdasarkan data sampel.",
         "bulletPoints": [
-          "Ketika kita telah menetapkan keluarga distribusi parametrik bagi suatu proses fisik (misalnya memutuskan bahwa waktu hidup se...",
-          "1. Metode Momen (Method of Moments / MoM): Dipelopori oleh Karl Pearson pada akhir abad ke-19. Prinsipnya sangat intuitif: me...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Dua kerangka kerja estimasi titik (*point estimation*) yang paling dominan dalam sains komputasi adalah Metode Momen dan Maximum Likelihood Estimation (MLE).",
+          "1.",
+          "Metode Momen (Method of Moments / MoM): Dipelopori oleh Karl Pearson pada akhir abad ke-19."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Ketika kita telah menetapkan keluarga distribusi parametrik bagi suatu proses fisik (misalnya memutuskan bahwa waktu hidup se...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 24,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Maximum Likelihood Estimation (MLE):",
         "bulletPoints": [
-          "1. Formulasi Maximum Likelihood Estimation (MLE):",
-          "Diberikan sampel independen berdistribusi identik (i.i.d.) $\\mathbf{X} = \\{x_1, x_2, \\dots, x_n\\}$ dengan fung...",
-          "Fungsi Likelihood:"
+          "Diberikan sampel independen berdistribusi identik (i.i.d.) $\\mathbf{X} = \\{x_1, x_2, \\dots, x_n\\}$ dengan fungsi kerapatan $f(x; \\theta)$.",
+          "Fungsi Likelihood:",
+          "Fungsi Log-Likelihood (mengubah perkalian menjadi penjumlahan untuk kestabilan numerik):"
         ],
-        "keyFormulaOrDiagram": "$$L(\\theta; \\mathbf{X}) = \\prod_{i=1}^n f(x_i; \\theta)$$"
+        "keyFormulaOrDiagram": "$$L(\\theta; \\mathbf{X}) = \\prod_{i=1}^n f(x_i; \\theta)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 25,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan n pengamatan waktu transmisi paket IoT yang dimodelkan mengikuti distribusi Eksponensial: f(x; lambda) = lambda * exp(-lambda * x)...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Susun fungsi Likelihood L(lambda): L(lambda) = Product_{i=1}^n [lambda * exp(-lambda * x_i)] = lamb...",
-          "Langkah 2: Ambil logaritma natural untuk menyusun Log-Likelihood: ell(lambda) = n * ln(lambda) - lambda * Sum_...",
-          "Langkah 3: Ambil turunan parsial terhadap lambda dan samakan dengan nol: d(ell)/d(lambda) = (n / lambda) - Sum...",
-          "Interpretasi: Estimator MLE untuk parameter laju eksponensial lambda adalah kebalikan dari nilai rata-rata sampel aritmatika (lambda_h..."
+          "Konteks Kasus: Diberikan n pengamatan waktu transmisi paket IoT yang dimodelkan mengikuti distribusi Eksponensial: f(x; lambda) = lambda * exp(-lambda * x). Turunkan rumus analitis Maximum Likelihood Estimator (MLE) untuk parameter laju transmisi lambda.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Periksa turunan kedua: d^2(ell)/d(lambda)^2 = -n / lambda^2 < 0 (Memenuhi syara..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 26,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Susun fungsi Likelihood L(lambda): L(lambda) = Product_{i=1}^n [lambda * exp(-lambda * x_i)] = lambda^n * exp(-lambda * Sum_{i=1}^n x_i).",
+          "Langkah 2: Ambil logaritma natural untuk menyusun Log-Likelihood: ell(lambda) = n * ln(lambda) - lambda * Sum_{i=1}^n x_i.",
+          "Langkah 3: Ambil turunan parsial terhadap lambda dan samakan dengan nol:\nd(ell)/d(lambda) = (n / lambda) - Sum_{i=1}^n x_i = 0."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Selesaikan untuk lambda:\nn / lambda = Sum_{i=1}^n x_i -> lambda_hat = n / Sum_{i=1}^n x_i = 1 / bar{X}.",
+          "Langkah 5: Periksa turunan kedua: d^2(ell)/d(lambda)^2 = -n / lambda^2 < 0 (Memenuhi syarat maksimum mutlak).",
+          "[result: Interpretasi Ilmiah] Estimator MLE untuk parameter laju eksponensial lambda adalah kebalikan dari nilai rata-rata sampel aritmatika (lambda_hat = 1 / bar{X})."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Penurunan estimasi parameter distribusi Eksponensial menggunakan rumus analitis MLE dan verifikasi optimasi numerik SciPy.",
         "bulletPoints": [
-          "Deskripsi: Penurunan estimasi parameter distribusi Eksponensial menggunakan rumus analitis MLE dan verifikasi optimasi numerik SciPy.",
-          "Dependensi Pustaka: scipy.optimize, scipy.stats, numpy",
-          "Keluaran Diharapkan: Nilai Parameter Sejati (Lambda) : 0.2500"
+          "Tujuan Algoritma: Penurunan estimasi parameter distribusi Eksponensial menggunakan rumus analitis MLE dan verifikasi optimasi numerik SciPy.",
+          "Dependensi Pustaka Ilmiah: scipy.optimize, scipy.stats, numpy",
+          "Keluaran Terverifikasi: Nilai Parameter Sejati (Lambda) : 0.2500"
         ],
-        "keyFormulaOrDiagram": "Nilai Parameter Sejati (Lambda) : 0.2500 | Estimasi MLE Analitis : 0.2543 | Estimasi MLE O..."
+        "keyFormulaOrDiagram": "Nilai Parameter Sejati (Lambda) : 0.2500\nEstimasi MLE Analitis           : 0.2543\nEstimasi MLE Optimasi Numerik   : 0.2543\nSelisih Konvergensi Numerik     : 0.00e+00",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 29,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengoptimalkan fungsi Likelihood mentah perkalian produk secara numerik alih-alih Log-Likelihood (memicu numer...",
-          "Perangkap: Mengabaikan batasan domain parameter (misalnya membiarkan parameter deviasi standar bernilai negatif dalam alg...",
-          "Perangkap: Mengasumsikan MLE selalu tak bias pada sampel kecil (misal MLE varians normal adalah pembagi n yang bias)."
-        ]
+          "[warning: Perangkap] Mengoptimalkan fungsi Likelihood mentah perkalian produk secara numerik alih-alih Log-Likelihood (memicu numerical underflow ekstrem mendekati 0.0).",
+          "[warning: Perangkap] Mengabaikan batasan domain parameter (misalnya membiarkan parameter deviasi standar bernilai negatif dalam algoritma optimasi).",
+          "[warning: Perangkap] Mengasumsikan MLE selalu tak bias pada sampel kecil (misal MLE varians normal adalah pembagi n yang bias)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 30,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan matriks Hessian negatif (Observed Fisher Information) pada titik optimum MLE untuk menghitung standar...",
-          "Prosedur: Periksa kestabilan optimasi numerik dengan menguji beberapa titik inisialisasi awal (*random multi-start*) unt..."
-        ]
+          "Prosedur: Gunakan matriks Hessian negatif (Observed Fisher Information) pada titik optimum MLE untuk menghitung standar error asimtotik penduga.",
+          "Prosedur: Periksa kestabilan optimasi numerik dengan menguji beberapa titik inisialisasi awal (*random multi-start*) untuk menghindari jebakan optimum lokal."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 31,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa hampir seluruh pustaka perangkat lunak komputasi ilmiah (seperti SciPy atau PyTorch) selalu meminimalkan \"Negati...",
-          "Petunjuk: Perhatikan algoritma optimasi numerik standar (gradient descent) dan pencegahan floating-point under...",
-          "Solusi Kunci: Perkalian ribuan probabilitas kecil (p < 1) menghasilkan angka yang sangat mendekati nol dan melampaui batas presisi rep..."
-        ]
+          "Pertanyaan Uji: Mengapa hampir seluruh pustaka perangkat lunak komputasi ilmiah (seperti SciPy atau PyTorch) selalu meminimalkan \"Negatif Log-Likelihood\" alih-alih memaksimalkan \"Likelihood\"?",
+          "Petunjuk Analitis: Perhatikan algoritma optimasi numerik standar (gradient descent) dan pencegahan floating-point underflow.",
+          "Solusi Kunci: Perkalian ribuan probabilitas kecil (p < 1) menghasilkan angka yang sangat mendekati nol dan melampaui batas presisi representasi floating-point komputer (*arithmetic underflow*). Menggunakan logaritma mengubah perkalian menjadi penjumlahan yang stabil secara numerik. Karena sebagian besar pustaka komputasi dirancang untuk algoritma minimasi (seperti gradient descent), mengalikan log-likelihood dengan -1 (Negative Log-Likelihood) memungkinkan pemanfaatan rutin minimasi standar."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -531,100 +624,138 @@ export const CH18_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penurunan Numerik Fungsi Log-Likelihood Menggunakan Pyt...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penurunan Numerik Fungsi Log-Likelihood Menggunakan Python SciPy",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 3.3.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.4.",
-          "Capaian: Menuliskan fungsi Negative Log-Likelihood (NLL) kustom untuk model rekayasa non-standar.",
-          "Capaian: Melakukan fitting distribusi kompleks menggunakan modul scipy.optimize dan scipy.stats.",
-          "Capaian: Mengekstrak matriks kovarians parameter asimtotik dari inversi matriks Hessian numerik."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 3.3.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menuliskan fungsi Negative Log-Likelihood (NLL) kustom untuk model rekayasa non-standar.",
+          "Capaian 2: Melakukan fitting distribusi kompleks menggunakan modul scipy.optimize dan scipy.stats.",
+          "Capaian 3: Mengekstrak matriks kovarians parameter asimtotik dari inversi matriks Hessian numerik."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{I}_{\\text{obs}}(\\hat{\\boldsymbol{\\theta}}) = -\\left. \\nabla^2 \\ell(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}} = \\left. \\mathbf{H}_{\\text{NLL}}(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{I}_{\\text{obs}}(\\hat{\\boldsymbol{\\theta}}) = -\\left. \\nabla^2 \\ell(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}} = \\left. \\mathbf{H}_{\\text{NLL}}(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 3.3.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penurunan Numerik Fungsi Log-Likelihood Menggunakan Pyt...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penurunan Numerik Fungsi Log-Likelihood Menggunakan Python SciPy",
+        "lead": "Dalam banyak permasalahan rekayasa tingkat lanjut (seperti pemodelan degradasi sensor fotovoltaik dengan sensor terpotong atau campuran respon getaran struktur), fungsi kerapatan probabilitas sistem tidak memiliki solusi analitis tertutup (*closed-form analytical solution*) untuk persamaan skor MLE-nya.",
         "bulletPoints": [
-          "Dalam banyak permasalahan rekayasa tingkat lanjut (seperti pemodelan degradasi sensor fotovoltaik dengan sensor terpotong ata...",
-          "Dalam situasi ini, estimasi parameter diselesaikan secara komputasional menggunakan Penurunan Numerik Fungsi Log-Likelihood (...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Peneliti tidak dapat menurunkan rumus turunan manual menggunakan kertas dan pensil.",
+          "Dalam situasi ini, estimasi parameter diselesaikan secara komputasional menggunakan Penurunan Numerik Fungsi Log-Likelihood (*Numerical Maximum Likelihood Estimation*)."
         ],
-        "keyFormulaOrDiagram": "Prosedur implementasi komputasi numerik MLE: 1. Formulasi Fungsi Negatif Log-Likelihood (N..."
+        "keyFormulaOrDiagram": "$\\boldsymbol{\\theta}$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Prosedur implementasi komputasi numerik MLE: 1.",
         "bulletPoints": [
-          "Prosedur implementasi komputasi numerik MLE: 1. Formulasi Fungsi Negatif Log-Likelihood (NLL): Menulis fungsi Python yang men...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Formulasi Fungsi Negatif Log-Likelihood (NLL): Menulis fungsi Python yang menerima vektor parameter $\\boldsymbol{\\theta}$ dan array data observasi $\\mathbf{x}$, lalu mengembalikan skalar nilai $-\\ln L(\\boldsymbol{\\theta}; \\mathbf{x})$.",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Matriks Informasi Fisher Teramati (*Observed Fisher Information Matrix* $\\mathcal{I}_{\\text{obs}}$):",
         "bulletPoints": [
-          "Matriks Informasi Fisher Teramati (*Observed Fisher Information Matrix* $\\mathcal{I}_{\\text{obs}}$):",
           "Di mana elemen matriks Hessian:",
-          "Matriks Kovarians Asimtotik Parameter $\\boldsymbol{\\Sigma}_{\\hat{\\theta}}$:"
+          "Matriks Kovarians Asimtotik Parameter $\\boldsymbol{\\Sigma}_{\\hat{\\theta}}$:",
+          "Standar Error Asimtotik untuk parameter ke-$j$:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{I}_{\\text{obs}}(\\hat{\\boldsymbol{\\theta}}) = -\\left. \\nabla^2 \\ell(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}} = \\left. \\mathbf{H}_{\\text{NLL}}(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{I}_{\\text{obs}}(\\hat{\\boldsymbol{\\theta}}) = -\\left. \\nabla^2 \\ell(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}} = \\left. \\mathbf{H}_{\\text{NLL}}(\\boldsymbol{\\theta}) \\right|_{\\boldsymbol{\\theta} = \\hat{\\boldsymbol{\\theta}}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah dataset laju transmisi bit radio (Mbps) difitting ke distribusi Gaussian N(mu, sigma^2) menggunakan algoritma minimasi numerik NLL. P...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah dataset laju transmisi bit radio (Mbps) difitting ke distribusi Gaussian N(mu, sigma^2) menggunakan algoritma minimasi numerik NLL. Pada titik optimum konvergen mu_hat = 54.2 Mbps dan sigma_hat = 4.8 Mbps dengan ukuran sampel n = 200, matriks Hessian numerik H yang dihasilkan adalah H = [[8.68, 0], [0, 17.36]]. Hitung Standar Error asimtotik dari mu_hat dan sigma_hat.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Inversikan matriks diagonal Hessian: H^(-1) = [[1 / 8.68, 0], [0, 1 / 17.36]] = [[0.1152, 0], [0, 0...",
+          "Langkah 1: Inversikan matriks diagonal Hessian: H^(-1) = [[1 / 8.68, 0], [0, 1 / 17.36]] = [[0.1152, 0], [0, 0.0576]].",
           "Langkah 2: Ambil elemen diagonal untuk varians asimtotik: Var(mu_hat) = 0.1152; Var(sigma_hat) = 0.0576.",
-          "Langkah 3: Hitung Standar Error dengan mengambil akar kuadrat:",
-          "Interpretasi: Parameter diestimasikan sebagai mu = (54.20 +/- 0.34) Mbps dan sigma = (4.80 +/- 0.24) Mbps dengan keyakinan asimtotik 1..."
+          "Langkah 3: Hitung Standar Error dengan mengambil akar kuadrat:"
         ],
-        "keyFormulaOrDiagram": "SE(sigma_hat) = sqrt(0.0576) = 0.240 Mbps."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "SE(mu_hat) = sqrt(0.1152) = 0.339 Mbps.",
+          "SE(sigma_hat) = sqrt(0.0576) = 0.240 Mbps.",
+          "[result: Interpretasi Ilmiah] Parameter diestimasikan sebagai mu = (54.20 +/- 0.34) Mbps dan sigma = (4.80 +/- 0.24) Mbps dengan keyakinan asimtotik 1-sigma."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Fitting distribusi Gaussian kustom via minimasi numerik NLL dengan ekstraksi standar error dari matriks Hessian.",
         "bulletPoints": [
-          "Deskripsi: Fitting distribusi Gaussian kustom via minimasi numerik NLL dengan ekstraksi standar error dari matriks Hessian.",
-          "Dependensi Pustaka: scipy.optimize, numpy",
-          "Keluaran Diharapkan: Hasil Estimasi Mu : 54.14 +/- 0.334 Mbps (Sejati: 54.20)"
+          "Tujuan Algoritma: Fitting distribusi Gaussian kustom via minimasi numerik NLL dengan ekstraksi standar error dari matriks Hessian.",
+          "Dependensi Pustaka Ilmiah: scipy.optimize, numpy",
+          "Keluaran Terverifikasi: Hasil Estimasi Mu    : 54.14 +/- 0.334 Mbps (Sejati: 54.20)"
         ],
-        "keyFormulaOrDiagram": "Hasil Estimasi Mu : 54.14 +/- 0.334 Mbps (Sejati: 54.20) | Hasil Estimasi Sigma : 4.72 +/-..."
+        "keyFormulaOrDiagram": "Hasil Estimasi Mu    : 54.14 +/- 0.334 Mbps (Sejati: 54.20)\nHasil Estimasi Sigma : 4.72 +/- 0.236 Mbps (Sejati: 4.80)\nStatus Konvergensi   : True (Pesan: CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Tidak memeriksa status konvergensi hasil optimasi (hasil.success) dan langsung menggunakan nilai parameter dar...",
-          "Perangkap: Memilih tebakan parameter awal (initial guess) yang terlalu jauh dari rentang data sehingga memicu overflow ni...",
-          "Perangkap: Mengabaikan batasan nilai parameter yang tidak boleh bernilai negatif secara fisis."
-        ]
+          "[warning: Perangkap] Tidak memeriksa status konvergensi hasil optimasi (hasil.success) dan langsung menggunakan nilai parameter dari optimasi yang gagal.",
+          "[warning: Perangkap] Memilih tebakan parameter awal (initial guess) yang terlalu jauh dari rentang data sehingga memicu overflow nilai fungsi.",
+          "[warning: Perangkap] Mengabaikan batasan nilai parameter yang tidak boleh bernilai negatif secara fisis."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan metode optimasi alternatif (seperti Nelder-Mead atau Powell) untuk mengonfirmasi bahwa konvergensi men...",
+          "Prosedur: Gunakan metode optimasi alternatif (seperti Nelder-Mead atau Powell) untuk mengonfirmasi bahwa konvergensi mencapai global minimum.",
           "Prosedur: Bandingkan kurva PDF hasil fitting numerik dengan histogram data empiris menggunakan overlay plot."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 42,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Bagaimana cara mendeteksi bahwa proses minimasi numerik NLL terjebak pada minimum lokal palsu?",
-          "Petunjuk: Perhatikan teknik inisialisasi ulang dengan multi-start parameter acak.",
-          "Solusi Kunci: Peneliti dapat menjalankan algoritma optimasi beberapa kali (misal 20 kali) menggunakan nilai tebakan awal yang berbeda-..."
-        ]
+          "Petunjuk Analitis: Perhatikan teknik inisialisasi ulang dengan multi-start parameter acak.",
+          "Solusi Kunci: Peneliti dapat menjalankan algoritma optimasi beberapa kali (misal 20 kali) menggunakan nilai tebakan awal yang berbeda-beda dan dibangkitkan secara acak melintasi ruang pencarian (*random restart*). Jika nilai NLL minimum yang dicapai berbeda-beda antar-iterasi, algoritma dipastikan mengalami masalah jebakan minimum lokal (multimodal likelihood surface)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

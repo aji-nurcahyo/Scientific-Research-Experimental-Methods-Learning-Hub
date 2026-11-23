@@ -18,7 +18,7 @@ export const CH49_LESSONS: Record<string, Partial<Lesson>> = {
       "problemStatement": "Seorang peneliti di ITERA memiliki manuskrip bidang smart grid. Terdapat tiga kandidat jurnal: Jurnal A (Q1, CiteScore 8.5, Review 6 bulan, APC 2500 USD), Jurnal B (Q2, CiteScore 4.2, Review 2 bulan, APC 0 USD - Diamond OA), dan Jurnal C (Klaim terindeks cepat, menjanjikan acceptance dalam 5 hari, APC 500 USD). Evaluasi ketiga jurnal ini menggunakan prinsip bibliometrik dan filter predator.",
       "stepByStepSolution": [
         "Langkah 1: Audit Integritas Jurnal C: Janji penerimaan 5 hari adalah indikator merah absolut (definite red flag) dari jurnal predator. Proses peer-review ilmiah yang ketat mustahil selesai dalam 5 hari kerja. Eliminasi Jurnal C seketika.",
-        "Langkah 2: Evaluasi Trade-off Jurnal A vs Jurnal B: Jurnal A memiliki reputasi sangat tinggi (Q1, CiteScore 8.5) namun memiliki kendala APC tinggi ($2.500) dan durasi review lama (6 bulan). Jurnal B (Q2) tidak mengenakan biaya (Diamond OA) dan review relatif cepat (2 bulan).",
+        "Langkah 2: Evaluasi Trade-off Jurnal A vs Jurnal B: Jurnal A memiliki reputasi sangat tinggi (Q1, CiteScore 8.5) namun memiliki kendala APC tinggi (USD 2.500) dan durasi review lama (6 bulan). Jurnal B (Q2) tidak mengenakan biaya (Diamond OA) dan review relatif cepat (2 bulan).",
         "Langkah 3: Terapkan pemetaan tujuan riset: Jika peneliti memiliki dana hibah institusional yang memadai dan mengejar target kelulusan doktor jangka panjang, Jurnal A adalah pilihan utama. Jika peneliti memiliki tenggat waktu kelulusan mendesak atau keterbatasan anggaran, Jurnal B menawarkan jalur publikasi terhormat tanpa risiko predator."
       ],
       "resultInterpretation": "Eliminasi Jurnal C menyelamatkan peneliti dari pencemaran reputasi akademik, sementara pemilihan Jurnal A atau B dapat diputuskan berdasarkan ketersediaan dana hibah institusi."
@@ -63,99 +63,135 @@ export const CH49_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Matriks Pemilihan Jurnal Target: Menghindari Jurnal Pre...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Matriks Pemilihan Jurnal Target: Menghindari Jurnal Predator dan Menilai Ruang Lingkup",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.5.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.1.",
-          "Capaian: Memahami metrik bibliometrik internasional: Journal Impact Factor (JIF), CiteScore, SNIP, dan SJR.",
-          "Capaian: Mengonstruksi matriks multi-kriteria untuk pemilihan jurnal target yang selaras dengan ruang lingkup riset.",
-          "Capaian: Menerapkan checklist forensik untuk mengidentifikasi dan menghindari jurnal predator atau bajakan (hijacked jo..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami metrik bibliometrik internasional: Journal Impact Factor (JIF), CiteScore, SNIP, dan SJR.",
+          "Capaian 2: Mengonstruksi matriks multi-kriteria untuk pemilihan jurnal target yang selaras dengan ruang lingkup riset.",
+          "Capaian 3: Menerapkan checklist forensik untuk mengidentifikasi dan menghindari jurnal predator atau bajakan (hijacked journals)."
         ],
-        "keyFormulaOrDiagram": "$$JIF_y = \\frac{C_y(y-1) + C_y(y-2)}{P(y-1) + P(y-2)}$$"
+        "keyFormulaOrDiagram": "$$JIF_y = \\frac{C_y(y-1) + C_y(y-2)}{P(y-1) + P(y-2)}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.5.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Matriks Pemilihan Jurnal Target: Menghindari Jurnal Pre...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Matriks Pemilihan Jurnal Target: Menghindari Jurnal Predator dan Menilai Ruang Lingkup",
+        "lead": "Memilih jurnal ilmiah yang tepat untuk mempublikasikan naskah riset adalah keputusan strategis yang menentukan visibilitas, dampak sitasi, dan pengakuan akademik peneliti.",
         "bulletPoints": [
-          "Memilih jurnal ilmiah yang tepat untuk mempublikasikan naskah riset adalah keputusan strategis yang menentukan visibilitas, d...",
-          "Metrik Bibliometrik Evaluasi Jurnal: Kualitas dan pengaruh jurnal dievaluasi menggunakan metrik kuantitatif terstandarisasi:...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Publikasi di jurnal yang tidak memiliki kesesuaian ruang lingkup (out of scope) akan berujung pada penolakan instan oleh editor (desk rejection).",
+          "Sebaliknya, terjebak mempublikasikan naskah di jurnal predator (predatory journal) dapat menghancurkan reputasi akademik peneliti secara permanen karena karya tersebut tidak melalui proses peninjauan ilmiah yang sah.",
+          "Metrik Bibliometrik Evaluasi Jurnal: Kualitas dan pengaruh jurnal dievaluasi menggunakan metrik kuantitatif terstandarisasi: 1.",
+          "Journal Impact Factor (Clarivate Web of Science - JCR): Mengukur frekuensi sitasi rata-rata dalam rentang waktu dua tahun terakhir."
         ],
-        "keyFormulaOrDiagram": "Bahaya Ekosistem Jurnal Predator dan Hijacked Journals: Jurnal predator adalah entitas pen..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Bahaya Ekosistem Jurnal Predator dan Hijacked Journals: Jurnal predator adalah entitas penerbitan yang memprioritaskan keuntungan finansial (melalui Article Processing Charges - APC) di atas integritas ilmiah.",
         "bulletPoints": [
-          "Bahaya Ekosistem Jurnal Predator dan Hijacked Journals: Jurnal predator adalah entitas penerbitan yang memprioritaskan keuntu...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Karakteristik utama jurnal predator meliputi: - Waktu peninjauan yang sangat singkat dan tidak realistis (misalnya menjanjikan \"accepted within 3 days\"). - Komite editor fiktif atau mencantumkan nama ilmuwan ternama tanpa izin. - Ketiadaan proses peer-review substansial (artikel apa pun diterima selama biaya dibayar). - Mengirimkan email spam massal yang memuji-muji draf karya peneliti secara agresif. - Fenomena Hijacked Journals: Sindikat kriminal menduplikasi nama dan tampilan situs web jurnal resmi yang sudah non-aktif atau lambat memperbarui domain untuk menipu peneliti."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Metrik Bibliometrik:",
         "bulletPoints": [
-          "Formulasi Matematis Metrik Bibliometrik:",
           "1. Journal Impact Factor (JIF) pada tahun $y$:",
-          "di mana $C_y(t)$ adalah jumlah sitasi yang diterima pada tahun $y$ atas artikel yang terbit pada tahun $t$, da..."
+          "di mana $C_y(t)$ adalah jumlah sitasi yang diterima pada tahun $y$ atas artikel yang terbit pada tahun $t$, dan $P(t)$ adalah jumlah citable items (artikel penelitian dan ulasan) yang terbit pada tahun $t$.",
+          "2. Scopus CiteScore pada tahun $y$:"
         ],
-        "keyFormulaOrDiagram": "$$JIF_y = \\frac{C_y(y-1) + C_y(y-2)}{P(y-1) + P(y-2)}$$"
+        "keyFormulaOrDiagram": "$$JIF_y = \\frac{C_y(y-1) + C_y(y-2)}{P(y-1) + P(y-2)}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang peneliti di ITERA memiliki manuskrip bidang smart grid. Terdapat tiga kandidat jurnal: Jurnal A (Q1, CiteScore 8.5, Review 6 bulan,...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang peneliti di ITERA memiliki manuskrip bidang smart grid. Terdapat tiga kandidat jurnal: Jurnal A (Q1, CiteScore 8.5, Review 6 bulan, APC 2500 USD), Jurnal B (Q2, CiteScore 4.2, Review 2 bulan, APC 0 USD - Diamond OA), dan Jurnal C (Klaim terindeks cepat, menjanjikan acceptance dalam 5 hari, APC 500 USD). Evaluasi ketiga jurnal ini menggunakan prinsip bibliometrik dan filter predator.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Audit Integritas Jurnal C: Janji penerimaan 5 hari adalah indikator merah absolut (definite red fla...",
-          "Langkah 2: Evaluasi Trade-off Jurnal A vs Jurnal B: Jurnal A memiliki reputasi sangat tinggi (Q1, CiteScore 8....",
-          "Langkah 3: Terapkan pemetaan tujuan riset: Jika peneliti memiliki dana hibah institusional yang memadai dan me...",
-          "Interpretasi: Eliminasi Jurnal C menyelamatkan peneliti dari pencemaran reputasi akademik, sementara pemilihan Jurnal A atau B dapat d..."
+          "Langkah 1: Audit Integritas Jurnal C: Janji penerimaan 5 hari adalah indikator merah absolut (definite red flag) dari jurnal predator. Proses peer-review ilmiah yang ketat mustahil selesai dalam 5 hari kerja. Eliminasi Jurnal C seketika.",
+          "Langkah 2: Evaluasi Trade-off Jurnal A vs Jurnal B: Jurnal A memiliki reputasi sangat tinggi (Q1, CiteScore 8.5) namun memiliki kendala APC tinggi (USD 2.500) dan durasi review lama (6 bulan). Jurnal B (Q2) tidak mengenakan biaya (Diamond OA) dan review relatif cepat (2 bulan)."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Terapkan pemetaan tujuan riset: Jika peneliti memiliki dana hibah institusional..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Penilaian komparatif multi-kriteria untuk perankingan jurnal target publikasi.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: HASIL PERANGKINGAN JURNAL TARGET:"
+          "Langkah 3: Terapkan pemetaan tujuan riset: Jika peneliti memiliki dana hibah institusional yang memadai dan mengejar target kelulusan doktor jangka panjang, Jurnal A adalah pilihan utama. Jika peneliti memiliki tenggat waktu kelulusan mendesak atau keterbatasan anggaran, Jurnal B menawarkan jalur publikasi terhormat tanpa risiko predator.",
+          "[result: Interpretasi Ilmiah] Eliminasi Jurnal C menyelamatkan peneliti dari pencemaran reputasi akademik, sementara pemilihan Jurnal A atau B dapat diputuskan berdasarkan ketersediaan dana hibah institusi."
         ],
-        "keyFormulaOrDiagram": "HASIL PERANGKINGAN JURNAL TARGET: | ======================================================..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Penilaian komparatif multi-kriteria untuk perankingan jurnal target publikasi.",
         "bulletPoints": [
-          "Perangkap: Menyerahkan naskah ke jurnal semata-mata karena nilai Impact Factor tinggi tanpa membaca artikel terbaru yang...",
-          "Perangkap: Percaya pada klaim indeks palsu di situs web jurnal (misal mencantumkan logo Scopus padahal sudah didiskualifi...",
-          "Perangkap: Mengabaikan panduan penulis (Author Guidelines) sehingga naskah ditolak pada tahap pra-screening sekretariat."
-        ]
+          "Tujuan Algoritma: Penilaian komparatif multi-kriteria untuk perankingan jurnal target publikasi.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: HASIL PERANGKINGAN JURNAL TARGET:"
+        ],
+        "keyFormulaOrDiagram": "HASIL PERANGKINGAN JURNAL TARGET:\n=================================================================\nNama Jurnal                      | Skor Komposit  | Status\n=================================================================\nIEEE Trans. Smart Grid (Q1)      |          0.745 | PRIORITAS UTAMA",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Verifikasi status indeksasi secara langsung di database resmi (Scopus.com atau Clarivate Master Journal List),...",
-          "Prosedur: Konsultasikan daftar \"Think. Check. Submit.\" (thinkchecksubmit.org) sebelum melakukan submisi final."
-        ]
+          "[warning: Perangkap] Menyerahkan naskah ke jurnal semata-mata karena nilai Impact Factor tinggi tanpa membaca artikel terbaru yang diterbitkan untuk memeriksa kecocokan scope.",
+          "[warning: Perangkap] Percaya pada klaim indeks palsu di situs web jurnal (misal mencantumkan logo Scopus padahal sudah didiskualifikasi/discontinued).",
+          "[warning: Perangkap] Mengabaikan panduan penulis (Author Guidelines) sehingga naskah ditolak pada tahap pra-screening sekretariat."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa metrik SNIP (Source Normalized Impact per Paper) dianggap lebih adil dibanding raw Impact Factor saat membanding...",
-          "Petunjuk: Pertimbangkan perbedaan kebiasaan menyitir antara peneliti matematika dan biokimia.",
-          "Solusi Kunci: SNIP menormalkan metrik sitasi berdasarkan potensi sitasi total pada bidang ilmu yang bersangkutan. Pada bidang ilmu den..."
-        ]
+          "Prosedur: Verifikasi status indeksasi secara langsung di database resmi (Scopus.com atau Clarivate Master Journal List), bukan melalui klaim banner di web jurnal.",
+          "Prosedur: Konsultasikan daftar \"Think. Check. Submit.\" (thinkchecksubmit.org) sebelum melakukan submisi final."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa metrik SNIP (Source Normalized Impact per Paper) dianggap lebih adil dibanding raw Impact Factor saat membandingkan jurnal dari disiplin ilmu yang berbeda?",
+          "Petunjuk Analitis: Pertimbangkan perbedaan kebiasaan menyitir antara peneliti matematika dan biokimia.",
+          "Solusi Kunci: SNIP menormalkan metrik sitasi berdasarkan potensi sitasi total pada bidang ilmu yang bersangkutan. Pada bidang ilmu dengan frekuensi sitasi tinggi (seperti molekuler biomedis di mana satu makalah biasa menyitir 60 referensi), raw impact factor akan melonjak tinggi secara artifisial dibanding bidang ilmu dengan tradisi sitasi rendah (seperti matematika di mana rata-rata referensi hanya 15 buah). SNIP menyeimbangkan perbedaan kultural ini."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -220,100 +256,137 @@ export const CH49_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Anatomi Proses Peer-Review Editorial: Single-Blind, Dou...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Anatomi Proses Peer-Review Editorial: Single-Blind, Double-Blind, dan Open Peer Review",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.5.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.2.",
-          "Capaian: Memahami siklus hidup penanganan naskah di meja redaksi editorial (Editorial Workflow).",
-          "Capaian: Menganalisis perbedaan model peer review: Single-Blind, Double-Blind, dan Open Peer Review.",
-          "Capaian: Mengidentifikasi kriteria keputusan editorial (Accept, Minor Revision, Major Revision, Reject & Resubmit, Reje..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami siklus hidup penanganan naskah di meja redaksi editorial (Editorial Workflow).",
+          "Capaian 2: Menganalisis perbedaan model peer review: Single-Blind, Double-Blind, dan Open Peer Review.",
+          "Capaian 3: Mengidentifikasi kriteria keputusan editorial (Accept, Minor Revision, Major Revision, Reject & Resubmit, Reject)."
         ],
-        "keyFormulaOrDiagram": "$$P(\\text{Konsensus Benar}) = \\sum_{i=\\lceil (k+1)/2 \\rceil}^k \\binom{k}{i} p^i (1-p)^{k-i}$$"
+        "keyFormulaOrDiagram": "$$P(\\text{Konsensus Benar}) = \\sum_{i=\\lceil (k+1)/2 \\rceil}^k \\binom{k}{i} p^i (1-p)^{k-i}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.5.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Anatomi Proses Peer-Review Editorial: Single-Blind, Dou...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Anatomi Proses Peer-Review Editorial: Single-Blind, Double-Blind, dan Open Peer Review",
+        "lead": "Proses peninjauan sejawat (peer review) adalah benteng pertahanan utama integritas sains.",
         "bulletPoints": [
-          "Proses peninjauan sejawat (peer review) adalah benteng pertahanan utama integritas sains. Peer review memastikan bahwa metodo...",
-          "Siklus Hidup Naskah di Redaksi Jurnal: 1. Tahap Pre-Check Sekretariat: Naskah dicek kepatuhan formatnya (panjang kata, gaya s...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Peer review memastikan bahwa metodologi penelitian dapat dipertanggungjawabkan, klaim didukung data, dan kontribusi baru memenuhi standar keilmuan sebelum diterbitkan ke dunia.",
+          "Memahami mekanisme internal ruang kerja editor dan reviewer membantu peneliti mengantisipasi kritik serta menavigasi proses revisi secara profesional.",
+          "Siklus Hidup Naskah di Redaksi Jurnal: 1.",
+          "Tahap Pre-Check Sekretariat: Naskah dicek kepatuhan formatnya (panjang kata, gaya sitasi, template) dan tingkat kemiripan teks melalui software anti-plagiarisme (seperti Turnitin atau iThenticate)."
         ],
-        "keyFormulaOrDiagram": "Tiga Paradigma Model Peer Review: - Single-Blind Review: Identitas reviewer disembunyikan..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Tiga Paradigma Model Peer Review: - Single-Blind Review: Identitas reviewer disembunyikan dari penulis, tetapi reviewer mengetahui identitas penulis.",
         "bulletPoints": [
-          "Tiga Paradigma Model Peer Review: - Single-Blind Review: Identitas reviewer disembunyikan dari penulis, tetapi reviewer menge...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Model ini paling tradisional namun memiliki risiko bias institusi atau gender. - Double-Blind Review: Identitas kedua belah pihak disembunyikan.",
+          "Penulis wajib menghapus nama, afiliasi, dan rujukan eksplisit pada naskah (anonymized manuscript)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Probabilistik Konsensus Reviewer:",
         "bulletPoints": [
-          "Model Probabilistik Konsensus Reviewer:",
           "Diberikan $k$ reviewer independen dengan probabilitas akurasi evaluasi $p > 0.5$ (Condorcet's Jury Theorem).",
-          "Peluang keputusan mayoritas menghasilkan evaluasi yang benar mendekati 1 seiring bertambahnya jumlah reviewer:"
+          "Peluang keputusan mayoritas menghasilkan evaluasi yang benar mendekati 1 seiring bertambahnya jumlah reviewer:",
+          "Matriks Keputusan Editorial (Utility Matrix):"
         ],
-        "keyFormulaOrDiagram": "$$P(\\text{Konsensus Benar}) = \\sum_{i=\\lceil (k+1)/2 \\rceil}^k \\binom{k}{i} p^i (1-p)^{k-i}$$"
+        "keyFormulaOrDiagram": "$$P(\\text{Konsensus Benar}) = \\sum_{i=\\lceil (k+1)/2 \\rceil}^k \\binom{k}{i} p^i (1-p)^{k-i}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah naskah di jurnal IEEE Transactions menerima laporan review dari 3 reviewer: Reviewer 1 (Accept), Reviewer 2 (Minor Revision), dan Rev...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi sifat kritik Reviewer 3: Kritik Reviewer 3 bukan masalah selera penulisan atau typo mi...",
-          "Langkah 2: Evaluasi asimetri bobot keputusan: Dalam sains, ketiadaan kesalahan fundamental jauh lebih dipriori...",
-          "Langkah 3: Prediksi keputusan AE: Editor akan memberikan keputusan \"Major Revision\" (jika kelemahan masih bisa...",
-          "Interpretasi: Keberadaan satu cacat metodologis fundamental memiliki bobot penentu yang melampaui skor numerik rata-rata rekomendasi r..."
+          "Konteks Kasus: Sebuah naskah di jurnal IEEE Transactions menerima laporan review dari 3 reviewer: Reviewer 1 (Accept), Reviewer 2 (Minor Revision), dan Reviewer 3 (Reject dengan catatan: \"Uji eksperimen tidak menyertakan seed acak berulang dan baseline yang dibandingkan adalah versi lawas tahun 2016\"). Jelaskan mengapa Associate Editor hampir pasti memutuskan \"Major Revision\" atau \"Reject\", bukan menerima naskah.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Prediksi keputusan AE: Editor akan memberikan keputusan \"Major Revision\" (jika..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi sifat kritik Reviewer 3: Kritik Reviewer 3 bukan masalah selera penulisan atau typo minor, melainkan kecacatan metodologis kritis (lack of experimental rigor and obsolete baseline).",
+          "Langkah 2: Evaluasi asimetri bobot keputusan: Dalam sains, ketiadaan kesalahan fundamental jauh lebih diprioritaskan daripada pujian umum. Rekomendasi positif dari Reviewer 1 dan 2 tidak memvalidasi kekurangan metodologis yang ditemukan Reviewer 3."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Prediksi keputusan AE: Editor akan memberikan keputusan \"Major Revision\" (jika kelemahan masih bisa diperbaiki dalam 60-90 hari dengan eksperimen ulang) atau \"Reject\" jika arsitektur eksperimen secara fundamental harus dirombak dari awal.",
+          "[result: Interpretasi Ilmiah] Keberadaan satu cacat metodologis fundamental memiliki bobot penentu yang melampaui skor numerik rata-rata rekomendasi reviewer lainnya."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi pohon keputusan agregasi editorial berdasarkan laporan reviewer independen.",
         "bulletPoints": [
-          "Deskripsi: Simulasi pohon keputusan agregasi editorial berdasarkan laporan reviewer independen.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: HASIL SIMULASI KEPUTUSAN EDITORIAL:"
+          "Tujuan Algoritma: Simulasi pohon keputusan agregasi editorial berdasarkan laporan reviewer independen.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: HASIL SIMULASI KEPUTUSAN EDITORIAL:"
         ],
-        "keyFormulaOrDiagram": "HASIL SIMULASI KEPUTUSAN EDITORIAL: | ----------------------------------------------------..."
+        "keyFormulaOrDiagram": "HASIL SIMULASI KEPUTUSAN EDITORIAL:\n-------------------------------------------------------\nReviewer 1: Accept\nReviewer 2: Minor Revision\nReviewer 3: Reject [FATAL]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyerahkan naskah tanpa menganonimkan identitas pada jurnal bersistem Double-Blind Review (menyebabkan immedi...",
-          "Perangkap: Mengira bahwa mendapatkan status Major Revision berarti naskah gagal (Major Revision adalah peluang emas pener...",
-          "Perangkap: Bereaksi emosional atau marah terhadap komentar reviewer yang tajam dan kritis."
-        ]
+          "[warning: Perangkap] Menyerahkan naskah tanpa menganonimkan identitas pada jurnal bersistem Double-Blind Review (menyebabkan immediate desk return).",
+          "[warning: Perangkap] Mengira bahwa mendapatkan status Major Revision berarti naskah gagal (Major Revision adalah peluang emas penerbitan yang harus dimanfaatkan maksimal).",
+          "[warning: Perangkap] Bereaksi emosional atau marah terhadap komentar reviewer yang tajam dan kritis."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Lakukan pra-peninjauan internal (mock peer review) bersama rekan sejawat sebelum naskah dikirim ke jurnal.",
-          "Prosedur: Periksa apakah ada referensi diri sendiri (self-citation) yang berlebihan yang dapat mengungkap identitas penu..."
-        ]
+          "Prosedur: Periksa apakah ada referensi diri sendiri (self-citation) yang berlebihan yang dapat mengungkap identitas penulis pada sistem blind review."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa perbedaan mendasar antara keputusan \"Reject\" dan \"Reject & Resubmit\"?",
-          "Petunjuk: Perhatikan apakah naskah boleh dikirimkan kembali ke jurnal yang sama setelah perbaikan besar.",
-          "Solusi Kunci: Keputusan \"Reject\" (penolakan mutlak) menutup pintu bagi naskah tersebut untuk diserahkan kembali ke jurnal yang sama. S..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah naskah boleh dikirimkan kembali ke jurnal yang sama setelah perbaikan besar.",
+          "Solusi Kunci: Keputusan \"Reject\" (penolakan mutlak) menutup pintu bagi naskah tersebut untuk diserahkan kembali ke jurnal yang sama. Sedangkan \"Reject & Resubmit\" berarti ide riset tersebut dinilai menarik oleh editor, namun membutuhkan perubahan eksperimental yang sangat masif sehingga tidak mungkin diselesaikan dalam batas waktu siklus revisi standar (biasanya 30-90 hari). Penulis diizinkan mengajukan naskah kembali sebagai submisi baru setelah seluruh pengujian tambahan selesai."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -378,100 +451,134 @@ export const CH49_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konstruksi Point-by-Point Rebuttal Matrix: Merespons Ma...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konstruksi Point-by-Point Rebuttal Matrix: Merespons Masukan Kritis secara Objektif",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.5.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.3.",
-          "Capaian: Menguasai metodologi perancangan dokumen Point-by-Point Rebuttal Matrix.",
-          "Capaian: Menerapkan struktur 3 bagian standar dalam menanggapi komentar reviewer: Agree/Acknowledge, Action Taken, Exac...",
-          "Capaian: Mengelola kritik reviewer yang tidak tepat atau keliru secara santun berbasis bukti matematis dan empiris."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menguasai metodologi perancangan dokumen Point-by-Point Rebuttal Matrix.",
+          "Capaian 2: Menerapkan struktur 3 bagian standar dalam menanggapi komentar reviewer: Agree/Acknowledge, Action Taken, Exact Location of Changes.",
+          "Capaian 3: Mengelola kritik reviewer yang tidak tepat atau keliru secara santun berbasis bukti matematis dan empiris."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{T} = \\{\\text{Empirical Revision}, \\text{Theoretical Clarification}, \\text{Scope Defense}, \\text{Typo/Formatting}\\}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{T} = \\{\\text{Empirical Revision}, \\text{Theoretical Clarification}, \\text{Scope Defense}, \\text{Typo/Formatting}\\}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.5.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konstruksi Point-by-Point Rebuttal Matrix: Merespons Ma...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konstruksi Point-by-Point Rebuttal Matrix: Merespons Masukan Kritis secara Objektif",
+        "lead": "Ketika sebuah naskah menerima keputusan revisi (Major atau Minor Revision), dokumen terpenting yang menentukan apakah naskah akhirnya diterima adalah Surat Tanggapan Penulis (Author Response / Rebuttal Letter).",
         "bulletPoints": [
-          "Ketika sebuah naskah menerima keputusan revisi (Major atau Minor Revision), dokumen terpenting yang menentukan apakah naskah...",
-          "Struktur Emas Point-by-Point Rebuttal Matrix: Setiap komentar dari reviewer wajib direspons secara terpisah menggunakan pola...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Reviewer dan editor umumnya membaca dokumen rebuttal ini terlebih dahulu sebelum membuka naskah yang direvisi.",
+          "Rebuttal yang disusun secara asal-asalan, defensif, atau tidak terstruktur akan membuat reviewer merasa masukannya diabaikan, yang berujung pada penolakan di ronde kedua.",
+          "Struktur Emas Point-by-Point Rebuttal Matrix: Setiap komentar dari reviewer wajib direspons secara terpisah menggunakan pola 3 langkah terstandarisasi: 1.",
+          "Sikap Hormat dan Apresiasi (Acknowledge & Clarify): Ucapkan terima kasih dan nyatakan persetujuan atau pemahaman atas esensi kritik reviewer (\"We thank the reviewer for pointing out this critical aspect...\")."
         ],
-        "keyFormulaOrDiagram": "Menghadapi Reviewer yang Keliru atau Bias: Terkadang seorang reviewer mengajukan kritik ya..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Menghadapi Reviewer yang Keliru atau Bias: Terkadang seorang reviewer mengajukan kritik yang faktual salah atau meminta ekspe...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Menghadapi Reviewer yang Keliru atau Bias: Terkadang seorang reviewer mengajukan kritik yang faktual salah atau meminta eksperimen yang berada di luar ruang lingkup penelitian: - Jangan pernah bersikap sarkastis atau menuduh reviewer tidak memahami materi. - Asumsikan kesalahpahaman tersebut terjadi karena penjelasan di naskah awal kurang jernih. - Berikan klarifikasi yang sangat santun dengan menyertakan bukti rujukan literatur atau penurunan matematis yang tak terbantahkan, lalu tambahkan paragraf klarifikasi di naskah agar pembaca masa depan tidak mengalami kebingungan yang sama.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pohon Resolusi Komentar Reviewer (Rebuttal Resolution Tree):",
         "bulletPoints": [
-          "Pohon Resolusi Komentar Reviewer (Rebuttal Resolution Tree):",
-          "Himpunan komentar dari reviewer $\\mathcal{K} = \\{k_1, k_2, \\dots, k_M\\}$ diklasifikasikan ke dalam tipe tindak...",
-          "Metrik Kelengkapan Resolusi Rebuttal ($R_{\\text{score}}$):"
+          "Himpunan komentar dari reviewer $\\mathcal{K} = \\{k_1, k_2, \\dots, k_M\\}$ diklasifikasikan ke dalam tipe tindak lanjut $\\mathcal{T}$:",
+          "Metrik Kelengkapan Resolusi Rebuttal ($R_{\\text{score}}$):",
+          "Sebuah tanggapan revisi dianggap sempurna ($R_{\\text{score}} = 1.0$) jika dan hanya jika setiap komentar $k_m$ memiliki closure lengkap:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{T} = \\{\\text{Empirical Revision}, \\text{Theoretical Clarification}, \\text{Scope Defense}, \\text{Typo/Formatting}\\}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{T} = \\{\\text{Empirical Revision}, \\text{Theoretical Clarification}, \\text{Scope Defense}, \\text{Typo/Formatting}\\}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Reviewer 2 menulis kritik: \"Metode deteksi cacat yang diajukan penulis hanya diuji pada 100 citra, yang mana ukuran sampel ini terlalu kecil...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Tulis apresiasi tulus: \"Comment 2: The proposed method is evaluated on only 100 images, which is to...",
-          "Langkah 2: Jelaskan tindakan konkret: \"Action Taken: To address this concern, we expanded our experimental dat...",
-          "Langkah 3: Kutip perubahan pada naskah: \"Manuscript Revision: We have updated Table 3 and added an in-depth di...",
-          "Interpretasi: Menjawab kritik reviewer dengan penambahan 400 data baru dan kutipan teks naskah revisi membuktikan dedikasi riset dan m..."
+          "Konteks Kasus: Reviewer 2 menulis kritik: \"Metode deteksi cacat yang diajukan penulis hanya diuji pada 100 citra, yang mana ukuran sampel ini terlalu kecil untuk menyimpulkan generalisasi model.\" Bagaimana penulis menyusun matriks respons point-by-point yang profesional dan tuntas?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Kutip perubahan pada naskah: \"Manuscript Revision: We have updated Table 3 and..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Tulis apresiasi tulus: \"Comment 2: The proposed method is evaluated on only 100 images, which is too small to claim generalization.\\n\\nResponse: We sincerely thank the reviewer for this insightful comment. We fully agree that sample size is crucial for validating statistical generalization in computer vision models.\"",
+          "Langkah 2: Jelaskan tindakan konkret: \"Action Taken: To address this concern, we expanded our experimental dataset by collecting 400 additional high-resolution images from ITERA solar testbeds and performed a 5-fold cross-validation across all 500 images. The updated empirical results confirm that our model maintains a mean Average Precision (mAP) of 92.4% +/- 1.1% across the enlarged dataset.\""
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Kutip perubahan pada naskah: \"Manuscript Revision: We have updated Table 3 and added an in-depth discussion in Section 4.2 (Page 9, Lines 210-224):\\n'To ensure statistical validity over a wider operational range, the evaluation was scaled to 500 annotated images using 5-fold cross-validation. As summarized in Table 3, the proposed architecture consistently achieves an mAP of 92.4%...'\"",
+          "[result: Interpretasi Ilmiah] Menjawab kritik reviewer dengan penambahan 400 data baru dan kutipan teks naskah revisi membuktikan dedikasi riset dan menutup peluang penolakan pada ronde kedua."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembangkit template dokumen Point-by-Point Rebuttal terstruktur untuk respons peer-review.",
         "bulletPoints": [
-          "Deskripsi: Pembangkit template dokumen Point-by-Point Rebuttal terstruktur untuk respons peer-review.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: POINT-BY-POINT REBUTTAL LETTER MATRIX:"
+          "Tujuan Algoritma: Pembangkit template dokumen Point-by-Point Rebuttal terstruktur untuk respons peer-review.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: POINT-BY-POINT REBUTTAL LETTER MATRIX:"
         ],
-        "keyFormulaOrDiagram": "POINT-BY-POINT REBUTTAL LETTER MATRIX: | =================================================..."
+        "keyFormulaOrDiagram": "POINT-BY-POINT REBUTTAL LETTER MATRIX:\n======================================================================\n[R1.C1] From Reviewer #1:\nCOMMENT: 'The computational runtime comparison is missing. Please provide FPS benchmarks.'\nRESPONSE:",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menanggapi komentar reviewer hanya dengan satu kalimat singkat seperti: \"Done\" atau \"Fixed\" tanpa mengutip per...",
-          "Perangkap: Berdebat secara emosional dan menuduh reviewer tidak kompeten ketika reviewer salah mengerti konsep naskah.",
-          "Perangkap: Mengabaikan komentar reviewer tertentu yang dianggap sulit atau sengaja melewatinya dengan harapan tidak diper..."
-        ]
+          "[warning: Perangkap] Menanggapi komentar reviewer hanya dengan satu kalimat singkat seperti: \"Done\" atau \"Fixed\" tanpa mengutip perubahan teksnya.",
+          "[warning: Perangkap] Berdebat secara emosional dan menuduh reviewer tidak kompeten ketika reviewer salah mengerti konsep naskah.",
+          "[warning: Perangkap] Mengabaikan komentar reviewer tertentu yang dianggap sulit atau sengaja melewatinya dengan harapan tidak diperhatikan editor."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan audit kelengkapan 100%: pastikan setiap butir komentar reviewer diberi nomor indeks unik dan memiliki...",
-          "Prosedur: Gunakan format visual penanda teks (misalnya warna biru untuk teks revisi di naskah dan warna merah untuk teks..."
-        ]
+          "Prosedur: Lakukan audit kelengkapan 100%: pastikan setiap butir komentar reviewer diberi nomor indeks unik dan memiliki respons lengkap.",
+          "Prosedur: Gunakan format visual penanda teks (misalnya warna biru untuk teks revisi di naskah dan warna merah untuk teks yang dihapus)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa menyertakan kutipan persis teks naskah yang baru (verbatim text changes) di dalam surat rebuttal sangat diapresi...",
-          "Petunjuk: Pikirkan efisiensi waktu reviewer yang memiliki beban kerja akademis padat.",
-          "Solusi Kunci: Reviewer adalah akademisi sukarelawan yang sangat sibuk. Menyertakan kutipan persis teks revisi di surat rebuttal memung..."
-        ]
+          "Pertanyaan Uji: Mengapa menyertakan kutipan persis teks naskah yang baru (verbatim text changes) di dalam surat rebuttal sangat diapresiasi oleh editor dan reviewer?",
+          "Petunjuk Analitis: Pikirkan efisiensi waktu reviewer yang memiliki beban kerja akademis padat.",
+          "Solusi Kunci: Reviewer adalah akademisi sukarelawan yang sangat sibuk. Menyertakan kutipan persis teks revisi di surat rebuttal memungkinkan reviewer memverifikasi perbaikan secara instan dalam hitungan detik tanpa harus membuka-buka dan mencari kalimat baru di naskah berlembar-lembar."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -540,100 +647,139 @@ export const CH49_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Manajemen Revisi Naskah Ilmiah dan Korespondensi Etis d...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Manajemen Revisi Naskah Ilmiah dan Korespondensi Etis dengan Editor",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.5.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.4.",
-          "Capaian: Mengelola manajemen versi naskah revisi (Track Changes vs Clean Manuscript).",
-          "Capaian: Menguasai etika korespondensi profesional dengan Editor-in-Chief dan Associate Editor.",
-          "Capaian: Menangani permohonan perpanjangan waktu revisi (extension request) dan penarikan naskah (withdrawal) secara le..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.5.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengelola manajemen versi naskah revisi (Track Changes vs Clean Manuscript).",
+          "Capaian 2: Menguasai etika korespondensi profesional dengan Editor-in-Chief dan Associate Editor.",
+          "Capaian 3: Menangani permohonan perpanjangan waktu revisi (extension request) dan penarikan naskah (withdrawal) secara legal dan etis."
         ],
-        "keyFormulaOrDiagram": "$$\\text{LCS}(\\mathbf{u}, \\mathbf{v}) = \\max_{\\mathbf{w}} \\{ |\\mathbf{w}| : \\mathbf{w} \\text{ subsequence dari } \\mathbf{u} \\text{ dan } \\mathbf{v} \\}$$"
+        "keyFormulaOrDiagram": "$$\\text{LCS}(\\mathbf{u}, \\mathbf{v}) = \\max_{\\mathbf{w}} \\{ |\\mathbf{w}| : \\mathbf{w} \\text{ subsequence dari } \\mathbf{u} \\text{ dan } \\mathbf{v} \\}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.5.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Manajemen Revisi Naskah Ilmiah dan Korespondensi Etis d...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Manajemen Revisi Naskah Ilmiah dan Korespondensi Etis dengan Editor",
+        "lead": "Fase revisi naskah sering kali berlangsung di bawah tekanan tenggat waktu yang ketat.",
         "bulletPoints": [
-          "Fase revisi naskah sering kali berlangsung di bawah tekanan tenggat waktu yang ketat. Mengelola berkas-berkas revisi, koordin...",
-          "Protokol Pengunggahan Berkas Revisi: Saat mengunggah hasil revisi ke portal editorial (seperti Editorial Manager, ScholarOne,...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Mengelola berkas-berkas revisi, koordinasi antar-rekan penulis (co-authors), dan korespondensi dengan editor membutuhkan manajemen proyek yang disiplin serta kepatuhan etika akademik yang tinggi.",
+          "Kesalahan administratif sederhana, seperti mengunggah berkas naskah yang salah atau mengirimkan surat yang tidak pantas kepada editor, dapat menggagalkan publikasi naskah yang secara saintifik sangat bermutu.",
+          "Protokol Pengunggahan Berkas Revisi: Saat mengunggah hasil revisi ke portal editorial (seperti Editorial Manager, ScholarOne, atau Elsevier Editorial System), penulis umumnya diwajibkan menyertakan dua versi naskah: 1.",
+          "Marked-up / Tracked Manuscript: Naskah yang memperlihatkan secara jelas setiap suntingan teks (biasanya menggunakan fitur Track Changes di Microsoft Word, atau paket latexdiff pada LaTeX dengan warna teks berbeda)."
         ],
-        "keyFormulaOrDiagram": "Etika Korespondensi dengan Redaksi: Seluruh komunikasi dengan editor wajib menjunjung ting..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Etika Korespondensi dengan Redaksi: Seluruh komunikasi dengan editor wajib menjunjung tinggi etika akademik: - Surat Pengantar Revisi (Revision Cover Letter): Nyatakan secara ringkas komitmen penulis dalam menyempurnakan naskah sesuai arahan reviewer, sebutkan nomor manuskrip resmi, dan rangkum perubahan-perubahan eksperimental besar yang telah dilakukan. - Permohonan Perpanjangan Waktu (Extension Request): Jika eksperimen tambahan membutuhkan waktu lebih lama dari batas waktu 60 hari, hubungi editor setidaknya dua minggu sebelum tenggat berakhir.",
         "bulletPoints": [
-          "Etika Korespondensi dengan Redaksi: Seluruh komunikasi dengan editor wajib menjunjung tinggi etika akademik: - Surat Penganta...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Jelaskan kendala laboratorium riil (misalnya antrian fasilitas mikroskop elektron atau pengadaan sampel kimia) dan ajukan tanggal realistis baru.",
+          "Editor yang bertanggung jawab hampir selalu mengabulkan permohonan yang masuk akal."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pembangkitan Visualisasi Perbedaan Naskah Otomatis (Latexdiff Metric):",
         "bulletPoints": [
-          "Pembangkitan Visualisasi Perbedaan Naskah Otomatis (Latexdiff Metric):",
-          "Diberikan naskah lama sebagai deretan token $\\mathbf{u} = (u_1, \\dots, u_m)$ dan naskah revisi $\\mathbf{v} = (...",
-          "Tingkat perombakan teks naskah (Churn Rate) dihitung sebagai:"
+          "Diberikan naskah lama sebagai deretan token $\\mathbf{u} = (u_1, \\dots, u_m)$ dan naskah revisi $\\mathbf{v} = (v_1, \\dots, v_n)$. Algoritma latexdiff menghitung Longest Common Subsequence (LCS):",
+          "Tingkat perombakan teks naskah (Churn Rate) dihitung sebagai:",
+          "Pada revisi bertaraf Major Revision, Churn Rate yang sehat biasanya berkisar antara $0.15$ hingga $0.35$ (15% hingga 35% teks naskah mengalami penyempurnaan)."
         ],
-        "keyFormulaOrDiagram": "$$\\text{LCS}(\\mathbf{u}, \\mathbf{v}) = \\max_{\\mathbf{w}} \\{ |\\mathbf{w}| : \\mathbf{w} \\text{ subsequence dari } \\mathbf{u} \\text{ dan } \\mathbf{v} \\}$$"
+        "keyFormulaOrDiagram": "$$\\text{LCS}(\\mathbf{u}, \\mathbf{v}) = \\max_{\\mathbf{w}} \\{ |\\mathbf{w}| : \\mathbf{w} \\text{ subsequence dari } \\mathbf{u} \\text{ dan } \\mathbf{v} \\}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim peneliti ITERA mendapatkan keputusan Major Revision dengan batas waktu 60 hari. Pada hari ke-45, instrumen spektrofotometer UV-Vi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah tim peneliti ITERA mendapatkan keputusan Major Revision dengan batas waktu 60 hari. Pada hari ke-45, instrumen spektrofotometer UV-Vis laboratorium rusak dan memerlukan waktu perbaikan 3 minggu. Bagaimana cara merumuskan email permohonan perpanjangan waktu (extension request) yang etis dan profesional kepada Associate Editor?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hubungi editor segera (jangan menunggu sampai H-1 tenggat waktu).",
-          "Langkah 2: Sebutkan identitas naskah lengkap: Judul lengkap naskah dan Nomor Manuskrip resmi (misal: Manuscrip...",
-          "Langkah 3: Jelaskan progress yang sudah dicapai: Sebutkan bahwa 85% masukan reviewer telah selesai direvisi.",
-          "Interpretasi: Komunikasi yang transparan, tepat waktu, dan disertai bukti progres konkret membangun respek profesional editor terhadap..."
+          "Langkah 2: Sebutkan identitas naskah lengkap: Judul lengkap naskah dan Nomor Manuskrip resmi (misal: Manuscript ID #IEEE-TSE-2025-0124).",
+          "Langkah 3: Jelaskan progress yang sudah dicapai: Sebutkan bahwa 85% masukan reviewer telah selesai direvisi."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Ajukan durasi perpanjangan spesifik dan realistis: Mintalah perpanjangan waktu..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Jelaskan kendala fisik di luar kendali: Jelaskan secara transparan bahwa alat UV-Vis sedang dalam masa perbaikan teknis tak terduga.",
+          "Langkah 5: Ajukan durasi perpanjangan spesifik dan realistis: Mintalah perpanjangan waktu 3 hingga 4 minggu tambahan, dan tegaskan komitmen tim untuk menyelesaikan naskah dengan kualitas terbaik.",
+          "[result: Interpretasi Ilmiah] Komunikasi yang transparan, tepat waktu, dan disertai bukti progres konkret membangun respek profesional editor terhadap integritas tim peneliti."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Kalkulator tingkat perombakan teks naskah (churn rate) berbasis Longest Common Subsequence.",
         "bulletPoints": [
-          "Deskripsi: Kalkulator tingkat perombakan teks naskah (churn rate) berbasis Longest Common Subsequence.",
-          "Dependensi Pustaka: difflib",
-          "Keluaran Diharapkan: METRIK MANAJEMEN REVISI NASKAH:"
+          "Tujuan Algoritma: Kalkulator tingkat perombakan teks naskah (churn rate) berbasis Longest Common Subsequence.",
+          "Dependensi Pustaka Ilmiah: difflib",
+          "Keluaran Terverifikasi: METRIK MANAJEMEN REVISI NASKAH:"
         ],
-        "keyFormulaOrDiagram": "METRIK MANAJEMEN REVISI NASKAH: | -------------------------------------------------- | Tot..."
+        "keyFormulaOrDiagram": "METRIK MANAJEMEN REVISI NASKAH:\n--------------------------------------------------\nTotal Kata Draf Awal (V1)    : 24\nTotal Kata Draf Revisi (V2)  : 30\nJumlah Kata Sama (LCS)       : 13",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengirimkan draf revisi hanya beberapa jam sebelum deadline tanpa verifikasi ulang nama seluruh co-authors.",
-          "Perangkap: Mengubah urutan nama penulis (authorship order) saat revisi tanpa persetujuan tertulis dari seluruh co-authors...",
-          "Perangkap: Menghapus bagian yang dikritik reviewer alih-alih memperbaikinya secara ilmiah."
-        ]
+          "[warning: Perangkap] Mengirimkan draf revisi hanya beberapa jam sebelum deadline tanpa verifikasi ulang nama seluruh co-authors.",
+          "[warning: Perangkap] Mengubah urutan nama penulis (authorship order) saat revisi tanpa persetujuan tertulis dari seluruh co-authors dan izin eksplisit editor.",
+          "[warning: Perangkap] Menghapus bagian yang dikritik reviewer alih-alih memperbaikinya secara ilmiah."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan perintah automated diff (misalnya: latexdiff original.tex revised.tex > diff.tex) untuk memastikan sel...",
-          "Prosedur: Lakukan sanity-check checklist berkas: pastikan berkas Marked-up, berkas Clean, dan berkas Cover Letter diungg..."
-        ]
+          "Prosedur: Gunakan perintah automated diff (misalnya: latexdiff original.tex revised.tex > diff.tex) untuk memastikan seluruh perubahan ditandai secara akurat.",
+          "Prosedur: Lakukan sanity-check checklist berkas: pastikan berkas Marked-up, berkas Clean, dan berkas Cover Letter diunggah ke slot yang benar di sistem editorial."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa perubahan urutan nama penulis (author order) atau penambahan nama penulis baru pada tahap revisi diawasi sangat...",
-          "Petunjuk: Perhatikan potensi praktik jual-beli kepengarangan (ghost/gift authorship).",
-          "Solusi Kunci: Penambahan nama penulis baru atau pergeseran posisi author pada tahap revisi merupakan indikasi klasik praktik kepengara..."
-        ]
+          "Pertanyaan Uji: Mengapa perubahan urutan nama penulis (author order) atau penambahan nama penulis baru pada tahap revisi diawasi sangat ketat oleh editor jurnal bereputasi?",
+          "Petunjuk Analitis: Perhatikan potensi praktik jual-beli kepengarangan (ghost/gift authorship).",
+          "Solusi Kunci: Penambahan nama penulis baru atau pergeseran posisi author pada tahap revisi merupakan indikasi klasik praktik kepengarangan yang tidak etis (seperti menjual slot nama penulis pada naskah yang hampir diterima). Editor mewajibkan formulir persetujuan bermeterai/tertulis dari seluruh penulis lama dan alasan kontribusi ilmiah yang sah sebelum mengizinkan perubahan tersebut."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

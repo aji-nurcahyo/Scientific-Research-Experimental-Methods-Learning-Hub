@@ -65,99 +65,136 @@ export const CH50_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Arsitektur Riset Doktoral: Strategi Disertasi Berbasis...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Arsitektur Riset Doktoral: Strategi Disertasi Berbasis Publikasi (Thesis-by-Publication)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.6.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.1.",
-          "Capaian: Memahami paradigma pergeseran dari monograf tradisional ke Thesis-by-Publication (kumulative Dissertation).",
-          "Capaian: Merancang arsitektur koherensi tematik (The Umbrella Framework) yang mengikat beberapa artikel jurnal independ...",
-          "Capaian: Menyusun bagian sintesis pengantar (Exegesis / Synthesis Chapter) yang mendemonstrasikan kontribusi orisinal d..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami paradigma pergeseran dari monograf tradisional ke Thesis-by-Publication (kumulative Dissertation).",
+          "Capaian 2: Merancang arsitektur koherensi tematik (The Umbrella Framework) yang mengikat beberapa artikel jurnal independen.",
+          "Capaian 3: Menyusun bagian sintesis pengantar (Exegesis / Synthesis Chapter) yang mendemonstrasikan kontribusi orisinal doktoral."
         ],
-        "keyFormulaOrDiagram": "$$C_{\\text{thesis}} = \\frac{1}{|\\mathcal{V}|} \\sum_{i=1}^k \\deg_{\\text{in}}(P_i) \\times \\text{Similarity}(P_i, \\text{Core Research Question})$$"
+        "keyFormulaOrDiagram": "$$C_{\\text{thesis}} = \\frac{1}{|\\mathcal{V}|} \\sum_{i=1}^k \\deg_{\\text{in}}(P_i) \\times \\text{Similarity}(P_i, \\text{Core Research Question})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.6.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Arsitektur Riset Doktoral: Strategi Disertasi Berbasis...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Arsitektur Riset Doktoral: Strategi Disertasi Berbasis Publikasi (Thesis-by-Publication)",
+        "lead": "Dalam pendidikan doktoral (Ph.D.) modern di universitas riset global terkemuka, model penulisan disertasi telah bergeser secara signifikan dari format buku monograf tunggal yang masif menuju format Disertasi Berbasis Publikasi (Thesis-by-Publication atau Cumulative Thesis).",
         "bulletPoints": [
-          "Dalam pendidikan doktoral (Ph.D.) modern di universitas riset global terkemuka, model penulisan disertasi telah bergeser seca...",
-          "Struktur Arsitektur Thesis-by-Publication: Format ini umumnya mengintegrasikan 3 hingga 5 artikel jurnal peer-reviewed (minim...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Format ini memposisikan kandidat doktor bukan hanya sebagai penulis draf internal yang dinilai oleh panitia penguji kampus, melainkan sebagai ilmuwan mandiri yang karyanya telah divalidasi dan diakui oleh komunitas sains internasional melalui penelaahan sejawat (peer review) di jurnal bereputasi.",
+          "Struktur Arsitektur Thesis-by-Publication: Format ini umumnya mengintegrasikan 3 hingga 5 artikel jurnal peer-reviewed (minimal terindeks Scopus Q1/Q2 atau WoS): 1.",
+          "Bagian Payung Pengantar (Umbrella Introduction / Exegesis): Menetapkan peta jalan konseptual, landasan filsafat ilmu, identifikasi problem fundamental, dan menguraikan benang merah (golden thread) yang mengikat seluruh artikel."
         ],
-        "keyFormulaOrDiagram": "Tantangan Koherensi Tematik (The Coherence Trap): Kelemahan paling fatal dalam Thesis-by-P..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Tantangan Koherensi Tematik (The Coherence Trap): Kelemahan paling fatal dalam Thesis-by-Publication adalah munculnya kesan \"kumpulan naskah terpisah yang dijilid bersama\" (stapler thesis) tanpa integrasi teoretis.",
         "bulletPoints": [
-          "Tantangan Koherensi Tematik (The Coherence Trap): Kelemahan paling fatal dalam Thesis-by-Publication adalah munculnya kesan \"...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Kandidat doktor wajib membuktikan bahwa setiap artikel merupakan tahapan modular yang secara kumulatif menjawab pertanyaan penelitian utama disertasi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Graf Ketergantungan Koherensi Disertasi (Directed Acyclic Graph of Scholarly Coherence):",
         "bulletPoints": [
-          "Graf Ketergantungan Koherensi Disertasi (Directed Acyclic Graph of Scholarly Coherence):",
-          "Disertasi berbasis publikasi dapat dimodelkan sebagai Directed Acyclic Graph (DAG) $\\mathcal{G} = (\\mathcal{V}...",
-          "- $\\mathcal{V} = \\{P_0, P_1, P_2, P_3, P_{\\text{synth}}\\}$ di mana $P_0$ adalah Bab Pengantar Payung, $P_1, P_..."
+          "Disertasi berbasis publikasi dapat dimodelkan sebagai Directed Acyclic Graph (DAG) $\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$:",
+          "- $\\mathcal{V} = \\{P_0, P_1, P_2, P_3, P_{\\text{synth}}\\}$ di mana $P_0$ adalah Bab Pengantar Payung, $P_1, P_2, P_3$ adalah artikel jurnal individual, dan $P_{\\text{synth}}$ adalah Bab Meta-Sintesis.",
+          "- $\\mathcal{E}$ adalah relasi transfer pengetahuan antar-makalah."
         ],
-        "keyFormulaOrDiagram": "$$C_{\\text{thesis}} = \\frac{1}{|\\mathcal{V}|} \\sum_{i=1}^k \\deg_{\\text{in}}(P_i) \\times \\text{Similarity}(P_i, \\text{Core Research Question})$$"
+        "keyFormulaOrDiagram": "$$C_{\\text{thesis}} = \\frac{1}{|\\mathcal{V}|} \\sum_{i=1}^k \\deg_{\\text{in}}(P_i) \\times \\text{Similarity}(P_i, \\text{Core Research Question})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang kandidat doktor di ITERA merencanakan riset bertema \"Sistem Penglihatan Komputer Adaptif untuk Otomasi Pertanian Cerdas\". Rancang de...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang kandidat doktor di ITERA merencanakan riset bertema \"Sistem Penglihatan Komputer Adaptif untuk Otomasi Pertanian Cerdas\". Rancang dekomposisi 3 artikel jurnal berjenjang yang membentuk satu kesatuan disertasi koheren berbasis publikasi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi Pertanyaan Inti Disertasi: \"Bagaimana merancang algoritma persepsi visual yang tahan t...",
-          "Langkah 2: Rancang Artikel 1 (Fondasi Sensor & Data - Jurnal Q2/Q1): \"Multispectral Benchmark Dataset and Cali...",
-          "Langkah 3: Rancang Artikel 2 (Inovasi Algoritmik Inti - Jurnal Q1): \"Attention-Guided Lightweight Convolutiona...",
-          "Interpretasi: Peta jalan ini menghasilkan tiga artikel publikasi terindeks Q1/Q2 yang saling terikat erat membentuk satu payung keilmu..."
+          "Langkah 1: Identifikasi Pertanyaan Inti Disertasi: \"Bagaimana merancang algoritma persepsi visual yang tahan terhadap variabilitas pencahayaan ekstrem dan oklusi dedaunan pada citra pertanian tropis dengan keterbatasan komputasi edge?\"",
+          "Langkah 2: Rancang Artikel 1 (Fondasi Sensor & Data - Jurnal Q2/Q1): \"Multispectral Benchmark Dataset and Calibration Protocols for Crop Disease Detection under Tropical Lighting Variations\". Fokus pada karakterisasi data dan kalibrasi instrumen.",
+          "Langkah 3: Rancang Artikel 2 (Inovasi Algoritmik Inti - Jurnal Q1): \"Attention-Guided Lightweight Convolutional Network for Dense Foliage Occlusion Segmentation\". Fokus pada kebaruan model matematika dan arsitektur neural."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Tulis Bab Pengantar Payung: Menghubungkan bagaimana Artikel 1 menyediakan data..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Pemodelan Directed Acyclic Graph (DAG) untuk mengevaluasi koherensi struktur publikasi disertasi.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: EVALUASI STRUKTUR THESIS-BY-PUBLICATION:"
+          "Langkah 4: Rancang Artikel 3 (Validasi Lapangan & Optimasi Sistem - Jurnal Q1): \"Hardware-Software Co-Design and Uncertainty Quantification for Real-Time Agricultural Drone Autonomy\". Fokus pada deployment sistem riil dan ketidakpastian inferensi.",
+          "Langkah 5: Tulis Bab Pengantar Payung: Menghubungkan bagaimana Artikel 1 menyediakan data terkalibrasi untuk Artikel 2, dan model dari Artikel 2 dideploy serta divalidasi ketidakpastiannya pada Artikel 3.",
+          "[result: Interpretasi Ilmiah] Peta jalan ini menghasilkan tiga artikel publikasi terindeks Q1/Q2 yang saling terikat erat membentuk satu payung keilmuan yang koheren tanpa ada artikel yang terisolasi."
         ],
-        "keyFormulaOrDiagram": "EVALUASI STRUKTUR THESIS-BY-PUBLICATION: | ===============================================..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemodelan Directed Acyclic Graph (DAG) untuk mengevaluasi koherensi struktur publikasi disertasi.",
         "bulletPoints": [
-          "Perangkap: Menyatukan beberapa artikel yang topiknya berbeda jauh demi mengejar jumlah publikasi syarat kelulusan tanpa a...",
-          "Perangkap: Menyalin mentah-mentah artikel tanpa menulis bab Exegesis/Sintesis pengantar yang mendalam.",
-          "Perangkap: Mengabaikan hak cipta penerbit (copyright transfer agreement) saat menyertakan naskah yang telah terbit ke dal..."
-        ]
+          "Tujuan Algoritma: Pemodelan Directed Acyclic Graph (DAG) untuk mengevaluasi koherensi struktur publikasi disertasi.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: EVALUASI STRUKTUR THESIS-BY-PUBLICATION:"
+        ],
+        "keyFormulaOrDiagram": "EVALUASI STRUKTUR THESIS-BY-PUBLICATION:\n============================================================\nKomponen Disertasi        | In-Degree  | Out-Degree | Peran\n============================================================\nUmbrella Intro            | 0          | 1          | Akar Teoretis",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Pastikan izin hak cipta (copyright clearance / open access reuse license) dari penerbit jurnal telah diperoleh...",
-          "Prosedur: Lakukan sanity-check: uji apakah bab Sintesis mampu berdiri sendiri sebagai artikel meta-analisis atau ulasan..."
-        ]
+          "[warning: Perangkap] Menyatukan beberapa artikel yang topiknya berbeda jauh demi mengejar jumlah publikasi syarat kelulusan tanpa ada benang merah konseptual.",
+          "[warning: Perangkap] Menyalin mentah-mentah artikel tanpa menulis bab Exegesis/Sintesis pengantar yang mendalam.",
+          "[warning: Perangkap] Mengabaikan hak cipta penerbit (copyright transfer agreement) saat menyertakan naskah yang telah terbit ke dalam berkas disertasi institusi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa keunggulan terbesar format Thesis-by-Publication bagi karier pasca-doktoral seorang lulusan PhD dibandingkan monogra...",
-          "Petunjuk: Perhatikan rekam jejak bibliometrik dan visibilitas di pasar kerja akademik global.",
-          "Solusi Kunci: Lulusan dengan format Thesis-by-Publication lulus dengan rekam jejak publikasi yang sudah terindeks di jurnal internasio..."
-        ]
+          "Prosedur: Pastikan izin hak cipta (copyright clearance / open access reuse license) dari penerbit jurnal telah diperoleh sebelum sidang disertasi.",
+          "Prosedur: Lakukan sanity-check: uji apakah bab Sintesis mampu berdiri sendiri sebagai artikel meta-analisis atau ulasan kritis komprehensif."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Apa keunggulan terbesar format Thesis-by-Publication bagi karier pasca-doktoral seorang lulusan PhD dibandingkan monograf tradisional?",
+          "Petunjuk Analitis: Perhatikan rekam jejak bibliometrik dan visibilitas di pasar kerja akademik global.",
+          "Solusi Kunci: Lulusan dengan format Thesis-by-Publication lulus dengan rekam jejak publikasi yang sudah terindeks di jurnal internasional bergengsi, lengkap dengan sitasi dan DOI resmi. Ini membuat profil akademik lulusan langsung kompetitif untuk melamar posisi post-doctoral fellowship, tenure-track faculty, atau hibah riset internasional, dibandingkan monograf yang sering kali tersimpan di perpustakaan kampus tanpa dibaca komunitas global."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -225,100 +262,138 @@ export const CH50_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Dekomposisi Payung Riset Besar Menjadi Tiga Proyek Mand...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Dekomposisi Payung Riset Besar Menjadi Tiga Proyek Mandiri yang Koheren",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.6.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.2.",
-          "Capaian: Menguasai metodologi Work Breakdown Structure (WBS) untuk program riset tahun jamak (multi-year).",
-          "Capaian: Mendekomposisi payung riset doktoral menjadi tiga paket kerja (Work Packages - WP) mandiri (self-contained).",
-          "Capaian: Mengelola risiko antar-proyek sehingga kegagalan satu sub-proyek tidak menggagalkan program riset keseluruhan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menguasai metodologi Work Breakdown Structure (WBS) untuk program riset tahun jamak (multi-year).",
+          "Capaian 2: Mendekomposisi payung riset doktoral menjadi tiga paket kerja (Work Packages - WP) mandiri (self-contained).",
+          "Capaian 3: Mengelola risiko antar-proyek sehingga kegagalan satu sub-proyek tidak menggagalkan program riset keseluruhan."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Cov}(\\text{Fail}(WP_i), \\text{Fail}(WP_j)) \\to 0, \\quad \\forall i \\neq j$$"
+        "keyFormulaOrDiagram": "$$\\text{Cov}(\\text{Fail}(WP_i), \\text{Fail}(WP_j)) \\to 0, \\quad \\forall i \\neq j$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.6.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Dekomposisi Payung Riset Besar Menjadi Tiga Proyek Mand...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Dekomposisi Payung Riset Besar Menjadi Tiga Proyek Mandiri yang Koheren",
+        "lead": "Program penelitian doktoral atau hibah tahun jamak (multi-year grant) mencakup tantangan sains yang terlalu besar untuk diselesaikan dalam satu eksperimen tunggal.",
         "bulletPoints": [
-          "Program penelitian doktoral atau hibah tahun jamak (multi-year grant) mencakup tantangan sains yang terlalu besar untuk disel...",
-          "Prinsip Dekomposisi Modular Program Riset: Program riset besar wajib didekomposisi secara metodologis menjadi tiga sub-proyek...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kegagalan umum peneliti muda adalah mencoba menyelesaikan seluruh masalah sekaligus dalam satu model raksasa yang monolitik.",
+          "Pendekatan monolitik ini sangat rentan: jika salah satu komponen hardware gagal atau data terlambat diperoleh, seluruh penelitian macet total (deadlock).",
+          "Prinsip Dekomposisi Modular Program Riset: Program riset besar wajib didekomposisi secara metodologis menjadi tiga sub-proyek mandiri yang saling mendukung: 1.",
+          "Work Package 1 (Fondasi Empiris & Karakterisasi Batas): Berfokus pada pemahaman fundamental fenomena, pembangunan dataset standar, instrumentasi kalibrasi, atau benchmark perbandingan baseline."
         ],
-        "keyFormulaOrDiagram": "Isolasi Risiko (Decoupling and Fault Tolerance): Ketiga proyek harus dirancang sedemikian..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Isolasi Risiko (Decoupling and Fault Tolerance): Ketiga proyek harus dirancang sedemikian rupa sehingga memiliki sifat self-contained.",
         "bulletPoints": [
-          "Isolasi Risiko (Decoupling and Fault Tolerance): Ketiga proyek harus dirancang sedemikian rupa sehingga memiliki sifat self-c...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Keberhasilan publikasi WP1 tidak boleh bergantung pada keberhasilan inovasi WP2.",
+          "Jika algoritma baru pada WP2 gagal melampaui baseline komersial, data dan metodologi karakterisasi dari WP1 serta analisis pengujian dari WP3 tetap memiliki nilai ilmiah orisinal yang valid untuk diterbitkan."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Optimasi Dekomposisi Proyek Riset (Work Package Orthogonality):",
         "bulletPoints": [
-          "Model Optimasi Dekomposisi Proyek Riset (Work Package Orthogonality):",
-          "Diberikan himpunan luaran ilmiah $\\mathcal{O} = \\{o_1, o_2, o_3\\}$ dan himpunan vektor risiko eksperimen $\\mat...",
-          "Derajat Ortogonalitas Risiko Riset didefinisikan melalui inner product kovariansi kegagalan:"
+          "Diberikan himpunan luaran ilmiah $\\mathcal{O} = \\{o_1, o_2, o_3\\}$ dan himpunan vektor risiko eksperimen $\\mathbf{r}_i \\in \\mathbb{R}^d$.",
+          "Derajat Ortogonalitas Risiko Riset didefinisikan melalui inner product kovariansi kegagalan:",
+          "Peluang Keberhasilan Minimal Program (Program Resilience):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Cov}(\\text{Fail}(WP_i), \\text{Fail}(WP_j)) \\to 0, \\quad \\forall i \\neq j$$"
+        "keyFormulaOrDiagram": "$$\\text{Cov}(\\text{Fail}(WP_i), \\text{Fail}(WP_j)) \\to 0, \\quad \\forall i \\neq j$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah laboratorium di ITERA menerima mandat riset 3 tahun bertema \"Pengembangan Turbin Angin Sumbu Vertikal Skala Mikro untuk Pesisir Lampu...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Rancang WP1 (Risiko Rendah, Publikasi Cepat): \"Karakterisasi Profil Kecepatan dan Turbulensi Angin...",
-          "Langkah 2: Rancang WP2 (Risiko Moderat/Tinggi, Nilai Kebaruan Inti): \"Perancangan Profil Bilah Sudu Adaptif Me...",
-          "Langkah 3: Rancang WP3 (Risiko Moderat, Validasi Sistem): \"Analisis Dinamika Getaran dan Keandalan Mekanikal G...",
-          "Interpretasi: Dekomposisi ini memitigasi risiko kegagalan berantai dengan membuat setiap Work Package mampu memproduksi luaran ilmiah..."
+          "Konteks Kasus: Sebuah laboratorium di ITERA menerima mandat riset 3 tahun bertema \"Pengembangan Turbin Angin Sumbu Vertikal Skala Mikro untuk Pesisir Lampung\". Dekomposisi tema besar ini menjadi 3 Work Package yang ortogonal dan terisolasi dari risiko kegagalan fatal.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi Ketahanan: Jika simulasi CFD di WP2 mengalami keterlambatan lisensi su..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Rancang WP1 (Risiko Rendah, Publikasi Cepat): \"Karakterisasi Profil Kecepatan dan Turbulensi Angin Pesisir Selat Sunda Berbasis Sensor LiDAR dan Anemometer Ultrasonik\". Output: Dataset publik profil angin pesisir dan artikel karakterisasi meteorologi rekayasa.",
+          "Langkah 2: Rancang WP2 (Risiko Moderat/Tinggi, Nilai Kebaruan Inti): \"Perancangan Profil Bilah Sudu Adaptif Menggunakan Simulasi Dinamika Fluida Komputasi (CFD) dan Algoritma Optimasi Multiobyektif\". Output: Desain aerodinamika baru sudu mikro dengan efisiensi konversi daya lebih tinggi."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Rancang WP3 (Risiko Moderat, Validasi Sistem): \"Analisis Dinamika Getaran dan Keandalan Mekanikal Generator Magnet Permanen Fluks Aksial pada Turbin Skala Prototipe\". Output: Pengujian getaran lapangan dan analisis umur kelelahan bahan (fatigue life).",
+          "Langkah 4: Evaluasi Ketahanan: Jika simulasi CFD di WP2 mengalami keterlambatan lisensi superkomputer, prototipe turbin di WP3 tetap dapat menguji profil angin nyata dari data WP1 menggunakan bilah konvensional terlebih dahulu.",
+          "[result: Interpretasi Ilmiah] Dekomposisi ini memitigasi risiko kegagalan berantai dengan membuat setiap Work Package mampu memproduksi luaran ilmiah bernilai tinggi secara mandiri."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi probabilitas keberhasilan program riset multi-tahun: Monolitik vs Modular Dekomposisi.",
         "bulletPoints": [
-          "Deskripsi: Simulasi probabilitas keberhasilan program riset multi-tahun: Monolitik vs Modular Dekomposisi.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: ANALISIS KETAHANAN DESAIN PROGRAM RISET:"
+          "Tujuan Algoritma: Simulasi probabilitas keberhasilan program riset multi-tahun: Monolitik vs Modular Dekomposisi.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: ANALISIS KETAHANAN DESAIN PROGRAM RISET:"
         ],
-        "keyFormulaOrDiagram": "ANALISIS KETAHANAN DESAIN PROGRAM RISET: | -----------------------------------------------..."
+        "keyFormulaOrDiagram": "ANALISIS KETAHANAN DESAIN PROGRAM RISET:\n-------------------------------------------------------\nPeluang Sukses Desain Monolitik           :  43.9%\nPeluang Terbit Minimal 1 Paper (Modular) :  99.1%\nPeluang Terbit Minimal 2 Paper (Modular) :  84.5%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Membuat WP2 baru bisa dimulai jika WP1 100% selesai, sehingga menciptakan bottleneck waktu yang kritis.",
-          "Perangkap: Membagi proyek berdasarkan tahapan administratif (misal: Bab 1, Bab 2) bukan berdasarkan paket pertanyaan ilmi...",
-          "Perangkap: Tidak memiliki rencana cadangan (contingency fallback) ketika pengadaan alat di WP1 tertunda."
-        ]
+          "[warning: Perangkap] Membuat WP2 baru bisa dimulai jika WP1 100% selesai, sehingga menciptakan bottleneck waktu yang kritis.",
+          "[warning: Perangkap] Membagi proyek berdasarkan tahapan administratif (misal: Bab 1, Bab 2) bukan berdasarkan paket pertanyaan ilmiah yang mandiri.",
+          "[warning: Perangkap] Tidak memiliki rencana cadangan (contingency fallback) ketika pengadaan alat di WP1 tertunda."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan matriks dependensi tugas (Design Structure Matrix - DSM) untuk mengidentifikasi dan meminimalkan circu...",
-          "Prosedur: Uji kemandirian setiap paket kerja: pastikan setiap WP memiliki rumusan masalah, metodologi, dan target publik..."
-        ]
+          "Prosedur: Gunakan matriks dependensi tugas (Design Structure Matrix - DSM) untuk mengidentifikasi dan meminimalkan circular feedback loops antar paket kerja.",
+          "Prosedur: Uji kemandirian setiap paket kerja: pastikan setiap WP memiliki rumusan masalah, metodologi, dan target publikasi jurnal yang terdefinisi sejak hari pertama."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa dalam dekomposisi riset doktoral, WP1 disarankan memiliki tingkat kepastian metodologis yang tinggi (high feasib...",
-          "Petunjuk: Perhatikan faktor psikologis peneliti dan tuntutan evaluasi tahun pertama.",
-          "Solusi Kunci: Tahun pertama doktoral adalah fase krusial di mana kandidat membangun kepercayaan diri akademik dan menghadapi evaluasi..."
-        ]
+          "Pertanyaan Uji: Mengapa dalam dekomposisi riset doktoral, WP1 disarankan memiliki tingkat kepastian metodologis yang tinggi (high feasibility)?",
+          "Petunjuk Analitis: Perhatikan faktor psikologis peneliti dan tuntutan evaluasi tahun pertama.",
+          "Solusi Kunci: Tahun pertama doktoral adalah fase krusial di mana kandidat membangun kepercayaan diri akademik dan menghadapi evaluasi kualifikasi (confirmation review). Memulai dengan WP1 yang feasible (seperti pembangunan dataset atau benchmark terstandarisasi) menjamin adanya capaian publikasi nyata lebih awal, sehingga mengurangi stres dan mengamankan kelanjutan studi sebelum menghadapi inovasi WP2 yang penuh ketidakpastian."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -384,100 +459,138 @@ export const CH50_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penyusunan Peta Jalan 3-4 Tahun dengan Kriteria Termina...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penyusunan Peta Jalan 3-4 Tahun dengan Kriteria Terminasi Dini (Kill Criteria)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.6.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.3.",
-          "Capaian: Menyusun peta jalan riset 3-4 tahun menggunakan Analisis Jalur Kritis (Critical Path Method - CPM).",
-          "Capaian: Merumuskan kriteria terminasi dini (Kill Criteria) dan strategi pivoting eksperimen secara objektif.",
-          "Capaian: Mengatasi sunk cost fallacy dalam riset saintifik berbasis aturan keputusan formal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun peta jalan riset 3-4 tahun menggunakan Analisis Jalur Kritis (Critical Path Method - CPM).",
+          "Capaian 2: Merumuskan kriteria terminasi dini (Kill Criteria) dan strategi pivoting eksperimen secara objektif.",
+          "Capaian 3: Mengatasi sunk cost fallacy dalam riset saintifik berbasis aturan keputusan formal."
         ],
-        "keyFormulaOrDiagram": "$$ES(A_i) = \\max_{A_j \\in \\text{Pred}(A_i)} EF(A_j), \\quad EF(A_i) = ES(A_i) + d_i$$"
+        "keyFormulaOrDiagram": "$$ES(A_i) = \\max_{A_j \\in \\text{Pred}(A_i)} EF(A_j), \\quad EF(A_i) = ES(A_i) + d_i$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.6.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penyusunan Peta Jalan 3-4 Tahun dengan Kriteria Termina...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penyusunan Peta Jalan 3-4 Tahun dengan Kriteria Terminasi Dini (Kill Criteria)",
+        "lead": "Waktu adalah sumber daya paling terbatas dalam sebuah program penelitian doktoral atau proyek hibah terikat batas waktu.",
         "bulletPoints": [
-          "Waktu adalah sumber daya paling terbatas dalam sebuah program penelitian doktoral atau proyek hibah terikat batas waktu. Bany...",
-          "Penjadwalan Jalur Kritis (Critical Path Method - CPM): Dalam peta jalan 36 hingga 48 bulan, setiap aktivitas penelitian (peng...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Banyak peneliti terjebak dalam sunk cost fallacy: terus menerus menghabiskan waktu dan dana berbulan-bulan untuk mengejar hipotesis atau memperbaiki instrumen yang sebenarnya telah menemui jalan buntu, semata-mata karena merasa \"sudah terlanjur banyak berinvestasi di awal\".",
+          "Manajemen riset profesional menuntut keberanian metodologis untuk menetapkan kriteria terminasi dini (Kill Criteria) dan rencana pivot yang terukur.",
+          "Penjadwalan Jalur Kritis (Critical Path Method - CPM): Dalam peta jalan 36 hingga 48 bulan, setiap aktivitas penelitian (pengadaan sensor, kalibrasi, pengumpulan data, komputasi, penulisan, revisi) memiliki durasi dan hubungan ketergantungan.",
+          "Jalur Kritis (Critical Path) adalah urutan aktivitas terpanjang dari awal hingga akhir proyek yang tidak memiliki toleransi keterlambatan (zero slack / float)."
         ],
-        "keyFormulaOrDiagram": "Konstruksi Kriteria Terminasi Dini (Kill Criteria): Kill Criteria adalah seperangkat amban..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Konstruksi Kriteria Terminasi Dini (Kill Criteria): Kill Criteria adalah seperangkat ambang batas kuantitatif yang ditentukan di muka sebelum eksperimen dimulai, yang menyatakan kapan sebuah pendekatan harus dihentikan atau di-pivot: 1.",
         "bulletPoints": [
-          "Konstruksi Kriteria Terminasi Dini (Kill Criteria): Kill Criteria adalah seperangkat ambang batas kuantitatif yang ditentukan...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Ambang Batas Waktu (Temporal Deadline): Misal, jika konvergensi sintesis material tidak tercapai dalam waktu 12 minggu, hentikan eksplorasi variasi prekursor kimia tersebut.",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Analisis Jalur Kritis (Critical Path Method - CPM) Matematis:",
         "bulletPoints": [
-          "Analisis Jalur Kritis (Critical Path Method - CPM) Matematis:",
-          "Diberikan aktivitas riset $A_i$ dengan durasi $d_i$, himpunan pendahulu $\\text{Pred}(A_i)$, dan penerus $\\text...",
-          "1. Perhitungan Waktu Maju (Forward Pass):"
+          "Diberikan aktivitas riset $A_i$ dengan durasi $d_i$, himpunan pendahulu $\\text{Pred}(A_i)$, dan penerus $\\text{Succ}(A_i)$.",
+          "1. Perhitungan Waktu Maju (Forward Pass):",
+          "2. Perhitungan Waktu Mundur (Backward Pass):"
         ],
-        "keyFormulaOrDiagram": "$$ES(A_i) = \\max_{A_j \\in \\text{Pred}(A_i)} EF(A_j), \\quad EF(A_i) = ES(A_i) + d_i$$"
+        "keyFormulaOrDiagram": "$$ES(A_i) = \\max_{A_j \\in \\text{Pred}(A_i)} EF(A_j), \\quad EF(A_i) = ES(A_i) + d_i$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah proyek riset memiliki 4 aktivitas utama: A1 (Karakterisasi Sensor, 4 bulan), A2 (Pengembangan Algoritma Baru, 6 bulan, butuh A1), A3...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah proyek riset memiliki 4 aktivitas utama: A1 (Karakterisasi Sensor, 4 bulan), A2 (Pengembangan Algoritma Baru, 6 bulan, butuh A1), A3 (Desain Casing Prototipe, 2 bulan, butuh A1), dan A4 (Uji Integrasi Akhir, 3 bulan, butuh A2 dan A3). Tentukan durasi total proyek, aktivitas yang berada pada jalur kritis, dan besar slack waktu untuk A3.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Forward Pass: A1: ES=0, EF=4. A2: ES=4, EF=10. A3: ES=4, EF=6. A4: ES=max(EF_A2, EF_A3) = max(10, 6...",
-          "Langkah 2: Backward Pass (Durasi total = 13 bulan): A4: LF=13, LS=10. A2: LF=LS_A4=10, LS=4. A3: LF=LS_A4=10,...",
+          "Langkah 1: Forward Pass: A1: ES=0, EF=4. A2: ES=4, EF=10. A3: ES=4, EF=6. A4: ES=max(EF_A2, EF_A3) = max(10, 6) = 10, EF=13 bulan.",
+          "Langkah 2: Backward Pass (Durasi total = 13 bulan): A4: LF=13, LS=10. A2: LF=LS_A4=10, LS=4. A3: LF=LS_A4=10, LS=8. A1: LF=min(LS_A2, LS_A3) = min(4, 8) = 4, LS=0."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung Slack: S(A1) = 0 - 0 = 0. S(A2) = 4 - 4 = 0. S(A3) = 8 - 4 = 4 bulan. S(A4) = 10 - 10 = 0.",
-          "Interpretasi: Peneliti wajib mengalokasikan fokus pengawasan harian pada rantai kritis A1-A2-A4, sementara fabrikasi casing di A3 memi..."
+          "Langkah 4: Jalur Kritis: A1 -> A2 -> A4 dengan durasi total 13 bulan. Aktivitas A3 memiliki slack 4 bulan (dapat ditunda hingga 4 bulan tanpa memundurkan jadwal penyelesaian proyek).",
+          "[result: Interpretasi Ilmiah] Peneliti wajib mengalokasikan fokus pengawasan harian pada rantai kritis A1-A2-A4, sementara fabrikasi casing di A3 memiliki fleksibilitas 4 bulan."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Jalur Kritis: A1 -> A2 -> A4 dengan durasi total 13 bulan. Aktivitas A3 memilik..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Algoritma Critical Path Method (CPM) untuk penjadwalan dan identifikasi jalur kritis program riset doktoral.",
         "bulletPoints": [
-          "Deskripsi: Algoritma Critical Path Method (CPM) untuk penjadwalan dan identifikasi jalur kritis program riset doktoral.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: DURASI TOTAL PROYEK RISET: 13 Bulan"
+          "Tujuan Algoritma: Algoritma Critical Path Method (CPM) untuk penjadwalan dan identifikasi jalur kritis program riset doktoral.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: DURASI TOTAL PROYEK RISET: 13 Bulan"
         ],
-        "keyFormulaOrDiagram": "DURASI TOTAL PROYEK RISET: 13 Bulan | ====================================================..."
+        "keyFormulaOrDiagram": "DURASI TOTAL PROYEK RISET: 13 Bulan\n=================================================================\nAktivitas              | Dur  | Slack | Jalur Kritis\n=================================================================\nA1 (Kalibrasi)         | 4    | 0     | YA (CRITICAL)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menetapkan timeline riset tanpa mempertimbangkan waktu tunggu acak (seperti antrian peer review jurnal yang da...",
-          "Perangkap: Mengabaikan Kill Criteria karena gengsi akademik atau rasa keterikatan emosional pada ide awal.",
-          "Perangkap: Melakukan pivoting tanpa dokumentasi sistematis mengapa metode sebelumnya gagal (kegagalan terukur adalah data..."
-        ]
+          "[warning: Perangkap] Menetapkan timeline riset tanpa mempertimbangkan waktu tunggu acak (seperti antrian peer review jurnal yang dapat memakan waktu 4-8 bulan).",
+          "[warning: Perangkap] Mengabaikan Kill Criteria karena gengsi akademik atau rasa keterikatan emosional pada ide awal.",
+          "[warning: Perangkap] Melakukan pivoting tanpa dokumentasi sistematis mengapa metode sebelumnya gagal (kegagalan terukur adalah data berharga)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan checkpoint triwulanan (Quarterly Milestone Review): evaluasi metrik kinerja aktual terhadap Kill Crite...",
-          "Prosedur: Sertakan buffer time kontingensi minimal 20% pada jalur kritis proyek untuk mengantisipasi hambatan tak terdug..."
-        ]
+          "Prosedur: Gunakan checkpoint triwulanan (Quarterly Milestone Review): evaluasi metrik kinerja aktual terhadap Kill Criteria yang telah disepakati bersama pembimbing.",
+          "Prosedur: Sertakan buffer time kontingensi minimal 20% pada jalur kritis proyek untuk mengantisipasi hambatan tak terduga."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa aktivitas dengan nilai Slack = 0 disebut berada pada \"Jalur Kritis\"?",
-          "Petunjuk: Perhatikan dampak keterlambatan satu hari pada aktivitas tersebut terhadap tanggal akhir proyek.",
-          "Solusi Kunci: Aktivitas dengan Slack = 0 tidak memiliki toleransi penundaan sama sekali. Jika aktivitas tersebut terlambat 1 hari atau..."
-        ]
+          "Petunjuk Analitis: Perhatikan dampak keterlambatan satu hari pada aktivitas tersebut terhadap tanggal akhir proyek.",
+          "Solusi Kunci: Aktivitas dengan Slack = 0 tidak memiliki toleransi penundaan sama sekali. Jika aktivitas tersebut terlambat 1 hari atau 1 minggu, maka tanggal penyelesaian keseluruhan proyek riset akan ikut mundur tepat 1 hari atau 1 minggu."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -544,100 +657,140 @@ export const CH50_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Manajemen Kolaborasi, Pembimbingan Ilmiah, dan Formulas...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Manajemen Kolaborasi, Pembimbingan Ilmiah, dan Formulasi Proposal Hibah Penelitian",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 7.6.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.4.",
-          "Capaian: Mengelola dinamika hubungan pembimbingan ilmiah (Advisor-Advisee Management) secara proaktif.",
-          "Capaian: Merancang arsitektur pembagian tugas dan hak kepengarangan dalam tim riset kolaboratif multidisiplin.",
-          "Capaian: Memformulasi proposal hibah penelitian kompetitif (Grant Writing) berbasis kerangka SMART dan Heilmeier Catech..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 7.6.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengelola dinamika hubungan pembimbingan ilmiah (Advisor-Advisee Management) secara proaktif.",
+          "Capaian 2: Merancang arsitektur pembagian tugas dan hak kepengarangan dalam tim riset kolaboratif multidisiplin.",
+          "Capaian 3: Memformulasi proposal hibah penelitian kompetitif (Grant Writing) berbasis kerangka SMART dan Heilmeier Catechism."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{U}_{\\text{grant}} = w_{\\text{nov}} \\cdot N + w_{\\text{imp}} \\cdot I + w_{\\text{feas}} \\cdot F - w_{\\text{cost}} \\cdot C$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{U}_{\\text{grant}} = w_{\\text{nov}} \\cdot N + w_{\\text{imp}} \\cdot I + w_{\\text{feas}} \\cdot F - w_{\\text{cost}} \\cdot C$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 7.6.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Manajemen Kolaborasi, Pembimbingan Ilmiah, dan Formulas...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Manajemen Kolaborasi, Pembimbingan Ilmiah, dan Formulasi Proposal Hibah Penelitian",
+        "lead": "Riset ilmiah modern di era kontemporer hampir tidak pernah lagi dilakukan oleh seorang jenius yang bekerja dalam isolasi total.",
         "bulletPoints": [
-          "Riset ilmiah modern di era kontemporer hampir tidak pernah lagi dilakukan oleh seorang jenius yang bekerja dalam isolasi tota...",
-          "Manajemen Hubungan Pembimbingan Ilmiah (Managing Upwards): Hubungan antara kandidat doktor dan promotor/pembimbing bukan hubu...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kemajuan sains didorong oleh kolaborasi tim multidisiplin berskala besar yang membutuhkan pendanaan hibah kompetitif.",
+          "Kapasitas seorang peneliti tidak hanya diukur dari kecakapan analitis di depan komputer atau meja lab, melainkan juga kecerdasan interpersonal dalam mengelola relasi pembimbingan, memimpin kolaborator internasional, dan memenangkan pendanaan riset.",
+          "Manajemen Hubungan Pembimbingan Ilmiah (Managing Upwards): Hubungan antara kandidat doktor dan promotor/pembimbing bukan hubungan majikan-karyawan pasif, melainkan kemitraan intelektual profesional: - Buat agenda pertemuan tertulis sebelum jadwal bimbingan: ringkasan kemajuan minggu lalu, hambatan spesifik yang butuh keputusan pembimbing, dan rencana aksi minggu depan. - Sajikan alternatif solusi, bukan hanya membawa masalah mentah (\"Kami menghadapi masalah X, dan kami telah merancang Opsi Solusi A dan Opsi Solusi B beserta kelebihan dan kekurangannya...\"). - Hormati waktu pembimbing dengan mengirimkan draf naskah minimal 5 hari kerja sebelum tanggal diskusi."
         ],
-        "keyFormulaOrDiagram": "Protokol Kolaborasi dan Kepengarangan Adil (CRediT Taxonomy): Dalam tim riset multi-instit..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Protokol Kolaborasi dan Kepengarangan Adil (CRediT Taxonomy): Dalam tim riset multi-institusi, perselisihan paling sering timbul seputar urutan nama penulis (authorship order).",
         "bulletPoints": [
-          "Protokol Kolaborasi dan Kepengarangan Adil (CRediT Taxonomy): Dalam tim riset multi-institusi, perselisihan paling sering tim...",
-          "Formulasi Proposal Hibah: Prinsip George Heilmeier (DARPA Catechism): George H. Heilmeier merumuskan serangkaian pertanyaan e...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Standar internasional CRediT (Contributor Roles Taxonomy) membagi kontribusi ke dalam 14 peran terstandarisasi (Conceptualization, Methodology, Software, Formal Analysis, Investigation, Resources, Data Curation, Writing - Original Draft, Writing - Review & Editing, Visualization, Supervision, Project Administration, Funding Acquisition).",
+          "Matriks CRediT wajib disepakati di awal kolaborasi untuk mencegah konflik di kemudian hari.",
+          "Formulasi Proposal Hibah: Prinsip George Heilmeier (DARPA Catechism): George H.",
+          "Heilmeier merumuskan serangkaian pertanyaan esensial yang digunakan oleh lembaga donor dunia untuk menyaring proposal riset jutaan dolar: 1."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Evaluasi Kelayakan Proposal Hibah Riset (Heilmeier Utility Score):",
         "bulletPoints": [
-          "Model Evaluasi Kelayakan Proposal Hibah Riset (Heilmeier Utility Score):",
           "Panitia seleksi reviewer hibah mengevaluasi proposal menggunakan model linier terbobot bergradien dampak:",
-          "di mana:"
+          "di mana:",
+          "- $N \\in [0, 1]$ adalah skor kebaruan ilmiah (novelty)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{U}_{\\text{grant}} = w_{\\text{nov}} \\cdot N + w_{\\text{imp}} \\cdot I + w_{\\text{feas}} \\cdot F - w_{\\text{cost}} \\cdot C$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{U}_{\\text{grant}} = w_{\\text{nov}} \\cdot N + w_{\\text{imp}} \\cdot I + w_{\\text{feas}} \\cdot F - w_{\\text{cost}} \\cdot C$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim dosen dan mahasiswa ITERA merancang proposal hibah penelitian terapan untuk sistem peringatan dini tanah longsor berbasis IoT dan...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Butir 1 (Tujuan Tanpa Jargon): \"Kami membangun sistem pemantauan lereng berbiaya rendah yang mampu...",
-          "Langkah 2: Butir 2 (Praktik Saat Ini dan Limitasi): \"Saat ini pemantauan lereng mengandalkan sensor ekstensome...",
-          "Langkah 3: Butir 3 (Inovasi dan Alasan Berhasil): \"Pendekatan kami menggabungkan kamera inframerah bersolar se...",
-          "Interpretasi: Penerapan Heilmeier Catechism menghasilkan ringkasan eksekutif proposal yang sangat jernih, persuasif, dan bebas dari ja..."
+          "Konteks Kasus: Sebuah tim dosen dan mahasiswa ITERA merancang proposal hibah penelitian terapan untuk sistem peringatan dini tanah longsor berbasis IoT dan visi komputer. Gunakan kerangka Heilmeier Catechism untuk merumuskan ringkasan eksekutif 5 butir proposal tersebut.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Butir 5 (Waktu dan Biaya): \"Riset ini membutuhkan waktu 24 bulan dengan total a..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Butir 1 (Tujuan Tanpa Jargon): \"Kami membangun sistem pemantauan lereng berbiaya rendah yang mampu mendeteksi pergeseran tanah mikro dan mengirimkan peringatan sirene 15 menit sebelum longsor terjadi ke warga desa pesisir.\"",
+          "Langkah 2: Butir 2 (Praktik Saat Ini dan Limitasi): \"Saat ini pemantauan lereng mengandalkan sensor ekstensometer impor berharga mahal (> Rp 200 juta/titik) atau inspeksi visual manual yang tidak bisa beroperasi di malam hari dan saat hujan badai.\"",
+          "Langkah 3: Butir 3 (Inovasi dan Alasan Berhasil): \"Pendekatan kami menggabungkan kamera inframerah bersolar sel surya dengan algoritma Optical Flow efisien di microcomputer lokal. Ini terbukti berhasil mendeteksi pergeseran 2 mm pada skala uji laboratorium.\""
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Butir 4 (Dampak Riil): \"Jika berhasil, biaya instrumen turun 85% menjadi Rp 15 juta, memungkinkan pemerintah daerah memasang 50 titik pantau rawan longsor di Lampung, berpotensi menyelamatkan ribuan jiwa penduduk lereng perbukitan.\"",
+          "Langkah 5: Butir 5 (Waktu dan Biaya): \"Riset ini membutuhkan waktu 24 bulan dengan total anggaran Rp 350 juta, dengan milestone teruji pada simulasi getaran buatan di bulan ke-12 dan uji lereng jalan lintas Sumatra di bulan ke-20.\"",
+          "[result: Interpretasi Ilmiah] Penerapan Heilmeier Catechism menghasilkan ringkasan eksekutif proposal yang sangat jernih, persuasif, dan bebas dari jargon berlebihan bagi para reviewer pendanaan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemetaan matriks kontribusi peran kepengarangan terstandarisasi berbasis taksonomi CRediT.",
         "bulletPoints": [
-          "Deskripsi: Pemetaan matriks kontribusi peran kepengarangan terstandarisasi berbasis taksonomi CRediT.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: MATRIKS KEPENGARANGAN STANDAR CRediT:"
+          "Tujuan Algoritma: Pemetaan matriks kontribusi peran kepengarangan terstandarisasi berbasis taksonomi CRediT.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: MATRIKS KEPENGARANGAN STANDAR CRediT:"
         ],
-        "keyFormulaOrDiagram": "MATRIKS KEPENGARANGAN STANDAR CRediT: | ==================================================..."
+        "keyFormulaOrDiagram": "MATRIKS KEPENGARANGAN STANDAR CRediT:\n======================================================================\nNama Peneliti              | Peran Kontribusi Utama\n======================================================================\nDr. Aji (Lead Researcher)  | Conceptualization, Methodology, Software, Formal Analysis, Investigation, Data Curation, Writing - Original Draft, Writing - Review & Editing",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memasukkan rekan atau pejabat institusi sebagai penulis pendamping (guest/honorary authorship) padahal yang be...",
-          "Perangkap: Menulis proposal hibah yang penuh dengan istilah hiperbolik tanpa detail metodologi pengujian yang konkret.",
-          "Perangkap: Menemui pembimbing tanpa persiapan data atau tanpa catatan pertemuan tertulis, mengharapkan pembimbing yang me..."
-        ]
+          "[warning: Perangkap] Memasukkan rekan atau pejabat institusi sebagai penulis pendamping (guest/honorary authorship) padahal yang bersangkutan tidak berkontribusi saintifik.",
+          "[warning: Perangkap] Menulis proposal hibah yang penuh dengan istilah hiperbolik tanpa detail metodologi pengujian yang konkret.",
+          "[warning: Perangkap] Menemui pembimbing tanpa persiapan data atau tanpa catatan pertemuan tertulis, mengharapkan pembimbing yang memikirkan seluruh detail solusi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan formulir persetujuan kepengarangan CRediT sebelum draf pertama artikel mulai ditulis bersama rekan tim...",
-          "Prosedur: Terapkan \"Reviewer-Persona Check\" pada proposal hibah: minta rekan sejawat di luar disiplin ilmu Anda membaca..."
-        ]
+          "Prosedur: Gunakan formulir persetujuan kepengarangan CRediT sebelum draf pertama artikel mulai ditulis bersama rekan tim.",
+          "Prosedur: Terapkan \"Reviewer-Persona Check\" pada proposal hibah: minta rekan sejawat di luar disiplin ilmu Anda membaca naskah untuk menguji apakah tujuannya mudah dipahami."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Menurut pedoman internasional COPE dan ICMJE, apakah seorang kepala laboratorium berhak dicantumkan sebagai penulis arti...",
-          "Petunjuk: Perhatikan definisi kontribusi intelektual substansial vs dukungan administratif.",
-          "Solusi Kunci: TIDAK BERHAK. Penyediaan dana riset, fasilitas laboratorium umum, atau jabatan manajerial/kepala lab semata-mata (tanpa..."
-        ]
+          "Pertanyaan Uji: Menurut pedoman internasional COPE dan ICMJE, apakah seorang kepala laboratorium berhak dicantumkan sebagai penulis artikel ilmiah semata-mata karena ia menyediakan fasilitas lab dan pendanaan?",
+          "Petunjuk Analitis: Perhatikan definisi kontribusi intelektual substansial vs dukungan administratif.",
+          "Solusi Kunci: TIDAK BERHAK. Penyediaan dana riset, fasilitas laboratorium umum, atau jabatan manajerial/kepala lab semata-mata (tanpa kontribusi intelektual langsung pada perancangan, eksekusi, analisis, atau penulisan naskah) tidak memenuhi syarat kepengarangan ilmiah. Kontribusi tersebut wajib dicantumkan pada bagian Acknowledgments (Ucapan Terima Kasih), bukan di daftar penulis."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

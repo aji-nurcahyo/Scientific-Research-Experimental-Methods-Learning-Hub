@@ -61,98 +61,125 @@ export const CH08_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Taksonomi Desain Riset: Studi Observasional, Quasi-Eksp...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Taksonomi Desain Riset: Studi Observasional, Quasi-Eksperimen, dan Eksperimen Murni",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.1.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.1.",
-          "Capaian: Membedakan tiga paradigma desain riset utama berdasarkan tingkat kontrol dan manipulasi variabel.",
-          "Capaian: Memahami notasi desain eksperimen standar Campbell & Stanley (R, O, X).",
-          "Capaian: Memilih arsitektur desain yang tepat untuk studi rekayasa dan sains komputasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan tiga paradigma desain riset utama berdasarkan tingkat kontrol dan manipulasi variabel.",
+          "Capaian 2: Memahami notasi desain eksperimen standar Campbell & Stanley (R, O, X).",
+          "Capaian 3: Memilih arsitektur desain yang tepat untuk studi rekayasa dan sains komputasi."
         ],
-        "keyFormulaOrDiagram": "$$\\begin{matrix} \\text{Grup 1 (Perlakuan):} & R & O_1 & X & O_2 \\\\ \\text{Grup 2 (Kontrol):} & R & O_3 & & O_4 \\end{matrix}$$"
+        "keyFormulaOrDiagram": "$$\\begin{matrix} \\text{Grup 1 (Perlakuan):} & R & O_1 & X & O_2 \\\\ \\text{Grup 2 (Kontrol):} & R & O_3 & & O_4 \\end{matrix}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.1.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Taksonomi Desain Riset: Studi Observasional, Quasi-Eksp...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Taksonomi Desain Riset: Studi Observasional, Quasi-Eksperimen, dan Eksperimen Murni",
+        "lead": "Desain penelitian (*research design*) adalah cetak biru operasional yang menghubungkan pertanyaan penelitian dengan strategi pengumpulan data empiris.",
         "bulletPoints": [
-          "Desain penelitian (*research design*) adalah cetak biru operasional yang menghubungkan pertanyaan penelitian dengan strategi...",
-          "Tiga paradigma arsitektur penelitian utama meliputi: 1. Studi Observasional (Observational Studies): Peneliti tidak melakukan...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Dalam ranah rekayasa dan sains terapan, rancangan metodologis menentukan sejauh mana klaim kausalitas yang dihasilkan dapat dipertanggungjawabkan secara ilmiah.",
+          "Tiga paradigma arsitektur penelitian utama meliputi: 1.",
+          "Studi Observasional (Observational Studies): Peneliti tidak melakukan manipulasi aktif terhadap sistem."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "derivation",
+        "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Sistem notasi formal Campbell & Stanley:",
         "bulletPoints": [
-          "Desain penelitian (*research design*) adalah cetak biru operasional yang menghubungkan pertanyaan penelitian dengan strategi...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "- $R$ : Pengacakan unit eksperimen (Random Assignment)",
+          "- $X$ : Pemaparan terhadap perlakuan / manipulasi variabel bebas",
+          "- $O_k$ : Observasi pengukuran respons ke-$k$"
+        ],
+        "keyFormulaOrDiagram": "$$\\begin{matrix} \\text{Grup 1 (Perlakuan):} & R & O_1 & X & O_2 \\\\ \\text{Grup 2 (Kontrol):} & R & O_3 & & O_4 \\end{matrix}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 4,
-        "title": "Formulasi Matematis & Notasi Formal",
+        "layout": "example",
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Sistem notasi formal Campbell & Stanley:",
-          "- $R$ : Pengacakan unit eksperimen (Random Assignment)",
-          "- $X$ : Pemaparan terhadap perlakuan / manipulasi variabel bebas"
+          "Konteks Kasus: Sebuah pabrik semen di Lampung menguji aditif kimia baru untuk menurunkan emisi debu pada cerobong Kiln A. Pabrik memiliki Kiln B sebagai pembanding yang tidak diberi aditif. Kiln tidak dapat dialokasikan secara acak karena sifat fisik bangunan permanen. Tentukan klasifikasi desain riset ini dan formulasikan notasi Campbell-Stanley untuk pengujian selama 30 hari sebelum dan sesudah intervensi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "$$\\begin{matrix} \\text{Grup 1 (Perlakuan):} & R & O_1 & X & O_2 \\\\ \\text{Grup 2 (Kontrol):} & R & O_3 & & O_4 \\end{matrix}$$"
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 5,
-        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah pabrik semen di Lampung menguji aditif kimia baru untuk menurunkan emisi debu pada cerobong Kiln A. Pabrik memiliki Kiln B sebagai pe...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Langkah 1: Identifikasi ada/tidaknya manipulasi variabel bebas: Ada perlakuan intervensi berupa penambahan aditif kimia (X).",
+          "Langkah 2: Identifikasi ada/tidaknya randomisasi: Kiln A dan Kiln B adalah struktur permanen, tidak mungkin dialokasikan secara acak (ketiadaan R)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi ada/tidaknya manipulasi variabel bebas: Ada perlakuan intervensi berupa penambahan adi...",
-          "Langkah 2: Identifikasi ada/tidaknya randomisasi: Kiln A dan Kiln B adalah struktur permanen, tidak mungkin di...",
-          "Langkah 3: Klasifikasikan desain: Karena ada perlakuan namun tanpa alokasi acak, desain ini adalah Quasi-Ekspe...",
-          "Interpretasi: Peneliti wajib mengontrol variabel kovariat (seperti laju alir bahan baku dan kadar air batubara) dalam model statistik..."
+          "Langkah 3: Klasifikasikan desain: Karena ada perlakuan namun tanpa alokasi acak, desain ini adalah Quasi-Eksperimen tipe Non-Equivalent Control Group Design.",
+          "Langkah 4: Tuliskan notasi formal: Grup A: O1 X O2; Grup B: O3 O4 (tanpa simbol R di awal baris).",
+          "[result: Interpretasi Ilmiah] Peneliti wajib mengontrol variabel kovariat (seperti laju alir bahan baku dan kadar air batubara) dalam model statistik untuk memitigasi bias non-ekuivalensi antara Kiln A dan Kiln B."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Tuliskan notasi formal: Grup A: O1 X O2; Grup B: O3 O4 (tanpa simbol R di awal..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 7,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Estimasi efek perlakuan menggunakan estimator Difference-in-Differences (DiD) pada data quasi-eksperimen.",
         "bulletPoints": [
-          "Deskripsi: Estimasi efek perlakuan menggunakan estimator Difference-in-Differences (DiD) pada data quasi-eksperimen.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Perubahan Kiln A (Perlakuan): -13.06 mg/Nm3"
+          "Tujuan Algoritma: Estimasi efek perlakuan menggunakan estimator Difference-in-Differences (DiD) pada data quasi-eksperimen.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Perubahan Kiln A (Perlakuan): -13.06 mg/Nm3"
         ],
-        "keyFormulaOrDiagram": "Perubahan Kiln A (Perlakuan): -13.06 mg/Nm3 | Perubahan Kiln B (Kontrol) : -0.32 mg/Nm3 |..."
+        "keyFormulaOrDiagram": "Perubahan Kiln A (Perlakuan): -13.06 mg/Nm3\nPerubahan Kiln B (Kontrol)   : -0.32 mg/Nm3\nEfek Bersih Aditif (DiD)    : -12.74 mg/Nm3",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 8,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan hubungan sebab-akibat langsung dari studi observasional murni tanpa mengontrol variabel perancu.",
-          "Perangkap: Mengklaim suatu desain sebagai eksperimen murni padahal unit uji dialokasikan berdasarkan kenyamanan (convenie...",
-          "Perangkap: Mengabaikan efek tren waktu alami yang terjadi secara independen dari perlakuan intervensi."
-        ]
+          "[warning: Perangkap] Menyimpulkan hubungan sebab-akibat langsung dari studi observasional murni tanpa mengontrol variabel perancu.",
+          "[warning: Perangkap] Mengklaim suatu desain sebagai eksperimen murni padahal unit uji dialokasikan berdasarkan kenyamanan (convenience assignment).",
+          "[warning: Perangkap] Mengabaikan efek tren waktu alami yang terjadi secara independen dari perlakuan intervensi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 9,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan uji keseimbangan baseline (balance test) pada data pretest untuk memeriksa derajat kesetaraan awal ant...",
+          "Prosedur: Gunakan uji keseimbangan baseline (balance test) pada data pretest untuk memeriksa derajat kesetaraan awal antar-kelompok.",
           "Prosedur: Sertakan diagram alir desain Campbell-Stanley secara eksplisit pada bab metodologi."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
         "slideNumber": 10,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa desain satu kelompok pretest-posttest sederhana (O1 X O2) dianggap memiliki validitas ilmiah yang sangat lemah?",
-          "Petunjuk: Perhatikan apakah penurunan atau kenaikan respons pasti disebabkan oleh X atau oleh faktor waktu.",
-          "Solusi Kunci: Desain satu kelompok tanpa kelompok kontrol tidak mampu membedakan apakah perubahan antara O1 dan O2 disebabkan oleh int..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah penurunan atau kenaikan respons pasti disebabkan oleh X atau oleh faktor waktu.",
+          "Solusi Kunci: Desain satu kelompok tanpa kelompok kontrol tidak mampu membedakan apakah perubahan antara O1 dan O2 disebabkan oleh intervensi X, ataukah semata-mata akibat efek perjalanan waktu alami (maturasi), peristiwa eksternal yang terjadi bersamaan (sejarah), atau fluktuasi instrumen pengukuran."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -215,99 +242,126 @@ export const CH08_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Validitas Internal: Ancaman Seleksi, Sejarah, Maturasi,...",
+        "slideNumber": 11,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Validitas Internal: Ancaman Seleksi, Sejarah, Maturasi, dan Regresi Statistik",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.1.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.2.",
-          "Capaian: Mengidentifikasi 8 ancaman klasik terhadap validitas internal eksperimen.",
-          "Capaian: Menganalisis fenomena regresi menuju rata-rata (regression to the mean) pada pengujian ekstrem.",
-          "Capaian: Merancang mekanisme kontrol untuk menetralisir ancaman seleksi dan efek sejarah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi 8 ancaman klasik terhadap validitas internal eksperimen.",
+          "Capaian 2: Menganalisis fenomena regresi menuju rata-rata (regression to the mean) pada pengujian ekstrem.",
+          "Capaian 3: Merancang mekanisme kontrol untuk menetralisir ancaman seleksi dan efek sejarah."
         ],
-        "keyFormulaOrDiagram": "$$Y_t = \\mu + s_i + \\epsilon_t$$"
+        "keyFormulaOrDiagram": "$$Y_t = \\mu + s_i + \\epsilon_t$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.1.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Validitas Internal: Ancaman Seleksi, Sejarah, Maturasi,...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Validitas Internal: Ancaman Seleksi, Sejarah, Maturasi, dan Regresi Statistik",
+        "lead": "Validitas internal (*internal validity*) adalah derajat kepastian bahwa perubahan yang teramati pada variabel terikat benar-benar disebabkan oleh manipulasi variabel bebas, bukan oleh variabel pengganggu di luar kendali peneliti.",
         "bulletPoints": [
-          "Validitas internal (*internal validity*) adalah derajat kepastian bahwa perubahan yang teramati pada variabel terikat benar-b...",
-          "Empat ancaman klasik terhadap validitas internal meliputi: 1. Efek Sejarah (History): Peristiwa eksternal yang tidak direncan...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Jika validitas internal suatu eksperimen cacat, maka seluruh kesimpulan kausal yang ditarik menjadi tidak sah.",
+          "Empat ancaman klasik terhadap validitas internal meliputi: 1.",
+          "Efek Sejarah (History): Peristiwa eksternal yang tidak direncanakan terjadi di antara pengukuran pretest dan posttest yang mempengaruhi variabel respons (misalnya fluktuasi tegangan jala-jala listrik PLN saat pengujian efisiensi motor semalam suntuk)."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Validitas internal (*internal validity*) adalah derajat kepastian bahwa perubahan yang teramati pada variabel terikat benar-b...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 13,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model dekomposisi galat observasi berulang pada fenomena regresi menuju rata-rata (Galton Regression):",
         "bulletPoints": [
-          "Model dekomposisi galat observasi berulang pada fenomena regresi menuju rata-rata (Galton Regression):",
           "Respons teramati $Y_t$ pada waktu $t$:",
-          "Di mana $\\mu$ adalah rata-rata populasi, $s_i \\sim \\mathcal{N}(0, \\sigma_s^2)$ adalah karakteristik sejati uni..."
+          "Di mana $\\mu$ adalah rata-rata populasi, $s_i \\sim \\mathcal{N}(0, \\sigma_s^2)$ adalah karakteristik sejati unit ke-$i$, dan $\\epsilon_t \\sim \\mathcal{N}(0, \\sigma_\\epsilon^2)$ adalah galat pengukuran acak sementara.",
+          "Jika unit dipilih karena $Y_1 > c$ (nilai ekstrem tinggi), ekspektasi bersyarat pada pengukuran kedua $Y_2$:"
         ],
-        "keyFormulaOrDiagram": "$$Y_t = \\mu + s_i + \\epsilon_t$$"
+        "keyFormulaOrDiagram": "$$Y_t = \\mu + s_i + \\epsilon_t$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 14,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada lini inspeksi baterai litium ITERA, 10 sel baterai dengan kapasitas paling rendah (rata-rata 1850 mAh dari baseline rata-rata pabrik 20...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada lini inspeksi baterai litium ITERA, 10 sel baterai dengan kapasitas paling rendah (rata-rata 1850 mAh dari baseline rata-rata pabrik 2000 mAh) dipilih untuk diberi perlakuan pulse conditioning. Setelah perlakuan, kapasitas rata-rata 10 sel tersebut naik menjadi 1910 mAh. Koefisien korelasi test-retest pengukuran adalah rho = 0.60. Hitung berapa porsi kenaikan kapasitas yang sebenarnya hanyalah efek regresi statistik menuju rata-rata.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 15,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi parameter: mu = 2000 mAh, y1 = 1850 mAh, rho = 0.60.",
-          "Langkah 2: Hitung nilai ekspektasi posttest murni akibat regresi statistik (tanpa intervensi): E[Y2] = mu + rh...",
+          "Langkah 2: Hitung nilai ekspektasi posttest murni akibat regresi statistik (tanpa intervensi): E[Y2] = mu + rho * (y1 - mu) = 2000 + 0.60 * (1850 - 2000) = 2000 - 90 = 1910 mAh."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Bandingkan hasil teramati dengan prediksi regresi: Hasil teramati adalah tepat 1910 mAh.",
-          "Interpretasi: Pulse conditioning kemungkinan besar tidak memberikan efek apa pun. Peneliti tertipu oleh fenomena regresi menuju rata-r..."
+          "Langkah 4: Evaluasi efek perlakuan bersih: Kenaikan dari 1850 mAh ke 1910 mAh (sebesar +60 mAh) 100% dapat diterangkan oleh regresi statistik menuju rata-rata!",
+          "[result: Interpretasi Ilmiah] Pulse conditioning kemungkinan besar tidak memberikan efek apa pun. Peneliti tertipu oleh fenomena regresi menuju rata-rata karena memilih sampel dari kelompok ekstrem terendah."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi efek perlakuan bersih: Kenaikan dari 1850 mAh ke 1910 mAh (sebesar +60..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi komputasional efek regresi menuju rata-rata pada seleksi sampel ekstrem.",
         "bulletPoints": [
-          "Deskripsi: Simulasi komputasional efek regresi menuju rata-rata pada seleksi sampel ekstrem.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Rata-rata Keseluruhan Populasi : 100.00"
+          "Tujuan Algoritma: Simulasi komputasional efek regresi menuju rata-rata pada seleksi sampel ekstrem.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Rata-rata Keseluruhan Populasi       : 100.00"
         ],
-        "keyFormulaOrDiagram": "Rata-rata Keseluruhan Populasi : 100.00 | Rata-rata Sampel Terpilih pada Uji 1 : 79.91 | R..."
+        "keyFormulaOrDiagram": "Rata-rata Keseluruhan Populasi       : 100.00\nRata-rata Sampel Terpilih pada Uji 1 : 79.91\nRata-rata Sampel Terpilih pada Uji 2 : 83.84\nKenaikan Semu Akibat Regresi Menuju Rata-rata: +3.93",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 18,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan keberhasilan intervensi perbaikan kualitas hanya karena unit yang sebelumnya paling rusak menunju...",
-          "Perangkap: Mengabaikan efek kelelahan instrumen sensorik yang mengalami drift termal selama sesi pengujian panjang (ancam...",
-          "Perangkap: Mengizinkan unit eksperimen memilih kelompok perlakuannya sendiri (self-selection)."
-        ]
+          "[warning: Perangkap] Menyimpulkan keberhasilan intervensi perbaikan kualitas hanya karena unit yang sebelumnya paling rusak menunjukkan perbaikan pada uji kedua.",
+          "[warning: Perangkap] Mengabaikan efek kelelahan instrumen sensorik yang mengalami drift termal selama sesi pengujian panjang (ancaman instrumen).",
+          "[warning: Perangkap] Mengizinkan unit eksperimen memilih kelompok perlakuannya sendiri (self-selection)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 19,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Terapkan alokasi acak (randomization) dengan kelompok kontrol paralel murni untuk membatalkan ancaman sejarah...",
-          "Prosedur: Sertakan kelompok kontrol yang juga diambil dari kelompok ekstrem yang sama untuk mengisolasi besaran efek reg..."
-        ]
+          "Prosedur: Terapkan alokasi acak (randomization) dengan kelompok kontrol paralel murni untuk membatalkan ancaman sejarah dan maturasi.",
+          "Prosedur: Sertakan kelompok kontrol yang juga diambil dari kelompok ekstrem yang sama untuk mengisolasi besaran efek regresi menuju rata-rata."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 20,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Bagaimana penambahan kelompok kontrol murni mampu menetralisir ancaman efek sejarah (history threat)?",
-          "Petunjuk: Perhatikan apakah peristiwa eksternal mempengaruhi kelompok perlakuan dan kontrol secara seimbang.",
-          "Solusi Kunci: Peristiwa eksternal yang tidak terduga (seperti kenaikan suhu lingkungan atau perubahan kelembaban udara) akan dialami s..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah peristiwa eksternal mempengaruhi kelompok perlakuan dan kontrol secara seimbang.",
+          "Solusi Kunci: Peristiwa eksternal yang tidak terduga (seperti kenaikan suhu lingkungan atau perubahan kelembaban udara) akan dialami secara simultan oleh kelompok perlakuan maupun kelompok kontrol. Dengan membandingkan selisih antara kedua kelompok (Difference-in-Differences), efek gangguan eksternal tersebut saling meniadakan secara matematis."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -371,100 +425,134 @@ export const CH08_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Validitas Eksternal: Generalisabilitas Hasil ke Domain...",
+        "slideNumber": 21,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Validitas Eksternal: Generalisabilitas Hasil ke Domain Operasional Riil",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.1.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.3.",
-          "Capaian: Memahami definisi validitas eksternal dan batasan generalisasi hasil laboratorium.",
-          "Capaian: Mengevaluasi ancaman reaktivitas lingkungan uji dan efek interaksi perlakuan-latar belakang.",
-          "Capaian: Merancang protokol validasi bertingkat dari simulasi menuju uji lapangan operasional."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami definisi validitas eksternal dan batasan generalisasi hasil laboratorium.",
+          "Capaian 2: Mengevaluasi ancaman reaktivitas lingkungan uji dan efek interaksi perlakuan-latar belakang.",
+          "Capaian 3: Merancang protokol validasi bertingkat dari simulasi menuju uji lapangan operasional."
         ],
-        "keyFormulaOrDiagram": "$$\\tau_{\\text{target}} = \\int \\tau(x) \\, dP_{\\text{target}}(x)$$"
+        "keyFormulaOrDiagram": "$$\\tau_{\\text{target}} = \\int \\tau(x) \\, dP_{\\text{target}}(x)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.1.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Validitas Eksternal: Generalisabilitas Hasil ke Domain...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Validitas Eksternal: Generalisabilitas Hasil ke Domain Operasional Riil",
+        "lead": "Validitas eksternal (*external validity*) adalah sejauh mana hubungan kausal dan kinerja sistem yang terbukti di laboratorium dapat digeneralisasikan ke populasi, setting lingkungan, waktu, dan kondisi operasional dunia nyata yang berbeda.",
         "bulletPoints": [
-          "Validitas eksternal (*external validity*) adalah sejauh mana hubungan kausal dan kinerja sistem yang terbukti di laboratorium...",
-          "Ancaman utama terhadap validitas eksternal dalam rekayasa: 1. Interaksi Seleksi-Perlakuan: Sampel benda uji yang digunakan di...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Sebuah algoritma atau material yang beroperasi sempurna di lingkungan laboratorium yang bersih dan terkontrol sering kali mengalami keruntuhan performa saat diterjunkan ke lingkungan industri nyata.",
+          "Ancaman utama terhadap validitas eksternal dalam rekayasa: 1.",
+          "Interaksi Seleksi-Perlakuan: Sampel benda uji yang digunakan di laboratorium tidak mewakili variabilitas populasi komponen di pasar."
         ],
-        "keyFormulaOrDiagram": "Menjamin validitas eksternal menuntut verifikasi bertingkat: dari simulasi in-silico, peng..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Menjamin validitas eksternal menuntut verifikasi bertingkat: dari simulasi in-silico, pengujian rig bangku (bench-scale), hin...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Menjamin validitas eksternal menuntut verifikasi bertingkat: dari simulasi in-silico, pengujian rig bangku (bench-scale), hingga uji coba percontohan lapangan (pilot-scale operational testing).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 24,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Generalisabilitas estimasi efek $\\tau$ dari domain laboratorium $\\mathcal{D}_{\\text{lab}}$ menuju domain target operasional $\\mathcal{D}_{\\text{target}}$:",
         "bulletPoints": [
-          "Generalisabilitas estimasi efek $\\tau$ dari domain laboratorium $\\mathcal{D}_{\\text{lab}}$ menuju domain targe...",
           "Di mana $\\tau(x) = \\mathbb{E}[Y(1) - Y(0) \\mid X = x]$ adalah conditional average treatment effect.",
-          "Validitas eksternal terjaga jika dan hanya jika:"
+          "Validitas eksternal terjaga jika dan hanya jika:",
+          "1. Dukungan Bersama (Common Support / Positivity):"
         ],
-        "keyFormulaOrDiagram": "$$\\tau_{\\text{target}} = \\int \\tau(x) \\, dP_{\\text{target}}(x)$$"
+        "keyFormulaOrDiagram": "$$\\tau_{\\text{target}} = \\int \\tau(x) \\, dP_{\\text{target}}(x)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 25,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah model visi komputer untuk klasifikasi penyakit daun kopi dilatih pada dataset laboratorium dengan latar belakang kain putih bersih da...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah model visi komputer untuk klasifikasi penyakit daun kopi dilatih pada dataset laboratorium dengan latar belakang kain putih bersih dan pencahayaan studio konstan 500 lux (akurasi uji 98.5%). Saat diuji pada kamera petani di lapangan dengan latar belakang tanah berlumpur, pencahayaan matahari langsung 20.000 lux, dan bayangan ranting, akurasi anjlok menjadi 61.2%. Analisis kegagalan validitas eksternal ini secara matematis.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 26,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi ruang fitur kovariat X (intensitas cahaya dan tekstur latar belakang).",
-          "Langkah 2: Evaluasi kondisi Common Support: Domain laboratorium memiliki rentang cahaya [450, 550] lux dan tek...",
-          "Langkah 3: Amati pelanggaran dukungan bersama: Ruang fitur target berada jauh di luar dukungan fitur laborator...",
-          "Interpretasi: Eksperimen awal gagal memenuhi validitas eksternal karena mengeliminasi variabilitas lingkungan alami. Peneliti harus me..."
+          "Langkah 2: Evaluasi kondisi Common Support: Domain laboratorium memiliki rentang cahaya [450, 550] lux dan tekstur latar belakang datar. Domain lapangan memiliki rentang cahaya [2.000, 80.000] lux dengan tekstur fraktal kompleks."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Model mengalami Out-of-Distribution (OOD) shift yang masif."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Amati pelanggaran dukungan bersama: Ruang fitur target berada jauh di luar dukungan fitur laboratorium (Supp(P_target) di luar Supp(P_lab)).",
+          "Langkah 4: Model mengalami Out-of-Distribution (OOD) shift yang masif.",
+          "[result: Interpretasi Ilmiah] Eksperimen awal gagal memenuhi validitas eksternal karena mengeliminasi variabilitas lingkungan alami. Peneliti harus melatih ulang model dengan augmentasi domain dan data lapangan yang representatif."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pengukuran pergeseran distribusi fitur (Covariate Shift) antara data laboratorium dan data operasional lapangan.",
         "bulletPoints": [
-          "Deskripsi: Pengukuran pergeseran distribusi fitur (Covariate Shift) antara data laboratorium dan data operasional lapangan.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: Rata-rata Intensitas Cahaya Lab : 500.2 lux"
+          "Tujuan Algoritma: Pengukuran pergeseran distribusi fitur (Covariate Shift) antara data laboratorium dan data operasional lapangan.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: Rata-rata Intensitas Cahaya Lab     : 500.2 lux"
         ],
-        "keyFormulaOrDiagram": "Rata-rata Intensitas Cahaya Lab : 500.2 lux | Rata-rata Intensitas Cahaya Lapangan : 6046...."
+        "keyFormulaOrDiagram": "Rata-rata Intensitas Cahaya Lab     : 500.2 lux\nRata-rata Intensitas Cahaya Lapangan : 6046.2 lux\nStatistik Kolmogorov-Smirnov (KS)   : 1.0000\nNilai p-value                       : 0.0000e+00\nPeringatan Kritis: Terjadi pergeseran distribusi ekstrem (Covariate Shift). Validitas eksternal terancam runtuh.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 29,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan bahwa algoritma siap diterapkan secara komersial hanya berdasarkan evaluasi pada dataset benchmar...",
-          "Perangkap: Mengabaikan efek keausan mekanis atau degradasi termal komponen saat beralih dari pengujian durasi pendek ke o...",
-          "Perangkap: Melakukan klaim generalisasi universal untuk semua kondisi tanpa menguji batas toleransi ekstrem lingkungan."
-        ]
+          "[warning: Perangkap] Menyimpulkan bahwa algoritma siap diterapkan secara komersial hanya berdasarkan evaluasi pada dataset benchmark publik yang steril.",
+          "[warning: Perangkap] Mengabaikan efek keausan mekanis atau degradasi termal komponen saat beralih dari pengujian durasi pendek ke operasional kontinu.",
+          "[warning: Perangkap] Melakukan klaim generalisasi universal untuk semua kondisi tanpa menguji batas toleransi ekstrem lingkungan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 30,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan uji silang domain (cross-dataset and out-of-domain evaluation) pada data yang dihimpun dari geografi d...",
+          "Prosedur: Lakukan uji silang domain (cross-dataset and out-of-domain evaluation) pada data yang dihimpun dari geografi dan sensor berbeda.",
           "Prosedur: Sertakan pengujian stres (stress testing) dengan memaparkan sistem pada kondisi batas kebisingan maksimum."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 31,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa perbedaan antara validitas populasi (population validity) dan validitas ekologis (ecological validity)?",
-          "Petunjuk: Perhatikan apakah generalisasi ditujukan pada keragaman unit subjek atau keragaman kondisi lingkunga...",
-          "Solusi Kunci: Validitas populasi berfokus pada apakah temuan dapat digeneralisasikan ke kelompok subjek atau unit uji lain yang lebih..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah generalisasi ditujukan pada keragaman unit subjek atau keragaman kondisi lingkungan fisis.",
+          "Solusi Kunci: Validitas populasi berfokus pada apakah temuan dapat digeneralisasikan ke kelompok subjek atau unit uji lain yang lebih luas. Sebaliknya, validitas ekologis berfokus pada apakah temuan yang diperoleh di bawah kondisi buatan laboratorium tetap berlaku di bawah setting kondisi lingkungan fisik dunia nyata yang bising dan dinamis."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -485,7 +573,7 @@ export const CH08_LESSONS: Record<string, Partial<Lesson>> = {
       "problemStatement": "Sebuah tim peneliti ITERA merancang sistem pemantauan gempa bumi berbasis jaringan sensor akselerometer MEMS berbiaya rendah. Rancang strategi pengujian terpadu yang memadukan keunggulan eksperimen laboratorium dan studi lapangan.",
       "stepByStepSolution": [
         "Langkah 1 (Fase Laboratorium - Validitas Internal Tinggi): Tempatkan sensor pada meja getar (shake table) terkontrol. Masukkan sinyal sinusoidal murni dengan amplitudo dan frekuensi presisi untuk mengkalibrasi sensitivitas sensor dan memverifikasi respon transfer fungsi tanpa noise luar.",
-        "Langkah 2 (Fase Hibrida - Simulasi Hardware-in-the-Loop): Putar rekaman sinyal gempa bumi bersejarah riil pada shake table di dalam ruang uji termal dengan suhu bervariasi -10\u00b0C hingga +50\u00b0C untuk menguji kompensasi drift suhu.",
+        "Langkah 2 (Fase Hibrida - Simulasi Hardware-in-the-Loop): Putar rekaman sinyal gempa bumi bersejarah riil pada shake table di dalam ruang uji termal dengan suhu bervariasi -10°C hingga +50°C untuk menguji kompensasi drift suhu.",
         "Langkah 3 (Fase Lapangan - Validitas Eksternal Tinggi): Pasang 10 unit sensor di lereng Gunung Anak Krakatau selama 3 bulan. Evaluasi performa sistem dalam menangani cuaca hujan tropis, paparan gas sulfur korosif, dan interupsi daya panel surya."
       ],
       "resultInterpretation": "Kombinasi tiga fase memastikan bahwa algoritma memiliki dasar kalibrasi fisis yang valid secara internal di lab dan terbukti tangguh secara eksternal di habitat operasional riil."
@@ -526,100 +614,130 @@ export const CH08_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Trade-off Desain: Eksperimen Terkontrol Laboratorium vs...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Trade-off Desain: Eksperimen Terkontrol Laboratorium vs Studi Lapangan",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.1.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.4.",
-          "Capaian: Menganalisis dilema trade-off mendasar antara validitas internal dan validitas eksternal.",
-          "Capaian: Merancang desain eksperimen hibrida (laboratorium lapangan / field experiments) yang seimbang.",
-          "Capaian: Memilih metodologi pengujian yang optimal sesuai tahap kematangan teknologi (TRL)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.1.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menganalisis dilema trade-off mendasar antara validitas internal dan validitas eksternal.",
+          "Capaian 2: Merancang desain eksperimen hibrida (laboratorium lapangan / field experiments) yang seimbang.",
+          "Capaian 3: Memilih metodologi pengujian yang optimal sesuai tahap kematangan teknologi (TRL)."
         ],
-        "keyFormulaOrDiagram": "$$\\max_{\\mathbf{w}} \\mathcal{U}_{\\text{desain}} = w_{\\text{int}} \\cdot \\mathcal{V}_{\\text{int}}(\\mathbf{c}) + w_{\\text{ext}} \\cdot \\mathcal{V}_{\\text{ext}}(\\mathbf{c})$$"
+        "keyFormulaOrDiagram": "$$\\max_{\\mathbf{w}} \\mathcal{U}_{\\text{desain}} = w_{\\text{int}} \\cdot \\mathcal{V}_{\\text{int}}(\\mathbf{c}) + w_{\\text{ext}} \\cdot \\mathcal{V}_{\\text{ext}}(\\mathbf{c})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.1.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Trade-off Desain: Eksperimen Terkontrol Laboratorium vs...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Trade-off Desain: Eksperimen Terkontrol Laboratorium vs Studi Lapangan",
+        "lead": "Dalam setiap penyelidikan ilmiah rekayasa, peneliti selalu dihadapkan pada dilema kompromi mendasar (*fundamental methodological dilemma*): semakin tinggi kontrol eksperimental yang diterapkan untuk mematikan seluruh variabel pengganggu (meningkatkan validitas internal), semakin steril dan artifisial lingkungan pengujian tersebut, yang berakibat pada penurunan realisme dan kemampuan generalisasi ke dunia nyata (menurunkan validitas eksternal).",
         "bulletPoints": [
-          "Dalam setiap penyelidikan ilmiah rekayasa, peneliti selalu dihadapkan pada dilema kompromi mendasar (*fundamental methodologi...",
-          "Sebaliknya, pengujian yang dilakukan langsung di lapangan operasional industri (field trial) memiliki realisme ekologis yang...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Sebaliknya, pengujian yang dilakukan langsung di lapangan operasional industri (field trial) memiliki realisme ekologis yang sempurna, namun menghadapkan peneliti pada puluhan variabel pengganggu tak terukur yang dapat mendistorsi pembuktian mekanisme kausal."
         ],
-        "keyFormulaOrDiagram": "Strategi rekayasa modern menyelesaikan dilema ini melalui pendekatan bertahap berbasis Tin..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Strategi rekayasa modern menyelesaikan dilema ini melalui pendekatan bertahap berbasis Tingkat Kesiapterapan Teknologi (Techn...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Strategi rekayasa modern menyelesaikan dilema ini melalui pendekatan bertahap berbasis Tingkat Kesiapterapan Teknologi (Technology Readiness Level / TRL): - TRL 1-3 (Validitas Internal Dominan): Eksperimen skala bangku laboratorium murni dengan variabel perancu yang diisolasi ketat untuk membuktikan prinsip fisis dasar. - TRL 4-6 (Transisi Hibrida): Pengujian rig skala percontohan dengan memasukkan faktor perturbasi lingkungan terkontrol (hardware-in-the-loop simulation). - TRL 7-9 (Validitas Eksternal Dominan): Uji coba lapangan terdistribusi penuh di lingkungan operasional aktual untuk memverifikasi keandalan dan daya tahan sistem.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Fungsi utilitas kualitas desain penelitian $\\mathcal{U}_{\\text{desain}}$ dapat dimodelkan sebagai optimasi terbobot:",
         "bulletPoints": [
-          "Fungsi utilitas kualitas desain penelitian $\\mathcal{U}_{\\text{desain}}$ dapat dimodelkan sebagai optimasi ter...",
           "Di mana $\\mathbf{c} \\in [0, 1]^K$ merepresentasikan vektor tingkat isolasi kontrol lingkungan eksperimen.",
-          "Ketika tingkat isolasi dinaikkan ($c_k \\to 1$), $\\mathcal{V}_{\\text{int}}$ meningkat secara asimtotik, namun $..."
+          "Ketika tingkat isolasi dinaikkan ($c_k \\to 1$), $\\mathcal{V}_{\\text{int}}$ meningkat secara asimtotik, namun $\\mathcal{V}_{\\text{ext}}$ menurun:"
         ],
-        "keyFormulaOrDiagram": "$$\\max_{\\mathbf{w}} \\mathcal{U}_{\\text{desain}} = w_{\\text{int}} \\cdot \\mathcal{V}_{\\text{int}}(\\mathbf{c}) + w_{\\text{ext}} \\cdot \\mathcal{V}_{\\text{ext}}(\\mathbf{c})$$"
+        "keyFormulaOrDiagram": "$$\\max_{\\mathbf{w}} \\mathcal{U}_{\\text{desain}} = w_{\\text{int}} \\cdot \\mathcal{V}_{\\text{int}}(\\mathbf{c}) + w_{\\text{ext}} \\cdot \\mathcal{V}_{\\text{ext}}(\\mathbf{c})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim peneliti ITERA merancang sistem pemantauan gempa bumi berbasis jaringan sensor akselerometer MEMS berbiaya rendah. Rancang strate...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1 (Fase Laboratorium - Validitas Internal Tinggi): Tempatkan sensor pada meja getar (shake table) terk...",
-          "Langkah 2 (Fase Hibrida - Simulasi Hardware-in-the-Loop): Putar rekaman sinyal gempa bumi bersejarah riil pada...",
-          "Langkah 3 (Fase Lapangan - Validitas Eksternal Tinggi): Pasang 10 unit sensor di lereng Gunung Anak Krakatau s...",
-          "Interpretasi: Kombinasi tiga fase memastikan bahwa algoritma memiliki dasar kalibrasi fisis yang valid secara internal di lab dan terb..."
+          "Konteks Kasus: Sebuah tim peneliti ITERA merancang sistem pemantauan gempa bumi berbasis jaringan sensor akselerometer MEMS berbiaya rendah. Rancang strategi pengujian terpadu yang memadukan keunggulan eksperimen laboratorium dan studi lapangan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3 (Fase Lapangan - Validitas Eksternal Tinggi): Pasang 10 unit sensor di lereng Gu..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1 (Fase Laboratorium - Validitas Internal Tinggi): Tempatkan sensor pada meja getar (shake table) terkontrol. Masukkan sinyal sinusoidal murni dengan amplitudo dan frekuensi presisi untuk mengkalibrasi sensitivitas sensor dan memverifikasi respon transfer fungsi tanpa noise luar.",
+          "Langkah 2 (Fase Hibrida - Simulasi Hardware-in-the-Loop): Putar rekaman sinyal gempa bumi bersejarah riil pada shake table di dalam ruang uji termal dengan suhu bervariasi -10°C hingga +50°C untuk menguji kompensasi drift suhu."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Fase Lapangan - Validitas Eksternal Tinggi): Pasang 10 unit sensor di lereng Gunung Anak Krakatau selama 3 bulan. Evaluasi performa sistem dalam menangani cuaca hujan tropis, paparan gas sulfur korosif, dan interupsi daya panel surya.",
+          "[result: Interpretasi Ilmiah] Kombinasi tiga fase memastikan bahwa algoritma memiliki dasar kalibrasi fisis yang valid secara internal di lab dan terbukti tangguh secara eksternal di habitat operasional riil."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi kurva trade-off antara validitas internal dan eksternal berdasarkan tingkat isolasi lingkungan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi kurva trade-off antara validitas internal dan eksternal berdasarkan tingkat isolasi lingkungan.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Analisis Trade-off Desain Riset:"
+          "Tujuan Algoritma: Simulasi kurva trade-off antara validitas internal dan eksternal berdasarkan tingkat isolasi lingkungan.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Analisis Trade-off Desain Riset:"
         ],
-        "keyFormulaOrDiagram": "Analisis Trade-off Desain Riset: | Isolasi Lab | Val. Internal | Val. Eksternal | Skor Kes..."
+        "keyFormulaOrDiagram": "Analisis Trade-off Desain Riset:\nIsolasi Lab  | Val. Internal  | Val. Eksternal | Skor Keseimbangan \n-----------------------------------------------------------------\n        0.05 |          0.161 |          0.882 |              0.272\n        0.15 |          0.408 |          0.687 |              0.513",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Terjebak pada pengujian laboratorium murni sehingga solusi tidak pernah dapat diimplementasikan dalam praktik...",
-          "Perangkap: Langsung melompat ke uji coba lapangan tanpa pengujian bangku awal, sehingga saat sistem gagal, peneliti tidak...",
-          "Perangkap: Mengabaikan biaya logistik dan risiko keselamatan pada uji lapangan skala penuh."
-        ]
+          "[warning: Perangkap] Terjebak pada pengujian laboratorium murni sehingga solusi tidak pernah dapat diimplementasikan dalam praktik industri nyata.",
+          "[warning: Perangkap] Langsung melompat ke uji coba lapangan tanpa pengujian bangku awal, sehingga saat sistem gagal, peneliti tidak tahu komponen internal mana yang rusak.",
+          "[warning: Perangkap] Mengabaikan biaya logistik dan risiko keselamatan pada uji lapangan skala penuh."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan matriks readiness level (TRL checklist) untuk memetakan kesiapan sistem sebelum melangkah ke uji lapan...",
-          "Prosedur: Tetapkan parameter batas kegagalan kritis yang memicu penghentian darurat selama pengujian lapangan berlangsun..."
-        ]
+          "Prosedur: Gunakan matriks readiness level (TRL checklist) untuk memetakan kesiapan sistem sebelum melangkah ke uji lapangan.",
+          "Prosedur: Tetapkan parameter batas kegagalan kritis yang memicu penghentian darurat selama pengujian lapangan berlangsung."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 42,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Dalam penelitian sistem kemudi otonom kendaraan listrik, mengapa simulasi komputer (Software-in-the-Loop) wajib mendahul...",
-          "Petunjuk: Pertimbangkan faktor keselamatan (safety), biaya kegagalan, dan pengujian skenario kecelakaan ekstre...",
-          "Solusi Kunci: Simulasi komputer memungkinkan pengujian jutaan skenario ekstrem (seperti rem blong mendadak atau pejalan kaki menyebera..."
-        ]
+          "Pertanyaan Uji: Dalam penelitian sistem kemudi otonom kendaraan listrik, mengapa simulasi komputer (Software-in-the-Loop) wajib mendahului uji jalan raya publik?",
+          "Petunjuk Analitis: Pertimbangkan faktor keselamatan (safety), biaya kegagalan, dan pengujian skenario kecelakaan ekstrem (edge cases).",
+          "Solusi Kunci: Simulasi komputer memungkinkan pengujian jutaan skenario ekstrem (seperti rem blong mendadak atau pejalan kaki menyeberang tiba-tiba) secara cepat, berbiaya rendah, dan tanpa membahayakan nyawa manusia. Setelah algoritma terbukti stabil secara internal dalam simulasi dan rig bangku tertutup, uji jalan raya baru boleh dilakukan untuk memvalidasi performa eksternalnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

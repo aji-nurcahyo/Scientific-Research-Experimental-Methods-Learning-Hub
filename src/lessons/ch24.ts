@@ -63,100 +63,136 @@ export const CH24_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Model Regresi Linier Sederhana dan Berganda: Penurunan...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Model Regresi Linier Sederhana dan Berganda: Penurunan Matriks OLS",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.1.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.1.",
-          "Capaian: Menurunkan vektor koefisien estimator Ordinary Least Squares (OLS) menggunakan kalkulus matriks.",
-          "Capaian: Memahami sifat geometris proyeksi ortogonal ruang kolom matriks desain.",
-          "Capaian: Menghitung matriks varians-kovarians estimator dan standar error koefisien regresi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menurunkan vektor koefisien estimator Ordinary Least Squares (OLS) menggunakan kalkulus matriks.",
+          "Capaian 2: Memahami sifat geometris proyeksi ortogonal ruang kolom matriks desain.",
+          "Capaian 3: Menghitung matriks varians-kovarians estimator dan standar error koefisien regresi."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.1.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Model Regresi Linier Sederhana dan Berganda: Penurunan...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Model Regresi Linier Sederhana dan Berganda: Penurunan Matriks OLS",
+        "lead": "Regresi linier merupakan salah satu alat pemodelan statistik dan inferensial paling fundamental dalam rekayasa dan sains eksperimental.",
         "bulletPoints": [
-          "Regresi linier merupakan salah satu alat pemodelan statistik dan inferensial paling fundamental dalam rekayasa dan sains eksp...",
-          "Meskipun secara komputasi estimasi regresi dapat diselesaikan dengan memanggil fungsi perangkat lunak satu baris, pemahaman m...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Model ini mengkuantifikasi hubungan fungsional antara satu atau lebih variabel penjelas (prediktor/independen) dengan satu variabel respon kontinu (dependen).",
+          "Meskipun secara komputasi estimasi regresi dapat diselesaikan dengan memanggil fungsi perangkat lunak satu baris, pemahaman mendalam mengenai penurunan matematis Ordinary Least Squares (OLS) adalah syarat mutlak bagi peneliti.",
+          "Dalam pendekatan OLS, estimator dicari dengan meminimalkan Jumlah Kuadrat Residu (Residual Sum of Squares / RSS), yaitu selisih kuadrat antara nilai observasi empiris dan nilai prediksi model."
         ],
-        "keyFormulaOrDiagram": "Dalam formulasi aljabar linier modern, permasalahan OLS dipandang sebagai proyeksi ortogon..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dalam formulasi aljabar linier modern, permasalahan OLS dipandang sebagai proyeksi ortogonal geometris: vektor respon y yang berada pada ruang dimensi n diproyeksikan secara tegak lurus ke dalam subruang dimensi p yang dibentangkan oleh kolom-kolom matriks desain X.",
         "bulletPoints": [
-          "Dalam formulasi aljabar linier modern, permasalahan OLS dipandang sebagai proyeksi ortogonal geometris: vektor respon y yang...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Vektor proyeksi tersebut merupakan estimasi y-hat terbaik, dan vektor selisihnya (residu e) tegak lurus terhadap seluruh kolom prediktor, menjamin bahwa korelasi sampel antara prediktor dan residual adalah tepat nol."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Matriks Model Regresi Linier Berganda:",
         "bulletPoints": [
-          "1. Formulasi Matriks Model Regresi Linier Berganda:",
           "di mana:",
-          "- $\\mathbf{y} \\in \\mathbb{R}^{n \\times 1}$ adalah vektor respon observasi."
+          "- $\\mathbf{y} \\in \\mathbb{R}^{n \\times 1}$ adalah vektor respon observasi.",
+          "- $\\mathbf{X} \\in \\mathbb{R}^{n \\times p}$ adalah matriks desain (dengan kolom pertama biasanya bernilai 1 untuk intersep)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{y} = \\mathbf{X} \\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian daya pembangkitan turbin angin mikro terhadap kecepatan angin (X1, m/s) dan suhu udara (X2, deg C), diperoleh data n = 4 peng...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian daya pembangkitan turbin angin mikro terhadap kecepatan angin (X1, m/s) dan suhu udara (X2, deg C), diperoleh data n = 4 pengamatan:\ny = [10, 20, 22, 32]^T\nX1 = [2, 4, 5, 7]^T\nX2 = [25, 26, 24, 27]^T\nSusun matriks desain X (dengan intersep) dan turunkan estimasi OLS koefisien beta secara matriks.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Susun matriks desain X (4 x 3) dan vektor y (4 x 1): X = [[1, 2, 25], [1, 4, 26], [1, 5, 24], [1, 7...",
-          "Langkah 2: Hitung matriks produk X^T X: Kolom 0: sum(1)=4, sum(X1)=18, sum(X2)=102. sum(X1^2) = 4 + 16 + 25 +...",
-          "Langkah 3: Hitung vektor produk X^T y: sum(y) = 10 + 20 + 22 + 32 = 84. sum(X1*y) = 20 + 80 + 110 + 224 = 434....",
-          "Interpretasi: Model regresi yang diperoleh adalah y_hat = -2.57 + 4.29*X1 + 0.36*X2. Setiap kenaikan kecepatan angin 1 m/s diprediksi..."
+          "Langkah 1: Susun matriks desain X (4 x 3) dan vektor y (4 x 1):\nX = [[1, 2, 25], [1, 4, 26], [1, 5, 24], [1, 7, 27]], y = [10, 20, 22, 32]^T.",
+          "Langkah 2: Hitung matriks produk X^T X:\nKolom 0: sum(1)=4, sum(X1)=18, sum(X2)=102.\nsum(X1^2) = 4 + 16 + 25 + 49 = 94.\nsum(X2^2) = 625 + 676 + 576 + 729 = 2606.\nsum(X1*X2) = 50 + 104 + 120 + 189 = 463.\nX^T X = [[4, 18, 102], [18, 94, 463], [102, 463, 2606]]."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Selesaikan sistem persamaan linier (X^T X) beta = X^T y: Inversi dan eliminasi..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Implementasi OLS aljabar matriks murni via NumPy dan verifikasi menggunakan statsmodels.",
-          "Dependensi Pustaka: numpy, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Estimasi Matriks OLS"
+          "Langkah 3: Hitung vektor produk X^T y:\nsum(y) = 10 + 20 + 22 + 32 = 84.\nsum(X1*y) = 20 + 80 + 110 + 224 = 434.\nsum(X2*y) = 250 + 520 + 528 + 864 = 2162.\nX^T y = [84, 434, 2162]^T.",
+          "Langkah 4: Selesaikan sistem persamaan linier (X^T X) beta = X^T y:\nInversi dan eliminasi menghasilkan:\nbeta_0 = -2.5714, beta_1 (Kecepatan Angin) = 4.2857, beta_2 (Suhu) = 0.3571.",
+          "[result: Interpretasi Ilmiah] Model regresi yang diperoleh adalah y_hat = -2.57 + 4.29*X1 + 0.36*X2. Setiap kenaikan kecepatan angin 1 m/s diprediksi menaikkan daya rata-rata sebesar 4.29 Watt, sedangkan kenaikan suhu 1 deg C memberikan kontribusi 0.36 Watt."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Estimasi Matriks OLS | Koefisien beta_hat : [-2.57142857 4.28571..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi OLS aljabar matriks murni via NumPy dan verifikasi menggunakan statsmodels.",
         "bulletPoints": [
-          "Perangkap: Lupa menambahkan kolom intersep (konstanta 1) pada matriks desain X sehingga memaksa garis regresi melewati ti...",
-          "Perangkap: Menginversi matriks X^T X secara langsung menggunakan inv() alih-alih menyelesaikan sistem persamaan linier so...",
-          "Perangkap: Mengabaikan singularitas matriks ketika prediktor mengalami multikolinearitas sempurna (kolom linier dependen)..."
-        ]
+          "Tujuan Algoritma: Implementasi OLS aljabar matriks murni via NumPy dan verifikasi menggunakan statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Estimasi Matriks OLS"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Estimasi Matriks OLS\nKoefisien beta_hat : [-2.57142857  4.28571429  0.35714286]\nStandar Error SE   : [20.73028938  0.35714286  0.80377935]\n\nVerifikasi Statsmodels Summary:",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Periksa apakah rank matriks X sama dengan jumlah kolom p (kondisi rank penuh).",
-          "Prosedur: Verifikasi bahwa jumlah residu sum(e) mendekati nol (dengan toleransi numerik 1e-12) ketika intersep disertaka...",
-          "Prosedur: Konfirmasi bahwa vektor residu e ortogonal terhadap setiap kolom prediktor X_j (X^T e = 0)."
-        ]
+          "[warning: Perangkap] Lupa menambahkan kolom intersep (konstanta 1) pada matriks desain X sehingga memaksa garis regresi melewati titik origin (0,0).",
+          "[warning: Perangkap] Menginversi matriks X^T X secara langsung menggunakan inv() alih-alih menyelesaikan sistem persamaan linier solve() yang lebih stabil secara numerik.",
+          "[warning: Perangkap] Mengabaikan singularitas matriks ketika prediktor mengalami multikolinearitas sempurna (kolom linier dependen)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
+        "bulletPoints": [
+          "Prosedur: Periksa apakah rank matriks X sama dengan jumlah kolom p (kondisi rank penuh).",
+          "Prosedur: Verifikasi bahwa jumlah residu sum(e) mendekati nol (dengan toleransi numerik 1e-12) ketika intersep disertakan.",
+          "Prosedur: Konfirmasi bahwa vektor residu e ortogonal terhadap setiap kolom prediktor X_j (X^T e = 0)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa matriks hat H = X(X^T X)^(-1) X^T disebut sebagai matriks idempoten?",
-          "Petunjuk: Perhatikan sifat perkalian matriks H dengan dirinya sendiri: H * H.",
-          "Solusi Kunci: Matriks H disebut idempoten karena H^2 = H. Secara geometris, memproyeksikan vektor yang sudah berada di dalam subruang..."
-        ]
+          "Petunjuk Analitis: Perhatikan sifat perkalian matriks H dengan dirinya sendiri: H * H.",
+          "Solusi Kunci: Matriks H disebut idempoten karena H^2 = H. Secara geometris, memproyeksikan vektor yang sudah berada di dalam subruang proyeksi untuk kedua kalinya tidak mengubah posisinya sama sekali."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -228,101 +264,146 @@ export const CH24_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Asumsi Klasik Gauss-Markov: Linieritas, Homoskedastisit...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Asumsi Klasik Gauss-Markov: Linieritas, Homoskedastisitas, dan Independensi Residu",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.1.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.2.",
-          "Capaian: Memahami Teorema Gauss-Markov dan kriteria BLUE (Best Linear Unbiased Estimator).",
-          "Capaian: Mengidentifikasi lima asumsi klasik OLS dan konsekuensi matematis dari pelanggarannya.",
-          "Capaian: Membedakan asumsi deterministik pada prediktor versus asumsi stokastik pada komponen galat."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami Teorema Gauss-Markov dan kriteria BLUE (Best Linear Unbiased Estimator).",
+          "Capaian 2: Mengidentifikasi lima asumsi klasik OLS dan konsekuensi matematis dari pelanggarannya.",
+          "Capaian 3: Membedakan asumsi deterministik pada prediktor versus asumsi stokastik pada komponen galat."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Var}(\\tilde{\\boldsymbol{\\beta}}) - \\text{Var}(\\hat{\\boldsymbol{\\beta}}) \\ge \\mathbf{0} \\quad (\\text{Semi-Definit Positif})$$"
+        "keyFormulaOrDiagram": "$$\\text{Var}(\\tilde{\\boldsymbol{\\beta}}) - \\text{Var}(\\hat{\\boldsymbol{\\beta}}) \\ge \\mathbf{0} \\quad (\\text{Semi-Definit Positif})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.1.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Asumsi Klasik Gauss-Markov: Linieritas, Homoskedastisit...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Asumsi Klasik Gauss-Markov: Linieritas, Homoskedastisitas, dan Independensi Residu",
+        "lead": "Kekuatan dan keindahan model regresi OLS terletak pada Teorema Gauss-Markov.",
         "bulletPoints": [
-          "Kekuatan dan keindahan model regresi OLS terletak pada Teorema Gauss-Markov. Teorema ini membuktikan bahwa jika sekumpulan ko...",
-          "Lima Asumsi Klasik Gauss-Markov meliputi: 1. Linieritas dalam Parameter: Hubungan antara y dan X bersifat linier dalam koefis...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Teorema ini membuktikan bahwa jika sekumpulan kondisi tertentu (dikenal sebagai Asumsi Klasik Gauss-Markov) terpenuhi, maka estimator OLS adalah Best Linear Unbiased Estimator (BLUE).",
+          "Kata \"Best\" di sini memiliki makna matematis yang sangat spesifik: memiliki varians minimum di antara seluruh kelas estimator linier tak bias lainnya.",
+          "Lima Asumsi Klasik Gauss-Markov meliputi: 1.",
+          "Linieritas dalam Parameter: Hubungan antara y dan X bersifat linier dalam koefisien beta."
         ],
-        "keyFormulaOrDiagram": "Jika kelima asumsi ini terpenuhi, Teorema Gauss-Markov menjamin efisiensi optimal estimato..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Jika kelima asumsi ini terpenuhi, Teorema Gauss-Markov menjamin efisiensi optimal estimator OLS.",
         "bulletPoints": [
-          "Jika kelima asumsi ini terpenuhi, Teorema Gauss-Markov menjamin efisiensi optimal estimator OLS. Jika ditambah satu asumsi pe...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Jika ditambah satu asumsi pelengkap, yaitu Galat Terdistribusi Normal (epsilon ~ N(0, sigma^2 I)), maka uji hipotesis t-Student dan F-Fisher menjadi valid secara eksak untuk inferensi sampel berapapun ukurannya."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Pernyataan Teorema Gauss-Markov:",
         "bulletPoints": [
-          "1. Pernyataan Teorema Gauss-Markov:",
           "Diberikan model $\\mathbf{y} = \\mathbf{X}\\boldsymbol{\\beta} + \\boldsymbol{\\epsilon}$ dengan asumsi:",
-          "- $E[\\boldsymbol{\\epsilon} | \\mathbf{X}] = \\mathbf{0}$"
+          "- $E[\\boldsymbol{\\epsilon} | \\mathbf{X}] = \\mathbf{0}$",
+          "- $\\text{Var}(\\boldsymbol{\\epsilon} | \\mathbf{X}) = \\sigma^2 \\mathbf{I}_n$"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Var}(\\tilde{\\boldsymbol{\\beta}}) - \\text{Var}(\\hat{\\boldsymbol{\\beta}}) \\ge \\mathbf{0} \\quad (\\text{Semi-Definit Positif})$$"
+        "keyFormulaOrDiagram": "$$\\text{Var}(\\tilde{\\boldsymbol{\\beta}}) - \\text{Var}(\\hat{\\boldsymbol{\\beta}}) \\ge \\mathbf{0} \\quad (\\text{Semi-Definit Positif})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Buktikan secara analitis bahwa jika estimator OLS adalah beta_hat = (X^T X)^(-1) X^T y dan asumsi E[epsilon | X] = 0 terpenuhi, maka beta_ha...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Buktikan secara analitis bahwa jika estimator OLS adalah beta_hat = (X^T X)^(-1) X^T y dan asumsi E[epsilon | X] = 0 terpenuhi, maka beta_hat adalah estimator tak bias (unbiased estimator) dari parameter sejati beta.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Substitusikan persamaan model sejati y = X beta + epsilon ke dalam formula estimator OLS:",
           "beta_hat = (X^T X)^(-1) X^T (X beta + epsilon).",
           "Langkah 2: Distribusikan perkalian matriks:",
-          "Interpretasi: Terbukti bahwa E[beta_hat] = beta. Estimator OLS bersifat tak bias sempurna asalkan asumsi eksogenitas E[epsilon | X] =..."
+          "beta_hat = (X^T X)^(-1) (X^T X) beta + (X^T X)^(-1) X^T epsilon.",
+          "Langkah 3: Karena (X^T X)^(-1) (X^T X) = I (matriks identitas):",
+          "beta_hat = beta + (X^T X)^(-1) X^T epsilon."
         ],
-        "keyFormulaOrDiagram": "E[beta_hat | X] = beta + (X^T X)^(-1) X^T (0) = beta + 0 = beta."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Ambil ekspektasi kondisional terhadap X pada kedua sisi:",
+          "E[beta_hat | X] = E[beta | X] + E[(X^T X)^(-1) X^T epsilon | X].",
+          "Langkah 5: Karena beta dan X bersifat deterministik bersyarat:",
+          "E[beta_hat | X] = beta + (X^T X)^(-1) X^T E[epsilon | X].",
+          "Langkah 6: Terapkan asumsi ekspektasi nol galat E[epsilon | X] = 0:",
+          "E[beta_hat | X] = beta + (X^T X)^(-1) X^T (0) = beta + 0 = beta.",
+          "[result: Interpretasi Ilmiah] Terbukti bahwa E[beta_hat] = beta. Estimator OLS bersifat tak bias sempurna asalkan asumsi eksogenitas E[epsilon | X] = 0 terpenuhi."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Monte Carlo membuktikan sifat tak bias OLS di bawah kondisi Gauss-Markov.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Monte Carlo membuktikan sifat tak bias OLS di bawah kondisi Gauss-Markov.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Verifikasi Sifat Unbiased Teorema Gauss-Markov"
+          "Tujuan Algoritma: Simulasi Monte Carlo membuktikan sifat tak bias OLS di bawah kondisi Gauss-Markov.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Verifikasi Sifat Unbiased Teorema Gauss-Markov"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Verifikasi Sifat Unbiased Teorema Gauss-Markov | Jumlah Replikas..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Verifikasi Sifat Unbiased Teorema Gauss-Markov\nJumlah Replikasi : 10000\nParameter Sejati : Intersep = 5.0000, Slope = 2.5000\nRata-rata OLS    : Intersep = 5.0004, Slope = 2.4998\nBias Empiris     : Intersep = 0.000427, Slope = -0.000185",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan bahwa model salah hanya karena variabel prediktor X tidak berdistribusi normal (Gauss-Markov tida...",
-          "Perangkap: Menganggap bahwa heteroskedastisitas menyebabkan koefisien beta menjadi bias (heteroskedastisitas merusak stan...",
-          "Perangkap: Mengacaukan residu sampel e_i dengan galat populasi sejati epsilon_i."
-        ]
+          "[warning: Perangkap] Menyimpulkan bahwa model salah hanya karena variabel prediktor X tidak berdistribusi normal (Gauss-Markov tidak menuntut normalitas pada prediktor X, melainkan pada galat epsilon).",
+          "[warning: Perangkap] Menganggap bahwa heteroskedastisitas menyebabkan koefisien beta menjadi bias (heteroskedastisitas merusak standar error, bukan ketakbiasan titik estimasi).",
+          "[warning: Perangkap] Mengacaukan residu sampel e_i dengan galat populasi sejati epsilon_i."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Audit sumber data untuk memastikan tidak ada variabel penting yang berkorelasi dengan prediktor yang tertingga...",
+          "Prosedur: Audit sumber data untuk memastikan tidak ada variabel penting yang berkorelasi dengan prediktor yang tertinggal dari model.",
           "Prosedur: Periksa apakah desain eksperimen menjamin independensi antar-observasi.",
           "Prosedur: Gunakan uji diagnostik formal untuk menguji asumsi homoskedastisitas sebelum mempercayai nilai p-value."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apakah konsekuensi langsung terhadap estimator OLS jika asumsi homoskedastisitas dilanggar (terjadi heteroskedastisitas)...",
-          "Petunjuk: Perhatikan perbedaan antara ketakbiasan titik estimasi dan ketepatan perhitungan varians/standar err...",
-          "Solusi Kunci: Estimator OLS tetap tidak bias (unbiased), namun kehilangan sifat varians minimum (tidak lagi Best), dan standar error y..."
-        ]
+          "Pertanyaan Uji: Apakah konsekuensi langsung terhadap estimator OLS jika asumsi homoskedastisitas dilanggar (terjadi heteroskedastisitas)?",
+          "Petunjuk Analitis: Perhatikan perbedaan antara ketakbiasan titik estimasi dan ketepatan perhitungan varians/standar error.",
+          "Solusi Kunci: Estimator OLS tetap tidak bias (unbiased), namun kehilangan sifat varians minimum (tidak lagi Best), dan standar error yang dihitung secara konvensional menjadi salah sehingga uji signifikansi p-value menjadi tidak valid."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -387,101 +468,135 @@ export const CH24_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Diagnostik Residu 4-Panel Lengkap: Deteksi Heteroskedas...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Diagnostik Residu 4-Panel Lengkap: Deteksi Heteroskedastisitas dan Titik Pengaruh (Leverage)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.1.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.3.",
-          "Capaian: Membangun dan menginterpretasikan grafik diagnostik residu standar 4-panel.",
-          "Capaian: Mendeteksi heteroskedastisitas menggunakan uji formal Breusch-Pagan dan White Test.",
-          "Capaian: Mengidentifikasi titik leverage tinggi dan observasi berpengaruh menggunakan Cook Distance."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membangun dan menginterpretasikan grafik diagnostik residu standar 4-panel.",
+          "Capaian 2: Mendeteksi heteroskedastisitas menggunakan uji formal Breusch-Pagan dan White Test.",
+          "Capaian 3: Mengidentifikasi titik leverage tinggi dan observasi berpengaruh menggunakan Cook Distance."
         ],
-        "keyFormulaOrDiagram": "$$r_i = \\frac{e_i}{s \\sqrt{1 - h_{ii}}}$$"
+        "keyFormulaOrDiagram": "$$r_i = \\frac{e_i}{s \\sqrt{1 - h_{ii}}}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.1.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Diagnostik Residu 4-Panel Lengkap: Deteksi Heteroskedas...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Diagnostik Residu 4-Panel Lengkap: Deteksi Heteroskedastisitas dan Titik Pengaruh (Leverage)",
+        "lead": "Memasang model regresi dan melihat nilai R-squared yang tinggi tidak pernah menjadi bukti bahwa model tersebut valid.",
         "bulletPoints": [
-          "Memasang model regresi dan melihat nilai R-squared yang tinggi tidak pernah menjadi bukti bahwa model tersebut valid. Tanpa d...",
-          "Dalam metodologi ekonometrika dan statistika rekayasa modern, Diagnostik 4-Panel (4-Panel Residual Diagnostic Plot) merupakan...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Tanpa diagnostik residu yang komprehensif, seorang peneliti rentan mempublikasikan model yang cacat akibat pelanggaran asumsi struktural, heteroskedastisitas, atau distorsi oleh satu titik pencilan tunggal.",
+          "Dalam metodologi ekonometrika dan statistika rekayasa modern, Diagnostik 4-Panel (4-Panel Residual Diagnostic Plot) merupakan standar wajib sebelum model OLS diterima: 1.",
+          "Panel 1: Residuals vs Fitted: Menampilkan residu e_i terhadap nilai prediksi y_hat_i."
         ],
-        "keyFormulaOrDiagram": "Jika heteroskedastisitas terdeteksi oleh uji formal Breusch-Pagan atau White, peneliti mem..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Jika heteroskedastisitas terdeteksi oleh uji formal Breusch-Pagan atau White, peneliti memiliki dua rute perbaikan: menerapka...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Jika heteroskedastisitas terdeteksi oleh uji formal Breusch-Pagan atau White, peneliti memiliki dua rute perbaikan: menerapkan Standar Error Tangguh Heteroskedastisitas (Heteroskedasticity-Consistent / HC Standard Errors seperti Huber-White HC3) atau melakukan transformasi varians stabil (seperti log-transform atau Box-Cox).",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Residu Terstandarisasi (Internally Studentized Residuals):",
         "bulletPoints": [
-          "1. Residu Terstandarisasi (Internally Studentized Residuals):",
-          "di mana $h_{ii} = [\\mathbf{X}(\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T]_{ii}$ adalah leverage dari observasi...",
-          "2. Cook's Distance ($D_i$):"
+          "di mana $h_{ii} = [\\mathbf{X}(\\mathbf{X}^T \\mathbf{X})^{-1} \\mathbf{X}^T]_{ii}$ adalah leverage dari observasi ke-$i$, dan $\\sum h_{ii} = p$. Rata-rata leverage adalah $\\bar{h} = p / n$. Titik dengan $h_{ii} > 2p/n$ dianggap memiliki leverage tinggi.",
+          "2. Cook's Distance ($D_i$):",
+          "Mengukur sejauh mana seluruh vektor prediksi $\\hat{\\mathbf{y}}$ berubah jika observasi ke-$i$ dihapus dari dataset:"
         ],
-        "keyFormulaOrDiagram": "$$r_i = \\frac{e_i}{s \\sqrt{1 - h_{ii}}}$$"
+        "keyFormulaOrDiagram": "$$r_i = \\frac{e_i}{s \\sqrt{1 - h_{ii}}}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada model regresi linier n = 20 observasi dengan p = 2 parameter, terdapat satu titik pengamatan ke-7 yang memiliki residu mentah e_7 = 4.0...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung rata-rata leverage: bar{h} = p / n = 2 / 20 = 0.10. Nilai h_77 = 0.40 adalah 4 kali lipat da...",
-          "Langkah 2: Hitung residu studentized r_7: r_7 = e_7 / (s * sqrt(1 - h_77)) = 4.0 / (1.5 * sqrt(1 - 0.40)) = 4....",
-          "Langkah 3: Hitung Cook Distance D_7 menggunakan rumus: D_7 = (r_7^2 / p) * (h_77 / (1 - h_77)) D_7 = (3.4426^2...",
-          "Interpretasi: Nilai Cook Distance D_7 = 3.95 jauh melampaui ambang batas 1.0 dan 0.20. Observasi ke-7 adalah titik berpengaruh sangat..."
+          "Konteks Kasus: Pada model regresi linier n = 20 observasi dengan p = 2 parameter, terdapat satu titik pengamatan ke-7 yang memiliki residu mentah e_7 = 4.0, standar error regresi s = 1.5, dan nilai diagonal leverage h_77 = 0.40. Hitung residu studentized r_7 dan Jarak Cook D_7. Tentukan apakah titik ini merupakan titik berpengaruh berbahaya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi terhadap ambang batas: Ambang Cook 4/n = 4/20 = 0.20, dan ambang mutla..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung rata-rata leverage: bar{h} = p / n = 2 / 20 = 0.10. Nilai h_77 = 0.40 adalah 4 kali lipat dari rata-rata (leverage sangat tinggi).",
+          "Langkah 2: Hitung residu studentized r_7:\nr_7 = e_7 / (s * sqrt(1 - h_77)) = 4.0 / (1.5 * sqrt(1 - 0.40)) = 4.0 / (1.5 * sqrt(0.60)) = 4.0 / (1.5 * 0.7746) = 4.0 / 1.1619 = 3.4426."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung Cook Distance D_7 menggunakan rumus:\nD_7 = (r_7^2 / p) * (h_77 / (1 - h_77))\nD_7 = (3.4426^2 / 2) * (0.40 / (1 - 0.40)) = (11.8515 / 2) * (0.40 / 0.60) = 5.9257 * 0.6667 = 3.9505.",
+          "Langkah 4: Evaluasi terhadap ambang batas: Ambang Cook 4/n = 4/20 = 0.20, dan ambang mutlak adalah 1.0.",
+          "[result: Interpretasi Ilmiah] Nilai Cook Distance D_7 = 3.95 jauh melampaui ambang batas 1.0 dan 0.20. Observasi ke-7 adalah titik berpengaruh sangat ekstrem yang mendominasi estimasi kemiringan garis regresi. Model harus dievaluasi dengan dan tanpa titik ini."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Ekstraksi diagnostik residu, leverage, Cook Distance, dan uji Breusch-Pagan menggunakan statsmodels.",
         "bulletPoints": [
-          "Deskripsi: Ekstraksi diagnostik residu, leverage, Cook Distance, dan uji Breusch-Pagan menggunakan statsmodels.",
-          "Dependensi Pustaka: numpy, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Diagnostik Residu OLS"
+          "Tujuan Algoritma: Ekstraksi diagnostik residu, leverage, Cook Distance, dan uji Breusch-Pagan menggunakan statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Diagnostik Residu OLS"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Diagnostik Residu OLS | R-squared Model : 0.9419 | Uji Bre..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Diagnostik Residu OLS\nR-squared Model            : 0.9419\nUji Breusch-Pagan LM Stat  : 16.5188, p-value: 4.8171e-05\nStatus Heteroskedastisitas : Terdeteksi Heteroskedastisitas (p < 0.05)\n",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghapus pencilan secara otomatis hanya karena Cook Distance tinggi tanpa meneliti penyebab fisis atau instru...",
-          "Perangkap: Hanya mengandalkan R-squared dan mengabaikan pola lengkungan residu pada plot Residuals vs Fitted.",
-          "Perangkap: Mengabaikan heteroskedastisitas yang nyata terlihat pada scatter plot residual."
-        ]
+          "[warning: Perangkap] Menghapus pencilan secara otomatis hanya karena Cook Distance tinggi tanpa meneliti penyebab fisis atau instrumen pengukuran.",
+          "[warning: Perangkap] Hanya mengandalkan R-squared dan mengabaikan pola lengkungan residu pada plot Residuals vs Fitted.",
+          "[warning: Perangkap] Mengabaikan heteroskedastisitas yang nyata terlihat pada scatter plot residual."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Plot selalu panel Residuals vs Fitted untuk mendeteksi non-linieritas fungsi.",
           "Prosedur: Jalankan uji Breusch-Pagan atau White test: jika p < 0.05, gunakan kovarians robust HC3.",
           "Prosedur: Identifikasi seluruh observasi dengan Cook Distance D > 4/n dan lakukan analisis sensitivitas."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Dua faktor utama apakah yang secara bersama-sama menentukan besarnya nilai Cook Distance suatu titik pengamatan?",
-          "Petunjuk: Perhatikan formula matematis Cook Distance yang menggabungkan residu dan struktur matriks desain.",
-          "Solusi Kunci: Cook Distance ditentukan oleh besarnya residu terstandarisasi (seberapa jauh titik dari garis prediksi) dan nilai levera..."
-        ]
+          "Petunjuk Analitis: Perhatikan formula matematis Cook Distance yang menggabungkan residu dan struktur matriks desain.",
+          "Solusi Kunci: Cook Distance ditentukan oleh besarnya residu terstandarisasi (seberapa jauh titik dari garis prediksi) dan nilai leverage (posisi ekstremitas titik pada ruang variabel prediktor). Titik dengan residu besar dan leverage tinggi akan memiliki Cook Distance paling masif."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -546,101 +661,138 @@ export const CH24_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Multikolinearitas: Deteksi via VIF dan Strategi Penanga...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Multikolinearitas: Deteksi via VIF dan Strategi Penanganannya",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.1.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.4.",
-          "Capaian: Memahami mekanisme multikolinearitas dan dampaknya terhadap inflasi varians koefisien regresi.",
-          "Capaian: Menghitung Variance Inflation Factor (VIF) dan Condition Number matriks desain.",
-          "Capaian: Menerapkan strategi penanganan multikolinearitas (eliminasi fitur, Principal Component Regression, Ridge Regre..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.1.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami mekanisme multikolinearitas dan dampaknya terhadap inflasi varians koefisien regresi.",
+          "Capaian 2: Menghitung Variance Inflation Factor (VIF) dan Condition Number matriks desain.",
+          "Capaian 3: Menerapkan strategi penanganan multikolinearitas (eliminasi fitur, Principal Component Regression, Ridge Regression)."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_j) = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_{ij} - \\bar{x}_j)^2} \\times \\frac{1}{1 - R_j^2}$$"
+        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_j) = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_{ij} - \\bar{x}_j)^2} \\times \\frac{1}{1 - R_j^2}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.1.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Multikolinearitas: Deteksi via VIF dan Strategi Penanga...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Multikolinearitas: Deteksi via VIF dan Strategi Penanganannya",
+        "lead": "Dalam regresi linier berganda, para peneliti sering tergoda untuk memasukkan sebanyak mungkin variabel prediktor ke dalam model dengan harapan meningkatkan akurasi penjelasan.",
         "bulletPoints": [
-          "Dalam regresi linier berganda, para peneliti sering tergoda untuk memasukkan sebanyak mungkin variabel prediktor ke dalam mod...",
-          "Multikolinearitas tidak melanggar asumsi Gauss-Markov jika korelasinya tidak sempurna (rank matriks tetap penuh). Oleh karena...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, ketika dua atau lebih variabel prediktor memiliki korelasi linier yang kuat satu sama lain, model mengalami kondisi patologis yang disebut Multikolinearitas (Multicollinearity).",
+          "Multikolinearitas tidak melanggar asumsi Gauss-Markov jika korelasinya tidak sempurna (rank matriks tetap penuh).",
+          "Oleh karena itu, estimator OLS secara teknis tetap bersifat tak bias (unbiased)."
         ],
-        "keyFormulaOrDiagram": "Untuk mendeteksi tingkat keparahan multikolinearitas, metrik diagnostik standar yang digun..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Untuk mendeteksi tingkat keparahan multikolinearitas, metrik diagnostik standar yang digunakan adalah Variance Inflation Factor (VIF).",
         "bulletPoints": [
-          "Untuk mendeteksi tingkat keparahan multikolinearitas, metrik diagnostik standar yang digunakan adalah Variance Inflation Fact...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "VIF mengukur seberapa besar varians koefisien ke-j membengkak dibandingkan kondisi di mana prediktor tersebut ortogonal sempurna terhadap prediktor lainnya.",
+          "Ambang batas umum adalah: VIF > 5 mengindikasikan kolinearitas moderat, dan VIF > 10 menunjukkan multikolinearitas parah yang menuntut tindakan perbaikan seperti eliminasi variabel redundan, agregasi indeks, atau regularisasi L2 (Ridge)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Variance Inflation Factor (VIF):",
         "bulletPoints": [
-          "1. Formulasi Variance Inflation Factor (VIF):",
           "Varians dari koefisien estimator $\\hat{\\beta}_j$ dalam regresi berganda dapat diuraikan menjadi:",
-          "di mana $R_j^2$ adalah koefisien determinasi yang diperoleh dari regresi pembantu (*auxiliary regression*), ya..."
+          "di mana $R_j^2$ adalah koefisien determinasi yang diperoleh dari regresi pembantu (*auxiliary regression*), yaitu meregresikan prediktor $X_j$ terhadap seluruh prediktor lainnya dalam model.",
+          "Faktor inflasi varians didefinisikan sebagai:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_j) = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_{ij} - \\bar{x}_j)^2} \\times \\frac{1}{1 - R_j^2}$$"
+        "keyFormulaOrDiagram": "$$\\text{Var}(\\hat{\\beta}_j) = \\frac{\\sigma^2}{\\sum_{i=1}^n (x_{ij} - \\bar{x}_j)^2} \\times \\frac{1}{1 - R_j^2}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dalam permodelan konsumsi energi gedung, terdapat dua prediktor suhu: X1 (Suhu udara luar ruangan dalam Celcius) dan X2 (Suhu udara luar rua...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dalam permodelan konsumsi energi gedung, terdapat dua prediktor suhu: X1 (Suhu udara luar ruangan dalam Celcius) dan X2 (Suhu udara luar ruangan dalam Fahrenheit). Karena hubungan fisik F = 1.8*C + 32, korelasi sampel antara X1 dan X2 adalah r = 0.995 (sehingga R_j^2 = 0.990). Hitung VIF untuk kedua prediktor dan jelaskan dampaknya terhadap standar error koefisien.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi koefisien determinasi regresi pembantu: R_1^2 = R_2^2 = 0.990.",
-          "Langkah 2: Hitung VIF: VIF = 1 / (1 - 0.990) = 1 / 0.010 = 100.0.",
-          "Langkah 3: Hitung faktor pembesaran standar error (SE): Faktor Pembesaran SE = sqrt(VIF) = sqrt(100.0) = 10.0.",
-          "Interpretasi: VIF bernilai 100.0 (jauh melampaui ambang batas 10). Standar error koefisien suhu membengkak 10 kali lipat dari kondisi..."
+          "Langkah 2: Hitung VIF:\nVIF = 1 / (1 - 0.990) = 1 / 0.010 = 100.0."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung toleransi: Tol = 1 - 0.990 = 0.010."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung faktor pembesaran standar error (SE):\nFaktor Pembesaran SE = sqrt(VIF) = sqrt(100.0) = 10.0.",
+          "Langkah 4: Hitung toleransi: Tol = 1 - 0.990 = 0.010.",
+          "[result: Interpretasi Ilmiah] VIF bernilai 100.0 (jauh melampaui ambang batas 10). Standar error koefisien suhu membengkak 10 kali lipat dari kondisi ideal. Akibatnya, rentang confidence interval menjadi 10 kali lebih lebar dan uji t kemungkinan besar menghasilkan p > 0.05, meskipun suhu adalah faktor penentu konsumsi energi. Solusi: Buang salah satu prediktor suhu."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Deteksi multikolinearitas menggunakan VIF dan perbandingan estimasi sebelum vs sesudah penanganan.",
         "bulletPoints": [
-          "Deskripsi: Deteksi multikolinearitas menggunakan VIF dan perbandingan estimasi sebelum vs sesudah penanganan.",
-          "Dependensi Pustaka: numpy, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Multikolinearitas via VIF"
+          "Tujuan Algoritma: Deteksi multikolinearitas menggunakan VIF dan perbandingan estimasi sebelum vs sesudah penanganan.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Multikolinearitas via VIF"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Multikolinearitas via VIF | VIF x1 (Variabel Asli) : 36..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Multikolinearitas via VIF\nVIF x1 (Variabel Asli)      : 36.31\nVIF x2 (Variabel Redundan)  : 36.31\nVIF x3 (Variabel Ortogonal) : 1.00\n",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan bahwa suatu variabel tidak berpengaruh hanya karena p-value > 0.05 pada model yang terjangkit VIF...",
-          "Perangkap: Mengira bahwa menambahkan interaksi polinomial (misal x dan x^2) selalu aman tanpa melakukan pemusatan rata-ra...",
-          "Perangkap: Membuang variabel tanpa dasar teori ilmiah semata-mata untuk menurunkan VIF."
-        ]
+          "[warning: Perangkap] Menyimpulkan bahwa suatu variabel tidak berpengaruh hanya karena p-value > 0.05 pada model yang terjangkit VIF tinggi.",
+          "[warning: Perangkap] Mengira bahwa menambahkan interaksi polinomial (misal x dan x^2) selalu aman tanpa melakukan pemusatan rata-rata (mean-centering) terlebih dahulu.",
+          "[warning: Perangkap] Membuang variabel tanpa dasar teori ilmiah semata-mata untuk menurunkan VIF."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Hitung nilai VIF untuk seluruh prediktor: jika VIF > 5, selidiki matriks korelasi bivariat.",
           "Prosedur: Lakukan mean-centering pada prediktor sebelum membentuk suku polinomial atau interaksi.",
           "Prosedur: Bandingkan stabilitas koefisien sebelum dan sesudah penghapusan variabel kolinier."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Pada regresi pembantu sebuah prediktor, diperoleh koefisien determinasi R_j^2 = 0.95. Berapakah nilai VIF prediktor ters...",
-          "Petunjuk: Gunakan formula VIF = 1 / (1 - R_j^2).",
-          "Solusi Kunci: VIF = 1 / (1 - 0.95) = 1 / 0.05 = 20.0. Nilai ini menunjukkan multikolinearitas sangat parah karena varians membengkak 2..."
-        ]
+          "Pertanyaan Uji: Pada regresi pembantu sebuah prediktor, diperoleh koefisien determinasi R_j^2 = 0.95. Berapakah nilai VIF prediktor tersebut?",
+          "Petunjuk Analitis: Gunakan formula VIF = 1 / (1 - R_j^2).",
+          "Solusi Kunci: VIF = 1 / (1 - 0.95) = 1 / 0.05 = 20.0. Nilai ini menunjukkan multikolinearitas sangat parah karena varians membengkak 20 kali lipat."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

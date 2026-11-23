@@ -43,7 +43,7 @@ export const CH15_LESSONS: Record<string, Partial<Lesson>> = {
       {
         "question": "Apa perbedaan antara \"Batasan Masalah (Scope Delimitation)\" yang sah secara ilmiah dengan \"Keterbatasan Penelitian (Research Limitation)\"?",
         "hint": "Perhatikan apakah batasan tersebut merupakan keputusan sadar peneliti di awal ataukah kendala tak terkendali di luar kontrol peneliti.",
-        "answerExplanation": "Batasan Masalah (Delimitation) adalah keputusan sadar yang sengaja ditetapkan oleh peneliti sejak awal untuk mengunci fokus riset pada parameter tertentu (misal membatasi rentang suhu pengujian 20-40 \u00b0C). Sebaliknya, Keterbatasan (Limitation) adalah kendala eksternal tak terhindarkan di luar kendali peneliti yang timbul selama riset berlangsung (misal instrumen pengukur rusak atau terhentinya pasokan daya listrik laboratorium)."
+        "answerExplanation": "Batasan Masalah (Delimitation) adalah keputusan sadar yang sengaja ditetapkan oleh peneliti sejak awal untuk mengunci fokus riset pada parameter tertentu (misal membatasi rentang suhu pengujian 20-40 °C). Sebaliknya, Keterbatasan (Limitation) adalah kendala eksternal tak terhindarkan di luar kendali peneliti yang timbul selama riset berlangsung (misal instrumen pengukur rusak atau terhentinya pasokan daya listrik laboratorium)."
       }
     ],
     "references": [
@@ -59,99 +59,133 @@ export const CH15_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Anatomi Naskah Proposal Penelitian Rekayasa yang Terpad...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Anatomi Naskah Proposal Penelitian Rekayasa yang Terpadu",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.8.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.1.",
-          "Capaian: Memahami struktur anatomi baku proposal penelitian rekayasa tingkat Sarjana, Magister, dan Doktoral.",
-          "Capaian: Membangun benang merah koheren (*golden thread*) dari latar belakang masalah hingga metodologi validasi.",
-          "Capaian: Menghindari inkonsistensi terminologi antar-bab dalam naskah proposal ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami struktur anatomi baku proposal penelitian rekayasa tingkat Sarjana, Magister, dan Doktoral.",
+          "Capaian 2: Membangun benang merah koheren (*golden thread*) dari latar belakang masalah hingga metodologi validasi.",
+          "Capaian 3: Menghindari inkonsistensi terminologi antar-bab dalam naskah proposal ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$\\forall o_i \\in \\mathcal{O}, \\quad \\exists m_j \\in \\mathcal{M} \\quad \\text{sedemikian sehingga } m_j \\text{ mengeksekusi } o_i$$"
+        "keyFormulaOrDiagram": "$$\\forall o_i \\in \\mathcal{O}, \\quad \\exists m_j \\in \\mathcal{M} \\quad \\text{sedemikian sehingga } m_j \\text{ mengeksekusi } o_i$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.8.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Anatomi Naskah Proposal Penelitian Rekayasa yang Terpad...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Anatomi Naskah Proposal Penelitian Rekayasa yang Terpadu",
+        "lead": "Proposal penelitian (*research proposal*) adalah dokumen operasional ilmiah dan kontrak intelektual formal antara peneliti dengan komite penguji akademik atau dewan penyandang dana (*funding agency*).",
         "bulletPoints": [
-          "Proposal penelitian (*research proposal*) adalah dokumen operasional ilmiah dan kontrak intelektual formal antara peneliti de...",
-          "Anatomi standar proposal penelitian rekayasa yang terpadu terdiri dari 4 blok bangunan esensial: 1. Blok Kontekstual & Celah...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Proposal yang berhasil tidak hanya menjawab pertanyaan \"apa yang ingin dibuat\", melainkan membuktikan secara meyakinkan \"mengapa masalah ini bernilai ilmiah\", \"mengapa metode yang dipilih adalah yang paling tepat\", dan \"bagaimana hasil akhirnya akan divalidasi secara objektif\".",
+          "Anatomi standar proposal penelitian rekayasa yang terpadu terdiri dari 4 blok bangunan esensial: 1.",
+          "Blok Kontekstual & Celah Ilmiah (Bab 1: Pendahuluan): Memaparkan fenomena dunia nyata, mendekonstruksi gejala permukaan menjadi akar masalah ilmiah, menyajikan celah riset (*research gap*) yang terkonfirmasi oleh literatur SOTA, serta merumuskan rumusan masalah, batasan masalah, dan tujuan penelitian yang spesifik."
         ],
-        "keyFormulaOrDiagram": "Benang merah keilmuan (*golden thread*) harus mengalir mulus: setiap kata kunci pada judul..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Benang merah keilmuan (*golden thread*) harus mengalir mulus: setiap kata kunci pada judul harus bersumber dari masalah di Ba...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Benang merah keilmuan (*golden thread*) harus mengalir mulus: setiap kata kunci pada judul harus bersumber dari masalah di Bab 1, terikat pada teori di Bab 2, dan memiliki tahapan eksperimen konkret di Bab 3.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Koherensi Struktural Proposal dapat dimodelkan sebagai fungsi pelestarian informasi (*information preservation*) antar-bab:",
         "bulletPoints": [
-          "Koherensi Struktural Proposal dapat dimodelkan sebagai fungsi pelestarian informasi (*information preservation...",
-          "Diberikan himpunan tujuan riset $\\mathcal{O} = \\{o_1, o_2, \\dots, o_k\\}$, himpunan metode $\\mathcal{M} = \\{m_1...",
-          "Kondisi Kelengkapan Tertutup (*Closed Completeness Criterion*):"
+          "Diberikan himpunan tujuan riset $\\mathcal{O} = \\{o_1, o_2, \\dots, o_k\\}$, himpunan metode $\\mathcal{M} = \\{m_1, m_2, \\dots, m_p\\}$, dan himpunan metrik evaluasi $\\mathcal{E} = \\{e_1, e_2, \\dots, e_q\\}$.",
+          "Kondisi Kelengkapan Tertutup (*Closed Completeness Criterion*):",
+          "Jika $\\exists o^* \\in \\mathcal{O}$ yang tidak memiliki pasangan di $\\mathcal{M}$ (tujuan tanpa metode) atau tidak memiliki pasangan di $\\mathcal{E}$ (tujuan tanpa metrik validasi), maka naskah proposal dinyatakan mengalami diskontinuitas metodologis (*broken golden thread*)."
         ],
-        "keyFormulaOrDiagram": "$$\\forall o_i \\in \\mathcal{O}, \\quad \\exists m_j \\in \\mathcal{M} \\quad \\text{sedemikian sehingga } m_j \\text{ mengeksekusi } o_i$$"
+        "keyFormulaOrDiagram": "$$\\forall o_i \\in \\mathcal{O}, \\quad \\exists m_j \\in \\mathcal{M} \\quad \\text{sedemikian sehingga } m_j \\text{ mengeksekusi } o_i$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang mahasiswa ITERA menuliskan Tujuan Penelitian ke-3 dalam proposal skripsi: \"Menganalisis efisiensi konsumsi daya algoritma pada mikro...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang mahasiswa ITERA menuliskan Tujuan Penelitian ke-3 dalam proposal skripsi: \"Menganalisis efisiensi konsumsi daya algoritma pada mikrokontroler STM32\". Namun pada Bab 3 Metode Penelitian, mahasiswa tersebut hanya menjelaskan cara melatih model di Google Colab dan tidak menyebutkan pengujian perangkat keras apa pun. Analisis cacat proposal ini dan rumuskan perbaikannya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi pelanggaran koherensi: Tujuan ke-3 menuntut data fisik konsumsi daya embedded hardware...",
-          "Langkah 2: Evaluasi dampak penilaian: Reviewer akan langsung menandai proposal ini sebagai \"metodologi tidak l...",
-          "Langkah 3: Opsi Perbaikan A (Menyelaraskan Metodologi): Tambahkan sub-bab baru di Bab 3 yang merinci: (a) Inst...",
-          "Interpretasi: Penyelarasan antara tujuan yang dijanjikan dengan prosedur yang dirancang memulihkan integritas naskah proposal."
+          "Langkah 1: Identifikasi pelanggaran koherensi: Tujuan ke-3 menuntut data fisik konsumsi daya embedded hardware (STM32), namun Bab Metodologi hanya menyediakan eksperimen simulasi cloud (Google Colab).",
+          "Langkah 2: Evaluasi dampak penilaian: Reviewer akan langsung menandai proposal ini sebagai \"metodologi tidak lengkap dan tujuan tidak terjawab\" yang memicu penolakan instan."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Opsi Perbaikan B (Menyelaraskan Tujuan): Jika perangkat keras fisik tidak terse..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Linter otomatis pemetaan relasi antar-tujuan dan ketersediaan metodologi pengujian.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: AUDIT KOHERENSI ANATOMI PROPOSAL:"
+          "Langkah 3: Opsi Perbaikan A (Menyelaraskan Metodologi): Tambahkan sub-bab baru di Bab 3 yang merinci: (a) Instrumen pengukur arus (shunt resistor + multimeter data logger), (b) Prosedur deployment model ke STM32 (konversi via TensorFlow Lite for Microcontrollers), dan (c) Metrik perhitungan daya (P = V * I).",
+          "Langkah 4: Opsi Perbaikan B (Menyelaraskan Tujuan): Jika perangkat keras fisik tidak tersedia, ubah Tujuan ke-3 menjadi: \"Mengestimasi kompleksitas komputasional algoritma berdasarkan jumlah operasi titik mengambang (FLOPs) dan estimasi memori teoretis.\"",
+          "[result: Interpretasi Ilmiah] Penyelarasan antara tujuan yang dijanjikan dengan prosedur yang dirancang memulihkan integritas naskah proposal."
         ],
-        "keyFormulaOrDiagram": "AUDIT KOHERENSI ANATOMI PROPOSAL: | - O1_Akurasi -> K-Fold Cross Validation pada Dataset U..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Linter otomatis pemetaan relasi antar-tujuan dan ketersediaan metodologi pengujian.",
         "bulletPoints": [
-          "Perangkap: Menulis Bab 1 Pendahuluan yang berisi deskripsi buku teks umum (seperti sejarah ditemukannya panel surya) alih...",
-          "Perangkap: Menyajikan metodologi hanya dalam bentuk diagram alir umum (Mulai -> Studi Pustaka -> Ambil Data -> Analisis -...",
-          "Perangkap: Menggunakan batasan masalah untuk menutupi kemalasan metodologis (misalnya: \"penelitian dibatasi hanya pada da..."
-        ]
+          "Tujuan Algoritma: Linter otomatis pemetaan relasi antar-tujuan dan ketersediaan metodologi pengujian.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: AUDIT KOHERENSI ANATOMI PROPOSAL:"
+        ],
+        "keyFormulaOrDiagram": "AUDIT KOHERENSI ANATOMI PROPOSAL:\n- O1_Akurasi     -> K-Fold Cross Validation pada Dataset Uji\n- O2_Latensi     -> Timer Timestamp Hardware ADC\n- O3_Daya_Baterai -> TIDAK ADA METODE DI BAB 3!\n-------------------------------------------------------",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Gunakan uji keterbacaan silang (*peer review internal*): berikan naskah proposal kepada rekan peneliti dari la...",
-          "Prosedur: Pastikan seluruh pustaka acuan yang disitasi di naskah tercantum utuh pada daftar pustaka (verifikasi bebas ku..."
-        ]
+          "[warning: Perangkap] Menulis Bab 1 Pendahuluan yang berisi deskripsi buku teks umum (seperti sejarah ditemukannya panel surya) alih-alih fokus pada akar masalah dan celah riset.",
+          "[warning: Perangkap] Menyajikan metodologi hanya dalam bentuk diagram alir umum (Mulai -> Studi Pustaka -> Ambil Data -> Analisis -> Selesai) tanpa rincian operasional teknis.",
+          "[warning: Perangkap] Menggunakan batasan masalah untuk menutupi kemalasan metodologis (misalnya: \"penelitian dibatasi hanya pada data 1 hari karena keterbatasan waktu peneliti\")."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa perbedaan antara \"Batasan Masalah (Scope Delimitation)\" yang sah secara ilmiah dengan \"Keterbatasan Penelitian (Rese...",
-          "Petunjuk: Perhatikan apakah batasan tersebut merupakan keputusan sadar peneliti di awal ataukah kendala tak te...",
-          "Solusi Kunci: Batasan Masalah (Delimitation) adalah keputusan sadar yang sengaja ditetapkan oleh peneliti sejak awal untuk mengunci fo..."
-        ]
+          "Prosedur: Gunakan uji keterbacaan silang (*peer review internal*): berikan naskah proposal kepada rekan peneliti dari laboratorium berbeda untuk menguji apakah mereka memahami alur riset.",
+          "Prosedur: Pastikan seluruh pustaka acuan yang disitasi di naskah tercantum utuh pada daftar pustaka (verifikasi bebas kutipan hantu)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Apa perbedaan antara \"Batasan Masalah (Scope Delimitation)\" yang sah secara ilmiah dengan \"Keterbatasan Penelitian (Research Limitation)\"?",
+          "Petunjuk Analitis: Perhatikan apakah batasan tersebut merupakan keputusan sadar peneliti di awal ataukah kendala tak terkendali di luar kontrol peneliti.",
+          "Solusi Kunci: Batasan Masalah (Delimitation) adalah keputusan sadar yang sengaja ditetapkan oleh peneliti sejak awal untuk mengunci fokus riset pada parameter tertentu (misal membatasi rentang suhu pengujian 20-40 °C). Sebaliknya, Keterbatasan (Limitation) adalah kendala eksternal tak terhindarkan di luar kendali peneliti yang timbul selama riset berlangsung (misal instrumen pengukur rusak atau terhentinya pasokan daya listrik laboratorium)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -222,100 +256,142 @@ export const CH15_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konstruksi Matriks Keselarasan Riset (Research Alignmen...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konstruksi Matriks Keselarasan Riset (Research Alignment Matrix)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.8.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.2.",
-          "Capaian: Membangun Matriks Keselarasan Riset (Research Alignment Matrix / RAM) yang terhubung erat.",
-          "Capaian: Menyelaraskan secara bijective: Pertanyaan Riset -> Kebutuhan Data -> Metode Eksperimen -> Metrik Evaluasi ->...",
-          "Capaian: Menggunakan RAM sebagai instrumen audit metodologis sebelum sidang proposal."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membangun Matriks Keselarasan Riset (Research Alignment Matrix / RAM) yang terhubung erat.",
+          "Capaian 2: Menyelaraskan secara bijective: Pertanyaan Riset -> Kebutuhan Data -> Metode Eksperimen -> Metrik Evaluasi -> Luaran Bukti.",
+          "Capaian 3: Menggunakan RAM sebagai instrumen audit metodologis sebelum sidang proposal."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{T}_i = \\langle Q_i, \\, D_i, \\, M_i, \\, E_i, \\, L_i \\rangle$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{T}_i = \\langle Q_i, \\, D_i, \\, M_i, \\, E_i, \\, L_i \\rangle$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.8.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konstruksi Matriks Keselarasan Riset (Research Alignmen...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konstruksi Matriks Keselarasan Riset (Research Alignment Matrix)",
+        "lead": "Matriks Keselarasan Riset (*Research Alignment Matrix* / RAM), atau sering disebut sebagai Matriks Konsistensi Metodologis, adalah instrumen paling ampuh untuk mendeteksi kecacatan logika dan lubang metodologis dalam proposal penelitian.",
         "bulletPoints": [
-          "Matriks Keselarasan Riset (*Research Alignment Matrix* / RAM), atau sering disebut sebagai Matriks Konsistensi Metodologis, a...",
-          "Setiap baris dalam Matriks Keselarasan Riset wajib memetakan 5 pilar secara horizontal: 1. Pertanyaan Penelitian Spesifik (Re...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "RAM merangkum seluruh arsitektur proyek penelitian ke dalam satu tabel matriks komprehensif di mana setiap baris mewakili satu alur penyelidikan independen.",
+          "Setiap baris dalam Matriks Keselarasan Riset wajib memetakan 5 pilar secara horizontal: 1.",
+          "Pertanyaan Penelitian Spesifik (Research Question): Apa ketidaktahuan ilmiah spesifik yang ingin dipecahkan?"
         ],
-        "keyFormulaOrDiagram": "Jika sebuah proposal mampu menyusun RAM yang solid dan tanpa celah, proposal tersebut hamp..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Jika sebuah proposal mampu menyusun RAM yang solid dan tanpa celah, proposal tersebut hampir dipastikan akan lolos evaluasi m...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Jika sebuah proposal mampu menyusun RAM yang solid dan tanpa celah, proposal tersebut hampir dipastikan akan lolos evaluasi metodologi pada komite penilai mana pun.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Representasi Formal Matriks Keselarasan Riset sebagai Pemetaan Bijektif:",
         "bulletPoints": [
-          "Representasi Formal Matriks Keselarasan Riset sebagai Pemetaan Bijektif:",
           "Didefinisikan tupel keselarasan penelitian $\\mathcal{T}_i$:",
-          "Kondisi Keselarasan Homomorfik Sistematis:"
+          "Kondisi Keselarasan Homomorfik Sistematis:",
+          "1. $Q_i \\longleftrightarrow D_i$ : Data $D_i$ mencukupi secara statistik (*statistically sufficient*) untuk menjawab $Q_i$."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{T}_i = \\langle Q_i, \\, D_i, \\, M_i, \\, E_i, \\, L_i \\rangle$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{T}_i = \\langle Q_i, \\, D_i, \\, M_i, \\, E_i, \\, L_i \\rangle$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Susun Matriks Keselarasan Riset (RAM) lengkap untuk proyek skripsi teknik elektro ITERA dengan judul: \"Optimasi Penjadwalan Pengisian Daya K...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Susun Matriks Keselarasan Riset (RAM) lengkap untuk proyek skripsi teknik elektro ITERA dengan judul: \"Optimasi Penjadwalan Pengisian Daya Kendaraan Listrik Berbasis Logika Fuzzy pada Kampus ITERA\".",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1 (Baris 1 - Karakterisasi Profil Beban):",
           "- Pertanyaan: Bagaimana pola fluktuasi profil beban dasar kelistrikan Gedung Kuliah ITERA?",
           "- Data: Rekaman daya aktif (kW) interval 15 menit selama 3 bulan dari smart meter PLN.",
-          "Interpretasi: Setiap baris RAM memiliki keterikatan horizontal yang kokoh, menjamin bahwa tidak ada aktivitas pengumpulan data yang si..."
+          "- Metode: Analisis deret waktu deskriptif dan clustering k-means pola beban puncak.",
+          "- Metrik: Varians beban intraday dan Peak-to-Average Ratio (PAR).",
+          "- Luaran: Grafik kurva beban harian tipikal hari kerja vs akhir pekan."
         ],
-        "keyFormulaOrDiagram": "- Luaran: Tabel komparasi pembebanan trafo (Uncontrolled vs Fuzzy) dan kurva profil tegang..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 2 (Baris 2 - Optimasi Fuzzy):",
+          "- Pertanyaan: Bagaimana merancang aturan inferensi fuzzy untuk mencegah lonjakan beban puncak saat 50 kendaraan listrik diisi bersamaan?",
+          "- Data: Waktu kedatangan kendaraan, State of Charge (SoC) awal, target keberangkatan, dan kapasitas trafo gardu.",
+          "- Metode: Pemodelan logika fuzzy Mamdani dengan 27 basis aturan diuji pada simulator jaringan OpenDSS.",
+          "- Metrik: Penurunan beban puncak transformator minimal 20% dan tidak ada tegangan bus di bawah 0.95 pu.",
+          "- Luaran: Tabel komparasi pembebanan trafo (Uncontrolled vs Fuzzy) dan kurva profil tegangan bus.",
+          "[result: Interpretasi Ilmiah] Setiap baris RAM memiliki keterikatan horizontal yang kokoh, menjamin bahwa tidak ada aktivitas pengumpulan data yang sia-sia atau tujuan yang tidak terukur."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Program validasi kelengkapan dan keterhubungan kolom Matriks Keselarasan Riset (RAM).",
         "bulletPoints": [
-          "Deskripsi: Program validasi kelengkapan dan keterhubungan kolom Matriks Keselarasan Riset (RAM).",
-          "Dependensi Pustaka: pandas",
-          "Keluaran Diharapkan: MATRIKS KESELARASAN RISET (RESEARCH ALIGNMENT MATRIX):"
+          "Tujuan Algoritma: Program validasi kelengkapan dan keterhubungan kolom Matriks Keselarasan Riset (RAM).",
+          "Dependensi Pustaka Ilmiah: pandas",
+          "Keluaran Terverifikasi: MATRIKS KESELARASAN RISET (RESEARCH ALIGNMENT MATRIX):"
         ],
-        "keyFormulaOrDiagram": "MATRIKS KESELARASAN RISET (RESEARCH ALIGNMENT MATRIX): | [RQ-1] Bagaimana pola fluktuasi b..."
+        "keyFormulaOrDiagram": "MATRIKS KESELARASAN RISET (RESEARCH ALIGNMENT MATRIX):\n[RQ-1] Bagaimana pola fluktuasi beban dasar gedung?\n  -> Data   : Daya aktif kW interval 15 menit (3 bulan)\n  -> Metode : Clustering K-Means Deret Waktu\n  -> Metrik : Silhouette Score > 0.65",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menuliskan metode pengujian yang sangat umum seperti \"menggunakan kecerdasan buatan\" tanpa menyebutkan algorit...",
-          "Perangkap: Menetapkan metrik keberhasilan yang bersifat kualitatif subjektif seperti \"sistem berjalan dengan baik dan lan...",
-          "Perangkap: Mengabaikan keterkaitan data input: merancang algoritma kompleks namun tidak menjelaskan dari mana data input..."
-        ]
+          "[warning: Perangkap] Menuliskan metode pengujian yang sangat umum seperti \"menggunakan kecerdasan buatan\" tanpa menyebutkan algoritma dan metrik konkret.",
+          "[warning: Perangkap] Menetapkan metrik keberhasilan yang bersifat kualitatif subjektif seperti \"sistem berjalan dengan baik dan lancar\".",
+          "[warning: Perangkap] Mengabaikan keterkaitan data input: merancang algoritma kompleks namun tidak menjelaskan dari mana data input fisik akan diperoleh."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Lakukan uji horizontal terbalik (*reverse audit*): mulai dari kolom Luaran Bukti dan periksa apakah bukti ters...",
+          "Prosedur: Lakukan uji horizontal terbalik (*reverse audit*): mulai dari kolom Luaran Bukti dan periksa apakah bukti tersebut benar-benar mampu menjawab Pertanyaan Riset di kolom pertama.",
           "Prosedur: Sematkan tabel Matriks Keselarasan Riset di akhir Bab 1 atau awal Bab 3 proposal."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa kolom \"Metrik dan Kriteria Keberhasilan Kuantitatif\" dalam RAM wajib memiliki ambang batas numerik spesifik?",
-          "Petunjuk: Perhatikan kriteria pembeda antara proyek ilmiah eksperimental versus proyek instalasi hobi biasa.",
-          "Solusi Kunci: Ambang batas numerik spesifik (misal: akurasi > 92%, latency < 50 ms, konsumsi daya < 2 W) adalah kriteria batas demarka..."
-        ]
+          "Petunjuk Analitis: Perhatikan kriteria pembeda antara proyek ilmiah eksperimental versus proyek instalasi hobi biasa.",
+          "Solusi Kunci: Ambang batas numerik spesifik (misal: akurasi > 92%, latency < 50 ms, konsumsi daya < 2 W) adalah kriteria batas demarkasi falsifikasi Popperian. Kriteria numerik ini menetapkan secara transparan sebelum eksperimen dimulai mengenai apa yang dianggap sebagai \"sukses\" versus \"gagal\", mencegah peneliti memanipulasi kesimpulan setelah melihat hasil data di lapangan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -376,99 +452,126 @@ export const CH15_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penjadwalan Kerja (Gantt Chart), Perencanaan Sumber Day...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penjadwalan Kerja (Gantt Chart), Perencanaan Sumber Daya, dan Manajemen Risiko",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.8.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.3.",
-          "Capaian: Menyusun jadwal penelitian menggunakan Gantt Chart berbasis Work Breakdown Structure (WBS).",
-          "Capaian: Menghitung Jalur Kritis (Critical Path Method / CPM) dan float waktu aktivitas.",
-          "Capaian: Membangun Matriks Penilaian Risiko (Risk Assessment Matrix) dan strategi rencana kontingensi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun jadwal penelitian menggunakan Gantt Chart berbasis Work Breakdown Structure (WBS).",
+          "Capaian 2: Menghitung Jalur Kritis (Critical Path Method / CPM) dan float waktu aktivitas.",
+          "Capaian 3: Membangun Matriks Penilaian Risiko (Risk Assessment Matrix) dan strategi rencana kontingensi."
         ],
-        "keyFormulaOrDiagram": "$$S_i = LS_i - ES_i = LF_i - EF_i$$"
+        "keyFormulaOrDiagram": "$$S_i = LS_i - ES_i = LF_i - EF_i$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.8.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penjadwalan Kerja (Gantt Chart), Perencanaan Sumber Day...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penjadwalan Kerja (Gantt Chart), Perencanaan Sumber Daya, dan Manajemen Risiko",
+        "lead": "Sebuah proposal penelitian yang hebat secara teoretis tetap akan ditolak oleh komite pemberi hibah jika dewan penilai meragukan kelayakan eksekusi (*feasibility*) proyek tersebut.",
         "bulletPoints": [
-          "Sebuah proposal penelitian yang hebat secara teoretis tetap akan ditolak oleh komite pemberi hibah jika dewan penilai meraguk...",
-          "Manajemen eksekusi riset yang profesional menuntut tiga perangkat operasional: 1. Work Breakdown Structure (WBS) & Gantt Char...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Banyak riset skripsi dan hibah penelitian mangkrak di tengah jalan karena kegagalan manajemen proyek: pesanan komponen mikrokontroler tertahan di bea cukai selama 3 bulan, sensor utama terbakar saat pengujian tanpa ada cadangan, atau waktu komputasi pelatihan model deep learning meleset dari 1 minggu menjadi 2 bulan.",
+          "Manajemen eksekusi riset yang profesional menuntut tiga perangkat operasional: 1.",
+          "Work Breakdown Structure (WBS) & Gantt Chart: Mendekomposisi proyek menjadi paket kerja diskrit (*work packages*), menetapkan dependensi antar-tugas (Finish-to-Start), dan memetakan tonggak capaian (*milestones*)."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Sebuah proposal penelitian yang hebat secara teoretis tetap akan ditolak oleh komite pemberi hibah jika dewan penilai meraguk...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Analisis Jalur Kritis (Critical Path Method):",
         "bulletPoints": [
-          "1. Analisis Jalur Kritis (Critical Path Method):",
           "Untuk setiap aktivitas $i$ dengan durasi $D_i$:",
-          "- Waktu Mulai Tercepat (*Early Start*): $ES_i = \\max_{p \\in \\text{Pred}(i)} (EF_p)$"
+          "- Waktu Mulai Tercepat (*Early Start*): $ES_i = \\max_{p \\in \\text{Pred}(i)} (EF_p)$",
+          "- Waktu Selesai Tercepat (*Early Finish*): $EF_i = ES_i + D_i$"
         ],
-        "keyFormulaOrDiagram": "$$S_i = LS_i - ES_i = LF_i - EF_i$$"
+        "keyFormulaOrDiagram": "$$S_i = LS_i - ES_i = LF_i - EF_i$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada proyek riset radar kebocoran tanah ITERA, aktivitas kritis \"Pengiriman Modul Antena Ultra-Wideband Khusus dari Luar Negeri\" memiliki du...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada proyek riset radar kebocoran tanah ITERA, aktivitas kritis \"Pengiriman Modul Antena Ultra-Wideband Khusus dari Luar Negeri\" memiliki durasi pengiriman 8 minggu dengan probabilitas keterlambatan P = 4 (Tinggi) dan dampak terhadap kelulusan I = 5 (Fatal, proyek terhenti total). Hitung skor risiko R dan susun rencana mitigasi serta rencana kontingensinya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung skor risiko: R = P * I = 4 * 5 = 20 (Kategori Risiko Kritis / Merah).",
-          "Langkah 2: Rencana Mitigasi Preventif (Dilakukan sebelum masalah terjadi): Pesan komponen sejak hari pertama p...",
-          "Langkah 3: Rencana Kontingensi / Plan B (Dilakukan jika komponen benar-benar tertahan/hilang): Siapkan rancang...",
-          "Interpretasi: Menyajikan rencana kontingensi Plan B yang realistis di dalam proposal membuktikan kematangan manajerial peneliti di mat..."
+          "Langkah 2: Rencana Mitigasi Preventif (Dilakukan sebelum masalah terjadi): Pesan komponen sejak hari pertama proposal disetujui; gunakan jasa pengiriman ekspres dengan pelacakan dokumen bea cukai prioritas."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Analisis kompromi Plan B: Antena cetak lokal memiliki bandwidth lebih sempit (r..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Rencana Kontingensi / Plan B (Dilakukan jika komponen benar-benar tertahan/hilang): Siapkan rancangan antena mikrostrip cetak sendiri (PCB patch antenna) menggunakan mesin CNC PCB bengkel elektro ITERA sebagai instrumen alternatif cadangan.",
+          "Langkah 4: Analisis kompromi Plan B: Antena cetak lokal memiliki bandwidth lebih sempit (resolusi kedalaman turun 15%), namun eksperimen tetap dapat diselesaikan tepat waktu tanpa membatalkan penelitian.",
+          "[result: Interpretasi Ilmiah] Menyajikan rencana kontingensi Plan B yang realistis di dalam proposal membuktikan kematangan manajerial peneliti di mata dewan penguji."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Penghitungan Jalur Kritis (CPM) dan total float waktu pada jaringan aktivitas penelitian.",
         "bulletPoints": [
-          "Deskripsi: Penghitungan Jalur Kritis (CPM) dan total float waktu pada jaringan aktivitas penelitian.",
-          "Dependensi Pustaka: ",
-          "Keluaran Diharapkan: DURASI TOTAL PROYEK PENELITIAN: 18 Minggu"
+          "Tujuan Algoritma: Penghitungan Jalur Kritis (CPM) dan total float waktu pada jaringan aktivitas penelitian.",
+          "Dependensi Pustaka Ilmiah: Standard Scientific Libraries",
+          "Keluaran Terverifikasi: DURASI TOTAL PROYEK PENELITIAN: 18 Minggu"
         ],
-        "keyFormulaOrDiagram": "DURASI TOTAL PROYEK PENELITIAN: 18 Minggu | ----------------------------------------------..."
+        "keyFormulaOrDiagram": "DURASI TOTAL PROYEK PENELITIAN: 18 Minggu\n-------------------------------------------------------\n- A_Studi_Pustaka        | Durasi: 4m | ES:  0 | LF:  5 | Float: 1 minggu\n- B_Pemesanan_Sensor     | Durasi: 8m | ES:  0 | LF:  8 | **JALUR KRITIS**\n- C_Fabrikasi_Rig        | Durasi: 6m | ES:  4 | LF: 11 | Float: 1 minggu",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 30,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyusun Gantt Chart yang tidak realistis dengan menumpuk seluruh analisis data dan penulisan naskah pada dua...",
-          "Perangkap: Mengabaikan ketergantungan sekuensial (misalnya menjadwalkan pengujian instrumen sebelum komponen fisik tiba d...",
-          "Perangkap: Mengisi tabel manajemen risiko dengan hal-hal sepele (seperti \"laptop terkena virus\") tanpa membahas kegagalan..."
-        ]
+          "[warning: Perangkap] Menyusun Gantt Chart yang tidak realistis dengan menumpuk seluruh analisis data dan penulisan naskah pada dua minggu terakhir semester.",
+          "[warning: Perangkap] Mengabaikan ketergantungan sekuensial (misalnya menjadwalkan pengujian instrumen sebelum komponen fisik tiba di laboratorium).",
+          "[warning: Perangkap] Mengisi tabel manajemen risiko dengan hal-hal sepele (seperti \"laptop terkena virus\") tanpa membahas kegagalan teknis metodologi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Tambahkan buffer waktu kontingensi sebesar 15% hingga 20% pada jadwal proyek untuk mengantisipasi keterlambata...",
-          "Prosedur: Sertakan tonggak capaian konkret (*go/no-go milestone gates*) di mana kelanjutan riset dievaluasi secara forma..."
-        ]
+          "Prosedur: Tambahkan buffer waktu kontingensi sebesar 15% hingga 20% pada jadwal proyek untuk mengantisipasi keterlambatan tak terduga.",
+          "Prosedur: Sertakan tonggak capaian konkret (*go/no-go milestone gates*) di mana kelanjutan riset dievaluasi secara formal."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Dalam Critical Path Method (CPM), apa arti dari aktivitas yang memiliki \"Total Float = 0\"?",
-          "Petunjuk: Perhatikan dampak keterlambatan aktivitas tersebut terhadap waktu penyelesaian akhir proyek.",
-          "Solusi Kunci: Aktivitas dengan Total Float = 0 berada tepat di atas Jalur Kritis (Critical Path). Artinya, aktivitas tersebut tidak me..."
-        ]
+          "Petunjuk Analitis: Perhatikan dampak keterlambatan aktivitas tersebut terhadap waktu penyelesaian akhir proyek.",
+          "Solusi Kunci: Aktivitas dengan Total Float = 0 berada tepat di atas Jalur Kritis (Critical Path). Artinya, aktivitas tersebut tidak memiliki kelonggaran waktu tunda sama sekali. Keterlambatan satu hari saja pada aktivitas ini akan langsung memundurkan tanggal penyelesaian akhir seluruh proyek penelitian."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -532,99 +635,127 @@ export const CH15_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kriteria Penilaian Proposal oleh Reviewer Akademik dan...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kriteria Penilaian Proposal oleh Reviewer Akademik dan Komite Hibah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.8.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.4.",
-          "Capaian: Memahami rubrik evaluasi multi-kriteria dewan reviewer jurnal, sidang proposal, dan komite hibah (DIKTI, LPDP,...",
-          "Capaian: Mengantisipasi 5 pertanyaan kritis jebakan metodologi yang sering diajukan dewan penguji.",
-          "Capaian: Menyusun strategi pertahanan proposal (*proposal defense strategy*) yang objektif dan berbasis bukti."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.8.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami rubrik evaluasi multi-kriteria dewan reviewer jurnal, sidang proposal, dan komite hibah (DIKTI, LPDP, NSF).",
+          "Capaian 2: Mengantisipasi 5 pertanyaan kritis jebakan metodologi yang sering diajukan dewan penguji.",
+          "Capaian 3: Menyusun strategi pertahanan proposal (*proposal defense strategy*) yang objektif dan berbasis bukti."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{S} = \\frac{1}{R} \\sum_{r=1}^R \\left( \\sum_{j=1}^M w_j \\cdot s_{r,j} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{S} = \\frac{1}{R} \\sum_{r=1}^R \\left( \\sum_{j=1}^M w_j \\cdot s_{r,j} \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.8.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kriteria Penilaian Proposal oleh Reviewer Akademik dan...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kriteria Penilaian Proposal oleh Reviewer Akademik dan Komite Hibah",
+        "lead": "Memahami sudut pandang dan rubrik evaluasi dewan penilai (*reviewer mindset*) adalah kunci sukses meloloskan proposal penelitian.",
         "bulletPoints": [
-          "Memahami sudut pandang dan rubrik evaluasi dewan penilai (*reviewer mindset*) adalah kunci sukses meloloskan proposal penelit...",
-          "Komite hibah nasional (seperti DRTPM Kemendikbudristek, LPDP) dan internasional (seperti NSF, IEEE Foundation) secara konsist...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Reviewer akademik dan komite pendanaan tidak membaca proposal dengan sikap kagum, melainkan dengan sikap skeptis metodologis yang ketat: mencari setiap potensi cacat logika, asumsi yang tidak berdasar, dan kelemahan pembuktian sebelum memberikan persetujuan atau alokasi dana publik.",
+          "Komite hibah nasional (seperti DRTPM Kemendikbudristek, LPDP) dan internasional (seperti NSF, IEEE Foundation) secara konsisten menggunakan 4 kriteria evaluasi terbobot: 1.",
+          "Signifikansi Ilmiah dan Kebaruan (Scientific Significance & Novelty ~ 30%): Apakah penelitian ini menyelesaikan masalah nyata yang mendesak?"
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Memahami sudut pandang dan rubrik evaluasi dewan penilai (*reviewer mindset*) adalah kunci sukses meloloskan proposal penelit...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Evaluasi Multi-Kriteria Skor Terbobot Reviewer (*Reviewer Weighted Scoring Model*):",
         "bulletPoints": [
-          "Model Evaluasi Multi-Kriteria Skor Terbobot Reviewer (*Reviewer Weighted Scoring Model*):",
           "Skor akhir proposal $\\mathcal{S}$ dinilai oleh panel $R$ reviewer independen:",
-          "Di mana:"
+          "Di mana:",
+          "- $w_j$ adalah bobot kriteria ke-$j$ dengan $\\sum_{j=1}^M w_j = 1.0$."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{S} = \\frac{1}{R} \\sum_{r=1}^R \\left( \\sum_{j=1}^M w_j \\cdot s_{r,j} \\right)$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{S} = \\frac{1}{R} \\sum_{r=1}^R \\left( \\sum_{j=1}^M w_j \\cdot s_{r,j} \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah proposal riset dievaluasi oleh 2 reviewer dengan rubrik terbobot: Signifikansi (w1 = 0.30), Metodologi (w2 = 0.35), Kelayakan (w3 = 0...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung skor tertimbang Reviewer 1: S1 = (0.30*85) + (0.35*90) + (0.20*80) + (0.15*85) = 25.5 + 31.5...",
-          "Langkah 2: Hitung skor tertimbang Reviewer 2: S2 = (0.30*90) + (0.35*60) + (0.20*85) + (0.15*80) = 27.0 + 21.0...",
-          "Langkah 3: Hitung skor akhir rata-rata gabungan: S_total = (85.75 + 77.00) / 2 = 81.375 (Memenuhi syarat S >=...",
-          "Interpretasi: Kelemahan metodologi pada Reviewer 2 menjadi fokus utama yang wajib diperbaiki sebelum dana penelitian dapat dicairkan."
+          "Konteks Kasus: Sebuah proposal riset dievaluasi oleh 2 reviewer dengan rubrik terbobot: Signifikansi (w1 = 0.30), Metodologi (w2 = 0.35), Kelayakan (w3 = 0.20), Dampak (w4 = 0.15). Reviewer 1 memberikan skor berturut-turut: [85, 90, 80, 85]. Reviewer 2 memberikan skor: [90, 60, 85, 80]. Ambang batas kelolosan adalah Skor Total >= 80.0 dan nilai rata-rata setiap kriteria tidak boleh di bawah 70.0. Tentukan keputusan akhir komite terhadap proposal ini.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Keputusan panel: Proposal lolos ambang agregat namun ditahan untuk klarifikasi..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung skor tertimbang Reviewer 1: S1 = (0.30*85) + (0.35*90) + (0.20*80) + (0.15*85) = 25.5 + 31.5 + 16.0 + 12.75 = 85.75.",
+          "Langkah 2: Hitung skor tertimbang Reviewer 2: S2 = (0.30*90) + (0.35*60) + (0.20*85) + (0.15*80) = 27.0 + 21.0 + 17.0 + 12.00 = 77.00.",
+          "Langkah 3: Hitung skor akhir rata-rata gabungan: S_total = (85.75 + 77.00) / 2 = 81.375 (Memenuhi syarat S >= 80.0)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Periksa syarat batas minimum per kriteria: Rata-rata Kriteria Metodologi: (90 + 60) / 2 = 75.0 (Lolos > 70.0). Namun Reviewer 2 memberikan nilai 60 (tanda fatal flaw).",
+          "Langkah 5: Keputusan panel: Proposal lolos ambang agregat namun ditahan untuk klarifikasi metodologis (Status: Conditional Acceptance / Revisi Minor Terjadwal untuk merespons keberatan Reviewer 2).",
+          "[result: Interpretasi Ilmiah] Kelemahan metodologi pada Reviewer 2 menjadi fokus utama yang wajib diperbaiki sebelum dana penelitian dapat dicairkan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi evaluasi panel reviewer multi-kriteria komite hibah penelitian.",
         "bulletPoints": [
-          "Deskripsi: Simulasi evaluasi panel reviewer multi-kriteria komite hibah penelitian.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Skor Tertimbang Reviewer 1 : 85.75"
+          "Tujuan Algoritma: Simulasi evaluasi panel reviewer multi-kriteria komite hibah penelitian.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Skor Tertimbang Reviewer 1 : 85.75"
         ],
-        "keyFormulaOrDiagram": "Skor Tertimbang Reviewer 1 : 85.75 | Skor Tertimbang Reviewer 2 : 77.00 | Skor Agregat Gab..."
+        "keyFormulaOrDiagram": "Skor Tertimbang Reviewer 1 : 85.75\nSkor Tertimbang Reviewer 2 : 77.00\nSkor Agregat Gabungan      : 81.38 / 100\n--------------------------------------------------\nEvaluasi Rata-rata per Kriteria:",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Bersikap defensif secara emosional saat menghadapi kritik reviewer di ruang sidang alih-alih merespons dengan...",
-          "Perangkap: Mengabaikan format pedoman penulisan resmi hibah (seperti batas jumlah kata atau margin halaman) yang memicu d...",
-          "Perangkap: Tidak mencantumkan instrumen mitigasi risiko ketika mengajukan teknologi yang belum terbukti secara komersial."
-        ]
+          "[warning: Perangkap] Bersikap defensif secara emosional saat menghadapi kritik reviewer di ruang sidang alih-alih merespons dengan data dan bukti literatur.",
+          "[warning: Perangkap] Mengabaikan format pedoman penulisan resmi hibah (seperti batas jumlah kata atau margin halaman) yang memicu diskualifikasi administratif.",
+          "[warning: Perangkap] Tidak mencantumkan instrumen mitigasi risiko ketika mengajukan teknologi yang belum terbukti secara komersial."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan formulir rubrik penilaian resmi komite untuk melakukan simulasi penilaian mandiri (*self-assessment*)...",
-          "Prosedur: Siapkan berkas tabel tanggapan reviewer (*rebuttal matrix*) yang memetakan setiap kritik ke halaman revisi nas..."
-        ]
+          "Prosedur: Gunakan formulir rubrik penilaian resmi komite untuk melakukan simulasi penilaian mandiri (*self-assessment*) sebelum pengiriman naskah.",
+          "Prosedur: Siapkan berkas tabel tanggapan reviewer (*rebuttal matrix*) yang memetakan setiap kritik ke halaman revisi naskah secara transparan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 42,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Ketika seorang reviewer sidang proposal menyatakan: \"Metode Anda tidak memiliki kebaruan karena algoritma X sudah pernah...",
-          "Petunjuk: Gunakan formulasi delta kontribusi dan batas domain operasional yang telah dipelajari di CH-05.",
-          "Solusi Kunci: Peneliti tidak boleh membantah secara agresif, melainkan harus menyajikan matriks perbandingan fitur secara terukur: men..."
-        ]
+          "Pertanyaan Uji: Ketika seorang reviewer sidang proposal menyatakan: \"Metode Anda tidak memiliki kebaruan karena algoritma X sudah pernah digunakan oleh peneliti Y\", bagaimana strategi jawaban ilmiah yang paling tepat?",
+          "Petunjuk Analitis: Gunakan formulasi delta kontribusi dan batas domain operasional yang telah dipelajari di CH-05.",
+          "Solusi Kunci: Peneliti tidak boleh membantah secara agresif, melainkan harus menyajikan matriks perbandingan fitur secara terukur: mengakui keunggulan peneliti Y pada domain aslinya, lalu menerangkan secara presisi perbedaan vektor delta kontribusi (misal: \"Peneliti Y menguji algoritma X pada citra medis beresolusi tinggi dengan komputasi cloud server, sedangkan penelitian kami memodifikasi algoritma X agar mampu mengatasi degradasi sinyal pantulan optis dinamis pada sistem mikrokontroler edge 1-Watt di lingkungan lapangan tropis\")."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

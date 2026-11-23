@@ -38,9 +38,13 @@ export interface Lesson {
   }[];
   slides?: {
     slideNumber: number;
+    layout?: 'concept' | 'derivation' | 'example' | 'algorithm' | 'warning' | 'exercise' | 'comparison' | 'summary';
     title: string;
+    subtitle?: string;
+    lead?: string;
     bulletPoints: string[];
     keyFormulaOrDiagram?: string;
+    notes?: string;
   }[];
 }
 

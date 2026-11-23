@@ -67,100 +67,138 @@ export const CH41_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Taksonomi Ketidakpastian: Ketidakpastian Aleatorik (Sto...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Taksonomi Ketidakpastian: Ketidakpastian Aleatorik (Stokastik) vs Epistemik (Pengetahuan)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.4.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.1.",
-          "Capaian: Membedakan secara formal dan filosofis antara ketidakpastian aleatorik dan ketidakpastian epistemik.",
-          "Capaian: Menganalisis sifat reduksibilitas ketidakpastian melalui penambahan data eksperimen.",
-          "Capaian: Memodelkan ketidakpastian homoskedastis vs heteroskedastis pada sistem rekayasa."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan secara formal dan filosofis antara ketidakpastian aleatorik dan ketidakpastian epistemik.",
+          "Capaian 2: Menganalisis sifat reduksibilitas ketidakpastian melalui penambahan data eksperimen.",
+          "Capaian 3: Memodelkan ketidakpastian homoskedastis vs heteroskedastis pada sistem rekayasa."
         ],
-        "keyFormulaOrDiagram": "$$y = f_\\theta(\\mathbf{x}) + \\epsilon(\\mathbf{x}), \\quad \\epsilon(\\mathbf{x}) \\sim \\mathcal{N}(0, \\sigma_{\\text{aleatoric}}^2(\\mathbf{x}))$$"
+        "keyFormulaOrDiagram": "$$y = f_\\theta(\\mathbf{x}) + \\epsilon(\\mathbf{x}), \\quad \\epsilon(\\mathbf{x}) \\sim \\mathcal{N}(0, \\sigma_{\\text{aleatoric}}^2(\\mathbf{x}))$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.4.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Taksonomi Ketidakpastian: Ketidakpastian Aleatorik (Sto...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Taksonomi Ketidakpastian: Ketidakpastian Aleatorik (Stokastik) vs Epistemik (Pengetahuan)",
+        "lead": "Dalam rekayasa sistem keselamatan kritis (safety-critical engineering) dan sains komputasi, tidak ada prediksi yang memiliki makna ilmiah tanpa disertai estimasi ketidakpastian kuantitatif (Uncertainty Quantification / UQ).",
         "bulletPoints": [
-          "Dalam rekayasa sistem keselamatan kritis (safety-critical engineering) dan sains komputasi, tidak ada prediksi yang memiliki...",
-          "Taksonomi Fundamental Dua Kategori Ketidakpastian (Der Kiureghian & Ditlevsen, 2009): 1. Ketidakpastian Aleatorik (Aleatoric...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Melaporkan bahwa \"ketebalan dinding pipa gas berisiko korosi sebesar 2.1 mm\" tanpa mengetahui apakah ketidakpastiannya adalah +/- 0.05 mm atau +/- 1.5 mm dapat mengakibatkan bencana ledakan atau pemborosan jutaan dolar untuk inspeksi yang tidak perlu.",
+          "Taksonomi Fundamental Dua Kategori Ketidakpastian (Der Kiureghian & Ditlevsen, 2009): 1.",
+          "Ketidakpastian Aleatorik (Aleatoric Uncertainty / Stokastik): Berasal dari kata Latin *alea* (dadu)."
         ],
-        "keyFormulaOrDiagram": "2. Ketidakpastian Epistemik (Epistemic Uncertainty / Pengetahuan): Berasal dari kata Yunan..."
+        "keyFormulaOrDiagram": "$N \\to \\infty$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Ketidakpastian Epistemik (Epistemic Uncertainty / Pengetahuan): Berasal dari kata Yunani *episteme* (pengetahuan). Merupak...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Ketidakpastian Epistemik (Epistemic Uncertainty / Pengetahuan): Berasal dari kata Yunani *episteme* (pengetahuan).",
+          "Merupakan ketidakpastian yang timbul akibat ketidaktahuan manusia, keterbatasan data pengamatan, atau asumsi simplifikasi model matematika (reducible uncertainty)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Dekomposisi Varians Ketidakpastian Prediktif:",
         "bulletPoints": [
-          "Dekomposisi Varians Ketidakpastian Prediktif:",
           "Misalkan $y$ adalah variabel respon fisik, dan $\\mathbf{x}$ adalah vektor fitur input.",
-          "Model regresi probabilistik memprediksi distribusi:"
+          "Model regresi probabilistik memprediksi distribusi:",
+          "di mana parameter model $\\theta$ memiliki distribusi ketidakpastian epistemik posterior $p(\\theta \\mid \\mathcal{D})$."
         ],
-        "keyFormulaOrDiagram": "$$y = f_\\theta(\\mathbf{x}) + \\epsilon(\\mathbf{x}), \\quad \\epsilon(\\mathbf{x}) \\sim \\mathcal{N}(0, \\sigma_{\\text{aleatoric}}^2(\\mathbf{x}))$$"
+        "keyFormulaOrDiagram": "$$y = f_\\theta(\\mathbf{x}) + \\epsilon(\\mathbf{x}), \\quad \\epsilon(\\mathbf{x}) \\sim \\mathcal{N}(0, \\sigma_{\\text{aleatoric}}^2(\\mathbf{x}))$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah turbin angin dipantau getarannya pada kecepatan angin X. Pada kecepatan angin 15 m/s, sebuah model Gaussian Process dilatih dengan N...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah turbin angin dipantau getarannya pada kecepatan angin X. Pada kecepatan angin 15 m/s, sebuah model Gaussian Process dilatih dengan N = 5 data dan memprediksi: rata-rata getaran 2.4 mm/s, varians epistemik sigma_epistemic^2 = 0.36, dan varians aleatorik sensor sigma_aleatoric^2 = 0.04. Peneliti mengumpulkan 500 data getaran tambahan pada kecepatan 15 m/s. Estimasi varians total sebelum dan sesudah penambahan data.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung varians total awal (N=5): Var_total_1 = sigma_epistemic^2 + sigma_aleatoric^2 = 0.36 + 0.04...",
-          "Langkah 2: Evaluasi dampak penambahan data masif (N=505): Ketidakpastian epistemik menyusut secara asimtotik s...",
-          "Langkah 3: Evaluasi ketidakpastian aleatorik: Derau intrinsik sensor fisik tidak berubah oleh penambahan data:...",
-          "Interpretasi: Penambahan data berhasil memangkas 99% ketidakpastian epistemik ketidaktahuan model, namun varians aleatorik sebesar 0.0..."
+          "Langkah 1: Hitung varians total awal (N=5): Var_total_1 = sigma_epistemic^2 + sigma_aleatoric^2 = 0.36 + 0.04 = 0.40 (Standar Deviasi total = sqrt(0.40) = 0.632 mm/s).",
+          "Langkah 2: Evaluasi dampak penambahan data masif (N=505): Ketidakpastian epistemik menyusut secara asimtotik seiring bertambahnya bukti data: sigma_epistemic^2 berkurang sekitar faktor 100 => 0.36 / 100 = 0.0036."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung varians total akhir: Var_total_2 = 0.0036 + 0.04 = 0.0436 (Standar Devia..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Dekomposisi ketidakpastian aleatorik heteroskedastis vs epistemik menggunakan ensemble simulasi.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Dekomposisi Ketidakpastian Prediktif:"
+          "Langkah 3: Evaluasi ketidakpastian aleatorik: Derau intrinsik sensor fisik tidak berubah oleh penambahan data: sigma_aleatoric^2 tetap = 0.04.",
+          "Langkah 4: Hitung varians total akhir: Var_total_2 = 0.0036 + 0.04 = 0.0436 (Standar Deviasi total = sqrt(0.0436) = 0.209 mm/s).",
+          "[result: Interpretasi Ilmiah] Penambahan data berhasil memangkas 99% ketidakpastian epistemik ketidaktahuan model, namun varians aleatorik sebesar 0.04 tetap bertahan sebagai batas dasar derau fisis sensor."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Dekomposisi Ketidakpastian Prediktif: | Titik Uji | Var Epistemi..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Dekomposisi ketidakpastian aleatorik heteroskedastis vs epistemik menggunakan ensemble simulasi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan bahwa model sangat yakin pada wilayah ekstrapolasi hanya karena data latih bersih dari derau.",
-          "Perangkap: Mengabaikan heteroskedastisitas (mengasumsikan derau aleatorik konstan di seluruh ruang input).",
-          "Perangkap: Mencampuradukkan ketidakpastian epistemik dengan kegagalan bias algoritma."
-        ]
+          "Tujuan Algoritma: Dekomposisi ketidakpastian aleatorik heteroskedastis vs epistemik menggunakan ensemble simulasi.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Dekomposisi Ketidakpastian Prediktif:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Dekomposisi Ketidakpastian Prediktif:\nTitik Uji  | Var Epistemik  | Var Aleatorik  | Rasio Epistemik (%)\n--------------------------------------------------------------\nTitik 0     | 0.0130         | 1.5000         | 0.9               %\nTitik 1     | 0.0130         | 1.5000         | 0.9               %",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Visualisasikan pita ketidakpastian terdekomposisi (Shaded Error Bands) pada grafik prediksi.",
-          "Prosedur: Uji perilaku model pada wilayah ekstrapolasi: ketidakpastian epistemik wajib melebar.",
-          "Prosedur: Gunakan teknik Active Learning untuk memandu pengumpulan data baru ke wilayah dengan ketidakpastian epistemik..."
-        ]
+          "[warning: Perangkap] Menyimpulkan bahwa model sangat yakin pada wilayah ekstrapolasi hanya karena data latih bersih dari derau.",
+          "[warning: Perangkap] Mengabaikan heteroskedastisitas (mengasumsikan derau aleatorik konstan di seluruh ruang input).",
+          "[warning: Perangkap] Mencampuradukkan ketidakpastian epistemik dengan kegagalan bias algoritma."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa dalam sistem Active Learning, sampel baru harus dipilih berdasarkan ketidakpastian epistemik dan bukan ketidakpa...",
-          "Petunjuk: Perhatikan jenis ketidakpastian mana yang dapat dikurangi dengan penambahan data pengamatan.",
-          "Solusi Kunci: Ketidakpastian aleatorik adalah derau acak murni yang tidak dapat direduksi. Jika kita mengambil sampel pada titik denga..."
-        ]
+          "Prosedur: Visualisasikan pita ketidakpastian terdekomposisi (Shaded Error Bands) pada grafik prediksi.",
+          "Prosedur: Uji perilaku model pada wilayah ekstrapolasi: ketidakpastian epistemik wajib melebar.",
+          "Prosedur: Gunakan teknik Active Learning untuk memandu pengumpulan data baru ke wilayah dengan ketidakpastian epistemik tertinggi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa dalam sistem Active Learning, sampel baru harus dipilih berdasarkan ketidakpastian epistemik dan bukan ketidakpastian aleatorik?",
+          "Petunjuk Analitis: Perhatikan jenis ketidakpastian mana yang dapat dikurangi dengan penambahan data pengamatan.",
+          "Solusi Kunci: Ketidakpastian aleatorik adalah derau acak murni yang tidak dapat direduksi. Jika kita mengambil sampel pada titik dengan ketidakpastian aleatorik tinggi, kita hanya mengumpulkan lebih banyak derau tanpa menambah pengetahuan. Sebaliknya, ketidakpastian epistemik menandakan ketidaktahuan model; mengambil sampel di area ini secara efektif memangkas ketidaktahuan tersebut."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -230,101 +268,139 @@ export const CH41_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Perambatan Ketidakpastian Berbasis Simulasi Monte Carlo...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Perambatan Ketidakpastian Berbasis Simulasi Monte Carlo pada Sistem Non-Linier",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.4.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.2.",
-          "Capaian: Memahami mekanisme perambatan ketidakpastian (Uncertainty Propagation) dari parameter input ke output respon.",
-          "Capaian: Menganalisis kegagalan Hukum Perambatan Ketidakpastian GUM linier pada sistem non-linier tinggi.",
-          "Capaian: Mengimplementasikan simulasi Monte Carlo untuk menghitung distribusi probabilitas respon non-Gaussian."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami mekanisme perambatan ketidakpastian (Uncertainty Propagation) dari parameter input ke output respon.",
+          "Capaian 2: Menganalisis kegagalan Hukum Perambatan Ketidakpastian GUM linier pada sistem non-linier tinggi.",
+          "Capaian 3: Mengimplementasikan simulasi Monte Carlo untuk menghitung distribusi probabilitas respon non-Gaussian."
         ],
-        "keyFormulaOrDiagram": "$$Y = g(\\mathbf{X})$$"
+        "keyFormulaOrDiagram": "$$Y = g(\\mathbf{X})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.4.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Perambatan Ketidakpastian Berbasis Simulasi Monte Carlo...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Perambatan Ketidakpastian Berbasis Simulasi Monte Carlo pada Sistem Non-Linier",
+        "lead": "Dalam rekayasa sistem fisik, variabel keluaran yang menjadi perhatian kritis (seperti defleksi balok jembatan, efisiensi turbin, atau tegangan tembus isolator) selalu merupakan fungsi matematis dari berbagai parameter masukan yang mengandung ketidakpastian: $Y = g(X_1, X_2, \\dots, X_k)$.",
         "bulletPoints": [
-          "Dalam rekayasa sistem fisik, variabel keluaran yang menjadi perhatian kritis (seperti defleksi balok jembatan, efisiensi turb...",
-          "Batasan Pendekatan Klasik ISO GUM (Linear Propagation): Pedoman ISO Guide to the Expression of Uncertainty in Measurement (GU...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Menentukan bagaimana ketidakpastian pada input merambat menjadi ketidakpastian pada output disebut Perambatan Ketidakpastian (Uncertainty Propagation).",
+          "Batasan Pendekatan Klasik ISO GUM (Linear Propagation): Pedoman ISO Guide to the Expression of Uncertainty in Measurement (GUM) merekomendasikan aproksimasi deret Taylor orde pertama: $$\\sigma_Y^2 \\approx \\sum_{i=1}^k \\left( \\frac{\\partial g}{\\partial X_i} \\right)^2 \\sigma_{X_i}^2$$ Pendekatan linier ini hanya valid jika fungsi $g(\\cdot)$ bersifat linier atau hampir linier di sekitar titik kerja nominal.",
+          "Jika sistem memiliki non-linearitas kuat (misalnya relasi kuadratik, eksponensial, atau logaritmik), pendekatan analitis linier ini menghasilkan kesalahan estimasi yang fatal, meremehkan ketidakpastian ekstrim, dan salah mengasumsikan bahwa keluaran berdistribusi simetris normal."
         ],
-        "keyFormulaOrDiagram": "Solusi Simulasi Monte Carlo (GUM Supplement 1): Simulasi Monte Carlo menyelesaikan masalah..."
+        "keyFormulaOrDiagram": "$M$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Solusi Simulasi Monte Carlo (GUM Supplement 1): Simulasi Monte Carlo menyelesaikan masalah ini secara numerik tanpa aproksimasi linier.",
         "bulletPoints": [
-          "Solusi Simulasi Monte Carlo (GUM Supplement 1): Simulasi Monte Carlo menyelesaikan masalah ini secara numerik tanpa aproksima...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Peneliti menarik $M$ sampel acak dari distribusi probabilitas gabungan seluruh parameter input, mengevaluasi model non-linier $g(\\mathbf{X})$ untuk setiap sampel, lalu mengonstruksi fungsi distribusi kumulatif empiris dari respon keluaran secara langsung."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Perambatan Monte Carlo:",
         "bulletPoints": [
-          "Formulasi Matematis Perambatan Monte Carlo:",
-          "Misalkan $\\mathbf{X} = (X_1, \\dots, X_k)^T$ adalah vektor variabel input dengan PDF gabungan $p_\\mathbf{X}(\\ma...",
-          "Sistem fisik non-linier:"
+          "Misalkan $\\mathbf{X} = (X_1, \\dots, X_k)^T$ adalah vektor variabel input dengan PDF gabungan $p_\\mathbf{X}(\\mathbf{x})$.",
+          "Sistem fisik non-linier:",
+          "Algoritma Monte Carlo:"
         ],
-        "keyFormulaOrDiagram": "$$Y = g(\\mathbf{X})$$"
+        "keyFormulaOrDiagram": "$$Y = g(\\mathbf{X})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Daya listrik yang hilang pada resistor non-linier dimodelkan sebagai P = R * I^2. Hambatan R berdistribusi N(10.0, 0.5^2) Ohm, dan arus I be...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Daya listrik yang hilang pada resistor non-linier dimodelkan sebagai P = R * I^2. Hambatan R berdistribusi N(10.0, 0.5^2) Ohm, dan arus I berdistribusi N(2.0, 0.4^2) Ampere (koefisien variasi arus 20%). Hitung estimasi rata-rata daya E[P] menggunakan aproksimasi linier Taylor orde-1 vs ekspektasi matematis eksak. Buktikan mengapa non-linearitas kuadratik memicu bias pada aproksimasi linier.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Pendekatan linier orde-1: Evaluasi pada nilai nominal: P_nom = mu_R * (mu_I)^2 = 10.0 * (2.0)^2 = 1...",
+          "Langkah 1: Pendekatan linier orde-1: Evaluasi pada nilai nominal: P_nom = mu_R * (mu_I)^2 = 10.0 * (2.0)^2 = 10.0 * 4.0 = 40.0 Watt.",
           "Langkah 2: Hitung ekspektasi matematis eksak: Karena R dan I independen: E[P] = E[R * I^2] = E[R] * E[I^2].",
-          "Langkah 3: Hitung E[I^2]: Menggunakan sifat momen kedua: E[I^2] = Var(I) + (E[I])^2 = 0.4^2 + 2.0^2 = 0.16 + 4...",
-          "Interpretasi: Pada sistem non-linier, rata-rata respon output BUKAN sama dengan respon dari rata-rata input (E[g(X)] != g(E[X])). Simu..."
+          "Langkah 3: Hitung E[I^2]: Menggunakan sifat momen kedua: E[I^2] = Var(I) + (E[I])^2 = 0.4^2 + 2.0^2 = 0.16 + 4.0 = 4.16 A^2."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Evaluasi bias linier: Aproksimasi linier (40.0 W) meremehkan daya rata-rata seb..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung E[P] eksak: E[P] = 10.0 * 4.16 = 41.6 Watt.",
+          "Langkah 5: Evaluasi bias linier: Aproksimasi linier (40.0 W) meremehkan daya rata-rata sebesar 1.6 Watt (-3.85% bias negatif) karena mengabaikan suku kurvatur kuadratik.",
+          "[result: Interpretasi Ilmiah] Pada sistem non-linier, rata-rata respon output BUKAN sama dengan respon dari rata-rata input (E[g(X)] != g(E[X])). Simulasi Monte Carlo secara otomatis memperhitungkan seluruh koreksi kurvatur orde tinggi."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Monte Carlo perambatan ketidakpastian non-linier vs GUM linear propagation.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Monte Carlo perambatan ketidakpastian non-linier vs GUM linear propagation.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Perambatan Ketidakpastian Monte Carlo (M=50.000):"
+          "Tujuan Algoritma: Simulasi Monte Carlo perambatan ketidakpastian non-linier vs GUM linear propagation.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Perambatan Ketidakpastian Monte Carlo (M=50.000):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perambatan Ketidakpastian Monte Carlo (M=50.000): | Defleksi Nom..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perambatan Ketidakpastian Monte Carlo (M=50.000):\nDefleksi Nominal Titik Kerja : 1.6001 mm\nRata-rata Defleksi Riil (MC) : 1.6094 mm (Terjadi pergeseran rata-rata!)\nKetidakpastian Baku (Std MC) : 0.1491 mm\n95% Interval Cakupan Riil    : [1.3340, 1.9189] mm",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan aproksimasi linier GUM pada sistem dengan eksponen atau fungsi non-linier tajam.",
-          "Perangkap: Menggunakan jumlah sampel Monte Carlo yang terlalu sedikit (M < 1.000) untuk mengestimasi persentil ekor 99%.",
-          "Perangkap: Mengasumsikan variabel masukan independen tanpa memverifikasi matriks korelasi fisik."
-        ]
+          "[warning: Perangkap] Menggunakan aproksimasi linier GUM pada sistem dengan eksponen atau fungsi non-linier tajam.",
+          "[warning: Perangkap] Menggunakan jumlah sampel Monte Carlo yang terlalu sedikit (M < 1.000) untuk mengestimasi persentil ekor 99%.",
+          "[warning: Perangkap] Mengasumsikan variabel masukan independen tanpa memverifikasi matriks korelasi fisik."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan minimal M = 10.000 hingga 100.000 sampel untuk menjamin stabilitas persentil 95%.",
           "Prosedur: Periksa skewness dan kurtosis respon output untuk membuktikan ketidaknormalan distribusi.",
           "Prosedur: Sajikan histogram probabilitas respon yang dibandingkan dengan kurva Gaussian nominal."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa laju konvergensi simulasi Monte Carlo 1/sqrt(M) dianggap sebagai keunggulan masif pada perambatan ketidakpastian...",
-          "Petunjuk: Bandingkan dengan integrasi numerik berbasis grid kuadratur (seperti Simpson rule) pada dimensi k.",
-          "Solusi Kunci: Integrasi numerik berbasis grid membutuhkan N^k titik evaluasi (mengalami kutukan dimensionalitas yang meledak secara ek..."
-        ]
+          "Pertanyaan Uji: Mengapa laju konvergensi simulasi Monte Carlo 1/sqrt(M) dianggap sebagai keunggulan masif pada perambatan ketidakpastian multivariat?",
+          "Petunjuk Analitis: Bandingkan dengan integrasi numerik berbasis grid kuadratur (seperti Simpson rule) pada dimensi k.",
+          "Solusi Kunci: Integrasi numerik berbasis grid membutuhkan N^k titik evaluasi (mengalami kutukan dimensionalitas yang meledak secara eksponensial terhadap jumlah variabel k). Pada k=10 dimensi, metode grid membutuhkan miliaran titik. Laju konvergensi Monte Carlo murni 1/sqrt(M) sama sekali tidak bergantung pada dimensi k, sehingga dapat menangani sistem dengan ratusan variabel masukan acak secara efisien."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -395,101 +471,140 @@ export const CH41_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Emulasi Komputasi Menggunakan Gaussian Process Regressi...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Emulasi Komputasi Menggunakan Gaussian Process Regression untuk Sistem Berbiaya Tinggi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.4.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.3.",
-          "Capaian: Memahami konsep model pengganti (Surrogate Model / Emulator) untuk kode simulasi berbiaya komputasi tinggi.",
-          "Capaian: Memformulasi Gaussian Process Regression (Kriging) sebagai interpolator probabilistik non-parametrik.",
-          "Capaian: Mengekstraksi estimasi ketidakpastian analitis pada titik-titik desain baru."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami konsep model pengganti (Surrogate Model / Emulator) untuk kode simulasi berbiaya komputasi tinggi.",
+          "Capaian 2: Memformulasi Gaussian Process Regression (Kriging) sebagai interpolator probabilistik non-parametrik.",
+          "Capaian 3: Mengekstraksi estimasi ketidakpastian analitis pada titik-titik desain baru."
         ],
-        "keyFormulaOrDiagram": "$$f(\\mathbf{x}) \\sim \\mathcal{GP}\\left(m(\\mathbf{x}), k(\\mathbf{x}, \\mathbf{x}')\\right)$$"
+        "keyFormulaOrDiagram": "$$f(\\mathbf{x}) \\sim \\mathcal{GP}\\left(m(\\mathbf{x}), k(\\mathbf{x}, \\mathbf{x}')\\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.4.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Emulasi Komputasi Menggunakan Gaussian Process Regressi...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Emulasi Komputasi Menggunakan Gaussian Process Regression untuk Sistem Berbiaya Tinggi",
+        "lead": "Dalam riset rekayasa tingkat lanjut (seperti simulasi aerodinamika CFD pesawat terbang, dinamika tabrakan elemen hingga, atau simulasi iklim global), satu kali pemanggilan kode komputasi (one simulation run) dapat memakan waktu 12 jam hingga 3 hari pada superkomputer.",
         "bulletPoints": [
-          "Dalam riset rekayasa tingkat lanjut (seperti simulasi aerodinamika CFD pesawat terbang, dinamika tabrakan elemen hingga, atau...",
-          "Solusi Emulasi Komputasi (Surrogate Modeling / Emulation): Solusi rekayasa mutakhir adalah melatih model pengganti matematis...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam kondisi seperti ini, melakukan simulasi Monte Carlo yang membutuhkan 50.000 kali run adalah hal yang mustahil secara praktis.",
+          "Solusi Emulasi Komputasi (Surrogate Modeling / Emulation): Solusi rekayasa mutakhir adalah melatih model pengganti matematis (Surrogate Model atau Emulator) yang sangat cepat menggunakan sejumlah kecil hasil simulasi berbiaya tinggi yang dirancang secara optimal (misalnya 50 titik desain dari Latin Hypercube Sampling).",
+          "Emulator tersebut kemudian dievaluasi jutaan kali dalam hitungan milidetik untuk perambatan ketidakpastian, optimasi desain, atau analisis sensitivitas."
         ],
-        "keyFormulaOrDiagram": "Gaussian Process Regression (Kriging): Dari seluruh arsitektur model pengganti (seperti po..."
+        "keyFormulaOrDiagram": "$\\sigma^2 = 0$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Gaussian Process Regression (Kriging): Dari seluruh arsitektur model pengganti (seperti polinomial, neural networks, atau random forests), Gaussian Process Regression (GPR) adalah standar emas yang paling unggul untuk emulasi ilmiah karena dua sifat unik: 1.",
         "bulletPoints": [
-          "Gaussian Process Regression (Kriging): Dari seluruh arsitektur model pengganti (seperti polinomial, neural networks, atau ran...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Interpolasi Eksak (Exact Interpolation): Pada titik-titik data desain di mana simulasi deterministik telah dihitung, prediksi emulator memiliki ketidakpastian nol ($\\sigma^2 = 0$).",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Gaussian Process Regression (GPR):",
         "bulletPoints": [
-          "Formulasi Matematis Gaussian Process Regression (GPR):",
-          "Diberikan himpunan data simulasi berbiaya tinggi $\\mathcal{D} = \\{(\\mathbf{x}_i, y_i)\\}_{i=1}^n$, dengan $\\mat...",
-          "Fungsi kontinu $f(\\mathbf{x})$ diasumsikan sebagai Gaussian Process:"
+          "Diberikan himpunan data simulasi berbiaya tinggi $\\mathcal{D} = \\{(\\mathbf{x}_i, y_i)\\}_{i=1}^n$, dengan $\\mathbf{X} \\in \\mathbb{R}^{n \\times d}$ dan $\\mathbf{y} \\in \\mathbb{R}^n$.",
+          "Fungsi kontinu $f(\\mathbf{x})$ diasumsikan sebagai Gaussian Process:",
+          "Fungsi Kovarians Matérn 5/2 (Standar Industri Rekayasa):"
         ],
-        "keyFormulaOrDiagram": "$$f(\\mathbf{x}) \\sim \\mathcal{GP}\\left(m(\\mathbf{x}), k(\\mathbf{x}, \\mathbf{x}')\\right)$$"
+        "keyFormulaOrDiagram": "$$f(\\mathbf{x}) \\sim \\mathcal{GP}\\left(m(\\mathbf{x}), k(\\mathbf{x}, \\mathbf{x}')\\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan dua titik data simulasi pada x_1 = 0.0 (y_1 = 1.0) dan x_2 = 2.0 (y_2 = 3.0). Fungsi kernel RBF memiliki panjang skala l = 1.0 dan...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Matriks kovarians K: K_11 = 1.0; K_22 = 1.0; K_12 = exp(-0.5 * (0 - 2)^2) = exp(-2.0) = 0.1353. K =...",
-          "Langkah 2: Evaluasi pada x_* = 0.0: Vektor k_* = [1.0, 0.1353]^T (identik dengan kolom pertama K). Maka k_*^T...",
-          "Langkah 3: Evaluasi pada x_* = 1.0: k(1, 0) = exp(-0.5 * 1^2) = exp(-0.5) = 0.6065; k(1, 2) = exp(-0.5 * (-1)^...",
-          "Interpretasi: Pada titik data latih x=0, varians bernilai 0 (interpolasi eksak). Pada titik tengah x=1 yang belum pernah disimulasikan..."
+          "Konteks Kasus: Diberikan dua titik data simulasi pada x_1 = 0.0 (y_1 = 1.0) dan x_2 = 2.0 (y_2 = 3.0). Fungsi kernel RBF memiliki panjang skala l = 1.0 dan varians sigma_f^2 = 1.0: k(x, x') = exp(-0.5 * (x - x')^2). Hitung prediksi mean dan varians ketidakpastian emulator pada titik baru x_* = 0.0 (titik data latih) dan x_* = 1.0 (titik tengah interpolasi).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung k_*^T @ K^-1: k_*^T @ K^-1 = [0.5342, 0.5342]. Prediksi mean: mu(1) = 0...."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Matriks kovarians K: K_11 = 1.0; K_22 = 1.0; K_12 = exp(-0.5 * (0 - 2)^2) = exp(-2.0) = 0.1353. K = [[1.0, 0.1353], [0.1353, 1.0]].",
+          "Langkah 2: Evaluasi pada x_* = 0.0: Vektor k_* = [1.0, 0.1353]^T (identik dengan kolom pertama K). Maka k_*^T @ K^-1 = [1.0, 0.0]. Prediksi mean: mu(0) = [1.0, 0.0] @ [1.0, 3.0]^T = 1.0. Prediksi varians: sigma^2(0) = k(0,0) - k_*^T @ K^-1 @ k_* = 1.0 - 1.0 = 0.0.",
+          "Langkah 3: Evaluasi pada x_* = 1.0: k(1, 0) = exp(-0.5 * 1^2) = exp(-0.5) = 0.6065; k(1, 2) = exp(-0.5 * (-1)^2) = 0.6065. Vektor k_* = [0.6065, 0.6065]^T."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung K^-1: det(K) = 1.0 - 0.1353^2 = 1.0 - 0.0183 = 0.9817. K^-1 = (1 / 0.9817) * [[1.0, -0.1353], [-0.1353, 1.0]].",
+          "Langkah 5: Hitung k_*^T @ K^-1: k_*^T @ K^-1 = [0.5342, 0.5342]. Prediksi mean: mu(1) = 0.5342 * 1.0 + 0.5342 * 3.0 = 0.5342 * 4.0 = 2.1368. Prediksi varians: sigma^2(1) = 1.0 - [0.5342, 0.5342] @ [0.6065, 0.6065]^T = 1.0 - 2 * (0.5342 * 0.6065) = 1.0 - 0.6480 = 0.3520.",
+          "[result: Interpretasi Ilmiah] Pada titik data latih x=0, varians bernilai 0 (interpolasi eksak). Pada titik tengah x=1 yang belum pernah disimulasikan, GP memberikan prediksi kompromi 2.14 dengan pita ketidakpastian terukur sebesar 0.352."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi Gaussian Process Emulator untuk menggantikan fungsi simulasi non-linier berbiaya tinggi.",
         "bulletPoints": [
-          "Deskripsi: Implementasi Gaussian Process Emulator untuk menggantikan fungsi simulasi non-linier berbiaya tinggi.",
-          "Dependensi Pustaka: numpy, sklearn.gaussian_process",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Gaussian Process Emulator:"
+          "Tujuan Algoritma: Implementasi Gaussian Process Emulator untuk menggantikan fungsi simulasi non-linier berbiaya tinggi.",
+          "Dependensi Pustaka Ilmiah: numpy, sklearn.gaussian_process",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Gaussian Process Emulator:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Gaussian Process Emulator: | Jumlah Titik Sampel Latih..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Gaussian Process Emulator:\nJumlah Titik Sampel Latih (Simulasi Asli) : 8\nRoot Mean Squared Error (RMSE) Emulator  : 0.0543\nKetidakpastian Terbesar (Max Std Dev)    : 0.1628\nKetidakpastian pada Titik Latih Pertama  : 0.00000000 (Interpolasi Eksak!)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menambahkan white noise (alpha besar) pada Gaussian Process untuk kode simulasi deterministik (menghilangkan s...",
-          "Perangkap: Menggunakan kernel RBF halus kuadratik pada fenomena fisis yang memiliki gradien curam atau diskontinuitas.",
-          "Perangkap: Melatih GP pada ukuran sampel terlalu besar (N > 10.000) tanpa metode aproksimasi sparse, memicu kehabisan mem..."
-        ]
+          "[warning: Perangkap] Menambahkan white noise (alpha besar) pada Gaussian Process untuk kode simulasi deterministik (menghilangkan sifat interpolasi eksak).",
+          "[warning: Perangkap] Menggunakan kernel RBF halus kuadratik pada fenomena fisis yang memiliki gradien curam atau diskontinuitas.",
+          "[warning: Perangkap] Melatih GP pada ukuran sampel terlalu besar (N > 10.000) tanpa metode aproksimasi sparse, memicu kehabisan memori RAM O(N^2)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan kernel Matérn 3/2 atau 5/2 sebagai default untuk sistem fisik rekayasa.",
           "Prosedur: Validasi emulator menggunakan Leave-One-Out Cross-Validation (LOOCV) pada data latih simulasi.",
           "Prosedur: Laporkan metrik Standarized Residual Mean Squared Error (SRMSE) untuk memverifikasi kalibrasi varians."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa kernel Matérn 5/2 lebih direkomendasikan daripada kernel Squared Exponential (RBF) untuk emulasi simulasi fisik...",
-          "Petunjuk: Perhatikan derajat diferensiabilitas fungsi yang dihasilkan kedua kernel.",
-          "Solusi Kunci: Kernel Squared Exponential (RBF) mengasumsikan fungsi yang dapat diturunkan tak terhingga kali (smoothness yang tidak re..."
-        ]
+          "Pertanyaan Uji: Mengapa kernel Matérn 5/2 lebih direkomendasikan daripada kernel Squared Exponential (RBF) untuk emulasi simulasi fisik fluida dan struktur?",
+          "Petunjuk Analitis: Perhatikan derajat diferensiabilitas fungsi yang dihasilkan kedua kernel.",
+          "Solusi Kunci: Kernel Squared Exponential (RBF) mengasumsikan fungsi yang dapat diturunkan tak terhingga kali (smoothness yang tidak realistis secara fisik). Pada fluida turbulen atau mekanika kontak, terdapat variasi lokal yang kasar. Kernel Matérn 5/2 mengasumsikan diferensiabilitas dua kali, memberikan representasi elastis yang jauh lebih realistis terhadap fenomena fisik nyata."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -559,101 +674,138 @@ export const CH41_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Conformal Prediction: Pembangkitan Interval Prediksi Be...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Conformal Prediction: Pembangkitan Interval Prediksi Bebas Distribusi dengan Jaminan Cakupan Riil",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.4.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.4.",
-          "Capaian: Memahami keterbatasan interval prediksi parametrik dan Bayesian yang rentan terhadap misspecification.",
-          "Capaian: Menguasai algoritma Split Conformal Prediction untuk regresi dan klasifikasi.",
-          "Capaian: Membuktikan secara matematis jaminan cakupan finit bebas distribusi (Distribution-Free Finite-Sample Coverage..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.4.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami keterbatasan interval prediksi parametrik dan Bayesian yang rentan terhadap misspecification.",
+          "Capaian 2: Menguasai algoritma Split Conformal Prediction untuk regresi dan klasifikasi.",
+          "Capaian 3: Membuktikan secara matematis jaminan cakupan finit bebas distribusi (Distribution-Free Finite-Sample Coverage Guarantee)."
         ],
-        "keyFormulaOrDiagram": "$$s_i = |y_i - \\hat{f}(x_i)|, \\quad i = 1, \\dots, n$$"
+        "keyFormulaOrDiagram": "$$s_i = |y_i - \\hat{f}(x_i)|, \\quad i = 1, \\dots, n$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.4.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Conformal Prediction: Pembangkitan Interval Prediksi Be...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Conformal Prediction: Pembangkitan Interval Prediksi Bebas Distribusi dengan Jaminan Cakupan Riil",
+        "lead": "Dalam era kecerdasan artifisial modern, baik metode Frequentist maupun Bayesian memiliki kelemahan mendasar dalam menghasilkan interval prediksi untuk model kotak hitam yang sangat kompleks: - Frequentist mengasumsikan residual berdistribusi Gaussian dan homoskedastis. - Bayesian sangat bergantung pada kebenaran spesifikasi prior dan likelihood; jika prior atau likelihood salah, jaminan cakupan probabilitas runtuh.",
         "bulletPoints": [
-          "Dalam era kecerdasan artifisial modern, baik metode Frequentist maupun Bayesian memiliki kelemahan mendasar dalam menghasilka...",
-          "Revolusi Conformal Prediction (Vovk et al., 2005): Conformal Prediction adalah metodologi inferensi prediktif paling transfor...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Revolusi Conformal Prediction (Vovk et al., 2005): Conformal Prediction adalah metodologi inferensi prediktif paling transformatif dalam dua dekade terakhir.",
+          "Metode ini memungkinkan sembarang algoritma prediktif (mulai dari regresi linier, XGBoost, hingga Deep Neural Networks) untuk membangkitkan interval prediksi atau himpunan prediksi yang memiliki Jaminan Cakupan Finit Bebas Distribusi (Distribution-Free Finite-Sample Coverage Guarantee): $$P(Y_{n+1} \\in C(X_{n+1})) \\geq 1 - \\alpha$$"
         ],
-        "keyFormulaOrDiagram": "Tiga Karakteristik Revolusioner Conformal Prediction: 1. Bebas Distribusi (Distribution-Fr..."
+        "keyFormulaOrDiagram": "$n$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Tiga Karakteristik Revolusioner Conformal Prediction: 1.",
         "bulletPoints": [
-          "Tiga Karakteristik Revolusioner Conformal Prediction: 1. Bebas Distribusi (Distribution-Free): Tidak memerlukan asumsi apa pu...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Bebas Distribusi (Distribution-Free): Tidak memerlukan asumsi apa pun mengenai bentuk distribusi data (bisa bimodal, heteroskedastis ekstrem, atau menceng).",
+          "Satu-satunya asumsi yang dibutuhkan adalah pertukaran data (exchangeability), yang otomatis terpenuhi oleh data i.i.d."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Algoritma Split Conformal Prediction (Inductive Conformal Prediction):",
         "bulletPoints": [
-          "Algoritma Split Conformal Prediction (Inductive Conformal Prediction):",
           "Diberikan dataset $D = \\{(x_i, y_i)\\}_{i=1}^N$.",
-          "1. Partisi Data:"
+          "1. Partisi Data:",
+          "Bagi $D$ secara acak menjadi Himpunan Pelatihan ($D_{\\text{train}}$) dan Himpunan Kalibrasi ($D_{\\text{cal}}$ berukuran $n$)."
         ],
-        "keyFormulaOrDiagram": "$$s_i = |y_i - \\hat{f}(x_i)|, \\quad i = 1, \\dots, n$$"
+        "keyFormulaOrDiagram": "$$s_i = |y_i - \\hat{f}(x_i)|, \\quad i = 1, \\dots, n$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan n = 19 data kalibrasi untuk model prediksi suhu mesin. Skor residual absolut yang terurut s_i = |y_i - f(x_i)| adalah: [0.1, 0.2,...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan n = 19 data kalibrasi untuk model prediksi suhu mesin. Skor residual absolut yang terurut s_i = |y_i - f(x_i)| adalah: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.5] degC. Tentukan nilai kuantil kritis q_hat untuk tingkat kepercayaan 90% (alpha = 0.10). Jika model memprediksi suhu mesin baru adalah 85.0 degC, tentukan interval Conformal Prediction yang sah secara matematis.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung indeks kuantil teoretis: Indeks = ceil((n + 1) * (1 - alpha)) = ceil((19 + 1) * (1 - 0.10))...",
-          "Langkah 2: Ambil nilai skor pada indeks ke-18 dari array terurut (berbasis 1): s_(18) = 1.8 degC.",
+          "Langkah 1: Hitung indeks kuantil teoretis: Indeks = ceil((n + 1) * (1 - alpha)) = ceil((19 + 1) * (1 - 0.10)) = ceil(20 * 0.90) = ceil(18.0) = 18.",
+          "Langkah 2: Ambil nilai skor pada indeks ke-18 dari array terurut (berbasis 1): s_(18) = 1.8 degC."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Maka kuantil kritis kalibrasi adalah q_hat = 1.8 degC.",
-          "Interpretasi: Interval [83.2, 86.8] degC dijamin secara matematis memiliki probabilitas cakupan riil minimal 90% tanpa asumsi distribu..."
+          "Langkah 4: Konstruksi interval pada titik baru f(X_new) = 85.0 degC: C(X_new) = [85.0 - 1.8, 85.0 + 1.8] = [83.2, 86.8] degC.",
+          "[result: Interpretasi Ilmiah] Interval [83.2, 86.8] degC dijamin secara matematis memiliki probabilitas cakupan riil minimal 90% tanpa asumsi distribusi apa pun mengenai bentuk derau sensor."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Konstruksi interval pada titik baru f(X_new) = 85.0 degC: C(X_new) = [85.0 - 1...."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi Split Conformal Prediction dan pembuktian empiris jaminan cakupan 90%.",
         "bulletPoints": [
-          "Deskripsi: Implementasi Split Conformal Prediction dan pembuktian empiris jaminan cakupan 90%.",
-          "Dependensi Pustaka: numpy, sklearn.ensemble",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Validasi Split Conformal Prediction:"
+          "Tujuan Algoritma: Implementasi Split Conformal Prediction dan pembuktian empiris jaminan cakupan 90%.",
+          "Dependensi Pustaka Ilmiah: numpy, sklearn.ensemble",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Validasi Split Conformal Prediction:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Validasi Split Conformal Prediction: | Tingkat Kepercayaan Targe..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Validasi Split Conformal Prediction:\nTingkat Kepercayaan Target (1 - alpha) : 90.0%\nKuantil Kalibrasi Kritis (q_hat)       : 1.6385\nCakupan Empiris Teramati pada Test Set : 92.40% (Jaminan Terbukti!)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghitung skor non-conformity pada data latih alih-alih pada himpunan kalibrasi terpisah (kebocoran kalibrasi...",
-          "Perangkap: Menerapkan Conformal Prediction pada data yang melanggar asumsi exchangeability (seperti deret waktu dengan au...",
-          "Perangkap: Menggunakan fungsi pembulatan ke bawah (floor) saat menghitung indeks kuantil kalibrasi."
-        ]
+          "[warning: Perangkap] Menghitung skor non-conformity pada data latih alih-alih pada himpunan kalibrasi terpisah (kebocoran kalibrasi).",
+          "[warning: Perangkap] Menerapkan Conformal Prediction pada data yang melanggar asumsi exchangeability (seperti deret waktu dengan autokorelasi kuat tanpa adaptasi enbPI).",
+          "[warning: Perangkap] Menggunakan fungsi pembulatan ke bawah (floor) saat menghitung indeks kuantil kalibrasi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Verifikasi bahwa himpunan kalibrasi benar-benar diisolasi dari proses pelatihan model.",
           "Prosedur: Gunakan formula kuantil eksak np.ceil((n + 1) * (1 - alpha)) / n.",
           "Prosedur: Audit cakupan empiris pada data uji independen: cakupan teramati wajib >= 1 - alpha."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa Conformal Prediction disebut \"Distribution-Free\" dan \"Model-Agnostic\"?",
-          "Petunjuk: Perhatikan asumsi matematika yang mendasari pembuktian teoremanya.",
-          "Solusi Kunci: Disebut Distribution-Free karena pembuktian matematisnya tidak mengasumsikan bentuk distribusi probabilitas apa pun (tid..."
-        ]
+          "Petunjuk Analitis: Perhatikan asumsi matematika yang mendasari pembuktian teoremanya.",
+          "Solusi Kunci: Disebut Distribution-Free karena pembuktian matematisnya tidak mengasumsikan bentuk distribusi probabilitas apa pun (tidak perlu Gaussian, linier, atau simetris). Disebut Model-Agnostic karena metode ini memperlakukan prediktor sebagai fungsi kotak hitam murni; dapat diterapkan pada regresi linier, random forest, deep neural network, hingga Large Language Model."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

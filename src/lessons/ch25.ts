@@ -65,100 +65,139 @@ export const CH25_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Struktur GLM: Komponen Acak, Prediktor Linier, dan Fung...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Struktur GLM: Komponen Acak, Prediktor Linier, dan Fungsi Penghubung (Link Function)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.2.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.1.",
-          "Capaian: Memahami tripartit arsitektur Generalized Linear Models (GLM) Nelder-Wedderburn.",
-          "Capaian: Menurunkan formulasi keluarga eksponensial (Exponential Dispersion Family).",
-          "Capaian: Memilih fungsi penghubung kanonik (canonical link function) yang tepat untuk berbagai jenis respon."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami tripartit arsitektur Generalized Linear Models (GLM) Nelder-Wedderburn.",
+          "Capaian 2: Menurunkan formulasi keluarga eksponensial (Exponential Dispersion Family).",
+          "Capaian 3: Memilih fungsi penghubung kanonik (canonical link function) yang tepat untuk berbagai jenis respon."
         ],
-        "keyFormulaOrDiagram": "$$f(y; \\theta, \\phi) = \\exp\\left( \\frac{y \\theta - b(\\theta)}{a(\\phi)} + c(y, \\phi) \\right)$$"
+        "keyFormulaOrDiagram": "$$f(y; \\theta, \\phi) = \\exp\\left( \\frac{y \\theta - b(\\theta)}{a(\\phi)} + c(y, \\phi) \\right)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.2.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Struktur GLM: Komponen Acak, Prediktor Linier, dan Fung...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Struktur GLM: Komponen Acak, Prediktor Linier, dan Fungsi Penghubung (Link Function)",
+        "lead": "Model regresi linier OLS standar menuntut variabel respon kontinu dengan asumsi galat berdistribusi normal dan memiliki varians konstan.",
         "bulletPoints": [
-          "Model regresi linier OLS standar menuntut variabel respon kontinu dengan asumsi galat berdistribusi normal dan memiliki varia...",
-          "Memaksakan model OLS pada data biner atau cacah memicu kegagalan teoritis yang fatal: prediksi probabilitas dapat bernilai di...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, dalam dunia rekayasa nyata, fenomena yang diteliti sering kali berupa variabel biner (sukses atau gagal uji beban), variabel cacah diskrit (jumlah cacat per wafer silikon), atau waktu tahan lama yang condong positif (time-to-failure komponen).",
+          "Memaksakan model OLS pada data biner atau cacah memicu kegagalan teoritis yang fatal: prediksi probabilitas dapat bernilai di bawah 0 atau di atas 1, varians secara intrinsik bergantung pada rata-rata (melanggar homoskedastisitas), dan distribusi residual tidak mungkin simetris normal."
         ],
-        "keyFormulaOrDiagram": "Untuk menyatukan dan memperluas teori pemodelan linier melintasi berbagai jenis distribusi..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Untuk menyatukan dan memperluas teori pemodelan linier melintasi berbagai jenis distribusi, John Nelder dan Robert Wedderburn (1972) merumuskan Generalized Linear Models (GLM).",
         "bulletPoints": [
-          "Untuk menyatukan dan memperluas teori pemodelan linier melintasi berbagai jenis distribusi, John Nelder dan Robert Wedderburn...",
-          "Dengan memisahkan fungsi penghubung dari asumsi distribusi acak, GLM memungkinkan pemodelan data non-normal yang elegan dan k...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "GLM menggeneralisasi regresi linier dengan mendefinisikan tiga komponen terpadu: 1.",
+          "Komponen Acak (Random Component): Distribusi probabilitas variabel respon y diasumsikan berasal dari Keluarga Dispersi Eksponensial (Exponential Dispersion Family), yang mencakup distribusi Normal, Bernoulli/Binomial, Poisson, Gamma, dan Inverse Gaussian.",
+          "Dengan memisahkan fungsi penghubung dari asumsi distribusi acak, GLM memungkinkan pemodelan data non-normal yang elegan dan ketat tanpa memerlukan transformasi data ad-hoc yang sering kali merusak interpretabilitas fisik."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Definisi Keluarga Dispersi Eksponensial (Exponential Dispersion Family):",
         "bulletPoints": [
-          "1. Definisi Keluarga Dispersi Eksponensial (Exponential Dispersion Family):",
           "Fungsi kepekatan probabilitas atau fungsi massa probabilitas memiliki bentuk kanonik:",
-          "di mana:"
+          "di mana:",
+          "- $\\theta$ adalah parameter alami (*natural/canonical parameter*)."
         ],
-        "keyFormulaOrDiagram": "$$f(y; \\theta, \\phi) = \\exp\\left( \\frac{y \\theta - b(\\theta)}{a(\\phi)} + c(y, \\phi) \\right)$$"
+        "keyFormulaOrDiagram": "$$f(y; \\theta, \\phi) = \\exp\\left( \\frac{y \\theta - b(\\theta)}{a(\\phi)} + c(y, \\phi) \\right)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Tunjukkan bahwa distribusi Poisson P(Y = y) = (lambda^y * e^(-lambda)) / y! merupakan anggota dari Keluarga Dispersi Eksponensial. Tentukan...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Tunjukkan bahwa distribusi Poisson P(Y = y) = (lambda^y * e^(-lambda)) / y! merupakan anggota dari Keluarga Dispersi Eksponensial. Tentukan parameter alami theta, fungsi kumulan b(theta), dan buktikan fungsi penghubung kanoniknya adalah g(mu) = ln(mu).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Tuliskan fungsi probabilitas Poisson: f(y; lambda) = exp(ln( (lambda^y * e^(-lambda)) / y! )).",
-          "Langkah 2: Uraikan logaritma alami: ln(f) = y * ln(lambda) - lambda - ln(y!).",
-          "Langkah 3: Cocokkan ke dalam bentuk standar exp( [y*theta - b(theta)]/a(phi) + c(y, phi) ): f(y; lambda) = exp...",
-          "Interpretasi: Terbukti bahwa distribusi Poisson adalah anggota keluarga eksponensial dengan fungsi penghubung kanonik logaritma natura..."
+          "Langkah 2: Uraikan logaritma alami:\nln(f) = y * ln(lambda) - lambda - ln(y!).",
+          "Langkah 3: Cocokkan ke dalam bentuk standar exp( [y*theta - b(theta)]/a(phi) + c(y, phi) ):\nf(y; lambda) = exp( y * ln(lambda) - lambda - ln(y!) )."
         ],
-        "keyFormulaOrDiagram": "Langkah 6: Tentukan fungsi penghubung kanonik g(mu): g(mu) = theta = ln(lambda) = ln(mu)."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Implementasi GLM dengan link kanonik menggunakan statsmodels.api.GLM.",
-          "Dependensi Pustaka: numpy, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Estimasi Generalized Linear Model (GLM Poisson)"
+          "Langkah 4: Identifikasi komponen:\n- theta = ln(lambda) (Parameter alami).\n- a(phi) = 1 (Parameter dispersi phi = 1 tetap).\n- b(theta) = lambda = exp(theta) (Fungsi kumulan).\n- c(y, phi) = -ln(y!).",
+          "Langkah 5: Turunkan ekspektasi mu:\nmu = b'(theta) = d/dtheta [exp(theta)] = exp(theta) = lambda.",
+          "Langkah 6: Tentukan fungsi penghubung kanonik g(mu):\ng(mu) = theta = ln(lambda) = ln(mu).",
+          "[result: Interpretasi Ilmiah] Terbukti bahwa distribusi Poisson adalah anggota keluarga eksponensial dengan fungsi penghubung kanonik logaritma natural: eta = ln(mu). Hal ini mendasari formulasi matematis model regresi Poisson."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Generalized Linear Model (GLM Poisson) | Koefisie..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi GLM dengan link kanonik menggunakan statsmodels.api.GLM.",
         "bulletPoints": [
-          "Perangkap: Memaksakan regresi OLS pada data biner atau cacah yang menghasilkan prediksi probabilitas di luar rentang vali...",
-          "Perangkap: Melakukan transformasi log(y + 1) pada data cacah dengan OLS alih-alih menggunakan Poisson GLM (memicu bias es...",
-          "Perangkap: Mengabaikan perbedaan antara parameter alami theta dan nilai harapan observasi mu."
-        ]
+          "Tujuan Algoritma: Implementasi GLM dengan link kanonik menggunakan statsmodels.api.GLM.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Estimasi Generalized Linear Model (GLM Poisson)"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Generalized Linear Model (GLM Poisson)\nKoefisien Estimasi : Intersep = 0.4491, Slope = 0.6125\nStandar Error SE   : Intersep = 0.0898, Slope = 0.0252\nDevians Residual   : 92.42 (df: 98)\nSkala Dispersi     : 1.0000",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Memaksakan regresi OLS pada data biner atau cacah yang menghasilkan prediksi probabilitas di luar rentang valid [0, 1] atau cacah negatif.",
+          "[warning: Perangkap] Melakukan transformasi log(y + 1) pada data cacah dengan OLS alih-alih menggunakan Poisson GLM (memicu bias estimasi berat pada nilai kecil).",
+          "[warning: Perangkap] Mengabaikan perbedaan antara parameter alami theta dan nilai harapan observasi mu."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Identifikasi sifat variabel respon (kontinu simetris, biner, proporsi, atau cacah diskrit non-negatif).",
           "Prosedur: Pilih keluarga distribusi dan fungsi link yang menjamin prediksi berada pada domain fisik yang valid.",
           "Prosedur: Periksa rasio devians terhadap derajat kebebasan untuk memastikan tidak terjadi overdispersi berat."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apakah fungsi penghubung kanonik (canonical link function) untuk variabel respon yang berdistribusi Bernoulli/Binomial d...",
-          "Petunjuk: Perhatikan relasi parameter alami theta pada fungsi peluang Bernoulli: ln(p / (1 - p)).",
-          "Solusi Kunci: Fungsi penghubung kanonik untuk distribusi binomial adalah fungsi logit: g(mu) = ln(mu / (1 - mu)), yang memetakan proba..."
-        ]
+          "Pertanyaan Uji: Apakah fungsi penghubung kanonik (canonical link function) untuk variabel respon yang berdistribusi Bernoulli/Binomial dalam GLM?",
+          "Petunjuk Analitis: Perhatikan relasi parameter alami theta pada fungsi peluang Bernoulli: ln(p / (1 - p)).",
+          "Solusi Kunci: Fungsi penghubung kanonik untuk distribusi binomial adalah fungsi logit: g(mu) = ln(mu / (1 - mu)), yang memetakan probabilitas [0, 1] ke seluruh garis bilangan riil (-inf, +inf)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -223,101 +262,135 @@ export const CH25_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Regresi Logistik Biner: Estimasi Probabilitas, Odds Rat...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Regresi Logistik Biner: Estimasi Probabilitas, Odds Ratio, dan Kurva ROC",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.2.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.2.",
-          "Capaian: Menurunkan fungsi kemungkinan logaritmik (Log-Likelihood) model regresi logistik biner.",
-          "Capaian: Menginterpretasikan koefisien regresi sebagai Odds Ratio (OR) dengan benar.",
-          "Capaian: Mengevaluasi diskriminasi model menggunakan Receiver Operating Characteristic (ROC) dan Area Under the Curve (..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menurunkan fungsi kemungkinan logaritmik (Log-Likelihood) model regresi logistik biner.",
+          "Capaian 2: Menginterpretasikan koefisien regresi sebagai Odds Ratio (OR) dengan benar.",
+          "Capaian 3: Mengevaluasi diskriminasi model menggunakan Receiver Operating Characteristic (ROC) dan Area Under the Curve (AUC)."
         ],
-        "keyFormulaOrDiagram": "$$L(\\boldsymbol{\\beta}) = \\prod_{i=1}^n p_i^{y_i} (1 - p_i)^{1 - y_i}$$"
+        "keyFormulaOrDiagram": "$$L(\\boldsymbol{\\beta}) = \\prod_{i=1}^n p_i^{y_i} (1 - p_i)^{1 - y_i}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.2.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Regresi Logistik Biner: Estimasi Probabilitas, Odds Rat...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Regresi Logistik Biner: Estimasi Probabilitas, Odds Ratio, dan Kurva ROC",
+        "lead": "Regresi Logistik Biner adalah varian GLM paling populer dalam sains rekayasa dan kecerdasan buatan, dirancang untuk memodelkan variabel respon dikotomis y in {0, 1} (seperti deteksi retak beton, klasifikasi sinyal anomali, atau keberhasilan transmisi data nirkabel).",
         "bulletPoints": [
-          "Regresi Logistik Biner adalah varian GLM paling populer dalam sains rekayasa dan kecerdasan buatan, dirancang untuk memodelka...",
-          "Dalam model logistik, fungsi link logit memetakan probabilitas p = P(y = 1 | x) yang terbatas pada interval [0, 1] ke dalam r...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dalam model logistik, fungsi link logit memetakan probabilitas p = P(y = 1 | x) yang terbatas pada interval [0, 1] ke dalam rentang tanpa batas (-inf, +inf) melalui transformasi logaritma dari peluang (odds): $$\\text{logit}(p) = \\ln\\left( \\frac{p}{1 - p} \\right) = \\mathbf{x}^T \\boldsymbol{\\beta}$$ Dengan membalikkan transformasi logit, fungsi sigmoid logistik standar dihasilkan: $$p = \\frac{1}{1 + e^{-\\mathbf{x}^T \\boldsymbol{\\beta}}}$$"
         ],
-        "keyFormulaOrDiagram": "Karena tidak ada solusi analitis tertutup seperti OLS, estimasi parameter beta diselesaika..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Karena tidak ada solusi analitis tertutup seperti OLS, estimasi parameter beta diselesaikan menggunakan Maximum Likelihood Estimation (MLE) melalui algoritma optimasi numerik Newton-Raphson atau Iteratively Reweighted Least Squares (IRLS).",
         "bulletPoints": [
-          "Karena tidak ada solusi analitis tertutup seperti OLS, estimasi parameter beta diselesaikan menggunakan Maximum Likelihood Es...",
-          "Interpretasi koefisien regresi logistik didasarkan pada Rasio Peluang (Odds Ratio / OR). Eksponensial dari koefisien exp(beta...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Interpretasi koefisien regresi logistik didasarkan pada Rasio Peluang (Odds Ratio / OR).",
+          "Eksponensial dari koefisien exp(beta_j) merepresentasikan faktor pengali odds terjadinya peristiwa untuk setiap kenaikan satu satuan prediktor x_j, dengan asumsi prediktor lainnya konstan."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Fungsi Log-Likelihood Regresi Logistik:",
         "bulletPoints": [
-          "1. Fungsi Log-Likelihood Regresi Logistik:",
           "Diberikan $n$ observasi independen $(y_i, \\mathbf{x}_i)$ di mana $y_i \\sim \\text{Bernoulli}(p_i)$:",
-          "Log-Likelihood:"
+          "Log-Likelihood:",
+          "Substitusi $p_i = 1 / (1 + e^{-\\mathbf{x}_i^T \\boldsymbol{\\beta}})$:"
         ],
-        "keyFormulaOrDiagram": "$$L(\\boldsymbol{\\beta}) = \\prod_{i=1}^n p_i^{y_i} (1 - p_i)^{1 - y_i}$$"
+        "keyFormulaOrDiagram": "$$L(\\boldsymbol{\\beta}) = \\prod_{i=1}^n p_i^{y_i} (1 - p_i)^{1 - y_i}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian kelelahan sambungan las struktur baja terhadap tegangan siklik (X, MPa), diperoleh model regresi logistik logit(p) = -6.0 + 0...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung prediktor linier eta pada X = 100 MPa: eta_100 = -6.0 + 0.05 * (100) = -6.0 + 5.0 = -1.0. Pr...",
-          "Langkah 2: Hitung prediktor linier eta pada X = 140 MPa: eta_140 = -6.0 + 0.05 * (140) = -6.0 + 7.0 = +1.0. Pr...",
-          "Langkah 3: Hitung Odds Ratio untuk kenaikan delta_X = 20 MPa: OR_(delta=20) = exp(beta * delta_X) = exp(0.05 *...",
-          "Interpretasi: Pada tegangan 100 MPa, risiko retak adalah 26.89%, namun melonjak menjadi 73.11% pada 140 MPa. Setiap kenaikan beban teg..."
+          "Konteks Kasus: Pada pengujian kelelahan sambungan las struktur baja terhadap tegangan siklik (X, MPa), diperoleh model regresi logistik logit(p) = -6.0 + 0.05 * X, di mana p adalah probabilitas terjadinya retak mikro. Hitung probabilitas retak pada tegangan 100 MPa dan 140 MPa, serta hitung Odds Ratio untuk kenaikan tegangan sebesar 20 MPa.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung Odds Ratio untuk kenaikan delta_X = 20 MPa: OR_(delta=20) = exp(beta * d..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung prediktor linier eta pada X = 100 MPa:\neta_100 = -6.0 + 0.05 * (100) = -6.0 + 5.0 = -1.0.\nProbabilitas p_100 = 1 / (1 + exp(-(-1.0))) = 1 / (1 + exp(1.0)) = 1 / (1 + 2.7183) = 1 / 3.7183 = 0.2689 (26.89%).",
+          "Langkah 2: Hitung prediktor linier eta pada X = 140 MPa:\neta_140 = -6.0 + 0.05 * (140) = -6.0 + 7.0 = +1.0.\nProbabilitas p_140 = 1 / (1 + exp(-1.0)) = 1 / (1 + 0.3679) = 1 / 1.3679 = 0.7311 (73.11%)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung Odds Ratio untuk kenaikan delta_X = 20 MPa:\nOR_(delta=20) = exp(beta * delta_X) = exp(0.05 * 20) = exp(1.0) = 2.7183.",
+          "[result: Interpretasi Ilmiah] Pada tegangan 100 MPa, risiko retak adalah 26.89%, namun melonjak menjadi 73.11% pada 140 MPa. Setiap kenaikan beban tegangan sebesar 20 MPa melipatgandakan peluang terjadinya retak struktur sebesar 2.72 kali lipat."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemasangan regresi logistik, kalkulasi Odds Ratio, dan evaluasi kurva ROC / AUC menggunakan scikit-learn dan statsmodels.",
         "bulletPoints": [
-          "Deskripsi: Pemasangan regresi logistik, kalkulasi Odds Ratio, dan evaluasi kurva ROC / AUC menggunakan scikit-learn dan statsmodels.",
-          "Dependensi Pustaka: numpy, statsmodels, sklearn.metrics",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Regresi Logistik Biner"
+          "Tujuan Algoritma: Pemasangan regresi logistik, kalkulasi Odds Ratio, dan evaluasi kurva ROC / AUC menggunakan scikit-learn dan statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels, sklearn.metrics",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Regresi Logistik Biner"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Regresi Logistik Biner | Koefisien Intersep : -6.5385 (p:..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Regresi Logistik Biner\nKoefisien Intersep : -6.5385 (p: 0.0000)\nKoefisien Tegangan : 0.0543 (p: 0.0000)\nOdds Ratio (1 MPa) : 1.0558 [95% CI: 1.0361, 1.0759]\nOdds Ratio (20 MPa): 2.9634",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menafsirkan koefisien regresi logistik beta secara langsung sebagai perubahan probabilitas marjinal (seharusny...",
-          "Perangkap: Mengabaikan masalah separasi sempurna (quasi/complete separation) yang menyebabkan koefisien beta dan standar...",
-          "Perangkap: Menggunakan threshold default 0.5 secara membabi buta tanpa mempertimbangkan biaya asimetris antara False Posi..."
-        ]
+          "[warning: Perangkap] Menafsirkan koefisien regresi logistik beta secara langsung sebagai perubahan probabilitas marjinal (seharusnya diinterpretasikan sebagai perubahan log-odds).",
+          "[warning: Perangkap] Mengabaikan masalah separasi sempurna (quasi/complete separation) yang menyebabkan koefisien beta dan standar error meledak menuju tak terhingga.",
+          "[warning: Perangkap] Menggunakan threshold default 0.5 secara membabi buta tanpa mempertimbangkan biaya asimetris antara False Positive dan False Negative."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Konfirmasi ketiadaan multikolinearitas ekstrem pada variabel prediktor.",
           "Prosedur: Evaluasi kalibrasi probabilitas model menggunakan uji Hosmer-Lemeshow atau calibration curve.",
           "Prosedur: Laporkan selalu metrik diskriminasi global AUC-ROC beserta matriks konfusi pada threshold optimal."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Jika koefisien regresi logistik untuk suatu prediktor adalah beta_1 = 0.6931, berapakah perkiraan nilai Odds Ratio (OR)...",
-          "Petunjuk: Odds Ratio dihitung sebagai eksponensial dari koefisien: OR = exp(beta).",
-          "Solusi Kunci: OR = exp(0.6931) = 2.0. Ini berarti setiap kenaikan satu satuan prediktor menggandakan odds (peluang) terjadinya peristi..."
-        ]
+          "Pertanyaan Uji: Jika koefisien regresi logistik untuk suatu prediktor adalah beta_1 = 0.6931, berapakah perkiraan nilai Odds Ratio (OR) prediktor tersebut?",
+          "Petunjuk Analitis: Odds Ratio dihitung sebagai eksponensial dari koefisien: OR = exp(beta).",
+          "Solusi Kunci: OR = exp(0.6931) = 2.0. Ini berarti setiap kenaikan satu satuan prediktor menggandakan odds (peluang) terjadinya peristiwa target menjadi dua kali lipat."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -382,101 +455,139 @@ export const CH25_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Regresi Poisson dan Negative Binomial untuk Data Cacah...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Regresi Poisson dan Negative Binomial untuk Data Cacah Rekayasa",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.2.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.3.",
-          "Capaian: Memodelkan data cacah diskrit non-negatif menggunakan regresi Poisson.",
-          "Capaian: Mendiagnosis dan menangani fenomena overdispersi varians (overdispersion).",
-          "Capaian: Menerapkan Regresi Negative Binomial sebagai ekstensi tangguh Poisson ketika varians melampaui rata-rata."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memodelkan data cacah diskrit non-negatif menggunakan regresi Poisson.",
+          "Capaian 2: Mendiagnosis dan menangani fenomena overdispersi varians (overdispersion).",
+          "Capaian 3: Menerapkan Regresi Negative Binomial sebagai ekstensi tangguh Poisson ketika varians melampaui rata-rata."
         ],
-        "keyFormulaOrDiagram": "$$P(Y_i = y_i | \\mathbf{x}_i) = \\frac{\\mu_i^{y_i} e^{-\\mu_i}}{y_i!}, \\quad y_i = 0, 1, 2, \\dots$$"
+        "keyFormulaOrDiagram": "$$P(Y_i = y_i | \\mathbf{x}_i) = \\frac{\\mu_i^{y_i} e^{-\\mu_i}}{y_i!}, \\quad y_i = 0, 1, 2, \\dots$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.2.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Regresi Poisson dan Negative Binomial untuk Data Cacah...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Regresi Poisson dan Negative Binomial untuk Data Cacah Rekayasa",
+        "lead": "Dalam riset eksperimental dan pemantauan sistem rekayasa, data yang dikumpulkan sering kali berbentuk cacahan diskrit non-negatif: jumlah paket data yang hilang dalam transmisi jaringan per detik, frekuensi retakan mikro pada permukaan beton cor per meter persegi, atau jumlah transaksi gagal pada server basis data.",
         "bulletPoints": [
-          "Dalam riset eksperimental dan pemantauan sistem rekayasa, data yang dikumpulkan sering kali berbentuk cacahan diskrit non-neg...",
-          "Model matematika klasik untuk data cacah adalah Regresi Poisson. Dalam model Poisson standar, diasumsikan bahwa probabilitas...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Model matematika klasik untuk data cacah adalah Regresi Poisson.",
+          "Dalam model Poisson standar, diasumsikan bahwa probabilitas kemunculan peristiwa bersifat independen antar-waktu atau antar-ruang."
         ],
-        "keyFormulaOrDiagram": "Namun, dalam data empiris riil, asumsi ekuidispersi ini hampir selalu dilanggar. Kondisi d..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Namun, dalam data empiris riil, asumsi ekuidispersi ini hampir selalu dilanggar.",
         "bulletPoints": [
-          "Namun, dalam data empiris riil, asumsi ekuidispersi ini hampir selalu dilanggar. Kondisi di mana varians teramati jauh lebih...",
-          "Jika model Poisson tetap dipaksakan ketika terjadi overdispersi, estimasi koefisien regresi tetap konsisten, namun standar er...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Kondisi di mana varians teramati jauh lebih besar daripada rata-rata sampel disebut Overdispersi (Overdispersion).",
+          "Overdispersi terjadi akibat adanya heterogenitas yang tidak teramati antar-subjek, ketergantungan temporal/spasial (klastering kejadian), atau kelebihan nilai nol (excess zeros).",
+          "Jika model Poisson tetap dipaksakan ketika terjadi overdispersi, estimasi koefisien regresi tetap konsisten, namun standar error akan sangat diremehkan (underestimated).",
+          "Akibatnya, nilai t-statistik menjadi terlalu besar dan peneliti membuat klaim temuan signifikan palsu."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Regresi Poisson:",
         "bulletPoints": [
-          "1. Formulasi Regresi Poisson:",
           "Fungsi link log kanonik:",
-          "Sifat ekuidispersi:"
+          "Sifat ekuidispersi:",
+          "2. Deteksi Overdispersi via Statistik Dispersi Pearson:"
         ],
-        "keyFormulaOrDiagram": "$$P(Y_i = y_i | \\mathbf{x}_i) = \\frac{\\mu_i^{y_i} e^{-\\mu_i}}{y_i!}, \\quad y_i = 0, 1, 2, \\dots$$"
+        "keyFormulaOrDiagram": "$$P(Y_i = y_i | \\mathbf{x}_i) = \\frac{\\mu_i^{y_i} e^{-\\mu_i}}{y_i!}, \\quad y_i = 0, 1, 2, \\dots$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian stabilitas jaringan sensor nirkabel n = 100 putaran, dianalisis jumlah paket hilang (y). Model Poisson menghasilkan devians P...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian stabilitas jaringan sensor nirkabel n = 100 putaran, dianalisis jumlah paket hilang (y). Model Poisson menghasilkan devians Pearson chi^2 = 285.0 dengan derajat kebebasan df = 95. Hitung rasio dispersi Pearson hat{phi}, tentukan apakah terjadi overdispersi, dan jelaskan konsekuensi jika peneliti tidak beralih ke Negative Binomial.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi parameter: chi^2_Pearson = 285.0, derajat kebebasan df = n - p = 95.",
-          "Langkah 2: Hitung rasio dispersi: hat{phi} = 285.0 / 95 = 3.00.",
-          "Langkah 3: Evaluasi overdispersi: Karena hat{phi} = 3.00 >> 1.0, data mengalami overdispersi yang sangat parah...",
-          "Interpretasi: Model Poisson sangat tidak cocok. Standar error yang dilaporkan mengecil sebesar 73%, menyebabkan nilai p-value menjadi..."
+          "Langkah 2: Hitung rasio dispersi: hat{phi} = 285.0 / 95 = 3.00."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung faktor distorsi standar error: SE sejati diperkirakan membengkak sebesar..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi overdispersi: Karena hat{phi} = 3.00 >> 1.0, data mengalami overdispersi yang sangat parah (varians data adalah 3 kali lipat lebih besar dari yang diasumsikan distribusi Poisson).",
+          "Langkah 4: Hitung faktor distorsi standar error: SE sejati diperkirakan membengkak sebesar sqrt(hat{phi}) = sqrt(3.00) = 1.732 kali lipat dari SE yang dilaporkan model Poisson standar.",
+          "[result: Interpretasi Ilmiah] Model Poisson sangat tidak cocok. Standar error yang dilaporkan mengecil sebesar 73%, menyebabkan nilai p-value menjadi jauh terlalu optimis palsu. Model harus diestimasi ulang menggunakan Regresi Negative Binomial."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Perbandingan pemodelan data cacah dengan overdispersi menggunakan Poisson GLM versus Negative Binomial.",
         "bulletPoints": [
-          "Deskripsi: Perbandingan pemodelan data cacah dengan overdispersi menggunakan Poisson GLM versus Negative Binomial.",
-          "Dependensi Pustaka: numpy, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Perbandingan Model Poisson vs Negative Binomial"
+          "Tujuan Algoritma: Perbandingan pemodelan data cacah dengan overdispersi menggunakan Poisson GLM versus Negative Binomial.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Perbandingan Model Poisson vs Negative Binomial"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Model Poisson vs Negative Binomial | Poisson Disper..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Model Poisson vs Negative Binomial\nPoisson Dispersi Pearson (phi) : 2.76 (Overdispersi Berat)\nPoisson Koefisien Getaran      : 0.5050 (SE: 0.0463)\n\nNegative Binomial Pearson (phi): 0.99 (Terkalibrasi Sempurna)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengabaikan pemeriksaan rasio dispersi Pearson pada regresi Poisson dan menganggap standar error default sudah...",
-          "Perangkap: Menggunakan regresi linier OLS pada data cacah dengan mentransformasikan nilai menggunakan akar kuadrat atau l...",
-          "Perangkap: Mengabaikan keberadaan kelebihan nilai nol (excess zeros) yang membutuhkan model Zero-Inflated Poisson (ZIP) a..."
-        ]
+          "[warning: Perangkap] Mengabaikan pemeriksaan rasio dispersi Pearson pada regresi Poisson dan menganggap standar error default sudah benar.",
+          "[warning: Perangkap] Menggunakan regresi linier OLS pada data cacah dengan mentransformasikan nilai menggunakan akar kuadrat atau logaritma tanpa justifikasi teoritis.",
+          "[warning: Perangkap] Mengabaikan keberadaan kelebihan nilai nol (excess zeros) yang membutuhkan model Zero-Inflated Poisson (ZIP) atau Zero-Inflated Negative Binomial (ZINB)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Hitung statistik dispersi Pearson hat{phi} = Pearson_chi2 / df_resid.",
           "Prosedur: Jika hat{phi} > 1.25, ganti model Poisson dengan Negative Binomial atau Quasi-Poisson.",
           "Prosedur: Uji signifikansi parameter dispersi alpha menggunakan Likelihood Ratio Test antara model Poisson dan NB."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apakah perbedaan mendasar antara fungsi varians model Poisson dan model Negative Binomial (NB2)?",
-          "Petunjuk: Perhatikan keberadaan parameter dispersi kuadratik alpha * mu^2.",
-          "Solusi Kunci: Model Poisson menetapkan varians sama dengan rata-rata (Var = mu), sedangkan Negative Binomial memperluas varians dengan..."
-        ]
+          "Petunjuk Analitis: Perhatikan keberadaan parameter dispersi kuadratik alpha * mu^2.",
+          "Solusi Kunci: Model Poisson menetapkan varians sama dengan rata-rata (Var = mu), sedangkan Negative Binomial memperluas varians dengan suku kuadratik (Var = mu + alpha * mu^2), sehingga mampu mengakomodasi overdispersi data."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -542,101 +653,139 @@ export const CH25_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Evaluasi Kecocokan Model GLM: Devians Residual dan Krit...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Evaluasi Kecocokan Model GLM: Devians Residual dan Kriteria Informasi AIC/BIC",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.2.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.4.",
-          "Capaian: Menghitung dan menginterpretasikan Devians Residual (Deviance) sebagai ukuran goodness-of-fit GLM.",
-          "Capaian: Melakukan Uji Rasio Kemungkinan (Likelihood Ratio Test) untuk perbandingan model bersarang (nested models).",
-          "Capaian: Menggunakan Kriteria Informasi Akaike (AIC) dan Bayesian (BIC) untuk seleksi model non-bersarang."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.2.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menghitung dan menginterpretasikan Devians Residual (Deviance) sebagai ukuran goodness-of-fit GLM.",
+          "Capaian 2: Melakukan Uji Rasio Kemungkinan (Likelihood Ratio Test) untuk perbandingan model bersarang (nested models).",
+          "Capaian 3: Menggunakan Kriteria Informasi Akaike (AIC) dan Bayesian (BIC) untuk seleksi model non-bersarang."
         ],
-        "keyFormulaOrDiagram": "$$D^*(\\mathbf{y}, \\hat{\\boldsymbol{\\mu}}) = 2 \\left[ \\ell(\\mathbf{y}; \\mathbf{y}) - \\ell(\\hat{\\boldsymbol{\\mu}}; \\mathbf{y}) \\right]$$"
+        "keyFormulaOrDiagram": "$$D^*(\\mathbf{y}, \\hat{\\boldsymbol{\\mu}}) = 2 \\left[ \\ell(\\mathbf{y}; \\mathbf{y}) - \\ell(\\hat{\\boldsymbol{\\mu}}; \\mathbf{y}) \\right]$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.2.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Evaluasi Kecocokan Model GLM: Devians Residual dan Krit...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Evaluasi Kecocokan Model GLM: Devians Residual dan Kriteria Informasi AIC/BIC",
+        "lead": "Dalam regresi linier OLS standar, kualitas kecocokan model dievaluasi menggunakan koefisien determinasi R-squared.",
         "bulletPoints": [
-          "Dalam regresi linier OLS standar, kualitas kecocokan model dievaluasi menggunakan koefisien determinasi R-squared. Namun, dal...",
-          "Sebagai pengganti R-squared, GLM menggunakan konsep Devians (Deviance). Devians mengukur jarak ketidakcocokan antara model ya...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, dalam Generalized Linear Models (GLM), konsep R-squared konvensional tidak berlaku secara langsung karena asumsi varians konstan dan distribusi normalitas galat telah ditinggalkan.",
+          "Sebagai pengganti R-squared, GLM menggunakan konsep Devians (Deviance).",
+          "Devians mengukur jarak ketidakcocokan antara model yang diusulkan dengan Model Jenuh (Saturated Model), yaitu model teoritis ideal yang memiliki parameter sebanyak jumlah observasi n sehingga mampu memprediksi setiap titik data dengan sempurna (log-likelihood maksimum)."
         ],
-        "keyFormulaOrDiagram": "Untuk membandingkan dua model yang bersarang (nested models, di mana model sederhana merup..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Untuk membandingkan dua model yang bersarang (nested models, di mana model sederhana merupakan subset parameter dari model yang lebih kompleks), peneliti menggunakan Uji Rasio Kemungkinan (Likelihood Ratio Test / LRT).",
         "bulletPoints": [
-          "Untuk membandingkan dua model yang bersarang (nested models, di mana model sederhana merupakan subset parameter dari model ya...",
-          "Ketika membandingkan model yang tidak bersarang (non-nested models) atau mencari model dengan keseimbangan optimal antara aku...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Selisih devians antara kedua model mengikuti distribusi Chi-Square dengan derajat kebebasan sama dengan selisih jumlah parameter.",
+          "Ketika membandingkan model yang tidak bersarang (non-nested models) atau mencari model dengan keseimbangan optimal antara akurasi kecocokan dan kompleksitas model (prinsip parsimoni Occam), dua kriteria informasi standar yang digunakan di seluruh disiplin sains adalah Akaike Information Criterion (AIC) dan Bayesian Information Criterion (BIC).",
+          "Model dengan nilai AIC atau BIC terendah adalah model yang paling disukai."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Devians Skala (Scaled Deviance):",
         "bulletPoints": [
-          "1. Formulasi Devians Skala (Scaled Deviance):",
           "di mana:",
-          "- $\\ell(\\mathbf{y}; \\mathbf{y})$ adalah log-likelihood dari model jenuh (*saturated model*)."
+          "- $\\ell(\\mathbf{y}; \\mathbf{y})$ adalah log-likelihood dari model jenuh (*saturated model*).",
+          "- $\\ell(\\hat{\\boldsymbol{\\mu}}; \\mathbf{y})$ adalah log-likelihood dari model yang dievaluasi."
         ],
-        "keyFormulaOrDiagram": "$$D^*(\\mathbf{y}, \\hat{\\boldsymbol{\\mu}}) = 2 \\left[ \\ell(\\mathbf{y}; \\mathbf{y}) - \\ell(\\hat{\\boldsymbol{\\mu}}; \\mathbf{y}) \\right]$$"
+        "keyFormulaOrDiagram": "$$D^*(\\mathbf{y}, \\hat{\\boldsymbol{\\mu}}) = 2 \\left[ \\ell(\\mathbf{y}; \\mathbf{y}) - \\ell(\\hat{\\boldsymbol{\\mu}}; \\mathbf{y}) \\right]$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua model regresi Poisson diuji pada n = 150 observasi untuk memprediksi cacat fabrikasi. Model Sederhana (p = 2 parameter) menghasilkan log...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung statistik selisih devians (Likelihood Ratio Test): Delta_D = 2 * (l_1 - l_0) = 2 * (-238.1 -...",
-          "Langkah 2: Tentukan derajat kebebasan: df = p_1 - p_0 = 5 - 2 = 3.",
-          "Langkah 3: Evaluasi terhadap nilai kritis Chi-Square: chi^2_(0.05, 3) = 7.815. Karena Delta_D (14.2) > 7.815 (...",
-          "Interpretasi: Model Lengkap terbukti secara signifikan lebih baik daripada Model Sederhana (LRT chi^2 = 14.2, df = 3, p = 0.0026). Nil..."
+          "Konteks Kasus: Dua model regresi Poisson diuji pada n = 150 observasi untuk memprediksi cacat fabrikasi. Model Sederhana (p = 2 parameter) menghasilkan log-likelihood l_0 = -245.2. Model Lengkap (p = 5 parameter) menghasilkan log-likelihood l_1 = -238.1. Lakukan Likelihood Ratio Test pada alpha = 0.05 dan hitung nilai AIC untuk kedua model.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung AIC untuk kedua model: AIC_0 = -2 * (-245.2) + 2 * (2) = 490.4 + 4 = 494..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung statistik selisih devians (Likelihood Ratio Test):\nDelta_D = 2 * (l_1 - l_0) = 2 * (-238.1 - (-245.2)) = 2 * (7.1) = 14.2.",
+          "Langkah 2: Tentukan derajat kebebasan: df = p_1 - p_0 = 5 - 2 = 3."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi terhadap nilai kritis Chi-Square: chi^2_(0.05, 3) = 7.815.\nKarena Delta_D (14.2) > 7.815 (p-value = 0.0026), tolak H0.",
+          "Langkah 4: Hitung AIC untuk kedua model:\nAIC_0 = -2 * (-245.2) + 2 * (2) = 490.4 + 4 = 494.4.\nAIC_1 = -2 * (-238.1) + 2 * (5) = 476.2 + 10 = 486.2.\nSelisih AIC: Delta_AIC = 494.4 - 486.2 = 8.2.",
+          "[result: Interpretasi Ilmiah] Model Lengkap terbukti secara signifikan lebih baik daripada Model Sederhana (LRT chi^2 = 14.2, df = 3, p = 0.0026). Nilai AIC Model Lengkap lebih rendah sebesar 8.2 poin (penurunan > 2 dianggap bukti kuat keunggulan model). Tiga prediktor tambahan layak dipertahankan."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komparasi model GLM menggunakan Likelihood Ratio Test, AIC, dan BIC via Python.",
         "bulletPoints": [
-          "Deskripsi: Komparasi model GLM menggunakan Likelihood Ratio Test, AIC, dan BIC via Python.",
-          "Dependensi Pustaka: numpy, statsmodels, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Perbandingan Model GLM"
+          "Tujuan Algoritma: Komparasi model GLM menggunakan Likelihood Ratio Test, AIC, dan BIC via Python.",
+          "Dependensi Pustaka Ilmiah: numpy, statsmodels, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Perbandingan Model GLM"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Perbandingan Model GLM | Model 0 (Hanya x1) : Log-Lik =..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Perbandingan Model GLM\nModel 0 (Hanya x1)   : Log-Lik = -203.11, AIC = 410.22, BIC = 415.79\nModel 1 (x1 + noise) : Log-Lik = -202.43, AIC = 412.87, BIC = 424.01\nStatistik LRT (Chi2) : 1.3524 (df: 2)\np-value LRT          : 0.5085",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Membandingkan nilai AIC antara dua model yang menggunakan variabel respon y yang berbeda (misal y vs log(y)).",
-          "Perangkap: Menggunakan Likelihood Ratio Test untuk membandingkan model yang tidak bersarang (non-nested).",
-          "Perangkap: Menganggap selisih AIC yang sangat kecil (Delta AIC < 2) sebagai bukti konklusif keunggulan salah satu model."
-        ]
+          "[warning: Perangkap] Membandingkan nilai AIC antara dua model yang menggunakan variabel respon y yang berbeda (misal y vs log(y)).",
+          "[warning: Perangkap] Menggunakan Likelihood Ratio Test untuk membandingkan model yang tidak bersarang (non-nested).",
+          "[warning: Perangkap] Menganggap selisih AIC yang sangat kecil (Delta AIC < 2) sebagai bukti konklusif keunggulan salah satu model."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Likelihood Ratio Test hanya jika satu model adalah sub-model ketat dari model lainnya.",
           "Prosedur: Gunakan AIC dan BIC untuk membandingkan arsitektur model non-bersarang.",
-          "Prosedur: Periksa apakah penambahan prediktor menghasilkan penurunan devians yang sepadan dengan hilangnya derajat kebeb..."
-        ]
+          "Prosedur: Periksa apakah penambahan prediktor menghasilkan penurunan devians yang sepadan dengan hilangnya derajat kebebasan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa kriteria BIC cenderung memilih model yang lebih sederhana (lebih sedikit parameter) dibandingkan kriteria AIC pa...",
-          "Petunjuk: Bandingkan faktor penalti parameter: 2p pada AIC versus p * ln(n) pada BIC.",
-          "Solusi Kunci: Pada sampel besar di mana n >= 8, nilai ln(n) melebihi 2. Akibatnya, faktor penalti BIC terhadap kompleksitas model (p *..."
-        ]
+          "Pertanyaan Uji: Mengapa kriteria BIC cenderung memilih model yang lebih sederhana (lebih sedikit parameter) dibandingkan kriteria AIC pada sampel berukuran besar?",
+          "Petunjuk Analitis: Bandingkan faktor penalti parameter: 2p pada AIC versus p * ln(n) pada BIC.",
+          "Solusi Kunci: Pada sampel besar di mana n >= 8, nilai ln(n) melebihi 2. Akibatnya, faktor penalti BIC terhadap kompleksitas model (p * ln(n)) menjadi jauh lebih berat daripada AIC (2p), sehingga BIC secara agresif menolak penambahan variabel yang marginal."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

@@ -65,100 +65,138 @@ export const CH31_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Randomized Complete Block Design (RCBD) dan Incomplete...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Randomized Complete Block Design (RCBD) dan Incomplete Block Design",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.8.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.1.",
-          "Capaian: Merancang Randomized Complete Block Design (RCBD) untuk mengontrol satu sumber gangguan homogen.",
-          "Capaian: Memahami keterbatasan kapasitas blok dan formulasi Balanced Incomplete Block Design (BIBD).",
-          "Capaian: Menganalisis tabel ANOVA dua arah tanpa interaksi untuk desain terblokir."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang Randomized Complete Block Design (RCBD) untuk mengontrol satu sumber gangguan homogen.",
+          "Capaian 2: Memahami keterbatasan kapasitas blok dan formulasi Balanced Incomplete Block Design (BIBD).",
+          "Capaian 3: Menganalisis tabel ANOVA dua arah tanpa interaksi untuk desain terblokir."
         ],
-        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\beta_j + \\epsilon_{ij}, \\quad i = 1, \\dots, a; \\; j = 1, \\dots, b$$"
+        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\beta_j + \\epsilon_{ij}, \\quad i = 1, \\dots, a; \\; j = 1, \\dots, b$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.8.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Randomized Complete Block Design (RCBD) dan Incomplete...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Randomized Complete Block Design (RCBD) dan Incomplete Block Design",
+        "lead": "Dalam eksperimen rekayasa, variabel gangguan (nuisance variables) adalah faktor-faktor yang diketahui mempengaruhi respon, namun bukan merupakan fokus utama dari penyelidikan ilmiah.",
         "bulletPoints": [
-          "Dalam eksperimen rekayasa, variabel gangguan (nuisance variables) adalah faktor-faktor yang diketahui mempengaruhi respon, na...",
-          "Randomized Complete Block Design (RCBD): RCBD adalah strategi baku untuk mengontrol satu sumber variasi gangguan yang dapat d...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Jika variabel gangguan ini diabaikan dan eksperimen dijalankan menggunakan Completely Randomized Design (CRD), variabilitas dari gangguan tersebut akan terserap ke dalam galat eksperimental (MSE), menenggelamkan signifikansi efek perlakuan yang sebenarnya nyata.",
+          "Randomized Complete Block Design (RCBD): RCBD adalah strategi baku untuk mengontrol satu sumber variasi gangguan yang dapat diidentifikasi (seperti perbedaan batch material, teknisi penguji, atau hari pelaksanaan).",
+          "Karakteristik RCBD: 1."
         ],
-        "keyFormulaOrDiagram": "Balanced Incomplete Block Design (BIBD): Dalam situasi fisik tertentu, ukuran blok yang te..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Balanced Incomplete Block Design (BIBD): Dalam situasi fisik tertentu, ukuran blok yang tersedia secara alami lebih kecil daripada jumlah perlakuan yang ingin diuji (k < a).",
         "bulletPoints": [
-          "Balanced Incomplete Block Design (BIBD): Dalam situasi fisik tertentu, ukuran blok yang tersedia secara alami lebih kecil dar...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Misalnya, sebuah mesin uji keausan hanya memiliki 3 slot pengujian (k = 3), padahal peneliti ingin membandingkan 4 jenis pelumas (a = 4).",
+          "Solusi matematisnya adalah Balanced Incomplete Block Design (BIBD)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Model RCBD (Aditif Tanpa Interaksi):",
         "bulletPoints": [
-          "1. Formulasi Model RCBD (Aditif Tanpa Interaksi):",
           "di mana:",
-          "- $\\tau_i$ adalah efek perlakuan ke-$i$ ($\\sum \\tau_i = 0$)."
+          "- $\\tau_i$ adalah efek perlakuan ke-$i$ ($\\sum \\tau_i = 0$).",
+          "- $\\beta_j$ adalah efek blok ke-$j$ ($\\sum \\beta_j = 0$)."
         ],
-        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\beta_j + \\epsilon_{ij}, \\quad i = 1, \\dots, a; \\; j = 1, \\dots, b$$"
+        "keyFormulaOrDiagram": "$$y_{ij} = \\mu + \\tau_i + \\beta_j + \\epsilon_{ij}, \\quad i = 1, \\dots, a; \\; j = 1, \\dots, b$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang peneliti ingin membandingkan a = 4 formulasi katalis menggunakan reaktor yang hanya memiliki kapasitas k = 3 tabung per batch (blok)...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang peneliti ingin membandingkan a = 4 formulasi katalis menggunakan reaktor yang hanya memiliki kapasitas k = 3 tabung per batch (blok). Rencanakan desain BIBD: hitung jumlah replikasi r, jumlah blok b, dan frekuensi perpasangan lambda.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi parameter yang diberikan: a = 4 perlakuan, k = 3 ukuran blok (k < a).",
-          "Langkah 2: Tentukan nilai r dan b terkecil yang memenuhi relasi N = a*r = b*k dan lambda bulat: lambda = r*(k...",
-          "Langkah 3: Agar lambda berupa bilangan bulat positif, nilai r terkecil adalah kelipatan 3, yaitu r = 3.",
-          "Interpretasi: Desain BIBD berhasil dirancang dengan b = 4 blok, r = 3 replikasi per katalis, dan lambda = 2. Setiap pasang katalis (mi..."
+          "Langkah 2: Tentukan nilai r dan b terkecil yang memenuhi relasi N = a*r = b*k dan lambda bulat:\nlambda = r*(k - 1) / (a - 1) = r*(3 - 1) / (4 - 1) = 2r / 3.",
+          "Langkah 3: Agar lambda berupa bilangan bulat positif, nilai r terkecil adalah kelipatan 3, yaitu r = 3."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Susun 4 blok BIBD: Blok 1: {A, B, C} Blok 2: {A, B, D} Blok 3: {A, C, D} Blok 4..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Implementasi analisis ANOVA untuk Randomized Complete Block Design (RCBD) menggunakan statsmodels.",
-          "Dependensi Pustaka: numpy, pandas, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Tabel ANOVA Randomized Complete Block Design (RCBD)"
+          "Langkah 4: Hitung parameter lainnya:\n- lambda = 2 * (3) / 3 = 2 (setiap pasang katalis akan bertemu bersama di dalam blok sebanyak 2 kali).\n- Total observasi: N = a * r = 4 * 3 = 12.\n- Jumlah blok: b = N / k = 12 / 3 = 4 blok.",
+          "Langkah 5: Susun 4 blok BIBD:\nBlok 1: {A, B, C}\nBlok 2: {A, B, D}\nBlok 3: {A, C, D}\nBlok 4: {B, C, D}.",
+          "[result: Interpretasi Ilmiah] Desain BIBD berhasil dirancang dengan b = 4 blok, r = 3 replikasi per katalis, dan lambda = 2. Setiap pasang katalis (misal A dan B, A dan C, dll) muncul bersama di 2 blok yang berbeda, menjamin perbandingan efisiensi katalis yang seimbang dan adil."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Randomized Complete Block Design (RCBD) | sum_sq df..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi analisis ANOVA untuk Randomized Complete Block Design (RCBD) menggunakan statsmodels.",
         "bulletPoints": [
-          "Perangkap: Menyertakan suku interaksi antara perlakuan dan blok pada RCBD standar (pada n=1 per sel, tidak ada derajat ke...",
-          "Perangkap: Lupa mengacak urutan perlakuan di dalam masing-masing blok.",
-          "Perangkap: Menggunakan CRD padahal variabilitas antar-blok sangat besar, sehingga memicu hilangnya signifikansi statistik..."
-        ]
+          "Tujuan Algoritma: Implementasi analisis ANOVA untuk Randomized Complete Block Design (RCBD) menggunakan statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Tabel ANOVA Randomized Complete Block Design (RCBD)"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Randomized Complete Block Design (RCBD)\n                   sum_sq   df           F        PR(>F)\nC(Perlakuan)   876.439589  2.0  275.589832  2.167098e-06\nC(Blok)        247.962095  3.0   51.986877  1.077271e-04\nResidual         9.540788  6.0         NaN           NaN",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Menyertakan suku interaksi antara perlakuan dan blok pada RCBD standar (pada n=1 per sel, tidak ada derajat kebebasan yang tersisa untuk mengestimasi galat jika interaksi disertakan).",
+          "[warning: Perangkap] Lupa mengacak urutan perlakuan di dalam masing-masing blok.",
+          "[warning: Perangkap] Menggunakan CRD padahal variabilitas antar-blok sangat besar, sehingga memicu hilangnya signifikansi statistik."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan unit di dalam satu blok bersifat homogen dan variabilitas antar-blok dapat diidentifikasi.",
           "Prosedur: Verifikasi asumsi aditivitas (uji non-aditivitas Tukey untuk interaksi perlakuan-blok).",
           "Prosedur: Gunakan BIBD jika kapasitas fisik blok tidak mampu menampung seluruh perlakuan secara serentak."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Pada eksperimen RCBD dengan a = 4 perlakuan dan b = 5 blok, berapakah derajat kebebasan untuk komponen galat residual (S...",
-          "Petunjuk: Derajat kebebasan galat pada RCBD dihitung sebagai df_E = (a - 1)(b - 1).",
+          "Pertanyaan Uji: Pada eksperimen RCBD dengan a = 4 perlakuan dan b = 5 blok, berapakah derajat kebebasan untuk komponen galat residual (SSE)?",
+          "Petunjuk Analitis: Derajat kebebasan galat pada RCBD dihitung sebagai df_E = (a - 1)(b - 1).",
           "Solusi Kunci: Derajat kebebasan galat residual RCBD adalah df_E = (a - 1)(b - 1) = (4 - 1)(5 - 1) = 3 * 4 = 12."
-        ]
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -224,101 +262,138 @@ export const CH31_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Latin Square dan Graeco-Latin Square untuk Mengontrol D...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Latin Square dan Graeco-Latin Square untuk Mengontrol Dua Variabel Gangguan Simultan",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.8.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.2.",
-          "Capaian: Merancang Desain Bujursangkar Latin (Latin Square Design) untuk mengontrol dua sumber gangguan ortogonal simul...",
-          "Capaian: Memahami aturan ortogonalitas baris, kolom, dan huruf perlakuan (p x p grid).",
-          "Capaian: Mengembangkan desain ke Graeco-Latin Square untuk mengontrol tiga sumber gangguan sekaligus."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang Desain Bujursangkar Latin (Latin Square Design) untuk mengontrol dua sumber gangguan ortogonal simultan.",
+          "Capaian 2: Memahami aturan ortogonalitas baris, kolom, dan huruf perlakuan (p x p grid).",
+          "Capaian 3: Mengembangkan desain ke Graeco-Latin Square untuk mengontrol tiga sumber gangguan sekaligus."
         ],
-        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\alpha_i + \\beta_j + \\tau_k + \\epsilon_{ijk}, \\quad i, j, k = 1, \\dots, p$$"
+        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\alpha_i + \\beta_j + \\tau_k + \\epsilon_{ijk}, \\quad i, j, k = 1, \\dots, p$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.8.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Latin Square dan Graeco-Latin Square untuk Mengontrol D...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Latin Square dan Graeco-Latin Square untuk Mengontrol Dua Variabel Gangguan Simultan",
+        "lead": "Dalam banyak situasi pengujian rekayasa, eksperimen menghadapi dua sumber gangguan sekaligus yang beroperasi secara independen.",
         "bulletPoints": [
-          "Dalam banyak situasi pengujian rekayasa, eksperimen menghadapi dua sumber gangguan sekaligus yang beroperasi secara independe...",
-          "Jika digunakan desain faktorial penuh untuk mengontrol kedua gangguan tersebut bersama faktor perlakuan, jumlah run eksperime...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Contoh klasik: - Pengujian emisi bahan bakar pada mesin mobil, di mana dua sumber variabilitas gangguan yang diketahui adalah: (1) Perbedaan operator pengemudi (baris), dan (2) Hari pengujian atau urutan rotasi kendaraan (kolom). - Pembandingan algoritma pada platform komputasi awan, di mana dua gangguan adalah: (1) Node pemrosesan fisik, dan (2) Waktu beban trafik jaringan puncak harian.",
+          "Jika digunakan desain faktorial penuh untuk mengontrol kedua gangguan tersebut bersama faktor perlakuan, jumlah run eksperimen akan meledak menjadi sangat besar (p^3 run).",
+          "Solusi matematis paling brilian untuk masalah ini adalah Desain Bujursangkar Latin (Latin Square Design)."
         ],
-        "keyFormulaOrDiagram": "Prinsip Latin Square: Desain Latin Square berukuran p x p memungkinkan pengujian p perlaku..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Prinsip Latin Square: Desain Latin Square berukuran p x p memungkinkan pengujian p perlakuan (dilambangkan dengan huruf Latin A, B, C, D) sambil mengontrol secara simultan dua variabel gangguan (baris berukuran p dan kolom berukuran p) hanya dalam p^2 run pengujian (jauh lebih hemat daripada p^3 run).",
         "bulletPoints": [
-          "Prinsip Latin Square: Desain Latin Square berukuran p x p memungkinkan pengujian p perlakuan (dilambangkan dengan huruf Latin...",
-          "Graeco-Latin Square: Jika terdapat tiga sumber gangguan simultan, desain dapat diperluas menjadi Graeco-Latin Square dengan m...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Aturan mutlak Latin Square adalah: setiap huruf perlakuan harus muncul tepat satu kali di setiap baris dan tepat satu kali di setiap kolom (seperti aturan teka-teki Sudoku).",
+          "Graeco-Latin Square: Jika terdapat tiga sumber gangguan simultan, desain dapat diperluas menjadi Graeco-Latin Square dengan menumpangkan huruf Yunani (alpha, beta, gamma) di atas huruf Latin secara ortogonal."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Model Statistik Latin Square Design ($p \\times p$):",
         "bulletPoints": [
-          "1. Formulasi Model Statistik Latin Square Design ($p \\times p$):",
           "di mana:",
-          "- $\\alpha_i$ adalah efek baris gangguan ke-$i$ ($\\sum \\alpha_i = 0$)."
+          "- $\\alpha_i$ adalah efek baris gangguan ke-$i$ ($\\sum \\alpha_i = 0$).",
+          "- $\\beta_j$ adalah efek kolom gangguan ke-$j$ ($\\sum \\beta_j = 0$)."
         ],
-        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\alpha_i + \\beta_j + \\tau_k + \\epsilon_{ijk}, \\quad i, j, k = 1, \\dots, p$$"
+        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\alpha_i + \\beta_j + \\tau_k + \\epsilon_{ijk}, \\quad i, j, k = 1, \\dots, p$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang insinyur ingin membandingkan p = 4 jenis ban mobil (A, B, C, D) terhadap laju keausan. Dua variabel gangguan yang dikontrol adalah:...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang insinyur ingin membandingkan p = 4 jenis ban mobil (A, B, C, D) terhadap laju keausan. Dua variabel gangguan yang dikontrol adalah: 4 Posisi Roda (Depan Kiri, Depan Kanan, Belakang Kiri, Belakang Kanan) dan 4 Mobil Uji. Rancang grid Latin Square 4x4 dan hitung derajat kebebasan galatnya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi parameter: p = 4 perlakuan, Baris = 4 Mobil, Kolom = 4 Posisi Roda.",
-          "Langkah 2: Susun grid Latin Square 4x4 standar: Baris 1 (Mobil 1): [A, B, C, D] Baris 2 (Mobil 2): [B, C, D, A...",
+          "Langkah 2: Susun grid Latin Square 4x4 standar:\nBaris 1 (Mobil 1): [A, B, C, D]\nBaris 2 (Mobil 2): [B, C, D, A]\nBaris 3 (Mobil 3): [C, D, A, B]\nBaris 4 (Mobil 4): [D, A, B, C].\nVerifikasi: Setiap huruf ban (A, B, C, D) muncul tepat satu kali di tiap baris mobil dan tepat satu kali di tiap kolom posisi roda."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung total run: N = p^2 = 4^2 = 16 run (jauh lebih hemat daripada 4^3 = 64 run).",
-          "Interpretasi: Desain Latin Square 4x4 berhasil mengontrol variabilitas antar-mobil dan variabilitas posisi roda secara simultan hanya..."
+          "Langkah 4: Hitung derajat kebebasan galat:\ndf_error = (p - 1)(p - 2) = (4 - 1)(4 - 2) = 3 * 2 = 6.",
+          "[result: Interpretasi Ilmiah] Desain Latin Square 4x4 berhasil mengontrol variabilitas antar-mobil dan variabilitas posisi roda secara simultan hanya dengan 16 run pengujian dengan df galat = 6, menghasilkan efisiensi eksperimen 400% lebih tinggi dibanding desain faktorial penuh."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung derajat kebebasan galat: df_error = (p - 1)(p - 2) = (4 - 1)(4 - 2) = 3..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Analisis ANOVA Latin Square 4x4 untuk mengontrol dua sumber variasi gangguan simultan.",
         "bulletPoints": [
-          "Deskripsi: Analisis ANOVA Latin Square 4x4 untuk mengontrol dua sumber variasi gangguan simultan.",
-          "Dependensi Pustaka: numpy, pandas, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Tabel ANOVA Latin Square Design 4x4"
+          "Tujuan Algoritma: Analisis ANOVA Latin Square 4x4 untuk mengontrol dua sumber variasi gangguan simultan.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Tabel ANOVA Latin Square Design 4x4"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Latin Square Design 4x4 | sum_sq df F PR(>F) | C(Ban..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Latin Square Design 4x4\n                 sum_sq   df           F        PR(>F)\nC(Ban)      1354.214732  3.0  359.206268  1.107086e-06\nC(Mobil)     102.438514  3.0   27.171899  7.127883e-04\nC(Posisi)     54.896748  3.0   14.561338  3.896281e-03",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menerapkan Latin Square ketika dicurigai ada interaksi kuat antara baris dan kolom atau antara perlakuan dan g...",
-          "Perangkap: Menggunakan Latin Square ukuran 3x3 tanpa replikasi (df galat hanya 2, uji statistik menjadi sangat lemah).",
-          "Perangkap: Tidak mengacak urutan baris, kolom, dan penetapan label huruf sebelum eksperimen dijalankan."
-        ]
+          "[warning: Perangkap] Menerapkan Latin Square ketika dicurigai ada interaksi kuat antara baris dan kolom atau antara perlakuan dan gangguan (asumsi aditivitas runtuh).",
+          "[warning: Perangkap] Menggunakan Latin Square ukuran 3x3 tanpa replikasi (df galat hanya 2, uji statistik menjadi sangat lemah).",
+          "[warning: Perangkap] Tidak mengacak urutan baris, kolom, dan penetapan label huruf sebelum eksperimen dijalankan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Verifikasi bahwa setiap perlakuan muncul tepat satu kali di setiap baris dan setiap kolom.",
-          "Prosedur: Pastikan ukuran perlakuan sama persis dengan jumlah level kedua variabel gangguan (harus berupa matriks bujurs...",
+          "Prosedur: Pastikan ukuran perlakuan sama persis dengan jumlah level kedua variabel gangguan (harus berupa matriks bujursangkar p x p).",
           "Prosedur: Jika p <= 4, pertimbangkan mereplikasi bujursangkar Latin untuk meningkatkan derajat kebebasan galat."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Berapakah derajat kebebasan galat residual untuk sebuah Desain Bujursangkar Latin tunggal berukuran 5x5 (p = 5)?",
-          "Petunjuk: Gunakan formula derajat kebebasan galat Latin Square: df_E = (p - 1)(p - 2).",
+          "Petunjuk Analitis: Gunakan formula derajat kebebasan galat Latin Square: df_E = (p - 1)(p - 2).",
           "Solusi Kunci: Derajat kebebasan galat adalah df_E = (p - 1)(p - 2) = (5 - 1)(5 - 2) = 4 * 3 = 12."
-        ]
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -384,101 +459,140 @@ export const CH31_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Desain Split-Plot untuk Faktor yang Sulit Diubah (Hard-...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Desain Split-Plot untuk Faktor yang Sulit Diubah (Hard-to-Change Factors)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.8.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.3.",
-          "Capaian: Mengidentifikasi kendala logistik faktor yang sulit diubah (hard-to-change factors) dalam industri.",
-          "Capaian: Memahami struktur dua tingkat pengacakan: Whole Plot (faktor makro) dan Sub-Plot (faktor mikro).",
-          "Capaian: Menghitung dan membedakan dua komponen galat residual yang berbeda: Error A dan Error B."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi kendala logistik faktor yang sulit diubah (hard-to-change factors) dalam industri.",
+          "Capaian 2: Memahami struktur dua tingkat pengacakan: Whole Plot (faktor makro) dan Sub-Plot (faktor mikro).",
+          "Capaian 3: Menghitung dan membedakan dua komponen galat residual yang berbeda: Error A dan Error B."
         ],
-        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\rho_i + \\alpha_j + \\eta_{ij} + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}$$"
+        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\rho_i + \\alpha_j + \\eta_{ij} + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.8.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Desain Split-Plot untuk Faktor yang Sulit Diubah (Hard-...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Desain Split-Plot untuk Faktor yang Sulit Diubah (Hard-to-Change Factors)",
+        "lead": "Dalam eksperimen faktorial standar, diasumsikan bahwa seluruh kombinasi perlakuan dapat diacak urutannya secara bebas dan independen murni.",
         "bulletPoints": [
-          "Dalam eksperimen faktorial standar, diasumsikan bahwa seluruh kombinasi perlakuan dapat diacak urutannya secara bebas dan ind...",
-          "Contoh Kendala Fisik: Sebuah eksperimen menguji pengaruh Suhu Tungku Pembakaran (Furnace Temperature: 800 C vs 1000 C) dan Wa...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, dalam industri manufaktur, metalurgi, pertanian, dan pemrosesan kimia, asumsi ini sering kali mustahil dipenuhi secara praktis akibat adanya Faktor yang Sulit Diubah (Hard-to-Change Factors).",
+          "Contoh Kendala Fisik: Sebuah eksperimen menguji pengaruh Suhu Tungku Pembakaran (Furnace Temperature: 800 C vs 1000 C) dan Waktu Penahanan (Holding Time: 15 menit vs 30 menit) terhadap kekerasan paduan logam.",
+          "Mengubah suhu tungku pembakaran dari 800 C ke 1000 C membutuhkan waktu 6 jam pemanasan, dan mendinginkannya kembali membutuhkan waktu 12 jam."
         ],
-        "keyFormulaOrDiagram": "Struktur Desain Split-Plot: Untuk mengatasi kendala fisik ini secara elegan dan jujur, dig..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Struktur Desain Split-Plot: Untuk mengatasi kendala fisik ini secara elegan dan jujur, digunakan Desain Split-Plot: 1.",
         "bulletPoints": [
-          "Struktur Desain Split-Plot: Untuk mengatasi kendala fisik ini secara elegan dan jujur, digunakan Desain Split-Plot: 1. Whole...",
-          "Konsekuensi Statistika Krusial: Desain Split-Plot memiliki Dua Suku Galat Residual yang Berbeda: - Galat Plot Utama (Whole-Pl...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Whole Plot: Tingkat perlakuan makro (misal suhu tungku) diatur pada satu level tetap, membentuk satu \"plot utama\".",
+          "2.",
+          "Konsekuensi Statistika Krusial: Desain Split-Plot memiliki Dua Suku Galat Residual yang Berbeda: - Galat Plot Utama (Whole-Plot Error, Error A): Digunakan sebagai penyebut untuk menguji faktor yang sulit diubah.",
+          "Karena ukuran replikasi whole plot sedikit, uji untuk faktor sulit ini memiliki kekuatan statistik yang lebih rendah. - Galat Sub-Plot (Sub-Plot Error, Error B): Digunakan sebagai penyebut untuk menguji faktor yang mudah diubah dan efek interaksinya."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Model Statistik Split-Plot:",
         "bulletPoints": [
-          "1. Formulasi Model Statistik Split-Plot:",
           "di mana:",
-          "- $\\rho_i$ adalah efek blok/replikasi ke-$i$ ($i = 1, \\dots, r$)."
+          "- $\\rho_i$ adalah efek blok/replikasi ke-$i$ ($i = 1, \\dots, r$).",
+          "- $\\alpha_j$ adalah efek faktor Whole-Plot (Hard-to-Change) ke-$j$ ($j = 1, \\dots, a$)."
         ],
-        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\rho_i + \\alpha_j + \\eta_{ij} + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}$$"
+        "keyFormulaOrDiagram": "$$y_{ijk} = \\mu + \\rho_i + \\alpha_j + \\eta_{ij} + \\beta_k + (\\alpha\\beta)_{jk} + \\epsilon_{ijk}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian perlakuan panas baja, Faktor A (Suhu Tungku: 2 level, Hard-to-change) dan Faktor B (Media Pendingin: 3 level, Easy-to-change)...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi derajat kebebasan dan pasang penyebut galat yang tepat: - Faktor A (Whole plot): df_A...",
-          "Langkah 2: Hitung F untuk Faktor A (Suhu Tungku): F_A = MS_A / MS_ErrorA = 120.0 / 15.0 = 8.00 (df1 = 1, df2 =...",
-          "Langkah 3: Hitung F untuk Faktor B (Media Pendingin): F_B = MS_B / MS_ErrorB = 80.0 / 4.0 = 20.00 (df1 = 2, df...",
-          "Interpretasi: Penyebut galat yang berbeda sangat menentukan keputusan inferensi. Faktor B dan interaksi AB diuji terhadap Error B (MSE..."
+          "Konteks Kasus: Pada pengujian perlakuan panas baja, Faktor A (Suhu Tungku: 2 level, Hard-to-change) dan Faktor B (Media Pendingin: 3 level, Easy-to-change) diuji dengan r = 3 blok replikasi (total N = 18). Dari analisis ANOVA diperoleh:\nMS_A = 120.0, MS_ErrorA = 15.0\nMS_B = 80.0, MS_AB = 40.0, MS_ErrorB = 4.0\nHitung statistik F untuk Faktor A, Faktor B, dan Interaksi AB dengan penyebut galat yang tepat.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung F untuk Interaksi AB: F_AB = MS_AB / MS_ErrorB = 40.0 / 4.0 = 10.00 (df1..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi derajat kebebasan dan pasang penyebut galat yang tepat:\n- Faktor A (Whole plot): df_A = a - 1 = 2 - 1 = 1.\n  Penyebut: Error A dengan df = (r - 1)(a - 1) = (3 - 1)(2 - 1) = 2.\n- Faktor B (Sub plot): df_B = b - 1 = 3 - 1 = 2.\n  Penyebut: Error B dengan df = a(r - 1)(b - 1) = 2(2)(2) = 8.\n- Interaksi AB: df_AB = (a - 1)(b - 1) = (1)(2) = 2.\n  Penyebut: Error B (df = 8).",
+          "Langkah 2: Hitung F untuk Faktor A (Suhu Tungku):\nF_A = MS_A / MS_ErrorA = 120.0 / 15.0 = 8.00 (df1 = 1, df2 = 2).\nNilai kritis F_(0.05, 1, 2) = 18.51 -> Tidak Signifikan."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung F untuk Faktor B (Media Pendingin):\nF_B = MS_B / MS_ErrorB = 80.0 / 4.0 = 20.00 (df1 = 2, df2 = 8).\nNilai kritis F_(0.05, 2, 8) = 4.46 -> Sangat Signifikan (p < 0.001).",
+          "Langkah 4: Hitung F untuk Interaksi AB:\nF_AB = MS_AB / MS_ErrorB = 40.0 / 4.0 = 10.00 (df1 = 2, df2 = 8).\nNilai kritis F_(0.05, 2, 8) = 4.46 -> Sangat Signifikan (p = 0.007).",
+          "[result: Interpretasi Ilmiah] Penyebut galat yang berbeda sangat menentukan keputusan inferensi. Faktor B dan interaksi AB diuji terhadap Error B (MSE = 4.0) dan terbukti sangat signifikan. Jika peneliti keliru menganalisisnya sebagai faktorial standar menggunakan gabungan galat, p-value untuk faktor A akan terbias palsu."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemodelan analisis split-plot dua tingkat galat menggunakan MixedLM statsmodels.",
         "bulletPoints": [
-          "Deskripsi: Pemodelan analisis split-plot dua tingkat galat menggunakan MixedLM statsmodels.",
-          "Dependensi Pustaka: numpy, pandas, statsmodels",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Estimasi Model Split-Plot (MixedLM)"
+          "Tujuan Algoritma: Pemodelan analisis split-plot dua tingkat galat menggunakan MixedLM statsmodels.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, statsmodels",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Estimasi Model Split-Plot (MixedLM)"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Model Split-Plot (MixedLM) | Varians Error A (Who..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Model Split-Plot (MixedLM)\nVarians Error A (Whole-Plot) : 7.9154 (Sejati: 9.00)\nVarians Error B (Sub-Plot)   : 2.3412 (Sejati: 2.25)\nEfek Suhu (Hard-to-Change)   : -20.45 (SE: 2.11)\nEfek Media (Easy-to-Change)  : -10.12 (SE: 0.88)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menganalisis eksperimen split-plot menggunakan Two-Way ANOVA standar dengan satu penyebut galat tunggal (menge...",
-          "Perangkap: Mengabaikan kendala operasional hard-to-change dan mengklaim telah melakukan randomisasi penuh padahal suhu ha...",
-          "Perangkap: Melupakan bahwa faktor whole-plot memiliki kekuatan uji (power) yang jauh lebih rendah daripada faktor sub-plo..."
-        ]
+          "[warning: Perangkap] Menganalisis eksperimen split-plot menggunakan Two-Way ANOVA standar dengan satu penyebut galat tunggal (mengecilkan p-value whole plot secara palsu).",
+          "[warning: Perangkap] Mengabaikan kendala operasional hard-to-change dan mengklaim telah melakukan randomisasi penuh padahal suhu hanya diubah sekali.",
+          "[warning: Perangkap] Melupakan bahwa faktor whole-plot memiliki kekuatan uji (power) yang jauh lebih rendah daripada faktor sub-plot."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Identifikasi faktor mana yang sulit diubah (suhu, batch reaktor) dan tetapkan sebagai whole plot.",
           "Prosedur: Pastikan tabel ANOVA memuat dua baris galat terpisah: Error A dan Error B.",
-          "Prosedur: Gunakan pemodelan Linear Mixed Models (LMM) dengan random intercept untuk unit whole plot sebagai pendekatan k..."
-        ]
+          "Prosedur: Gunakan pemodelan Linear Mixed Models (LMM) dengan random intercept untuk unit whole plot sebagai pendekatan komputasi modern."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa analisis data eksperimen Split-Plot secara matematis wajib menggunakan dua komponen suku galat (Error A dan Erro...",
-          "Petunjuk: Perhatikan perbedaan tingkat pengacakan antara faktor yang sulit diubah dan faktor yang mudah diubah...",
-          "Solusi Kunci: Desain Split-Plot memiliki dua unit eksperimen dengan ukuran berbeda akibat dua tingkat pengacakan. Faktor yang sulit di..."
-        ]
+          "Pertanyaan Uji: Mengapa analisis data eksperimen Split-Plot secara matematis wajib menggunakan dua komponen suku galat (Error A dan Error B) yang terpisah?",
+          "Petunjuk Analitis: Perhatikan perbedaan tingkat pengacakan antara faktor yang sulit diubah dan faktor yang mudah diubah.",
+          "Solusi Kunci: Desain Split-Plot memiliki dua unit eksperimen dengan ukuran berbeda akibat dua tingkat pengacakan. Faktor yang sulit diubah (whole plot) memiliki variabilitas galat yang lebih besar (Error A), sedangkan faktor yang mudah diubah diuji di dalam plot yang sama dengan variabilitas galat yang lebih kecil (Error B)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -543,101 +657,142 @@ export const CH31_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pengantar Response Surface Methodology (RSM): Optimasi...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pengantar Response Surface Methodology (RSM): Optimasi Proses Orde-2 via Central Composite Design (CCD)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.8.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.4.",
-          "Capaian: Memahami metodologi Response Surface Methodology (RSM) untuk optimasi proses multi-variabel kontinu.",
-          "Capaian: Merancang arsitektur Central Composite Design (CCD) yang menggabungkan faktorial, titik aksial, dan titik pusa...",
-          "Capaian: Menurunkan kondisi optimum titik stasioner (stationary point) menggunakan kalkulus gradien matriks kuadratik."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.8.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami metodologi Response Surface Methodology (RSM) untuk optimasi proses multi-variabel kontinu.",
+          "Capaian 2: Merancang arsitektur Central Composite Design (CCD) yang menggabungkan faktorial, titik aksial, dan titik pusat.",
+          "Capaian 3: Menurunkan kondisi optimum titik stasioner (stationary point) menggunakan kalkulus gradien matriks kuadratik."
         ],
-        "keyFormulaOrDiagram": "$$y = \\beta_0 + \\sum_{i=1}^k \\beta_i x_i + \\sum_{i=1}^k \\beta_{ii} x_i^2 + \\sum_{i < j} \\sum \\beta_{ij} x_i x_j + \\epsilon$$"
+        "keyFormulaOrDiagram": "$$y = \\beta_0 + \\sum_{i=1}^k \\beta_i x_i + \\sum_{i=1}^k \\beta_{ii} x_i^2 + \\sum_{i < j} \\sum \\beta_{ij} x_i x_j + \\epsilon$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.8.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pengantar Response Surface Methodology (RSM): Optimasi...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pengantar Response Surface Methodology (RSM): Optimasi Proses Orde-2 via Central Composite Design (CCD)",
+        "lead": "Desain faktorial 2^k sangat efektif untuk menyaring faktor dan memodelkan aproksimasi linier orde-1.",
         "bulletPoints": [
-          "Desain faktorial 2^k sangat efektif untuk menyaring faktor dan memodelkan aproksimasi linier orde-1. Namun, ketika proses rek...",
-          "Response Surface Methodology (RSM), yang dikembangkan oleh George E.P. Box dan K.B. Wilson (1951), adalah metodologi matemati...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, ketika proses rekayasa sudah mendekati wilayah optimum, hubungan antara parameter input dan respon hampir selalu melengkung (curvature).",
+          "Model linier tidak lagi mampu memetakan puncak bukit respon (optimum maximum) atau lembah terdalam (optimum minimum).",
+          "Response Surface Methodology (RSM), yang dikembangkan oleh George E.P.",
+          "Box dan K.B."
         ],
-        "keyFormulaOrDiagram": "Central Composite Design (CCD): Desain eksperimen standar emas untuk membangun model permu..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Central Composite Design (CCD): Desain eksperimen standar emas untuk membangun model permukaan respon orde-2 adalah Central Composite Design (CCD).",
         "bulletPoints": [
-          "Central Composite Design (CCD): Desain eksperimen standar emas untuk membangun model permukaan respon orde-2 adalah Central C...",
-          "Penentuan Nilai Alpha: Untuk menjamin sifat Rotatability (presisi prediksi model seragam di seluruh arah radial dari titik pu...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Struktur geometris CCD dibangun secara efisien dari tiga komponen: 1.",
+          "Poin Faktorial (Factorial Points): Desain 2^k (atau 2^(k-p)) pada koordinat (-1, +1), untuk mengestimasi efek linier dan interaksi dua faktor.",
+          "Penentuan Nilai Alpha: Untuk menjamin sifat Rotatability (presisi prediksi model seragam di seluruh arah radial dari titik pusat), nilai alpha ditetapkan sebesar alpha = (2^k)^(1/4).",
+          "Melalui analisis kanonik matriks Hessian kuadratik, peneliti dapat menentukan secara analitis apakah titik stasioner yang ditemukan adalah Titik Maksimum Lokal, Titik Minimum Lokal, atau Titik Pelana (Saddle Point)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Model Polinomial Orde-2 Lengkap RSM:",
         "bulletPoints": [
-          "1. Model Polinomial Orde-2 Lengkap RSM:",
           "Dalam notasi matriks kuadratik:",
-          "di mana $\\mathbf{b} = [\\beta_1, \\dots, \\beta_k]^T$ dan matriks simetris Hessian $\\mathbf{B}$:"
+          "di mana $\\mathbf{b} = [\\beta_1, \\dots, \\beta_k]^T$ dan matriks simetris Hessian $\\mathbf{B}$:",
+          "2. Solusi Titik Stasioner Optimum (Stationary Point):"
         ],
-        "keyFormulaOrDiagram": "$$y = \\beta_0 + \\sum_{i=1}^k \\beta_i x_i + \\sum_{i=1}^k \\beta_{ii} x_i^2 + \\sum_{i < j} \\sum \\beta_{ij} x_i x_j + \\epsilon$$"
+        "keyFormulaOrDiagram": "$$y = \\beta_0 + \\sum_{i=1}^k \\beta_i x_i + \\sum_{i=1}^k \\beta_{ii} x_i^2 + \\sum_{i < j} \\sum \\beta_{ij} x_i x_j + \\epsilon$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada optimasi proses ekstraksi minyak atsiri 2 faktor (x1 = Suhu, x2 = Waktu), model kuadratik orde-2 RSM yang terestimasi adalah: y_hat = 8...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Susun vektor linier b dan matriks kuadratik B: b = [4.0, 2.0]^T. beta_11 = -2.5, beta_22 = -1.5, be...",
-          "Langkah 2: Hitung determinan dan invers dari matriks B: det(B) = (-2.5)(-1.5) - (-0.5)^2 = 3.75 - 0.25 = 3.50....",
-          "Langkah 3: Hitung titik stasioner x_s = -0.5 * B^(-1) * b: B^(-1) * b = (1 / 3.5) * [ (-1.5 * 4.0 + 0.5 * 2.0)...",
-          "Interpretasi: Kondisi operasi optimal tercapai pada koordinat terkode Suhu x1 = +0.71 dan Waktu x2 = +0.43. Di titik puncak ini, yield..."
+          "Konteks Kasus: Pada optimasi proses ekstraksi minyak atsiri 2 faktor (x1 = Suhu, x2 = Waktu), model kuadratik orde-2 RSM yang terestimasi adalah:\ny_hat = 82.5 + 4.0*x1 + 2.0*x2 - 2.5*x1^2 - 1.5*x2^2 - 1.0*x1*x2.\nSusun vektor b dan matriks B, hitung koordinat titik stasioner x_s, tentukan jenis optimumnya via nilai eigen, dan hitung respon yield maksimum yang diprediksi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung yield maksimum y_hat_s: y_hat_s = beta_0 + 0.5 * x_s^T * b = 82.5 + 0.5..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Susun vektor linier b dan matriks kuadratik B:\nb = [4.0, 2.0]^T.\nbeta_11 = -2.5, beta_22 = -1.5, beta_12 = -1.0 -> elemen non-diagonal = beta_12 / 2 = -0.5.\nB = [[-2.5, -0.5], [-0.5, -1.5]].",
+          "Langkah 2: Hitung determinan dan invers dari matriks B:\ndet(B) = (-2.5)(-1.5) - (-0.5)^2 = 3.75 - 0.25 = 3.50.\nB^(-1) = (1 / 3.50) * [[-1.5, 0.5], [0.5, -2.5]].",
+          "Langkah 3: Hitung titik stasioner x_s = -0.5 * B^(-1) * b:\nB^(-1) * b = (1 / 3.5) * [ (-1.5 * 4.0 + 0.5 * 2.0), (0.5 * 4.0 - 2.5 * 2.0) ] = (1 / 3.5) * [ -6.0 + 1.0, 2.0 - 5.0 ] = (1 / 3.5) * [ -5.0, -3.0 ] = [-1.4286, -0.8571]^T.\nx_s = -0.5 * [-1.4286, -0.8571]^T = [+0.7143, +0.4286]^T."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Klasifikasi jenis optimum via nilai eigen B:\nPersamaan karakteristik: det(B - lambda*I) = (-2.5 - lambda)(-1.5 - lambda) - 0.25 = lambda^2 + 4.0*lambda + 3.50 = 0.\nlambda = [-4.0 +- sqrt(16.0 - 14.0)] / 2 = [-4.0 +- 1.4142] / 2.\nlambda_1 = -1.2929, lambda_2 = -2.7071.\nKarena KEDUA nilai eigen bertanda negatif murni (lambda < 0), titik stasioner adalah MAKSIMUM LOKAL SEJATI.",
+          "Langkah 5: Hitung yield maksimum y_hat_s:\ny_hat_s = beta_0 + 0.5 * x_s^T * b = 82.5 + 0.5 * (0.7143 * 4.0 + 0.4286 * 2.0) = 82.5 + 0.5 * (2.8572 + 0.8572) = 82.5 + 0.5 * (3.7144) = 82.5 + 1.857 = 84.36%.",
+          "[result: Interpretasi Ilmiah] Kondisi operasi optimal tercapai pada koordinat terkode Suhu x1 = +0.71 dan Waktu x2 = +0.43. Di titik puncak ini, yield ekstraksi maksimum diprediksi mencapai 84.36%."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Optimasi matematis RSM: Kalkulasi titik stasioner, analisis nilai eigen Hessian, dan prediksi respon maksimum.",
         "bulletPoints": [
-          "Deskripsi: Optimasi matematis RSM: Kalkulasi titik stasioner, analisis nilai eigen Hessian, dan prediksi respon maksimum.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Analisis Optimasi Response Surface Methodology (RSM)"
+          "Tujuan Algoritma: Optimasi matematis RSM: Kalkulasi titik stasioner, analisis nilai eigen Hessian, dan prediksi respon maksimum.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Analisis Optimasi Response Surface Methodology (RSM)"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Optimasi Response Surface Methodology (RSM) | Koordinat..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Analisis Optimasi Response Surface Methodology (RSM)\nKoordinat Titik Stasioner (x_s) : x1 = 0.7143, x2 = 0.4286\nNilai Eigen Matriks Hessian (B) : lambda_1 = -2.7071, lambda_2 = -1.2929\nKarakteristik Titik Stasioner   : Maksimum Lokal\nPrediksi Respon Optimum (y_max) : 84.36%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyimpulkan titik stasioner sebagai titik maksimum tanpa memeriksa nilai eigen matriks B (titik tersebut bisa...",
-          "Perangkap: Menghitung koordinat optimum yang jatuh jauh di luar wilayah eksperimen (|x_s| > alpha) dan memaksakan ekstrap...",
-          "Perangkap: Mengabaikan titik pusat (center points) sehingga tidak dapat memisahkan galat eksperimental murni dari ketidak..."
-        ]
+          "[warning: Perangkap] Menyimpulkan titik stasioner sebagai titik maksimum tanpa memeriksa nilai eigen matriks B (titik tersebut bisa jadi merupakan saddle point di mana respon justru menurun pada arah tertentu).",
+          "[warning: Perangkap] Menghitung koordinat optimum yang jatuh jauh di luar wilayah eksperimen (|x_s| > alpha) dan memaksakan ekstrapolasi yang tidak valid.",
+          "[warning: Perangkap] Mengabaikan titik pusat (center points) sehingga tidak dapat memisahkan galat eksperimental murni dari ketidakcocokan model (lack of fit)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Uji Lack of Fit model kuadratik: pastikan p-value lack of fit > 0.05 (model cocok dengan data).",
           "Prosedur: Periksa apakah titik stasioner x_s berada di dalam batas domain eksperimen teruji.",
           "Prosedur: Jalankan pengujian konfirmasi laboratorium fisik pada koordinat titik stasioner yang direkomendasikan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Pada analisis kanonik model kuadratik RSM, jika matriks kuadratik Hessian B memiliki nilai eigen lambda_1 = +3.2 dan lam...",
-          "Petunjuk: Perhatikan tanda dari masing-masing nilai eigen (satu positif dan satu negatif).",
-          "Solusi Kunci: Titik stasioner tersebut adalah Titik Pelana (Saddle Point). Pada arah vektor eigen pertama respon berbentuk lembah (min..."
-        ]
+          "Pertanyaan Uji: Pada analisis kanonik model kuadratik RSM, jika matriks kuadratik Hessian B memiliki nilai eigen lambda_1 = +3.2 dan lambda_2 = -1.8, apakah jenis titik stasioner yang teridentifikasi?",
+          "Petunjuk Analitis: Perhatikan tanda dari masing-masing nilai eigen (satu positif dan satu negatif).",
+          "Solusi Kunci: Titik stasioner tersebut adalah Titik Pelana (Saddle Point). Pada arah vektor eigen pertama respon berbentuk lembah (minimum), sedangkan pada arah vektor eigen kedua respon berbentuk bukit (maksimum), sehingga sistem tidak memiliki titik ekstrem tunggal murni di wilayah tersebut."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

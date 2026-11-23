@@ -67,100 +67,139 @@ export const CH01_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi dalam Rekayasa",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.1.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.1.",
-          "Capaian: Membedakan struktur silogisme deduktif, inferensi induktif, dan penalaran abduktif dalam konteks rekayasa.",
-          "Capaian: Menganalisis validitas dan kebenaran substantif dari suatu argumen ilmiah.",
-          "Capaian: Menerapkan penalaran abduktif untuk mendiagnosis anomali kegagalan pada sistem fisik atau komputasi."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan struktur silogisme deduktif, inferensi induktif, dan penalaran abduktif dalam konteks rekayasa.",
+          "Capaian 2: Menganalisis validitas dan kebenaran substantif dari suatu argumen ilmiah.",
+          "Capaian 3: Menerapkan penalaran abduktif untuk mendiagnosis anomali kegagalan pada sistem fisik atau komputasi."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Premis Mayor: } P \\implies Q$$"
+        "keyFormulaOrDiagram": "$$\\text{Premis Mayor: } P \\implies Q$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.1.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi dalam Rekayasa",
+        "lead": "Penelitian ilmiah dalam bidang rekayasa dan sains komputasi berakar pada tiga bentuk penalaran inferensial: deduksi, induksi, dan abduksi.",
         "bulletPoints": [
-          "Penelitian ilmiah dalam bidang rekayasa dan sains komputasi berakar pada tiga bentuk penalaran inferensial: deduksi, induksi,...",
-          "Penalaran deduktif (*deductive reasoning*) bergerak dari premis teoretis universal menuju kesimpulan spesifik yang bersifat p...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Memahami perbedaan mendasar ketiganya merupakan syarat mutlak sebelum seorang peneliti merancang metodologi eksperimen atau menarik kesimpulan dari data empiris.",
+          "Penalaran deduktif (*deductive reasoning*) bergerak dari premis teoretis universal menuju kesimpulan spesifik yang bersifat pasti secara logis.",
+          "Jika premis awal benar dan struktur silogisme valid, maka kesimpulan dijamin pasti benar."
         ],
-        "keyFormulaOrDiagram": "Penalaran induktif (*inductive reasoning*) bekerja pada arah sebaliknya: menggeneralisasik..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Penalaran induktif (*inductive reasoning*) bekerja pada arah sebaliknya: menggeneralisasikan pola umum dari serangkaian observasi empiris yang terbatas.",
         "bulletPoints": [
-          "Penalaran induktif (*inductive reasoning*) bekerja pada arah sebaliknya: menggeneralisasikan pola umum dari serangkaian obser...",
-          "Penalaran abduktif (*abductive reasoning*), yang diformalkan oleh Charles Sanders Peirce, adalah inferensi menuju penjelasan...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Ketika seorang insinyur menguji ketahanan tarik 100 sampel paduan titanium dan menemukan seluruhnya patah pada tegangan di atas 900 MPa, penarikan kesimpulan bahwa \"seluruh paduan titanium tipe tersebut memiliki kekuatan tarik di atas 900 MPa\" adalah langkah induktif.",
+          "Induksi memperluas batas pengetahuan empiris, tetapi kesimpulannya bersifat probabilistik, tidak pernah mutlak pasti.",
+          "Penalaran abduktif (*abductive reasoning*), yang diformalkan oleh Charles Sanders Peirce, adalah inferensi menuju penjelasan terbaik (*inference to the best explanation*).",
+          "Abduksi dimulai dari observasi anomali yang mengejutkan, kemudian mengajukan hipotesis plausibel yang jika benar akan mampu menerangkan fenomena tersebut secara koheren."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Struktur formal ketiga logika penalaran dinyatakan dalam kalkulus proposisional:",
         "bulletPoints": [
-          "Struktur formal ketiga logika penalaran dinyatakan dalam kalkulus proposisional:",
           "1. **Deduksi (Modus Ponens):**",
-          "Karakteristik: Bersifat analitis, mengawetkan kebenaran (*truth-preserving*), derajat kepastian mutlak ($P(Q |..."
+          "Karakteristik: Bersifat analitis, mengawetkan kebenaran (*truth-preserving*), derajat kepastian mutlak ($P(Q | P, P \\implies Q) = 1$).",
+          "2. **Induksi (Generalisasi Statistik):**"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Premis Mayor: } P \\implies Q$$"
+        "keyFormulaOrDiagram": "$$\\text{Premis Mayor: } P \\implies Q$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian rig getaran turbin angin otonom, sensor akselerometer mendeteksi lonjakan harmonik ganjil ketiga sebesar 15 dB di atas batas...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada pengujian rig getaran turbin angin otonom, sensor akselerometer mendeteksi lonjakan harmonik ganjil ketiga sebesar 15 dB di atas batas baseline normal. Insinyur peneliti mengidentifikasi tiga hipotesis penyebab potensial: (H1) Resonansi struktur bilah akibat kecepatan angin kritis, (H2) Cacat mekanis pada bantalan poros (bearing defect), atau (H3) Noise elektromagnetik pada kabel transmisi ADC. Bagaimanakah alur penalaran abduksi diterapkan untuk menetapkan hipotesis terbaik, dan bagaimana deduksi-induksi digunakan untuk memvalidasinya?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1 (Abduksi - Pembentukan Ruang Hipotesis): Insinyur memeriksa spektrum frekuensi dan suhu pengoperasia...",
-          "Langkah 2 (Seleksi Penjelasan Terbaik): H2 (cacat bearing) memprediksi munculnya frekuensi cacat cincin luar (...",
-          "Langkah 3 (Deduksi - Prediksi Teruji): Jika H2 benar, maka pelumasan ulang tidak akan menghilangkan puncak fre...",
-          "Interpretasi: Penyelidikan ilmiah berhasil menggabungkan abduksi (menemukan hipotesis penyebab paling rasional), deduksi (menurunkan p..."
+          "Langkah 1 (Abduksi - Pembentukan Ruang Hipotesis): Insinyur memeriksa spektrum frekuensi dan suhu pengoperasian. H3 dieliminasi karena sensor menggunakan komunikasi diferensial berpelindung yang kebal noise kabel. H1 dieliminasi karena pengujian dilakukan pada kecepatan angin konstan di bawah ambang resonansi.",
+          "Langkah 2 (Seleksi Penjelasan Terbaik): H2 (cacat bearing) memprediksi munculnya frekuensi cacat cincin luar (BPFO) yang tepat berimpit dengan harmonik ketiga yang terobservasi. Oleh karena itu, H2 dipilih secara abduktif sebagai penjelasan terbaik."
         ],
-        "keyFormulaOrDiagram": "Langkah 4 (Induksi - Verifikasi Empiris): Insinyur mengambil 10 sampel pelumas secara berk..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi komparasi Bayes factor untuk membedakan dua hipotesis penyebab anomali data sensor berdasarkan likelihood observasi empir...",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: Log-Likelihood H1: -78.36"
+          "Langkah 3 (Deduksi - Prediksi Teruji): Jika H2 benar, maka pelumasan ulang tidak akan menghilangkan puncak frekuensi cacat, dan inspeksi partikel oli (ferrografi) harus menunjukkan serpihan logam mikroskopis.",
+          "Langkah 4 (Induksi - Verifikasi Empiris): Insinyur mengambil 10 sampel pelumas secara berkala. Pemeriksaan laboratorium membuktikan keberadaan partikel serpihan baja karbon pada seluruh 10 sampel (induksi empiris), mengonfirmasi keabsahan H2.",
+          "[result: Interpretasi Ilmiah] Penyelidikan ilmiah berhasil menggabungkan abduksi (menemukan hipotesis penyebab paling rasional), deduksi (menurunkan prediksi yang dapat diuji), dan induksi (mengonfirmasi prediksi melalui observasi berulang)."
         ],
-        "keyFormulaOrDiagram": "Log-Likelihood H1: -78.36 | Log-Likelihood H2: -59.74 | Bayes Factor (H2 / H1): 1.22e+08"
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi komparasi Bayes factor untuk membedakan dua hipotesis penyebab anomali data sensor berdasarkan likelihood observasi empiris.",
         "bulletPoints": [
-          "Perangkap: Memperlakukan hipotesis abduktif seolah-olah telah terbukti benar secara mutlak tanpa pengujian deduktif-induk...",
-          "Perangkap: Melakukan generalisasi induktif tergesa-gesa (*hasty generalization*) dari ukuran sampel yang terlalu kecil at...",
-          "Perangkap: Melakukan penalaran yang menegaskan konsekuen (*affirming the consequent*): Jika P maka Q; Q terjadi; maka men..."
-        ]
+          "Tujuan Algoritma: Simulasi komparasi Bayes factor untuk membedakan dua hipotesis penyebab anomali data sensor berdasarkan likelihood observasi empiris.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: Log-Likelihood H1: -78.36"
+        ],
+        "keyFormulaOrDiagram": "Log-Likelihood H1: -78.36\nLog-Likelihood H2: -59.74\nBayes Factor (H2 / H1): 1.22e+08\nKesimpulan Abduktif: Bukti empiris sangat kuat mendukung H2 (Kerusakan Bantalan).",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Verifikasi kepatuhan silogisme terhadap hukum logika formal untuk mencegah kesalahan deduksi.",
-          "Prosedur: Pemeriksaan kecukupan ukuran sampel dan representativitas sampling frame untuk inferensi induktif.",
-          "Prosedur: Uji sensitivitas model penjelas tandingan untuk memastikan hipotesis terpilih benar-benar *the best explanatio..."
-        ]
+          "[warning: Perangkap] Memperlakukan hipotesis abduktif seolah-olah telah terbukti benar secara mutlak tanpa pengujian deduktif-induktif lanjutan.",
+          "[warning: Perangkap] Melakukan generalisasi induktif tergesa-gesa (*hasty generalization*) dari ukuran sampel yang terlalu kecil atau tidak acak.",
+          "[warning: Perangkap] Melakukan penalaran yang menegaskan konsekuen (*affirming the consequent*): Jika P maka Q; Q terjadi; maka menyimpulkan P pasti benar."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Seorang peneliti mengamati bahwa 50 model deep learning yang ditraining dengan optimizer Adam selalu konvergen lebih cep...",
-          "Petunjuk: Perhatikan perpindahan dari observasi terbatas menuju klaim universal.",
-          "Solusi Kunci: Peneliti menggunakan penalaran induktif. Kelemahan fatalnya adalah generalisasi berlebihan (*overgeneralization*). Kesim..."
-        ]
+          "Prosedur: Verifikasi kepatuhan silogisme terhadap hukum logika formal untuk mencegah kesalahan deduksi.",
+          "Prosedur: Pemeriksaan kecukupan ukuran sampel dan representativitas sampling frame untuk inferensi induktif.",
+          "Prosedur: Uji sensitivitas model penjelas tandingan untuk memastikan hipotesis terpilih benar-benar *the best explanation*."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Seorang peneliti mengamati bahwa 50 model deep learning yang ditraining dengan optimizer Adam selalu konvergen lebih cepat dibanding SGD pada dataset citra medis miliknya. Peneliti tersebut menyimpulkan: \"Optimizer Adam pasti selalu lebih unggul dibanding SGD untuk seluruh jenis arsitektur komputasi visi\". Bentuk penalaran apakah yang digunakan, dan apa kelemahan fatal kesimpulannya?",
+          "Petunjuk Analitis: Perhatikan perpindahan dari observasi terbatas menuju klaim universal.",
+          "Solusi Kunci: Peneliti menggunakan penalaran induktif. Kelemahan fatalnya adalah generalisasi berlebihan (*overgeneralization*). Kesimpulan induktif hanya berlaku dengan tingkat probabilitas tertentu pada domain pengujian yang identik, dan tidak dapat digeneralisasikan secara universal ke seluruh arsitektur visi tanpa mempertimbangkan faktor regularisasi dan generalisasi out-of-distribution."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -227,101 +266,139 @@ export const CH01_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prinsip Falsifikasi Popperian dan Demarkasi Sains vs Ps...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prinsip Falsifikasi Popperian dan Demarkasi Sains vs Pseudosains",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.1.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.2.",
-          "Capaian: Menjelaskan kriteria demarkasi Karl Popper antara sains empiris dan pseudosains.",
-          "Capaian: Merumuskan hipotesis rekayasa yang memenuhi kriteria keterfalsifikasian (falsifiability).",
-          "Capaian: Mengidentifikasi taktik imunisasi konseptual yang melemahkan keabsahan riset ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menjelaskan kriteria demarkasi Karl Popper antara sains empiris dan pseudosains.",
+          "Capaian 2: Merumuskan hipotesis rekayasa yang memenuhi kriteria keterfalsifikasian (falsifiability).",
+          "Capaian 3: Mengidentifikasi taktik imunisasi konseptual yang melemahkan keabsahan riset ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Teori } T \\implies \\text{Prediksi Empiris } E$$"
+        "keyFormulaOrDiagram": "$$\\text{Teori } T \\implies \\text{Prediksi Empiris } E$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.1.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prinsip Falsifikasi Popperian dan Demarkasi Sains vs Ps...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prinsip Falsifikasi Popperian dan Demarkasi Sains vs Pseudosains",
+        "lead": "Salah satu kontribusi paling berpengaruh dalam filsafat sains modern adalah kriteria demarkasi Karl Popper dalam bukunya *The Logic of Scientific Discovery* (1959).",
         "bulletPoints": [
-          "Salah satu kontribusi paling berpengaruh dalam filsafat sains modern adalah kriteria demarkasi Karl Popper dalam bukunya *The...",
-          "Kriteria demarkasi Popperian menyatakan bahwa suatu teori atau hipotesis hanya dapat dikategorikan sebagai ilmiah (*scientifi...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Popper menolak pandangan positivisme logis kaum Lingkaran Wina yang mendasarkan sains pada prinsip verifikasi (*verifiability*).",
+          "Menurut Popper, hukum ilmiah tidak akan pernah dapat diverifikasi secara tuntas oleh observasi empiris berapapun banyaknya bukti pendukung yang dikumpulkan, namun hukum tersebut dapat difalsifikasi secara mutlak hanya oleh satu bukti tandingan yang valid.",
+          "Kriteria demarkasi Popperian menyatakan bahwa suatu teori atau hipotesis hanya dapat dikategorikan sebagai ilmiah (*scientific*) apabila teori tersebut terbuka terhadap kemungkinan untuk dibuktikan salah (*falsifiable*).",
+          "Teori yang tidak dapat dibayangkan kondisi empiris apa yang dapat membantahnya bukanlah teori ilmiah, melainkan doktrin metafisis atau pseudosains."
         ],
-        "keyFormulaOrDiagram": "Dalam konteks penelitian rekayasa dan sains komputasi, prinsip falsifikasi memiliki implik..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dalam konteks penelitian rekayasa dan sains komputasi, prinsip falsifikasi memiliki implikasi praktis yang sangat tegas.",
         "bulletPoints": [
-          "Dalam konteks penelitian rekayasa dan sains komputasi, prinsip falsifikasi memiliki implikasi praktis yang sangat tegas. Suat...",
-          "Peneliti rekayasa kerap terjebak dalam taktik imunisasi (*conventionalist stratagems* atau *ad-hoc immunizing hypotheses*): k...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Suatu klaim algoritma seperti \"metode kami bekerja dengan baik dan cerdas\" bukanlah hipotesis ilmiah karena bersifat kebal terhadap penyangkalan (*unfalsifiable*).",
+          "Sebaliknya, klaim seperti \"algoritma kendali prediktif usulan mempertahankan osilasi sudut roll di bawah 2.5 derajat saat diuji pada kecepatan angin silang 15 m/s\" adalah hipotesis ilmiah yang kokoh, karena menyediakan kondisi batas yang jelas di mana klaim tersebut akan dinyatakan gagal jika deviasi melebihi 2.5 derajat.",
+          "Peneliti rekayasa kerap terjebak dalam taktik imunisasi (*conventionalist stratagems* atau *ad-hoc immunizing hypotheses*): ketika eksperimen menghasilkan data yang bertentangan dengan model usulan, peneliti menambahkan pengecualian khusus secara retrospektif hanya untuk menyelamatkan hipotesis awal.",
+          "Popper menegaskan bahwa modifikasi teori hanya diizinkan apabila modifikasi tersebut meningkatkan derajat keterfalsifikasian teori, bukan menurunkannya."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi asimetri logis antara verifikasi dan falsifikasi bersandar pada hukum Modus Tollens:",
         "bulletPoints": [
-          "Formulasi asimetri logis antara verifikasi dan falsifikasi bersandar pada hukum Modus Tollens:",
           "Bandingkan dengan upaya verifikasi yang secara logis keliru:",
-          "Secara formal, konfirmasi empiris $E$ hanya meningkatkan derajat koroborasi (*degree of corroboration*) teori..."
+          "Secara formal, konfirmasi empiris $E$ hanya meningkatkan derajat koroborasi (*degree of corroboration*) teori $T$, tidak pernah membuktikannya benar mutlak:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Teori } T \\implies \\text{Prediksi Empiris } E$$"
+        "keyFormulaOrDiagram": "$$\\text{Teori } T \\implies \\text{Prediksi Empiris } E$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Evaluasi dua pernyataan klaim penelitian dalam proposal tesis rekayasa berikut: (Klaim A) \"Sistem pendingin berbasis thermoelectric generato...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1 (Analisis Klaim A): Kata \"optimal\" dan \"berbagai kondisi\" bersifat ambigu dan tidak operasional. Jik...",
-          "Langkah 2 (Analisis Klaim B): Klaim B mendefinisikan batas kuantitatif tegas: resistansi termal $\\leq 0.45$ K/...",
-          "Langkah 3 (Perumusan Kondisi Falsifikasi): Kondisi falsifikasi formal: Jika pada pengujian terkalibrasi dengan...",
-          "Interpretasi: Klaim B adalah pernyataan ilmiah berbobot tinggi karena secara sukarela menempatkan diri pada risiko untuk dibuktikan sa..."
+          "Konteks Kasus: Evaluasi dua pernyataan klaim penelitian dalam proposal tesis rekayasa berikut: (Klaim A) \"Sistem pendingin berbasis thermoelectric generator (TEG) yang kami kembangkan mampu meningkatkan efisiensi pendinginan perangkat elektronik secara optimal pada berbagai kondisi beban panas.\" (Klaim B) \"Sistem pendingin TEG usulan menurunkan resistansi termal junction-to-ambient di bawah 0.45 K/W pada fluks panas 50 W/cm^2 dengan konsumsi daya listrik tambahan tidak melebihi 8.0 Watt.\" Tentukan mana klaim yang ilmiah menurut Popper dan rumuskan kondisi falsifikasinya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3 (Perumusan Kondisi Falsifikasi): Kondisi falsifikasi formal: Jika pada pengujian..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1 (Analisis Klaim A): Kata \"optimal\" dan \"berbagai kondisi\" bersifat ambigu dan tidak operasional. Jika pada pengujian resistansi termal melonjak, perancang dapat membela diri dengan menyatakan kondisi tersebut belum \"optimal\". Klaim A kebal terhadap pembuktian salah (unfalsifiable), sehingga tidak memenuhi standar ilmiah.",
+          "Langkah 2 (Analisis Klaim B): Klaim B mendefinisikan batas kuantitatif tegas: resistansi termal $\\leq 0.45$ K/W pada fluks panas $50$ W/cm^2 dengan batas daya $\\leq 8.0$ W."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Perumusan Kondisi Falsifikasi): Kondisi falsifikasi formal: Jika pada pengujian terkalibrasi dengan fluks $50$ W/cm^2, terukur resistansi termal $> 0.45$ K/W ATAU konsumsi daya $> 8.0$ W, maka klaim usulan dinyatakan terfalsifikasi secara objektif.",
+          "[result: Interpretasi Ilmiah] Klaim B adalah pernyataan ilmiah berbobot tinggi karena secara sukarela menempatkan diri pada risiko untuk dibuktikan salah oleh data eksperimen terukur."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi evaluasi otomatis ambang falsifikasi performa model kendali rekayasa di bawah uji stres beban dinamis.",
         "bulletPoints": [
-          "Deskripsi: Implementasi evaluasi otomatis ambang falsifikasi performa model kendali rekayasa di bawah uji stres beban dinamis.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: === AUDIT FALSIFIKASI KLAIM ILMIAH ==="
+          "Tujuan Algoritma: Implementasi evaluasi otomatis ambang falsifikasi performa model kendali rekayasa di bawah uji stres beban dinamis.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: === AUDIT FALSIFIKASI KLAIM ILMIAH ==="
         ],
-        "keyFormulaOrDiagram": "=== AUDIT FALSIFIKASI KLAIM ILMIAH === | Rata-rata Resistansi Termal: 0.425 K/W (Max: 0.48..."
+        "keyFormulaOrDiagram": "=== AUDIT FALSIFIKASI KLAIM ILMIAH ===\nRata-rata Resistansi Termal: 0.425 K/W (Max: 0.485)\nRata-rata Konsumsi Daya: 7.64 W (Max: 8.21)\nSTATUS: KLAIM TERFALSIFIKASI pada 3 run resistansi dan 2 run daya.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menuliskan rumusan masalah dan hipotesis yang menggunakan bahasa puitis atau kata sifat subjektif tanpa angka...",
-          "Perangkap: Menyembunyikan run eksperimen yang gagal agar klaim naskah tampak selalu berhasil sempurna (cherry-picking).",
-          "Perangkap: Menganggap bahwa jika eksperimen memfalsifikasi hipotesis awal maka penelitian dinyatakan \"gagal\" (falsifikasi..."
-        ]
+          "[warning: Perangkap] Menuliskan rumusan masalah dan hipotesis yang menggunakan bahasa puitis atau kata sifat subjektif tanpa angka batas toleransi kuantitatif.",
+          "[warning: Perangkap] Menyembunyikan run eksperimen yang gagal agar klaim naskah tampak selalu berhasil sempurna (cherry-picking).",
+          "[warning: Perangkap] Menganggap bahwa jika eksperimen memfalsifikasi hipotesis awal maka penelitian dinyatakan \"gagal\" (falsifikasi yang valid adalah kontribusi saintifik sejati)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Audit hipotesis pra-eksperimen: Pastikan terdapat minimal satu skenario data yang dapat menggugurkan klaim.",
           "Prosedur: Pemeriksaan logbook forensik untuk mendeteksi penambahan hipotesis ad-hoc pasca-analisis data.",
           "Prosedur: Evaluasi transparansi pelaporan kegagalan sistem pada seksi Results dan Discussion."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa klaim \"Algoritma kecerdasan buatan kami memiliki akurasi tinggi karena terinspirasi oleh mekanisme otak biologis...",
-          "Petunjuk: Fokus pada apakah analogi biologis dapat dibuktikan salah secara komputasi.",
-          "Solusi Kunci: Klaim tersebut tidak ilmiah karena analogi inspirasi biologis tidak menyediakan kriteria falsifikasi matematis. Keunggul..."
-        ]
+          "Pertanyaan Uji: Mengapa klaim \"Algoritma kecerdasan buatan kami memiliki akurasi tinggi karena terinspirasi oleh mekanisme otak biologis manusia\" dikategorikan sebagai klaim non-ilmiah (pseudosains) dalam rekayasa komputasi?",
+          "Petunjuk Analitis: Fokus pada apakah analogi biologis dapat dibuktikan salah secara komputasi.",
+          "Solusi Kunci: Klaim tersebut tidak ilmiah karena analogi inspirasi biologis tidak menyediakan kriteria falsifikasi matematis. Keunggulan algoritma harus diukur melalui metrik komparasi kuantitatif terhadap baseline terstandarisasi, bukan melalui klaim kemiripan kualitatif dengan organ biologis yang tidak dapat diverifikasi batas fungsionalnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -337,7 +414,7 @@ export const CH01_LESSONS: Record<string, Partial<Lesson>> = {
       "Menyelaraskan paradigma riset yang dipilih dengan strategi pengumpulan dan validasi data."
     ],
     "content": "Setiap peneliti, secara sadar atau tidak, bekerja di bawah suatu paradigma penelitian tertentu. Paradigma adalah sistem keyakinan filosofis mendasar (*worldview*) yang memandu tindakan ilmiah, mencakup tiga dimensi utama: ontologi (apakah hakikat dari realitas yang diteliti?), epistemologi (apakah hakikat hubungan antara peneliti dan objek yang diketahui?), dan metodologi (bagaimana cara peneliti memperoleh pengetahuan tersebut?).\n\nDalam sejarah keilmuan, empat paradigma dominan membentuk lanskap metodologi:\n\n1. **Positivisme:** Berakar pada pandangan bahwa realitas bersifat objektif, tunggal, dan diatur oleh hukum-hukum alam deterministik yang independen dari pengamat (*naive realism*). Epistemologinya bersifat dualis dan objektif: peneliti dapat mengamati objek tanpa mempengaruhinya. Metodologinya berfokus pada eksperimen terkontrol ketat dan verifikasi kuantitatif.\n\n2. **Post-Positivisme:** Mengakui bahwa realitas objektif memang ada di luar sana, namun manusia tidak akan pernah mampu memahaminya secara sempurna karena keterbatasan panca indera dan ketidaksempurnaan instrumen (*critical realism*). Posisi epistemologinya menekankan objektivitas yang termodifikasi: kebenaran selalu bersifat aproksimatif dan probabilistik. Paradigma inilah yang menjadi landasan sains rekayasa eksperimental modern, di mana setiap pengukuran wajib menyertakan batas ketidakpastian (*uncertainty bounds*).\n\n3. **Konstruktivisme (Interpretivisme):** Memandang bahwa realitas bersifat majemuk, dinamis, dan dikonstruksi secara sosial melalui pengalaman manusia (*relativism*). Peneliti dan subjek penelitian saling berinteraksi secara tak terpisahkan. Paradigma ini dominan dalam penelitian ilmu sosial, interaksi manusia-komputer (HCI) kualitatif, dan studi penerimaan teknologi.\n\n4. **Pragmatisme:** Mengesampingkan perdebatan metafisis abstrak mengenai realitas murni dan memusatkan perhatian pada \"apa yang berhasil secara praktis\" (*what works*) untuk menyelesaikan masalah riil. Aksiologi pragmatisme berorientasi pada dampak solusi, nilai terapan, dan kegunaan instrumental. Pragmatisme menjadi landasan filosofis utama bagi penelitian rekayasa terapan (*applied engineering*) dan metodologi campuran (*mixed methods*), di mana insinyur menggabungkan pemodelan matematika, simulasi numerik, prototipe laboratorium, dan studi kelayakan ekonomi.",
-    "mathematicalFoundations": "Matriks komparasi filosofis paradigma riset:\n\n$$\\mathbf{M}_{\\text{Paradigma}} = \\begin{pmatrix} \n\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\\n\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\\n\\text{Post-Positivisme} & \\text{Realisme Kritis} & \\text{Objektivis Probabilistik} & \\text{Falsifikasi & DoE} \\\\\n\\text{Konstruktivisme} & \\text{Relativisme Majemuk} & \\text{Subjektif Interaktif} & \\text{Hermeneutika & Kualitatif} \\\\\n\\text{Pragmatisme} & \\text{Realisme Instrumental} & \\text{Fungsional Praktis} & \\text{Mixed Methods & Design Science}\n\\end{pmatrix}$$",
+    "mathematicalFoundations": "Matriks komparasi filosofis paradigma riset:\n\n$$\\mathbf{M}_{\\text{Paradigma}} = \\begin{pmatrix} \n\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\\n\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\\n\\text{Post-Positivisme} & \\text{Realisme Kritis} & \\text{Objektivis Probabilistik} & \\text{Falsifikasi dan DoE} \\\\\n\\text{Konstruktivisme} & \\text{Relativisme Majemuk} & \\text{Subjektif Interaktif} & \\text{Hermeneutika dan Kualitatif} \\\\\n\\text{Pragmatisme} & \\text{Realisme Instrumental} & \\text{Fungsional Praktis} & \\text{Mixed Methods dan Design Science}\n\\end{pmatrix}$$",
     "workedExample": {
       "problemStatement": "Sebuah tim peneliti di ITERA mengembangkan sistem navigasi otonom untuk traktor bajak sawah pintar. Penelitian mencakup perancangan algoritma path-planning, pengujian akurasi GPS RTK di lahan berlumpur, serta evaluasi persepsi kemudahan penggunaan oleh kelompok petani lokal. Analisislah bagaimana integrasi paradigma Post-Positivisme dan Pragmatisme diterapkan dalam studi multi-tahap ini.",
       "stepByStepSolution": [
@@ -375,90 +452,124 @@ export const CH01_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Paradigma Riset: Positivisme, Post-Positivisme, Konstru...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Paradigma Riset: Positivisme, Post-Positivisme, Konstruktivisme, dan Pragmatisme",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.1.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.3.",
-          "Capaian: Membandingkan asumsi ontologis, epistemologis, dan aksiologis dari empat paradigma penelitian utama.",
-          "Capaian: Menganalisis relevansi paradigma pragmatisme dalam penelitian rekayasa terapan.",
-          "Capaian: Menyelaraskan paradigma riset yang dipilih dengan strategi pengumpulan dan validasi data."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membandingkan asumsi ontologis, epistemologis, dan aksiologis dari empat paradigma penelitian utama.",
+          "Capaian 2: Menganalisis relevansi paradigma pragmatisme dalam penelitian rekayasa terapan.",
+          "Capaian 3: Menyelaraskan paradigma riset yang dipilih dengan strategi pengumpulan dan validasi data."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{M}_{\\text{Paradigma}} = \\begin{pmatrix} \n\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\\n\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\\n\\text{Post-Positivisme} & \\text{Realisme Kritis} & \\text{Objektivis Probabilistik} & \\text{Falsifikasi & DoE} \\\\\n\\text{Konstruktivisme} & \\text{Relativisme Majemuk} & \\text{Subjektif Interaktif} & \\text{Hermeneutika & Kualitatif} \\\\\n\\text{Pragmatisme} & \\text{Realisme Instrumental} & \\text{Fungsional Praktis} & \\text{Mixed Methods & Design Science}\n\\end{pmatrix}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{M}_{\\text{Paradigma}} = \\begin{pmatrix} \n\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\\n\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\\n\\text{Post-Positivisme} & \\text{Realisme Kritis} & \\text{Objektivis Probabilistik} & \\text{Falsifikasi dan DoE} \\\\\n\\text{Konstruktivisme} & \\text{Relativisme Majemuk} & \\text{Subjektif Interaktif} & \\text{Hermeneutika dan Kualitatif} \\\\\n\\text{Pragmatisme} & \\text{Realisme Instrumental} & \\text{Fungsional Praktis} & \\text{Mixed Methods dan Design Science}\n\\end{pmatrix}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.1.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Paradigma Riset: Positivisme, Post-Positivisme, Konstru...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Paradigma Riset: Positivisme, Post-Positivisme, Konstruktivisme, dan Pragmatisme",
+        "lead": "Setiap peneliti, secara sadar atau tidak, bekerja di bawah suatu paradigma penelitian tertentu.",
         "bulletPoints": [
-          "Setiap peneliti, secara sadar atau tidak, bekerja di bawah suatu paradigma penelitian tertentu. Paradigma adalah sistem keyak...",
-          "Dalam sejarah keilmuan, empat paradigma dominan membentuk lanskap metodologi:",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Paradigma adalah sistem keyakinan filosofis mendasar (*worldview*) yang memandu tindakan ilmiah, mencakup tiga dimensi utama: ontologi (apakah hakikat dari realitas yang diteliti?), epistemologi (apakah hakikat hubungan antara peneliti dan objek yang diketahui?), dan metodologi (bagaimana cara peneliti memperoleh pengetahuan tersebut?).",
+          "Dalam sejarah keilmuan, empat paradigma dominan membentuk lanskap metodologi:"
         ],
-        "keyFormulaOrDiagram": "1. **Positivisme:** Berakar pada pandangan bahwa realitas bersifat objektif, tunggal, dan..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "1. **Positivisme:** Berakar pada pandangan bahwa realitas bersifat objektif, tunggal, dan diatur oleh hukum-hukum alam deterministik yang independen dari pengamat (*naive realism*).",
         "bulletPoints": [
-          "1. **Positivisme:** Berakar pada pandangan bahwa realitas bersifat objektif, tunggal, dan diatur oleh hukum-hukum alam determ...",
-          "2. **Post-Positivisme:** Mengakui bahwa realitas objektif memang ada di luar sana, namun manusia tidak akan pernah mampu mema...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Epistemologinya bersifat dualis dan objektif: peneliti dapat mengamati objek tanpa mempengaruhinya.",
+          "Metodologinya berfokus pada eksperimen terkontrol ketat dan verifikasi kuantitatif.",
+          "2. **Post-Positivisme:** Mengakui bahwa realitas objektif memang ada di luar sana, namun manusia tidak akan pernah mampu memahaminya secara sempurna karena keterbatasan panca indera dan ketidaksempurnaan instrumen (*critical realism*).",
+          "Posisi epistemologinya menekankan objektivitas yang termodifikasi: kebenaran selalu bersifat aproksimatif dan probabilistik."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Matriks komparasi filosofis paradigma riset:",
         "bulletPoints": [
-          "Matriks komparasi filosofis paradigma riset:",
-          "\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\",
-          "\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\"
+          "Formulasi analitis variabel independen dan dependen.",
+          "Asumsi keterpenuhan parameter dan ruang distribusi.",
+          "Kalkulasi derajat kebebasan dan kriteria keputusan statistik."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{M}_{\\text{Paradigma}} = \\begin{pmatrix} \n\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\\n\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\\n\\text{Post-Positivisme} & \\text{Realisme Kritis} & \\text{Objektivis Probabilistik} & \\text{Falsifikasi & DoE} \\\\\n\\text{Konstruktivisme} & \\text{Relativisme Majemuk} & \\text{Subjektif Interaktif} & \\text{Hermeneutika & Kualitatif} \\\\\n\\text{Pragmatisme} & \\text{Realisme Instrumental} & \\text{Fungsional Praktis} & \\text{Mixed Methods & Design Science}\n\\end{pmatrix}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{M}_{\\text{Paradigma}} = \\begin{pmatrix} \n\\text{Paradigma} & \\text{Ontologi} & \\text{Epistemologi} & \\text{Metodologi} \\\\\n\\text{Positivisme} & \\text{Realisme Naif} & \\text{Objektivis Dualis} & \\text{Eksperimen Verifikatif} \\\\\n\\text{Post-Positivisme} & \\text{Realisme Kritis} & \\text{Objektivis Probabilistik} & \\text{Falsifikasi dan DoE} \\\\\n\\text{Konstruktivisme} & \\text{Relativisme Majemuk} & \\text{Subjektif Interaktif} & \\text{Hermeneutika dan Kualitatif} \\\\\n\\text{Pragmatisme} & \\text{Realisme Instrumental} & \\text{Fungsional Praktis} & \\text{Mixed Methods dan Design Science}\n\\end{pmatrix}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah tim peneliti di ITERA mengembangkan sistem navigasi otonom untuk traktor bajak sawah pintar. Penelitian mencakup perancangan algoritm...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1 (Fase Pengujian Sensor - Post-Positivisme): Pengujian akurasi koordinat GPS RTK beroperasi di bawah...",
-          "Langkah 2 (Fase Algoritma Path-Planning - Pragmatisme): Peneliti mengevaluasi algoritma berdasarkan kriteria f...",
-          "Langkah 3 (Fase Penerimaan Petani - Elemen Konstruktivis dalam Payung Pragmatis): Wawancara mendalam mengenai...",
-          "Interpretasi: Penyelarasan paradigma yang jelas menghindarkan peneliti dari kekeliruan metode, seperti memperlakukan data kepuasan pet..."
+          "Konteks Kasus: Sebuah tim peneliti di ITERA mengembangkan sistem navigasi otonom untuk traktor bajak sawah pintar. Penelitian mencakup perancangan algoritma path-planning, pengujian akurasi GPS RTK di lahan berlumpur, serta evaluasi persepsi kemudahan penggunaan oleh kelompok petani lokal. Analisislah bagaimana integrasi paradigma Post-Positivisme dan Pragmatisme diterapkan dalam studi multi-tahap ini.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3 (Fase Penerimaan Petani - Elemen Konstruktivis dalam Payung Pragmatis): Wawancar..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Perangkap: Mengklaim paradigma positivis murni pada penelitian rekayasa sensor modern yang jelas-jelas tunduk pada batas...",
-          "Perangkap: Mengabaikan pertimbangan aksiologis (etika, dampak lingkungan, dan nilai praktis) pada riset rekayasa.",
-          "Perangkap: Mencampuradukkan metode kualitatif dan kuantitatif secara serampangan tanpa kerangka integrasi pragmatisme yan..."
-        ]
+          "Langkah 1 (Fase Pengujian Sensor - Post-Positivisme): Pengujian akurasi koordinat GPS RTK beroperasi di bawah realisme kritis. Realitas posisi fisik traktor adalah objektif, namun data sensor mengandung noise atmosfer dan multipath. Peneliti menerapkan DoE terkontrol dan menghitung interval ketidakpastian 95% Root Mean Square Error (RMSE).",
+          "Langkah 2 (Fase Algoritma Path-Planning - Pragmatisme): Peneliti mengevaluasi algoritma berdasarkan kriteria fungsional praktis: minimalisasi waktu putar di ujung pematang dan efisiensi konsumsi bahan bakar solar, bukan kesempurnaan teoretis konvergensial murni."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3 (Fase Penerimaan Petani - Elemen Konstruktivis dalam Payung Pragmatis): Wawancara mendalam mengenai kenyamanan antarmuka layar sentuh menggali persepsi subjektif petani untuk menyempurnakan interaksi pengguna.",
+          "[result: Interpretasi Ilmiah] Penyelarasan paradigma yang jelas menghindarkan peneliti dari kekeliruan metode, seperti memperlakukan data kepuasan petani dengan uji t-student parametrik tanpa justifikasi skala interval."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Mengklaim paradigma positivis murni pada penelitian rekayasa sensor modern yang jelas-jelas tunduk pada batas ketidakpastian Heisenberg dan noise stokastik.",
+          "[warning: Perangkap] Mengabaikan pertimbangan aksiologis (etika, dampak lingkungan, dan nilai praktis) pada riset rekayasa.",
+          "[warning: Perangkap] Mencampuradukkan metode kualitatif dan kuantitatif secara serampangan tanpa kerangka integrasi pragmatisme yang koheren."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 31,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pemeriksaan konsistensi epistemologis antara pertanyaan penelitian dan metode analisis yang dipilih.",
           "Prosedur: Verifikasi bahwa interpretasi temuan tidak melompat melampaui batas ontologis paradigma yang dinyatakan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa riset rekayasa algoritma visi komputer yang menguji akurasi deteksi citra di laboratorium lebih tepat dipayungi...",
-          "Petunjuk: Perhatikan keberadaan noise sensor, variasi iluminasi, dan keterbatasan dataset pelatihan.",
-          "Solusi Kunci: Karena akurasi deteksi pada data riil tidak pernah bernilai mutlak 100% deterministik. Post-positivisme mengakui bahwa k..."
-        ]
+          "Pertanyaan Uji: Mengapa riset rekayasa algoritma visi komputer yang menguji akurasi deteksi citra di laboratorium lebih tepat dipayungi oleh paradigma Post-Positivisme dibanding Positivisme Naif?",
+          "Petunjuk Analitis: Perhatikan keberadaan noise sensor, variasi iluminasi, dan keterbatasan dataset pelatihan.",
+          "Solusi Kunci: Karena akurasi deteksi pada data riil tidak pernah bernilai mutlak 100% deterministik. Post-positivisme mengakui bahwa kebenaran pengukuran model selalu dipengaruhi oleh bias sampling dataset, noise sensor kamera, dan kondisi batas domain operasional yang probabilistik."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -506,87 +617,110 @@ export const CH01_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
+        "slideNumber": 33,
+        "layout": "concept",
         "title": "Tinjauan & Capaian: Siklus Investigasi Ilmiah Hipotetiko-Deduktif",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.1.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.4.",
-          "Capaian: Menguraikan tahapan siklus investigasi hipotetiko-deduktif dari observasi ke falsifikasi.",
-          "Capaian: Menerapkan perulangan umpan balik eksperimental untuk memutakhirkan model matematika.",
-          "Capaian: Mengidentifikasi titik henti siklus riset rekayasa berbasis kriteria konvergensi teknis."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.1.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menguraikan tahapan siklus investigasi hipotetiko-deduktif dari observasi ke falsifikasi.",
+          "Capaian 2: Menerapkan perulangan umpan balik eksperimental untuk memutakhirkan model matematika.",
+          "Capaian 3: Mengidentifikasi titik henti siklus riset rekayasa berbasis kriteria konvergensi teknis."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{M}_{t+1} = \\mathcal{U}(\\mathbf{M}_t, \\mathcal{D}_t, \\mathcal{L})$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{M}_{t+1} = \\mathcal{U}(\\mathbf{M}_t, \\mathcal{D}_t, \\mathcal{L})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.1.4."
       },
       {
-        "slideNumber": 2,
+        "slideNumber": 34,
+        "layout": "concept",
         "title": "Fondasi Konseptual: Siklus Investigasi Ilmiah Hipotetiko-Deduktif",
+        "lead": "Metode ilmiah modern beroperasi sebagai siklus iteratif berkelanjutan yang dikenal sebagai siklus hipotetiko-deduktif (*hypothetico-deductive cycle*).",
         "bulletPoints": [
-          "Metode ilmiah modern beroperasi sebagai siklus iteratif berkelanjutan yang dikenal sebagai siklus hipotetiko-deduktif (*hypot...",
-          "Siklus ini terdiri dari enam tahapan yang saling mengunci: 1. **Observasi Awal & Eksplorasi Fenomena:** Menemukan inkonsisten...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Sains dan rekayasa tidak bergerak secara linier satu arah, melainkan membentuk spiral pembelajaran di mana setiap putaran eksperimen memperhalus, mengoreksi, atau menggantikan model teoretis sebelumnya.",
+          "Siklus ini terdiri dari enam tahapan yang saling mengunci: 1. **Observasi Awal & Eksplorasi Fenomena:** Menemukan inkonsistensi antara teori yang ada dengan fakta fisik teramati di laboratorium atau industri.",
+          "2. **Perumusan Hipotesis Teoritis:** Mengembangkan model matematis atau konseptual baru yang mampu menerangkan mekanisme penyebab fenomena tersebut."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Metode ilmiah modern beroperasi sebagai siklus iteratif berkelanjutan yang dikenal sebagai siklus hipotetiko-deduktif (*hypot...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formalisasi siklus iteratif pemutakhiran model:",
         "bulletPoints": [
-          "Formalisasi siklus iteratif pemutakhiran model:",
           "di mana:",
-          "- $\\mathbf{M}_t$: Status model teoretis pada iterasi ke-$t$."
+          "- $\\mathbf{M}_t$: Status model teoretis pada iterasi ke-$t$.",
+          "- $\\mathcal{D}_t$: Himpunan data observasi eksperimen baru $\\{(x_i, y_i)\\}_{i=1}^{n_t}$."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{M}_{t+1} = \\mathcal{U}(\\mathbf{M}_t, \\mathcal{D}_t, \\mathcal{L})$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{M}_{t+1} = \\mathcal{U}(\\mathbf{M}_t, \\mathcal{D}_t, \\mathcal{L})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Tunjukkan bagaimana siklus hipotetiko-deduktif diterapkan dalam pengembangan algoritma kompresi citra satelit tanpa kehilangan informasi tep...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Iterasi 1 (Model Linier Standar): Model awal mengasumsikan transformasi kosinus diskrit (DCT) standar cukup. P...",
-          "Feedback Loop 1: Hipotesis dimutakhirkan dengan menambahkan modul wavelet adaptif yang memisahkan koefisien fr...",
-          "Iterasi 2 (Model Hybrid Wavelet): Prediksi: rasio kompresi 8:1, PSNR > 40 dB, dan degradasi tepi < 5%. Hasil e...",
-          "Interpretasi: Siklus berhasil memutakhirkan model dari kegagalan awal menuju solusi yang terkoroborasi secara empiris."
+          "Konteks Kasus: Tunjukkan bagaimana siklus hipotetiko-deduktif diterapkan dalam pengembangan algoritma kompresi citra satelit tanpa kehilangan informasi tepi (edge-preserving compression).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Iterasi 2 (Model Hybrid Wavelet): Prediksi: rasio kompresi 8:1, PSNR > 40 dB, dan degradas..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Iterasi 1 (Model Linier Standar): Model awal mengasumsikan transformasi kosinus diskrit (DCT) standar cukup. Prediksi: rasio kompresi 8:1 dengan PSNR > 40 dB. Hasil eksperimen: PSNR tercapai 41 dB tetapi tepi jalan raya kabur (Edge Degradation > 15%). Falsifikasi terjadi.",
+          "Feedback Loop 1: Hipotesis dimutakhirkan dengan menambahkan modul wavelet adaptif yang memisahkan koefisien frekuensi tinggi pada koordinat tepi."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Iterasi 2 (Model Hybrid Wavelet): Prediksi: rasio kompresi 8:1, PSNR > 40 dB, dan degradasi tepi < 5%. Hasil eksperimen pada 50 citra satelit: degradasi tepi terukur 3.8 +/- 0.4%, PSNR 42.1 dB. Model lolos uji falsifikasi.",
+          "[result: Interpretasi Ilmiah] Siklus berhasil memutakhirkan model dari kegagalan awal menuju solusi yang terkoroborasi secara empiris."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghentikan siklus pada iterasi pertama tanpa melakukan uji ketahanan di bawah kondisi batas yang bervariasi.",
-          "Perangkap: Memperlakukan siklus sebagai proses linier tanpa pernah bersedia merevisi asumsi dasar model saat eksperimen g..."
-        ]
+          "[warning: Perangkap] Menghentikan siklus pada iterasi pertama tanpa melakukan uji ketahanan di bawah kondisi batas yang bervariasi.",
+          "[warning: Perangkap] Memperlakukan siklus sebagai proses linier tanpa pernah bersedia merevisi asumsi dasar model saat eksperimen gagal."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Pemeriksaan logbook iterasi: Catat setiap perubahan parameter model beserta bukti data yang memicu perubahan t..."
-        ]
+          "Prosedur: Pemeriksaan logbook iterasi: Catat setiap perubahan parameter model beserta bukti data yang memicu perubahan tersebut."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Kapan seorang peneliti rekayasa harus memutuskan untuk menghentikan iterasi siklus pemutakhiran model dan mempublikasika...",
-          "Petunjuk: Perhatikan pencapaian tujuan penelitian spesifik dan prinsip diminishing returns.",
-          "Solusi Kunci: Siklus dihentikan saat kriteria keberhasilan yang ditetapkan pada proposal telah terpenuhi secara statistically signific..."
-        ]
+          "Pertanyaan Uji: Kapan seorang peneliti rekayasa harus memutuskan untuk menghentikan iterasi siklus pemutakhiran model dan mempublikasikan hasilnya?",
+          "Petunjuk Analitis: Perhatikan pencapaian tujuan penelitian spesifik dan prinsip diminishing returns.",
+          "Solusi Kunci: Siklus dihentikan saat kriteria keberhasilan yang ditetapkan pada proposal telah terpenuhi secara statistically significant, model telah teruji kebal terhadap falsifikasi pada domain yang ditargetkan, dan modifikasi lebih lanjut hanya menghasilkan perbaikan marjinal yang tidak sebanding dengan kompleksitas komputasi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

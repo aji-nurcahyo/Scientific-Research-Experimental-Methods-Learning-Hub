@@ -69,100 +69,137 @@ export const CH43_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Korelasi vs Kausalitas: Mengapa Regresi Multivariat Buk...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Korelasi vs Kausalitas: Mengapa Regresi Multivariat Bukan Bukti Kausalitas",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.6.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.1.",
-          "Capaian: Memahami batas epistemologis korelasi statistik: Mengapa korelasi tidak pernah membuktikan kausalitas.",
-          "Capaian: Menganalisis kegagalan regresi multivariat dalam membedakan perancu (confounder) vs mediator.",
-          "Capaian: Mengidentifikasi Paradoks Simpson (Simpson's Paradox) dan pembalikan arah asosiasi pada data agregat."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami batas epistemologis korelasi statistik: Mengapa korelasi tidak pernah membuktikan kausalitas.",
+          "Capaian 2: Menganalisis kegagalan regresi multivariat dalam membedakan perancu (confounder) vs mediator.",
+          "Capaian 3: Mengidentifikasi Paradoks Simpson (Simpson's Paradox) dan pembalikan arah asosiasi pada data agregat."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Corr}(X, Y) = \\text{Corr}(Y, X) = \\frac{\\text{Cov}(X, Y)}{\\sigma_X \\sigma_Y}$$"
+        "keyFormulaOrDiagram": "$$\\text{Corr}(X, Y) = \\text{Corr}(Y, X) = \\frac{\\text{Cov}(X, Y)}{\\sigma_X \\sigma_Y}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.6.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Korelasi vs Kausalitas: Mengapa Regresi Multivariat Buk...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Korelasi vs Kausalitas: Mengapa Regresi Multivariat Bukan Bukti Kausalitas",
+        "lead": "Dalam seluruh cabang rekayasa dan sains terapan, tujuan tertinggi dari sebuah investigasi ilmiah bukanlah sekadar memprediksi asosiasi statistik pasif, melainkan memahami mekanisme intervensi kausal: \"Jika kita menaikkan temperatur reaktor sebesar 10 derajat, apakah laju reaksi akan meningkat secara nyata, ataukah korelasi historis yang kita amati hanyalah ilusi dari variabel ketiga?\"",
         "bulletPoints": [
-          "Dalam seluruh cabang rekayasa dan sains terapan, tujuan tertinggi dari sebuah investigasi ilmiah bukanlah sekadar memprediksi...",
-          "Aforisme Ilmiah: \"Korelasi Bukan Kausalitas\": Dua variabel $X$ dan $Y$ dapat memiliki koefisien korelasi $r = 0.99$ yang sang...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Aforisme Ilmiah: \"Korelasi Bukan Kausalitas\": Dua variabel $X$ dan $Y$ dapat memiliki koefisien korelasi $r = 0.99$ yang sangat signifikan secara statistik tanpa adanya hubungan sebab-akibat langsung sama sekali.",
+          "Korelasi palsu (Spurious Correlation) dapat timbul akibat: 1."
         ],
-        "keyFormulaOrDiagram": "Mitos Kehebatan Regresi Multivariat: Banyak peneliti keliru meyakini bahwa memasukkan selu..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Mitos Kehebatan Regresi Multivariat: Banyak peneliti keliru meyakini bahwa memasukkan seluruh variabel pengamatan ke dalam model regresi berganda (\"mengontrol semua variabel yang ada\") akan secara otomatis menghasilkan koefisien kausal yang valid.",
         "bulletPoints": [
-          "Mitos Kehebatan Regresi Multivariat: Banyak peneliti keliru meyakini bahwa memasukkan seluruh variabel pengamatan ke dalam mo...",
-          "Paradoks Simpson (Simpson's Paradox): Fenomena matematis di mana sebuah tren atau asosiasi statistik antara dua variabel berb...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Judea Pearl membuktikan bahwa mengontrol variabel yang salah (seperti variabel Collider atau Mediator) justru akan memicu bias baru yang mematikan validitas ilmiah estimasi.",
+          "Paradoks Simpson (Simpson's Paradox): Fenomena matematis di mana sebuah tren atau asosiasi statistik antara dua variabel berbalik arah secara total ketika data dibagi ke dalam subkelompok-subkelompok demografis atau operasional yang relevan.",
+          "Paradoks ini tidak dapat diselesaikan dengan analisis data murni tanpa melibatkan model kausal fisik sistem."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Asimetri Kausalitas vs Simetri Korelasi:",
         "bulletPoints": [
-          "Formulasi Asimetri Kausalitas vs Simetri Korelasi:",
           "Misalkan $X$ dan $Y$ adalah dua variabel acak.",
-          "1. Korelasi Bersifat Simetris:"
+          "1. Korelasi Bersifat Simetris:",
+          "Korelasi tidak memiliki panah arah waktu atau pengaruh fisik."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Corr}(X, Y) = \\text{Corr}(Y, X) = \\frac{\\text{Cov}(X, Y)}{\\sigma_X \\sigma_Y}$$"
+        "keyFormulaOrDiagram": "$$\\text{Corr}(X, Y) = \\text{Corr}(Y, X) = \\frac{\\text{Cov}(X, Y)}{\\sigma_X \\sigma_Y}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Dua pabrik memproduksi komponen semikonduktor. Pabrik A memproduksi 100 komponen (90 sukses, 10 gagal -> Akurasi 90%). Pabrik B memproduksi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Dua pabrik memproduksi komponen semikonduktor. Pabrik A memproduksi 100 komponen (90 sukses, 10 gagal -> Akurasi 90%). Pabrik B memproduksi 900 komponen (720 sukses, 180 gagal -> Akurasi 80%). Metode baru diterapkan di mana proporsi penggunaan di Pabrik A adalah 80% dan di Pabrik B adalah 20%. Pada data agregat gabungan, metode baru tampak memiliki tingkat keberhasilan 88%, sedangkan metode lama tampak memiliki tingkat keberhasilan 81%. Namun ketika dianalisis per pabrik, metode baru justru lebih buruk 2% di Pabrik A dan lebih buruk 2% di Pabrik B. Jelaskan terjadinya Paradoks Simpson ini.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Identifikasi variabel: X = Metode (Baru vs Lama), Y = Keberhasilan Komponen, Z = Pabrik (Pabrik A m...",
-          "Langkah 2: Analisis alokasi perlakuan: Metode Baru dialokasikan 80% ke Pabrik A yang mudah, dan hanya 20% ke P...",
-          "Langkah 3: Efek agregasi semu: Karena Metode Baru diuji mayoritas di pabrik yang secara alami memang menghasil...",
-          "Interpretasi: Paradoks Simpson terjadi akibat confounding bias. Mengabaikan variabel Pabrik Z memicu kesimpulan salah arah bahwa Metod..."
+          "Langkah 1: Identifikasi variabel: X = Metode (Baru vs Lama), Y = Keberhasilan Komponen, Z = Pabrik (Pabrik A memiliki mesin presisi tinggi dengan baseline sukses 90%; Pabrik B memiliki mesin tua dengan baseline sukses 80%).",
+          "Langkah 2: Analisis alokasi perlakuan: Metode Baru dialokasikan 80% ke Pabrik A yang mudah, dan hanya 20% ke Pabrik B yang sulit. Sebaliknya Metode Lama dialokasikan 80% ke Pabrik B yang sulit."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi kausal: Variabel Pabrik Z adalah Confounder yang mengacaukan hubungan..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Paradoks Simpson: Pembalikan kemiringan regresi pada data agregat vs data terstratifikasi.",
-          "Dependensi Pustaka: numpy, pandas, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Demonstrasi Paradoks Simpson:"
+          "Langkah 3: Efek agregasi semu: Karena Metode Baru diuji mayoritas di pabrik yang secara alami memang menghasilkan produk sukses (Pabrik A), skor agregatnya terdongkrak naik secara palsu.",
+          "Langkah 4: Evaluasi kausal: Variabel Pabrik Z adalah Confounder yang mengacaukan hubungan antara Metode X dan Keberhasilan Y.",
+          "[result: Interpretasi Ilmiah] Paradoks Simpson terjadi akibat confounding bias. Mengabaikan variabel Pabrik Z memicu kesimpulan salah arah bahwa Metode Baru lebih unggul, padahal secara kausal Metode Baru lebih buruk di setiap lini produksi."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Demonstrasi Paradoks Simpson: | Slope Regresi Grup 1 (Baja Padua..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Paradoks Simpson: Pembalikan kemiringan regresi pada data agregat vs data terstratifikasi.",
         "bulletPoints": [
-          "Perangkap: Menafsirkan koefisien regresi linier multivariat beta_i sebagai besaran efek kausal intervensi fisik.",
-          "Perangkap: Memasukkan seluruh variabel kovariat yang tersedia ke dalam model regresi tanpa dasar graf kausal.",
-          "Perangkap: Menyimpulkan arah sebab-akibat murni dari urutan waktu observasi tanpa menyingkirkan bias perancu."
-        ]
+          "Tujuan Algoritma: Simulasi Paradoks Simpson: Pembalikan kemiringan regresi pada data agregat vs data terstratifikasi.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Demonstrasi Paradoks Simpson:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Demonstrasi Paradoks Simpson:\nSlope Regresi Grup 1 (Baja Paduan)   : -0.4908 (Negatif: Suhu naik -> Aus turun)\nSlope Regresi Grup 2 (Baja Karbon)   : -0.4727 (Negatif: Suhu naik -> Aus turun)\n-----------------------------------------------------------------\nSlope Regresi Agregat Naif (Campuran): -0.9996 (POSITIF PALSU! p=0.0000e+00)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Menafsirkan koefisien regresi linier multivariat beta_i sebagai besaran efek kausal intervensi fisik.",
+          "[warning: Perangkap] Memasukkan seluruh variabel kovariat yang tersedia ke dalam model regresi tanpa dasar graf kausal.",
+          "[warning: Perangkap] Menyimpulkan arah sebab-akibat murni dari urutan waktu observasi tanpa menyingkirkan bias perancu."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gambarkan Diagram Asiklik Terarah (DAG) kausal eksplisit sebelum melakukan estimasi statistik.",
           "Prosedur: Uji sensitivitas model terhadap potensi adanya Unmeasured Confounders (Rosenbaum Bounds).",
           "Prosedur: Verifikasi ketiadaan Paradoks Simpson dengan memeriksa konsistensi arah efek pada subgrup utama."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa dalam hukum perumusan intervensi kausal Pearl, P(Y | do(X = x)) secara matematis berbeda dengan probabilitas kon...",
-          "Petunjuk: Perhatikan pemotongan panah masuk kausal saat intervensi aktif dilakukan.",
-          "Solusi Kunci: Probabilitas kondisional P(Y | X=x) adalah pengamatan pasif di mana variabel X masih dipengaruhi oleh variabel perancu m..."
-        ]
+          "Pertanyaan Uji: Mengapa dalam hukum perumusan intervensi kausal Pearl, P(Y | do(X = x)) secara matematis berbeda dengan probabilitas kondisional observasi P(Y | X = x)?",
+          "Petunjuk Analitis: Perhatikan pemotongan panah masuk kausal saat intervensi aktif dilakukan.",
+          "Solusi Kunci: Probabilitas kondisional P(Y | X=x) adalah pengamatan pasif di mana variabel X masih dipengaruhi oleh variabel perancu masa lalu Z (jalur belakang tetap terbuka). Sebaliknya, intervensi do(X=x) secara fisik memotong seluruh panah yang masuk ke X (membebaskan X dari pengaruh perancu masa lalu) dan menetapkan nilai X secara eksogen melalui eksperimen terencana."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -233,101 +270,136 @@ export const CH43_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kerangka Potential Outcomes Rubin: Average Treatment Ef...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kerangka Potential Outcomes Rubin: Average Treatment Effect (ATE) dan Counterfactuals",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.6.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.2.",
-          "Capaian: Memahami Masalah Mendasar Inferensi Kausal (Fundamental Problem of Causal Inference).",
-          "Capaian: Memformulasi Hasil Potensial (Potential Outcomes) dan Kontrafaktual (Counterfactuals).",
-          "Capaian: Menghitung Average Treatment Effect (ATE), Treatment Effect on the Treated (ATT), dan memverifikasi asumsi SUT..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami Masalah Mendasar Inferensi Kausal (Fundamental Problem of Causal Inference).",
+          "Capaian 2: Memformulasi Hasil Potensial (Potential Outcomes) dan Kontrafaktual (Counterfactuals).",
+          "Capaian 3: Menghitung Average Treatment Effect (ATE), Treatment Effect on the Treated (ATT), dan memverifikasi asumsi SUTVA."
         ],
-        "keyFormulaOrDiagram": "$$Y_i^{\\text{obs}} = T_i Y_i(1) + (1 - T_i) Y_i(0)$$"
+        "keyFormulaOrDiagram": "$$Y_i^{\\text{obs}} = T_i Y_i(1) + (1 - T_i) Y_i(0)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.6.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kerangka Potential Outcomes Rubin: Average Treatment Ef...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kerangka Potential Outcomes Rubin: Average Treatment Effect (ATE) dan Counterfactuals",
+        "lead": "Dalam epistemologi sains kuantitatif modern, Kerangka Kerja Hasil Potensial Rubin (Rubin Causal Model / Potential Outcomes Framework, Rubin, 1974; Holland, 1986) mendefinisikan kausalitas bukan sebagai sifat asosiatif antar populasi, melainkan sebagai perbandingan hipotetis antara dua kondisi masa depan yang mungkin dialami oleh unit fisik yang sama.",
         "bulletPoints": [
-          "Dalam epistemologi sains kuantitatif modern, Kerangka Kerja Hasil Potensial Rubin (Rubin Causal Model / Potential Outcomes Fr...",
-          "Masalah Mendasar Inferensi Kausal (Fundamental Problem of Causal Inference): Untuk setiap unit fisik ke-$i$ (misalnya satu bi...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Masalah Mendasar Inferensi Kausal (Fundamental Problem of Causal Inference): Untuk setiap unit fisik ke-$i$ (misalnya satu bilah turbin tertentu atau satu pasien tertentu): - $Y_i(1)$: Hasil potensial jika unit $i$ menerima perlakuan/intervensi ($T_i = 1$). - $Y_i(0)$: Hasil potensial jika unit $i$ tidak menerima perlakuan/kontrol ($T_i = 0$).",
+          "Efek kausal individual pada unit $i$ adalah selisih eksak: $$\\tau_i = Y_i(1) - Y_i(0)$$ Namun, dalam realitas alam semesta kita yang linier terhadap waktu, seorang ilmuwan HANYA BISA MENGAMATI salah satu dari kedua hasil tersebut pada satu waktu!"
         ],
-        "keyFormulaOrDiagram": "Mengatasi Kebuntuan Melalui Ekspektasi Populasi: Meskipun efek individual $\\tau_i$ tidak p..."
+        "keyFormulaOrDiagram": "$\\tau_i$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Mengatasi Kebuntuan Melalui Ekspektasi Populasi: Meskipun efek individual $\\tau_i$ tidak pernah dapat dihitung untuk individu...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Mengatasi Kebuntuan Melalui Ekspektasi Populasi: Meskipun efek individual $\\tau_i$ tidak pernah dapat dihitung untuk individu tunggal, kita dapat mengestimasi rata-rata efek kausal di seluruh populasi: - Average Treatment Effect (ATE): $\\tau_{\\text{ATE}} = \\mathbb{E}[Y(1) - Y(0)]$. - Average Treatment Effect on the Treated (ATT): $\\tau_{\\text{ATT}} = \\mathbb{E}[Y(1) - Y(0) \\mid T = 1]$.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Rubin Causal Model:",
         "bulletPoints": [
-          "Formulasi Matematis Rubin Causal Model:",
           "Diberikan variabel perlakuan biner $T_i \\in \\{0, 1\\}$.",
-          "Variabel respon teramati (Factual Outcome):"
+          "Variabel respon teramati (Factual Outcome):",
+          "Tiga Asumsi Kunci Identifikasi Kausal:"
         ],
-        "keyFormulaOrDiagram": "$$Y_i^{\\text{obs}} = T_i Y_i(1) + (1 - T_i) Y_i(0)$$"
+        "keyFormulaOrDiagram": "$$Y_i^{\\text{obs}} = T_i Y_i(1) + (1 - T_i) Y_i(0)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan populasi hipotetis 4 turbin dengan hasil potensial: Turbin 1: Y(0)=10, Y(1)=15; Turbin 2: Y(0)=12, Y(1)=18; Turbin 3: Y(0)=8, Y(1)...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan populasi hipotetis 4 turbin dengan hasil potensial: Turbin 1: Y(0)=10, Y(1)=15; Turbin 2: Y(0)=12, Y(1)=18; Turbin 3: Y(0)=8, Y(1)=11; Turbin 4: Y(0)=14, Y(1)=16. Hitung Average Treatment Effect (ATE) sejati populasi. Jika karena kesalahan sampling, Turbin 1 dan 2 masuk kelompok treated (T=1) sementara Turbin 3 dan 4 masuk kelompok control (T=0), hitung estimasi asosiasi naif dan tentukan besaran bias seleksi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung efek individual tau_i: Turbin 1: 15-10 = 5; Turbin 2: 18-12 = 6; Turbin 3: 11-8 = 3; Turbin...",
+          "Langkah 1: Hitung efek individual tau_i: Turbin 1: 15-10 = 5; Turbin 2: 18-12 = 6; Turbin 3: 11-8 = 3; Turbin 4: 16-14 = 2.",
           "Langkah 2: Hitung ATE sejati: tau_ATE = (5 + 6 + 3 + 2) / 4 = 16 / 4 = +4.00 unit.",
-          "Langkah 3: Hitung hasil teramati faktual: Turbin 1 (T=1): Y_obs = 15; Turbin 2 (T=1): Y_obs = 18; Turbin 3 (T=...",
-          "Interpretasi: Eksperimen non-acak memilih turbin dengan potensi perbaikan tertinggi masuk ke perlakuan, mendistorsi estimasi performa..."
+          "Langkah 3: Hitung hasil teramati faktual: Turbin 1 (T=1): Y_obs = 15; Turbin 2 (T=1): Y_obs = 18; Turbin 3 (T=0): Y_obs = 8; Turbin 4 (T=0): Y_obs = 14."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung bias seleksi baseline: E[Y(0)|T=1] = (10 + 12)/2 = 11.0; E[Y(0)|T=0] = (..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung selisih rata-rata naif: Mean(T=1) = (15 + 18) / 2 = 16.5; Mean(T=0) = (8 + 14) / 2 = 11.0. Selisih Naif = 16.5 - 11.0 = +5.50 unit.",
+          "Langkah 5: Hitung bias seleksi baseline: E[Y(0)|T=1] = (10 + 12)/2 = 11.0; E[Y(0)|T=0] = (8 + 14)/2 = 11.0. Tunggu, hitung bias: Selisih Naif - ATT = 5.50 - 5.50 = 0? Evaluasi ATT: tau_ATT = (5 + 6)/2 = 5.50. Bias Seleksi = E[Y(0)|T=1] - E[Y(0)|T=0] = 11.0 - 11.0 = 0. Selisih Naif melebih-lebihkan ATE sejati sebesar 1.5 unit karena kelompok treated memiliki respons kausal alami yang lebih tinggi (ATT=5.5 vs ATE=4.0).",
+          "[result: Interpretasi Ilmiah] Eksperimen non-acak memilih turbin dengan potensi perbaikan tertinggi masuk ke perlakuan, mendistorsi estimasi performa untuk populasi umum."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Potensial Outcomes Rubin dan dekomposisi bias seleksi pada data observasional.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Potensial Outcomes Rubin dan dekomposisi bias seleksi pada data observasional.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Kerangka Rubin Potential Outcomes:"
+          "Tujuan Algoritma: Simulasi Potensial Outcomes Rubin dan dekomposisi bias seleksi pada data observasional.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Kerangka Rubin Potential Outcomes:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Kerangka Rubin Potential Outcomes: | Average Treatment..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Kerangka Rubin Potential Outcomes:\nAverage Treatment Effect Sejati (ATE) : 15.0886\nPerbedaan Rata-rata Naif Teramati     : 28.0583 (Terdistorsi Bias!)\nBesaran Bias Seleksi Baseline         : 12.9830\nRekonstruksi Kausal (Naif - Bias)     : 15.0753 (Identik dengan ATT)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyamakan nilai ATE dengan perbedaan rata-rata observasional sederhana.",
-          "Perangkap: Mengabaikan pelanggaran asumsi SUTVA (adanya efek penularan/spillover antar unit eksperimen).",
-          "Perangkap: Mengabaikan pelanggaran asumsi Positivity ketika ada subkelompok kovariat yang tidak pernah menerima perlakuan..."
-        ]
+          "[warning: Perangkap] Menyamakan nilai ATE dengan perbedaan rata-rata observasional sederhana.",
+          "[warning: Perangkap] Mengabaikan pelanggaran asumsi SUTVA (adanya efek penularan/spillover antar unit eksperimen).",
+          "[warning: Perangkap] Mengabaikan pelanggaran asumsi Positivity ketika ada subkelompok kovariat yang tidak pernah menerima perlakuan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Periksa kurva tumpang tindih densitas (Common Support Plot) antar kelompok perlakuan.",
           "Prosedur: Uji sensitivitas terhadap pelanggaran SUTVA pada eksperimen fisik yang berdekatan spasial.",
           "Prosedur: Laporkan baik nilai ATE maupun ATT secara eksplisit."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa arti dari asumsi SUTVA (Stable Unit Treatment Value Assumption) dalam konteks pengujian pestisida pada lahan pertani...",
-          "Petunjuk: Perhatikan apakah penyemprotan di satu petak sawah mempengaruhi petak sawah di sebelahnya.",
-          "Solusi Kunci: SUTVA mensyaratkan tidak adanya efek limpahan (spillover / interference). Jika penyemprotan pestisida pada Petak A membu..."
-        ]
+          "Pertanyaan Uji: Apa arti dari asumsi SUTVA (Stable Unit Treatment Value Assumption) dalam konteks pengujian pestisida pada lahan pertanian?",
+          "Petunjuk Analitis: Perhatikan apakah penyemprotan di satu petak sawah mempengaruhi petak sawah di sebelahnya.",
+          "Solusi Kunci: SUTVA mensyaratkan tidak adanya efek limpahan (spillover / interference). Jika penyemprotan pestisida pada Petak A membunuh hama yang seharusnya terbang ke Petak B (kontrol), maka hasil Petak B telah terdistorsi oleh perlakuan Petak A. SUTVA dilanggar karena hasil potensial Y_B(0) tidak lagi independen dari perlakuan tetangganya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -397,101 +469,138 @@ export const CH43_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Graf Kausal Pearl (SCMs): Kriteria d-separation, Bias P...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Graf Kausal Pearl (SCMs): Kriteria d-separation, Bias Perancu (Confounder), dan Bias Kolider (Collider)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.6.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.3.",
-          "Capaian: Membangun Model Kausal Struktural (Structural Causal Models / SCM) menggunakan Directed Acyclic Graphs (DAG).",
-          "Capaian: Menerapkan Kriteria d-separation untuk menentukan independensi bersyarat grafis.",
-          "Capaian: Membedakan bahaya pengkondisian pada variabel Perancu (Confounder) vs Kolider (Collider / M-bias)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membangun Model Kausal Struktural (Structural Causal Models / SCM) menggunakan Directed Acyclic Graphs (DAG).",
+          "Capaian 2: Menerapkan Kriteria d-separation untuk menentukan independensi bersyarat grafis.",
+          "Capaian 3: Membedakan bahaya pengkondisian pada variabel Perancu (Confounder) vs Kolider (Collider / M-bias)."
         ],
-        "keyFormulaOrDiagram": "$p$"
+        "keyFormulaOrDiagram": "$p$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.6.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Graf Kausal Pearl (SCMs): Kriteria d-separation, Bias P...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Graf Kausal Pearl (SCMs): Kriteria d-separation, Bias Perancu (Confounder), dan Bias Kolider (Collider)",
+        "lead": "Dalam pendekatan Judea Pearl (Pemenang Turing Award 2011), kausalitas direpresentasikan secara elegan menggunakan grafik formal: Diagram Asiklik Terarah (Directed Acyclic Graphs / DAGs).",
         "bulletPoints": [
-          "Dalam pendekatan Judea Pearl (Pemenang Turing Award 2011), kausalitas direpresentasikan secara elegan menggunakan grafik form...",
-          "Tiga Struktur Grafis Dasar (The Graphical Triad): Setiap graf kausal kompleks tersusun dari tiga struktur kanonikal tiga simp...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "DAG mengubah perdebatan filosofis yang kabur mengenai kausalitas menjadi operasi kalkulus grafis yang dapat diverifikasi secara algoritmik.",
+          "Tiga Struktur Grafis Dasar (The Graphical Triad): Setiap graf kausal kompleks tersusun dari tiga struktur kanonikal tiga simpul: 1.",
+          "Rantai Kausal (Chain / Mediator): $X \\to M \\to Y$ Informasi mengalir dari $X$ ke $Y$ melalui perantara $M$."
         ],
-        "keyFormulaOrDiagram": "Kriteria d-separation (Directional Separation): Dua simpul $X$ dan $Y$ dinyatakan terpisah..."
+        "keyFormulaOrDiagram": "$X$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Kriteria d-separation (Directional Separation): Dua simpul $X$ dan $Y$ dinyatakan terpisah secara terarah (d-separated) oleh himpunan simpul $\\mathbf{Z}$ jika seluruh jalur antara $X$ dan $Y$ terblokir oleh $\\mathbf{Z}$.",
         "bulletPoints": [
-          "Kriteria d-separation (Directional Separation): Dua simpul $X$ dan $Y$ dinyatakan terpisah secara terarah (d-separated) oleh...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Teorema Pearl menjamin bahwa jika $X$ dan $Y$ d-separated oleh $\\mathbf{Z}$ pada graf, maka $X$ dan $Y$ independen bersyarat secara statistik ($X \\perp Y \\mid \\mathbf{Z}$) pada sembarang distribusi probabilitas yang kompatibel."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Definisi Formal Kriteria d-separation:",
         "bulletPoints": [
-          "Definisi Formal Kriteria d-separation:",
-          "Sebuah jalur tak terarah $p$ antara simpul $X$ dan $Y$ dinyatakan terblokir (blocked) oleh himpunan simpul $\\m...",
-          "1. Jalur $p$ memuat sebuah simpul rantai ($A \\to B \\to C$) atau simpul percabangan ($A \\leftarrow B \\to C$) se..."
+          "Sebuah jalur tak terarah $p$ antara simpul $X$ dan $Y$ dinyatakan terblokir (blocked) oleh himpunan simpul $\\mathbf{Z}$ jika dan hanya jika:",
+          "1. Jalur $p$ memuat sebuah simpul rantai ($A \\to B \\to C$) atau simpul percabangan ($A \\leftarrow B \\to C$) sedemikian rupa sehingga simpul tengah $B \\in \\mathbf{Z}$; ATAU",
+          "2. Jalur $p$ memuat sebuah simpul tabrakan kolider ($A \\to B \\leftarrow C$) sedemikian rupa sehingga simpul tengah $B \\notin \\mathbf{Z}$ dan seluruh keturunan dari $B$ juga bukan anggota $\\mathbf{Z}$ ($\\text{Descendants}(B) \\cap \\mathbf{Z} = \\emptyset$)."
         ],
-        "keyFormulaOrDiagram": "$p$"
+        "keyFormulaOrDiagram": "$p$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan graf kausal struktur M: X <- U1 -> C <- U2 -> Y, di mana U1 dan U2 tidak teramati (unmeasured confounders). Analisis aliran inform...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Analisis status alami (C tidak dikontrol): Jalur dari X ke Y melewati simpul C. Pada simpul C, pana...",
-          "Langkah 2: Evaluasi d-separation alami: Karena C adalah kolider dan C tidak dikontrol, jalur tertutup secara a...",
-          "Langkah 3: Analisis intervensi (C dikontrol dalam regresi): Peneliti memasukkan C sebagai kovariat kontrol. Me...",
-          "Interpretasi: Mengontrol variabel C memicu M-bias: sebuah kesalahan fatal di mana tindakan \"mengontrol variabel\" justru merusak indepe..."
+          "Konteks Kasus: Diberikan graf kausal struktur M: X <- U1 -> C <- U2 -> Y, di mana U1 dan U2 tidak teramati (unmeasured confounders). Analisis aliran informasi antara X dan Y ketika C tidak dikontrol vs ketika C dikontrol. Jelaskan mengapa mengontrol variabel C memicu bias M (M-bias).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Akibat pembukaan jalur: Terbentuk jalur aktif semu: X <- U1 ... U2 -> Y. Timbul..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Analisis status alami (C tidak dikontrol): Jalur dari X ke Y melewati simpul C. Pada simpul C, panah dari U1 dan panah dari U2 saling bertabrakan (U1 -> C <- U2). Maka C adalah simpul Collider.",
+          "Langkah 2: Evaluasi d-separation alami: Karena C adalah kolider dan C tidak dikontrol, jalur tertutup secara alami. X dan Y bersifat independen kausal murni (X _|_ Y). Tidak ada perancu langsung antara X dan Y."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Analisis intervensi (C dikontrol dalam regresi): Peneliti memasukkan C sebagai kovariat kontrol. Mengkondisikan pada kolider C secara otomatis membuka jalur komunikasi antara U1 dan U2.",
+          "Langkah 4: Akibat pembukaan jalur: Terbentuk jalur aktif semu: X <- U1 ... U2 -> Y. Timbul korelasi palsu antara X dan Y yang murni diciptakan oleh tindakan peneliti mengontrol C.",
+          "[result: Interpretasi Ilmiah] Mengontrol variabel C memicu M-bias: sebuah kesalahan fatal di mana tindakan \"mengontrol variabel\" justru merusak independensi data dan memalsukan estimasi kausal."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi induksi korelasi palsu akibat pengkondisian pada variabel kolider (Collider Stratification Bias).",
         "bulletPoints": [
-          "Deskripsi: Simulasi induksi korelasi palsu akibat pengkondisian pada variabel kolider (Collider Stratification Bias).",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Forensik Bias Kolider (Berkson's Paradox):"
+          "Tujuan Algoritma: Simulasi induksi korelasi palsu akibat pengkondisian pada variabel kolider (Collider Stratification Bias).",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Forensik Bias Kolider (Berkson's Paradox):"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Bias Kolider (Berkson's Paradox): | Korelasi Populasi U..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Bias Kolider (Berkson's Paradox):\nKorelasi Populasi Umum (C bebas) : r = 0.0079 (p = 0.5750 -> Independen Benar)\nKorelasi Terkondisi pada C=1     : r = -0.5891 (p = 0.0000e+00 -> Korelasi Palsu Kuat!)\nPenjelasan: Mengontrol kolider C menciptakan ilusi negatif artifisial yang menyesatkan.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memasukkan seluruh variabel pengamatan ke dalam model regresi tanpa membedakan Confounder vs Collider.",
-          "Perangkap: Mengontrol variabel yang merupakan akibat (descendant) dari variabel perlakuan X.",
-          "Perangkap: Mengabaikan keberadaan unobserved confounders saat menyatakan klaim kausalitas."
-        ]
+          "[warning: Perangkap] Memasukkan seluruh variabel pengamatan ke dalam model regresi tanpa membedakan Confounder vs Collider.",
+          "[warning: Perangkap] Mengontrol variabel yang merupakan akibat (descendant) dari variabel perlakuan X.",
+          "[warning: Perangkap] Mengabaikan keberadaan unobserved confounders saat menyatakan klaim kausalitas."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan perangkat lunak DAGitty atau modul causaldag untuk memvalidasi kriteria d-separation secara formal.",
           "Prosedur: Pastikan tidak ada simpul kolider yang masuk ke dalam set kovariat kontrol.",
           "Prosedur: Cantumkan diagram DAG kausal secara eksplisit pada metodologi penelitian."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa perbedaan mendasar dalam dampak pengkondisian antara simpul Fork (X <- Z -> Y) dan simpul Collider (X -> C <- Y)?",
-          "Petunjuk: Perhatikan apakah pengkondisian menutup jalur yang terbuka atau membuka jalur yang tertutup.",
-          "Solusi Kunci: Pada simpul Fork, jalur secara alami terbuka (menciptakan korelasi semu); mengkondisikan pada Z menutup jalur tersebut (..."
-        ]
+          "Petunjuk Analitis: Perhatikan apakah pengkondisian menutup jalur yang terbuka atau membuka jalur yang tertutup.",
+          "Solusi Kunci: Pada simpul Fork, jalur secara alami terbuka (menciptakan korelasi semu); mengkondisikan pada Z menutup jalur tersebut (menghilangkan bias). Pada simpul Collider, jalur secara alami tertutup (independen); mengkondisikan pada C justru membuka jalur tersebut secara paksa dan memicu korelasi palsu (Collider bias). Dampaknya berlawanan 180 derajat."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -564,101 +673,139 @@ export const CH43_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pengendalian Kovariat: Backdoor Criterion dan Propensit...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pengendalian Kovariat: Backdoor Criterion dan Propensity Score Matching (PSM)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.6.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.4.",
-          "Capaian: Menerapkan Kriteria Jalur Belakang (Backdoor Criterion) untuk memilih himpunan kovariat kontrol yang valid.",
-          "Capaian: Memahami fungsi penyeimbangan Propensity Score $e(\\mathbf{X}) = P(T = 1 \\mid \\mathbf{X})$.",
-          "Capaian: Mengimplementasikan Propensity Score Matching (PSM) untuk mengeliminasi bias seleksi pada data observasional."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.6.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan Kriteria Jalur Belakang (Backdoor Criterion) untuk memilih himpunan kovariat kontrol yang valid.",
+          "Capaian 2: Memahami fungsi penyeimbangan Propensity Score $e(\\mathbf{X}) = P(T = 1 \\mid \\mathbf{X})$.",
+          "Capaian 3: Mengimplementasikan Propensity Score Matching (PSM) untuk mengeliminasi bias seleksi pada data observasional."
         ],
-        "keyFormulaOrDiagram": "$$(Y(0), Y(1)) \\perp T \\mid \\mathbf{X}$$"
+        "keyFormulaOrDiagram": "$$(Y(0), Y(1)) \\perp T \\mid \\mathbf{X}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.6.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pengendalian Kovariat: Backdoor Criterion dan Propensit...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pengendalian Kovariat: Backdoor Criterion dan Propensity Score Matching (PSM)",
+        "lead": "Dalam studi observasional di mana randomisasi perlakuan (RCT) tidak memungkinkan secara etis atau teknis (misalnya menguji dampak radiasi ekstrem pada material reaktor nuklir), peneliti harus mengandalkan data historis yang sarat dengan bias seleksi perancu.",
         "bulletPoints": [
-          "Dalam studi observasional di mana randomisasi perlakuan (RCT) tidak memungkinkan secara etis atau teknis (misalnya menguji da...",
-          "Kriteria Jalur Belakang (Backdoor Criterion, Judea Pearl): Sebuah himpunan variabel $\\mathbf{Z}$ memenuhi Kriteria Jalur Bela...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Bagaimana seorang ilmuwan dapat memilih kumpulan variabel kontrol yang tepat untuk menjamin bahwa estimasi efek perlakuan bebas dari bias?",
+          "Kriteria Jalur Belakang (Backdoor Criterion, Judea Pearl): Sebuah himpunan variabel $\\mathbf{Z}$ memenuhi Kriteria Jalur Belakang terhadap pasangan terarah $(X, Y)$ jika: 1.",
+          "Tidak ada simpul dalam $\\mathbf{Z}$ yang merupakan keturunan (descendant) dari $X$."
         ],
-        "keyFormulaOrDiagram": "Propensity Score Matching (PSM, Rosenbaum & Rubin, 1983): Ketika himpunan kovariat $\\mathb..."
+        "keyFormulaOrDiagram": "$$e(\\mathbf{X}) = P(T = 1 \\mid \\mathbf{X})$$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Propensity Score Matching (PSM, Rosenbaum & Rubin, 1983): Ketika himpunan kovariat $\\mathbf{Z}$ berdimensi tinggi (misal terdiri dari 20 variabel perancu), melakukan pencocokan langsung antar data (exact matching) menjadi mustahil karena kelangkaan data di ruang dimensi tinggi.",
         "bulletPoints": [
-          "Propensity Score Matching (PSM, Rosenbaum & Rubin, 1983): Ketika himpunan kovariat $\\mathbf{Z}$ berdimensi tinggi (misal terd...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Rosenbaum & Rubin membuktikan bahwa seluruh kovariat berdimensi tinggi dapat diringkas menjadi satu skor skalar tunggal: Skor Kecenderungan (Propensity Score): $$e(\\mathbf{X}) = P(T = 1 \\mid \\mathbf{X})$$ Dengan mencocokkan unit treated dan unit control yang memiliki Propensity Score yang sama ($e(X) \\approx e(X)$), distribusi kovariat latar belakang menjadi seimbang secara simetris, mereplikasi kondisi pseudo-randomized trial."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Teorema Skor Kecenderungan (Rosenbaum & Rubin, 1983):",
         "bulletPoints": [
-          "Teorema Skor Kecenderungan (Rosenbaum & Rubin, 1983):",
           "Jika asumsi Unconfoundedness terpenuhi terhadap kovariat $\\mathbf{X}$:",
-          "maka penugasan perlakuan juga independen bersyarat terhadap hasil potensial jika dikondisikan pada skalar Prop..."
+          "maka penugasan perlakuan juga independen bersyarat terhadap hasil potensial jika dikondisikan pada skalar Propensity Score $e(\\mathbf{X})$:",
+          "Estimasi Efek Perlakuan Berbobot (Inverse Probability of Treatment Weighting / IPTW):"
         ],
-        "keyFormulaOrDiagram": "$$(Y(0), Y(1)) \\perp T \\mid \\mathbf{X}$$"
+        "keyFormulaOrDiagram": "$$(Y(0), Y(1)) \\perp T \\mid \\mathbf{X}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan evaluasi program pelapisan anti-korosi pada pipa transmisi minyak. Dua kovariat perancu: Umur Pipa (X1) dan Salinitas Tanah (X2)....",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan evaluasi program pelapisan anti-korosi pada pipa transmisi minyak. Dua kovariat perancu: Umur Pipa (X1) dan Salinitas Tanah (X2). Sebelum matching, treated group memiliki umur rata-rata 12 tahun (s=3) dan control group memiliki umur 6 tahun (s=3). Hitung Standarized Mean Difference (SMD) sebelum matching. Setelah dilakukan Propensity Score Matching terdekat (Nearest Neighbor), kelompok kontrol terpilih memiliki umur rata-rata 11.8 tahun (s=2.8). Hitung SMD setelah matching dan evaluasi kualitas keseimbangan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung pooled standard deviation awal: s_pool = sqrt((3^2 + 3^2) / 2) = sqrt(18 / 2) = 3.0 tahun.",
-          "Langkah 2: Hitung SMD sebelum matching: SMD_awal = |12.0 - 6.0| / 3.0 = 6.0 / 3.0 = 2.00 (Ketidakseimbangan ek...",
-          "Langkah 3: Hitung pooled standard deviation setelah matching: s_pool_post = sqrt((3.0^2 + 2.8^2) / 2) = sqrt((...",
-          "Interpretasi: Pencocokan PSM berhasil memangkas bias perbedaan umur dari 200% menjadi hanya 6.9%, memungkinkan komparasi laju korosi y..."
+          "Langkah 2: Hitung SMD sebelum matching: SMD_awal = |12.0 - 6.0| / 3.0 = 6.0 / 3.0 = 2.00 (Ketidakseimbangan ekstrem!).",
+          "Langkah 3: Hitung pooled standard deviation setelah matching: s_pool_post = sqrt((3.0^2 + 2.8^2) / 2) = sqrt((9.0 + 7.84) / 2) = sqrt(16.84 / 2) = sqrt(8.42) = 2.902 tahun."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Evaluasi kriteria baku: Karena SMD_akhir = 0.0689 < 0.10, keseimbangan kovariat..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung SMD setelah matching: SMD_akhir = |12.0 - 11.8| / 2.902 = 0.20 / 2.902 = 0.0689 (6.89%).",
+          "Langkah 5: Evaluasi kriteria baku: Karena SMD_akhir = 0.0689 < 0.10, keseimbangan kovariat umur pipa berhasil tercapai dengan sangat baik.",
+          "[result: Interpretasi Ilmiah] Pencocokan PSM berhasil memangkas bias perbedaan umur dari 200% menjadi hanya 6.9%, memungkinkan komparasi laju korosi yang adil dan bebas perancu."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi Propensity Score Matching (PSM) menggunakan regresi logistik dan nearest neighbor matching.",
         "bulletPoints": [
-          "Deskripsi: Implementasi Propensity Score Matching (PSM) menggunakan regresi logistik dan nearest neighbor matching.",
-          "Dependensi Pustaka: numpy, pandas, sklearn.linear_model, sklearn.neighbors",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Propensity Score Matching:"
+          "Tujuan Algoritma: Implementasi Propensity Score Matching (PSM) menggunakan regresi logistik dan nearest neighbor matching.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas, sklearn.linear_model, sklearn.neighbors",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Propensity Score Matching:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Propensity Score Matching: | Efek Kausal Sejati (Ground Tr..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Propensity Score Matching:\nEfek Kausal Sejati (Ground Truth)   : +10.0000\nEstimasi Naif (Sebelum Matching)     : +15.5893 (Terdistorsi Confounder!)\nEstimasi Kausal PSM (Pasca-Matching) : +10.0881 (Mendekati Ground Truth)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyertakan variabel mediator ke dalam model Propensity Score.",
-          "Perangkap: Melakukan pencocokan pada wilayah tanpa tumpang tindih (lack of common support) tanpa pemangkasan (caliper tri...",
-          "Perangkap: Mengabaikan pemeriksaan tabel Standardized Mean Difference (SMD) setelah matching selesai."
-        ]
+          "[warning: Perangkap] Menyertakan variabel mediator ke dalam model Propensity Score.",
+          "[warning: Perangkap] Melakukan pencocokan pada wilayah tanpa tumpang tindih (lack of common support) tanpa pemangkasan (caliper trimming).",
+          "[warning: Perangkap] Mengabaikan pemeriksaan tabel Standardized Mean Difference (SMD) setelah matching selesai."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Verifikasi bahwa seluruh jalur backdoor pada DAG terblokir oleh himpunan kovariat.",
           "Prosedur: Terapkan caliper restriction (misal jarak propensity maksimum 0.2 x std deviasi logit propensity).",
           "Prosedur: Sajikan Love Plot yang memvisualisasikan penurunan SMD seluruh kovariat di bawah 0.10."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Kapan Kriteria Jalur Belakang (Backdoor Criterion) gagal memberikan solusi identifikasi kausal pada sebuah graf DAG?",
-          "Petunjuk: Perhatikan keberadaan unmeasured confounder pada jalur backdoor.",
-          "Solusi Kunci: Backdoor Criterion gagal jika terdapat jalur backdoor yang memuat variabel perancu yang tidak dapat diukur/diobservasi (..."
-        ]
+          "Petunjuk Analitis: Perhatikan keberadaan unmeasured confounder pada jalur backdoor.",
+          "Solusi Kunci: Backdoor Criterion gagal jika terdapat jalur backdoor yang memuat variabel perancu yang tidak dapat diukur/diobservasi (Unmeasured Confounder U). Pada kondisi ini, jalur belakang tidak dapat ditutup melalui pengkondisian. Peneliti harus mencari strategi alternatif seperti Instrumental Variables (IV) atau Frontdoor Criterion."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

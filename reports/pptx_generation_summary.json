@@ -1,32 +1,32 @@
 [
   {
     "chapterId": "CH-01",
-    "slideCount": 38,
-    "fileSize": 449512,
+    "slideCount": 41,
+    "fileSize": 469017,
     "outputPath": "D:\\Workstation\\Repo My Corses\\Scientific Research & Experimental Methods\\reports\\pptx\\CH-01_Scientific_Foundations.pptx"
   },
   {
     "chapterId": "CH-16",
-    "slideCount": 40,
-    "fileSize": 465157,
+    "slideCount": 41,
+    "fileSize": 475032,
     "outputPath": "D:\\Workstation\\Repo My Corses\\Scientific Research & Experimental Methods\\reports\\pptx\\CH-16_Statistical_Analysis.pptx"
   },
   {
     "chapterId": "CH-24",
-    "slideCount": 40,
-    "fileSize": 472936,
+    "slideCount": 44,
+    "fileSize": 513286,
     "outputPath": "D:\\Workstation\\Repo My Corses\\Scientific Research & Experimental Methods\\reports\\pptx\\CH-24_Regression_Modeling.pptx"
   },
   {
     "chapterId": "CH-38",
-    "slideCount": 40,
-    "fileSize": 473574,
+    "slideCount": 44,
+    "fileSize": 515549,
     "outputPath": "D:\\Workstation\\Repo My Corses\\Scientific Research & Experimental Methods\\reports\\pptx\\CH-38_Advanced_Computational_Methods.pptx"
   },
   {
     "chapterId": "CH-51",
-    "slideCount": 40,
-    "fileSize": 469530,
+    "slideCount": 43,
+    "fileSize": 492367,
     "outputPath": "D:\\Workstation\\Repo My Corses\\Scientific Research & Experimental Methods\\reports\\pptx\\CH-51_Research_Capstone.pptx"
   }
 ]

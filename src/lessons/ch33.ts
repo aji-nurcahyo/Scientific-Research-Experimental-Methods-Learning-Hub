@@ -68,100 +68,137 @@ export const CH33_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kriteria Pemilihan Baseline Pembanding yang Kredibel da...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kriteria Pemilihan Baseline Pembanding yang Kredibel dan Terkini (Bukan Toy Baselines)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.2.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.1.",
-          "Capaian: Menetapkan kriteria pemilihan baseline pembanding yang kredibel dan berstandar internasional.",
-          "Capaian: Mengidentifikasi taktik manipulasi ilmiah strawman baseline (toy baselines) dalam publikasi rekayasa.",
-          "Capaian: Menyusun portofolio baseline multi-lapisan: naive baseline, standar industri mapan, dan model state-of-the-art..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menetapkan kriteria pemilihan baseline pembanding yang kredibel dan berstandar internasional.",
+          "Capaian 2: Mengidentifikasi taktik manipulasi ilmiah strawman baseline (toy baselines) dalam publikasi rekayasa.",
+          "Capaian 3: Menyusun portofolio baseline multi-lapisan: naive baseline, standar industri mapan, dan model state-of-the-art (SOTA)."
         ],
-        "keyFormulaOrDiagram": "$$R_{\\text{SOTA}} = \\frac{M_{\\text{prop}} - M_{\\text{SOTA}}}{M_{\\text{SOTA}}} \\times 100\\%$$"
+        "keyFormulaOrDiagram": "$$R_{\\text{SOTA}} = \\frac{M_{\\text{prop}} - M_{\\text{SOTA}}}{M_{\\text{SOTA}}} \\times 100\\%$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.2.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kriteria Pemilihan Baseline Pembanding yang Kredibel da...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kriteria Pemilihan Baseline Pembanding yang Kredibel dan Terkini (Bukan Toy Baselines)",
+        "lead": "Klaim kontribusi ilmiah dalam rekayasa komputasi dan kecerdasan artifisial selalu bersifat komparatif: sebuah metode baru diklaim berharga karena memiliki akurasi yang lebih tinggi, latensi yang lebih rendah, atau kebutuhan memori yang lebih efisien dibandingkan metode yang sudah ada.",
         "bulletPoints": [
-          "Klaim kontribusi ilmiah dalam rekayasa komputasi dan kecerdasan artifisial selalu bersifat komparatif: sebuah metode baru dik...",
-          "Praktik Manipulasi Ilmiah \"Strawman Baseline\": Taktik yang sering ditemukan dalam manuskrip berkualitas rendah adalah memband...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, validitas klaim ini sepenuhnya runtuh jika baseline pembanding yang digunakan tidak representatif atau sengaja diperlemah.",
+          "Praktik Manipulasi Ilmiah \"Strawman Baseline\": Taktik yang sering ditemukan dalam manuskrip berkualitas rendah adalah membandingkan algoritma deep learning mutakhir yang dirancang penulis hanya dengan Multi-Layer Perceptron (MLP) sederhana dari tahun 1990 atau k-NN tanpa tuning hyperparameter (strawman baseline).",
+          "Dengan mengalahkan baseline usang tersebut, penulis mengklaim telah menciptakan terobosan."
         ],
-        "keyFormulaOrDiagram": "Taksonomi Portofolio Baseline Wajib: Sebuah eksperimen komputasi bereputasi tinggi wajib m..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Taksonomi Portofolio Baseline Wajib: Sebuah eksperimen komputasi bereputasi tinggi wajib menyertakan minimal 3 lapisan baseline: 1.",
         "bulletPoints": [
-          "Taksonomi Portofolio Baseline Wajib: Sebuah eksperimen komputasi bereputasi tinggi wajib menyertakan minimal 3 lapisan baseli...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Baseline Kanonikal Naive (Lower Bound): Metode paling sederhana untuk memastikan masalah memang memerlukan solusi kompleks (misalnya regresi linier, majority class voting, atau moving average).",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Kriteria Rasio Peningkatan Kinerja Relatif Terstandarisasi:",
         "bulletPoints": [
-          "Kriteria Rasio Peningkatan Kinerja Relatif Terstandarisasi:",
           "Misalkan $M(f)$ adalah metrik kinerja (misal F1-score atau mAP di mana nilai lebih tinggi lebih baik).",
-          "Diberikan:"
+          "Diberikan:",
+          "- $M_{\\text{naive}}$: Kinerja baseline paling sederhana."
         ],
-        "keyFormulaOrDiagram": "$$R_{\\text{SOTA}} = \\frac{M_{\\text{prop}} - M_{\\text{SOTA}}}{M_{\\text{SOTA}}} \\times 100\\%$$"
+        "keyFormulaOrDiagram": "$$R_{\\text{SOTA}} = \\frac{M_{\\text{prop}} - M_{\\text{SOTA}}}{M_{\\text{SOTA}}} \\times 100\\%$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada deteksi cacat permukaan logam, sebuah baseline SOTA memiliki mAP 0.920 (92.0%). Metode yang Anda usulkan mencapai mAP 0.936 (93.6%). Hi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada deteksi cacat permukaan logam, sebuah baseline SOTA memiliki mAP 0.920 (92.0%). Metode yang Anda usulkan mencapai mAP 0.936 (93.6%). Hitung kenaikan relatif standar (R_SOTA) dan persentase penutupan sisa ruang kesalahan (Feasible Headroom Improvement H). Interpretasikan hasilnya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung peningkatan relatif standar terhadap SOTA: R_SOTA = ((0.936 - 0.920) / 0.920) * 100% = (0.01...",
-          "Langkah 2: Tentukan batas teoretis maksimum mAP: M_max = 1.000.",
-          "Langkah 3: Hitung sisa ruang kesalahan SOTA: Headroom = 1.000 - 0.920 = 0.080 (8.0%).",
-          "Interpretasi: Meskipun kenaikan nominal hanya 1.6% (atau 1.74% relatif), metode yang diusulkan berhasil memangkas 20% dari total sisa..."
+          "Langkah 1: Hitung peningkatan relatif standar terhadap SOTA: R_SOTA = ((0.936 - 0.920) / 0.920) * 100% = (0.016 / 0.920) * 100% = 1.74%.",
+          "Langkah 2: Tentukan batas teoretis maksimum mAP: M_max = 1.000."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung penutupan headroom (H): H = (0.016 / 0.080) * 100% = 20.0%."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Audit komparasi multi-baseline dengan metrik headroom reduction.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Audit Portofolio Baseline:"
+          "Langkah 3: Hitung sisa ruang kesalahan SOTA: Headroom = 1.000 - 0.920 = 0.080 (8.0%).",
+          "Langkah 4: Hitung penutupan headroom (H): H = (0.016 / 0.080) * 100% = 20.0%.",
+          "[result: Interpretasi Ilmiah] Meskipun kenaikan nominal hanya 1.6% (atau 1.74% relatif), metode yang diusulkan berhasil memangkas 20% dari total sisa kesalahan yang belum terpecahkan oleh model terbaik di dunia."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Portofolio Baseline: | Model Metric Score Rel. to SOTA (%)..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit komparasi multi-baseline dengan metrik headroom reduction.",
         "bulletPoints": [
-          "Perangkap: Membandingkan model baru hanya dengan pustaka default tanpa men-tuning parameter baseline sama sekali.",
-          "Perangkap: Menggunakan arsitektur pembanding yang dipublikasikan lebih dari 10 tahun lalu sebagai satu-satunya rujukan SO...",
-          "Perangkap: Melatih baseline dengan jumlah epoch atau ukuran batch yang jauh lebih sedikit daripada metode sendiri."
-        ]
+          "Tujuan Algoritma: Audit komparasi multi-baseline dengan metrik headroom reduction.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Audit Portofolio Baseline:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Portofolio Baseline:\n                         Model  Metric Score  Rel. to SOTA (%)  Headroom Closed (%)\n     Naive Baseline (Majority)         0.520        -43.722944                  NaN\n Industry Standard (ResNet-50)         0.865         -6.385281                  NaN\n        Recent SOTA 1 (ConvNeXt-T)         0.912         -1.298701                  NaN",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Membandingkan model baru hanya dengan pustaka default tanpa men-tuning parameter baseline sama sekali.",
+          "[warning: Perangkap] Menggunakan arsitektur pembanding yang dipublikasikan lebih dari 10 tahun lalu sebagai satu-satunya rujukan SOTA.",
+          "[warning: Perangkap] Melatih baseline dengan jumlah epoch atau ukuran batch yang jauh lebih sedikit daripada metode sendiri."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Alokasikan komputasi tuning yang setara (computational budget parity) untuk setiap baseline pembanding.",
           "Prosedur: Verifikasi bahwa implementasi baseline mereproduksi performa yang dilaporkan pada makalah aslinya.",
           "Prosedur: Cantumkan nomor versi, repositori resmi, dan konfigurasi hyperparameter lengkap untuk seluruh baseline."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa membandingkan model kompleks dengan parameter default baseline dianggap sebagai bentuk kecurangan ilmiah terselu...",
-          "Petunjuk: Perhatikan potensi performa baseline jika dioptimasi dengan baik.",
-          "Solusi Kunci: Sebagian besar pustaka menyertakan hyperparameter default yang konservatif. Jika penulis menghabiskan waktu berhari-hari..."
-        ]
+          "Pertanyaan Uji: Mengapa membandingkan model kompleks dengan parameter default baseline dianggap sebagai bentuk kecurangan ilmiah terselubung?",
+          "Petunjuk Analitis: Perhatikan potensi performa baseline jika dioptimasi dengan baik.",
+          "Solusi Kunci: Sebagian besar pustaka menyertakan hyperparameter default yang konservatif. Jika penulis menghabiskan waktu berhari-hari mengoptimasi model usulan sendiri namun membiarkan baseline menggunakan parameter default yang sub-optimal, selisih performa yang terjadi mencerminkan ketidakadilan alokasi optimasi, bukan keunggulan arsitektur."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -230,101 +267,137 @@ export const CH33_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Masalah Kontaminasi Data Benchmark Publik (Benchmark Ov...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Masalah Kontaminasi Data Benchmark Publik (Benchmark Overfitting)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.2.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.2.",
-          "Capaian: Menganalisis fenomena adaptive overfitting pada dataset benchmark publik standar.",
-          "Capaian: Memahami implikasi uji hipotesis berulang (multiple testing) oleh komunitas riset global pada satu test set te...",
-          "Capaian: Merancang protokol evaluasi out-of-benchmark untuk membuktikan kemampuan generalisasi sejati."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menganalisis fenomena adaptive overfitting pada dataset benchmark publik standar.",
+          "Capaian 2: Memahami implikasi uji hipotesis berulang (multiple testing) oleh komunitas riset global pada satu test set tetap.",
+          "Capaian 3: Merancang protokol evaluasi out-of-benchmark untuk membuktikan kemampuan generalisasi sejati."
         ],
-        "keyFormulaOrDiagram": "$$P(|\\hat{R}_N(f) - R(f)| > \\epsilon) \\leq 2e^{-2N\\epsilon^2}$$"
+        "keyFormulaOrDiagram": "$$P(|\\hat{R}_N(f) - R(f)| > \\epsilon) \\leq 2e^{-2N\\epsilon^2}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.2.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Masalah Kontaminasi Data Benchmark Publik (Benchmark Ov...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Masalah Kontaminasi Data Benchmark Publik (Benchmark Overfitting)",
+        "lead": "Dalam ekosistem riset pembelajaran mesin global, dataset benchmark standar seperti ImageNet, CIFAR-10, KITTI, atau MIMIC-III memainkan peran penting dalam memacu inovasi.",
         "bulletPoints": [
-          "Dalam ekosistem riset pembelajaran mesin global, dataset benchmark standar seperti ImageNet, CIFAR-10, KITTI, atau MIMIC-III...",
-          "Mekanisme Adaptive Overfitting (Dwork et al., 2015): Secara teoretis, data uji (test set) hanya boleh dievaluasi tepat satu k...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, penggunaan dataset uji yang sama selama bertahun-tahun oleh ribuan peneliti menghasilkan anomali epistemologis yang disebut Benchmark Overfitting atau Adaptive Overfitting.",
+          "Mekanisme Adaptive Overfitting (Dwork et al., 2015): Secara teoretis, data uji (test set) hanya boleh dievaluasi tepat satu kali untuk mempertahankan jaminan generalisasi statistik.",
+          "Namun dalam praktiknya, komunitas ilmiah global mengevaluasi jutaan arsitektur pada test set publik yang sama, mempublikasikan arsitektur yang menang secara marjinal, dan mengabaikan arsitektur yang kalah."
         ],
-        "keyFormulaOrDiagram": "Studi Recht et al. (2019) \"Do ImageNet Classifiers Generalize to ImageNet?\": Para peneliti..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Studi Recht et al.",
         "bulletPoints": [
-          "Studi Recht et al. (2019) \"Do ImageNet Classifiers Generalize to ImageNet?\": Para peneliti membuat dataset uji baru (ImageNet...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "(2019) \"Do ImageNet Classifiers Generalize to ImageNet?\": Para peneliti membuat dataset uji baru (ImageNet-v2) yang dikumpulkan dengan mengikuti protokol sampling identik dengan ImageNet asli.",
+          "Hasilnya sangat mengejutkan: seluruh model SOTA teratas mengalami penurunan akurasi absolut antara 11% hingga 14% pada dataset baru tersebut."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pelemahan Jaminan Generalisasi Akibat Pengujian Adaptif:",
         "bulletPoints": [
-          "Pelemahan Jaminan Generalisasi Akibat Pengujian Adaptif:",
-          "Dalam kerangka statistik klasik, batas selisih antara risiko empiris data uji $\\hat{R}_N(f)$ dan risiko popula...",
-          "Namun jika sebuah rangkaian $K$ model adaptif ${f_1, f_2, \\dots, f_K}$ dievaluasi secara sekuensial pada test..."
+          "Dalam kerangka statistik klasik, batas selisih antara risiko empiris data uji $\\hat{R}_N(f)$ dan risiko populasi sejati $R(f)$ untuk hipotesis tunggal $f$ berukuran sampel $N$ diatur oleh ketidaksamaan Hoeffding:",
+          "Namun jika sebuah rangkaian $K$ model adaptif ${f_1, f_2, \\dots, f_K}$ dievaluasi secara sekuensial pada test set yang sama di mana model ke-$k$ dirancang berdasarkan umpan balik performa model ke-$(k-1)$, batas kesalahan terdegenerasi secara eksponensial terhadap kedalaman adaptasi. Berdasarkan Teorema Generalisasi Diferensial Privasi (Dwork et al., 2015):",
+          "Ukuran sampel yang dibutuhkan untuk mencegah overfitting adaptif berskala:"
         ],
-        "keyFormulaOrDiagram": "$$P(|\\hat{R}_N(f) - R(f)| > \\epsilon) \\leq 2e^{-2N\\epsilon^2}$$"
+        "keyFormulaOrDiagram": "$$P(|\\hat{R}_N(f) - R(f)| > \\epsilon) \\leq 2e^{-2N\\epsilon^2}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah model inspeksi visual pabrik mencapai akurasi 98.5% pada dataset benchmark publik PCB defect. Namun saat diuji pada 500 papan PCB yan...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Faktor 1 (Benchmark Overfitting): Model telah mengoptimalkan representasi visualnya pada sudut penc...",
-          "Langkah 2: Faktor 2 (Pergeseran Distribusi Mikro): Produksi hari ini memiliki variasi batch solder baru, perbe...",
-          "Langkah 3: Evaluasi metodologis: Peneliti melakukan kesalahan dengan mengasumsikan test set benchmark publik m...",
-          "Interpretasi: Peneliti wajib menguji model pada cross-domain dataset independen untuk memvalidasi klaim keandalan industri."
+          "Konteks Kasus: Sebuah model inspeksi visual pabrik mencapai akurasi 98.5% pada dataset benchmark publik PCB defect. Namun saat diuji pada 500 papan PCB yang baru diproduksi hari ini di pabrik yang sama, akurasi turun menjadi 88.0%. Berikan penjelasan ilmiah mengenai 2 faktor utama penyebab degradasi ini.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Evaluasi metodologis: Peneliti melakukan kesalahan dengan mengasumsikan test se..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Faktor 1 (Benchmark Overfitting): Model telah mengoptimalkan representasi visualnya pada sudut pencahayaan, posisi kamera, dan artefak kompresi gambar yang spesifik terdapat pada dataset benchmark PCB publik.",
+          "Langkah 2: Faktor 2 (Pergeseran Distribusi Mikro): Produksi hari ini memiliki variasi batch solder baru, perbedaan suhu ruang, atau sedikit pergeseran fokus optik mikroskop (covariate shift) yang tidak terwakili dalam benchmark statis."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Evaluasi metodologis: Peneliti melakukan kesalahan dengan mengasumsikan test set benchmark publik mewakili seluruh domain fisik operasional.",
+          "[result: Interpretasi Ilmiah] Peneliti wajib menguji model pada cross-domain dataset independen untuk memvalidasi klaim keandalan industri."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi degradasi performa model akibat pengujian adaptif berulang pada satu test set tetap.",
         "bulletPoints": [
-          "Deskripsi: Simulasi degradasi performa model akibat pengujian adaptif berulang pada satu test set tetap.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Forensik Adaptive Benchmark Overfitting:"
+          "Tujuan Algoritma: Simulasi degradasi performa model akibat pengujian adaptif berulang pada satu test set tetap.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Forensik Adaptive Benchmark Overfitting:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Adaptive Benchmark Overfitting: | Kualitas Sejati Model..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Adaptive Benchmark Overfitting:\nKualitas Sejati Model di Populasi         : 0.8000\nSkor Juara Leaderboard Publik             : 0.8850 (Optimisme Semu!)\nPerforma Juara pada Dataset Baru Mandiri  : 0.7950\nPenurunan Performa Absolut (Drop)         : 9.00%",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menganggap bahwa akurasi tinggi pada satu benchmark publik membuktikan keunggulan universal model.",
-          "Perangkap: Menggunakan data uji benchmark secara berulang untuk menentukan kapan training epoch harus dihentikan (early s...",
-          "Perangkap: Mengabaikan keberadaan label yang salah atau ambigu di dalam dataset benchmark populer."
-        ]
+          "[warning: Perangkap] Menganggap bahwa akurasi tinggi pada satu benchmark publik membuktikan keunggulan universal model.",
+          "[warning: Perangkap] Menggunakan data uji benchmark secara berulang untuk menentukan kapan training epoch harus dihentikan (early stopping on test set).",
+          "[warning: Perangkap] Mengabaikan keberadaan label yang salah atau ambigu di dalam dataset benchmark populer."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan minimal 2 hingga 3 dataset independen dari sumber berbeda untuk mengevaluasi klaim arsitektur baru.",
-          "Prosedur: Kumpulkan dataset uji baru yang diambil dari lingkungan fisik aktual (zero-shot transfer atau out-of-domain ev...",
+          "Prosedur: Kumpulkan dataset uji baru yang diambil dari lingkungan fisik aktual (zero-shot transfer atau out-of-domain evaluation).",
           "Prosedur: Audit konsistensi label benchmark menggunakan metode Confident Learning untuk mengidentifikasi label noise."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa temuan utama studi Recht et al. (2019) mengenai reproduksibilitas akurasi ImageNet pada ImageNet-v2?",
-          "Petunjuk: Fokus pada penurunan akurasi absolut di seluruh arsitektur model.",
-          "Solusi Kunci: Studi menemukan bahwa seluruh model klasifikasi (dari AlexNet hingga ResNet mutakhir) mengalami penurunan akurasi absolu..."
-        ]
+          "Petunjuk Analitis: Fokus pada penurunan akurasi absolut di seluruh arsitektur model.",
+          "Solusi Kunci: Studi menemukan bahwa seluruh model klasifikasi (dari AlexNet hingga ResNet mutakhir) mengalami penurunan akurasi absolut 11% hingga 14% ketika diuji pada ImageNet-v2, membuktikan adanya overfitting komunitas terhadap karakteristik spesifik set uji asli."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -396,101 +469,139 @@ export const CH33_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Standardisasi Metrik Evaluasi Kinerja (Akurasi, F1, Lat...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Standardisasi Metrik Evaluasi Kinerja (Akurasi, F1, Latensi, Efisiensi Energi)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.2.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.3.",
-          "Capaian: Memilih metrik evaluasi statistik yang tepat berdasarkan karakteristik distribusi data dan utilitas aplikasi.",
-          "Capaian: Membedakan Macro-F1, Micro-F1, dan Weighted-F1 pada skenario ketidakseimbangan kelas.",
-          "Capaian: Mengintegrasikan metrik komputasi fisik: Throughput, Latensi P99, Footprint Memori, dan Konsumsi Energi (Joule..."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memilih metrik evaluasi statistik yang tepat berdasarkan karakteristik distribusi data dan utilitas aplikasi.",
+          "Capaian 2: Membedakan Macro-F1, Micro-F1, dan Weighted-F1 pada skenario ketidakseimbangan kelas.",
+          "Capaian 3: Mengintegrasikan metrik komputasi fisik: Throughput, Latensi P99, Footprint Memori, dan Konsumsi Energi (Joules/Inference)."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Precision}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FP}_c}, \\quad \\text{Recall}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FN}_c}$$"
+        "keyFormulaOrDiagram": "$$\\text{Precision}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FP}_c}, \\quad \\text{Recall}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FN}_c}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.2.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Standardisasi Metrik Evaluasi Kinerja (Akurasi, F1, Lat...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Standardisasi Metrik Evaluasi Kinerja (Akurasi, F1, Latensi, Efisiensi Energi)",
+        "lead": "Dalam riset rekayasa, menilai performa sistem hanya berdasarkan satu metrik statistik tunggal (seperti akurasi klasifikasi) adalah indikasi kedangkalan analisis ilmiah.",
         "bulletPoints": [
-          "Dalam riset rekayasa, menilai performa sistem hanya berdasarkan satu metrik statistik tunggal (seperti akurasi klasifikasi) a...",
-          "Matriks Metrik Kinerja Multidimensi: 1. Metrik Kualitas Prediksi (Predictive Quality): - Precision dan Recall: Mengukur kesei...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Akurasi 99% tidak memiliki makna informatif jika 99% dari data sampel memang termasuk dalam kelas normal (kejadian anomali hanya 1%).",
+          "Selain itu, sebuah algoritma yang unggul 0.5% dalam akurasi namun membutuhkan memori 100 kali lebih besar dan latensi 10 kali lebih lambat tidak layak diterapkan dalam sistem rekayasa nyata.",
+          "Matriks Metrik Kinerja Multidimensi: 1.",
+          "Metrik Kualitas Prediksi (Predictive Quality): - Precision dan Recall: Mengukur keseimbangan antara kepastian temuan dan kelengkapan deteksi. - Macro-F1 vs Micro-F1: Macro-F1 menghitung rata-rata aritmatika unweighted dari F1 setiap kelas, memberikan bobot yang setara untuk kelas langka."
         ],
-        "keyFormulaOrDiagram": "2. Metrik Efisiensi Komputasi Fisik (Operational Quality): - Latensi Rata-rata dan P99 (Pe..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Metrik Efisiensi Komputasi Fisik (Operational Quality): - Latensi Rata-rata dan P99 (Percentile 99): Mengukur batas keterl...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Metrik Efisiensi Komputasi Fisik (Operational Quality): - Latensi Rata-rata dan P99 (Percentile 99): Mengukur batas keterlambatan terburuk sistem untuk aplikasi real-time. - Kebutuhan Komputasi Algoritmik: Floating-Point Operations (FLOPs) dan jumlah parameter terbobot. - Konsumsi Energi Fisik: Energi per inferensi yang diukur langsung pada antarmuka daya keras (Joules/inferensi atau Watt-jam)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Metrik Multidimensi:",
         "bulletPoints": [
-          "Formulasi Matematis Metrik Multidimensi:",
           "1. Macro-Averaged F1 vs Micro-Averaged F1 untuk $C$ Kelas:",
-          "2. Metrik Efisiensi Energi Spesifik ($E_{\\text{inf}}$):"
+          "2. Metrik Efisiensi Energi Spesifik ($E_{\\text{inf}}$):",
+          "Jika daya listrik seketika $P(t)$ (Watt) diukur selama durasi waktu inferensi $T$ (detik):"
         ],
-        "keyFormulaOrDiagram": "$$\\text{Precision}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FP}_c}, \\quad \\text{Recall}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FN}_c}$$"
+        "keyFormulaOrDiagram": "$$\\text{Precision}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FP}_c}, \\quad \\text{Recall}_c = \\frac{\\text{TP}_c}{\\text{TP}_c + \\text{FN}_c}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada dataset klasifikasi 3-kelas: Kelas 0 (90 sampel), Kelas 1 (5 sampel), Kelas 2 (5 sampel). Sebuah model memprediksi seluruh sampel sebag...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada dataset klasifikasi 3-kelas: Kelas 0 (90 sampel), Kelas 1 (5 sampel), Kelas 2 (5 sampel). Sebuah model memprediksi seluruh sampel sebagai Kelas 0. Hitung Akurasi, Micro-F1, dan Macro-F1 dari model tersebut. Jelaskan mengapa Macro-F1 wajib dilaporkan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung TP, FP, FN untuk setiap kelas: Kelas 0: TP=90, FP=10, FN=0; Kelas 1: TP=0, FP=0, FN=5; Kelas...",
+          "Langkah 1: Hitung TP, FP, FN untuk setiap kelas: Kelas 0: TP=90, FP=10, FN=0; Kelas 1: TP=0, FP=0, FN=5; Kelas 2: TP=0, FP=0, FN=5.",
           "Langkah 2: Hitung Akurasi global: Akurasi = (90 + 0 + 0) / 100 = 90.0%.",
-          "Langkah 3: Hitung Micro-F1: Total TP = 90, Total FP = 10, Total FN = 10. Micro-F1 = (2 * 90) / (2 * 90 + 10 +...",
-          "Interpretasi: Akurasi dan Micro-F1 (90%) memberikan kesan palsu bahwa model sangat baik, padahal model sama sekali gagal mendeteksi Ke..."
+          "Langkah 3: Hitung Micro-F1: Total TP = 90, Total FP = 10, Total FN = 10. Micro-F1 = (2 * 90) / (2 * 90 + 10 + 10) = 180 / 200 = 0.900 (90.0%)."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung Macro-F1: Macro-F1 = (0.947 + 0.0 + 0.0) / 3 = 0.3157 (31.6%)."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung F1 per kelas: F1_0 = (2 * 90/100 * 90/90) / (90/100 + 90/90) = (2 * 0.9 * 1.0) / 1.9 = 1.8 / 1.9 = 0.947; F1_1 = 0.000; F1_2 = 0.000.",
+          "Langkah 5: Hitung Macro-F1: Macro-F1 = (0.947 + 0.0 + 0.0) / 3 = 0.3157 (31.6%).",
+          "[result: Interpretasi Ilmiah] Akurasi dan Micro-F1 (90%) memberikan kesan palsu bahwa model sangat baik, padahal model sama sekali gagal mendeteksi Kelas 1 dan Kelas 2. Macro-F1 (31.6%) secara jujur mencerminkan kegagalan total model pada kelas-kelas kritis."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Perhitungan komparasi metrik kualitas prediksi dan pengukuran latensi P99.",
         "bulletPoints": [
-          "Deskripsi: Perhitungan komparasi metrik kualitas prediksi dan pengukuran latensi P99.",
-          "Dependensi Pustaka: numpy, sklearn.metrics, time",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Metrik Terstandarisasi:"
+          "Tujuan Algoritma: Perhitungan komparasi metrik kualitas prediksi dan pengukuran latensi P99.",
+          "Dependensi Pustaka Ilmiah: numpy, sklearn.metrics, time",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Metrik Terstandarisasi:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Metrik Terstandarisasi: | Akurasi Sederhana : 90.00% (M..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Metrik Terstandarisasi:\nAkurasi Sederhana       : 90.00% (Menyesatkan pada Imbalance)\nMicro-Averaged F1       : 90.00% (Didominasi Kelas Mayoritas)\nMacro-Averaged F1       : 31.58% (Mencerminkan Kinerja Sejati)\n--- Profil Latensi Komputasi (ms) ---",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Melaporkan akurasi sederhana pada dataset dengan ketidakseimbangan kelas ekstrem.",
-          "Perangkap: Hanya mengukur latensi rata-rata dan mengabaikan tail latency (P99) yang krusial bagi sistem real-time.",
-          "Perangkap: Mengukur waktu eksekusi tanpa fase warm-up GPU/CPU, yang mencampuradukkan waktu inisialisasi modul."
-        ]
+          "[warning: Perangkap] Melaporkan akurasi sederhana pada dataset dengan ketidakseimbangan kelas ekstrem.",
+          "[warning: Perangkap] Hanya mengukur latensi rata-rata dan mengabaikan tail latency (P99) yang krusial bagi sistem real-time.",
+          "[warning: Perangkap] Mengukur waktu eksekusi tanpa fase warm-up GPU/CPU, yang mencampuradukkan waktu inisialisasi modul."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Macro-F1 atau PR-AUC sebagai metrik primer untuk data tidak seimbang.",
           "Prosedur: Sertakan kurva batas Pareto (Pareto Frontier) yang memetakan Macro-F1 vs Latensi/FLOPs.",
-          "Prosedur: Lakukan pengulangan minimal 100 kali inferensi dengan pemanasan awal (warm-up) sebelum mencatat waktu eksekusi..."
-        ]
+          "Prosedur: Lakukan pengulangan minimal 100 kali inferensi dengan pemanasan awal (warm-up) sebelum mencatat waktu eksekusi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa dalam sistem kendali otomotif atau robotika otonom, latensi persentil ke-99 (P99) jauh lebih penting daripada la...",
-          "Petunjuk: Pikirkan konsekuensi keterlambatan respons rem pada kondisi terburuk.",
-          "Solusi Kunci: Dalam sistem keselamatan kritis (safety-critical), keterlambatan satu kali saja pada skenario terburuk (tail latency) da..."
-        ]
+          "Pertanyaan Uji: Mengapa dalam sistem kendali otomotif atau robotika otonom, latensi persentil ke-99 (P99) jauh lebih penting daripada latensi rata-rata?",
+          "Petunjuk Analitis: Pikirkan konsekuensi keterlambatan respons rem pada kondisi terburuk.",
+          "Solusi Kunci: Dalam sistem keselamatan kritis (safety-critical), keterlambatan satu kali saja pada skenario terburuk (tail latency) dapat menyebabkan kegagalan fisik fatal atau tabrakan. Latensi rata-rata dapat menyembunyikan lonjakan delay ekstrem akibat garbage collection atau thread contention."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -560,101 +671,140 @@ export const CH33_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Protokol Pelaksanaan Benchmark Komputasi yang Adil dan...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Protokol Pelaksanaan Benchmark Komputasi yang Adil dan Terkontrol",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.2.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.4.",
-          "Capaian: Menyusun protokol benchmark komputasi yang menjamin keadilan lingkungan dan keterulangan pengujian.",
-          "Capaian: Mengontrol variabel pengganggu perangkat keras (thermal throttling, background processes, power states).",
-          "Capaian: Mendokumentasikan kartu spesifikasi benchmark (Hardware & Environment Manifest) berstandar ACM."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.2.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun protokol benchmark komputasi yang menjamin keadilan lingkungan dan keterulangan pengujian.",
+          "Capaian 2: Mengontrol variabel pengganggu perangkat keras (thermal throttling, background processes, power states).",
+          "Capaian 3: Mendokumentasikan kartu spesifikasi benchmark (Hardware & Environment Manifest) berstandar ACM."
         ],
-        "keyFormulaOrDiagram": "$$T_{\\text{obs}, i}(A) = T_{\\text{det}}(A) + \\epsilon_{\\text{env}, i} + \\delta_{\\text{thermal}}(t_i)$$"
+        "keyFormulaOrDiagram": "$$T_{\\text{obs}, i}(A) = T_{\\text{det}}(A) + \\epsilon_{\\text{env}, i} + \\delta_{\\text{thermal}}(t_i)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.2.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Protokol Pelaksanaan Benchmark Komputasi yang Adil dan...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Protokol Pelaksanaan Benchmark Komputasi yang Adil dan Terkontrol",
+        "lead": "Membandingkan efisiensi komputasi dari dua algoritma yang berbeda membutuhkan ketelitian kontrol lingkungan yang setara dengan eksperimen fisika presisi tinggi.",
         "bulletPoints": [
-          "Membandingkan efisiensi komputasi dari dua algoritma yang berbeda membutuhkan ketelitian kontrol lingkungan yang setara denga...",
-          "Variabel Pengganggu dalam Benchmark Komputasi: 1. Pemanasan Cache dan GPU JIT (Cold vs Warm Execution): Eksekusi pertama dari...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Seringkali perbedaan kecepatan eksekusi 20% yang diklaim sebagai keunggulan algoritma sebenarnya hanya disebabkan oleh perbedaan fluktuasi termal CPU (thermal throttling), intervensi thread sistem operasi di latar belakang, atau alokasi memori yang tidak dihangatkan (cold cache).",
+          "Variabel Pengganggu dalam Benchmark Komputasi: 1.",
+          "Pemanasan Cache dan GPU JIT (Cold vs Warm Execution): Eksekusi pertama dari sebuah model selalu memakan waktu jauh lebih lama akibat inisialisasi CUDA context, alokasi memori dinamis, dan kompilasi graf komputasi (JIT compilation)."
         ],
-        "keyFormulaOrDiagram": "2. Fluktuasi Frekuensi Jam (Dynamic Frequency Scaling / Turboboost): Prosesor modern secar..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Fluktuasi Frekuensi Jam (Dynamic Frequency Scaling / Turboboost): Prosesor modern secara dinamis menaikkan frekuensi jam s...",
-          "3. Alokasi Memori dan Garbage Collection (GC): Bahasa pemrograman tingkat tinggi seperti Python atau Java memicu garbage coll...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Fluktuasi Frekuensi Jam (Dynamic Frequency Scaling / Turboboost): Prosesor modern secara dinamis menaikkan frekuensi jam saat beban kerja dimulai, kemudian menurunkan frekuensi saat suhu chip meningkat (thermal throttling).",
+          "Jika metode A diuji saat prosesor masih dingin dan metode B diuji setelah prosesor memanas, metode B akan tampak lebih lambat secara tidak adil.",
+          "3.",
+          "Alokasi Memori dan Garbage Collection (GC): Bahasa pemrograman tingkat tinggi seperti Python atau Java memicu garbage collection secara acak."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Komparasi Kinerja Komputasi Terkontrol:",
         "bulletPoints": [
-          "Model Komparasi Kinerja Komputasi Terkontrol:",
           "Waktu eksekusi teramati $T_{\\text{obs}}$ dari algoritma $A$ pada iterasi ke-$i$ dapat dimodelkan sebagai:",
-          "di mana:"
+          "di mana:",
+          "- $T_{\\text{det}}(A)$: Kompleksitas waktu deterministik intrinsik algoritma."
         ],
-        "keyFormulaOrDiagram": "$$T_{\\text{obs}, i}(A) = T_{\\text{det}}(A) + \\epsilon_{\\text{env}, i} + \\delta_{\\text{thermal}}(t_i)$$"
+        "keyFormulaOrDiagram": "$$T_{\\text{obs}, i}(A) = T_{\\text{det}}(A) + \\epsilon_{\\text{env}, i} + \\delta_{\\text{thermal}}(t_i)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Jelaskan mengapa mengeksekusi Algoritma A sebanyak 100 kali pada jam 08:00 pagi, lalu mengeksekusi Algoritma B sebanyak 100 kali pada jam 12...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Perubahan suhu lingkungan laboratorium: Suhu ruang pada jam 12:00 siang umumnya lebih tinggi daripa...",
-          "Langkah 2: Beban sistem operasi dan jaringan: Pada siang hari, proses background pengguna lain atau pembaruan...",
-          "Langkah 3: Thermal throttling: Workstation mungkin telah beroperasi selama 4 jam penuh pada jam 12:00, menyeba...",
-          "Interpretasi: Pemisahan waktu uji memicu bias variabel perancu lingkungan fisik yang membatalkan validitas komparasi efisiensi."
+          "Konteks Kasus: Jelaskan mengapa mengeksekusi Algoritma A sebanyak 100 kali pada jam 08:00 pagi, lalu mengeksekusi Algoritma B sebanyak 100 kali pada jam 12:00 siang di workstation laboratorium yang sama dapat menghasilkan kesimpulan komparasi latensi yang invalid.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Solusi ilmiah: Pengujian wajib dijalankan dalam satu sesi eksekusi terkontrol d..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Perubahan suhu lingkungan laboratorium: Suhu ruang pada jam 12:00 siang umumnya lebih tinggi daripada jam 08:00 pagi, mempengaruhi efektivitas pendinginan heatsink.",
+          "Langkah 2: Beban sistem operasi dan jaringan: Pada siang hari, proses background pengguna lain atau pembaruan otomatis sistem operasi lebih aktif."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Thermal throttling: Workstation mungkin telah beroperasi selama 4 jam penuh pada jam 12:00, menyebabkan batas frekuensi prosesor (thermal limit) tertekan ke batas bawah.",
+          "Langkah 4: Solusi ilmiah: Pengujian wajib dijalankan dalam satu sesi eksekusi terkontrol dengan skema interleaved random scheduling dan pencatatan log suhu CPU/GPU.",
+          "[result: Interpretasi Ilmiah] Pemisahan waktu uji memicu bias variabel perancu lingkungan fisik yang membatalkan validitas komparasi efisiensi."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi benchmark komputasi dengan protokol warm-up dan interleaved execution.",
         "bulletPoints": [
-          "Deskripsi: Implementasi benchmark komputasi dengan protokol warm-up dan interleaved execution.",
-          "Dependensi Pustaka: numpy, time",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Protokol Benchmark Interleaved:"
+          "Tujuan Algoritma: Implementasi benchmark komputasi dengan protokol warm-up dan interleaved execution.",
+          "Dependensi Pustaka Ilmiah: numpy, time",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Protokol Benchmark Interleaved:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Protokol Benchmark Interleaved: | Algo A (np.dot) : Median..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Protokol Benchmark Interleaved:\nAlgo A (np.dot)    : Median=2.450 ms | P99=3.210 ms\nAlgo B (np.einsum) : Median=2.520 ms | P99=3.350 ms",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghitung waktu eksekusi fungsi bersamaan dengan operasi print() atau I/O disk.",
-          "Perangkap: Mengabaikan sinkronisasi GPU (torch.cuda.synchronize() sebelum dan sesudah time profiling pada GPU).",
-          "Perangkap: Menggunakan fungsi time.time() alih-alih time.perf_counter() yang beresolusi tinggi."
-        ]
+          "[warning: Perangkap] Menghitung waktu eksekusi fungsi bersamaan dengan operasi print() atau I/O disk.",
+          "[warning: Perangkap] Mengabaikan sinkronisasi GPU (torch.cuda.synchronize() sebelum dan sesudah time profiling pada GPU).",
+          "[warning: Perangkap] Menggunakan fungsi time.time() alih-alih time.perf_counter() yang beresolusi tinggi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Panggil torch.cuda.synchronize() jika melakukan benchmarking komputasi GPU asynchronous.",
           "Prosedur: Gunakan protokol interleaved execution untuk meminimalkan dampak drift termal.",
           "Prosedur: Lampirkan spesifikasi lengkap CPU, GPU, RAM, OS, driver CUDA, dan versi pustaka dalam berkas manifest."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa pemanggilan torch.cuda.synchronize() bersifat mutlak sebelum dan setelah pencatatan waktu komputasi GPU di PyTor...",
-          "Petunjuk: Perhatikan sifat asinkron dari kernel launch GPU.",
-          "Solusi Kunci: Operasi GPU di PyTorch berjalan secara asinkron terhadap proses utama CPU. Jika torch.cuda.synchronize() tidak dipanggil..."
-        ]
+          "Pertanyaan Uji: Mengapa pemanggilan torch.cuda.synchronize() bersifat mutlak sebelum dan setelah pencatatan waktu komputasi GPU di PyTorch?",
+          "Petunjuk Analitis: Perhatikan sifat asinkron dari kernel launch GPU.",
+          "Solusi Kunci: Operasi GPU di PyTorch berjalan secara asinkron terhadap proses utama CPU. Jika torch.cuda.synchronize() tidak dipanggil, CPU hanya mengukur waktu pengiriman instruksi kernel ke antrean GPU, bukan durasi waktu eksekusi kalkulasi fisik di dalam silikon GPU tersebut."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

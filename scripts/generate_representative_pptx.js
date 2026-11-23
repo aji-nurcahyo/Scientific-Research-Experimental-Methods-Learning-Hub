@@ -84,6 +84,11 @@ function cleanFormulaForPPTX(formula) {
 function cleanBulletText(text) {
   if (!text) return '';
   let res = text
+    .replace(/\[(warning|perangkap|danger):\s*([^\]]+)\]/gi, '[PERINGATAN] $2')
+    .replace(/\[(result|hasil|temuan):\s*([^\]]+)\]/gi, '[TEMUAN] $2')
+    .replace(/\[(definition|definisi):\s*([^\]]+)\]/gi, '[DEFINISI] $2')
+    .replace(/\[(concept|konsep):\s*([^\]]+)\]/gi, '[KONSEP] $2')
+    .replace(/\[(note|catatan):\s*([^\]]+)\]/gi, '[CATATAN] $2')
     .replace(/\*\*([^*]+)\*\*/g, '$1')
     .replace(/\*([^*]+)\*/g, '$1')
     .replace(/`([^`]+)`/g, '$1')
@@ -208,6 +213,11 @@ async function buildChapterPPTX(chapterId, chapterTitle, subtitle, lessonsDict, 
         fontSize: 10.5, color: '0F172A', fontFace: 'Courier New',
         valign: 'middle', align: 'center', breakLine: true
       });
+    }
+
+    // Speaker Notes
+    if (s.notes) {
+      slide.addNotes(s.notes);
     }
 
     // Footer

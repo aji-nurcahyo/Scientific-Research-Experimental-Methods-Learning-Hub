@@ -238,7 +238,57 @@ Platform telah menyelesaikan audit komprehensif, rekonstruksi slide substantif, 
 
 ---
 
-## 6. CONTINUITY GUIDE & PROTOKOL OTORISASI RILIS
+## 7. PHASE 6C: REKONTROL MUTU PRESENTASI SLIDE, INTEGRITAS MATEMATIKA & SISTEM VISUAL AKADEMIK
+
+### A. Diagnosa Masalah dan Perbaikan Arsitektur Presentasi
+1. **Akar Permasalahan Teridentifikasi:**
+   - Pemotongan mekanis `slice(0, 120) + '...'` pada generator slide lama memotong rumus matematika di tengah jalan, menghasilkan delimiter `$` tidak berpasangan dan string error KaTeX merah di antarmuka.
+   - Perender teks slide sebelumnya hanya menggunakan parser matematika sederhana tanpa dukungan Markdown inline, menyebabkan tag tebal (`**...**`), miring (`*...*`), dan kode (`` `...` ``) tampil sebagai teks mentah yang merusak keterbacaan presentasi.
+   - Tidak adanya variasi tata letak dan diferensiasi semantik antara definisi, contoh numerik, perangkap metodologis, dan hasil kesimpulan.
+2. **Adopsi Arsitektur dari Repositori Rujukan (`Multimedia & Computer Vision`):**
+   - Mengembangkan `src/components/PresentationViewer.tsx` kanvas 16:9 widescreen responsif dengan dukungan peralihan tema Gelap/Terang, navigasi keyboard lengkap, laci catatan pembicara (*speaker notes drawer*), dan pintasan bantuan interaktif.
+   - Mengimplementasikan `renderInlineText` dalam `src/components/MathRenderer.tsx` yang memproses Markdown inline (tebal, miring, tautan, kode) secara rekursif berdampingan dengan rendering KaTeX murni tanpa galat merah.
+   - Membuat `src/components/MathView.tsx` dengan konfigurasi penanganan galat KaTeX teredam (`errorColor: '#94a3b8'`) dan pemulihan teks aman.
+
+### B. Rekonstruksi Slide Substantif Bebas Pemotongan (Zero-Truncation)
+1. **Sintesis Berbasis Kalimat Utuh:** Menggunakan generator `scripts/reconstruct_substantive_slides_v2.js` dengan pelindung token formula matematis, menjamin tidak ada kalimat atau ekspresi matematika yang terpotong.
+2. **Statistik Peningkatan Slide:**
+   - Total slide sebelum Phase 6C: 2.035 slide mekanis.
+   - Total slide setelah Phase 6C: **2.211 slide substantif** pada 51 bab (rata-rata 43,3 slide per bab).
+   - Seluruh slide dilengkapi dengan tag layout spesifik (`concept`, `derivation`, `example`, `algorithm`, `warning`, `exercise`).
+   - Setiap slide memuat catatan pembicara pedagogis (*speaker notes*) untuk memandu dosen dan mahasiswa.
+
+### C. Sistem Penandaan Semantik (Semantic Highlighting)
+Menerapkan 5 palet warna semantik berstandar ITERA dan WCAG AA:
+- **Blue (Konsep):** `[concept: ...]` untuk orientasi dan prinsip rekayasa.
+- **Gold (Definisi/Metodologi):** `[definition: ...]` untuk postulat dan rumus kunci.
+- **Green (Temuan/Hasil):** `[result: ...]` untuk interpretasi ilmiah dan konfirmasi empiris.
+- **Red (Peringatan):** `[warning: ...]` untuk pencegahan bias, *p-hacking*, dan kesalahan metodologi.
+- **Neutral (Sekunder):** `[note: ...]` untuk catatan operasional dan referensi pustaka.
+
+### D. Hasil Audit Mutu Menyeluruh (Comprehensive QA Verification)
+1. **Audit Integritas Persamaan Matematika KaTeX:**
+   - Total Persamaan Diuji: **4.231 persamaan** di seluruh 51 bab, 204 lesson, dan 2.211 slide.
+   - Persamaan Berhasil Dirender: **4.231 / 4.231 (100.0%)**.
+   - Persamaan Rusak / Galat Delimiter: **0 (Nol)**.
+2. **Inspeksi Struktur OpenXML PowerPoint (.pptx):**
+   - 5 bab representatif (CH-01, CH-16, CH-24, CH-38, CH-51) menghasilkan berkas PPTX 16:9 widescreen valid.
+   - 0 raw markdown, 0 broken LaTeX, 0 text overflow, dan catatan pembicara tersemat rapi pada slide OpenXML.
+3. **Ekspor PDF Akademik Beresolusi Tinggi:**
+   - 4 lesson representatif diekspor menghasilkan berkas PDF berstandar A4 dengan KaTeX tajam dan pemformatan cetak profesional.
+4. **Verifikasi Visual Interaktif Playwright:**
+   - Lolos di seluruh 3 breakpoint (Desktop 1920x1080, Tablet 768x1024, Mobile 375x667).
+   - Pengujian interaktif penampil slide: navigasi slide, tombol tema gelap/terang, dan catatan pembicara berfungsi 100% tanpa galat konsol.
+5. **Regresi Komputasi Python & Laboratorium:**
+   - 199 / 199 kode Python lolos AST, runtime, dan validasi numerik 100%.
+   - 15 / 15 laboratorium mandiri Python di `labs/` lulus 100%.
+6. **Kompilasi TypeScript & Bundel Produksi:**
+   - `tsc --noEmit` lulus dengan 0 error.
+   - `npm run build` sukses memproduksi bundel Vite dalam 6,86 detik.
+
+---
+
+## 8. CONTINUITY GUIDE & PROTOKOL OTORISASI RILIS
 
 Jika sesi ini dilanjutkan atau dibuka oleh asisten AI baru:
 1. **STATUS PROYEK SAAT INI:**

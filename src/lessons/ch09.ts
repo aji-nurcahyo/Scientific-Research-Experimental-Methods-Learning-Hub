@@ -19,7 +19,7 @@ export const CH09_LESSONS: Record<string, Partial<Lesson>> = {
       "stepByStepSolution": [
         "Langkah 1 (Definisi Konseptual): Deviasi ketidakteraturan mikrogeometris permukaan benda kerja dari garis profil rata-ratanya.",
         "Langkah 2 (Instrumen & Probe): Profilometer kontak stylus portabel (Mitutoyo Surftest SJ-210) dengan radius ujung intan 2 mikrometer dan gaya penekanan 0.75 mN.",
-        "Langkah 3 (Kondisi Pengukuran): Panjang evaluasi profil L = 4.0 mm, cut-off filter Gauss lambda_c = 0.8 mm, kecepatan pemindaian 0.5 mm/s, dilakukan pada 3 titik keliling poros bersudut 120 derajat pada suhu ruang 25 +/- 1 \u00b0C.",
+        "Langkah 3 (Kondisi Pengukuran): Panjang evaluasi profil L = 4.0 mm, cut-off filter Gauss lambda_c = 0.8 mm, kecepatan pemindaian 0.5 mm/s, dilakukan pada 3 titik keliling poros bersudut 120 derajat pada suhu ruang 25 +/- 1 °C.",
         "Langkah 4 (Parameter Kuantitatif): Rata-rata aritmatika deviasi profil kasar Ra (dalam satuan mikrometer, um), dihitung otomatis melalui integrasi digital simpangan profil."
       ],
       "resultInterpretation": "Definisi ini menghilangkan seluruh ambiguitas operasional sehingga peneliti mana pun dapat mereplikasi pengukuran dengan hasil yang identik."
@@ -61,99 +61,134 @@ export const CH09_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penyusunan Definisi Operasional Variabel yang Terukur O...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penyusunan Definisi Operasional Variabel yang Terukur Objektif",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.2.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.1.",
-          "Capaian: Membedakan definisi konseptual (teoretis) dan definisi operasional variabel.",
-          "Capaian: Menetapkan prosedur instrumen, satuan baku, dan algoritma ekstraksi variabel secara kuantitatif.",
-          "Capaian: Menghilangkan ambiguitas pengukuran dalam protokol eksperimen."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan definisi konseptual (teoretis) dan definisi operasional variabel.",
+          "Capaian 2: Menetapkan prosedur instrumen, satuan baku, dan algoritma ekstraksi variabel secara kuantitatif.",
+          "Capaian 3: Menghilangkan ambiguitas pengukuran dalam protokol eksperimen."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{M}: \\Omega \\longrightarrow \\mathbb{R}^k$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{M}: \\Omega \\longrightarrow \\mathbb{R}^k$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.2.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penyusunan Definisi Operasional Variabel yang Terukur O...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penyusunan Definisi Operasional Variabel yang Terukur Objektif",
+        "lead": "Sebuah konsep ilmiah yang cemerlang tidak memiliki nilai empiris jika tidak dapat dioperasionalkan ke dalam entitas fisik atau komputasi yang terukur.",
         "bulletPoints": [
-          "Sebuah konsep ilmiah yang cemerlang tidak memiliki nilai empiris jika tidak dapat dioperasionalkan ke dalam entitas fisik ata...",
-          "Dalam penelitian rekayasa, definisi operasional yang baik harus memenuhi tiga syarat: 1. Spesifikasi Instrumen: Menyebutkan p...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Definisi konseptual menjelaskan arti teoritis dari suatu variabel dalam kerangka disiplin ilmu (misalnya: \"efisiensi termal adalah rasio kerja berguna terhadap energi kalor masuk\").",
+          "Sebaliknya, definisi operasional menjelaskan secara eksplisit dan tidak ambigu langkah-langkah mekanis, instrumen, satuan fisik, dan prosedur komputasi yang digunakan untuk menghasilkan angka pengukuran tersebut di laboratorium.",
+          "Dalam penelitian rekayasa, definisi operasional yang baik harus memenuhi tiga syarat: 1.",
+          "Spesifikasi Instrumen: Menyebutkan perangkat pengukur, nomor model, dan konfigurasi kalibrasi (misalnya: \"diukur menggunakan osiloskop digital Rigol DS1054Z pada bandwidth 50 MHz\")."
         ],
-        "keyFormulaOrDiagram": "Tanpa definisi operasional yang presisi, pengulangan eksperimen oleh laboratorium lain aka..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Tanpa definisi operasional yang presisi, pengulangan eksperimen oleh laboratorium lain akan menghasilkan data yang tidak seba...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Tanpa definisi operasional yang presisi, pengulangan eksperimen oleh laboratorium lain akan menghasilkan data yang tidak sebanding.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Pemetaan pengukuran operasional $\\mathcal{M}$ dari ruang keadaan fisik sistem $\\Omega$ menuju ruang bilangan riil $\\mathbb{R}$:",
         "bulletPoints": [
-          "Pemetaan pengukuran operasional $\\mathcal{M}$ dari ruang keadaan fisik sistem $\\Omega$ menuju ruang bilangan r...",
           "Kriteria Ketunggalan Operasional (*Operational Uniqueness*):",
-          "Definisi operasional dikatakan tertutup dan valid jika untuk setiap keadaan sistem $\\omega_1, \\omega_2 \\in \\Om..."
+          "Definisi operasional dikatakan tertutup dan valid jika untuk setiap keadaan sistem $\\omega_1, \\omega_2 \\in \\Omega$:",
+          "Di mana $\\epsilon_{\\text{noise}}$ adalah batas ketidakpastian resolusi instrumen pengukuran."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{M}: \\Omega \\longrightarrow \\mathbb{R}^k$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{M}: \\Omega \\longrightarrow \\mathbb{R}^k$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Susun definisi operasional lengkap untuk variabel \"Kekasaran Permukaan Poros Baja\" pada proses pemesinan bubut di Bengkel Mekanik ITERA.",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Susun definisi operasional lengkap untuk variabel \"Kekasaran Permukaan Poros Baja\" pada proses pemesinan bubut di Bengkel Mekanik ITERA.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1 (Definisi Konseptual): Deviasi ketidakteraturan mikrogeometris permukaan benda kerja dari garis prof...",
-          "Langkah 2 (Instrumen & Probe): Profilometer kontak stylus portabel (Mitutoyo Surftest SJ-210) dengan radius uj...",
-          "Langkah 3 (Kondisi Pengukuran): Panjang evaluasi profil L = 4.0 mm, cut-off filter Gauss lambda_c = 0.8 mm, ke...",
-          "Interpretasi: Definisi ini menghilangkan seluruh ambiguitas operasional sehingga peneliti mana pun dapat mereplikasi pengukuran dengan..."
+          "Langkah 1 (Definisi Konseptual): Deviasi ketidakteraturan mikrogeometris permukaan benda kerja dari garis profil rata-ratanya.",
+          "Langkah 2 (Instrumen & Probe): Profilometer kontak stylus portabel (Mitutoyo Surftest SJ-210) dengan radius ujung intan 2 mikrometer dan gaya penekanan 0.75 mN."
         ],
-        "keyFormulaOrDiagram": "Langkah 4 (Parameter Kuantitatif): Rata-rata aritmatika deviasi profil kasar Ra (dalam sat..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Komputasi parameter kekasaran permukaan aritmetika (Ra) dari sinyal profil ketinggian stylus mentah.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Panjang Evaluasi Profil (L) : 4.00 mm"
+          "Langkah 3 (Kondisi Pengukuran): Panjang evaluasi profil L = 4.0 mm, cut-off filter Gauss lambda_c = 0.8 mm, kecepatan pemindaian 0.5 mm/s, dilakukan pada 3 titik keliling poros bersudut 120 derajat pada suhu ruang 25 +/- 1 °C.",
+          "Langkah 4 (Parameter Kuantitatif): Rata-rata aritmatika deviasi profil kasar Ra (dalam satuan mikrometer, um), dihitung otomatis melalui integrasi digital simpangan profil.",
+          "[result: Interpretasi Ilmiah] Definisi ini menghilangkan seluruh ambiguitas operasional sehingga peneliti mana pun dapat mereplikasi pengukuran dengan hasil yang identik."
         ],
-        "keyFormulaOrDiagram": "Panjang Evaluasi Profil (L) : 4.00 mm | Jumlah Titik Cuplik : 4000 | Parameter Kekasaran R..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Komputasi parameter kekasaran permukaan aritmetika (Ra) dari sinyal profil ketinggian stylus mentah.",
         "bulletPoints": [
-          "Perangkap: Menuliskan definisi operasional yang masih memuat kata-kata sifat subjektif seperti \"diukur secara teliti\" ata...",
-          "Perangkap: Mengabaikan spesifikasi kondisi lingkungan ambien yang mempengaruhi pemuaian atau kelistrikan sensor.",
-          "Perangkap: Menggunakan indikator proksi yang tidak memiliki korelasi fisis langsung dengan konsep yang hendak diukur."
-        ]
+          "Tujuan Algoritma: Komputasi parameter kekasaran permukaan aritmetika (Ra) dari sinyal profil ketinggian stylus mentah.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Panjang Evaluasi Profil (L) : 4.00 mm"
+        ],
+        "keyFormulaOrDiagram": "Panjang Evaluasi Profil (L) : 4.00 mm\nJumlah Titik Cuplik         : 4000\nParameter Kekasaran Ra      : 1.018 um\nTinggi Puncak-Lembah Rz     : 5.485 um",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Mintalah teknisi laboratorium independen untuk melakukan pengukuran hanya dengan membaca dokumen definisi oper...",
-          "Prosedur: Periksa apakah satuan ukur telah mengikuti Sistem Satuan Internasional (SI)."
-        ]
+          "[warning: Perangkap] Menuliskan definisi operasional yang masih memuat kata-kata sifat subjektif seperti \"diukur secara teliti\" atau \"dalam waktu singkat\".",
+          "[warning: Perangkap] Mengabaikan spesifikasi kondisi lingkungan ambien yang mempengaruhi pemuaian atau kelistrikan sensor.",
+          "[warning: Perangkap] Menggunakan indikator proksi yang tidak memiliki korelasi fisis langsung dengan konsep yang hendak diukur."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa definisi \"Kualitas jaringan internet diukur berdasarkan kepuasan pengguna\" dinilai cacat sebagai definisi operas...",
-          "Petunjuk: Perhatikan objektivitas dan instrumen metrik telekomunikasi yang baku.",
-          "Solusi Kunci: Kepuasan pengguna bersifat subjektif, rentan terhadap bias psikologis persepsi, dan tidak dapat ditelusuri ke instrumen..."
-        ]
+          "Prosedur: Mintalah teknisi laboratorium independen untuk melakukan pengukuran hanya dengan membaca dokumen definisi operasional tanpa instruksi lisan tambahan.",
+          "Prosedur: Periksa apakah satuan ukur telah mengikuti Sistem Satuan Internasional (SI)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Mengapa definisi \"Kualitas jaringan internet diukur berdasarkan kepuasan pengguna\" dinilai cacat sebagai definisi operasional dalam riset teknik elektro/telekomunikasi?",
+          "Petunjuk Analitis: Perhatikan objektivitas dan instrumen metrik telekomunikasi yang baku.",
+          "Solusi Kunci: Kepuasan pengguna bersifat subjektif, rentan terhadap bias psikologis persepsi, dan tidak dapat ditelusuri ke instrumen metrologi jaringan. Definisi operasional teknik elektro harus menggunakan metrik fisik objektif seperti Packet Loss Rate (%), Round Trip Latency (ms), Throughput (Mbps), dan Jitter (ms) yang dicatat menggunakan penganalisis paket terstandarisasi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -168,13 +203,13 @@ export const CH09_LESSONS: Record<string, Partial<Lesson>> = {
       "Mengidentifikasi karakteristik nol mutlak (absolute zero) dan kesetaraan interval.",
       "Menentukan skala yang tepat untuk berbagai parameter fisis, algoritmis, dan kuesioner rekayasa."
     ],
-    "content": "Pada tahun 1946, psikolog dan metrolog Stanley Smith Stevens menerbitkan karya monumental di majalah *Science* yang memformulasikan representasi pengukuran ke dalam empat skala hierarkis. Pemahaman atas skala pengukuran merupakan syarat mutlak dalam analisis data rekayasa, karena skala data secara ketat menentukan operasi matematika dan uji statistik mana yang absah (*permissible*) untuk digunakan.\n\nEmpat skala pengukuran tersebut adalah:\n1. Skala Nominal: Tingkat paling mendasar yang hanya berfungsi sebagai label atau identitas kategori kualitatif tanpa adanya urutan atau peringkat. Contoh: tipe topologi jaringan (Star, Mesh, Ring) atau jenis bahan konduktor (Tembaga, Aluminium, Perak).\n2. Skala Ordinal: Memiliki sifat pelabelan ditambah dengan adanya relasi pemeringkatan atau urutan logis ($A > B > C$), namun jarak atau selisih matematis antar-peringkat tidak diketahui atau tidak seragam. Contoh: tingkat kekerasan mineral skala Mohs, skala kematangan teknologi (TRL 1 hingga 9), atau skala likert kepuasan (Sangat Lambat, Lambat, Cepat).\n3. Skala Interval: Memiliki urutan pemeringkatan dan interval (jarak) matematis yang sama antar-angka, namun TIDAK memiliki titik nol alami mutlak (*arbitrary zero*). Angka nol pada skala interval bukan berarti ketiadaan kuantitas fisis. Contoh: suhu dalam skala Celsius atau Fahrenheit (0 \u00b0C bukan berarti ketiadaan kalor total di alam).\n4. Skala Rasio: Tingkat pengukuran tertinggi dan paling sempurna. Memiliki urutan, jarak interval yang presisi, dan memiliki TITIK NOL MUTLAK (*absolute zero*). Nilai nol menandakan ketiadaan besaran fisik total. Contoh: suhu dalam Kelvin (0 K = ketiadaan energi kinetik partikel total), tegangan listrik (Volt), arus (Ampere), massa (kg), dan waktu tunda/latensi (detik).",
+    "content": "Pada tahun 1946, psikolog dan metrolog Stanley Smith Stevens menerbitkan karya monumental di majalah *Science* yang memformulasikan representasi pengukuran ke dalam empat skala hierarkis. Pemahaman atas skala pengukuran merupakan syarat mutlak dalam analisis data rekayasa, karena skala data secara ketat menentukan operasi matematika dan uji statistik mana yang absah (*permissible*) untuk digunakan.\n\nEmpat skala pengukuran tersebut adalah:\n1. Skala Nominal: Tingkat paling mendasar yang hanya berfungsi sebagai label atau identitas kategori kualitatif tanpa adanya urutan atau peringkat. Contoh: tipe topologi jaringan (Star, Mesh, Ring) atau jenis bahan konduktor (Tembaga, Aluminium, Perak).\n2. Skala Ordinal: Memiliki sifat pelabelan ditambah dengan adanya relasi pemeringkatan atau urutan logis ($A > B > C$), namun jarak atau selisih matematis antar-peringkat tidak diketahui atau tidak seragam. Contoh: tingkat kekerasan mineral skala Mohs, skala kematangan teknologi (TRL 1 hingga 9), atau skala likert kepuasan (Sangat Lambat, Lambat, Cepat).\n3. Skala Interval: Memiliki urutan pemeringkatan dan interval (jarak) matematis yang sama antar-angka, namun TIDAK memiliki titik nol alami mutlak (*arbitrary zero*). Angka nol pada skala interval bukan berarti ketiadaan kuantitas fisis. Contoh: suhu dalam skala Celsius atau Fahrenheit (0 °C bukan berarti ketiadaan kalor total di alam).\n4. Skala Rasio: Tingkat pengukuran tertinggi dan paling sempurna. Memiliki urutan, jarak interval yang presisi, dan memiliki TITIK NOL MUTLAK (*absolute zero*). Nilai nol menandakan ketiadaan besaran fisik total. Contoh: suhu dalam Kelvin (0 K = ketiadaan energi kinetik partikel total), tegangan listrik (Volt), arus (Ampere), massa (kg), dan waktu tunda/latensi (detik).",
     "mathematicalFoundations": "Teori Pengukuran Representasional Stevens dinyatakan melalui grup transformasi invarian:\n\n1. Nominal: Invarian terhadap transformasi permutasi satu-ke-satu (Bijeksi):\n$$y = f(x), \\quad f \\text{ satu-ke-satu}$$\n\n2. Ordinal: Invarian terhadap transformasi monotonik naik tegas (*strictly increasing monotonic*):\n$$y = f(x), \\quad x_1 > x_2 \\implies f(x_1) > f(x_2)$$\n\n3. Interval: Invarian terhadap transformasi afin positif linier (*positive linear / affine transformation*):\n$$y = a x + b, \\quad a > 0, \\; b \\in \\mathbb{R}$$\nRasio interval terlestarikan: $\\frac{y_2 - y_1}{y_4 - y_3} = \\frac{x_2 - x_1}{x_4 - x_3}$.\n\n4. Rasio: Invarian terhadap transformasi keserupaan geometris linier (*similarity transformation*):\n$$y = a x, \\quad a > 0$$\nRasio mutlak nilai terlestarikan: $\\frac{y_2}{y_1} = \\frac{x_2}{x_1}$.",
     "workedExample": {
-      "problemStatement": "Jelaskan mengapa pernyataan \"Suhu air 40 \u00b0C adalah dua kali lebih panas dibanding suhu air 20 \u00b0C\" merupakan kesalahan interpretasi skala matematis, sedangkan pernyataan \"Tegangan 40 Volt adalah dua kali lebih besar dari 20 Volt\" adalah pernyataan yang absah.",
+      "problemStatement": "Jelaskan mengapa pernyataan \"Suhu air 40 °C adalah dua kali lebih panas dibanding suhu air 20 °C\" merupakan kesalahan interpretasi skala matematis, sedangkan pernyataan \"Tegangan 40 Volt adalah dua kali lebih besar dari 20 Volt\" adalah pernyataan yang absah.",
       "stepByStepSolution": [
         "Langkah 1: Identifikasi skala pengukuran suhu Celsius: Skala Celsius adalah Skala Interval, dengan titik nol arbitrer (titik beku air murni pada 1 atm).",
-        "Langkah 2: Uji invariansi rasio pada Celsius: Konversikan ke Kelvin: 20 \u00b0C = 293.15 K; 40 \u00b0C = 313.15 K. Rasio energi termal sejati adalah 313.15 / 293.15 = 1.068 (hanya naik 6.8%, bukan naik 100%). Rasio matematis tidak invarian terhadap konversi satuan pada skala interval.",
+        "Langkah 2: Uji invariansi rasio pada Celsius: Konversikan ke Kelvin: 20 °C = 293.15 K; 40 °C = 313.15 K. Rasio energi termal sejati adalah 313.15 / 293.15 = 1.068 (hanya naik 6.8%, bukan naik 100%). Rasio matematis tidak invarian terhadap konversi satuan pada skala interval.",
         "Langkah 3: Identifikasi skala pengukuran tegangan listrik (Volt): Skala Volt adalah Skala Rasio dengan nol mutlak (0 V = beda potensial elektrostatik nol).",
         "Langkah 4: Uji invariansi rasio pada Volt: 40 V / 20 V = 2.0. Jika diubah ke milivolt: 40000 mV / 20000 mV = 2.0. Rasio terlestarikan sempurna di bawah transformasi skala apa pun."
       ],
@@ -216,99 +251,126 @@ export const CH09_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: 4 Skala Pengukuran Data: Nominal, Ordinal, Interval, da...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: 4 Skala Pengukuran Data: Nominal, Ordinal, Interval, dan Rasio",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.2.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.2.",
-          "Capaian: Memahami hierarki taksonomi 4 skala pengukuran data menurut teori S.S. Stevens (1946).",
-          "Capaian: Mengidentifikasi karakteristik nol mutlak (absolute zero) dan kesetaraan interval.",
-          "Capaian: Menentukan skala yang tepat untuk berbagai parameter fisis, algoritmis, dan kuesioner rekayasa."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami hierarki taksonomi 4 skala pengukuran data menurut teori S.S. Stevens (1946).",
+          "Capaian 2: Mengidentifikasi karakteristik nol mutlak (absolute zero) dan kesetaraan interval.",
+          "Capaian 3: Menentukan skala yang tepat untuk berbagai parameter fisis, algoritmis, dan kuesioner rekayasa."
         ],
-        "keyFormulaOrDiagram": "$$y = f(x), \\quad f \\text{ satu-ke-satu}$$"
+        "keyFormulaOrDiagram": "$$y = f(x), \\quad f \\text{ satu-ke-satu}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.2.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: 4 Skala Pengukuran Data: Nominal, Ordinal, Interval, da...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: 4 Skala Pengukuran Data: Nominal, Ordinal, Interval, dan Rasio",
+        "lead": "Pada tahun 1946, psikolog dan metrolog Stanley Smith Stevens menerbitkan karya monumental di majalah *Science* yang memformulasikan representasi pengukuran ke dalam empat skala hierarkis.",
         "bulletPoints": [
-          "Pada tahun 1946, psikolog dan metrolog Stanley Smith Stevens menerbitkan karya monumental di majalah *Science* yang memformul...",
-          "Empat skala pengukuran tersebut adalah: 1. Skala Nominal: Tingkat paling mendasar yang hanya berfungsi sebagai label atau ide...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Pemahaman atas skala pengukuran merupakan syarat mutlak dalam analisis data rekayasa, karena skala data secara ketat menentukan operasi matematika dan uji statistik mana yang absah (*permissible*) untuk digunakan.",
+          "Empat skala pengukuran tersebut adalah: 1.",
+          "Skala Nominal: Tingkat paling mendasar yang hanya berfungsi sebagai label atau identitas kategori kualitatif tanpa adanya urutan atau peringkat."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Pada tahun 1946, psikolog dan metrolog Stanley Smith Stevens menerbitkan karya monumental di majalah *Science* yang memformul...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 14,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Teori Pengukuran Representasional Stevens dinyatakan melalui grup transformasi invarian:",
         "bulletPoints": [
-          "Teori Pengukuran Representasional Stevens dinyatakan melalui grup transformasi invarian:",
           "1. Nominal: Invarian terhadap transformasi permutasi satu-ke-satu (Bijeksi):",
-          "2. Ordinal: Invarian terhadap transformasi monotonik naik tegas (*strictly increasing monotonic*):"
+          "2. Ordinal: Invarian terhadap transformasi monotonik naik tegas (*strictly increasing monotonic*):",
+          "3. Interval: Invarian terhadap transformasi afin positif linier (*positive linear / affine transformation*):"
         ],
-        "keyFormulaOrDiagram": "$$y = f(x), \\quad f \\text{ satu-ke-satu}$$"
+        "keyFormulaOrDiagram": "$$y = f(x), \\quad f \\text{ satu-ke-satu}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 15,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Jelaskan mengapa pernyataan \"Suhu air 40 \u00b0C adalah dua kali lebih panas dibanding suhu air 20 \u00b0C\" merupakan kesalahan interpretasi skala mat...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi skala pengukuran suhu Celsius: Skala Celsius adalah Skala Interval, dengan titik nol a...",
-          "Langkah 2: Uji invariansi rasio pada Celsius: Konversikan ke Kelvin: 20 \u00b0C = 293.15 K; 40 \u00b0C = 313.15 K. Rasio...",
-          "Langkah 3: Identifikasi skala pengukuran tegangan listrik (Volt): Skala Volt adalah Skala Rasio dengan nol mut...",
-          "Interpretasi: Operasi rasio atau perkalian hanya memiliki makna fisis pada data berskala rasio, dan dilarang diterapkan secara langsun..."
+          "Konteks Kasus: Jelaskan mengapa pernyataan \"Suhu air 40 °C adalah dua kali lebih panas dibanding suhu air 20 °C\" merupakan kesalahan interpretasi skala matematis, sedangkan pernyataan \"Tegangan 40 Volt adalah dua kali lebih besar dari 20 Volt\" adalah pernyataan yang absah.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Uji invariansi rasio pada Volt: 40 V / 20 V = 2.0. Jika diubah ke milivolt: 400..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi skala pengukuran suhu Celsius: Skala Celsius adalah Skala Interval, dengan titik nol arbitrer (titik beku air murni pada 1 atm).",
+          "Langkah 2: Uji invariansi rasio pada Celsius: Konversikan ke Kelvin: 20 °C = 293.15 K; 40 °C = 313.15 K. Rasio energi termal sejati adalah 313.15 / 293.15 = 1.068 (hanya naik 6.8%, bukan naik 100%). Rasio matematis tidak invarian terhadap konversi satuan pada skala interval."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Identifikasi skala pengukuran tegangan listrik (Volt): Skala Volt adalah Skala Rasio dengan nol mutlak (0 V = beda potensial elektrostatik nol).",
+          "Langkah 4: Uji invariansi rasio pada Volt: 40 V / 20 V = 2.0. Jika diubah ke milivolt: 40000 mV / 20000 mV = 2.0. Rasio terlestarikan sempurna di bawah transformasi skala apa pun.",
+          "[result: Interpretasi Ilmiah] Operasi rasio atau perkalian hanya memiliki makna fisis pada data berskala rasio, dan dilarang diterapkan secara langsung pada data berskala interval atau ordinal."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Verifikasi invariansi transformasi skala pada data Interval (Celsius ke Fahrenheit) vs Rasio (Meter ke Inci).",
         "bulletPoints": [
-          "Deskripsi: Verifikasi invariansi transformasi skala pada data Interval (Celsius ke Fahrenheit) vs Rasio (Meter ke Inci).",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: EVALUASI SKALA INTERVAL (Suhu):"
+          "Tujuan Algoritma: Verifikasi invariansi transformasi skala pada data Interval (Celsius ke Fahrenheit) vs Rasio (Meter ke Inci).",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: EVALUASI SKALA INTERVAL (Suhu):"
         ],
-        "keyFormulaOrDiagram": "EVALUASI SKALA INTERVAL (Suhu): | Rasio dalam Celsius : 40.0 / 20.0 = 2.000 | Rasio dalam..."
+        "keyFormulaOrDiagram": "EVALUASI SKALA INTERVAL (Suhu):\nRasio dalam Celsius    : 40.0 / 20.0 = 2.000\nRasio dalam Fahrenheit : 104.0 / 68.0 = 1.529\nApakah Rasio Terlestarikan? False (Operasi rasio TIDAK absah)\n",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghitung rata-rata aritmatika dan standar deviasi pada data skala ordinal seperti skor kuesioner Likert (1 s...",
-          "Perangkap: Mengasumsikan bahwa angka nol selalu berarti ketiadaan fisik (seperti pada derajat Celsius atau waktu kalender...",
-          "Perangkap: Mengkodekan data nominal menjadi angka (misal: Jawa=1, Sumatra=2, Bali=3) lalu memasukkannya ke dalam model re..."
-        ]
+          "[warning: Perangkap] Menghitung rata-rata aritmatika dan standar deviasi pada data skala ordinal seperti skor kuesioner Likert (1 sampai 5) tanpa justifikasi model laten.",
+          "[warning: Perangkap] Mengasumsikan bahwa angka nol selalu berarti ketiadaan fisik (seperti pada derajat Celsius atau waktu kalender masehi).",
+          "[warning: Perangkap] Mengkodekan data nominal menjadi angka (misal: Jawa=1, Sumatra=2, Bali=3) lalu memasukkannya ke dalam model regresi linier biasa seolah-olah memiliki urutan numerik."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan tabel periksa skala pengukuran Stevens sebelum menjalankan paket perangkat lunak statistik apa pun.",
           "Prosedur: Untuk data nominal berkategori ganda, lakukan one-hot encoding sebelum pemodelan komputasi."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Dalam pemantauan gempa bumi, Skala Richter dan Skala Modified Mercalli Intensity (MMI) termasuk ke dalam jenis skala pen...",
-          "Petunjuk: Perhatikan apakah Skala Richter didasarkan pada logaritma energi fisik terukur atau persepsi kerusak...",
-          "Solusi Kunci: Skala MMI adalah Skala Ordinal karena didasarkan pada tingkatan deskripsi kerusakan visual teramati dari I hingga XII ta..."
-        ]
+          "Pertanyaan Uji: Dalam pemantauan gempa bumi, Skala Richter dan Skala Modified Mercalli Intensity (MMI) termasuk ke dalam jenis skala pengukuran apa?",
+          "Petunjuk Analitis: Perhatikan apakah Skala Richter didasarkan pada logaritma energi fisik terukur atau persepsi kerusakan visual manusia.",
+          "Solusi Kunci: Skala MMI adalah Skala Ordinal karena didasarkan pada tingkatan deskripsi kerusakan visual teramati dari I hingga XII tanpa jarak interval fisik yang seragam. Skala Richter adalah Skala Interval logaritmik terhadap amplitudo gelombang seismik acuan, di mana setiap kenaikan 1 skala mencerminkan pelipatan amplitudo 10 kali lipat."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -371,99 +433,125 @@ export const CH09_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Operasi Matematika dan Statistik yang Absah untuk Setia...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Operasi Matematika dan Statistik yang Absah untuk Setiap Skala Data",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.2.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.3.",
-          "Capaian: Memetakan statistik deskriptif dan inferensial yang absah untuk masing-masing skala pengukuran Stevens.",
-          "Capaian: Memahami batas penerapan statistik parametrik versus non-parametrik.",
-          "Capaian: Mencegah kesalahan kalkulasi rata-rata pada skala data berperingkat."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memetakan statistik deskriptif dan inferensial yang absah untuk masing-masing skala pengukuran Stevens.",
+          "Capaian 2: Memahami batas penerapan statistik parametrik versus non-parametrik.",
+          "Capaian 3: Mencegah kesalahan kalkulasi rata-rata pada skala data berperingkat."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{P}: T(X) > T(Y)$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{P}: T(X) > T(Y)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.2.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Operasi Matematika dan Statistik yang Absah untuk Setia...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Operasi Matematika dan Statistik yang Absah untuk Setiap Skala Data",
+        "lead": "Perangkat lunak analisis statistik (seperti SPSS, R, atau pustaka Python Scipy) akan memproses angka apa pun yang dimasukkan oleh pengguna tanpa memperingatkan apakah operasi tersebut masuk akal secara metodologis.",
         "bulletPoints": [
-          "Perangkat lunak analisis statistik (seperti SPSS, R, atau pustaka Python Scipy) akan memproses angka apa pun yang dimasukkan...",
-          "Kaidah pemetaan operasi statistik yang absah (*permissible statistics*): 1. Data Nominal: - Operasi Matematika: Ekivalensi ($...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Jika peneliti memasukkan kode wilayah (1 untuk Lampung, 2 untuk Sumsel, 3 untuk Bengkulu) lalu memerintahkan komputer untuk menghitung rata-ratanya (misal keluar angka 2.1), komputer akan menghitungnya dengan patuh, namun angka 2.1 tersebut sama sekali tidak memiliki arti fisis.",
+          "Kaidah pemetaan operasi statistik yang absah (*permissible statistics*): 1.",
+          "Data Nominal: - Operasi Matematika: Ekivalensi ($=$ atau $\\neq$). - Ukuran Pemusatan: Modus (Mode)."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Perangkat lunak analisis statistik (seperti SPSS, R, atau pustaka Python Scipy) akan memproses angka apa pun yang dimasukkan...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 24,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Prinsip Kesahihan Statistik Stevens: Suatu fungsi statistik $T(X_1, X_2, \\dots, X_n)$ dikatakan bermakna (*meaningful*) di bawah skala pengukuran tertentu jika kebenaran proposisi empiris:",
         "bulletPoints": [
-          "Prinsip Kesahihan Statistik Stevens: Suatu fungsi statistik $T(X_1, X_2, \\dots, X_n)$ dikatakan bermakna (*mea...",
           "tetap invarian di bawah seluruh transformasi $f \\in \\mathcal{G}$ yang diizinkan untuk skala tersebut:",
-          "Untuk skala ordinal, transformasi monotonik $f(x) = x^3$ dapat mengubah urutan nilai rata-rata aritmatika (Mea..."
+          "Untuk skala ordinal, transformasi monotonik $f(x) = x^3$ dapat mengubah urutan nilai rata-rata aritmatika (Mean(X) > Mean(Y) bisa berubah menjadi Mean(f(X)) < Mean(f(Y))), membuktikan bahwa rata-rata aritmatika tidak bermakna pada data ordinal. Namun, urutan median selalu terlestarikan: $\\text{Med}(f(X)) = f(\\text{Med}(X))$."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{P}: T(X) > T(Y)$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{P}: T(X) > T(Y)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 25,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan dua kelompok responden penguji aplikasi antarmuka robotik: Kelompok A memberikan skor kepuasan ordinal [1, 2, 5], Kelompok B membe...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Hitung pada data asli: Mean(A) = (1+2+5)/3 = 2.67; Mean(B) = (2+3+3)/3 = 2.67 (Rata-rata sama). Med...",
-          "Langkah 2: Terapkan transformasi monotonik sah skala ordinal f(x) = x^3: Kelompok A baru: [1, 8, 125]; Kelompo...",
-          "Langkah 3: Hitung pada data hasil transformasi: Mean(A_baru) = (1+8+125)/3 = 44.67; Mean(B_baru) = (8+27+27)/3...",
-          "Interpretasi: Eksperimen ini membuktikan secara matematis mengapa penggunaan rata-rata aritmatika pada data ordinal menghasilkan kesim..."
+          "Konteks Kasus: Diberikan dua kelompok responden penguji aplikasi antarmuka robotik: Kelompok A memberikan skor kepuasan ordinal [1, 2, 5], Kelompok B memberikan skor [2, 3, 3]. Hitung rata-rata aritmatika dan median masing-masing kelompok. Terapkan transformasi monotonik f(x) = x^3 pada data ordinal tersebut dan periksa apakah kesimpulan komparasi kedua kelompok tetap konsisten.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung median data baru: Median(A_baru) = 8; Median(B_baru) = 27. Median(B) tet..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 26,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Hitung pada data asli: Mean(A) = (1+2+5)/3 = 2.67; Mean(B) = (2+3+3)/3 = 2.67 (Rata-rata sama). Median(A) = 2; Median(B) = 3 (Kelompok B lebih tinggi).",
+          "Langkah 2: Terapkan transformasi monotonik sah skala ordinal f(x) = x^3: Kelompok A baru: [1, 8, 125]; Kelompok B baru: [8, 27, 27]."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung pada data hasil transformasi: Mean(A_baru) = (1+8+125)/3 = 44.67; Mean(B_baru) = (8+27+27)/3 = 20.67. Sekarang Mean(A) jauh lebih tinggi dibanding Mean(B)!",
+          "Langkah 4: Hitung median data baru: Median(A_baru) = 8; Median(B_baru) = 27. Median(B) tetap konsisten lebih tinggi dibanding Median(A).",
+          "[result: Interpretasi Ilmiah] Eksperimen ini membuktikan secara matematis mengapa penggunaan rata-rata aritmatika pada data ordinal menghasilkan kesimpulan yang tidak stabil dan menyesatkan. Peneliti wajib menggunakan median atau uji non-parametrik."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 28,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Demonstrasi keruntuhan konsistensi rata-rata versus stabilitas median pada data skala ordinal.",
         "bulletPoints": [
-          "Deskripsi: Demonstrasi keruntuhan konsistensi rata-rata versus stabilitas median pada data skala ordinal.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: SEBELUM TRANSFORMASI:"
+          "Tujuan Algoritma: Demonstrasi keruntuhan konsistensi rata-rata versus stabilitas median pada data skala ordinal.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: SEBELUM TRANSFORMASI:"
         ],
-        "keyFormulaOrDiagram": "SEBELUM TRANSFORMASI: | Mean A: 2.67 | Mean B: 2.67 -> Sama | Med A : 2.00 | Med B : 3.00..."
+        "keyFormulaOrDiagram": "SEBELUM TRANSFORMASI:\nMean A: 2.67 | Mean B: 2.67 -> Sama\nMed A : 2.00 | Med B : 3.00 -> B lebih tinggi\n\nSETELAH TRANSFORMASI MONOTONIK f(x) = x^3:",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 29,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menjalankan uji-t Student independen atau ANOVA pada data kuesioner berskala Likert 1-5 tanpa menguji normalit...",
-          "Perangkap: Menyajikan standar deviasi pada data yang berdistribusi sangat menceng (skewed) atau data berkategori ordinal.",
-          "Perangkap: Mengalikan data skala interval (seperti suhu Celsius) dengan konstanta pembagi tanpa mengonversi terlebih dahu..."
-        ]
+          "[warning: Perangkap] Menjalankan uji-t Student independen atau ANOVA pada data kuesioner berskala Likert 1-5 tanpa menguji normalitas dan tanpa asumsi model respon butir (Item Response Theory).",
+          "[warning: Perangkap] Menyajikan standar deviasi pada data yang berdistribusi sangat menceng (skewed) atau data berkategori ordinal.",
+          "[warning: Perangkap] Mengalikan data skala interval (seperti suhu Celsius) dengan konstanta pembagi tanpa mengonversi terlebih dahulu ke skala rasio mutlak."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 30,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan uji normalitas Shapiro-Wilk: jika asumsi distribusi Gaussian dilanggar pada data interval/rasio, alihk...",
+          "Prosedur: Gunakan uji normalitas Shapiro-Wilk: jika asumsi distribusi Gaussian dilanggar pada data interval/rasio, alihkan analisis ke uji non-parametrik yang tangguh.",
           "Prosedur: Sajikan nilai Median bersama Interquartile Range (IQR) saat melaporkan data berskala ordinal."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 31,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Metode uji hipotesis non-parametrik manakah yang merupakan padanan dari uji-t dua sampel independen untuk data berskala...",
-          "Petunjuk: Uji ini membandingkan peringkat (ranks) dari kedua kelompok pengamatan.",
-          "Solusi Kunci: Padanan non-parametrik untuk uji-t sampel independen adalah Uji Mann-Whitney U (atau Wilcoxon Rank-Sum Test). Uji ini be..."
-        ]
+          "Pertanyaan Uji: Metode uji hipotesis non-parametrik manakah yang merupakan padanan dari uji-t dua sampel independen untuk data berskala ordinal?",
+          "Petunjuk Analitis: Uji ini membandingkan peringkat (ranks) dari kedua kelompok pengamatan.",
+          "Solusi Kunci: Padanan non-parametrik untuk uji-t sampel independen adalah Uji Mann-Whitney U (atau Wilcoxon Rank-Sum Test). Uji ini bekerja dengan mengurutkan seluruh gabungan data menjadi ranking ordinal tanpa bergantung pada asumsi normalitas distribusi populasi atau kesetaraan jarak interval."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -526,100 +614,134 @@ export const CH09_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Penanganan Variabel Laten melalui Indikator Pengukuran...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Penanganan Variabel Laten melalui Indikator Pengukuran Teramati",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.2.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.4.",
-          "Capaian: Memahami definisi variabel laten (unobservable/latent variables) dalam konteks sistem rekayasa.",
-          "Capaian: Membangun model pengukuran refleksif versus formatif.",
-          "Capaian: Mereduksi dimensi indikator teramati menggunakan analisis faktor konfirmatori (CFA)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.2.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami definisi variabel laten (unobservable/latent variables) dalam konteks sistem rekayasa.",
+          "Capaian 2: Membangun model pengukuran refleksif versus formatif.",
+          "Capaian 3: Mereduksi dimensi indikator teramati menggunakan analisis faktor konfirmatori (CFA)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{x} = \\boldsymbol{\\Lambda}_x \\boldsymbol{\\xi} + \\boldsymbol{\\delta}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{x} = \\boldsymbol{\\Lambda}_x \\boldsymbol{\\xi} + \\boldsymbol{\\delta}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.2.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Penanganan Variabel Laten melalui Indikator Pengukuran...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Penanganan Variabel Laten melalui Indikator Pengukuran Teramati",
+        "lead": "Dalam riset ilmiah rekayasa, tidak semua konsep penting dapat diukur secara langsung oleh sebuah sensor tunggal.",
         "bulletPoints": [
-          "Dalam riset ilmiah rekayasa, tidak semua konsep penting dapat diukur secara langsung oleh sebuah sensor tunggal. Variabel sep...",
-          "Untuk mengukur variabel laten, peneliti harus menghubungkannya dengan serangkaian Indikator Pengukuran Teramati (*manifest/ob...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Variabel seperti \"kesehatan struktural jembatan (structural health)\", \"kenyamanan berkendara kendaraan listrik (ride comfort)\", \"kualitas daya listrik (power quality)\", atau \"beban kognitif operator reaktor nuklir (mental workload)\" adalah konstruksi teoretis abstrak yang bersifat tidak teramati secara langsung (*latent variables*).",
+          "Untuk mengukur variabel laten, peneliti harus menghubungkannya dengan serangkaian Indikator Pengukuran Teramati (*manifest/observed indicators*) melalui dua model pengukuran: 1.",
+          "Model Pengukuran Refleksif: Variabel laten dipandang sebagai akar penyebab yang mendasari variasi pada indikator teramati."
         ],
-        "keyFormulaOrDiagram": "Dengan memanfaatkan teknik Structural Equation Modeling (SEM) dan Confirmatory Factor Anal..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dengan memanfaatkan teknik Structural Equation Modeling (SEM) dan Confirmatory Factor Analysis (CFA), peneliti dapat mengeval...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Dengan memanfaatkan teknik Structural Equation Modeling (SEM) dan Confirmatory Factor Analysis (CFA), peneliti dapat mengevaluasi seberapa akurat kombinasi sensor teramati mampu merefleksikan keadaan variabel laten sejati.",
+        "bulletPoints": [],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Pengukuran Refleksif Klasik (Factor Analytic Measurement Model):",
         "bulletPoints": [
-          "Model Pengukuran Refleksif Klasik (Factor Analytic Measurement Model):",
           "Di mana:",
-          "- $\\mathbf{x} \\in \\mathbb{R}^p$ adalah vektor indikator teramati ($p$ buah pembacaan sensor)."
+          "- $\\mathbf{x} \\in \\mathbb{R}^p$ adalah vektor indikator teramati ($p$ buah pembacaan sensor).",
+          "- $\\boldsymbol{\\xi} \\in \\mathbb{R}^m$ adalah vektor variabel laten ($m \\ll p$)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{x} = \\boldsymbol{\\Lambda}_x \\boldsymbol{\\xi} + \\boldsymbol{\\delta}$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{x} = \\boldsymbol{\\Lambda}_x \\boldsymbol{\\xi} + \\boldsymbol{\\delta}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Variabel laten \"Kualitas Daya Listrik (Power Quality)\" diukur melalui 3 indikator sensorik terstandarisasi: x1 = Deviasi Frekuensi (Hz), x2...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Variabel laten \"Kualitas Daya Listrik (Power Quality)\" diukur melalui 3 indikator sensorik terstandarisasi: x1 = Deviasi Frekuensi (Hz), x2 = Total Harmonic Distortion (THD %), dan x3 = Voltage Sag Duration (ms). Matriks loading faktor ternormalisasi yang terestimasi adalah lambda = [0.85, 0.90, 0.78]. Hitung varians ekstrak rata-rata (Average Variance Extracted / AVE) untuk membuktikan apakah indikator-indikator tersebut memiliki validitas konvergen yang memadai (ambang batas standar AVE > 0.50).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Kuadratkan masing-masing bobot loading faktor: lambda_1^2 = 0.85^2 = 0.7225; lambda_2^2 = 0.90^2 =...",
-          "Langkah 2: Jumlahkan kuadrat loading faktor: 0.7225 + 0.8100 + 0.6084 = 2.1409.",
+          "Langkah 1: Kuadratkan masing-masing bobot loading faktor: lambda_1^2 = 0.85^2 = 0.7225; lambda_2^2 = 0.90^2 = 0.8100; lambda_3^2 = 0.78^2 = 0.6084.",
+          "Langkah 2: Jumlahkan kuadrat loading faktor: 0.7225 + 0.8100 + 0.6084 = 2.1409."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Hitung nilai AVE: AVE = (Jumlah lambda_i^2) / K = 2.1409 / 3 = 0.7136 (71.4%).",
-          "Interpretasi: Model pengukuran memiliki validitas konvergen yang sangat kuat. Lebih dari 71% variansi ketiga sensor tersebut berhasil..."
+          "Langkah 4: Evaluasi terhadap ambang batas: Nilai AVE sebesar 0.714 jauh melampaui kriteria minimum 0.50.",
+          "[result: Interpretasi Ilmiah] Model pengukuran memiliki validitas konvergen yang sangat kuat. Lebih dari 71% variansi ketiga sensor tersebut berhasil merefleksikan keadaan laten Kualitas Daya Listrik."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi terhadap ambang batas: Nilai AVE sebesar 0.714 jauh melampaui kriteria..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Ekstraksi skor variabel laten menggunakan Analisis Komponen Utama (PCA) sebagai aproksimasi faktor pertama.",
         "bulletPoints": [
-          "Deskripsi: Ekstraksi skor variabel laten menggunakan Analisis Komponen Utama (PCA) sebagai aproksimasi faktor pertama.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Proporsi Varians Terjelaskan Komponen 1: 89.2%"
+          "Tujuan Algoritma: Ekstraksi skor variabel laten menggunakan Analisis Komponen Utama (PCA) sebagai aproksimasi faktor pertama.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Proporsi Varians Terjelaskan Komponen 1: 89.2%"
         ],
-        "keyFormulaOrDiagram": "Proporsi Varians Terjelaskan Komponen 1: 89.2% | Korelasi Estimasi PCA dengan Laten Sejati..."
+        "keyFormulaOrDiagram": "Proporsi Varians Terjelaskan Komponen 1: 89.2%\nKorelasi Estimasi PCA dengan Laten Sejati: 0.9818\nKesimpulan: Gabungan 3 sensor teramati berhasil merekonstruksi variabel laten dengan fidelitas tinggi.",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Memperlakukan satu indikator tunggal yang bising seolah-olah indikator tersebut adalah variabel laten itu send...",
-          "Perangkap: Mencampuradukkan indikator formatif dengan indikator refleksif dalam satu model pengukuran tanpa analisis spes...",
-          "Perangkap: Mengabaikan korelasi galat antar-sensor yang dipasang pada papan sirkuit fisik yang sama."
-        ]
+          "[warning: Perangkap] Memperlakukan satu indikator tunggal yang bising seolah-olah indikator tersebut adalah variabel laten itu sendiri.",
+          "[warning: Perangkap] Mencampuradukkan indikator formatif dengan indikator refleksif dalam satu model pengukuran tanpa analisis spesifikasi struktur.",
+          "[warning: Perangkap] Mengabaikan korelasi galat antar-sensor yang dipasang pada papan sirkuit fisik yang sama."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Evaluasi Average Variance Extracted (AVE > 0.50) dan Composite Reliability (CR > 0.70) untuk mengonfirmasi val...",
+          "Prosedur: Evaluasi Average Variance Extracted (AVE > 0.50) dan Composite Reliability (CR > 0.70) untuk mengonfirmasi validitas model pengukuran.",
           "Prosedur: Lakukan uji Fornell-Larcker untuk memastikan validitas diskriminan antar-variabel laten yang berbeda."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 42,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Dalam pemantauan struktur jembatan gantung, apakah sensor regangan (strain gauge) dan sensor perpindahan (displacement s...",
-          "Petunjuk: Apakah kerusakan struktur yang terjadi menyebabkan perubahan regangan, ataukah regangan yang menyeba...",
-          "Solusi Kunci: Jika kerusakan struktural (laten) memicu deformasi fisis yang kemudian terdeteksi sebagai lonjakan regangan dan perpinda..."
-        ]
+          "Pertanyaan Uji: Dalam pemantauan struktur jembatan gantung, apakah sensor regangan (strain gauge) dan sensor perpindahan (displacement sensor) merupakan indikator refleksif atau formatif dari \"Kesehatan Struktural\"?",
+          "Petunjuk Analitis: Apakah kerusakan struktur yang terjadi menyebabkan perubahan regangan, ataukah regangan yang menyebabkan kerusakan struktur?",
+          "Solusi Kunci: Jika kerusakan struktural (laten) memicu deformasi fisis yang kemudian terdeteksi sebagai lonjakan regangan dan perpindahan oleh sensor, maka model tersebut adalah model Refleksif. Perubahan pada kondisi laten menyebabkan perubahan serentak pada pembacaan indikator sensor."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

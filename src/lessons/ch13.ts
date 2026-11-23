@@ -61,98 +61,125 @@ export const CH13_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Desain Eksperimen Murni: Pretest-Posttest Control Group...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Desain Eksperimen Murni: Pretest-Posttest Control Group & Solomon Four-Group",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.6.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.1.",
-          "Capaian: Memahami arsitektur dan pemodelan matematis desain eksperimen murni.",
-          "Capaian: Menganalisis interaksi efek pretest terhadap perlakuan menggunakan desain Solomon Four-Group.",
-          "Capaian: Mengisolasi efek kausal murni dari perancu temporal pada pengujian laboratorium rekayasa."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami arsitektur dan pemodelan matematis desain eksperimen murni.",
+          "Capaian 2: Menganalisis interaksi efek pretest terhadap perlakuan menggunakan desain Solomon Four-Group.",
+          "Capaian 3: Mengisolasi efek kausal murni dari perancu temporal pada pengujian laboratorium rekayasa."
         ],
-        "keyFormulaOrDiagram": "$$\\begin{matrix}\n\\text{Grup 1:} & R & O_1 & X & O_2 \\\\\n\\text{Grup 2:} & R & O_3 &   & O_4 \\\\\n\\text{Grup 3:} & R &     & X & O_5 \\\\\n\\text{Grup 4:} & R &     &   & O_6\n\\end{matrix}$$"
+        "keyFormulaOrDiagram": "$$\\begin{matrix}\n\\text{Grup 1:} & R & O_1 & X & O_2 \\\\\n\\text{Grup 2:} & R & O_3 &   & O_4 \\\\\n\\text{Grup 3:} & R &     & X & O_5 \\\\\n\\text{Grup 4:} & R &     &   & O_6\n\\end{matrix}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.6.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Desain Eksperimen Murni: Pretest-Posttest Control Group...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Desain Eksperimen Murni: Pretest-Posttest Control Group & Solomon Four-Group",
+        "lead": "Desain eksperimen murni (*true experimental design*) adalah arsitektur penelitian yang memegang kendali penuh atas alokasi acak unit eksperimen (*random assignment*) dan manipulasi aktif variabel perlakuan.",
         "bulletPoints": [
-          "Desain eksperimen murni (*true experimental design*) adalah arsitektur penelitian yang memegang kendali penuh atas alokasi ac...",
-          "Dua arsitektur eksperimen murni yang paling penting: 1. Desain Pretest-Posttest Control Group: Unit uji dialokasikan secara a...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Dengan memadukan kelompok kontrol paralel dan randomisasi murni, desain ini secara teoretis mengeliminasi sebagian besar ancaman validitas internal (seperti seleksi, maturasi, dan regresi menuju rata-rata).",
+          "Dua arsitektur eksperimen murni yang paling penting: 1.",
+          "Desain Pretest-Posttest Control Group: Unit uji dialokasikan secara acak (R) ke dalam dua kelompok: Kelompok Perlakuan (menerima pretest, intervensi X, dan posttest) dan Kelompok Kontrol (menerima pretest dan posttest tanpa intervensi X)."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "derivation",
+        "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Notasi Desain Solomon Four-Group:",
         "bulletPoints": [
-          "Desain eksperimen murni (*true experimental design*) adalah arsitektur penelitian yang memegang kendali penuh atas alokasi ac...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "2. Model ANOVA Faktorial 2x2 Posttest Solomon:",
+          "Variabel Faktor A: Perlakuan Intervensi (Diberi $X$ vs Tanpa $X$)",
+          "Variabel Faktor B: Pemberian Pretest (Ada Pretest vs Tanpa Pretest)"
+        ],
+        "keyFormulaOrDiagram": "$$\\begin{matrix}\n\\text{Grup 1:} & R & O_1 & X & O_2 \\\\\n\\text{Grup 2:} & R & O_3 &   & O_4 \\\\\n\\text{Grup 3:} & R &     & X & O_5 \\\\\n\\text{Grup 4:} & R &     &   & O_6\n\\end{matrix}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 4,
-        "title": "Formulasi Matematis & Notasi Formal",
+        "layout": "example",
+        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "1. Notasi Desain Solomon Four-Group:",
-          "\\text{Grup 1:} & R & O_1 & X & O_2 \\\\",
-          "\\text{Grup 2:} & R & O_3 & & O_4 \\\\"
+          "Konteks Kasus: Pada pengujian bahan isolator polimer terhadap paparan lucutan korona (X), dilakukan eksperimen desain Solomon Four-Group dengan mengukur arus bocor pasca-uji (micro-Ampere). Hasil rata-rata posttest: Grup 1 (Pretest + X): O2 = 18.5 uA; Grup 2 (Pretest, Kontrol): O4 = 8.2 uA; Grup 3 (Tanpa Pretest + X): O5 = 14.1 uA; Grup 4 (Tanpa Pretest, Kontrol): O6 = 8.0 uA. Hitung apakah terdapat efek interaksi sensitisasi pretest terhadap perlakuan.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "$$\\begin{matrix}\n\\text{Grup 1:} & R & O_1 & X & O_2 \\\\\n\\text{Grup 2:} & R & O_3 &   & O_4 \\\\\n\\text{Grup 3:} & R &     & X & O_5 \\\\\n\\text{Grup 4:} & R &     &   & O_6\n\\end{matrix}$$"
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 5,
-        "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian bahan isolator polimer terhadap paparan lucutan korona (X), dilakukan eksperimen desain Solomon Four-Group dengan mengukur ar...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Langkah 1: Hitung efek perlakuan pada kelompok ber-pretest: Efek_pre = O2 - O4 = 18.5 - 8.2 = +10.3 uA.",
+          "Langkah 2: Hitung efek perlakuan pada kelompok tanpa pretest: Efek_nopre = O5 - O6 = 14.1 - 8.0 = +6.1 uA."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Langkah 1: Hitung efek perlakuan pada kelompok ber-pretest: Efek_pre = O2 - O4 = 18.5 - 8.2 = +10.3 uA.",
-          "Langkah 2: Hitung efek perlakuan pada kelompok tanpa pretest: Efek_nopre = O5 - O6 = 14.1 - 8.0 = +6.1 uA.",
-          "Langkah 3: Hitung selisih efek (interaksi pretest-perlakuan): Efek_interaksi = (10.3 - 6.1) / 2 = 4.2 / 2 = +2...",
-          "Interpretasi: Terdapat efek sensitisasi pretest yang signifikan (+2.1 uA). Prosedur pengukuran pretest awal ternyata merusak sebagian..."
+          "Langkah 3: Hitung selisih efek (interaksi pretest-perlakuan): Efek_interaksi = (10.3 - 6.1) / 2 = 4.2 / 2 = +2.1 uA.",
+          "Langkah 4: Analisis temuan: Kelompok yang mengalami pretest menunjukkan kenaikan arus bocor yang jauh lebih tinggi (+10.3 uA vs +6.1 uA).",
+          "[result: Interpretasi Ilmiah] Terdapat efek sensitisasi pretest yang signifikan (+2.1 uA). Prosedur pengukuran pretest awal ternyata merusak sebagian ikatan mikro permukaan polimer, sehingga membuat material menjadi lebih rentan terhadap perlakuan korona berikutnya."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Analisis temuan: Kelompok yang mengalami pretest menunjukkan kenaikan arus boco..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 7,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Dekomposisi efek utama perlakuan dan interaksi pretest pada desain Solomon Four-Group.",
         "bulletPoints": [
-          "Deskripsi: Dekomposisi efek utama perlakuan dan interaksi pretest pada desain Solomon Four-Group.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Efek Bersih Perlakuan X (Treatment Effect) : +8.20 uA"
+          "Tujuan Algoritma: Dekomposisi efek utama perlakuan dan interaksi pretest pada desain Solomon Four-Group.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Efek Bersih Perlakuan X (Treatment Effect) : +8.20 uA"
         ],
-        "keyFormulaOrDiagram": "Efek Bersih Perlakuan X (Treatment Effect) : +8.20 uA | Efek Utama Pretest (Pretest Main E..."
+        "keyFormulaOrDiagram": "Efek Bersih Perlakuan X (Treatment Effect) : +8.20 uA\nEfek Utama Pretest (Pretest Main Effect)    : +2.30 uA\nEfek Interaksi Sensitisasi Pretest          : +2.10 uA\nKesimpulan Metodologis: Terjadi sensitisasi pretest! Analisis hanya valid jika menggunakan kelompok tanpa pretest (O5 vs O6).",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 8,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengabaikan efek sensitisasi instrumen atau benda uji akibat prosedur pengukuran pretest yang invasif.",
-          "Perangkap: Melakukan alokasi unit uji ke kelompok perlakuan dan kontrol berdasarkan urutan kedatangan komponen (bukan ran...",
-          "Perangkap: Mengabaikan data yang hilang (drop-out/attrition) yang tidak seimbang antara kelompok perlakuan dan kelompok k..."
-        ]
+          "[warning: Perangkap] Mengabaikan efek sensitisasi instrumen atau benda uji akibat prosedur pengukuran pretest yang invasif.",
+          "[warning: Perangkap] Melakukan alokasi unit uji ke kelompok perlakuan dan kontrol berdasarkan urutan kedatangan komponen (bukan randomisasi sejati).",
+          "[warning: Perangkap] Mengabaikan data yang hilang (drop-out/attrition) yang tidak seimbang antara kelompok perlakuan dan kelompok kontrol."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 9,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Verifikasi homogenitas varians awal (uji Levene) pada data pretest antara kelompok perlakuan dan kontrol.",
           "Prosedur: Gunakan pembangkit bilangan acak kriptografis terverifikasi untuk alokasi unit eksperimen."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
         "slideNumber": 10,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Kapan seorang peneliti wajib mempertimbangkan penggunaan Desain Solomon Four-Group dibanding Pretest-Posttest Control Gr...",
-          "Petunjuk: Perhatikan apakah proses pengukuran awal (pretest) berpotensi merusak, mendegradasi, atau mengubah s...",
-          "Solusi Kunci: Desain Solomon Four-Group wajib dipertimbangkan ketika prosedur pengukuran pretest bersifat invasif, destruktif, atau me..."
-        ]
+          "Pertanyaan Uji: Kapan seorang peneliti wajib mempertimbangkan penggunaan Desain Solomon Four-Group dibanding Pretest-Posttest Control Group biasa?",
+          "Petunjuk Analitis: Perhatikan apakah proses pengukuran awal (pretest) berpotensi merusak, mendegradasi, atau mengubah sifat benda uji.",
+          "Solusi Kunci: Desain Solomon Four-Group wajib dipertimbangkan ketika prosedur pengukuran pretest bersifat invasif, destruktif, atau memberikan paparan termal/listrik awal yang dapat mengubah sensitivitas sistem terhadap perlakuan eksperimen yang sesungguhnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -215,99 +242,126 @@ export const CH13_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Desain Quasi-Eksperimen: Non-Equivalent Control Group &...",
+        "slideNumber": 11,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Desain Quasi-Eksperimen: Non-Equivalent Control Group & Interrupted Time-Series",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.6.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.2.",
-          "Capaian: Menerapkan desain quasi-eksperimen saat pengacakan murni (randomization) tidak memungkinkan secara etis atau f...",
-          "Capaian: Merancang analisis regresi tersegmen (*segmented regression*) untuk Interrupted Time-Series (ITS).",
-          "Capaian: Memitigasi bias pemilihan kelompok pada Non-Equivalent Control Group Design."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan desain quasi-eksperimen saat pengacakan murni (randomization) tidak memungkinkan secara etis atau fisik.",
+          "Capaian 2: Merancang analisis regresi tersegmen (*segmented regression*) untuk Interrupted Time-Series (ITS).",
+          "Capaian 3: Memitigasi bias pemilihan kelompok pada Non-Equivalent Control Group Design."
         ],
-        "keyFormulaOrDiagram": "$$Y_t = \\beta_0 + \\beta_1 T_t + \\beta_2 D_t + \\beta_3 P_t + \\epsilon_t$$"
+        "keyFormulaOrDiagram": "$$Y_t = \\beta_0 + \\beta_1 T_t + \\beta_2 D_t + \\beta_3 P_t + \\epsilon_t$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.6.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Desain Quasi-Eksperimen: Non-Equivalent Control Group &...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Desain Quasi-Eksperimen: Non-Equivalent Control Group & Interrupted Time-Series",
+        "lead": "Dalam situasi dunia nyata rekayasa (seperti mengevaluasi pembaruan perangkat lunak pada pembangkit listrik tenaga bayu yang sedang beroperasi penuh atau memodifikasi algoritma routing jaringan telekomunikasi kota), randomisasi murni tidak dapat diterapkan.",
         "bulletPoints": [
-          "Dalam situasi dunia nyata rekayasa (seperti mengevaluasi pembaruan perangkat lunak pada pembangkit listrik tenaga bayu yang s...",
-          "Dalam skenario ini, peneliti menggunakan Desain Quasi-Eksperimen yang tangguh: 1. Non-Equivalent Control Group Design: Memban...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Menghentikan operasi separuh turbin atau membagi paket data secara acak dapat melanggar regulasi keselamatan atau memicu kerugian finansial yang masif.",
+          "Dalam skenario ini, peneliti menggunakan Desain Quasi-Eksperimen yang tangguh: 1.",
+          "Non-Equivalent Control Group Design: Membandingkan kelompok yang menerima perlakuan dengan kelompok pembanding alami yang tidak menerima perlakuan, di mana kedua kelompok tidak dibentuk melalui randomisasi."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dalam situasi dunia nyata rekayasa (seperti mengevaluasi pembaruan perangkat lunak pada pembangkit listrik tenaga bayu yang s...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 13,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Model Regresi Tersegmen Linier Interrupted Time-Series (ITS):",
         "bulletPoints": [
-          "Model Regresi Tersegmen Linier Interrupted Time-Series (ITS):",
           "Di mana:",
-          "- $Y_t$ adalah variabel respons pada titik waktu $t$."
+          "- $Y_t$ adalah variabel respons pada titik waktu $t$.",
+          "- $T_t$ adalah variabel waktu kontinu sejak awal penelitian ($T_t = 1, 2, \\dots, n$)."
         ],
-        "keyFormulaOrDiagram": "$$Y_t = \\beta_0 + \\beta_1 T_t + \\beta_2 D_t + \\beta_3 P_t + \\epsilon_t$$"
+        "keyFormulaOrDiagram": "$$Y_t = \\beta_0 + \\beta_1 T_t + \\beta_2 D_t + \\beta_3 P_t + \\epsilon_t$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 14,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah algoritma kendali daya reaktif baru diuji pada jaringan microgrid selama 24 jam (pencatatan per jam, n=24 titik). Intervensi diterapk...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah algoritma kendali daya reaktif baru diuji pada jaringan microgrid selama 24 jam (pencatatan per jam, n=24 titik). Intervensi diterapkan pada jam ke-12. Model regresi ITS menghasilkan estimasi: beta_0 = 100.0 kW, beta_1 = +0.5 kW/jam (tren kenaikan rugi-rugi dasar), beta_2 = -8.0 kW (penurunan seketika pasca-algoritma aktif), dan beta_3 = -0.8 kW/jam (perubahan kemiringan tren). Prediksikan rugi-rugi daya pada jam ke-20 dan bandingkan dengan kondisi counterfactual (jika algoritma baru tidak pernah diterapkan).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 15,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Identifikasi nilai variabel pada t = 20 jam (pasca-intervensi): T = 20, D = 1, P = 20 - 12 = 8 jam.",
-          "Langkah 2: Hitung rugi-rugi daya riil dengan intervensi: Y_20 = 100.0 + 0.5*(20) + (-8.0)*(1) + (-0.8)*(8) = 1...",
-          "Langkah 3: Hitung kondisi counterfactual (tanpa algoritma baru: D = 0, P = 0): Y_cf_20 = 100.0 + 0.5*(20) = 11...",
-          "Interpretasi: Penerapan algoritma menghasilkan penurunan rugi-rugi daya total sebesar 14.4 kW pada jam ke-20, yang terdiri dari 8.0 kW..."
+          "Langkah 2: Hitung rugi-rugi daya riil dengan intervensi: Y_20 = 100.0 + 0.5*(20) + (-8.0)*(1) + (-0.8)*(8) = 100.0 + 10.0 - 8.0 - 6.4 = 95.6 kW."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung penghematan daya bersih: Penghematan = Y_cf_20 - Y_20 = 110.0 kW - 95.6..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 16,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Hitung kondisi counterfactual (tanpa algoritma baru: D = 0, P = 0): Y_cf_20 = 100.0 + 0.5*(20) = 110.0 kW.",
+          "Langkah 4: Hitung penghematan daya bersih: Penghematan = Y_cf_20 - Y_20 = 110.0 kW - 95.6 kW = 14.4 kW.",
+          "[result: Interpretasi Ilmiah] Penerapan algoritma menghasilkan penurunan rugi-rugi daya total sebesar 14.4 kW pada jam ke-20, yang terdiri dari 8.0 kW penurunan drop seketika dan 6.4 kW akumulasi perubahan tren jangka panjang."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 17,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi dan visualisasi analisis regresi tersegmen Interrupted Time-Series (ITS).",
         "bulletPoints": [
-          "Deskripsi: Simulasi dan visualisasi analisis regresi tersegmen Interrupted Time-Series (ITS).",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Hasil Analisis Runtun Waktu Terinterupsi (ITS):"
+          "Tujuan Algoritma: Simulasi dan visualisasi analisis regresi tersegmen Interrupted Time-Series (ITS).",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Hasil Analisis Runtun Waktu Terinterupsi (ITS):"
         ],
-        "keyFormulaOrDiagram": "Hasil Analisis Runtun Waktu Terinterupsi (ITS): | Titik Intervensi : Jam ke-12 | Rugi Daya..."
+        "keyFormulaOrDiagram": "Hasil Analisis Runtun Waktu Terinterupsi (ITS):\nTitik Intervensi                : Jam ke-12\nRugi Daya Sebelum Intervensi (t=12) : 105.73 kW\nRugi Daya Sesaat Pasca Uji (t=13)   : 98.41 kW\nRugi Daya Akhir Riil (t=24)         : 92.29 kW",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 18,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Mengabaikan autokorelasi serial galat pada model regresi ITS yang menyebabkan p-value menjadi terlalu optimis...",
-          "Perangkap: Memiliki titik pengamatan pretest dan posttest yang terlalu sedikit (disarankan minimal 10-12 titik per segmen...",
-          "Perangkap: Mengabaikan peristiwa sejarah lain yang terjadi tepat bersamaan dengan titik intervensi."
-        ]
+          "[warning: Perangkap] Mengabaikan autokorelasi serial galat pada model regresi ITS yang menyebabkan p-value menjadi terlalu optimis semu.",
+          "[warning: Perangkap] Memiliki titik pengamatan pretest dan posttest yang terlalu sedikit (disarankan minimal 10-12 titik per segmen).",
+          "[warning: Perangkap] Mengabaikan peristiwa sejarah lain yang terjadi tepat bersamaan dengan titik intervensi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 19,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Lakukan uji Durbin-Watson untuk memeriksa keberadaan autokorelasi pada residual regresi.",
-          "Prosedur: Gunakan kelompok kontrol runtun waktu paralel (Controlled Interrupted Time-Series) untuk mengeliminasi faktor..."
-        ]
+          "Prosedur: Gunakan kelompok kontrol runtun waktu paralel (Controlled Interrupted Time-Series) untuk mengeliminasi faktor perancu peristiwa luar bersamaan."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 20,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa desain Interrupted Time-Series (ITS) jauh lebih kuat dibandingkan desain satu kelompok pretest-posttest sederhan...",
-          "Petunjuk: Perhatikan kemampuan ITS mendeteksi apakah respons memang sudah memiliki tren naik atau turun sebelu...",
-          "Solusi Kunci: Desain satu kelompok pretest-posttest sederhana tidak mampu membedakan apakah perubahan skor disebabkan oleh perlakuan X..."
-        ]
+          "Pertanyaan Uji: Mengapa desain Interrupted Time-Series (ITS) jauh lebih kuat dibandingkan desain satu kelompok pretest-posttest sederhana (O1 X O2)?",
+          "Petunjuk Analitis: Perhatikan kemampuan ITS mendeteksi apakah respons memang sudah memiliki tren naik atau turun sebelum intervensi diterapkan.",
+          "Solusi Kunci: Desain satu kelompok pretest-posttest sederhana tidak mampu membedakan apakah perubahan skor disebabkan oleh perlakuan X ataukah kelanjutan dari tren alami sistem yang sudah berlangsung lama. Sebaliknya, ITS memetakan tren garis dasar (baseline slope) sebelum intervensi, sehingga mampu membuktikan secara matematis apakah intervensi mengubah tingkat seketika atau mengubah kemiringan laju tren tersebut."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -371,99 +425,128 @@ export const CH13_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prinsip Pengacakan Urutan Uji (Randomized Run-Order) da...",
+        "slideNumber": 21,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prinsip Pengacakan Urutan Uji (Randomized Run-Order) dan Counterbalancing",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.6.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.3.",
-          "Capaian: Mencegah bias perancu temporal melalui pengacakan urutan pengujian (Randomized Run-Order).",
-          "Capaian: Menerapkan teknik penyeimbangan urutan (Counterbalancing) dan Latin Square Design.",
-          "Capaian: Mengeliminasi efek bawaan (*carryover effects*) dan kelelahan sistem pada eksperimen pengukuran berulang."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mencegah bias perancu temporal melalui pengacakan urutan pengujian (Randomized Run-Order).",
+          "Capaian 2: Menerapkan teknik penyeimbangan urutan (Counterbalancing) dan Latin Square Design.",
+          "Capaian 3: Mengeliminasi efek bawaan (*carryover effects*) dan kelelahan sistem pada eksperimen pengukuran berulang."
         ],
-        "keyFormulaOrDiagram": "$$1, \\; 2, \\; K, \\; 3, \\; K-1, \\; 4, \\; K-2, \\dots$$"
+        "keyFormulaOrDiagram": "$$1, \\; 2, \\; K, \\; 3, \\; K-1, \\; 4, \\; K-2, \\dots$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.6.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prinsip Pengacakan Urutan Uji (Randomized Run-Order) da...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prinsip Pengacakan Urutan Uji (Randomized Run-Order) dan Counterbalancing",
+        "lead": "Dalam eksperimen fisik rekayasa yang menguji berbagai variasi kombinasi perlakuan pada sebuah mesin atau rig uji, urutan pengujian (*run-order*) adalah faktor krusial yang paling sering diabaikan.",
         "bulletPoints": [
-          "Dalam eksperimen fisik rekayasa yang menguji berbagai variasi kombinasi perlakuan pada sebuah mesin atau rig uji, urutan peng...",
-          "Dua metodologi perancangan untuk menetralisir perancu urutan: 1. Pengacakan Urutan Uji Murni (*Completely Randomized Run-Orde...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Jika peneliti menguji seluruh sampel perlakuan A pada pagi hari, kemudian perlakuan B pada siang hari, dan perlakuan C pada sore hari, maka perlakuan C akan menanggung dampak akumulasi panas mesin, kelelahan pelumas, dan keausan pahat yang terjadi sepanjang hari.",
+          "Dalam kondisi ini, variabel perlakuan telah terancu total dengan waktu.",
+          "Dua metodologi perancangan untuk menetralisir perancu urutan: 1.",
+          "Pengacakan Urutan Uji Murni (*Completely Randomized Run-Order*): Urutan eksekusi kombinasi parameter perlakuan diacak secara penuh menggunakan tabel angka acak sebelum eksperimen dimulai."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Dalam eksperimen fisik rekayasa yang menguji berbagai variasi kombinasi perlakuan pada sebuah mesin atau rig uji, urutan peng...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 23,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Bujur Sangkar Latin Berimbang (*Balanced Latin Square Design*):",
         "bulletPoints": [
-          "1. Bujur Sangkar Latin Berimbang (*Balanced Latin Square Design*):",
           "Untuk $K$ perlakuan ($A, B, C, D$), konstruksi baris pertama menggunakan algoritma urutan cermin Williams:",
-          "Baris-baris berikutnya dibentuk melalui pergeseran siklis modulo $K$:"
+          "Baris-baris berikutnya dibentuk melalui pergeseran siklis modulo $K$:",
+          "Desain ini menjamin bahwa setiap perlakuan mendahului dan mengikuti perlakuan lainnya dengan frekuensi yang tepat sama, mengeliminasi efek bawaan orde pertama (*first-order carryover effects*)."
         ],
-        "keyFormulaOrDiagram": "$$1, \\; 2, \\; K, \\; 3, \\; K-1, \\; 4, \\; K-2, \\dots$$"
+        "keyFormulaOrDiagram": "$$1, \\; 2, \\; K, \\; 3, \\; K-1, \\; 4, \\; K-2, \\dots$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 24,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Susun matriks pengujian Balanced Latin Square 4x4 untuk menguji 4 algoritma kompresi data (A, B, C, D) pada 4 node sensor IoT untuk mengelim...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Susun matriks pengujian Balanced Latin Square 4x4 untuk menguji 4 algoritma kompresi data (A, B, C, D) pada 4 node sensor IoT untuk mengeliminasi bias urutan waktu eksekusi.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 25,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Terapkan rumus Williams untuk baris 1 (K=4): Urutan: 1, 2, K, 3 -> Perlakuan: [A, B, D, C].",
           "Langkah 2: Tambahkan 1 modulo 4 untuk baris 2: A->B, B->C, D->A, C->D -> Baris 2: [B, C, A, D].",
-          "Langkah 3: Tambahkan 1 modulo 4 untuk baris 3: B->C, C->D, A->B, D->A -> Baris 3: [C, D, B, A].",
-          "Interpretasi: Desain Latin Square ini menetralkan efek degradasi baterai sensor seiring berjalannya waktu pengujian secara sempurna."
+          "Langkah 3: Tambahkan 1 modulo 4 untuk baris 3: B->C, C->D, A->B, D->A -> Baris 3: [C, D, B, A]."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Periksa keseimbangan: Setiap perlakuan (A, B, C, D) diuji tepat satu kali pada..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 26,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Tambahkan 1 modulo 4 untuk baris 4: C->D, D->A, B->C, A->B -> Baris 4: [D, A, C, B].",
+          "Langkah 5: Periksa keseimbangan: Setiap perlakuan (A, B, C, D) diuji tepat satu kali pada setiap urutan uji (kolom 1 s.d. 4) dan tepat satu kali pada setiap node sensor (baris 1 s.d. 4).",
+          "[result: Interpretasi Ilmiah] Desain Latin Square ini menetralkan efek degradasi baterai sensor seiring berjalannya waktu pengujian secara sempurna."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 27,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pembangkit jadwal urutan eksperimen Balanced Latin Square Williams untuk K perlakuan genap.",
         "bulletPoints": [
-          "Deskripsi: Pembangkit jadwal urutan eksperimen Balanced Latin Square Williams untuk K perlakuan genap.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Jadwal Uji Balanced Latin Square (4x4):"
+          "Tujuan Algoritma: Pembangkit jadwal urutan eksperimen Balanced Latin Square Williams untuk K perlakuan genap.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Jadwal Uji Balanced Latin Square (4x4):"
         ],
-        "keyFormulaOrDiagram": "Jadwal Uji Balanced Latin Square (4x4): | Node Sensor | Uji 1 | Uji 2 | Uji 3 | Uji 4 | --..."
+        "keyFormulaOrDiagram": "Jadwal Uji Balanced Latin Square (4x4):\nNode Sensor  | Uji 1  | Uji 2  | Uji 3  | Uji 4 \n--------------------------------------------------\nNode # 1      | A      | B      | D      | C     \nNode # 2      | B      | C      | A      | D     ",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 28,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menjalankan eksperimen secara berurutan per kelompok perlakuan karena malas mengubah setting kabel atau konfig...",
-          "Perangkap: Mengabaikan periode pencucian (*washout period*) yang memadai di antara dua perlakuan sekuensial sehingga sisa...",
-          "Perangkap: Mengasumsikan bahwa pengacakan acak selalu menghasilkan distribusi urutan yang seimbang tanpa memeriksa pola p..."
-        ]
+          "[warning: Perangkap] Menjalankan eksperimen secara berurutan per kelompok perlakuan karena malas mengubah setting kabel atau konfigurasi mesin.",
+          "[warning: Perangkap] Mengabaikan periode pencucian (*washout period*) yang memadai di antara dua perlakuan sekuensial sehingga sisa bahan kimia atau memori cache masih tertinggal.",
+          "[warning: Perangkap] Mengasumsikan bahwa pengacakan acak selalu menghasilkan distribusi urutan yang seimbang tanpa memeriksa pola pengelompokan kebetulan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 29,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Simpan tabel urutan uji yang dihasilkan secara acak sebelum pengujian fisik dimulai dan patuhi urutan tersebut...",
-          "Prosedur: Lakukan uji korelasi antara nomor urut eksekusi (*run order*) dengan nilai residual regresi untuk memverifikas..."
-        ]
+          "Prosedur: Simpan tabel urutan uji yang dihasilkan secara acak sebelum pengujian fisik dimulai dan patuhi urutan tersebut secara ketat di laboratorium.",
+          "Prosedur: Lakukan uji korelasi antara nomor urut eksekusi (*run order*) dengan nilai residual regresi untuk memverifikasi ketiadaan drift temporal."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 30,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa fungsi dari \"washout period\" (periode jeda penetralan) dalam eksperimen pengukuran berulang yang menggunakan counter...",
-          "Petunjuk: Perhatikan potensi efek residu perlakuan pertama yang masih aktif saat perlakuan kedua dimulai.",
-          "Solusi Kunci: Washout period adalah jeda waktu yang sengaja diberikan di antara dua perlakuan berturut-turut untuk memastikan bahwa si..."
-        ]
+          "Pertanyaan Uji: Apa fungsi dari \"washout period\" (periode jeda penetralan) dalam eksperimen pengukuran berulang yang menggunakan counterbalancing?",
+          "Petunjuk Analitis: Perhatikan potensi efek residu perlakuan pertama yang masih aktif saat perlakuan kedua dimulai.",
+          "Solusi Kunci: Washout period adalah jeda waktu yang sengaja diberikan di antara dua perlakuan berturut-turut untuk memastikan bahwa sistem telah kembali ke kondisi kesetimbangan dasar semula (misal membiarkan suhu motor kembali dingin ke suhu ruang atau membersihkan memori RAM mikrokontroler). Jeda ini mengeliminasi carryover effect yang dapat mendistorsi respons perlakuan berikutnya."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -528,99 +611,128 @@ export const CH13_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Pengendalian Variabel Lingkungan Ambien pada Rig Uji La...",
+        "slideNumber": 31,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Pengendalian Variabel Lingkungan Ambien pada Rig Uji Laboratorium",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 2.6.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.4.",
-          "Capaian: Mengidentifikasi dan mengisolasi 4 faktor gangguan lingkungan laboratorium (Suhu, Kelembaban, Getaran, Interfe...",
-          "Capaian: Merancang sistem instrumentasi dengan pelindung Faraday, isolasi mekanik pneumatik, dan jalur grounding bintan...",
-          "Capaian: Menerapkan pemantauan telemetri ambien secara simultan selama eksperimen berlangsung."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 2.6.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengidentifikasi dan mengisolasi 4 faktor gangguan lingkungan laboratorium (Suhu, Kelembaban, Getaran, Interferensi Elektromagnetik).",
+          "Capaian 2: Merancang sistem instrumentasi dengan pelindung Faraday, isolasi mekanik pneumatik, dan jalur grounding bintang.",
+          "Capaian 3: Menerapkan pemantauan telemetri ambien secara simultan selama eksperimen berlangsung."
         ],
-        "keyFormulaOrDiagram": "$$V_{\\text{Seebeck}} = S_{AB} \\cdot \\Delta T = S_{AB} \\cdot (T_{\\text{junction 1}} - T_{\\text{junction 2}})$$"
+        "keyFormulaOrDiagram": "$$V_{\\text{Seebeck}} = S_{AB} \\cdot \\Delta T = S_{AB} \\cdot (T_{\\text{junction 1}} - T_{\\text{junction 2}})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 2.6.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Pengendalian Variabel Lingkungan Ambien pada Rig Uji La...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Pengendalian Variabel Lingkungan Ambien pada Rig Uji Laboratorium",
+        "lead": "Banyak kegagalan reproduksibilitas dalam riset rekayasa tidak disebabkan oleh kelemahan teori, melainkan oleh kelalaian dalam mengendalikan variabel lingkungan ambien di ruang laboratorium.",
         "bulletPoints": [
-          "Banyak kegagalan reproduksibilitas dalam riset rekayasa tidak disebabkan oleh kelemahan teori, melainkan oleh kelalaian dalam...",
-          "Empat domain pengendalian lingkungan ambien yang wajib diproteksi pada rig uji laboratorium: 1. Fluktuasi Termal dan Aliran U...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Sensor tegangan orde mikrovolt, pengukur regangan piezoelektrik, atau peralatan optik laser sangat sensitif terhadap fluktuasi lingkungan fisik yang sering tidak disadari oleh peneliti.",
+          "Empat domain pengendalian lingkungan ambien yang wajib diproteksi pada rig uji laboratorium: 1.",
+          "Fluktuasi Termal dan Aliran Udara: Perubahan suhu beberapa derajat Celsius memicu pemuaian mekanis struktur mikrometer dan menimbulkan gaya gerak listrik termal semu (*Seebeck thermoelectric voltage*) pada sambungan solder kabel tembaga-timah."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Banyak kegagalan reproduksibilitas dalam riset rekayasa tidak disebabkan oleh kelemahan teori, melainkan oleh kelalaian dalam...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 33,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Tegangan Termoelektrik Parasitik Seebeck pada Sambungan Logam Berbeda:",
         "bulletPoints": [
-          "1. Tegangan Termoelektrik Parasitik Seebeck pada Sambungan Logam Berbeda:",
-          "Di mana koefisien Seebeck tembaga-timah $S_{AB} \\approx 3 \\, \\mu\\text{V}/^\\circ\\text{C}$. Gradien suhu sebesar...",
-          "2. Efektivitas Redaman Meja Isolasi Getaran Pneumatik (Transmissibility $T_r$):"
+          "Di mana koefisien Seebeck tembaga-timah $S_{AB} \\approx 3 \\, \\mu\\text{V}/^\\circ\\text{C}$. Gradien suhu sebesar $2\\,^\\circ\\text{C}$ menghasilkan offset palsu sebesar $6\\,\\mu\\text{V}$ (sangat signifikan untuk penguat sinyal instrumentasi mikrovolt).",
+          "2. Efektivitas Redaman Meja Isolasi Getaran Pneumatik (Transmissibility $T_r$):",
+          "Di mana rasio frekuensi $\\eta = f_{\\text{eksitasi}} / f_{\\text{alami}}$ dan $\\zeta$ adalah rasio redaman. Isolasi getaran efektif tercapai hanya jika frekuensi gangguan berada jauh di atas frekuensi alami meja: $\\eta > \\sqrt{2}$."
         ],
-        "keyFormulaOrDiagram": "$$V_{\\text{Seebeck}} = S_{AB} \\cdot \\Delta T = S_{AB} \\cdot (T_{\\text{junction 1}} - T_{\\text{junction 2}})$$"
+        "keyFormulaOrDiagram": "$$V_{\\text{Seebeck}} = S_{AB} \\cdot \\Delta T = S_{AB} \\cdot (T_{\\text{junction 1}} - T_{\\text{junction 2}})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 34,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah meja isolasi getaran optik di Lab Laser ITERA memiliki frekuensi alami f_n = 2.0 Hz dengan rasio redaman zeta = 0.05. Sebuah pompa va...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah meja isolasi getaran optik di Lab Laser ITERA memiliki frekuensi alami f_n = 2.0 Hz dengan rasio redaman zeta = 0.05. Sebuah pompa vakum yang beroperasi di dekat rig uji menimbulkan getaran lantai pada frekuensi 30 Hz. Hitung rasio transmisibilitas getaran Tr dan tentukan persentase isolasi getaran yang dicapai.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 35,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung rasio frekuensi: eta = f_eksitasi / f_n = 30.0 Hz / 2.0 Hz = 15.0.",
           "Langkah 2: Amati bahwa eta = 15.0 >> sqrt(2) (berada jauh di dalam zona isolasi aktif).",
-          "Langkah 3: Hitung suku pembilang Tr: 1 + (2 * zeta * eta)^2 = 1 + (2 * 0.05 * 15.0)^2 = 1 + (1.5)^2 = 1 + 2.25...",
-          "Interpretasi: Meja optik berhasil meredam 99.2% getaran pompa vakum, memastikan berkas sinar laser stabil dan bebas dari modulasi meka..."
+          "Langkah 3: Hitung suku pembilang Tr: 1 + (2 * zeta * eta)^2 = 1 + (2 * 0.05 * 15.0)^2 = 1 + (1.5)^2 = 1 + 2.25 = 3.25."
         ],
-        "keyFormulaOrDiagram": "Langkah 6: Hitung persentase isolasi getaran: Isolasi_% = (1 - Tr) * 100% = (1 - 0.00804)..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 36,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung suku penyebut Tr: (1 - eta^2)^2 + (2 * zeta * eta)^2 = (1 - 225)^2 + 2.25 = (-224)^2 + 2.25 = 50176 + 2.25 = 50178.25.",
+          "Langkah 5: Hitung nilai Tr: Tr = sqrt(3.25 / 50178.25) = sqrt(0.0000647) = 0.00804 (0.80%).",
+          "Langkah 6: Hitung persentase isolasi getaran: Isolasi_% = (1 - Tr) * 100% = (1 - 0.00804) * 100% = 99.20%.",
+          "[result: Interpretasi Ilmiah] Meja optik berhasil meredam 99.2% getaran pompa vakum, memastikan berkas sinar laser stabil dan bebas dari modulasi mekanis."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 37,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemodelan kurva transmisibilitas getaran meja optik sebagai fungsi rasio frekuensi.",
         "bulletPoints": [
-          "Deskripsi: Pemodelan kurva transmisibilitas getaran meja optik sebagai fungsi rasio frekuensi.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: Transmisibilitas pada Resonansi (eta=1.0) : 10.01 (Amplifikasi Getaran!)"
+          "Tujuan Algoritma: Pemodelan kurva transmisibilitas getaran meja optik sebagai fungsi rasio frekuensi.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: Transmisibilitas pada Resonansi (eta=1.0) : 10.01 (Amplifikasi Getaran!)"
         ],
-        "keyFormulaOrDiagram": "Transmisibilitas pada Resonansi (eta=1.0) : 10.01 (Amplifikasi Getaran!) | Transmisibilita..."
+        "keyFormulaOrDiagram": "Transmisibilitas pada Resonansi (eta=1.0) : 10.01 (Amplifikasi Getaran!)\nTransmisibilitas pada Ambang (eta=sqrt(2)) : 1.00 (Netral)\nTransmisibilitas pada Operasi (eta=5.0)    : 0.0366 (Redaman 96.3%)",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 38,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menghubungkan kabel grounding dari berbagai instrumen secara seri bertingkat yang memicu terjadinya lingkaran...",
-          "Perangkap: Mengabaikan hembusan angin langsung dari saluran ventilasi AC yang mengarah ke sensor timbangan analitik atau...",
-          "Perangkap: Tidak mencatat data suhu dan kelembaban ruangan selama sesi pengujian berlangsung."
-        ]
+          "[warning: Perangkap] Menghubungkan kabel grounding dari berbagai instrumen secara seri bertingkat yang memicu terjadinya lingkaran tanah (*ground loop*) dan dengung 50 Hz masif.",
+          "[warning: Perangkap] Mengabaikan hembusan angin langsung dari saluran ventilasi AC yang mengarah ke sensor timbangan analitik atau rangkaian termal.",
+          "[warning: Perangkap] Tidak mencatat data suhu dan kelembaban ruangan selama sesi pengujian berlangsung."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 39,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Terapkan topologi satu titik grounding pusat (*star grounding*) untuk seluruh instrumen analog presisi.",
-          "Prosedur: Pasang data logger lingkungan yang merekam suhu, kelembaban, dan tegangan jala-jala listrik secara sinkron den..."
-        ]
+          "Prosedur: Pasang data logger lingkungan yang merekam suhu, kelembaban, dan tegangan jala-jala listrik secara sinkron dengan data eksperimen."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 40,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa kabel sinyal sensor analog bertegangan rendah wajib menggunakan kabel pilin berpelindung (Shielded Twisted Pair...",
-          "Petunjuk: Perhatikan pembatalan fluks magnetik induksi pada kabel pilin dan pencegahan arus ground loop pada p...",
-          "Solusi Kunci: Lilitan pilin (twisted pair) memastikan bahwa fluks magnetik eksternal menginduksi tegangan dengan polaritas berlawanan..."
-        ]
+          "Pertanyaan Uji: Mengapa kabel sinyal sensor analog bertegangan rendah wajib menggunakan kabel pilin berpelindung (Shielded Twisted Pair / STP) dan pelindungnya hanya boleh digrounding pada satu ujung?",
+          "Petunjuk Analitis: Perhatikan pembatalan fluks magnetik induksi pada kabel pilin dan pencegahan arus ground loop pada pelindung tembaga.",
+          "Solusi Kunci: Lilitan pilin (twisted pair) memastikan bahwa fluks magnetik eksternal menginduksi tegangan dengan polaritas berlawanan pada setiap lilitan bertetangga sehingga derau saling meniadakan. Menggrounding pelindung logam (shield) hanya pada satu ujung mencegah terjadinya aliran arus sirkulasi tanah (ground loop current) yang timbul jika ada perbedaan potensial elektrostatik antara dua sasis pentanahan yang berbeda."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

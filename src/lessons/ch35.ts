@@ -67,100 +67,137 @@ export const CH35_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Tujuan Studi Ablasi: Membuktikan Kausalitas Kontribusi...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Tujuan Studi Ablasi: Membuktikan Kausalitas Kontribusi Tiap Modul Algoritma",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.4.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.1.",
-          "Capaian: Memahami fungsi epistemologis studi ablasi dalam membongkar model komputasi kotak hitam (black-box).",
-          "Capaian: Membuktikan hubungan kausal antara modul arsitektur baru dengan peningkatan performa empiris.",
-          "Capaian: Menghindari arsitektur Frankenstein yang menambahkan komponen dekoratif tanpa kontribusi fisis nyata."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami fungsi epistemologis studi ablasi dalam membongkar model komputasi kotak hitam (black-box).",
+          "Capaian 2: Membuktikan hubungan kausal antara modul arsitektur baru dengan peningkatan performa empiris.",
+          "Capaian 3: Menghindari arsitektur Frankenstein yang menambahkan komponen dekoratif tanpa kontribusi fisis nyata."
         ],
-        "keyFormulaOrDiagram": "$$S(x) = (f_M \\circ f_{M-1} \\circ \\dots \\circ f_1)(x)$$"
+        "keyFormulaOrDiagram": "$$S(x) = (f_M \\circ f_{M-1} \\circ \\dots \\circ f_1)(x)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.4.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Tujuan Studi Ablasi: Membuktikan Kausalitas Kontribusi...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Tujuan Studi Ablasi: Membuktikan Kausalitas Kontribusi Tiap Modul Algoritma",
+        "lead": "Dalam rekayasa sistem cerdas dan pembelajaran mesin modern, arsitektur yang diusulkan seringkali terdiri dari beberapa modul terintegrasi, misalnya: mekanisme atensi spasial, regularisasi drop-path, fungsi loss kustom, dan modul augmentasi data adaptif.",
         "bulletPoints": [
-          "Dalam rekayasa sistem cerdas dan pembelajaran mesin modern, arsitektur yang diusulkan seringkali terdiri dari beberapa modul...",
-          "Tujuan Ilmiah Studi Ablasi (Ablation Study): Istilah ablasi dipinjam dari neurosains eksperimental, di mana peneliti mengangk...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Jika penulis hanya menunjukkan bahwa sistem secara keseluruhan mengungguli baseline, pembaca ilmiah tidak memiliki bukti apakah seluruh modul tersebut memang berkontribusi secara nyata, ataukah ada modul yang sebenarnya tidak berguna namun tetap dipertahankan sebagai pajangan kompleksitas matematis (\"arsitektur Frankenstein\").",
+          "Tujuan Ilmiah Studi Ablasi (Ablation Study): Istilah ablasi dipinjam dari neurosains eksperimental, di mana peneliti mengangkat bagian otak tertentu untuk membuktikan fungsi fisiologisnya.",
+          "Dalam ilmu komputer, studi ablasi adalah prosedur sistematis di mana komponen-komponen arsitektur sengaja dinonaktifkan, diubah, atau digantikan satu per satu untuk mengisolasi dan membuktikan secara kausal kontribusi spesifik dari setiap modul."
         ],
-        "keyFormulaOrDiagram": "Tiga Prinsip Epistemologis Ablasi: 1. Prinsip Parsimoni Ilmiah (Occam's Razor): Jika pengh..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Tiga Prinsip Epistemologis Ablasi: 1.",
         "bulletPoints": [
-          "Tiga Prinsip Epistemologis Ablasi: 1. Prinsip Parsimoni Ilmiah (Occam's Razor): Jika penghapusan suatu modul tidak menurunkan...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Prinsip Parsimoni Ilmiah (Occam's Razor): Jika penghapusan suatu modul tidak menurunkan performa sistem secara signifikan, modul tersebut wajib dibuang dari arsitektur final.",
+          "2."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Efek Kausal Modul Melalui Intervensi:",
         "bulletPoints": [
-          "Formulasi Efek Kausal Modul Melalui Intervensi:",
           "Misalkan arsitektur sistem $S$ didefinisikan sebagai komposisi fungsi dari $M$ modul:",
-          "Misalkan $\\mathcal{L}(S)$ adalah metrik performa objektif (misal akurasi atau IoU)."
+          "Misalkan $\\mathcal{L}(S)$ adalah metrik performa objektif (misal akurasi atau IoU).",
+          "Efek Kausal Penambahan Modul ke-$k$ (Marginal Attribution):"
         ],
-        "keyFormulaOrDiagram": "$$S(x) = (f_M \\circ f_{M-1} \\circ \\dots \\circ f_1)(x)$$"
+        "keyFormulaOrDiagram": "$$S(x) = (f_M \\circ f_{M-1} \\circ \\dots \\circ f_1)(x)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah arsitektur segmentasi citra medis terdiri dari: Backbone ResNet (B), Multi-Scale Attention (A), dan Boundary Loss (L). Akurasi model...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah arsitektur segmentasi citra medis terdiri dari: Backbone ResNet (B), Multi-Scale Attention (A), dan Boundary Loss (L). Akurasi model utuh (B+A+L) adalah 88.5%. Peneliti melakukan eksperimen ablasi: menghapus L (B+A) menghasilkan 88.3%; menghapus A (B+L) menghasilkan 82.1%; menghapus keduanya (B saja) menghasilkan 81.8%. Lakukan atribusi kontribusi kausal untuk modul A dan modul L. Manakah modul yang terbukti redundan?",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Evaluasi kontribusi modul A: Menghapus A dari model penuh menyebabkan performa anjlok dari 88.5% ke...",
-          "Langkah 2: Evaluasi kontribusi modul L: Menghapus L dari model penuh hanya menurunkan performa dari 88.5% ke 8...",
-          "Langkah 3: Uji toleransi derau: Jika fluktuasi random seed berada di sekitar +/- 0.3%, maka kontribusi modul L...",
-          "Interpretasi: Studi ablasi berhasil membongkar bahwa 95% peningkatan akurasi berasal dari Multi-Scale Attention, sedangkan Boundary Lo..."
+          "Langkah 1: Evaluasi kontribusi modul A: Menghapus A dari model penuh menyebabkan performa anjlok dari 88.5% ke 82.1% (penurunan -6.4%). Modul A memiliki efek kausal yang masif terhadap performa.",
+          "Langkah 2: Evaluasi kontribusi modul L: Menghapus L dari model penuh hanya menurunkan performa dari 88.5% ke 88.3% (selisih marjinal hanya 0.2%). Menghapus L dari model tanpa A (dari B+L ke B saja) hanya menurunkan dari 82.1% ke 81.8% (0.3%)."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Rekomendasi Occam: Modul Boundary Loss (L) berpotensi kuat sebagai modul dekora..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi matriks kontribusi kausal modul dan perbandingan trade-off parameter.",
-          "Dependensi Pustaka: pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Tabel Forensik Studi Ablasi Komponen:"
+          "Langkah 3: Uji toleransi derau: Jika fluktuasi random seed berada di sekitar +/- 0.3%, maka kontribusi modul L tidak dapat dibedakan dari noise statistik.",
+          "Langkah 4: Rekomendasi Occam: Modul Boundary Loss (L) berpotensi kuat sebagai modul dekoratif yang redundan dan harus dipertimbangkan untuk dieliminasi atau didesain ulang.",
+          "[result: Interpretasi Ilmiah] Studi ablasi berhasil membongkar bahwa 95% peningkatan akurasi berasal dari Multi-Scale Attention, sedangkan Boundary Loss tidak memberikan kontribusi fisis yang signifikan."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Tabel Forensik Studi Ablasi Komponen: | Configuration Attention..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi matriks kontribusi kausal modul dan perbandingan trade-off parameter.",
         "bulletPoints": [
-          "Perangkap: Menulis makalah ilmiah tanpa menyertakan seksi studi ablasi komponen.",
-          "Perangkap: Melakukan ablasi hanya pada satu dataset kecil sementara klaim utama didasarkan pada dataset besar.",
-          "Perangkap: Mematikan modul dengan cara mengubah hyperparameter lain secara bersamaan (merusak isolasi perlakuan)."
-        ]
+          "Tujuan Algoritma: Simulasi matriks kontribusi kausal modul dan perbandingan trade-off parameter.",
+          "Dependensi Pustaka Ilmiah: pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Tabel Forensik Studi Ablasi Komponen:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Tabel Forensik Studi Ablasi Komponen:\n           Configuration  Attention  BoundaryLoss  Params (M)  mIoU (%)  Gain over Base (%)\n     Baseline (Backbone)      False         False        25.0      81.8                 0.0\n    + Boundary Loss only      False          True        25.0      82.1                 0.3\n        + Attention only       True         False        28.5      88.3                 6.5",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Menulis makalah ilmiah tanpa menyertakan seksi studi ablasi komponen.",
+          "[warning: Perangkap] Melakukan ablasi hanya pada satu dataset kecil sementara klaim utama didasarkan pada dataset besar.",
+          "[warning: Perangkap] Mematikan modul dengan cara mengubah hyperparameter lain secara bersamaan (merusak isolasi perlakuan)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan seluruh varian ablasi dilatih dengan protokol, learning rate schedule, dan random seed yang identik.",
           "Prosedur: Bandingkan penurunan performa dengan interval kepercayaan dari fluktuasi multi-seed.",
           "Prosedur: Sajikan tabel ablasi komprehensif yang menampilkan konfigurasi modul, parameter, dan metrik primer."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apa bahaya metodologis dari mempublikasikan sistem cerdas dengan banyak modul tanpa menjalankan studi ablasi?",
-          "Petunjuk: Kaitkan dengan istilah arsitektur Frankenstein dan beban komputasi yang tidak perlu.",
-          "Solusi Kunci: Tanpa studi ablasi, komunitas tidak dapat mengetahui komponen mana yang benar-benar bekerja. Peneliti lain yang mereplik..."
-        ]
+          "Petunjuk Analitis: Kaitkan dengan istilah arsitektur Frankenstein dan beban komputasi yang tidak perlu.",
+          "Solusi Kunci: Tanpa studi ablasi, komunitas tidak dapat mengetahui komponen mana yang benar-benar bekerja. Peneliti lain yang mereplikasi sistem tersebut akan terpaksa membuang daya komputasi dan memori untuk mengimplementasikan modul-modul yang sebenarnya tidak memberikan faedah fisis apa pun."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -230,101 +267,142 @@ export const CH35_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Desain Matriks Ablasi Kombinatorial: Uji Modul Secara T...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Desain Matriks Ablasi Kombinatorial: Uji Modul Secara Terisolasi dan Terintegrasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.4.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.2.",
-          "Capaian: Merancang matriks ablasi kombinatorial berbasis prinsip Design of Experiments (DoE).",
-          "Capaian: Mendeteksi efek interaksi non-linier dan sinergi antar modul komputasi.",
-          "Capaian: Membedakan strategi ablasi Bottom-Up (Add-1) vs Top-Down (Remove-1)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Merancang matriks ablasi kombinatorial berbasis prinsip Design of Experiments (DoE).",
+          "Capaian 2: Mendeteksi efek interaksi non-linier dan sinergi antar modul komputasi.",
+          "Capaian 3: Membedakan strategi ablasi Bottom-Up (Add-1) vs Top-Down (Remove-1)."
         ],
-        "keyFormulaOrDiagram": "$$x_j \\in \\{0, 1\\}, \\quad j \\in \\{1, 2, 3\\}$$"
+        "keyFormulaOrDiagram": "$$x_j \\in \\{0, 1\\}, \\quad j \\in \\{1, 2, 3\\}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.4.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Desain Matriks Ablasi Kombinatorial: Uji Modul Secara T...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Desain Matriks Ablasi Kombinatorial: Uji Modul Secara Terisolasi dan Terintegrasi",
+        "lead": "Sebuah eksperimen ablasi yang hanya menguji model utuh dikurangi satu modul (metode Leave-One-Component-Out atau Top-Down) seringkali gagal mendeteksi efek sinergi antar modul.",
         "bulletPoints": [
-          "Sebuah eksperimen ablasi yang hanya menguji model utuh dikurangi satu modul (metode Leave-One-Component-Out atau Top-Down) se...",
-          "Dua Strategi Utama Desain Ablasi: 1. Strategi Top-Down (Leave-One-Out / Ablasi Kurang): Dimulai dari sistem lengkap (Full Sys...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Sebagai contoh, dua modul $A$ dan $B$ mungkin bekerja secara sinergis: jika hanya $A$ yang dipasang tidak ada perbaikan, jika hanya $B$ yang dipasang tidak ada perbaikan, namun ketika $A$ dan $B$ dipasang bersamaan, terjadi lonjakan performa yang dramatis.",
+          "Dua Strategi Utama Desain Ablasi: 1.",
+          "Strategi Top-Down (Leave-One-Out / Ablasi Kurang): Dimulai dari sistem lengkap (Full System), lalu menghilangkan modul satu per satu."
         ],
-        "keyFormulaOrDiagram": "2. Strategi Bottom-Up (Add-One-In / Ablasi Tambah): Dimulai dari baseline paling primitif,..."
+        "keyFormulaOrDiagram": "$A$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Strategi Bottom-Up (Add-One-In / Ablasi Tambah): Dimulai dari baseline paling primitif, lalu menambahkan modul satu per sa...",
-          "Matriks Ablasi Kombinatorial Penuh (Full Factorial Ablation): Untuk membuktikan ketiadaan interaksi palsu atau mendeteksi sin...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Strategi Bottom-Up (Add-One-In / Ablasi Tambah): Dimulai dari baseline paling primitif, lalu menambahkan modul satu per satu secara kumulatif atau terisolasi.",
+          "Pendekatan ini mengukur apakah setiap modul mampu memberikan nilai tambah secara mandiri pada arsitektur dasar.",
+          "Matriks Ablasi Kombinatorial Penuh (Full Factorial Ablation): Untuk membuktikan ketiadaan interaksi palsu atau mendeteksi sinergi tersembunyi secara matematis, peneliti idealnya menerapkan desain faktorial penuh $2^k$, di mana $k$ adalah jumlah modul baru.",
+          "Seluruh kombinasi status ON/OFF diuji secara teratur."
+        ],
+        "keyFormulaOrDiagram": "$2^k$",
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Matriks Desain Faktorial Ablasi $2^k$:",
         "bulletPoints": [
-          "Matriks Desain Faktorial Ablasi $2^k$:",
           "Misalkan terdapat 3 modul baru: $X_1$ (Encoder baru), $X_2$ (Attention block), $X_3$ (Regularizer).",
-          "Setiap modul diperlakukan sebagai faktor biner dengan level:"
+          "Setiap modul diperlakukan sebagai faktor biner dengan level:",
+          "Model regresi ANOVA efek interaksi modul:"
         ],
-        "keyFormulaOrDiagram": "$$x_j \\in \\{0, 1\\}, \\quad j \\in \\{1, 2, 3\\}$$"
+        "keyFormulaOrDiagram": "$$x_j \\in \\{0, 1\\}, \\quad j \\in \\{1, 2, 3\\}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan evaluasi faktorial 2^2 dari dua modul: Modul A (Augmentasi Fisik) dan Modul B (Loss Kontrastif). Hasil akurasi: Baseline (0,0) = 7...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Estimasi efek utama A: Main_A = 0.5 * [(y_11 - y_01) + (y_10 - y_00)] = 0.5 * [(84 - 78) + (77 - 75...",
-          "Langkah 2: Estimasi efek utama B: Main_B = 0.5 * [(y_11 - y_10) + (y_01 - y_00)] = 0.5 * [(84 - 77) + (78 - 75...",
-          "Langkah 3: Estimasi efek interaksi AB: Inter_AB = 0.5 * [(y_11 - y_10) - (y_01 - y_00)] = 0.5 * [(84 - 77) - (...",
-          "Interpretasi: Pemasangan Modul A dan B secara simultan menghasilkan lonjakan performa yang lebih besar daripada penjumlahan efek mandi..."
+          "Konteks Kasus: Diberikan evaluasi faktorial 2^2 dari dua modul: Modul A (Augmentasi Fisik) dan Modul B (Loss Kontrastif). Hasil akurasi: Baseline (0,0) = 75.0%; Hanya A (1,0) = 77.0%; Hanya B (0,1) = 78.0%; Keduanya A+B (1,1) = 84.0%. Hitung efek utama A, efek utama B, dan efek interaksi AB. Jelaskan apakah ada sinergi positif.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Interpretasi sinergi: Interaksi bernilai positif (+2.0%). Ini membuktikan adany..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Estimasi efek utama A: Main_A = 0.5 * [(y_11 - y_01) + (y_10 - y_00)] = 0.5 * [(84 - 78) + (77 - 75)] = 0.5 * [6 + 2] = 4.0%.",
+          "Langkah 2: Estimasi efek utama B: Main_B = 0.5 * [(y_11 - y_10) + (y_01 - y_00)] = 0.5 * [(84 - 77) + (78 - 75)] = 0.5 * [7 + 3] = 5.0%."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Estimasi efek interaksi AB: Inter_AB = 0.5 * [(y_11 - y_10) - (y_01 - y_00)] = 0.5 * [(84 - 77) - (78 - 75)] = 0.5 * [7 - 3] = 2.0%.",
+          "Langkah 4: Interpretasi sinergi: Interaksi bernilai positif (+2.0%). Ini membuktikan adanya super-aditivitas.",
+          "[result: Interpretasi Ilmiah] Pemasangan Modul A dan B secara simultan menghasilkan lonjakan performa yang lebih besar daripada penjumlahan efek mandiri kedua modul (sinergi ilmiah terbukti)."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Analisis efek interaksi sinergi modul menggunakan matriks kombinatorial.",
         "bulletPoints": [
-          "Deskripsi: Analisis efek interaksi sinergi modul menggunakan matriks kombinatorial.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Matriks Ablasi Faktorial 2^3:"
+          "Tujuan Algoritma: Analisis efek interaksi sinergi modul menggunakan matriks kombinatorial.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Matriks Ablasi Faktorial 2^3:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Matriks Ablasi Faktorial 2^3: | Modul_1 Modul_2 Modul_3 Accuracy..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Matriks Ablasi Faktorial 2^3:\n Modul_1  Modul_2  Modul_3  Accuracy (%)\n       0        0        0          70.2\n       1        0        0          73.1\n       0        1        0          72.5",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya menguji skenario Add-1 tanpa pernah menguji varian gabungan.",
-          "Perangkap: Mengabaikan efek destruktif (interferensi negatif) saat dua regularizer diterapkan bersamaan.",
-          "Perangkap: Mengubah ukuran batch atau optimizer di antara sel-sel matriks ablasi."
-        ]
+          "[warning: Perangkap] Hanya menguji skenario Add-1 tanpa pernah menguji varian gabungan.",
+          "[warning: Perangkap] Mengabaikan efek destruktif (interferensi negatif) saat dua regularizer diterapkan bersamaan.",
+          "[warning: Perangkap] Mengubah ukuran batch atau optimizer di antara sel-sel matriks ablasi."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan tabel kebenaran biner (0/1) untuk menyusun rencana eksekusi ablasi.",
           "Prosedur: Uji signifikansi efek interaksi menggunakan Two-Way ANOVA atau Linear Model.",
           "Prosedur: Verifikasi bahwa varian terbaik secara kombinatorial memang model utuh yang dipromosikan."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apa indikasi metodologis jika kombinasi dua modul menghasilkan performa yang lebih rendah daripada performa masing-masin...",
-          "Petunjuk: Perhatikan interferensi negatif atau persaingan gradient antar modul.",
-          "Solusi Kunci: Hal itu mengindikasikan adanya interferensi negatif (negative interaction / gradient conflict), di mana kedua modul mung..."
-        ]
+          "Pertanyaan Uji: Apa indikasi metodologis jika kombinasi dua modul menghasilkan performa yang lebih rendah daripada performa masing-masing modul secara mandiri?",
+          "Petunjuk Analitis: Perhatikan interferensi negatif atau persaingan gradient antar modul.",
+          "Solusi Kunci: Hal itu mengindikasikan adanya interferensi negatif (negative interaction / gradient conflict), di mana kedua modul mungkin berusaha mengoptimalkan representasi fitur ke arah yang saling berlawanan atau memberikan regularisasi berlebihan yang mencekik kapasitas model."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -394,101 +472,139 @@ export const CH35_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Analisis Nilai Tambah Marjinal dan Trade-off Kompleksit...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Analisis Nilai Tambah Marjinal dan Trade-off Kompleksitas Komputasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.4.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.3.",
-          "Capaian: Menganalisis hukum hasil yang semakin berkurang (diminishing returns) dalam perancangan arsitektur komputasi.",
-          "Capaian: Menghitung rasio efisiensi marjinal: Kenaikan performa per penambahan Mega-FLOPs dan Mega-Parameters.",
-          "Capaian: Menggunakan kurva batas Pareto (Pareto Efficiency Frontier) untuk justifikasi kelayakan rekayasa."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menganalisis hukum hasil yang semakin berkurang (diminishing returns) dalam perancangan arsitektur komputasi.",
+          "Capaian 2: Menghitung rasio efisiensi marjinal: Kenaikan performa per penambahan Mega-FLOPs dan Mega-Parameters.",
+          "Capaian 3: Menggunakan kurva batas Pareto (Pareto Efficiency Frontier) untuk justifikasi kelayakan rekayasa."
         ],
-        "keyFormulaOrDiagram": "$$\\text{MER}_{\\text{FLOPs}} = \\frac{\\Delta \\mathcal{M} / \\mathcal{M}(S_0)}{\\Delta \\text{FLOPs} / \\text{FLOPs}(S_0)}$$"
+        "keyFormulaOrDiagram": "$$\\text{MER}_{\\text{FLOPs}} = \\frac{\\Delta \\mathcal{M} / \\mathcal{M}(S_0)}{\\Delta \\text{FLOPs} / \\text{FLOPs}(S_0)}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.4.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Analisis Nilai Tambah Marjinal dan Trade-off Kompleksit...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Analisis Nilai Tambah Marjinal dan Trade-off Kompleksitas Komputasi",
+        "lead": "Dalam komunitas riset komputasi, menambahkan lapisan yang lebih tebal atau modul yang lebih rumit hampir selalu dapat menaikkan skor akurasi sebesar 0.2% atau 0.3%.",
         "bulletPoints": [
-          "Dalam komunitas riset komputasi, menambahkan lapisan yang lebih tebal atau modul yang lebih rumit hampir selalu dapat menaikk...",
-          "Hukum Diminishing Returns dalam Deep Learning: Seiring dengan semakin kompleksnya model, setiap persen kenaikan akurasi membu...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, jika kenaikan 0.2% tersebut menuntut peningkatan 300% parameter memori dan 400% konsumsi daya, penambahan tersebut secara teknologis dan ilmiah adalah langkah mundur.",
+          "Riset rekayasa yang unggul tidak hanya mengejar akurasi puncak, melainkan mengejar efisiensi frontier.",
+          "Hukum Diminishing Returns dalam Deep Learning: Seiring dengan semakin kompleksnya model, setiap persen kenaikan akurasi membutuhkan penambahan kapasitas komputasi yang tumbuh secara eksponensial.",
+          "Peneliti wajib mengevaluasi nilai tambah marjinal (marginal gain) dari setiap komponen arsitektur."
         ],
-        "keyFormulaOrDiagram": "Analisis Batas Pareto (Pareto Frontier Analysis): Sebuah arsitektur $A$ dikatakan efisien..."
+        "keyFormulaOrDiagram": "$A$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Analisis Batas Pareto (Pareto Frontier Analysis): Sebuah arsitektur $A$ dikatakan efisien secara Pareto (Pareto Optimal) jika tidak ada arsitektur lain $B$ yang memiliki akurasi lebih tinggi sekaligus kebutuhan komputasi (latensi/FLOPs) yang lebih rendah dari $A$.",
         "bulletPoints": [
-          "Analisis Batas Pareto (Pareto Frontier Analysis): Sebuah arsitektur $A$ dikatakan efisien secara Pareto (Pareto Optimal) jika...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Seksi studi ablasi wajib menyajikan grafik scatter plot dua dimensi yang memetakan performa vs kompleksitas seluruh varian ablasi, dan menyoroti posisi garis depan Pareto (Pareto Frontier)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Metrik Rasio Efisiensi Marjinal (Marginal Efficiency Ratio, MER):",
         "bulletPoints": [
-          "Metrik Rasio Efisiensi Marjinal (Marginal Efficiency Ratio, MER):",
           "Diberikan arsitektur dasar $S_0$ dan arsitektur yang diperkaya modul $S_1$:",
-          "- $\\Delta \\text{Metric} = \\mathcal{M}(S_1) - \\mathcal{M}(S_0)$"
+          "- $\\Delta \\text{Metric} = \\mathcal{M}(S_1) - \\mathcal{M}(S_0)$",
+          "- $\\Delta \\text{FLOPs} = \\text{FLOPs}(S_1) - \\text{FLOPs}(S_0)$"
         ],
-        "keyFormulaOrDiagram": "$$\\text{MER}_{\\text{FLOPs}} = \\frac{\\Delta \\mathcal{M} / \\mathcal{M}(S_0)}{\\Delta \\text{FLOPs} / \\text{FLOPs}(S_0)}$$"
+        "keyFormulaOrDiagram": "$$\\text{MER}_{\\text{FLOPs}} = \\frac{\\Delta \\mathcal{M} / \\mathcal{M}(S_0)}{\\Delta \\text{FLOPs} / \\text{FLOPs}(S_0)}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah varian ablasi Model Base memiliki akurasi 85.0% dengan 10 GFLOPs. Peneliti menguji dua varian modul: Varian 1 (Akurasi 87.0%, 12 GFLO...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Analisis Varian 1: Delta_M / M_0 = (87.0 - 85.0) / 85.0 = 2.0 / 85.0 = +2.35%; Delta_FLOPs / FLOPs_...",
-          "Langkah 2: Analisis Varian 2: Delta_M / M_0 = (87.2 - 85.0) / 85.0 = 2.2 / 85.0 = +2.59%; Delta_FLOPs / FLOPs_...",
-          "Langkah 3: Perbandingan trade-off: Varian 2 hanya memberikan tambahan akurasi 0.2% absolut di atas Varian 1, n...",
-          "Interpretasi: Varian 1 menawarkan rasio kompromi performa terhadap beban komputasi 11 kali lebih efisien daripada Varian 2."
+          "Konteks Kasus: Sebuah varian ablasi Model Base memiliki akurasi 85.0% dengan 10 GFLOPs. Peneliti menguji dua varian modul: Varian 1 (Akurasi 87.0%, 12 GFLOPs) dan Varian 2 (Akurasi 87.2%, 35 GFLOPs). Hitung rasio MER_FLOPs untuk kedua varian terhadap Model Base. Tentukan varian mana yang harus dipilih untuk sistem industri.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Rekomendasi industri: Varian 1 adalah pilihan rekayasa rasional karena berada p..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Analisis Varian 1: Delta_M / M_0 = (87.0 - 85.0) / 85.0 = 2.0 / 85.0 = +2.35%; Delta_FLOPs / FLOPs_0 = (12 - 10) / 10 = +20.0%. Maka MER_FLOPs = 2.35 / 20.0 = 0.1175.",
+          "Langkah 2: Analisis Varian 2: Delta_M / M_0 = (87.2 - 85.0) / 85.0 = 2.2 / 85.0 = +2.59%; Delta_FLOPs / FLOPs_0 = (35 - 10) / 10 = +250.0%. Maka MER_FLOPs = 2.59 / 250.0 = 0.0104."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Perbandingan trade-off: Varian 2 hanya memberikan tambahan akurasi 0.2% absolut di atas Varian 1, namun menuntut penambahan komputasi 191% lebih banyak dibanding Varian 1.",
+          "Langkah 4: Rekomendasi industri: Varian 1 adalah pilihan rekayasa rasional karena berada pada titik \"sweet spot\" kurva Pareto, sedangkan Varian 2 mengalami inefisiensi ekstrem.",
+          "[result: Interpretasi Ilmiah] Varian 1 menawarkan rasio kompromi performa terhadap beban komputasi 11 kali lebih efisien daripada Varian 2."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Identifikasi arsitektur Pareto Optimal dari sekumpulan varian model ablasi.",
         "bulletPoints": [
-          "Deskripsi: Identifikasi arsitektur Pareto Optimal dari sekumpulan varian model ablasi.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Efisiensi Batas Pareto:"
+          "Tujuan Algoritma: Identifikasi arsitektur Pareto Optimal dari sekumpulan varian model ablasi.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Efisiensi Batas Pareto:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Efisiensi Batas Pareto: | Model Accuracy (%) Latency (m..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Efisiensi Batas Pareto:\n             Model  Accuracy (%)  Latency (ms)  Pareto Optimal\n    Variant A (Base)          80.0          10.0            True\n   Variant B (+Mod1)          84.5          14.0            True\n   Variant C (+Mod2)          83.0          16.0           False",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menilai keunggulan model semata-mata dari akurasi tanpa melaporkan jumlah parameter atau FLOPs.",
-          "Perangkap: Membandingkan model dengan arsitektur berbobot 50M parameter langsung dengan model 5M parameter secara naif.",
-          "Perangkap: Menyembunyikan konsumsi memori puncak (peak GPU RAM footprint) yang membatasi penerapan di edge devices."
-        ]
+          "[warning: Perangkap] Menilai keunggulan model semata-mata dari akurasi tanpa melaporkan jumlah parameter atau FLOPs.",
+          "[warning: Perangkap] Membandingkan model dengan arsitektur berbobot 50M parameter langsung dengan model 5M parameter secara naif.",
+          "[warning: Perangkap] Menyembunyikan konsumsi memori puncak (peak GPU RAM footprint) yang membatasi penerapan di edge devices."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Plot grafik performa vs FLOPs untuk seluruh varian dalam seksi studi ablasi.",
           "Prosedur: Hitung parameter rasio efisiensi marjinal (MER) untuk setiap penambahan modul.",
           "Prosedur: Tunjukkan titik trade-off yang dipilih penulis berdasarkan batas spesifikasi sistem target."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa Variant C dalam contoh implementasi di atas dinyatakan NOT Pareto Optimal (didominasi)?",
-          "Petunjuk: Bandingkan langsung spesifikasi Variant C dengan Variant B.",
-          "Solusi Kunci: Variant B memiliki akurasi 84.5% (lebih tinggi dari C yang 83.0%) sekaligus latensi 14.0 ms (lebih cepat dari C yang 16...."
-        ]
+          "Petunjuk Analitis: Bandingkan langsung spesifikasi Variant C dengan Variant B.",
+          "Solusi Kunci: Variant B memiliki akurasi 84.5% (lebih tinggi dari C yang 83.0%) sekaligus latensi 14.0 ms (lebih cepat dari C yang 16.0 ms). Tidak ada alasan teknis apa pun untuk memilih Variant C karena Variant B lebih unggul di kedua dimensi secara mutlak."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -560,100 +676,129 @@ export const CH35_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Taksonomi Kasus Kegagalan (Failure Case Forensics) dari...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Taksonomi Kasus Kegagalan (Failure Case Forensics) dari Variasi Varian Ablasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 5.4.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.4.",
-          "Capaian: Menyusun protokol forensik analisis kasus kegagalan (Failure Case Forensics).",
-          "Capaian: Menganalisis pergeseran modus kegagalan fisis saat modul diaktifkan atau dinonaktifkan.",
-          "Capaian: Menggunakan taksonomi kesalahan kualitatif untuk memperkuat kredibilitas temuan ilmiah."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 5.4.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun protokol forensik analisis kasus kegagalan (Failure Case Forensics).",
+          "Capaian 2: Menganalisis pergeseran modus kegagalan fisis saat modul diaktifkan atau dinonaktifkan.",
+          "Capaian 3: Menggunakan taksonomi kesalahan kualitatif untuk memperkuat kredibilitas temuan ilmiah."
         ],
-        "keyFormulaOrDiagram": "$$C_M(x) = \\mathbb{I}(\\hat{y}_M(x) = y(x))$$"
+        "keyFormulaOrDiagram": "$$C_M(x) = \\mathbb{I}(\\hat{y}_M(x) = y(x))$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 5.4.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Taksonomi Kasus Kegagalan (Failure Case Forensics) dari...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Taksonomi Kasus Kegagalan (Failure Case Forensics) dari Variasi Varian Ablasi",
+        "lead": "Sebuah makalah ilmiah yang hanya menampilkan visualisasi sampel-sampel yang berhasil (cherry-picked successful cases) adalah naskah yang mencurigakan dan tidak memenuhi standar rigoritas ilmiah.",
         "bulletPoints": [
-          "Sebuah makalah ilmiah yang hanya menampilkan visualisasi sampel-sampel yang berhasil (cherry-picked successful cases) adalah...",
-          "Filosofi Failure Case Forensics: Analisis kasus kegagalan adalah investigasi kualitatif dan kuantitatif terstruktur terhadap...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
-        ]
+          "Komunitas riset belajar jauh lebih banyak dari analisis mendalam mengenai kasus-kasus di mana algoritma mengalami kegagalan, dan bagaimana penonaktifan modul tertentu mengubah sifat fisis dari kegagalan tersebut.",
+          "Filosofi Failure Case Forensics: Analisis kasus kegagalan adalah investigasi kualitatif dan kuantitatif terstruktur terhadap sampel-sampel data di mana model membuat prediksi dengan kesalahan terbesar (worst-case predictions).",
+          "Dalam konteks studi ablasi, tujuannya adalah melacak: 1."
+        ],
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
-        "bulletPoints": [
-          "Sebuah makalah ilmiah yang hanya menampilkan visualisasi sampel-sampel yang berhasil (cherry-picked successful cases) adalah...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
-      },
-      {
-        "slideNumber": 4,
+        "slideNumber": 36,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Himpunan Partisi Kesalahan pada Ruang Sampel:",
         "bulletPoints": [
-          "Formulasi Himpunan Partisi Kesalahan pada Ruang Sampel:",
           "Misalkan $D_{\\text{test}}$ adalah himpunan data uji. Didefinisikan prediktor biner keberhasilan:",
-          "Diberikan dua model varian ablasi: Model Baseline ($B$) dan Model Usulan ($O$)."
+          "Diberikan dua model varian ablasi: Model Baseline ($B$) dan Model Usulan ($O$).",
+          "Ruang sampel data uji terpartisi menjadi 4 himpunan saling lepas:"
         ],
-        "keyFormulaOrDiagram": "$$C_M(x) = \\mathbb{I}(\\hat{y}_M(x) = y(x))$$"
+        "keyFormulaOrDiagram": "$$C_M(x) = \\mathbb{I}(\\hat{y}_M(x) = y(x))$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 37,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian inspeksi 1.000 citra cacat las baja: Baseline sukses pada 800 citra (200 gagal). Model dengan Modul Atensi Baru sukses pada 8...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Identifikasi himpunan: Baseline benar 800. Dari 800 yang benar tersebut, 30 dirusak oleh model baru...",
-          "Langkah 2: Identifikasi perbaikan: Dari 200 yang salah pada baseline, 80 diperbaiki oleh model baru. Maka F_O...",
-          "Langkah 3: Identifikasi kegagalan baru: I_O = 30.",
-          "Interpretasi: Model baru menghasilkan perbaikan bersih sebesar 21.7% dari seluruh ruang masalah yang belum terpecahkan, namun peneliti..."
+          "Konteks Kasus: Pada pengujian inspeksi 1.000 citra cacat las baja: Baseline sukses pada 800 citra (200 gagal). Model dengan Modul Atensi Baru sukses pada 850 citra (150 gagal). Analisis partisi menunjukkan: Modul baru memperbaiki 80 citra yang gagal pada baseline, namun menyebabkan 30 citra yang sebelumnya benar pada baseline menjadi salah. Hitung ukuran himpunan S_BO, F_O, I_O, E_sys, dan rasio NERR. Interpretasikan maknanya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 6: Hitung NERR: NERR = (80 - 30) / (1000 - 770) = 50 / 230 = 0.2174 (21.74%)."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Identifikasi himpunan: Baseline benar 800. Dari 800 yang benar tersebut, 30 dirusak oleh model baru. Maka sukses bersama S_BO = 800 - 30 = 770.",
+          "Langkah 2: Identifikasi perbaikan: Dari 200 yang salah pada baseline, 80 diperbaiki oleh model baru. Maka F_O = 80.",
+          "Langkah 3: Identifikasi kegagalan baru: I_O = 30."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Identifikasi batas sistemik: Dari 200 salah di baseline, 80 diperbaiki, sisanya tetap salah: E_sys = 200 - 80 = 120.",
+          "Langkah 5: Cek total: 770 + 80 + 30 + 120 = 1.000 sampel (konsisten).",
+          "Langkah 6: Hitung NERR: NERR = (80 - 30) / (1000 - 770) = 50 / 230 = 0.2174 (21.74%).",
+          "[result: Interpretasi Ilmiah] Model baru menghasilkan perbaikan bersih sebesar 21.7% dari seluruh ruang masalah yang belum terpecahkan, namun peneliti wajib menginvestigasi secara kualitatif penyebab 30 kegagalan baru yang timbul."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit partisi kegagalan dan identifikasi sampel anomali antar varian ablasi.",
         "bulletPoints": [
-          "Deskripsi: Audit partisi kegagalan dan identifikasi sampel anomali antar varian ablasi.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Forensik Partisi Kasus Kegagalan:"
+          "Tujuan Algoritma: Audit partisi kegagalan dan identifikasi sampel anomali antar varian ablasi.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Forensik Partisi Kasus Kegagalan:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Partisi Kasus Kegagalan: | Total Sampel Evaluasi : 500..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Forensik Partisi Kasus Kegagalan:\nTotal Sampel Evaluasi          : 500\nSukses Bersama (S_BO)           : 374 (74.8%)\nPerbaikan Modul Baru (F_O)      : 42 (8.4%) [Keberhasilan Hipotesis]\nKegagalan Baru Modul (I_O)      : 19 (3.8%) [Efek Samping Arsitektur]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 41,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Hanya menampilkan visualisasi citra/data yang berhasil dan menyembunyikan prediksi yang salah.",
-          "Perangkap: Tidak menganalisis mengapa suatu modul menyebabkan kesalahan baru pada kasus-kasus tertentu.",
-          "Perangkap: Menyimpulkan bahwa modul bekerja sempurna hanya berdasarkan kenaikan metrik skalar rata-rata."
-        ]
+          "[warning: Perangkap] Hanya menampilkan visualisasi citra/data yang berhasil dan menyembunyikan prediksi yang salah.",
+          "[warning: Perangkap] Tidak menganalisis mengapa suatu modul menyebabkan kesalahan baru pada kasus-kasus tertentu.",
+          "[warning: Perangkap] Menyimpulkan bahwa modul bekerja sempurna hanya berdasarkan kenaikan metrik skalar rata-rata."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 42,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Sajikan galeri kasus kegagalan (Failure Gallery) yang membandingkan output Baseline vs Usulan.",
           "Prosedur: Kelompokkan kesalahan ke dalam taksonomi penyebab fisik (misal pencahayaan ekstrem, oklusi, derau sensor).",
           "Prosedur: Diskusikan limitasi sistemik secara jujur dalam seksi Pembahasan (Discussion)."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 43,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Mengapa reviewer jurnal Q1 sangat mengapresiasi keberadaan seksi \"Failure Analysis and Limitations\" yang mendalam?",
-          "Petunjuk: Kaitkan dengan integritas ilmiah dan panduan riset lanjutan bagi peneliti lain.",
-          "Solusi Kunci: Analisis kegagalan membuktikan kejujuran dan kematangan ilmiah peneliti. Mengetahui kapan dan mengapa sebuah metode gaga..."
-        ]
+          "Petunjuk Analitis: Kaitkan dengan integritas ilmiah dan panduan riset lanjutan bagi peneliti lain.",
+          "Solusi Kunci: Analisis kegagalan membuktikan kejujuran dan kematangan ilmiah peneliti. Mengetahui kapan dan mengapa sebuah metode gagal memberikan nilai ilmiah yang sangat tinggi bagi komunitas untuk menentukan batas keabsahan teknologi serta merancang solusi perbaikan di masa depan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

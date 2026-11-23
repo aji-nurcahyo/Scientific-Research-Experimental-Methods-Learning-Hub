@@ -65,99 +65,139 @@ export const CH02_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Dekonstruksi Masalah Rekayasa: Dari Gejala Praktis ke A...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Dekonstruksi Masalah Rekayasa: Dari Gejala Praktis ke Akar Ilmiah",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.2.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.1.",
-          "Capaian: Membedakan antara gejala permukaan (symptom) dan akar masalah ilmiah (root cause) pada fenomena rekayasa.",
-          "Capaian: Menerapkan teknik 5-Whys dan Ishikawa Diagram untuk memetakan kausalitas kegagalan sistem.",
-          "Capaian: Mentransformasikan keluhan teknis industri menjadi pertanyaan investigasi ilmiah terstruktur."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan antara gejala permukaan (symptom) dan akar masalah ilmiah (root cause) pada fenomena rekayasa.",
+          "Capaian 2: Menerapkan teknik 5-Whys dan Ishikawa Diagram untuk memetakan kausalitas kegagalan sistem.",
+          "Capaian 3: Mentransformasikan keluhan teknis industri menjadi pertanyaan investigasi ilmiah terstruktur."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.2.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Dekonstruksi Masalah Rekayasa: Dari Gejala Praktis ke A...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Dekonstruksi Masalah Rekayasa: Dari Gejala Praktis ke Akar Ilmiah",
+        "lead": "Dalam dunia rekayasa, penelitian ilmiah yang berkualitas tinggi hampir selalu bermula dari upaya membedah masalah nyata.",
         "bulletPoints": [
-          "Dalam dunia rekayasa, penelitian ilmiah yang berkualitas tinggi hampir selalu bermula dari upaya membedah masalah nyata. Namu...",
-          "Sebagai contoh, jika sebuah motor induksi di lini pabrik mengalami *overheating* (suhu berlebih), suhu tinggi tersebut hanyal...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun, kesalahan paling umum yang dilakukan peneliti pemula, khususnya mahasiswa tingkat sarjana, adalah memperlakukan gejala permukaan (*symptoms*) seolah-olah gejala tersebut adalah masalah penelitian itu sendiri.",
+          "Sebagai contoh, jika sebuah motor induksi di lini pabrik mengalami *overheating* (suhu berlebih), suhu tinggi tersebut hanyalah gejala fisik yang teramati.",
+          "Masalah penelitian ilmiahnya bukanlah \"bagaimana cara mendinginkan motor yang panas\" (yang merupakan respons teknis permukaan), melainkan \"apakah mekanisme degradasi harmonik tegangan tinggi dari inverter sumber yang memicu arus pusar abnormal pada inti rotor sehingga menaikkan laju pembangkitan panas Joule\"."
         ],
-        "keyFormulaOrDiagram": "Proses mentransformasikan gejala praktis menjadi akar masalah ilmiah menuntut dekonstruksi..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Proses mentransformasikan gejala praktis menjadi akar masalah ilmiah menuntut dekonstruksi analitis berlapis.",
         "bulletPoints": [
-          "Proses mentransformasikan gejala praktis menjadi akar masalah ilmiah menuntut dekonstruksi analitis berlapis. Tiga instrumen...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Tiga instrumen metodologis utama digunakan untuk tujuan ini: 1. **Analisis 5-Whys (Sakichi Toyoda):** Menanyakan \"mengapa\" secara iteratif hingga mencapai batas interaksi fisik atau variabel pembatas sistem.",
+          "2. **Diagram Tulang Ikan Ishikawa (Cause-and-Effect Matrix):** Mengelompokkan potensi akar penyebab ke dalam 6 dimensi rekayasa (Machine, Method, Material, Measurement, Milieu/Environment, Manpower)."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Representasi formal pemetaan gejala-ke-penyebab menggunakan teori graf kausal:",
         "bulletPoints": [
-          "Representasi formal pemetaan gejala-ke-penyebab menggunakan teori graf kausal:",
           "di mana himpunan simpul $\\mathcal{V} = \\mathcal{S} \\cup \\mathcal{C} \\cup \\mathcal{R}$:",
-          "- $\\mathcal{S} = \\{s_1, s_2, \\dots, s_k\\}$: Gejala permukaan teramati (*observed symptoms*)."
+          "- $\\mathcal{S} = \\{s_1, s_2, \\dots, s_k\\}$: Gejala permukaan teramati (*observed symptoms*).",
+          "- $\\mathcal{C} = \\{c_1, c_2, \\dots, c_m\\}$: Mekanisme perantara (*intermediate mechanisms*)."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{G} = (\\mathcal{V}, \\mathcal{E})$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada sistem transmisi citra drone pemantau kebakaran hutan di ITERA, operator mengeluhkan bahwa \"kualitas video sering terputus dan buram sa...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada sistem transmisi citra drone pemantau kebakaran hutan di ITERA, operator mengeluhkan bahwa \"kualitas video sering terputus dan buram saat drone terbang di atas kanopi pohon lebat\". Dekonstruksilah keluhan teknis ini menjadi akar masalah ilmiah yang dapat diinvestigasi secara kuantitatif.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Gejala Teramati (Level 1): Video buram dan frame rate turun drastis (framerate < 5 fps).",
           "Pertanyaan Kausal (5-Whys):",
           "- Mengapa video buram? Karena bit-rate transmisi nirkabel WiFi 5 GHz otomatis turun di bawah 1 Mbps.",
-          "Interpretasi: Peneliti kini memiliki masalah ilmiah yang presisi: merancang algoritma estimasi kanal adaptif yang mengompensasi koefis..."
+          "- Mengapa bit-rate turun? Karena rasio signal-to-noise (SNR) di penerima stasiun darat merosot tajam."
         ],
-        "keyFormulaOrDiagram": "Perumusan Masalah Ilmiah (Root Cause): Ketidakmampuan algoritma kontrol laju modulasi tran..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Pemodelan atenuasi daya sinyal elektromagnetik pada kanopi vegetasi menggunakan model empiris Weissberger untuk mengidentifikasi v...",
-          "Dependensi Pustaka: numpy, matplotlib",
-          "Keluaran Diharapkan: === EVALUASI ATENUASI SINYAL KANOPI VEGETASI ==="
+          "- Mengapa SNR merosot di atas kanopi? Karena terjadi atenuasi sinyal frekuensi gelombang mikro akibat absorpsi dielektrik kadar air daun basah dan hamburan multipath kanopi.",
+          "- Mengapa sistem modulasi gagal beradaptasi? Karena algoritma adaptasi modulasi standar (MCS) hanya memperhitungkan packet loss acak, bukan fading lambat frekuensi-selektif kanopi hutan.",
+          "Perumusan Masalah Ilmiah (Root Cause): Ketidakmampuan algoritma kontrol laju modulasi transmisi nirkabel dalam membedakan antara packet loss akibat kongesti buffer vs atenuasi absorbsi dielektrik kanopi vegetasi.",
+          "[result: Interpretasi Ilmiah] Peneliti kini memiliki masalah ilmiah yang presisi: merancang algoritma estimasi kanal adaptif yang mengompensasi koefisien atenuasi vegetasi."
         ],
-        "keyFormulaOrDiagram": "=== EVALUASI ATENUASI SINYAL KANOPI VEGETASI === | Loss pada kedalaman 10 meter (2.4 GHz):..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Pemodelan atenuasi daya sinyal elektromagnetik pada kanopi vegetasi menggunakan model empiris Weissberger untuk mengidentifikasi variabel pengaruh dominan.",
         "bulletPoints": [
-          "Perangkap: Menjadikan ketiadaan alat komersial tertentu sebagai rumusan masalah (\"masalahnya adalah alat X belum ada di p...",
-          "Perangkap: Merumuskan masalah yang sifatnya implementasi teknis rutin tanpa adanya gap pengetahuan ilmiah.",
-          "Perangkap: Berhenti pada gejala pertama yang dilaporkan pengguna tanpa membedah mekanisme fisis yang mendasarinya."
-        ]
+          "Tujuan Algoritma: Pemodelan atenuasi daya sinyal elektromagnetik pada kanopi vegetasi menggunakan model empiris Weissberger untuk mengidentifikasi variabel pengaruh dominan.",
+          "Dependensi Pustaka Ilmiah: numpy, matplotlib",
+          "Keluaran Terverifikasi: === EVALUASI ATENUASI SINYAL KANOPI VEGETASI ==="
+        ],
+        "keyFormulaOrDiagram": "=== EVALUASI ATENUASI SINYAL KANOPI VEGETASI ===\nLoss pada kedalaman 10 meter (2.4 GHz): 45.41 dB\nLoss pada kedalaman 10 meter (5.8 GHz): 58.26 dB\nSelisih atenuasi frekuensi tinggi: 12.85 dB",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
-        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Prosedur: Uji falsifikasi akar masalah: Jika akar masalah yang dicurigai dimanipulasi, apakah gejala permukaan berubah s...",
-          "Prosedur: Verifikasi kepatuhan terhadap hukum konservasi energi dan fisis dalam pohon kausalitas."
-        ]
+          "[warning: Perangkap] Menjadikan ketiadaan alat komersial tertentu sebagai rumusan masalah (\"masalahnya adalah alat X belum ada di pasaran\").",
+          "[warning: Perangkap] Merumuskan masalah yang sifatnya implementasi teknis rutin tanpa adanya gap pengetahuan ilmiah.",
+          "[warning: Perangkap] Berhenti pada gejala pertama yang dilaporkan pengguna tanpa membedah mekanisme fisis yang mendasarinya."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
         "slideNumber": 10,
-        "title": "Sintesis Materi & Latihan Mandiri",
+        "layout": "example",
+        "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Pertanyaan Uji: Sebuah pabrik pengolahan kelapa sawit mengeluhkan bahwa \"sensor kekeruhan minyak CPO sering rusak setiap dua minggu\". Ba...",
-          "Petunjuk: Identifikasi lingkungan kimiawi dan termal CPO yang bersentuhan dengan elemen sensor.",
-          "Solusi Kunci: Alih-alih menyimpulkan \"sensornya jelek\", dekonstruksi ilmiah meneliti interaksi kimiawi: Apakah tingginya kandungan asa..."
-        ]
+          "Prosedur: Uji falsifikasi akar masalah: Jika akar masalah yang dicurigai dimanipulasi, apakah gejala permukaan berubah secara terukur?",
+          "Prosedur: Verifikasi kepatuhan terhadap hukum konservasi energi dan fisis dalam pohon kausalitas."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
+      },
+      {
+        "slideNumber": 11,
+        "layout": "exercise",
+        "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
+        "bulletPoints": [
+          "Pertanyaan Uji: Sebuah pabrik pengolahan kelapa sawit mengeluhkan bahwa \"sensor kekeruhan minyak CPO sering rusak setiap dua minggu\". Bagaimana mentranslasikan keluhan operasional ini menjadi rumusan masalah penelitian material/sensorik?",
+          "Petunjuk Analitis: Identifikasi lingkungan kimiawi dan termal CPO yang bersentuhan dengan elemen sensor.",
+          "Solusi Kunci: Alih-alih menyimpulkan \"sensornya jelek\", dekonstruksi ilmiah meneliti interaksi kimiawi: Apakah tingginya kandungan asam lemak bebas (FFA) dan suhu operasi 80 derajat Celcius memicu korosi pitting pada elektroda sensor? Masalah ilmiahnya adalah degradasi elektrokimia material elektroda di bawah paparan asam organik bersuhu tinggi."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -212,89 +252,127 @@ export const CH02_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Analisis Pohon Masalah (Problem Tree Analysis) dan Bata...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Analisis Pohon Masalah (Problem Tree Analysis) dan Batasan Lingkup",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.2.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.2.",
-          "Capaian: Membangun diagram pohon masalah berhirarki yang menghubungkan akar, batang masalah, dan dampak.",
-          "Capaian: Menetapkan batasan ruang lingkup penelitian (scoping boundaries) secara objektif dan rasional.",
-          "Capaian: Mengonversi pohon masalah menjadi pohon tujuan penelitian (objective tree)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membangun diagram pohon masalah berhirarki yang menghubungkan akar, batang masalah, dan dampak.",
+          "Capaian 2: Menetapkan batasan ruang lingkup penelitian (scoping boundaries) secara objektif dan rasional.",
+          "Capaian 3: Mengonversi pohon masalah menjadi pohon tujuan penelitian (objective tree)."
         ],
-        "keyFormulaOrDiagram": "$$T = (V, E, W)$$"
+        "keyFormulaOrDiagram": "$$T = (V, E, W)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.2.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Analisis Pohon Masalah (Problem Tree Analysis) dan Bata...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Analisis Pohon Masalah (Problem Tree Analysis) dan Batasan Lingkup",
+        "lead": "Analisis Pohon Masalah (*Problem Tree Analysis*) adalah instrumen grafis terstruktur untuk memvisualisasikan hubungan sebab-akibat (*cause-and-effect relationship*) dari suatu isu ilmiah atau rekayasa yang kompleks.",
         "bulletPoints": [
-          "Analisis Pohon Masalah (*Problem Tree Analysis*) adalah instrumen grafis terstruktur untuk memvisualisasikan hubungan sebab-a...",
-          "Keuntungan utama membangun pohon masalah dalam penelitian rekayasa adalah kemampuannya memperjelas batasan ruang lingkup (*sc...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Diagram ini dianalogikan menyerupai anatomi pohon utuh: - **Akar (Roots):** Penyebab struktural mendasar (*underlying causes*). - **Batang (Trunk):** Masalah sentral inti (*core research problem*). - **Cabang & Daun (Branches & Leaves):** Dampak atau konsekuensi negatif yang ditimbulkan (*effects/impacts*).",
+          "Keuntungan utama membangun pohon masalah dalam penelitian rekayasa adalah kemampuannya memperjelas batasan ruang lingkup (*scoping*).",
+          "Tidak ada satu penelitian pun, termasuk disertasi doktoral, yang mampu menyelesaikan seluruh akar masalah sekaligus dalam satu waktu."
         ],
-        "keyFormulaOrDiagram": "Melalui pohon masalah, peneliti dapat secara sadar dan defensibel menentukan garis demarka..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Melalui pohon masalah, peneliti dapat secara sadar dan defensibel menentukan garis demarkasi: cabang akar mana yang berada **di dalam lingkup** penelitian (*in-scope*), dan cabang mana yang diletakkan **di luar lingkup** (*out-of-scope*) beserta justifikasi keterbatasan sumber daya, waktu, atau kapasitas instrumen.",
         "bulletPoints": [
-          "Melalui pohon masalah, peneliti dapat secara sadar dan defensibel menentukan garis demarkasi: cabang akar mana yang berada **...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Selanjutnya, pohon masalah dapat ditransformasikan secara simetris menjadi Pohon Tujuan (*Objective Tree*), di mana setiap simpul penyebab diubah menjadi simpul keluaran solusi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Struktur pohon masalah sebagai graf berarah asiklik hierarkis berbobot:",
         "bulletPoints": [
-          "Struktur pohon masalah sebagai graf berarah asiklik hierarkis berbobot:",
           "di mana:",
-          "- Simpul akar $r in V$ adalah masalah sentral."
+          "- Simpul akar $r in V$ adalah masalah sentral.",
+          "- Relasi busur $(u, v) in E$ menyatakan \"$u$ disebabkan oleh $v$\"."
         ],
-        "keyFormulaOrDiagram": "$$T = (V, E, W)$$"
+        "keyFormulaOrDiagram": "$$T = (V, E, W)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Susunlah dekomposisi pohon masalah untuk penelitian Tugas Akhir mengenai: \"Tingginya Laju Kegagalan Inisiasi Jahitan Las Gesek Putar (Fricti...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Susunlah dekomposisi pohon masalah untuk penelitian Tugas Akhir mengenai: \"Tingginya Laju Kegagalan Inisiasi Jahitan Las Gesek Putar (Friction Stir Welding) pada Plat Aluminium Paduan Seri 6000 di Laboratorium Manufaktur ITERA\". Tentukan batas lingkup penelitian yang realistis.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Masalah Inti (Batang): Terjadinya cacat rongga (wormhole defect) pada zona adukan las aluminium 6000.",
           "Akar Penyebab Level 1:",
           "1. Panas gesekan tidak homogen di sepanjang garis las.",
-          "Interpretasi: Peneliti berhasil menetapkan fokus yang tajam dan dapat diuji secara eksperimental di laboratorium tanpa over-commitment..."
+          "2. Gaya tekan aksial pin alat las mengalami defleksi dinamis.",
+          "3. Kecepatan rotasi spindel mengalami fluktuasi torsi motor."
         ],
-        "keyFormulaOrDiagram": "Batasan Lingkup (Scoping Decision): Peneliti membatasi riset pada optimalisasi geometri ba..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Akar Penyebab Level 2 (Sub-Akar):",
+          "1.1. Profil geometri bahu alat las tidak memiliki alur scroll spiral untuk sirkulasi plastisitas material.",
+          "1.2. Laju alir panas ke landasan anvil terlalu cepat (konduktivitas termal landasan tinggi).",
+          "Batasan Lingkup (Scoping Decision): Peneliti membatasi riset pada optimalisasi geometri bahu alat las (Akar 1.1) dan variasi kecepatan rotasi konstan (In-Scope). Peneliti menetapkan modifikasi sistem kontrol motor spindel (Akar 3) sebagai Out-of-Scope karena memerlukan pergantian hardware kontroler mesin yang berada di luar anggaran TA.",
+          "[result: Interpretasi Ilmiah] Peneliti berhasil menetapkan fokus yang tajam dan dapat diuji secara eksperimental di laboratorium tanpa over-commitment."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menyusun pohon masalah yang terbalik: menempatkan dampak sebagai penyebab, atau menempatkan masalah inti di ba...",
-          "Perangkap: Tidak membuat batasan lingkup tertulis sehingga reviewer menguji aspek-aspek yang sebenarnya tidak diniatkan u...",
-          "Perangkap: Membuat batasan lingkup yang didasarkan pada kemalasan peneliti (\"dibatasi karena peneliti tidak mau repot\") a..."
-        ]
+          "[warning: Perangkap] Menyusun pohon masalah yang terbalik: menempatkan dampak sebagai penyebab, atau menempatkan masalah inti di bagian cabang.",
+          "[warning: Perangkap] Tidak membuat batasan lingkup tertulis sehingga reviewer menguji aspek-aspek yang sebenarnya tidak diniatkan untuk diteliti.",
+          "[warning: Perangkap] Membuat batasan lingkup yang didasarkan pada kemalasan peneliti (\"dibatasi karena peneliti tidak mau repot\") alih-alih keterbatasan objektif keilmuan."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Uji keterbalikan logis (Logic Reversal Test): Baca pohon dari bawah ke atas menggunakan kata hubung \"KARENA ....."
-        ]
+          "Prosedur: Uji keterbalikan logis (Logic Reversal Test): Baca pohon dari bawah ke atas menggunakan kata hubung \"KARENA ... MAKA ...\". Jika alur logika terasa janggal, struktur pohon wajib direvisi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Dalam sebuah pohon masalah sistem deteksi citra medis kanker kulit, terdapat akar \"rendahnya kontras lesi akibat variasi...",
-          "Petunjuk: Bedakan kontribusi metodologis algoritma dari batasan infrastruktur IT.",
-          "Solusi Kunci: Variasi kontras lesi kulit adalah in-scope (memerlukan inovasi normalisasi warna atau atensi lokal). Keterbatasan GPU se..."
-        ]
+          "Pertanyaan Uji: Dalam sebuah pohon masalah sistem deteksi citra medis kanker kulit, terdapat akar \"rendahnya kontras lesi akibat variasi warna kulit pasien\" dan akar \"keterbatasan GPU server rumah sakit\". Jika Anda meneliti dari sudut pandang algoritma visi komputer murni, manakah yang in-scope dan manakah yang out-of-scope?",
+          "Petunjuk Analitis: Bedakan kontribusi metodologis algoritma dari batasan infrastruktur IT.",
+          "Solusi Kunci: Variasi kontras lesi kulit adalah in-scope (memerlukan inovasi normalisasi warna atau atensi lokal). Keterbatasan GPU server adalah out-of-scope (masalah pengadaan infrastruktur keras rumah sakit), meskipun efisiensi FLOPs algoritma dapat dipertimbangkan sebagai batasan sekunder."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -345,88 +423,122 @@ export const CH02_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Kriteria FINER untuk Evaluasi Kelayakan Pertanyaan Pene...",
+        "slideNumber": 22,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Kriteria FINER untuk Evaluasi Kelayakan Pertanyaan Penelitian",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.2.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.3.",
-          "Capaian: Menerapkan kerangka kerja FINER untuk menguji kelayakan pertanyaan penelitian rekayasa.",
-          "Capaian: Mengidentifikasi kendala etika, metodologis, dan sumber daya pada tahap perumusan pertanyaan.",
-          "Capaian: Merevisi pertanyaan penelitian yang gagal memenuhi salah satu kriteria FINER."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan kerangka kerja FINER untuk menguji kelayakan pertanyaan penelitian rekayasa.",
+          "Capaian 2: Mengidentifikasi kendala etika, metodologis, dan sumber daya pada tahap perumusan pertanyaan.",
+          "Capaian 3: Merevisi pertanyaan penelitian yang gagal memenuhi salah satu kriteria FINER."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Score}_{\\text{FINER}} = \\sum_{k \\in \\{F, I, N, E, R\\}} w_k \\cdot S_k$$"
+        "keyFormulaOrDiagram": "$$\\text{Score}_{\\text{FINER}} = \\sum_{k \\in \\{F, I, N, E, R\\}} w_k \\cdot S_k$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.2.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Kriteria FINER untuk Evaluasi Kelayakan Pertanyaan Pene...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Kriteria FINER untuk Evaluasi Kelayakan Pertanyaan Penelitian",
+        "lead": "Sebuah pertanyaan penelitian mungkin terdengar sangat menarik dan bernilai revolusioner, namun jika pertanyaan tersebut tidak dapat dieksekusi secara nyata dalam batas waktu dan sumber daya yang tersedia, maka riset tersebut ditakdirkan untuk macet di tengah jalan.",
         "bulletPoints": [
-          "Sebuah pertanyaan penelitian mungkin terdengar sangat menarik dan bernilai revolusioner, namun jika pertanyaan tersebut tidak...",
-          "FINER mengevaluasi pertanyaan penelitian melalui lima dimensi kritis:",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Untuk mencegah kegagalan ini, komunitas akademik mengadopsi kerangka kerja evaluasi **FINER** (Hulley et al., 2013).",
+          "FINER mengevaluasi pertanyaan penelitian melalui lima dimensi kritis:"
         ],
-        "keyFormulaOrDiagram": "1. **Feasible (Layak / Dapat Dikerjakan):** - Apakah jumlah subjek atau unit eksperimen me..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "1. **Feasible (Layak / Dapat Dikerjakan):** - Apakah jumlah subjek atau unit eksperimen memadai? - Apakah peneliti memiliki keahlian teknis yang disyaratkan? - Apakah biaya peralatan, reagen, atau komputasi berada dalam jangkauan anggaran? - Apakah durasi penyelesaian realistis sesuai tenggat waktu akademik?",
         "bulletPoints": [
-          "1. **Feasible (Layak / Dapat Dikerjakan):** - Apakah jumlah subjek atau unit eksperimen memadai? - Apakah peneliti memiliki k...",
-          "2. **Interesting (Menarik):** - Apakah pertanyaan tersebut memicu rasa ingin tahu ilmiah peneliti dan komunitas akademik glob...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "2. **Interesting (Menarik):** - Apakah pertanyaan tersebut memicu rasa ingin tahu ilmiah peneliti dan komunitas akademik global? - Apakah pembimbing atau reviewer akan terdorong untuk membaca dan menguji temuannya?"
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 25,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Skor Evaluasi Kelayakan FINER Terbobot:",
         "bulletPoints": [
-          "Skor Evaluasi Kelayakan FINER Terbobot:",
           "di mana:",
-          "- $w_k$: Bobot kepentingan relatif kriteria (dengan $\\sum w_k = 1.0$, misal: $w_F = 0.3, w_N = 0.25, w_E = 0.2..."
+          "- $w_k$: Bobot kepentingan relatif kriteria (dengan $\\sum w_k = 1.0$, misal: $w_F = 0.3, w_N = 0.25, w_E = 0.2, w_R = 0.15, w_I = 0.1$).",
+          "- $S_k \\in [1, 5]$: Skor pemenuhan skala ordinal Likert."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Score}_{\\text{FINER}} = \\sum_{k \\in \\{F, I, N, E, R\\}} w_k \\cdot S_k$$"
+        "keyFormulaOrDiagram": "$$\\text{Score}_{\\text{FINER}} = \\sum_{k \\in \\{F, I, N, E, R\\}} w_k \\cdot S_k$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 26,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang mahasiswa S1 Teknik Biomedis ITERA mengusulkan pertanyaan penelitian: \"Apakah penggunaan implan sensor berbasis nanotube karbon dapa...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Feasibility (F): SKOR 1 (SANGAT GAGAL). Uji in-vivo 5 tahun pada otak manusia mustahil diselesaikan dalam dura...",
-          "Interesting (I): SKOR 5. Sangat menarik dan futuristik.",
-          "Novel (N): SKOR 5. Sangat baru di literatur.",
-          "Interpretasi: Meskipun pertanyaan awal sangat menarik dan baru, kegagalan fatal pada Feasibility dan Ethics mengharuskan perumusan ula..."
+          "Konteks Kasus: Seorang mahasiswa S1 Teknik Biomedis ITERA mengusulkan pertanyaan penelitian: \"Apakah penggunaan implan sensor berbasis nanotube karbon dapat memantau kadar glukosa cairan serebrospinal otak manusia secara kontinu selama 5 tahun tanpa memicu reaksi penolakan imunologis?\" Lakukan audit kelayakan menggunakan kriteria FINER.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Rekomendasi Revisi: Turunkan pertanyaan ke skala laboratorium yang realistis: \"Bagaimanaka..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "slideNumber": 27,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Perangkap: Memilih topik hanya karena sedang tren di media sosial tanpa memeriksa ketersediaan data empiris atau perangka...",
-          "Perangkap: Mengabaikan aspek perizinan etik (*ethics clearance*) hingga penelitian telah selesai dijalankan (berpotensi m..."
-        ]
+          "Feasibility (F): SKOR 1 (SANGAT GAGAL). Uji in-vivo 5 tahun pada otak manusia mustahil diselesaikan dalam durasi Tugas Akhir S1 (maksimal 1-2 semester), dan laboratorium belum memiliki fasilitas sertifikasi implan bedah saraf.",
+          "Interesting (I): SKOR 5. Sangat menarik dan futuristik.",
+          "Novel (N): SKOR 5. Sangat baru di literatur."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Ethical (E): SKOR 1 (GAGAL MUTLAK). Risiko fatal infeksi otak atau kerusakan saraf permanen pada manusia tanpa uji praklinis hewan bertahap melanggar deklarasi Helsinki.",
+          "Relevant (R): SKOR 5. Sangat relevan untuk pemantauan penyakit metabolik.",
+          "Rekomendasi Revisi: Turunkan pertanyaan ke skala laboratorium yang realistis: \"Bagaimanakah biokompatibilitas material pelapis hidrogel pada sensor elektrokimia glukosa in-vitro di bawah paparan cairan simulasi tubuh selama 48 jam?\"",
+          "[result: Interpretasi Ilmiah] Meskipun pertanyaan awal sangat menarik dan baru, kegagalan fatal pada Feasibility dan Ethics mengharuskan perumusan ulang pertanyaan penelitian ke tingkat yang dapat dieksekusi secara legal dan aman."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Memilih topik hanya karena sedang tren di media sosial tanpa memeriksa ketersediaan data empiris atau perangkat keras di laboratorium lokal.",
+          "[warning: Perangkap] Mengabaikan aspek perizinan etik (*ethics clearance*) hingga penelitian telah selesai dijalankan (berpotensi menyebabkan penolakan naskah saat submit jurnal)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Matriks audit FINER pra-proposal yang ditandatangani bersama pembimbing riset sebelum eksperimen dimulai."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 31,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Sebuah pertanyaan penelitian memiliki skor novelty tinggi dan sangat relevan, namun memerlukan waktu pengumpulan data se...",
-          "Petunjuk: Fokus pada dimensi waktu dan ketersediaan data sekunder.",
-          "Solusi Kunci: Kriteria Feasible (F) terlanggar dari segi batasan waktu. Solusinya: beralih dari pengumpulan data observasi primer mult..."
-        ]
+          "Pertanyaan Uji: Sebuah pertanyaan penelitian memiliki skor novelty tinggi dan sangat relevan, namun memerlukan waktu pengumpulan data sensor satelit selama 3 tahun, padahal Anda harus lulus magister dalam 1.5 tahun. Kriteria FINER mana yang terlanggar, dan bagaimana solusinya?",
+          "Petunjuk Analitis: Fokus pada dimensi waktu dan ketersediaan data sekunder.",
+          "Solusi Kunci: Kriteria Feasible (F) terlanggar dari segi batasan waktu. Solusinya: beralih dari pengumpulan data observasi primer multi-tahun ke penggunaan dataset repositori satelit historis terbuka (misal: arsip USGS Landsat / ESA Sentinel 5 tahun terakhir) untuk menguji algoritma usulan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -475,88 +587,121 @@ export const CH02_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Perumusan Pertanyaan dan Tujuan Penelitian Berbasis SMA...",
+        "slideNumber": 32,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Perumusan Pertanyaan dan Tujuan Penelitian Berbasis SMART Framework",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 1.2.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.4.",
-          "Capaian: Menyusun pertanyaan penelitian terfokus yang memandu pilihan metode empiris.",
-          "Capaian: Menerapkan kerangka SMART untuk merumuskan tujuan penelitian yang terukur.",
-          "Capaian: Memetakan hubungan keselarasan satu-satu (bijective alignment) antara pertanyaan dan tujuan."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 1.2.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menyusun pertanyaan penelitian terfokus yang memandu pilihan metode empiris.",
+          "Capaian 2: Menerapkan kerangka SMART untuk merumuskan tujuan penelitian yang terukur.",
+          "Capaian 3: Memetakan hubungan keselarasan satu-satu (bijective alignment) antara pertanyaan dan tujuan."
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{RQ} = \\{rq_1, rq_2, \\dots, rq_n\\}, \\quad \\mathcal{RO} = \\{ro_1, ro_2, \\dots, ro_n\\}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{RQ} = \\{rq_1, rq_2, \\dots, rq_n\\}, \\quad \\mathcal{RO} = \\{ro_1, ro_2, \\dots, ro_n\\}$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 1.2.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Perumusan Pertanyaan dan Tujuan Penelitian Berbasis SMA...",
+        "slideNumber": 33,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Perumusan Pertanyaan dan Tujuan Penelitian Berbasis SMART Framework",
+        "lead": "Tahap puncak dari fase perumusan masalah penelitian adalah merumuskan Pertanyaan Penelitian (*Research Questions* - RQ) dan Tujuan Penelitian (*Research Objectives* - RO).",
         "bulletPoints": [
-          "Tahap puncak dari fase perumusan masalah penelitian adalah merumuskan Pertanyaan Penelitian (*Research Questions* - RQ) dan T...",
-          "Pertanyaan penelitian yang baik harus memiliki fokus tajam, tidak bermakna ganda, dan secara eksplisit menyiratkan variabel a...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Di sinilah rancangan riset diikat menjadi dokumen kontrak ilmiah yang presisi.",
+          "Pertanyaan penelitian yang baik harus memiliki fokus tajam, tidak bermakna ganda, dan secara eksplisit menyiratkan variabel apa yang akan dimanipulasi serta diukur.",
+          "Hindari pertanyaan biner sederhana (\"Apakah algoritma X bekerja?\") yang hanya memerlukan jawaban \"ya\" atau \"tidak\"."
         ],
-        "keyFormulaOrDiagram": "Untuk memastikan tujuan penelitian dapat dinilai ketercapaiannya, gunakan kerangka kerja *..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Untuk memastikan tujuan penelitian dapat dinilai ketercapaiannya, gunakan kerangka kerja **SMART**: - **Specific (Spesifik):** Menyatakan secara gamblang fenomena, variabel, dan unit eksperimen yang menjadi fokus, bukan pernyataan umum yang mengambang. - **Measurable (Terukur):** Memuat indikator metrik kuantitatif atau kualitatif objektif yang memiliki parameter ukur yang jelas. - **Achievable (Dapat Dicapai):** Realistis untuk direalisasikan dengan instrumen dan metodologi yang tersedia. - **Relevant (Relevan):** Berkontribusi langsung pada penyelesaian rumusan masalah inti. - **Time-bound (Berbatas Waktu):** Memiliki tonggak pencapaian (*milestones*) yang terikat jadwal.",
         "bulletPoints": [
-          "Untuk memastikan tujuan penelitian dapat dinilai ketercapaiannya, gunakan kerangka kerja **SMART**: - **Specific (Spesifik):*...",
-          "Aturan emas keselarasan penelitian: **Jumlah dan substansi Tujuan Penelitian harus berkorelasi 1-ke-1 (bijective mapping) ter...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Aturan emas keselarasan penelitian: **Jumlah dan substansi Tujuan Penelitian harus berkorelasi 1-ke-1 (bijective mapping) terhadap Pertanyaan Penelitian**.",
+          "Jika ada 3 pertanyaan penelitian, maka harus ada tepat 3 tujuan penelitian yang menjawab masing-masing pertanyaan tersebut secara simetris."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 35,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formalisasi Pemetaan Keselarasan Bijektif Pertanyaan-Tujuan:",
         "bulletPoints": [
-          "Formalisasi Pemetaan Keselarasan Bijektif Pertanyaan-Tujuan:",
           "Fungsi Pemetaan Keselarasan:",
           "di mana setiap $ro_i$ memenuhi fungsi predikat verifikasi SMART:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathcal{RQ} = \\{rq_1, rq_2, \\dots, rq_n\\}, \\quad \\mathcal{RO} = \\{ro_1, ro_2, \\dots, ro_n\\}$$"
+        "keyFormulaOrDiagram": "$$\\mathcal{RQ} = \\{rq_1, rq_2, \\dots, rq_n\\}, \\quad \\mathcal{RO} = \\{ro_1, ro_2, \\dots, ro_n\\}$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 36,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah riset Tugas Akhir di ITERA meneliti optimasi konsumsi energi pada jaringan sensor nirkabel (WSN) pemantau tanah longsor. Susunlah 2 p...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Pertanyaan Penelitian 1 (RQ-1): Bagaimanakah pengaruh variasi interval duty-cycling adaptif terhadap konsumsi...",
-          "Tujuan Penelitian 1 (RO-1 - SMART): Mengukur dan menganalisis penurunan konsumsi daya listrik simpul sensor WS...",
-          "Pertanyaan Penelitian 2 (RQ-2): Sejauh mana skema kompresi data berbasis Compressive Sensing mempertahankan ak...",
-          "Interpretasi: Kedua tujuan penelitian memiliki kata kerja operasional terukur (mengukur, menganalisis, mengevaluasi) dan ambang batas..."
+          "Konteks Kasus: Sebuah riset Tugas Akhir di ITERA meneliti optimasi konsumsi energi pada jaringan sensor nirkabel (WSN) pemantau tanah longsor. Susunlah 2 pasang Pertanyaan Penelitian (RQ) dan Tujuan Penelitian (RO) yang memenuhi standar SMART.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Tujuan Penelitian 2 (RO-2 - SMART): Mengevaluasi rasio Signal-to-Quantization-Noise (SQNR)..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 37,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Pertanyaan Penelitian 1 (RQ-1): Bagaimanakah pengaruh variasi interval duty-cycling adaptif terhadap konsumsi daya rata-rata simpul sensor WSN pada kondisi curah hujan tinggi?",
+          "Tujuan Penelitian 1 (RO-1 - SMART): Mengukur dan menganalisis penurunan konsumsi daya listrik simpul sensor WSN di bawah variasi interval duty-cycling adaptif (10 s.d. 60 detik) untuk mencapai efisiensi energi minimal 25% dibanding duty-cycling statis."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 38,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Pertanyaan Penelitian 2 (RQ-2): Sejauh mana skema kompresi data berbasis Compressive Sensing mempertahankan akurasi rekonstruksi sinyal kelembaban tanah pada rasio kompresi 4:1?",
+          "Tujuan Penelitian 2 (RO-2 - SMART): Mengevaluasi rasio Signal-to-Quantization-Noise (SQNR) dan Reconstruction Error (RMSE < 0.05 m^3/m^3) dari algoritma Compressive Sensing pada rasio kompresi 4:1 menggunakan dataset telemetri tanah longsor ITERA.",
+          "[result: Interpretasi Ilmiah] Kedua tujuan penelitian memiliki kata kerja operasional terukur (mengukur, menganalisis, mengevaluasi) dan ambang batas kuantitatif eksplisit (25% efisiensi, RMSE < 0.05)."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 39,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan kata kerja abstrak yang tidak dapat dinilai penguji seperti \"memahami secara mendalam\", \"mempelaja...",
-          "Perangkap: Tujuan penelitian tidak selaras dengan kesimpulan: menulis 4 tujuan di proposal namun hanya menjawab 2 tujuan..."
-        ]
+          "[warning: Perangkap] Menggunakan kata kerja abstrak yang tidak dapat dinilai penguji seperti \"memahami secara mendalam\", \"mempelajari sistem\", atau \"mengetahui fenomena\". Ganti dengan kata kerja taksonomi Bloom (mengukur, menghitung, mengonstruksi, membandingkan).",
+          "[warning: Perangkap] Tujuan penelitian tidak selaras dengan kesimpulan: menulis 4 tujuan di proposal namun hanya menjawab 2 tujuan di kesimpulan akhir."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 40,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Audit keselarasan matriks: Periksa keselarasan tabel 3 kolom (Pertanyaan Riset $\\leftrightarrow$ Tujuan SMART..."
-        ]
+          "Prosedur: Audit keselarasan matriks: Periksa keselarasan tabel 3 kolom (Pertanyaan Riset $\\leftrightarrow$ Tujuan SMART $\\leftrightarrow$ Metrik Luaran)."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 41,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Ubahlah tujuan penelitian yang buruk berikut menjadi tujuan SMART: \"Tujuan penelitian adalah mempelajari pembuatan siste...",
-          "Petunjuk: Gunakan kata kerja operasional, sebutkan parameter air yang diukur, dan batas galat sensor.",
-          "Solusi Kunci: Revisi SMART: \"Merancang dan memvalidasi prototipe sistem pemantau kualitas air berbasis IoT untuk mengukur pH (akurasi..."
-        ]
+          "Pertanyaan Uji: Ubahlah tujuan penelitian yang buruk berikut menjadi tujuan SMART: \"Tujuan penelitian adalah mempelajari pembuatan sistem IoT pendeteksi kualitas air sungai.\"",
+          "Petunjuk Analitis: Gunakan kata kerja operasional, sebutkan parameter air yang diukur, dan batas galat sensor.",
+          "Solusi Kunci: Revisi SMART: \"Merancang dan memvalidasi prototipe sistem pemantau kualitas air berbasis IoT untuk mengukur pH (akurasi +/- 0.1) dan kekeruhan turbiditas (akurasi +/- 5 NTU) dengan transmisi telemetri LoRaWAN setiap 5 menit selama 30 hari pengujian kontinu di Sungai Way Hui ITERA.\""
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

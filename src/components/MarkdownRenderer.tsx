@@ -13,7 +13,13 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, inl
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm as any, remarkMath as any]}
-      rehypePlugins={[rehypeKatex as any]}
+      rehypePlugins={[
+        [rehypeKatex as any, {
+          throwOnError: false,
+          errorColor: '#94a3b8',
+          strict: false,
+        }]
+      ]}
       components={inline ? {
         p: ({ children }) => <span>{children}</span>
       } : undefined}

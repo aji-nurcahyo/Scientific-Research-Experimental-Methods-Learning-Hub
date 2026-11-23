@@ -62,100 +62,138 @@ export const CH30_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Rasionalisasi Faktorial Fraksional: Prinsip Sparsity of...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Rasionalisasi Faktorial Fraksional: Prinsip Sparsity of Effects",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.7.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.1.",
-          "Capaian: Memahami ledakan eksponensial (curse of dimensionality) pada desain faktorial penuh saat k membesar.",
-          "Capaian: Menerapkan Prinsip Sparsity of Effects (Prinsip Pareto) dalam screening eksperimental.",
-          "Capaian: Menghitung rasio reduksi beban eksperimen dengan fraksionasi desain 2^(k-p)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami ledakan eksponensial (curse of dimensionality) pada desain faktorial penuh saat k membesar.",
+          "Capaian 2: Menerapkan Prinsip Sparsity of Effects (Prinsip Pareto) dalam screening eksperimental.",
+          "Capaian 3: Menghitung rasio reduksi beban eksperimen dengan fraksionasi desain 2^(k-p)."
         ],
-        "keyFormulaOrDiagram": "$$N = 2^{k-p} = \\frac{1}{2^p} \\times 2^k$$"
+        "keyFormulaOrDiagram": "$$N = 2^{k-p} = \\frac{1}{2^p} \\times 2^k$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.7.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Rasionalisasi Faktorial Fraksional: Prinsip Sparsity of...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Rasionalisasi Faktorial Fraksional: Prinsip Sparsity of Effects",
+        "lead": "Desain faktorial penuh 2^k adalah alat eksperimen yang sangat kuat, namun memiliki keterbatasan ekonomi yang drastis ketika jumlah faktor yang ingin diselidiki cukup banyak.",
         "bulletPoints": [
-          "Desain faktorial penuh 2^k adalah alat eksperimen yang sangat kuat, namun memiliki keterbatasan ekonomi yang drastis ketika j...",
-          "Lebih jauh lagi, pada desain 2^8 (256 run), terdapat 255 derajat kebebasan yang diestimasi. Dari 255 derajat kebebasan terseb...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Jumlah pengujian bertambah secara eksponensial: untuk k = 4 faktor dibutuhkan 16 run, k = 6 faktor membutuhkan 64 run, k = 8 faktor membutuhkan 256 run, dan k = 10 faktor membutuhkan 1,024 run.",
+          "Dalam dunia industri atau eksperimen laboratorium fisik berbiaya tinggi, menjalankan ratusan hingga ribuan run eksperimen sering kali mustahil secara anggaran dan waktu.",
+          "Lebih jauh lagi, pada desain 2^8 (256 run), terdapat 255 derajat kebebasan yang diestimasi.",
+          "Dari 255 derajat kebebasan tersebut: - Hanya 8 derajat kebebasan mewakili Efek Utama. - Hanya 28 derajat kebebasan mewakili Interaksi 2-Faktor. - Sebanyak 219 derajat kebebasan lainnya (86% dari seluruh kapasitas eksperimen!) dihabiskan semata-mata untuk mengestimasi interaksi 3-faktor, 4-faktor, hingga 8-faktor."
         ],
-        "keyFormulaOrDiagram": "Di sinilah Prinsip Sparsity of Effects (sering disebut Prinsip Pareto dalam DoE) beroperas..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Di sinilah Prinsip Sparsity of Effects (sering disebut Prinsip Pareto dalam DoE) beroperasi: dalam hampir seluruh sistem fisik dan rekayasa riil, respon sistem didominasi secara mutlak oleh segelintir efek utama dan beberapa interaksi dua faktor berorde rendah.",
         "bulletPoints": [
-          "Di sinilah Prinsip Sparsity of Effects (sering disebut Prinsip Pareto dalam DoE) beroperasi: dalam hampir seluruh sistem fisi...",
-          "Rasionalisasi ini melahirkan Desain Faktorial Fraksional (Fractional Factorial Designs, notasi 2^(k-p)). Alih-alih menjalanka...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Interaksi tiga faktor atau lebih hampir selalu bernilai nol secara praktis dan hanya merupakan noise acak.",
+          "Rasionalisasi ini melahirkan Desain Faktorial Fraksional (Fractional Factorial Designs, notasi 2^(k-p)).",
+          "Alih-alih menjalankan seluruh 2^k pengujian, peneliti hanya mengeksekusi sebagian kecil fraksi (1/2, 1/4, 1/8, atau 1/16 bagian dari desain penuh), namun tetap mampu mengidentifikasi efek-efek utama yang kritis dengan presisi tinggi."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Formulasi Fraksi Desain $2^{k-p}$:",
         "bulletPoints": [
-          "1. Formulasi Fraksi Desain $2^{k-p}$:",
           "- $k$: Jumlah faktor fisik yang diselidiki.",
-          "- $p$: Jumlah generator fraksionasi yang ditambahkan."
+          "- $p$: Jumlah generator fraksionasi yang ditambahkan.",
+          "- Ukuran eksperimen tereduksi:"
         ],
-        "keyFormulaOrDiagram": "$$N = 2^{k-p} = \\frac{1}{2^p} \\times 2^k$$"
+        "keyFormulaOrDiagram": "$$N = 2^{k-p} = \\frac{1}{2^p} \\times 2^k$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah pabrik semikonduktor ingin menyaring k = 6 parameter proses manufaktur chip (suhu oven, tekanan gas, waktu etsa, konsentrasi plasma,...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah pabrik semikonduktor ingin menyaring k = 6 parameter proses manufaktur chip (suhu oven, tekanan gas, waktu etsa, konsentrasi plasma, voltase bias, laju aliran reaktan). Biaya satu run pengujian adalah Rp 10.000.000. Bandingkan total biaya antara (a) Desain Faktorial Penuh 2^6 versus (b) Desain Faktorial Fraksional 2^(6-2) (seperempat fraksi).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung jumlah run dan biaya untuk Desain Penuh 2^6: Jumlah run: N_penuh = 2^6 = 64 run. Total Biaya...",
-          "Langkah 2: Hitung jumlah run dan biaya untuk Desain Fraksional 2^(6-2): k = 6, p = 2 generator. Jumlah run: N_...",
-          "Langkah 3: Hitung penghematan anggaran: Penghematan = Rp 640.000.000 - Rp 160.000.000 = Rp 480.000.000 (Penghe...",
-          "Interpretasi: Desain faktorial fraksional 2^(6-2) memangkas biaya penelitian dari Rp 640 juta menjadi hanya Rp 160 juta (menghemat Rp..."
+          "Langkah 1: Hitung jumlah run dan biaya untuk Desain Penuh 2^6:\nJumlah run: N_penuh = 2^6 = 64 run.\nTotal Biaya Penuh = 64 * Rp 10.000.000 = Rp 640.000.000.",
+          "Langkah 2: Hitung jumlah run dan biaya untuk Desain Fraksional 2^(6-2):\nk = 6, p = 2 generator.\nJumlah run: N_fraksional = 2^(6-2) = 2^4 = 16 run.\nTotal Biaya Fraksional = 16 * Rp 10.000.000 = Rp 160.000.000."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Hitung penghematan anggaran: Penghematan = Rp 640.000.000 - Rp 160.000.000 = Rp..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Perbandingan pertumbuhan kombinatorial jumlah run eksperimen faktorial penuh versus faktorial fraksional.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Perbandingan Kapasitas DoE Penuh vs Fraksional"
+          "Langkah 3: Hitung penghematan anggaran:\nPenghematan = Rp 640.000.000 - Rp 160.000.000 = Rp 480.000.000 (Penghematan sebesar 75%).",
+          "[result: Interpretasi Ilmiah] Desain faktorial fraksional 2^(6-2) memangkas biaya penelitian dari Rp 640 juta menjadi hanya Rp 160 juta (menghemat Rp 480 juta) hanya dengan 16 run pengujian, namun tetap mampu mengidentifikasi parameter-parameter kunci yang mengendalikan kualitas chip semikonduktor."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Kapasitas DoE Penuh vs Fraksional | Jumlah Faktor (..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Perbandingan pertumbuhan kombinatorial jumlah run eksperimen faktorial penuh versus faktorial fraksional.",
         "bulletPoints": [
-          "Perangkap: Memaksakan desain faktorial penuh pada banyak faktor (k >= 6) yang menghabiskan seluruh anggaran penelitian pa...",
-          "Perangkap: Melakukan fraksionasi tanpa memahami konsekuensi aliasing/confounding antara efek utama dan interaksi.",
-          "Perangkap: Mengira bahwa desain fraksional membuang data secara acak (fraksionasi dibangun di atas struktur aljabar grup..."
-        ]
+          "Tujuan Algoritma: Perbandingan pertumbuhan kombinatorial jumlah run eksperimen faktorial penuh versus faktorial fraksional.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Perbandingan Kapasitas DoE Penuh vs Fraksional"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Perbandingan Kapasitas DoE Penuh vs Fraksional\n Jumlah Faktor (k)  Run Penuh (2^k)  Run Fraksional (2^(k-p))  Penghematan (%)\n                 3                8                         4            50.00\n                 4               16                        16             0.00\n                 5               32                        16            50.00",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Memaksakan desain faktorial penuh pada banyak faktor (k >= 6) yang menghabiskan seluruh anggaran penelitian pada interaksi orde tinggi yang tidak berguna.",
+          "[warning: Perangkap] Melakukan fraksionasi tanpa memahami konsekuensi aliasing/confounding antara efek utama dan interaksi.",
+          "[warning: Perangkap] Mengira bahwa desain fraksional membuang data secara acak (fraksionasi dibangun di atas struktur aljabar grup yang sangat ketat)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan prinsip sparsity of effects sebagai dasar justifikasi pemilihan desain fraksional.",
           "Prosedur: Pilih fraksionasi yang menjamin derajat kebebasan cukup untuk mengestimasi seluruh faktor kunci.",
           "Prosedur: Rencanakan eksperimen lanjutan (follow-up/foldover) jika interaksi tertentu perlu diurai lebih lanjut."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Apakah landasan filosofis dan empiris utama yang menjustifikasi penggunaan Desain Faktorial Fraksional dalam riset rekay...",
-          "Petunjuk: Prinsip yang menyatakan bahwa sebagian besar variasi sistem dikendalikan oleh sedikit efek utama dan...",
-          "Solusi Kunci: Prinsip Sparsity of Effects (Prinsip Pareto DoE): Sistem rekayasa nyata hampir selalu didominasi oleh segelintir efek ut..."
-        ]
+          "Pertanyaan Uji: Apakah landasan filosofis dan empiris utama yang menjustifikasi penggunaan Desain Faktorial Fraksional dalam riset rekayasa?",
+          "Petunjuk Analitis: Prinsip yang menyatakan bahwa sebagian besar variasi sistem dikendalikan oleh sedikit efek utama dan interaksi orde rendah.",
+          "Solusi Kunci: Prinsip Sparsity of Effects (Prinsip Pareto DoE): Sistem rekayasa nyata hampir selalu didominasi oleh segelintir efek utama dan interaksi orde rendah (2-faktor), sedangkan interaksi orde tinggi (>= 3) sangat jarang terjadi dan dapat diabaikan."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -220,101 +258,140 @@ export const CH30_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konstruksi Desain 2^(k-p): Relasi Generator dan Struktu...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konstruksi Desain 2^(k-p): Relasi Generator dan Struktur Aliasing (Confounding)",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.7.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.2.",
-          "Capaian: Mengkonstruksi matriks desain 2^(k-p) menggunakan relasi generator (design generators).",
-          "Capaian: Menurunkan Persamaan Identitas (Defining Relation) menggunakan aljabar modulo-2.",
-          "Capaian: Memetakan Struktur Aliasing (Alias Patterns) untuk mengidentifikasi efek-efek yang terbaur (confounded)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Mengkonstruksi matriks desain 2^(k-p) menggunakan relasi generator (design generators).",
+          "Capaian 2: Menurunkan Persamaan Identitas (Defining Relation) menggunakan aljabar modulo-2.",
+          "Capaian 3: Memetakan Struktur Aliasing (Alias Patterns) untuk mengidentifikasi efek-efek yang terbaur (confounded)."
         ],
-        "keyFormulaOrDiagram": "$$I = ABCD$$"
+        "keyFormulaOrDiagram": "$$I = ABCD$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.7.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konstruksi Desain 2^(k-p): Relasi Generator dan Struktu...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konstruksi Desain 2^(k-p): Relasi Generator dan Struktur Aliasing (Confounding)",
+        "lead": "Ketika kita memutuskan untuk menjalankan hanya sebagian fraksi dari desain faktorial penuh, timbul konsekuensi aljabar yang tidak dapat dihindari: hilangnya sebagian derajat kebebasan menyebabkan beberapa efek terbaur (confounded atau aliased) satu sama lain.",
         "bulletPoints": [
-          "Ketika kita memutuskan untuk menjalankan hanya sebagian fraksi dari desain faktorial penuh, timbul konsekuensi aljabar yang t...",
-          "Konstruksi Desain via Generator: Untuk membangun desain fraksional 2^(k-p): 1. Pilih k - p faktor dasar dan bentuk matriks fa...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Dua efek yang saling ter-alias tidak dapat dipisahkan secara independen oleh data dari eksperimen tersebut.",
+          "Konstruksi Desain via Generator: Untuk membangun desain fraksional 2^(k-p): 1.",
+          "Pilih k - p faktor dasar dan bentuk matriks faktorial penuh 2^(k-p)."
         ],
-        "keyFormulaOrDiagram": "Persamaan Identitas (Defining Relation): Dalam aljabar desain faktorial dua level, perkali..."
+        "keyFormulaOrDiagram": "$$x_j \\cdot x_j = x_j^2 = I$$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Persamaan Identitas (Defining Relation): Dalam aljabar desain faktorial dua level, perkalian sebuah kolom dengan dirinya sendiri menghasilkan kolom konstanta +1 murni yang disebut Elemen Identitas I: $$x_j \\cdot x_j = x_j^2 = I$$ Jika faktor keempat D ditetapkan sebagai D = ABC, maka dengan mengalikan kedua sisi dengan D diperoleh: $$I = ABCD$$ Persamaan I = ABCD disebut sebagai Persamaan Identitas (Defining Relation).",
         "bulletPoints": [
-          "Persamaan Identitas (Defining Relation): Dalam aljabar desain faktorial dua level, perkalian sebuah kolom dengan dirinya send...",
-          "Struktur Aliasing (Alias Structure): Struktur alias dari setiap efek diperoleh dengan mengalikan efek tersebut dengan persama...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Struktur Aliasing (Alias Structure): Struktur alias dari setiap efek diperoleh dengan mengalikan efek tersebut dengan persamaan identitas.",
+          "Misalnya, jika I = ABCD: $$A \\cdot I = A \\cdot (ABCD) \\implies A = A^2 BCD = I \\cdot BCD = BCD$$ Artinya, Efek Utama A ter-alias sempurna dengan Interaksi Tiga Faktor BCD (ditulis [A] = A + BCD)."
+        ],
+        "keyFormulaOrDiagram": "$$A \\cdot I = A \\cdot (ABCD) \\implies A = A^2 BCD = I \\cdot BCD = BCD$$",
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Aritmatika Aljabar Desain Faktorial:",
         "bulletPoints": [
-          "1. Aritmatika Aljabar Desain Faktorial:",
           "- Elemen identitas: $I = (1, 1, \\dots, 1)^T$.",
-          "- Sifat idempoten kuadratik: Untuk setiap faktor $X$, $X^2 = I$."
+          "- Sifat idempoten kuadratik: Untuk setiap faktor $X$, $X^2 = I$.",
+          "- Sifat komutatif: $AB = BA$."
         ],
-        "keyFormulaOrDiagram": "$$I = ABCD$$"
+        "keyFormulaOrDiagram": "$$I = ABCD$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan desain fraksional 2^(3-1) dengan 3 faktor (A, B, C) dalam 4 run, di mana faktor C ditetapkan melalui generator C = AB. Tentukan pe...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan desain fraksional 2^(3-1) dengan 3 faktor (A, B, C) dalam 4 run, di mana faktor C ditetapkan melalui generator C = AB. Tentukan persamaan identitas I, turunkan struktur aliasing untuk seluruh efek, dan jelaskan apakah efek utama A terbebas dari bias interaksi 2-faktor.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Tuliskan relasi generator: C = AB.",
-          "Langkah 2: Kalikan kedua sisi dengan C untuk mendapatkan Persamaan Identitas: C * C = AB * C I = ABC.",
-          "Langkah 3: Turunkan alias untuk setiap efek dengan mengalikan terhadap I = ABC: - Efek A: A * I = A * (ABC) =...",
-          "Interpretasi: Efek utama A ter-alias langsung dengan interaksi dua faktor BC. Jika interaksi antara suhu dan tekanan (BC) besar, nilai..."
+          "Langkah 2: Kalikan kedua sisi dengan C untuk mendapatkan Persamaan Identitas:\nC * C = AB * C\nI = ABC."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Evaluasi keterbauran efek utama A: [A] = A + BC."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Turunkan alias untuk setiap efek dengan mengalikan terhadap I = ABC:\n- Efek A: A * I = A * (ABC) = A^2 BC = I * BC = BC -> [A] = A + BC.\n- Efek B: B * I = B * (ABC) = A B^2 C = AC -> [B] = B + AC.\n- Efek C: C * I = C * (ABC) = AB C^2 = AB -> [C] = C + AB.",
+          "Langkah 4: Evaluasi keterbauran efek utama A:\n[A] = A + BC.",
+          "[result: Interpretasi Ilmiah] Efek utama A ter-alias langsung dengan interaksi dua faktor BC. Jika interaksi antara suhu dan tekanan (BC) besar, nilai estimasi A akan terdistorsi secara langsung. Ini menunjukkan bahwa desain 2^(3-1) memiliki kelemahan di mana efek utama terbaur dengan interaksi 2-faktor."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Konstruksi matriks desain fraksional 2^(4-1) dengan generator D = ABC dan audit struktur aliasing.",
         "bulletPoints": [
-          "Deskripsi: Konstruksi matriks desain fraksional 2^(4-1) dengan generator D = ABC dan audit struktur aliasing.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Desain Faktorial Fraksional 2^(4-1) (Generator D = ABC)"
+          "Tujuan Algoritma: Konstruksi matriks desain fraksional 2^(4-1) dengan generator D = ABC dan audit struktur aliasing.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Desain Faktorial Fraksional 2^(4-1) (Generator D = ABC)"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Desain Faktorial Fraksional 2^(4-1) (Generator D = ABC) | Run A..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Desain Faktorial Fraksional 2^(4-1) (Generator D = ABC)\n Run   A   B   C   D  AB  CD\n   1 -1 -1 -1 -1   1   1\n   2  1 -1 -1  1  -1  -1\n   3 -1  1 -1  1  -1  -1",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menetapkan generator secara sembarangan yang menghasilkan kata identitas terlalu pendek sehingga membaurkan ef...",
-          "Perangkap: Mengira bahwa dua efek yang ter-alias dapat dipisahkan tanpa melakukan pengujian tambahan (foldover).",
-          "Perangkap: Lupa mengalikan kata identitas ketika ada lebih dari satu generator (misal desain 2^(k-2) memiliki 3 kata iden..."
-        ]
+          "[warning: Perangkap] Menetapkan generator secara sembarangan yang menghasilkan kata identitas terlalu pendek sehingga membaurkan efek utama dengan efek utama lainnya.",
+          "[warning: Perangkap] Mengira bahwa dua efek yang ter-alias dapat dipisahkan tanpa melakukan pengujian tambahan (foldover).",
+          "[warning: Perangkap] Lupa mengalikan kata identitas ketika ada lebih dari satu generator (misal desain 2^(k-2) memiliki 3 kata identitas: I = W1 = W2 = W1W2)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Tuliskan seluruh persamaan identitas secara lengkap termasuk produk interaksinya.",
           "Prosedur: Periksa struktur alias untuk memastikan tidak ada efek utama yang ter-alias dengan efek utama lainnya.",
           "Prosedur: Dokumentasikan rantai keterbauran (alias chains) pada laporan hasil eksperimen."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Pada desain faktorial fraksional dengan persamaan identitas I = ABCD, apakah alias dari interaksi dua faktor AC?",
-          "Petunjuk: Kalikan suku AC dengan persamaan identitas ABCD dan sederhanakan suku kuadrat.",
-          "Solusi Kunci: AC * I = AC * (ABCD) = A^2 C^2 BD = (1)(1) BD = BD. Maka interaksi AC ter-alias sempurna dengan interaksi BD ([AC] = AC..."
-        ]
+          "Petunjuk Analitis: Kalikan suku AC dengan persamaan identitas ABCD dan sederhanakan suku kuadrat.",
+          "Solusi Kunci: AC * I = AC * (ABCD) = A^2 C^2 BD = (1)(1) BD = BD. Maka interaksi AC ter-alias sempurna dengan interaksi BD ([AC] = AC + BD)."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -377,101 +454,138 @@ export const CH30_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Resolusi Desain: Resolusi III (Screening Kasar), IV (Be...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Resolusi Desain: Resolusi III (Screening Kasar), IV (Bebas Interaksi Utama), dan V",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.7.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.3.",
-          "Capaian: Memahami klasifikasi formal resolusi desain faktorial (Resolusi III, IV, dan V).",
-          "Capaian: Menghubungkan panjang kata terpendek pada persamaan identitas dengan resolusi desain.",
-          "Capaian: Memilih resolusi yang tepat sesuai tahap kedewasaan riset (screening vs karakterisasi)."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami klasifikasi formal resolusi desain faktorial (Resolusi III, IV, dan V).",
+          "Capaian 2: Menghubungkan panjang kata terpendek pada persamaan identitas dengan resolusi desain.",
+          "Capaian 3: Memilih resolusi yang tepat sesuai tahap kedewasaan riset (screening vs karakterisasi)."
         ],
-        "keyFormulaOrDiagram": "$$p + q \\ge R$$"
+        "keyFormulaOrDiagram": "$$p + q \\ge R$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.7.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Resolusi Desain: Resolusi III (Screening Kasar), IV (Be...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Resolusi Desain: Resolusi III (Screening Kasar), IV (Bebas Interaksi Utama), dan V",
+        "lead": "Tidak semua desain faktorial fraksional diciptakan setara.",
         "bulletPoints": [
-          "Tidak semua desain faktorial fraksional diciptakan setara. Kualitas, kekuatan inferensial, dan tingkat keamanan suatu desain...",
-          "Secara matematis, Resolusi Desain didefinisikan sebagai panjang kata terpendek (jumlah huruf minimum) yang terdapat dalam Per...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Kualitas, kekuatan inferensial, dan tingkat keamanan suatu desain 2^(k-p) diklasifikasikan secara formal menggunakan konsep Resolusi Desain (Design Resolution), yang dilambangkan dengan angka Romawi (III, IV, V, VI).",
+          "Secara matematis, Resolusi Desain didefinisikan sebagai panjang kata terpendek (jumlah huruf minimum) yang terdapat dalam Persamaan Identitas (Defining Relation) desain tersebut.",
+          "Tiga tingkatan resolusi paling penting dalam rekayasa:"
         ],
-        "keyFormulaOrDiagram": "1. Desain Resolusi III: Panjang kata terpendek pada persamaan identitas adalah 3 (misal I..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "1.",
         "bulletPoints": [
-          "1. Desain Resolusi III: Panjang kata terpendek pada persamaan identitas adalah 3 (misal I = ABD). - Efek utama TIDAK ter-alia...",
-          "2. Desain Resolusi IV: Panjang kata terpendek pada persamaan identitas adalah 4 (misal I = ABCD). - Efek utama TIDAK ter-alia...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Desain Resolusi III: Panjang kata terpendek pada persamaan identitas adalah 3 (misal I = ABD). - Efek utama TIDAK ter-alias dengan efek utama lainnya. - Efek utama TER-ALIAS langsung dengan interaksi dua faktor (misal [A] = A + BD). - Kegunaan: Hanya cocok untuk eksperimen screening awal yang sangat kasar (tahap eksplorasi awal dengan banyak faktor), dengan asumsi mutlak bahwa seluruh interaksi 2-faktor bernilai nol.",
+          "2.",
+          "Desain Resolusi IV: Panjang kata terpendek pada persamaan identitas adalah 4 (misal I = ABCD). - Efek utama TIDAK ter-alias dengan efek utama lainnya dan TIDAK ter-alias dengan interaksi dua faktor."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Definisi Formal Resolusi Desain:",
         "bulletPoints": [
-          "1. Definisi Formal Resolusi Desain:",
-          "Misalkan $R$ adalah resolusi desain. Maka tidak ada efek orde $p$ yang ter-alias dengan efek orde lain yang ku...",
-          "di mana $p$ dan $q$ adalah orde dari dua efek yang saling ter-alias."
+          "Misalkan $R$ adalah resolusi desain. Maka tidak ada efek orde $p$ yang ter-alias dengan efek orde lain yang kurang dari $R - p$:",
+          "di mana $p$ dan $q$ adalah orde dari dua efek yang saling ter-alias.",
+          "- Pada Resolusi III ($R = 3$):"
         ],
-        "keyFormulaOrDiagram": "$$p + q \\ge R$$"
+        "keyFormulaOrDiagram": "$$p + q \\ge R$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Seorang peneliti memiliki 5 faktor (A, B, C, D, E) dan anggaran untuk 16 run pengujian (desain 2^(5-1)). Peneliti mempertimbangkan dua opsi...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Seorang peneliti memiliki 5 faktor (A, B, C, D, E) dan anggaran untuk 16 run pengujian (desain 2^(5-1)). Peneliti mempertimbangkan dua opsi generator untuk faktor kelima E: (Opsi 1) E = AB, atau (Opsi 2) E = ABCD. Tentukan resolusi desain untuk masing-masing opsi dan rekomendasikan opsi mana yang harus dipilih.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Evaluasi Opsi 1 (Generator E = AB): Persamaan Identitas: I = ABE. Panjang kata terpendek adalah 3 h...",
-          "Langkah 2: Evaluasi Opsi 2 (Generator E = ABCD): Persamaan Identitas: I = ABCDE. Panjang kata terpendek adalah...",
+          "Langkah 1: Evaluasi Opsi 1 (Generator E = AB):\nPersamaan Identitas: I = ABE.\nPanjang kata terpendek adalah 3 huruf (A, B, E).\nMaka Opsi 1 adalah Desain Resolusi III (2^(5-1)_III).\nKonsekuensi: Efek utama C, D, dll ter-alias dengan interaksi 2-faktor (misal [A] = A + BE).",
+          "Langkah 2: Evaluasi Opsi 2 (Generator E = ABCD):\nPersamaan Identitas: I = ABCDE.\nPanjang kata terpendek adalah 5 huruf (A, B, C, D, E).\nMaka Opsi 2 adalah Desain Resolusi V (2^(5-1)_V).\nKonsekuensi: Seluruh efek utama dan seluruh interaksi 2-faktor bersih murni tanpa ada keterbauran antar-sesamanya."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
           "Langkah 3: Bandingkan kedua opsi pada ukuran run yang sama (16 run):",
-          "Interpretasi: Pilih Opsi 2 (E = ABCD). Kedua opsi membutuhkan jumlah pengujian yang identik sama (16 run), namun Opsi 2 menghasilkan D..."
+          "[result: Interpretasi Ilmiah] Pilih Opsi 2 (E = ABCD). Kedua opsi membutuhkan jumlah pengujian yang identik sama (16 run), namun Opsi 2 menghasilkan Desain Resolusi V yang sangat unggul dan bersih, sedangkan Opsi 1 menghasilkan Desain Resolusi III yang penuh keterbauran berbahaya."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Bandingkan kedua opsi pada ukuran run yang sama (16 run):"
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Audit otomatis resolusi desain faktorial fraksional berdasarkan panjang kata identitas.",
         "bulletPoints": [
-          "Deskripsi: Audit otomatis resolusi desain faktorial fraksional berdasarkan panjang kata identitas.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Audit Resolusi Desain Faktorial Fraksional"
+          "Tujuan Algoritma: Audit otomatis resolusi desain faktorial fraksional berdasarkan panjang kata identitas.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Audit Resolusi Desain Faktorial Fraksional"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Resolusi Desain Faktorial Fraksional | Desain 1 (I = ABE)..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Audit Resolusi Desain Faktorial Fraksional\nDesain 1 (I = ABE)   : Resolusi III -> Efek Utama TER-ALIAS dengan Interaksi 2-Faktor\nDesain 2 (I = ABCDE) : Resolusi V -> Seluruh Efek Utama & Interaksi 2-Faktor BEBAS MURNI",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan desain Resolusi III untuk optimasi akhir proses (Resolusi III hanya valid untuk screening kasar).",
-          "Perangkap: Mengasumsikan bahwa menambah jumlah run otomatis menaikkan resolusi (resolusi ditentukan oleh pemilihan relasi...",
-          "Perangkap: Tidak menyadari bahwa pada Resolusi IV, interaksi 2-faktor saling ter-alias berpasangan sehingga tidak dapat d..."
-        ]
+          "[warning: Perangkap] Menggunakan desain Resolusi III untuk optimasi akhir proses (Resolusi III hanya valid untuk screening kasar).",
+          "[warning: Perangkap] Mengasumsikan bahwa menambah jumlah run otomatis menaikkan resolusi (resolusi ditentukan oleh pemilihan relasi generator yang cerdas).",
+          "[warning: Perangkap] Tidak menyadari bahwa pada Resolusi IV, interaksi 2-faktor saling ter-alias berpasangan sehingga tidak dapat diidentifikasi secara unik tanpa uji pembongkar (foldover)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Hitung panjang kata terpendek dari seluruh kombinasi kata pada persamaan identitas.",
           "Prosedur: Gunakan minimal Resolusi IV untuk eksperimen screening industri terpercaya.",
           "Prosedur: Gunakan Resolusi V jika interaksi dua faktor ingin diestimasi secara bebas tanpa bias."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Apakah karakteristik keterbauran (aliasing) mendasar dari sebuah Desain Faktorial Fraksional Resolusi IV?",
-          "Petunjuk: Perhatikan kebersihan efek utama dan status interaksi dua faktor.",
-          "Solusi Kunci: Pada Desain Resolusi IV, efek utama bersih sempurna dari keterbauran dengan efek utama lain dan interaksi dua faktor (ha..."
-        ]
+          "Petunjuk Analitis: Perhatikan kebersihan efek utama dan status interaksi dua faktor.",
+          "Solusi Kunci: Pada Desain Resolusi IV, efek utama bersih sempurna dari keterbauran dengan efek utama lain dan interaksi dua faktor (hanya ter-alias dengan interaksi 3-faktor), namun interaksi dua faktor saling ter-alias satu sama lain."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -535,101 +649,136 @@ export const CH30_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Metodologi Screening Parameter Proses Manufaktur dan Si...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Metodologi Screening Parameter Proses Manufaktur dan Simulasi Komputasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 4.7.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.4.",
-          "Capaian: Menerapkan alur kerja screening terstruktur dari banyak faktor (vital few vs trivial many).",
-          "Capaian: Menggunakan teknik Foldover Design untuk memisahkan efek utama dan interaksi yang ter-alias.",
-          "Capaian: Mengintegrasikan desain screening Plackett-Burman untuk efisiensi run non-pangkat-dua."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 4.7.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan alur kerja screening terstruktur dari banyak faktor (vital few vs trivial many).",
+          "Capaian 2: Menggunakan teknik Foldover Design untuk memisahkan efek utama dan interaksi yang ter-alias.",
+          "Capaian 3: Mengintegrasikan desain screening Plackett-Burman untuk efisiensi run non-pangkat-dua."
         ],
-        "keyFormulaOrDiagram": "$$\\hat{\\boldsymbol{\\beta}}_{\\text{main}} = \\frac{1}{2} (\\hat{\\boldsymbol{\\beta}}_1 - \\hat{\\boldsymbol{\\beta}}_2)$$"
+        "keyFormulaOrDiagram": "$$\\hat{\\boldsymbol{\\beta}}_{\\text{main}} = \\frac{1}{2} (\\hat{\\boldsymbol{\\beta}}_1 - \\hat{\\boldsymbol{\\beta}}_2)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 4.7.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Metodologi Screening Parameter Proses Manufaktur dan Si...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Metodologi Screening Parameter Proses Manufaktur dan Simulasi Komputasi",
+        "lead": "Dalam fase awal penelitian rekayasa, pengembangan produk baru, atau simulasi komputasi numerik berdimensi tinggi, tim peneliti sering menghadapi daftar panjang variabel input potensial (10 hingga 50 parameter).",
         "bulletPoints": [
-          "Dalam fase awal penelitian rekayasa, pengembangan produk baru, atau simulasi komputasi numerik berdimensi tinggi, tim penelit...",
-          "Strategi yang tepat adalah menerapkan Metodologi Screening Bertahap (Sequential Screening Strategy): 1. Tahap 1: Screening Pa...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Mencoba mengoptimalkan seluruh variabel ini secara simultan adalah pemborosan sumber daya yang masif.",
+          "Strategi yang tepat adalah menerapkan Metodologi Screening Bertahap (Sequential Screening Strategy): 1.",
+          "Tahap 1: Screening Parameter (Parameter Screening): Menggunakan Desain Faktorial Fraksional Resolusi III/IV atau Desain Plackett-Burman untuk menguji puluhan faktor dalam jumlah run yang sangat hemat (misal 12 atau 16 run)."
         ],
-        "keyFormulaOrDiagram": "Desain Plackett-Burman (1946): Jika peneliti ingin menguji k faktor dalam kelipatan 4 peng..."
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Desain Plackett-Burman (1946): Jika peneliti ingin menguji k faktor dalam kelipatan 4 pengujian (N = 12, 20, 24, 28, 36 run) alih-alih kelipatan pangkat dua (N = 8, 16, 32), Desain Plackett-Burman adalah solusi screening non-geometris yang sangat ekonomis.",
         "bulletPoints": [
-          "Desain Plackett-Burman (1946): Jika peneliti ingin menguji k faktor dalam kelipatan 4 pengujian (N = 12, 20, 24, 28, 36 run)...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Pada Plackett-Burman, setiap efek utama ter-alias secara parsial (pecahan berbobot) dengan seluruh interaksi 2-faktor, memaksimalkan efisiensi run untuk identifikasi efek utama yang sangat dominan."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "1. Teknik Foldover Penuh (Full Foldover):",
         "bulletPoints": [
-          "1. Teknik Foldover Penuh (Full Foldover):",
           "Diberikan desain fraksional awal $2^{k-p}$ dengan matriks $\\mathbf{X}_1$ dan respon $\\mathbf{y}_1$.",
-          "Bentuk matriks kedua $\\mathbf{X}_2 = -\\mathbf{X}_1$ (seluruh tanda perlakuan dibalik) dan kumpulkan respon $\\m..."
+          "Bentuk matriks kedua $\\mathbf{X}_2 = -\\mathbf{X}_1$ (seluruh tanda perlakuan dibalik) dan kumpulkan respon $\\mathbf{y}_2$.",
+          "Gabungkan kedua eksperimen:"
         ],
-        "keyFormulaOrDiagram": "$$\\hat{\\boldsymbol{\\beta}}_{\\text{main}} = \\frac{1}{2} (\\hat{\\boldsymbol{\\beta}}_1 - \\hat{\\boldsymbol{\\beta}}_2)$$"
+        "keyFormulaOrDiagram": "$$\\hat{\\boldsymbol{\\beta}}_{\\text{main}} = \\frac{1}{2} (\\hat{\\boldsymbol{\\beta}}_1 - \\hat{\\boldsymbol{\\beta}}_2)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada pengujian optimasi mesin cetak injeksi plastik 7 parameter (k = 7: suhu leleh, tekanan injeksi, waktu pendinginan, suhu cetakan, kecepa...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
-      },
-      {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
-        "bulletPoints": [
-          "Langkah 1: Tinjau kapasitas Desain Plackett-Burman N = 12: Plackett-Burman N = 12 mampu menguji hingga k = 11...",
-          "Langkah 2: Tinjau Desain Faktorial Fraksional 2^(7-3): Membutuhkan N = 2^4 = 16 run (4 run lebih banyak daripa...",
-          "Langkah 3: Analisis batasan Plackett-Burman: Pada Plackett-Burman, struktur aliasing bersifat kompleks: setiap...",
-          "Interpretasi: Plackett-Burman N = 12 menghemat 25% run dibandingkan desain fraksional 16 run, menjadikannya pilihan ideal untuk penyar..."
+          "Konteks Kasus: Pada pengujian optimasi mesin cetak injeksi plastik 7 parameter (k = 7: suhu leleh, tekanan injeksi, waktu pendinginan, suhu cetakan, kecepatan injeksi, tekanan holding, waktu holding), peneliti menggunakan desain Plackett-Burman N = 12 run. Jelaskan mengapa Plackett-Burman N = 12 jauh lebih efisien daripada desain faktorial 2^(7-3) = 16 run dan apa batasannya.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
         ],
-        "keyFormulaOrDiagram": "Langkah 3: Analisis batasan Plackett-Burman: Pada Plackett-Burman, struktur aliasing bersi..."
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
+        "bulletPoints": [
+          "Langkah 1: Tinjau kapasitas Desain Plackett-Burman N = 12:\nPlackett-Burman N = 12 mampu menguji hingga k = 11 faktor dalam 12 run.\nUntuk k = 7 faktor, tersisa 12 - 1 - 7 = 4 derajat kebebasan untuk estimasi galat residual.",
+          "Langkah 2: Tinjau Desain Faktorial Fraksional 2^(7-3):\nMembutuhkan N = 2^4 = 16 run (4 run lebih banyak daripada Plackett-Burman)."
+        ],
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
+      },
+      {
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Analisis batasan Plackett-Burman:\nPada Plackett-Burman, struktur aliasing bersifat kompleks: setiap efek utama ter-alias secara parsial dengan 45 interaksi dua faktor dengan bobot pecahan 1/3 atau -1/3. Desain ini hanya aman jika interaksi diasumsikan kecil/dapat diabaikan.",
+          "[result: Interpretasi Ilmiah] Plackett-Burman N = 12 menghemat 25% run dibandingkan desain fraksional 16 run, menjadikannya pilihan ideal untuk penyaringan awal cepat guna membuang parameter yang jelas tidak aktif."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi teknik Full Foldover untuk memisahkan efek utama dari interaksi dua faktor.",
         "bulletPoints": [
-          "Deskripsi: Implementasi teknik Full Foldover untuk memisahkan efek utama dari interaksi dua faktor.",
-          "Dependensi Pustaka: numpy, pandas",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Konstruksi Desain Full Foldover (4 -> 8 Runs)"
+          "Tujuan Algoritma: Implementasi teknik Full Foldover untuk memisahkan efek utama dari interaksi dua faktor.",
+          "Dependensi Pustaka Ilmiah: numpy, pandas",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Konstruksi Desain Full Foldover (4 -> 8 Runs)"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Konstruksi Desain Full Foldover (4 -> 8 Runs) | Faktor_A Faktor_..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Konstruksi Desain Full Foldover (4 -> 8 Runs)\n Faktor_A  Faktor_B  Faktor_C    Batch\n       -1        -1         1     Awal\n        1        -1        -1     Awal\n       -1         1        -1     Awal",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Melompati tahap screening dan langsung melakukan pemodelan orde-2 respons surface pada 10 faktor (membutuhkan...",
-          "Perangkap: Mengabaikan teknik foldover ketika dua interaksi penting saling ter-alias pada desain Resolusi IV.",
-          "Perangkap: Menggunakan Plackett-Burman untuk menarik kesimpulan mengenai interaksi dua faktor (Plackett-Burman hanya vali..."
-        ]
+          "[warning: Perangkap] Melompati tahap screening dan langsung melakukan pemodelan orde-2 respons surface pada 10 faktor (membutuhkan ratusan run sia-sia).",
+          "[warning: Perangkap] Mengabaikan teknik foldover ketika dua interaksi penting saling ter-alias pada desain Resolusi IV.",
+          "[warning: Perangkap] Menggunakan Plackett-Burman untuk menarik kesimpulan mengenai interaksi dua faktor (Plackett-Burman hanya valid untuk efek utama)."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan strategi eksperimen berurutan: Screening -> Foldover -> Optimasi RSM.",
-          "Prosedur: Lakukan validasi konfirmasi (confirmation runs) pada kondisi faktor terbaik yang teridentifikasi dari screenin...",
-          "Prosedur: Pastikan variabel yang dibuang dari screening benar-benar memiliki efek mendekati nol di seluruh rentang opera..."
-        ]
+          "Prosedur: Lakukan validasi konfirmasi (confirmation runs) pada kondisi faktor terbaik yang teridentifikasi dari screening.",
+          "Prosedur: Pastikan variabel yang dibuang dari screening benar-benar memiliki efek mendekati nol di seluruh rentang operasi."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Bagaimana cara melakukan teknik Full Foldover pada desain faktorial fraksional dan apa keuntungan utamanya?",
-          "Petunjuk: Perhatikan pembalikan tanda seluruh kolom faktor dan peningkatan resolusi desain.",
-          "Solusi Kunci: Full Foldover dilakukan dengan menambahkan batch pengujian kedua di mana tanda seluruh faktor pada matriks desain awal d..."
-        ]
+          "Petunjuk Analitis: Perhatikan pembalikan tanda seluruh kolom faktor dan peningkatan resolusi desain.",
+          "Solusi Kunci: Full Foldover dilakukan dengan menambahkan batch pengujian kedua di mana tanda seluruh faktor pada matriks desain awal dibalik (-X). Keuntungan utamanya adalah menaikkan resolusi desain (misal dari Resolusi III ke IV), sehingga seluruh efek utama terpisah bersih dari interaksi dua faktor."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }

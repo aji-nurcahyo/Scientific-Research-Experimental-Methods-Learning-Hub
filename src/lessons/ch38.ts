@@ -67,100 +67,138 @@ export const CH38_LESSONS: Record<string, Partial<Lesson>> = {
     "slides": [
       {
         "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Em...",
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Empiris sebagai Pengganti Populasi",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.1.1.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.1.",
-          "Capaian: Memahami landasan filosofis dan matematis Prinsip Plug-In Bradley Efron (1979).",
-          "Capaian: Membedakan distribusi populasi sejati F dengan distribusi empiris sampel F_hat.",
-          "Capaian: Menerapkan analogi resampling untuk menaksir distribusi sampling dari estimator kompleks."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.1 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Memahami landasan filosofis dan matematis Prinsip Plug-In Bradley Efron (1979).",
+          "Capaian 2: Membedakan distribusi populasi sejati F dengan distribusi empiris sampel F_hat.",
+          "Capaian 3: Menerapkan analogi resampling untuk menaksir distribusi sampling dari estimator kompleks."
         ],
-        "keyFormulaOrDiagram": "$$\\hat{F}_n(t) = \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}(x_i \\leq t)$$"
+        "keyFormulaOrDiagram": "$$\\hat{F}_n(t) = \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}(x_i \\leq t)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.1.1."
       },
       {
         "slideNumber": 2,
-        "title": "Fondasi Konseptual: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Em...",
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Empiris sebagai Pengganti Populasi",
+        "lead": "Dalam inferensi statistik klasik, untuk menarik kesimpulan mengenai parameter populasi $\\theta = t(F)$, ilmuwan harus mengasumsikan bentuk analitis dari fungsi distribusi kumulatif populasi $F$ (misalnya berdistribusi Gaussian, Poisson, atau Weibull).",
         "bulletPoints": [
-          "Dalam inferensi statistik klasik, untuk menarik kesimpulan mengenai parameter populasi $\\theta = t(F)$, ilmuwan harus mengasu...",
-          "Prinsip Plug-In Bradley Efron (1979): Bradley Efron memperkenalkan terobosan fundamental: jika kita tidak mengetahui fungsi d...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Namun pada sistem rekayasa modern yang sangat kompleks, distribusi fisis data seringkali tidak diketahui dan tidak dapat dipaksakan ke dalam model parametrik standar.",
+          "Prinsip Plug-In Bradley Efron (1979): Bradley Efron memperkenalkan terobosan fundamental: jika kita tidak mengetahui fungsi distribusi populasi sejati $F$, representasi terbaik tanpa prasangka yang kita miliki mengenai $F$ adalah distribusi empiris dari sampel observasi itu sendiri, yang dilambangkan dengan $\\hat{F}_n$."
         ],
-        "keyFormulaOrDiagram": "Prinsip Plug-In menyatakan bahwa estimator dari sembarang karakteristik populasi $\\theta =..."
+        "keyFormulaOrDiagram": "$$\\hat{\\theta} = t(\\hat{F}_n)$$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
         "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Prinsip Plug-In menyatakan bahwa estimator dari sembarang karakteristik populasi $\\theta = t(F)$ dapat diperoleh secara langsung dengan menghitung karakteristik yang bersangkutan pada distribusi empiris: $$\\hat{\\theta} = t(\\hat{F}_n)$$",
         "bulletPoints": [
-          "Prinsip Plug-In menyatakan bahwa estimator dari sembarang karakteristik populasi $\\theta = t(F)$ dapat diperoleh secara langs...",
-          "Dunia Nyata vs Dunia Bootstrap (The Bootstrap World): - Dalam Dunia Nyata: Populasi $F$ membangkitkan sampel data $\\mathbf{x}...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Dunia Nyata vs Dunia Bootstrap (The Bootstrap World): - Dalam Dunia Nyata: Populasi $F$ membangkitkan sampel data $\\mathbf{x} = (x_1, \\dots, x_n)$ melalui mekanisme alam.",
+          "Dari $\\mathbf{x}$, kita menghitung statistik $\\hat{\\theta}$."
+        ],
+        "keyFormulaOrDiagram": "$F$",
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
         "slideNumber": 4,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Distribusi Empiris dan Penarikan Resampling:",
         "bulletPoints": [
-          "Formulasi Matematis Distribusi Empiris dan Penarikan Resampling:",
           "Diberikan sampel teramati $\\mathbf{x} = (x_1, x_2, \\dots, x_n)$.",
-          "1. Fungsi Distribusi Empiris (Empirical CDF, $\\hat{F}_n$):"
+          "1. Fungsi Distribusi Empiris (Empirical CDF, $\\hat{F}_n$):",
+          "$\\hat{F}_n$ menempatkan massa probabilitas diskrit seragam sebesar $1/n$ pada setiap titik data teramati $x_i$."
         ],
-        "keyFormulaOrDiagram": "$$\\hat{F}_n(t) = \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}(x_i \\leq t)$$"
+        "keyFormulaOrDiagram": "$$\\hat{F}_n(t) = \\frac{1}{n} \\sum_{i=1}^n \\mathbb{I}(x_i \\leq t)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
         "slideNumber": 5,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan dataset kecil hasil uji kelelahan logam (N=5): [120, 135, 128, 140, 130] siklus. Tunjukkan bagaimana distribusi empiris F_hat diko...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan dataset kecil hasil uji kelelahan logam (N=5): [120, 135, 128, 140, 130] siklus. Tunjukkan bagaimana distribusi empiris F_hat dikonstruksi. Hitung probabilitas bahwa titik data terkecil (120) terpilih minimal satu kali dalam sampel bootstrap berukuran 5.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
         "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Bentuk distribusi empiris F_hat: Setiap titik data memiliki massa probabilitas P(X = x_i) = 1/5 = 0...",
-          "Langkah 2: Hitung probabilitas titik 120 tidak terpilih dalam 1 kali penarikan: P(tidak terpilih) = 1 - 0.20 =...",
-          "Langkah 3: Hitung probabilitas titik 120 tidak terpilih sama sekali dalam 5 kali penarikan independen: P(nol k...",
-          "Interpretasi: Pada ukuran sampel n=5, peluang sebuah titik data masuk ke dalam replikasi bootstrap adalah 67.23%, mendekati batas asim..."
+          "Langkah 1: Bentuk distribusi empiris F_hat: Setiap titik data memiliki massa probabilitas P(X = x_i) = 1/5 = 0.20 pada titik-titik {120, 128, 130, 135, 140}.",
+          "Langkah 2: Hitung probabilitas titik 120 tidak terpilih dalam 1 kali penarikan: P(tidak terpilih) = 1 - 0.20 = 0.80."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Hitung probabilitas titik 120 terpilih minimal satu kali: P(terpilih >= 1) = 1..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
         "slideNumber": 7,
-        "title": "Implementasi Komputasi & Eksekusi Python",
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
         "bulletPoints": [
-          "Deskripsi: Simulasi Prinsip Plug-In Efron: Mengestimasi distribusi sampling median menggunakan bootstrap resampling.",
-          "Dependensi Pustaka: numpy",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Hasil Inferensi Prinsip Plug-In Bootstrap:"
+          "Langkah 3: Hitung probabilitas titik 120 tidak terpilih sama sekali dalam 5 kali penarikan independen: P(nol kali) = (0.80)^5 = 0.32768.",
+          "Langkah 4: Hitung probabilitas titik 120 terpilih minimal satu kali: P(terpilih >= 1) = 1 - P(nol kali) = 1 - 0.32768 = 0.67232 (67.23%).",
+          "[result: Interpretasi Ilmiah] Pada ukuran sampel n=5, peluang sebuah titik data masuk ke dalam replikasi bootstrap adalah 67.23%, mendekati batas asimtotik teoretis (1 - 1/e = 63.21%)."
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Inferensi Prinsip Plug-In Bootstrap: | Median Sampel Teram..."
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
       },
       {
         "slideNumber": 8,
-        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "layout": "algorithm",
+        "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Simulasi Prinsip Plug-In Efron: Mengestimasi distribusi sampling median menggunakan bootstrap resampling.",
         "bulletPoints": [
-          "Perangkap: Melakukan sampling without replacement (tanpa pengembalian), yang hanya menghasilkan permutasi data identik.",
-          "Perangkap: Menggunakan ukuran sampel bootstrap yang berbeda dari ukuran sampel asli (n* != n).",
-          "Perangkap: Mengasumsikan bootstrap dapat memperbaiki data sampel yang cacat sejak awal akibat sampling bias."
-        ]
+          "Tujuan Algoritma: Simulasi Prinsip Plug-In Efron: Mengestimasi distribusi sampling median menggunakan bootstrap resampling.",
+          "Dependensi Pustaka Ilmiah: numpy",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Hasil Inferensi Prinsip Plug-In Bootstrap:"
+        ],
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Hasil Inferensi Prinsip Plug-In Bootstrap:\nMedian Sampel Teramati        : 14.89 mW\nStandard Error Bootstrap (SE) : 1.94 mW\n95% Percentile Confidence Int : [11.83, 19.34] mW",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
         "slideNumber": 9,
+        "layout": "warning",
+        "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
+        "bulletPoints": [
+          "[warning: Perangkap] Melakukan sampling without replacement (tanpa pengembalian), yang hanya menghasilkan permutasi data identik.",
+          "[warning: Perangkap] Menggunakan ukuran sampel bootstrap yang berbeda dari ukuran sampel asli (n* != n).",
+          "[warning: Perangkap] Mengasumsikan bootstrap dapat memperbaiki data sampel yang cacat sejak awal akibat sampling bias."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
+      },
+      {
+        "slideNumber": 10,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Pastikan parameter replace=True selalu aktif pada fungsi penarikan acak.",
           "Prosedur: Gunakan jumlah replikasi B >= 1.000 untuk estimasi standard error, dan B >= 2.000 untuk interval kepercayaan.",
           "Prosedur: Verifikasi bahwa ukuran sampel n* pada setiap replikasi sama persis dengan n sampel awal."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 11,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa penarikan sampel dengan pengembalian (sampling with replacement) merupakan syarat mutlak agar simulasi bootstrap...",
-          "Petunjuk: Perhatikan apa yang terjadi jika penarikan dilakukan tanpa pengembalian.",
-          "Solusi Kunci: Jika penarikan dilakukan tanpa pengembalian, setiap sampel bootstrap hanya akan menjadi permutasi urutan dari himpunan d..."
-        ]
+          "Pertanyaan Uji: Mengapa penarikan sampel dengan pengembalian (sampling with replacement) merupakan syarat mutlak agar simulasi bootstrap valid?",
+          "Petunjuk Analitis: Perhatikan apa yang terjadi jika penarikan dilakukan tanpa pengembalian.",
+          "Solusi Kunci: Jika penarikan dilakukan tanpa pengembalian, setiap sampel bootstrap hanya akan menjadi permutasi urutan dari himpunan data yang sama persis. Akibatnya nilai statistik (seperti rata-rata atau median) akan konstan tanpa variasi, sehingga mustahil memodelkan variabilitas sampling."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -230,101 +268,139 @@ export const CH38_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Nonparametric Bootstrap vs Parametric Bootstrap: Prosed...",
+        "slideNumber": 12,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Nonparametric Bootstrap vs Parametric Bootstrap: Prosedur Algoritmik",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.1.2.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.2.",
-          "Capaian: Membedakan asumsi, arsitektur, dan penerapan Nonparametric Bootstrap vs Parametric Bootstrap.",
-          "Capaian: Mengimplementasikan Parametric Bootstrap ketika model keluarga distribusi diketahui secara fisik.",
-          "Capaian: Memilih metode resampling yang tepat berdasarkan ketersediaan pengetahuan prior fisis."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.2 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Membedakan asumsi, arsitektur, dan penerapan Nonparametric Bootstrap vs Parametric Bootstrap.",
+          "Capaian 2: Mengimplementasikan Parametric Bootstrap ketika model keluarga distribusi diketahui secara fisik.",
+          "Capaian 3: Memilih metode resampling yang tepat berdasarkan ketersediaan pengetahuan prior fisis."
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{x}_b^* = \\text{SampleWithReplacement}(\\mathbf{x}, n)$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{x}_b^* = \\text{SampleWithReplacement}(\\mathbf{x}, n)$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.1.2."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Nonparametric Bootstrap vs Parametric Bootstrap: Prosed...",
+        "slideNumber": 13,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Nonparametric Bootstrap vs Parametric Bootstrap: Prosedur Algoritmik",
+        "lead": "Meskipun istilah \"bootstrap\" seringkali diidentikkan dengan penarikan sampel non-parametrik langsung dari data, Bradley Efron sebenarnya merumuskan dua arsitektur resampling yang berbeda: Nonparametric Bootstrap dan Parametric Bootstrap.",
         "bulletPoints": [
-          "Meskipun istilah \"bootstrap\" seringkali diidentikkan dengan penarikan sampel non-parametrik langsung dari data, Bradley Efron...",
-          "Nonparametric Bootstrap (Empirical Resampling): - Karakteristik: Tidak membuat asumsi apa pun mengenai bentuk fungsional dist...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Pilihan antara keduanya mencerminkan trade-off klasik dalam metodologi rekayasa antara fleksibilitas bebas model vs efisiensi inferensi model parametrik.",
+          "Nonparametric Bootstrap (Empirical Resampling): - Karakteristik: Tidak membuat asumsi apa pun mengenai bentuk fungsional distribusi data.",
+          "Sampel bootstrap ditarik langsung dari titik-titik data observasi $\\mathbf{x}$. - Keunggulan: Sangat kuat (robust) terhadap kesalahan spesifikasi model (model misspecification)."
         ],
-        "keyFormulaOrDiagram": "Parametric Bootstrap (Model-Based Resampling): - Karakteristik: Peneliti mengasumsikan bah..."
+        "keyFormulaOrDiagram": "$F_\\theta$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 14,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Parametric Bootstrap (Model-Based Resampling): - Karakteristik: Peneliti mengasumsikan bahwa data dibangkitkan dari keluarga distribusi parametrik tertentu $F_\\theta$ (misalnya distribusi Weibull untuk waktu kegagalan material atau Lognormal untuk konsentrasi polutan).",
         "bulletPoints": [
-          "Parametric Bootstrap (Model-Based Resampling): - Karakteristik: Peneliti mengasumsikan bahwa data dibangkitkan dari keluarga...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Parameter $\\hat{\\theta}$ diestimasi menggunakan Maximum Likelihood Estimation (MLE) pada sampel teramati.",
+          "Sampel bootstrap $\\mathbf{x}^*$ kemudian dibangkitkan secara sintetis dari distribusi fitted $F_{\\hat{\\theta}}$. - Keunggulan: Memiliki efisiensi statistik yang jauh lebih tinggi dan mampu menginterpolasi serta mengekstrapolasi nilai ekstrim dengan mulus. - Limitasi: Sangat rentan terhadap bias fatal jika asumsi keluarga distribusi salah secara fisik."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 15,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Perbandingan Algoritma Resampling:",
         "bulletPoints": [
-          "Perbandingan Algoritma Resampling:",
           "1. Alur Nonparametric Bootstrap:",
-          "- Diberikan data teramati $\\mathbf{x} = (x_1, \\dots, x_n)$."
+          "- Diberikan data teramati $\\mathbf{x} = (x_1, \\dots, x_n)$.",
+          "- Untuk $b = 1, \\dots, B$:"
         ],
-        "keyFormulaOrDiagram": "$$\\mathbf{x}_b^* = \\text{SampleWithReplacement}(\\mathbf{x}, n)$$"
+        "keyFormulaOrDiagram": "$$\\mathbf{x}_b^* = \\text{SampleWithReplacement}(\\mathbf{x}, n)$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 16,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Diberikan data waktu kegagalan isolator tegangan tinggi (jam): [45, 82, 110, 160, 220]. Dari teori fisika dielektrik, waktu kegagalan diketa...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Diberikan data waktu kegagalan isolator tegangan tinggi (jam): [45, 82, 110, 160, 220]. Dari teori fisika dielektrik, waktu kegagalan diketahui berdistribusi Eksponensial Exp(lambda). Hitung parameter MLE lambda_hat. Jelaskan prosedur penarikan 1 replikasi Parametric Bootstrap versus Nonparametric Bootstrap.",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 17,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung rata-rata sampel: mean(x) = (45 + 82 + 110 + 160 + 220) / 5 = 617 / 5 = 123.4 jam.",
-          "Langkah 2: Hitung MLE lambda untuk distribusi eksponensial: lambda_hat = 1 / mean(x) = 1 / 123.4 = 0.008104 pe...",
-          "Langkah 3: Replikasi Nonparametric Bootstrap: Tarik 5 angka acak dengan pengembalian langsung dari himpunan {4...",
-          "Interpretasi: Parametric bootstrap mampu menghasilkan nilai kontinu baru yang belum pernah muncul di sampel observasi (seperti 12.5 da..."
+          "Langkah 2: Hitung MLE lambda untuk distribusi eksponensial: lambda_hat = 1 / mean(x) = 1 / 123.4 = 0.008104 per jam."
         ],
-        "keyFormulaOrDiagram": "Langkah 4: Replikasi Parametric Bootstrap: Bangkitkan 5 bilangan pseudorandom kontinu dari..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 18,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 3: Replikasi Nonparametric Bootstrap: Tarik 5 angka acak dengan pengembalian langsung dari himpunan {45, 82, 110, 160, 220}, misal terpilih [82, 45, 82, 220, 110]. Hitung rata-rata resample = 107.8 jam.",
+          "Langkah 4: Replikasi Parametric Bootstrap: Bangkitkan 5 bilangan pseudorandom kontinu dari distribusi Exp(lambda = 0.008104) atau skala beta = 123.4, misal diperoleh [12.5, 95.3, 184.2, 55.1, 310.8]. Hitung rata-rata resample = 131.58 jam.",
+          "[result: Interpretasi Ilmiah] Parametric bootstrap mampu menghasilkan nilai kontinu baru yang belum pernah muncul di sampel observasi (seperti 12.5 dan 310.8 jam) berdasarkan landasan hukum fisika eksponensial."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 19,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi perbandingan langsung Nonparametric vs Parametric Bootstrap untuk data Weibull.",
         "bulletPoints": [
-          "Deskripsi: Implementasi perbandingan langsung Nonparametric vs Parametric Bootstrap untuk data Weibull.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Komparasi Nonparametric vs Parametric Bootstrap:"
+          "Tujuan Algoritma: Implementasi perbandingan langsung Nonparametric vs Parametric Bootstrap untuk data Weibull.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Komparasi Nonparametric vs Parametric Bootstrap:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Komparasi Nonparametric vs Parametric Bootstrap: | Mean Sampel T..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Komparasi Nonparametric vs Parametric Bootstrap:\nMean Sampel Teramati        : 132.81 MPa\nNonparametric Bootstrap SE  : 9.77 MPa\nParametric Bootstrap SE     : 9.87 MPa\nNonparametric 95% CI        : [113.84, 151.78]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 20,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan Parametric Bootstrap saat justifikasi fisik untuk pemilihan keluarga distribusi lemah.",
-          "Perangkap: Menggunakan Nonparametric Bootstrap pada sampel sangat kecil (n < 10) di mana data diskrit tidak mewakili ekor...",
-          "Perangkap: Lupa mengunci lokasi parameter floc=0 saat melakukan fitting MLE pada variabel non-negatif fisik."
-        ]
+          "[warning: Perangkap] Menggunakan Parametric Bootstrap saat justifikasi fisik untuk pemilihan keluarga distribusi lemah.",
+          "[warning: Perangkap] Menggunakan Nonparametric Bootstrap pada sampel sangat kecil (n < 10) di mana data diskrit tidak mewakili ekor distribusi.",
+          "[warning: Perangkap] Lupa mengunci lokasi parameter floc=0 saat melakukan fitting MLE pada variabel non-negatif fisik."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 21,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
-          "Prosedur: Gunakan uji Goodness-of-Fit (Kolmogorov-Smirnov atau Anderson-Darling) sebelum menjalankan Parametric Bootstra...",
-          "Prosedur: Bandingkan estimasi standard error antara nonparametric dan parametric: jika selisih sangat besar, curigai mis...",
+          "Prosedur: Gunakan uji Goodness-of-Fit (Kolmogorov-Smirnov atau Anderson-Darling) sebelum menjalankan Parametric Bootstrap.",
+          "Prosedur: Bandingkan estimasi standard error antara nonparametric dan parametric: jika selisih sangat besar, curigai misspecification model.",
           "Prosedur: Sajikan plot perbandingan Q-Q plot antara sampel teramati dan distribusi parametrik terpilih."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 22,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
           "Pertanyaan Uji: Kapan seorang peneliti rekayasa dianjurkan memilih Parametric Bootstrap daripada Nonparametric Bootstrap?",
-          "Petunjuk: Kaitkan dengan hukum fisika dasar dan ukuran sampel yang terbatas.",
-          "Solusi Kunci: Parametric Bootstrap sangat dianjurkan ketika terdapat landasan teori fisika yang kuat mengenai bentuk distribusi (misal..."
-        ]
+          "Petunjuk Analitis: Kaitkan dengan hukum fisika dasar dan ukuran sampel yang terbatas.",
+          "Solusi Kunci: Parametric Bootstrap sangat dianjurkan ketika terdapat landasan teori fisika yang kuat mengenai bentuk distribusi (misal degradasi radioaktif pasti eksponensial, keausan mekanik pasti Weibull) dan ukuran sampel relatif terbatas sehingga penarikan non-parametrik akan menghasilkan estimasi ekor yang terlalu kasar."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -396,101 +472,144 @@ export const CH38_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Konstruksi Interval Kepercayaan: Metode Persentil vs Me...",
+        "slideNumber": 23,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Konstruksi Interval Kepercayaan: Metode Persentil vs Metode BCa yang Terkoreksi Bias",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.1.3.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.3.",
-          "Capaian: Menganalisis kelemahan metode Standard Normal Bootstrap dan Percentile Bootstrap pada distribusi asimetris.",
-          "Capaian: Memahami formulasi matematis koreksi bias ($z_0$) dan akselerasi ($a$) pada metode BCa (Bias-Corrected and Acc...",
-          "Capaian: Mengimplementasikan interval kepercayaan BCa berstandar publikasi menggunakan Python."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.3 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menganalisis kelemahan metode Standard Normal Bootstrap dan Percentile Bootstrap pada distribusi asimetris.",
+          "Capaian 2: Memahami formulasi matematis koreksi bias ($z_0$) dan akselerasi ($a$) pada metode BCa (Bias-Corrected and Accelerated).",
+          "Capaian 3: Mengimplementasikan interval kepercayaan BCa berstandar publikasi menggunakan Python."
         ],
-        "keyFormulaOrDiagram": "$$\\text{BCa}_{1-\\alpha} = \\left[ \\hat{\\theta}_{(\\alpha_1 B)}^*, \\; \\hat{\\theta}_{(\\alpha_2 B)}^* \\right]$$"
+        "keyFormulaOrDiagram": "$$\\text{BCa}_{1-\\alpha} = \\left[ \\hat{\\theta}_{(\\alpha_1 B)}^*, \\; \\hat{\\theta}_{(\\alpha_2 B)}^* \\right]$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.1.3."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Konstruksi Interval Kepercayaan: Metode Persentil vs Me...",
+        "slideNumber": 24,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Konstruksi Interval Kepercayaan: Metode Persentil vs Metode BCa yang Terkoreksi Bias",
+        "lead": "Setelah membangkitkan $B$ replikasi bootstrap $\\hat{\\theta}_1^*, \\dots, \\hat{\\theta}_B^*$, langkah inferensi berikutnya adalah mengonstruksi interval kepercayaan (Confidence Interval / CI).",
         "bulletPoints": [
-          "Setelah membangkitkan $B$ replikasi bootstrap $\\hat{\\theta}_1^*, \\dots, \\hat{\\theta}_B^*$, langkah inferensi berikutnya adala...",
-          "1. Metode Bootstrap-t / Standar Normal: Mengasumsikan bahwa distribusi sampling estimator berdistribusi normal: $\\hat{\\theta}...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Terdapat beberapa pendekatan dengan tingkat kecanggihan dan ketelitian matematis yang bertingkat:",
+          "1.",
+          "Metode Bootstrap-t / Standar Normal: Mengasumsikan bahwa distribusi sampling estimator berdistribusi normal: $\\hat{\\theta} \\pm z_{\\alpha/2} \\cdot \\widehat{\\text{SE}}_B$."
         ],
-        "keyFormulaOrDiagram": "2. Metode Persentil Bootstrap (Efron, 1981): Mengambil langsung persentil $\\alpha/2$ dan $..."
+        "keyFormulaOrDiagram": "$\\alpha/2$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 25,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "2.",
         "bulletPoints": [
-          "2. Metode Persentil Bootstrap (Efron, 1981): Mengambil langsung persentil $\\alpha/2$ dan $1 - \\alpha/2$ dari array replikasi...",
-          "3. Metode BCa (Bias-Corrected and Accelerated, Efron, 1987): Merupakan standar emas interval kepercayaan non-parametrik. Meto...",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Metode Persentil Bootstrap (Efron, 1981): Mengambil langsung persentil $\\alpha/2$ dan $1 - \\alpha/2$ dari array replikasi bootstrap yang telah diurutkan: $[\\hat{\\theta}^*_{(\\alpha/2)}, \\hat{\\theta}^*_{(1 - \\alpha/2)}]$.",
+          "Metode ini mudah dihitung dan invarian terhadap transformasi monoton, namun terbukti bias dan menghasilkan cakupan nyata yang lebih rendah dari tingkat kepercayaan nominal (misal cakupan aktual hanya 91% pada target 95%) jika estimator memiliki bias sampel atau varians bergantung pada parameter.",
+          "3.",
+          "Metode BCa (Bias-Corrected and Accelerated, Efron, 1987): Merupakan standar emas interval kepercayaan non-parametrik."
+        ],
+        "keyFormulaOrDiagram": "$z_0$",
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 26,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Formulasi Matematis Interval Kepercayaan BCa:",
         "bulletPoints": [
-          "Formulasi Matematis Interval Kepercayaan BCa:",
-          "Diberikan array replikasi bootstrap yang telah diurutkan $\\hat{\\theta}_{(1)}^* \\leq \\hat{\\theta}_{(2)}^* \\leq...",
-          "Batas interval kepercayaan BCa $(1 - \\alpha)$ didefinisikan sebagai persentil $\\alpha_1$ dan $\\alpha_2$:"
+          "Diberikan array replikasi bootstrap yang telah diurutkan $\\hat{\\theta}_{(1)}^* \\leq \\hat{\\theta}_{(2)}^* \\leq \\dots \\leq \\hat{\\theta}_{(B)}^*$.",
+          "Batas interval kepercayaan BCa $(1 - \\alpha)$ didefinisikan sebagai persentil $\\alpha_1$ dan $\\alpha_2$:",
+          "Perhitungan Indeks Persentil Terkoreksi:"
         ],
-        "keyFormulaOrDiagram": "$$\\text{BCa}_{1-\\alpha} = \\left[ \\hat{\\theta}_{(\\alpha_1 B)}^*, \\; \\hat{\\theta}_{(\\alpha_2 B)}^* \\right]$$"
+        "keyFormulaOrDiagram": "$$\\text{BCa}_{1-\\alpha} = \\left[ \\hat{\\theta}_{(\\alpha_1 B)}^*, \\; \\hat{\\theta}_{(\\alpha_2 B)}^* \\right]$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 27,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Pada eksperimen bootstrap B = 2.000 iterasi, estimator asli bernilai theta_hat = 10.0. Dari 2.000 replikasi bootstrap, sebanyak 1.150 replik...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Pada eksperimen bootstrap B = 2.000 iterasi, estimator asli bernilai theta_hat = 10.0. Dari 2.000 replikasi bootstrap, sebanyak 1.150 replikasi menghasilkan nilai theta^* < 10.0. Parameter akselerasi Jackknife dihitung sebesar a = 0.05. Hitung parameter bias z_0 dan tentukan persentil terkoreksi alpha_1 untuk batas bawah interval kepercayaan 95% (z_0.025 = -1.960).",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 28,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
           "Langkah 1: Hitung proporsi replikasi di bawah theta_hat: p = 1150 / 2000 = 0.575.",
           "Langkah 2: Hitung parameter bias z_0 = Phi^-1(0.575): Dari tabel distribusi normal standar, z_0 = +0.189.",
-          "Langkah 3: Hitung suku pembilang untuk alpha_1: Pembilang = z_0 + z_0.025 = 0.189 + (-1.960) = -1.771.",
-          "Interpretasi: Pada metode persentil biasa, batas bawah diambil pada persentil 2.50%. Akibat adanya bias dan kemencengan data, metode B..."
+          "Langkah 3: Hitung suku pembilang untuk alpha_1: Pembilang = z_0 + z_0.025 = 0.189 + (-1.960) = -1.771."
         ],
-        "keyFormulaOrDiagram": "Langkah 6: Hitung persentil terkoreksi alpha_1 = Phi(-1.4379): alpha_1 = 0.0752 (persentil..."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 29,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung suku penyebut untuk alpha_1: Penyebut = 1 - a * (z_0 + z_0.025) = 1 - 0.05 * (-1.771) = 1 + 0.08855 = 1.08855.",
+          "Langkah 5: Hitung nilai argumen Gaussian: W = z_0 + (Pembilang / Penyebut) = 0.189 + (-1.771 / 1.08855) = 0.189 - 1.6269 = -1.4379.",
+          "Langkah 6: Hitung persentil terkoreksi alpha_1 = Phi(-1.4379): alpha_1 = 0.0752 (persentil ke-7.52%).",
+          "[result: Interpretasi Ilmiah] Pada metode persentil biasa, batas bawah diambil pada persentil 2.50%. Akibat adanya bias dan kemencengan data, metode BCa secara otomatis mengoreksi batas bawah ke persentil 7.52%, menjamin cakupan probabilitas 95% yang akurat."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 30,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Implementasi mandiri kalkulasi interval kepercayaan BCa vs Persentil biasa.",
         "bulletPoints": [
-          "Deskripsi: Implementasi mandiri kalkulasi interval kepercayaan BCa vs Persentil biasa.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Komparasi Interval Kepercayaan Varians:"
+          "Tujuan Algoritma: Implementasi mandiri kalkulasi interval kepercayaan BCa vs Persentil biasa.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Komparasi Interval Kepercayaan Varians:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Komparasi Interval Kepercayaan Varians: | Estimator Titik Terama..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Komparasi Interval Kepercayaan Varians:\nEstimator Titik Teramati (Varians): 83.99\nParameter BCa: z0 = 0.2819 | a = 0.1343\nPersentil Biasa (2.5%, 97.5%)      : [22.42, 230.15]\nPersentil BCa (9.4%, 99.4%) : [36.03, 303.48]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 31,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Menggunakan metode Persentil sederhana pada estimator yang asimetris (seperti varians, korelasi, atau rasio).",
-          "Perangkap: Mengabaikan peringatan numerik ketika nilai penyebut 1 - a(z0 + z) mendekati nol.",
-          "Perangkap: Menghitung parameter akselerasi a langsung dari replikasi bootstrap alih-alih menggunakan sampel Jackknife."
-        ]
+          "[warning: Perangkap] Menggunakan metode Persentil sederhana pada estimator yang asimetris (seperti varians, korelasi, atau rasio).",
+          "[warning: Perangkap] Mengabaikan peringatan numerik ketika nilai penyebut 1 - a(z0 + z) mendekati nol.",
+          "[warning: Perangkap] Menghitung parameter akselerasi a langsung dari replikasi bootstrap alih-alih menggunakan sampel Jackknife."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 32,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan metode BCa sebagai pilihan default untuk pelaporan interval kepercayaan di jurnal bereputasi.",
-          "Prosedur: Pastikan jumlah replikasi B >= 2.000 agar penarikan persentil ekstrim (misal 0.5% atau 99.5%) stabil secara nu...",
-          "Prosedur: Bandingkan batas interval BCa dengan Persentil standar: perbedaan signifikan menandakan kuatnya efek kemenceng..."
-        ]
+          "Prosedur: Pastikan jumlah replikasi B >= 2.000 agar penarikan persentil ekstrim (misal 0.5% atau 99.5%) stabil secara numerik.",
+          "Prosedur: Bandingkan batas interval BCa dengan Persentil standar: perbedaan signifikan menandakan kuatnya efek kemencengan dan bias."
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 33,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa metode Persentil Bootstrap biasa sering menghasilkan cakupan empiris yang lebih rendah daripada 95% pada sampel...",
-          "Petunjuk: Perhatikan ketiadaan mekanisme koreksi untuk bias median dan kemencengan sebaran.",
-          "Solusi Kunci: Metode persentil biasa mengasumsikan bahwa distribusi sampling dari estimator berbentuk simetris sempurna di sekitar nil..."
-        ]
+          "Pertanyaan Uji: Mengapa metode Persentil Bootstrap biasa sering menghasilkan cakupan empiris yang lebih rendah daripada 95% pada sampel berukuran sedang?",
+          "Petunjuk Analitis: Perhatikan ketiadaan mekanisme koreksi untuk bias median dan kemencengan sebaran.",
+          "Solusi Kunci: Metode persentil biasa mengasumsikan bahwa distribusi sampling dari estimator berbentuk simetris sempurna di sekitar nilai parameter sejati. Jika estimator mengalami bias atau kemencengan (skewness), persentil 2.5% dan 97.5% akan bergeser ke satu sisi, sehingga salah satu ekor parameter populasi sering terlewat dan cakupan aktual merosot ke 88%-92%."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   },
@@ -561,101 +680,140 @@ export const CH38_LESSONS: Record<string, Partial<Lesson>> = {
     ],
     "slides": [
       {
-        "slideNumber": 1,
-        "title": "Tinjauan & Capaian: Resampling untuk Estimasi Parameter Non-Linier dan Rasi...",
+        "slideNumber": 34,
+        "layout": "concept",
+        "title": "Tinjauan & Capaian: Resampling untuk Estimasi Parameter Non-Linier dan Rasio Kompleks",
+        "lead": "Orientasi metodologis dan capaian pembelajaran khusus pada Lesson 6.1.4.",
         "bulletPoints": [
-          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.4.",
-          "Capaian: Menerapkan teknik resampling bootstrap untuk parameter yang tidak memiliki turunan analitis tertutup.",
-          "Capaian: Menganalisis interval kepercayaan rasio dua variabel acak (Ratio of Means) dan indeks efisiensi rekayasa.",
-          "Capaian: Membandingkan hasil Bootstrap dengan metode aproksimasi Delta Method."
+          "Fokus Metodologis: Pembahasan komprehensif pada lesson 6.1.4 dalam kurikulum riset rekayasa.",
+          "Capaian 1: Menerapkan teknik resampling bootstrap untuk parameter yang tidak memiliki turunan analitis tertutup.",
+          "Capaian 2: Menganalisis interval kepercayaan rasio dua variabel acak (Ratio of Means) dan indeks efisiensi rekayasa.",
+          "Capaian 3: Membandingkan hasil Bootstrap dengan metode aproksimasi Delta Method."
         ],
-        "keyFormulaOrDiagram": "$$\\widehat{\\text{Var}}_{\\text{Delta}}(\\hat{\\theta}) \\approx \\left( \\frac{\\bar{Y}}{\\bar{X}} \\right)^2 \\left[ \\frac{s_Y^2}{n \\bar{Y}^2} + \\frac{s_X^2}{n \\bar{X}^2} - 2 \\frac{s_{XY}}{n \\bar{X} \\bar{Y}} \\right]$$"
+        "keyFormulaOrDiagram": "$$\\widehat{\\text{Var}}_{\\text{Delta}}(\\hat{\\theta}) \\approx \\left( \\frac{\\bar{Y}}{\\bar{X}} \\right)^2 \\left[ \\frac{s_Y^2}{n \\bar{Y}^2} + \\frac{s_X^2}{n \\bar{X}^2} - 2 \\frac{s_{XY}}{n \\bar{X} \\bar{Y}} \\right]$$",
+        "notes": "Fokuskan perkuliahan pada pencapaian taksonomi Bloom (analisis C4 hingga evaluasi C5) untuk lesson 6.1.4."
       },
       {
-        "slideNumber": 2,
-        "title": "Fondasi Konseptual: Resampling untuk Estimasi Parameter Non-Linier dan Rasi...",
+        "slideNumber": 35,
+        "layout": "concept",
+        "title": "Fondasi Konseptual: Resampling untuk Estimasi Parameter Non-Linier dan Rasio Kompleks",
+        "lead": "Dalam rekayasa sistem dan eksperimen ilmiah, banyak parameter kritis diformulasikan sebagai fungsi non-linier dari beberapa pengukuran acak.",
         "bulletPoints": [
-          "Dalam rekayasa sistem dan eksperimen ilmiah, banyak parameter kritis diformulasikan sebagai fungsi non-linier dari beberapa p...",
-          "Tantangan Inferensi Analitis: Mencari interval kepercayaan eksak untuk parameter rasio atau persamaan non-linier menggunakan...",
-          "Pentingnya kepatuhan terhadap standar validitas internal dan eksternal."
+          "Contoh parametrik meliputi: - Rasio Efisiensi Termal: $\\theta = \\bar{Y} / \\bar{X}$ (Rasio output daya terhadap input bahan bakar). - Indeks Kemampuan Proses (Process Capability Index): $C_{pk} = \\min\\left(\\frac{\\text{USL} - \\mu}{3\\sigma}, \\frac{\\mu - \\text{LSL}}{3\\sigma}\\right)$. - Parameter Kinetika Reaksi Kimia Non-Linier Michaelis-Menten: $V = \\frac{V_{\\max} [S]}{K_m + [S]}$.",
+          "Tantangan Inferensi Analitis: Mencari interval kepercayaan eksak untuk parameter rasio atau persamaan non-linier menggunakan teori statistik klasik sangat sulit karena pembagian dua variabel acak menghasilkan distribusi dengan varians tak terhingga atau asimetri ekstrem (seperti distribusi Cauchy).",
+          "Metode analitis tradisional menggunakan Aproksimasi Deret Taylor (Delta Method), namun Delta Method mengasumsikan linearitas lokal dan seringkali menghasilkan estimasi batas kesalahan yang bias secara parah pada ukuran sampel terbatas."
         ],
-        "keyFormulaOrDiagram": "Resampling Bootstrap sebagai Solusi Universal: Metode bootstrap sepenuhnya membebaskan pen..."
+        "keyFormulaOrDiagram": "$g(\\cdot)$",
+        "notes": "Ajak mahasiswa mendiskusikan asumsi ontologis dan epistemologis di balik konsep ini."
       },
       {
-        "slideNumber": 3,
-        "title": "Arsitektur Metodologis & Prinsip Operasional",
+        "slideNumber": 36,
+        "layout": "concept",
+        "title": "Arsitektur Metodologis & Desain Operasional",
+        "lead": "Resampling Bootstrap sebagai Solusi Universal: Metode bootstrap sepenuhnya membebaskan peneliti dari keharusan menurunkan rumus turunan kalkulus yang rumit.",
         "bulletPoints": [
-          "Resampling Bootstrap sebagai Solusi Universal: Metode bootstrap sepenuhnya membebaskan peneliti dari keharusan menurunkan rum...",
-          "Karakterisasi batasan operasional dan domain aplikasi sistem.",
-          "Penetapan kriteria keberhasilan dan ambang batas deteksi instrumen."
-        ]
+          "Peneliti cukup menghitung fungsi non-linier $g(\\cdot)$ pada setiap sampel resample bootstrap secara langsung.",
+          "Distribusi empiris replikasi non-linier secara otomatis menangkap seluruh ketidaklinieran fisik dan kovarians antar variabel tanpa aproksimasi deret Taylor."
+        ],
+        "notes": "Tegaskan batas operasional sistem dan validitas internal pengukuran."
       },
       {
-        "slideNumber": 4,
+        "slideNumber": 37,
+        "layout": "derivation",
         "title": "Formulasi Matematis & Notasi Formal",
+        "lead": "Komparasi Resampling Non-Linier vs Delta Method:",
         "bulletPoints": [
-          "Komparasi Resampling Non-Linier vs Delta Method:",
-          "Diberikan dua variabel acak $X$ dan $Y$ dengan estimator rata-rata $(\\bar{X}, \\bar{Y})$ dan matriks kovarians...",
-          "Target parameter: Rasio $\\theta = \\mu_Y / \\mu_X$."
+          "Diberikan dua variabel acak $X$ dan $Y$ dengan estimator rata-rata $(\\bar{X}, \\bar{Y})$ dan matriks kovarians $\\mathbf{\\Sigma}$.",
+          "Target parameter: Rasio $\\theta = \\mu_Y / \\mu_X$.",
+          "1. Pendekatan Delta Method (Aproksimasi Taylor Orde-1):"
         ],
-        "keyFormulaOrDiagram": "$$\\widehat{\\text{Var}}_{\\text{Delta}}(\\hat{\\theta}) \\approx \\left( \\frac{\\bar{Y}}{\\bar{X}} \\right)^2 \\left[ \\frac{s_Y^2}{n \\bar{Y}^2} + \\frac{s_X^2}{n \\bar{X}^2} - 2 \\frac{s_{XY}}{n \\bar{X} \\bar{Y}} \\right]$$"
+        "keyFormulaOrDiagram": "$$\\widehat{\\text{Var}}_{\\text{Delta}}(\\hat{\\theta}) \\approx \\left( \\frac{\\bar{Y}}{\\bar{X}} \\right)^2 \\left[ \\frac{s_Y^2}{n \\bar{Y}^2} + \\frac{s_X^2}{n \\bar{X}^2} - 2 \\frac{s_{XY}}{n \\bar{X} \\bar{Y}} \\right]$$",
+        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
       },
       {
-        "slideNumber": 5,
+        "slideNumber": 38,
+        "layout": "example",
         "title": "Studi Kasus Numerik: Perumusan Masalah",
+        "lead": "Konteks rekayasa dan spesifikasi parameter eksperimen.",
         "bulletPoints": [
-          "Konteks Masalah: Sebuah turbin prototipe diuji pada n = 5 pengujian berpasangan. Daya input X (kW) = [100, 110, 95, 105, 120]; Daya output Y (kW) = [40, 48,...",
-          "Parameter Masukan: Penetapan nilai acuan baseline dan variabel kontrol.",
-          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan."
-        ]
+          "Konteks Kasus: Sebuah turbin prototipe diuji pada n = 5 pengujian berpasangan. Daya input X (kW) = [100, 110, 95, 105, 120]; Daya output Y (kW) = [40, 48, 36, 44, 54]. Hitung efisiensi rata-rata theta_hat = Y_bar / X_bar. Tunjukkan bagaimana satu replikasi bootstrap berpasangan dihitung jika indeks terambil adalah [0, 0, 2, 3, 4].",
+          "Identifikasi Parameter: Penetapan variabel independen, dependen, dan baseline.",
+          "Tujuan Analisis: Menghitung metrik performa sesuai kriteria keputusan metodologis."
+        ],
+        "notes": "Bimbing mahasiswa mengidentifikasi variabel kunci sebelum memulai perhitungan."
       },
       {
-        "slideNumber": 6,
-        "title": "Solusi Numerik & Interpretasi Hasil",
+        "slideNumber": 39,
+        "layout": "example",
+        "title": "Solusi Numerik: Kalkulasi Langkah demi Langkah",
+        "lead": "Prosedur perhitungan analitis dan estimasi parameter.",
         "bulletPoints": [
-          "Langkah 1: Hitung rata-rata sampel teramati: X_bar = (100 + 110 + 95 + 105 + 120) / 5 = 530 / 5 = 106.0 kW; Y_...",
+          "Langkah 1: Hitung rata-rata sampel teramati: X_bar = (100 + 110 + 95 + 105 + 120) / 5 = 530 / 5 = 106.0 kW; Y_bar = (40 + 48 + 36 + 44 + 54) / 5 = 222 / 5 = 44.4 kW.",
           "Langkah 2: Hitung rasio efisiensi teramati: theta_hat = 44.4 / 106.0 = 0.41887 (41.89%).",
-          "Langkah 3: Lakukan resampling berpasangan dengan indeks [0, 0, 2, 3, 4]: X* = [100, 100, 95, 105, 120]; Y* = [...",
-          "Interpretasi: Resampling berpasangan mempertahankan kovarians alami antara input dan output turbin, menghasilkan estimasi ketidakpasti..."
+          "Langkah 3: Lakukan resampling berpasangan dengan indeks [0, 0, 2, 3, 4]: X* = [100, 100, 95, 105, 120]; Y* = [40, 40, 36, 44, 54]."
         ],
-        "keyFormulaOrDiagram": "Langkah 5: Hitung replikasi rasio bootstrap: theta* = 42.8 / 104.0 = 0.41154 (41.15%)."
+        "notes": "Perhatikan kepatuhan terhadap urutan operasi matematis dan rounding error."
       },
       {
-        "slideNumber": 7,
+        "slideNumber": 40,
+        "layout": "example",
+        "title": "Solusi Numerik: Pembuktian & Interpretasi Hasil",
+        "lead": "Evaluasi kriteria keputusan statistik dan signifikansi temuan.",
+        "bulletPoints": [
+          "Langkah 4: Hitung rata-rata sampel bootstrap: X_bar* = (100 + 100 + 95 + 105 + 120) / 5 = 520 / 5 = 104.0 kW; Y_bar* = (40 + 40 + 36 + 44 + 54) / 5 = 214 / 5 = 42.8 kW.",
+          "Langkah 5: Hitung replikasi rasio bootstrap: theta* = 42.8 / 104.0 = 0.41154 (41.15%).",
+          "[result: Interpretasi Ilmiah] Resampling berpasangan mempertahankan kovarians alami antara input dan output turbin, menghasilkan estimasi ketidakpastian rasio yang realistis."
+        ],
+        "notes": "Tekankan perbedaan antara signifikansi statistik (p-value) dan signifikansi praktis/rekayasa."
+      },
+      {
+        "slideNumber": 41,
+        "layout": "algorithm",
         "title": "Implementasi Komputasi & Eksekusi Python",
+        "lead": "Estimasi interval kepercayaan rasio efisiensi berpasangan menggunakan Bootstrap vs Delta Method.",
         "bulletPoints": [
-          "Deskripsi: Estimasi interval kepercayaan rasio efisiensi berpasangan menggunakan Bootstrap vs Delta Method.",
-          "Dependensi Pustaka: numpy, scipy.stats",
-          "Keluaran Diharapkan: [SIMULASI/SYNTHETIC DATA] Evaluasi Rasio Parameter Non-Linier:"
+          "Tujuan Algoritma: Estimasi interval kepercayaan rasio efisiensi berpasangan menggunakan Bootstrap vs Delta Method.",
+          "Dependensi Pustaka Ilmiah: numpy, scipy.stats",
+          "Keluaran Terverifikasi: [SIMULASI/SYNTHETIC DATA] Evaluasi Rasio Parameter Non-Linier:"
         ],
-        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Rasio Parameter Non-Linier: | Estimator Rasio Efisiensi..."
+        "keyFormulaOrDiagram": "[SIMULASI/SYNTHETIC DATA] Evaluasi Rasio Parameter Non-Linier:\nEstimator Rasio Efisiensi Teramati: 0.4485\nDelta Method SE  : 0.0055 | 95% CI: [0.4377, 0.4593]\nBootstrap SE     : 0.0055 | 95% CI: [0.4379, 0.4598]",
+        "notes": "Jalankan skrip ini di lab komputasi untuk membuktikan replikasi hasil secara deterministik."
       },
       {
-        "slideNumber": 8,
+        "slideNumber": 42,
+        "layout": "warning",
         "title": "Perangkap Metodologis & P-Hacking Warning",
+        "lead": "Peringatan kritis terhadap ancaman validitas riset dan bias inferensi.",
         "bulletPoints": [
-          "Perangkap: Melakukan resampling terpisah (unpaired) pada data berpasangan, yang menghancurkan struktur kovarians antara X...",
-          "Perangkap: Menggunakan Delta Method saat penyebut rasio mendekati nol, yang menyebabkan ledakan varians tak terhingga.",
-          "Perangkap: Mengabaikan pemangkasan numerik jika sampel bootstrap menghasilkan nilai penyebut bernilai nol."
-        ]
+          "[warning: Perangkap] Melakukan resampling terpisah (unpaired) pada data berpasangan, yang menghancurkan struktur kovarians antara X dan Y.",
+          "[warning: Perangkap] Menggunakan Delta Method saat penyebut rasio mendekati nol, yang menyebabkan ledakan varians tak terhingga.",
+          "[warning: Perangkap] Mengabaikan pemangkasan numerik jika sampel bootstrap menghasilkan nilai penyebut bernilai nol."
+        ],
+        "notes": "Peringatkan mahasiswa agar tidak terjebak dalam bias konfirmasi atau manipulasi data."
       },
       {
-        "slideNumber": 9,
+        "slideNumber": 43,
+        "layout": "example",
         "title": "Prosedur Validasi Empiris & Integritas Riset",
+        "lead": "Protokol pengujian ketahanan model dan integritas keterbukaan sains.",
         "bulletPoints": [
           "Prosedur: Gunakan Paired Bootstrap (resampling indeks baris secara utuh) untuk seluruh data berpasangan multivariat.",
-          "Prosedur: Periksa apakah ada replikasi bootstrap yang menghasilkan nilai ekstrem tak masuk akal akibat penyebut mendekat...",
+          "Prosedur: Periksa apakah ada replikasi bootstrap yang menghasilkan nilai ekstrem tak masuk akal akibat penyebut mendekati nol.",
           "Prosedur: Laporkan interval BCa untuk rasio kompleks guna mengoreksi kemencengan distribusi pembagian."
-        ]
+        ],
+        "notes": "Verifikasi kepatuhan terhadap standar artefak bereputasi (ACM Badging / Zenodo DOI)."
       },
       {
-        "slideNumber": 10,
+        "slideNumber": 44,
+        "layout": "exercise",
         "title": "Sintesis Materi & Latihan Mandiri",
+        "lead": "Pertanyaan penguji pemahaman kritis dan diskusi kelas.",
         "bulletPoints": [
-          "Pertanyaan Uji: Mengapa pada data berpasangan (misal input daya X dan output daya Y), kita wajib meresample pasangan indeks baris (i) da...",
-          "Petunjuk: Perhatikan istilah kovarians Cov(X, Y) pada rumus Delta Method.",
-          "Solusi Kunci: Jika X dan Y diresample secara terpisah, korelasi intrinsik antar pasangan observasi akan hilang (kovarians menjadi nol)..."
-        ]
+          "Pertanyaan Uji: Mengapa pada data berpasangan (misal input daya X dan output daya Y), kita wajib meresample pasangan indeks baris (i) dan bukan meresample array X dan array Y secara terpisah?",
+          "Petunjuk Analitis: Perhatikan istilah kovarians Cov(X, Y) pada rumus Delta Method.",
+          "Solusi Kunci: Jika X dan Y diresample secara terpisah, korelasi intrinsik antar pasangan observasi akan hilang (kovarians menjadi nol). Padahal pada sistem rekayasa, input tinggi menghasilkan output tinggi (kovarians positif kuat). Menghilangkan kovarians ini akan melipatgandakan estimasi kesalahan baku rasio secara palsu."
+        ],
+        "notes": "Gunakan pertanyaan ini sebagai bahan kuis interaktif atau diskusi kelompok."
       }
     ]
   }
