@@ -82,8 +82,9 @@ Dokumen ini berfungsi sebagai buku catatan kerja internal (*internal logbook*), 
 [Phase 5: Public Deployment & Verification] (COMPLETED & VERIFIED LIVE)
        ├─ Remote Repository: https://github.com/aji-nurcahyo/Scientific-Research-Experimental-Methods-Learning-Hub.git
        ├─ Live URL: https://aji-nurcahyo.github.io/Scientific-Research-Experimental-Methods-Learning-Hub/
-       ├─ GitHub Actions Build & Test Workflow Passed (Run ID: 45118266504)
-       ├─ GitHub Pages Deployment Passed (Run ID: 45118683402)
+       ├─ Deployment Strategy: GitHub Pages "Deploy from a branch" (gh-pages / root)
+       ├─ CI/CD Automation: .github/workflows/deploy.yml (Test, Build, and Deploy to gh-pages)
+       ├─ Automated Quality Gates: Curriculum integrity, Python verification, Labs audit, TypeScript check
        └─ Public Asset Integrity Verified (HTTP 200 on all chunks)
 ```
 
@@ -157,6 +158,22 @@ Dokumen ini berfungsi sebagai buku catatan kerja internal (*internal logbook*), 
 - **Konteks:** Asisten AI kerap kembali menggunakan pola tulisan klise pemasaran, tanda baca em dash, dan campuran bahasa yang tidak konsisten antar sesi.
 - **Keputusan:** Memformalkan kebijakan permanen dalam [`docs/PERMANENT_STANDARDS.md`](docs/PERMANENT_STANDARDS.md) yang wajib dibaca dan dipatuhi oleh seluruh asisten AI sebelum menghasilkan konten.
 - **Dampak:** Konsistensi gaya bahasa dan mutu visual terjamin secara lintas-sesi.
+
+### ADR-010: Standardisasi Kanonikal 204 Pelajaran (Uniform 4 Lessons per Chapter Architecture)
+- **Konteks:** Draf perancangan awal memiliki variasi 3 hingga 4 pelajaran per bab yang berisiko menciptakan disparitas kedalaman materi.
+- **Keputusan:** Menstandarkan setiap bab pada tepat 4 pelajaran granular lengkap (51 bab x 4 pelajaran = 204 pelajaran) yang mematuhi 10 komponen anatomi akademik utuh.
+- **Dampak:** Struktur kurikulum simetris, terprediksi, dan memiliki kedalaman pedagogis yang setara di seluruh 7 level.
+
+### ADR-011: Verifikasi Komputasi Mandiri Tanpa Halusinasi Angka
+- **Konteks:** Eksperimen dan contoh kode rentan mengalami bit rot, perubahan API pustaka (misalnya penghapusan np.trapz pada NumPy 2.x), atau kesalahan runtime.
+- **Keputusan:** Mengimplementasikan runner audit mandiri (`verify_python_code.py` dan `verify_labs.py`) yang mengekstrak dan mengeksekusi seluruh 199 modul kode pelajaran dan 15 skrip laboratorium di lingkungan Python 3.12 riil.
+- **Dampak:** Jaminan ilmiah 100% bebas dari angka palsu dan data sintetis tanpa kalibrasi.
+
+### ADR-012: Standardisasi Arsitektur Publikasi Tunggal via Branch gh-pages
+- **Konteks:** Mekanisme `actions/deploy-pages@v4` berbasis GitHub Environment protection rules mengalami konflik otorisasi apabila konfigurasi resmi GitHub Pages pada repositori diatur pada mode "Deploy from a branch".
+- **Keputusan:** Menstandardisasi strategi publikasi tunggal yang konsisten: GitHub Actions menjalankan seluruh rangkaian pengujian akademik dan komputasi, membangun bundel produksi, lalu menerbitkan artefak secara otomatis ke branch `gh-pages` menggunakan `JamesIves/github-pages-deploy-action@v4`.
+- **Dampak:** Alur CI/CD stabil, bebas dari kendala izin environment GitHub, dan konfigurasi resmi GitHub Pages ("Deploy from a branch: gh-pages / (root)") tetap berfungsi tanpa intervensi manual.
+
 
 ---
 
