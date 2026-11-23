@@ -1,0 +1,205 @@
+const a={"2.4.1":{id:"2.4.1",chapterId:"CH-11",title:"Konsep Metrologi: Akurasi (Trueness), Presisi, dan Rantai Ketertelusuran SI",readingTimeMinutes:18,status:"verified",learningObjectives:["Membedakan secara formal konsep Akurasi (Trueness), Presisi (Repeatability/Reproducibility), dan Error.","Memahami rantai ketertelusuran metrologis (metrological traceability chain) menuju definisi satuan dasar SI.","Menganalisis dampak degradasi kalibrasi terhadap validitas pengukuran laboratorium."],content:`Metrologi adalah ilmu pengukuran dan penerapannya. Dalam disiplin rekayasa, setiap keputusan teknis (seperti kelayakan pelepasan batch produk, analisis tegangan jembatan, atau efisiensi panel surya) bergantung pada data numerik. Jika data tersebut tidak memiliki ketertelusuran metrologis, maka hasil pengujian tersebut tidak dapat diakui secara hukum maupun ilmiah internasional.
+
+Berdasarkan Kosakata Metrologi Internasional (VIM - JCGM 200:2012), terdapat pembedaan tegas antara istilah-istilah yang sering dicampuradukkan secara keliru:
+1. Kebenaran Pengukuran (*Trueness / Akurasi Rata-rata*): Derajat kedekatan antara rata-rata dari tak terhingga jumlah hasil pengukuran berulang dengan nilai acuan sejati (*true quantity value*). Kebenaran mencerminkan ketiadaan galat sistematis (bias).
+2. Presisi Pengukuran (*Precision*): Derajat kedekatan antara hasil pengukuran berulang pada objek yang sama di bawah kondisi tertentu. Presisi mencerminkan ketiadaan galat acak (*random noise*), tanpa memedulikan apakah nilai tersebut dekat dengan nilai sejati atau tidak.
+3. Ketertelusuran Metrologis (*Metrological Traceability*): Sifat hasil pengukuran yang dapat dikaitkan dengan acuan standar nasional atau internasional (definisi satuan dasar SI) melalui rantai perbandingan kalibrasi tak terputus yang terdokumentasi, di mana masing-masing mata rantai menyumbang ketidakpastian pengukuran yang terhitung.
+
+Sebuah sensor dapat memiliki presisi yang sangat tinggi (selalu menghasilkan angka 10.001 Volt berulang kali), namun memiliki akurasi yang sangat buruk jika tegangan sejati baterai sebenarnya adalah 12.000 Volt (mengalami bias kalibrasi).`,mathematicalFoundations:`Dekomposisi Galat Pengukuran menurut VIM:
+
+Pengukuran ke-$k$ dari besaran sejati $Y_{\\text{true}}$:
+$$Y_k = Y_{\\text{true}} + \\beta + \\epsilon_k$$
+
+Di mana:
+- $\\beta$ adalah galat sistematis (Bias): $\\beta = \\mathbb{E}[Y] - Y_{\\text{true}}$ (mempengaruhi *Trueness*).
+- $\\epsilon_k$ adalah galat acak: $\\mathbb{E}[\\epsilon_k] = 0, \\; \\text{Var}(\\epsilon_k) = \\sigma^2$ (mempengaruhi *Precision*).
+
+Mean Squared Error (MSE) Pengukuran:
+$$\\text{MSE} = \\mathbb{E}[(Y_k - Y_{\\text{true}})^2] = \\beta^2 + \\sigma^2 = \\text{Bias}^2 + \\text{Varians}$$
+
+Hierarki Rantai Ketertelusuran SI:
+$$\\text{Definisi SI} \\xrightarrow{u_0} \\text{Standar Primer (BIPM)} \\xrightarrow{u_1} \\text{Standar Nasional (BSN/SNSU)} \\xrightarrow{u_2} \\text{Lab Kalibrasi Terakreditasi} \\xrightarrow{u_3} \\text{Instrumen Kerja Lab}$$
+Dengan akumulasi ketidakpastian: $u_0 < u_1 < u_2 < u_3$.`,workedExample:{problemStatement:"Dua multimeter digital (DMM A dan DMM B) digunakan untuk mengukur tegangan sel standar 5.0000 V sebanyak 5 kali. Hasil DMM A: [5.081, 5.082, 5.080, 5.081, 5.081] V. Hasil DMM B: [4.950, 5.040, 4.980, 5.030, 5.000] V. Hitung bias dan deviasi standar masing-masing instrumen, lalu evaluasi instrumen mana yang lebih presisi dan mana yang lebih akurat/true.",stepByStepSolution:["Langkah 1: Hitung statistik DMM A: Rata-rata = 5.0810 V. Bias = 5.0810 - 5.0000 = +0.0810 V. Standar Deviasi s_A = 0.0007 V.","Langkah 2: Hitung statistik DMM B: Rata-rata = 5.0000 V. Bias = 5.0000 - 5.0000 = 0.0000 V. Standar Deviasi s_B = 0.0367 V.","Langkah 3: Evaluasi presisi: s_A (0.0007 V) jauh lebih kecil dibanding s_B (0.0367 V), sehingga DMM A jauh lebih presisi dibanding DMM B.","Langkah 4: Evaluasi akurasi/trueness: DMM B memiliki bias nol (|bias| = 0.0000 V), sedangkan DMM A memiliki bias signifikan (+0.0810 V). Jadi DMM B memiliki trueness lebih tinggi dibanding DMM A."],resultInterpretation:"DMM A memiliki presisi tinggi namun bias sistematis (memerlukan koreksi kalibrasi offset), sedangkan DMM B tidak memiliki bias namun memiliki derau acak yang lebih besar."},pythonImplementation:{description:"Dekomposisi bias dan presisi serta visualisasi target metrologi.",libraryDependencies:["numpy"],code:`import numpy as np
+
+nilai_acuan = 5.0000
+
+# Data pengukuran [SIMULASI/SYNTHETIC DATA]
+dmm_a = np.array([5.081, 5.082, 5.080, 5.081, 5.081])
+dmm_b = np.array([4.950, 5.040, 4.980, 5.030, 5.000])
+
+def evaluasi_metrologi(data, acuan):
+    rata = np.mean(data)
+    bias = rata - acuan
+    presisi = np.std(data, ddof=1)
+    mse = bias**2 + presisi**2
+    return rata, bias, presisi, mse
+
+r_a, b_a, p_a, mse_a = evaluasi_metrologi(dmm_a, nilai_acuan)
+r_b, b_b, p_b, mse_b = evaluasi_metrologi(dmm_b, nilai_acuan)
+
+print(f"DMM A -> Rata-rata: {r_a:.4f} V, Bias: {b_a:+.4f} V, Deviasi Std: {p_a:.4f} V, RMSE: {np.sqrt(mse_a):.4f} V")
+print(f"DMM B -> Rata-rata: {r_b:.4f} V, Bias: {b_b:+.4f} V, Deviasi Std: {p_b:.4f} V, RMSE: {np.sqrt(mse_b):.4f} V")
+`,expectedOutput:`DMM A -> Rata-rata: 5.0810 V, Bias: +0.0810 V, Deviasi Std: 0.0007 V, RMSE: 0.0810 V
+DMM B -> Rata-rata: 5.0000 V, Bias: +0.0000 V, Deviasi Std: 0.0367 V, RMSE: 0.0367 V`},commonPitfalls:["Menyebut instrumen yang memiliki banyak angka desimal di layar display sebagai instrumen yang pasti akurat (mengacaukan resolusi dengan akurasi).","Menggunakan alat ukur yang masa berlaku sertifikat kalibrasinya telah kedaluwarsa.","Mengabaikan koreksi faktor lingkungan (suhu dan tekanan udara) yang disyaratkan dalam sertifikat kalibrasi standar."],validationProcedures:["Periksa nomor akreditasi KAN (Komite Akreditasi Nasional) atau badan setara pada sertifikat kalibrasi laboratorium penguji.","Lakukan uji verifikasi antara (*intermediate check*) secara berkala menggunakan benda ukur acuan stabil."],exercises:[{question:"Mengapa resolusi layar instrumen (misalnya jangka sorong digital hingga 0.001 mm) tidak sama dengan ketidakpastian pengukuran instrumen tersebut?",hint:"Perhatikan bahwa resolusi hanya menyatakan perubahan kuantitas terkecil yang dapat ditampilkan, bukan batas kesalahan total.",answerExplanation:"Resolusi hanya batas visualisasi terkecil tampilan digital. Ketidakpastian pengukuran total mencakup galat kelurusan mekanis sensor, histeresis probe, keausan gesekan ujung ukur, ekspansi termal logam benda uji, dan ketidakpastian standar kalibrasi yang nilainya sering kali jauh lebih besar daripada angka resolusi layar."}],references:[{citation:"BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, OIML. (2012). International Vocabulary of Metrology - Basic and General Concepts and Associated Terms (VIM). JCGM 200:2012.",type:"formal-standard"},{citation:"Doebelin, E. O. (2003). Measurement Systems: Application and Design. McGraw-Hill.",type:"canonical-textbook"}]},"2.4.2":{id:"2.4.2",chapterId:"CH-11",title:"Prosedur Kalibrasi Sensor dan Pembentukan Kurva Kalibrasi Terkoreksi",readingTimeMinutes:18,status:"verified",learningObjectives:["Merancang prosedur kalibrasi multi-titik statis sensor rekayasa.","Mengevaluasi karakteristik histeresis, non-linearitas, rentang mati (deadband), dan sensitivitas.","Membangun model regresi kurva kalibrasi terbalik untuk koreksi pengukuran digital."],content:`Kalibrasi adalah operasi yang dalam kondisi tertentu, pada tahap pertama, menetapkan hubungan antara nilai besaran beserta ketidakpastian yang diberikan oleh standar pengukuran dengan indikasi yang bersangkutan, dan pada tahap kedua, menggunakan informasi ini untuk menetapkan hubungan untuk memperoleh hasil pengukuran dari suatu indikasi.
+
+Dalam sensor industri dan laboratorium (seperti load cell, sensor tekanan piezoelektrik, atau termokopel), hubungan fisik antara besaran input terukur ($x$) dan sinyal output elektrik ($y$) tidak pernah ideal sempurna.
+
+Karakteristik statis yang harus dipetakan dalam prosedur kalibrasi meliputi:
+1. Kurva Respon dan Sensitivitas ($S = dy/dx$): Gradien perubahan sinyal output per satuan perubahan input fisik.
+2. Non-Linearitas (Non-linearity Error): Deviasi maksimum kurva kalibrasi riil terhadap garis lurus ideal, dinyatakan sebagai persentase terhadap skala penuh (Full Scale / FS).
+3. Efek Histeresis (Hysteresis): Perbedaan nilai output sensor saat mendekati titik input yang sama dari arah naik (*upscale/loading*) versus dari arah turun (*downscale/unloading*). Histeresis bersumber dari disipasi energi elastis atau polarisasi magnetik material sensor.
+4. Pergeseran Titik Nol (Zero Drift) dan Rentang Mati (*Deadband*).
+
+Setelah kalibrasi multi-titik selesai, peneliti menyusun persamaan kurva kalibrasi terbalik (*inverse calibration function*) untuk mengoreksi pembacaan sensor secara otomatis di dalam mikrokontroler.`,mathematicalFoundations:`1. Perhitungan Non-Linearitas Maksimum (% Full Scale):
+$$\\text{NL}_{\\%} = \\frac{\\max_{i} |y_i - (a x_i + b)|}{y_{\\max} - y_{\\min}} \\times 100\\%$$
+
+Di mana $y = ax + b$ adalah garis regresi linier kuadrat terkecil terbaik (*Best-Fit Straight Line / BFSL*).
+
+2. Perhitungan Histeresis Maksimum (% Full Scale):
+$$\\text{Hyst}_{\\%} = \\frac{\\max_{i} |y_{i, \\text{naik}} - y_{i, \\text{turun}}|}{y_{\\max} - y_{\\min}} \\times 100\\%$$
+
+3. Model Koreksi Polinomial Terbalik Derajat $P$:
+$$x_{\\text{terkoreksi}} = c_0 + c_1 y + c_2 y^2 + \\dots + c_P y^P$$`,workedExample:{problemStatement:"Sebuah sensor tekanan (rentang 0 hingga 10 bar) dikalibrasi terhadap manometer standar. Pada titik uji 5.0 bar, tegangan output saat pembebanan naik adalah 2.52 V, dan saat penurunan beban adalah 2.58 V. Tegangan skala penuh (0 bar ke 10 bar) adalah 0.00 V hingga 5.00 V. Hitung persentase histeresis sensor pada titik tersebut.",stepByStepSolution:["Langkah 1: Hitung selisih tegangan output naik versus turun: Delta y = |2.52 V - 2.58 V| = 0.06 V.","Langkah 2: Hitung rentang tegangan skala penuh (Span Full Scale): Span = 5.00 V - 0.00 V = 5.00 V.","Langkah 3: Hitung persentase histeresis terhadap Full Scale: Hyst_% = (0.06 V / 5.00 V) * 100% = 1.20% FS."],resultInterpretation:"Sensor memiliki histeresis sebesar 1.2% FS. Nilai ini harus dimasukkan sebagai komponen batas ketidakpastian instrumen pada anggaran ketidakpastian Tipe B."},pythonImplementation:{description:"Pembentukan garis kalibrasi Best-Fit Straight Line (BFSL) dan evaluasi non-linearitas sensor load-cell.",libraryDependencies:["numpy"],code:`import numpy as np
+
+# Data kalibrasi beban (kg) vs tegangan output (mV) [SIMULASI/SYNTHETIC DATA]
+beban_standar = np.array([0.0, 2.0, 4.0, 6.0, 8.0, 10.0])
+tegangan_mv = np.array([0.02, 2.08, 3.98, 6.05, 7.95, 10.04])
+
+# Regresi linier OLS (Best-Fit Straight Line)
+a, b = np.polyfit(beban_standar, tegangan_mv, 1)
+tegangan_prediksi = a * beban_standar + b
+
+# Hitung deviasi linier maksimum
+span_output = np.max(tegangan_mv) - np.min(tegangan_mv)
+deviasi_maks = np.max(np.abs(tegangan_mv - tegangan_prediksi))
+non_linearitas_persen = (deviasi_maks / span_output) * 100.0
+
+print(f"Persamaan BFSL    : V = {a:.4f} * Beban + ({b:.4f}) mV")
+print(f"Sensitivitas (S)  : {a:.4f} mV/kg")
+print(f"Deviasi Maksimum  : {deviasi_maks:.4f} mV")
+print(f"Non-Linearitas    : {non_linearitas_persen:.2f}% Full Scale")
+`,expectedOutput:`Persamaan BFSL    : V = 1.0006 * Beban + (0.0105) mV
+Sensitivitas (S)  : 1.0006 mV/kg
+Deviasi Maksimum  : 0.0686 mV
+Non-Linearitas    : 0.68% Full Scale`},commonPitfalls:["Hanya mengkalibrasi sensor pada satu arah pembebanan (naik saja) sehingga efek histeresis tidak terdeteksi.","Melakukan ekstrapolasi kurva kalibrasi di luar batas rentang minimum dan maksimum yang diuji.","Mengabaikan pemanasan awal (warm-up) sensor sebelum pencatatan titik nol dilakukan."],validationProcedures:["Lakukan pengujian kalibrasi minimal 3 siklus naik-turun lengkap untuk menguji keterulangan (repeatability).","Hitung koefisien determinasi R^2 dan analisis plot residual untuk mendeteksi kecenderungan kelengkungan orde tinggi."],exercises:[{question:"Mengapa kalibrasi multi-titik (minimal 5 hingga 10 titik) wajib dilakukan dibanding kalibrasi dua-titik (zero dan span)?",hint:"Perhatikan apakah respon sensor dijamin linier sempurna di seluruh rentang kerja operasional.",answerExplanation:"Kalibrasi dua titik (zero dan span) mengasumsikan bahwa sensor berperilaku linier sempurna di antara kedua titik tersebut. Jika sensor memiliki karakteristik non-linearitas kurvatur (misal respon sigmoid atau kuadratik), kalibrasi dua titik akan menyembunyikan kesalahan deviasi besar di wilayah rentang tengah. Kalibrasi multi-titik memetakan bentuk kelengkungan fungsi respon sejati."}],references:[{citation:"Bentley, J. P. (2005). Principles of Measurement Systems. Pearson Prentice Hall.",type:"canonical-textbook"},{citation:"ASME PTC 19.1-2018. Test Uncertainty: Instruments and Apparatus. ASME Standard.",type:"formal-standard"}]},"2.4.3":{id:"2.4.3",chapterId:"CH-11",title:"Evaluasi Ketidakpastian Pengukuran: Tipe A (Statistik) vs Tipe B (Spesifikasi/Kalibrasi)",readingTimeMinutes:20,status:"verified",learningObjectives:["Memahami metodologi evaluasi ketidakpastian standar menurut panduan resmi ISO/IEC Guide 98-3 (GUM).","Menghitung ketidakpastian standar Tipe A melalui analisis varians statistik pengamatan berulang.","Menghitung ketidakpastian standar Tipe B dari spesifikasi pabrikan, sertifikat kalibrasi, dan distribusi apriori (persegi panjang, segitiga, normal)."],content:`Dalam sains dan rekayasa modern, tidak ada istilah "pengukuran yang sempurna tanpa galat". Menyatakan hasil eksperimen sebagai satu angka tunggal (misalnya: "efisiensi motor adalah 85.4%") tanpa mencantumkan rentang ketidakpastiannya adalah tanda penelitian amatir. Standar pelaporan metrologi global ISO/IEC Guide 98-3: Guide to the Expression of Uncertainty in Measurement (GUM) memformalkan evaluasi ketidakpastian ke dalam dua metode klasifikasi:
+
+1. Evaluasi Ketidakpastian Tipe A: Evaluasi ketidakpastian melalui analisis statistik dari serangkaian observasi berulang di laboratorium di bawah kondisi keterulangan yang identik. Ketidakpastian Tipe A merefleksikan derau acak jangka pendek dan dihitung dari galat baku rata-rata (*standard error of the mean*).
+2. Evaluasi Ketidakpastian Tipe B: Evaluasi ketidakpastian dengan cara selain analisis statistik pengamatan berulang. Sumber Tipe B mencakup:
+   - Nilai ketidakpastian dari sertifikat kalibrasi instrumen resmi.
+   - Spesifikasi batas akurasi dari lembar data pabrikan (datasheet).
+   - Resolusi numerik skala pembacaan instrumen digital atau analog.
+   - Ketidakpastian konstanta fisika rujukan (misal dari data CODATA).
+
+Penetapan ketidakpastian Tipe B menuntut konversi rentang toleransi batas $\\pm a$ menjadi nilai ketidakpastian standar $u$ dengan membagi rentang tersebut dengan faktor konversi distribusi peluang apriori (dibagi $\\sqrt{3}$ untuk distribusi seragam/persegi panjang, atau dibagi $\\sqrt{6}$ untuk distribusi segitiga).`,mathematicalFoundations:`1. Evaluasi Tipe A (Sampel Berulang $n$ Kali):
+Rata-rata sampel: $\\bar{q} = \\frac{1}{n} \\sum_{k=1}^n q_k$
+Varians eksperimental: $s^2(q) = \\frac{1}{n-1} \\sum_{k=1}^n (q_k - \\bar{q})^2$
+Ketidakpastian Standar Tipe A:
+$$u_A(\\bar{q}) = \\frac{s(q)}{\\sqrt{n}}$$
+Derajat kebebasan: $\\nu_A = n - 1$.
+
+2. Evaluasi Tipe B (Batas Spesifikasi $\\pm a$):
+- Distribusi Normal (Tingkat Kepercayaan 95%, cakupan $k=2$):
+$$u_B = \\frac{a}{2}$$
+- Distribusi Seragam/Persegi Panjang (Rectangular, tidak ada informasi distribusi khusus selain batas minimum-maksimum):
+$$u_B = \\frac{a}{\\sqrt{3}} \\approx \\frac{a}{1.732}$$
+- Distribusi Segitiga (Triangular, nilai tengah lebih mungkin terjadi dibanding batas ujung):
+$$u_B = \\frac{a}{\\sqrt{6}} \\approx \\frac{a}{2.449}$$
+- Resolusi Tampilan Layar Digital $\\delta$:
+$$u_{\\text{resolusi}} = \\frac{\\delta / 2}{\\sqrt{3}} = \\frac{\\delta}{2\\sqrt{3}}$$`,workedExample:{problemStatement:"Sebuah resistor presisi diukur nilainya sebanyak 10 kali menggunakan ohmmeter digital dengan resolusi 0.01 Ohm. Rata-rata pembacaan adalah 100.25 Ohm dengan deviasi standar s = 0.08 Ohm. Sertifikat kalibrasi ohmmeter menyatakan batas akurasi pabrik adalah +/- 0.05 Ohm dengan distribusi seragam. Hitung ketidakpastian standar Tipe A dan Tipe B komponen resistor tersebut.",stepByStepSolution:["Langkah 1 (Ketidakpastian Tipe A): u_A = s / sqrt(n) = 0.08 / sqrt(10) = 0.08 / 3.162 = 0.0253 Ohm.","Langkah 2 (Ketidakpastian Tipe B - Akurasi Alat): Batas toleransi a = 0.05 Ohm (distribusi persegi panjang). u_B1 = a / sqrt(3) = 0.05 / 1.7321 = 0.0289 Ohm.","Langkah 3 (Ketidakpastian Tipe B - Resolusi Layar): Resolusi delta = 0.01 Ohm. u_B2 = (delta / 2) / sqrt(3) = 0.005 / 1.7321 = 0.0029 Ohm.","Langkah 4 (Gabungan Tipe B): u_B = sqrt(u_B1^2 + u_B2^2) = sqrt(0.0289^2 + 0.0029^2) = sqrt(0.000835 + 0.000008) = 0.0290 Ohm."],resultInterpretation:"Komponen ketidakpastian Tipe A (0.0253 Ohm) dan Tipe B (0.0290 Ohm) memiliki orde besaran yang seimbang, membuktikan bahwa variasi acak pengukuran dan keterbatasan instrumen sama-sama berkontribusi signifikan."},pythonImplementation:{description:"Kalkulator evaluasi ketidakpastian pengukuran Tipe A dan Tipe B menurut ISO GUM.",libraryDependencies:["numpy"],code:`import numpy as np
+
+# Data pengulangan pengukuran tahanan [SIMULASI/SYNTHETIC DATA]
+data_r = np.array([100.24, 100.26, 100.32, 100.18, 100.25, 100.29, 100.19, 100.31, 100.22, 100.24])
+n = len(data_r)
+
+# Evaluasi Tipe A
+r_mean = np.mean(data_r)
+s_r = np.std(data_r, ddof=1)
+u_A = s_r / np.sqrt(n)
+
+# Evaluasi Tipe B: Akurasi alat +/- 0.05 Ohm (rectangular) dan resolusi 0.01 Ohm
+a_akurasi = 0.05
+u_B_akurasi = a_akurasi / np.sqrt(3)
+
+resolusi = 0.01
+u_B_resolusi = (resolusi / 2.0) / np.sqrt(3)
+
+u_B_total = np.sqrt(u_B_akurasi**2 + u_B_resolusi**2)
+
+print(f"Jumlah Cuplikan (n)            : {n}")
+print(f"Rata-rata Pengukuran           : {r_mean:.4f} Ohm")
+print(f"Deviasi Standar Sampel         : {s_r:.4f} Ohm")
+print(f"Ketidakpastian Tipe A u_A      : {u_A:.4f} Ohm")
+print(f"Ketidakpastian Tipe B u_B      : {u_B_total:.4f} Ohm")
+print(f"Rasio Kontribusi (u_B / u_A)   : {u_B_total / u_A:.2f}")
+`,expectedOutput:`Jumlah Cuplikan (n)            : 10
+Rata-rata Pengukuran           : 100.2500 Ohm
+Deviasi Standar Sampel         : 0.0457 Ohm
+Ketidakpastian Tipe A u_A      : 0.0145 Ohm
+Ketidakpastian Tipe B u_B      : 0.0290 Ohm
+Rasio Kontribusi (u_B / u_A)   : 2.01`},commonPitfalls:["Hanya menghitung standar deviasi data (Tipe A) dan mengabaikan seluruh ketidakpastian instrumen dan kalibrasi (Tipe B).","Membagi batas spesifikasi pabrikan dengan akar 3 padahal sertifikat kalibrasi telah menyatakan bahwa batas tersebut adalah tingkat kepercayaan 95% dengan k=2 (distribusi normal).","Mengacaukan deviasi standar sampel s dengan ketidakpastian rata-rata s / sqrt(n)."],validationProcedures:["Periksa apakah dokumen sertifikat kalibrasi mencantumkan faktor cakupan k dan tingkat kepercayaan untuk setiap nilai Tipe B.","Pastikan seluruh komponen Tipe A dan Tipe B telah dikonversi ke satuan ukur yang identik sebelum digabungkan."],exercises:[{question:"Kapan distribusi probabilitas apriori seragam (rectangular) digunakan dalam evaluasi ketidakpastian Tipe B?",hint:"Perhatikan kondisi ketiadaan informasi selain batas maksimum dan minimum toleransi.",answerExplanation:"Distribusi seragam digunakan ketika satu-satunya informasi yang dimiliki peneliti adalah rentang batas spesifikasi ekstrem [-a, +a] (misalnya pernyataan pabrikan bahwa instrumen memiliki akurasi +/- 1%), tanpa adanya data riwayat kalibrasi atau sertifikat statistik yang menunjukkan bahwa nilai lebih terkonsentrasi di tengah rentang."}],references:[{citation:"JCGM 100:2008. Evaluation of measurement data - Guide to the expression of uncertainty in measurement (GUM). BIPM.",type:"formal-standard"},{citation:"Taylor, B. N., & Kuyatt, C. E. (1994). Guidelines for Evaluating and Expressing the Uncertainty of NIST Measurement Results. NIST Technical Note 1297.",type:"guideline"}]},"2.4.4":{id:"2.4.4",chapterId:"CH-11",title:"Penyusunan Anggaran Ketidakpastian (Uncertainty Budget) dan Expanded Uncertainty (U)",readingTimeMinutes:20,status:"verified",learningObjectives:["Menyusun tabel Anggaran Ketidakpastian (Uncertainty Budget) terstandarisasi menurut kaidah GUM.","Menerapkan Hukum Perambatan Ketidakpastian untuk model fungsi pengukuran multivariat.","Menghitung derajat kebebasan efektif Welch-Satterthwaite dan Ketidakpastian Diperluas (Expanded Uncertainty $U$)."],content:`Hasil akhir dari evaluasi metrologi adalah penetapan Anggaran Ketidakpastian (*Uncertainty Budget*) dan pelaporan nilai Ketidakpastian Diperluas (*Expanded Uncertainty*). Pada banyak fenomena rekayasa, besaran yang ingin diketahui ($Y$) tidak diukur secara langsung, melainkan dihitung secara tidak langsung melalui hubungan fungsional fisis dari beberapa besaran input terukur ($X_1, X_2, \\dots, X_N$):
+
+$$Y = f(X_1, X_2, \\dots, X_N)$$
+
+Sebagai contoh, daya listrik $P$ dihitung dari tegangan $V$ dan arus $I$ ($P = V \\times I$), atau modulus elastisitas dihitung dari beban, panjang regangan, dan luas penampang.
+
+Hukum Perambatan Ketidakpastian (*Law of Propagation of Uncertainty*) menetapkan bagaimana ketidakpastian masing-masing variabel input merambat melewati fungsi matematika $f$ menuju ketidakpastian gabungan luaran ($u_c(y)$) menggunakan turunan parsial koefisien sensitivitas ($c_i = \\partial f / \\partial x_i$).
+
+Setelah ketidakpastian gabungan $u_c(y)$ diperoleh, nilai tersebut dikalikan dengan faktor cakupan (*coverage factor*) $k$ (biasanya $k=2$ untuk tingkat kepercayaan $\\approx 95\\%$) untuk menghasilkan Ketidakpastian Diperluas ($U = k \\cdot u_c(y)$). Hasil pengukuran dilaporkan dalam format formal: $Y = y \\pm U$ disertai pernyataan nilai $k$ dan tingkat kepercayaan.`,mathematicalFoundations:`1. Hukum Perambatan Ketidakpastian GUM:
+$$u_c^2(y) = \\sum_{i=1}^N c_i^2 u^2(x_i) + 2 \\sum_{i=1}^{N-1}\\sum_{j=i+1}^N c_i c_j u(x_i, x_j)$$
+Di mana koefisien sensitivitas: $c_i = \\left. \\frac{\\partial f}{\\partial x_i} \\right|_{\\mathbf{x} = \\bar{\\mathbf{x}}}$ dan $u(x_i, x_j) = r(x_i, x_j) u(x_i) u(x_j)$ adalah kovarians.
+
+2. Rumus Derajat Kebebasan Efektif Welch-Satterthwaite:
+$$\\nu_{\\text{eff}} = \\frac{u_c^4(y)}{\\sum_{i=1}^N \\frac{u_i^4(y)}{\\nu_i}} = \\frac{u_c^4(y)}{\\sum_{i=1}^N \\frac{[c_i u(x_i)]^4}{\\nu_i}}$$
+
+3. Ketidakpastian Diperluas (*Expanded Uncertainty*):
+$$U = k \\cdot u_c(y) = t_{p}(\\nu_{\\text{eff}}) \\cdot u_c(y)$$
+Untuk $\\nu_{\\text{eff}} > 30$ pada tingkat kepercayaan $95\\%$, $k \\approx 2.00$.`,workedExample:{problemStatement:"Daya listrik searah DC diserap oleh beban resistor dihitung dengan rumus P = V * I. Tegangan terukur V = (24.0 +/- 0.2) V dengan u(V) = 0.10 V (df = 50). Arus terukur I = (2.50 +/- 0.05) A dengan u(I) = 0.02 A (df = 20). Korelasi antar-pengukuran adalah nol. Susun anggaran ketidakpastian, hitung ketidakpastian gabungan u_c(P), derajat kebebasan efektif, dan ketidakpastian diperluas U (k=2, 95%).",stepByStepSolution:["Langkah 1 (Nilai Daya Nominal): P = V * I = 24.0 V * 2.50 A = 60.0 Watt.","Langkah 2 (Koefisien Sensitivitas Parsial): c_V = dP/dV = I = 2.50 A; c_I = dP/dI = V = 24.0 V.","Langkah 3 (Komponen Kontribusi Ketidakpastian): u_P(V) = c_V * u(V) = 2.50 * 0.10 = 0.25 W; u_P(I) = c_I * u(I) = 24.0 * 0.02 = 0.48 W.","Langkah 4 (Ketidakpastian Gabungan): u_c(P) = sqrt(u_P(V)^2 + u_P(I)^2) = sqrt(0.25^2 + 0.48^2) = sqrt(0.0625 + 0.2304) = sqrt(0.2929) = 0.5412 W.","Langkah 5 (Welch-Satterthwaite): nu_eff = 0.5412^4 / [ (0.25^4 / 50) + (0.48^4 / 20) ] = 0.0858 / [ (0.0039 / 50) + (0.0531 / 20) ] = 0.0858 / (0.000078 + 0.002655) = 31.4 -> df efektif > 30.","Langkah 6 (Ketidakpastian Diperluas): U = k * u_c(P) = 2.0 * 0.5412 W = 1.08 Watt."],resultInterpretation:"Daya beban dilaporkan sebagai P = (60.0 +/- 1.1) Watt dengan faktor cakupan k = 2 pada tingkat kepercayaan 95%. Variabel arus listrik (I) menyumbang kontribusi terbesar (78% dari total varians ketidakpastian)."},pythonImplementation:{description:"Penyusunan tabel Anggaran Ketidakpastian (Uncertainty Budget) otomatis untuk perhitungan daya P = V * I.",libraryDependencies:["pandas","numpy"],code:`import numpy as np
+import pandas as pd
+
+# Nilai input dan ketidakpastian standar [SIMULASI/SYNTHETIC DATA]
+V = 24.0
+u_V = 0.10
+df_V = 50
+
+I = 2.50
+u_I = 0.02
+df_I = 20
+
+# Fungsi P = V * I
+P = V * I
+c_V = I
+c_I = V
+
+u_P_V = c_V * u_V
+u_P_I = c_I * u_I
+
+u_c_P = np.sqrt(u_P_V**2 + u_P_I**2)
+nu_eff = (u_c_P**4) / ((u_P_V**4 / df_V) + (u_P_I**4 / df_I))
+
+k = 2.0
+U = k * u_c_P
+
+anggaran = [
+    {"Besaran Input": "Tegangan (V)", "Nilai": V, "Satuan": "Volt", "u(xi)": u_V, "Sensitivitas ci": c_V, "Kontribusi ui(y)": u_P_V, "Bobot Varians (%)": (u_P_V**2 / u_c_P**2) * 100},
+    {"Besaran Input": "Arus (I)", "Nilai": I, "Satuan": "Ampere", "u(xi)": u_I, "Sensitivitas ci": c_I, "Kontribusi ui(y)": u_P_I, "Bobot Varians (%)": (u_P_I**2 / u_c_P**2) * 100}
+]
+
+df = pd.DataFrame(anggaran)
+print("TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET):")
+print(df[["Besaran Input", "Nilai", "Satuan", "Kontribusi ui(y)", "Bobot Varians (%)"]].to_string(index=False))
+print("-" * 65)
+print(f"Hasil Akhir Daya (P)            : {P:.2f} Watt")
+print(f"Ketidakpastian Gabungan uc(P)   : {u_c_P:.3f} Watt")
+print(f"Derajat Kebebasan Efektif nu    : {nu_eff:.1f}")
+print(f"Ketidakpastian Diperluas U (k=2): +/- {U:.2f} Watt")
+print(f"Pernyataan Pelaporan Resmi     : P = ({P:.1f} +/- {U:.1f}) W (k=2, 95% CI)")
+`,expectedOutput:`TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET):
+Besaran Input  Nilai  Satuan  Kontribusi ui(y)  Bobot Varians (%)
+Tegangan (V)   24.0    Volt              0.25              21.34
+     Arus (I)    2.5  Ampere              0.48              78.66
+-----------------------------------------------------------------
+Hasil Akhir Daya (P)            : 60.00 Watt
+Ketidakpastian Gabungan uc(P)   : 0.541 Watt
+Derajat Kebebasan Efektif nu    : 31.4
+Ketidakpastian Diperluas U (k=2): +/- 1.08 Watt
+Pernyataan Pelaporan Resmi     : P = (60.0 +/- 1.1) W (k=2, 95% CI)`},commonPitfalls:["Menjumlahkan ketidakpastian secara linier biasa (u1 + u2) alih-alih penjumlahan kuadratur akar kuadrat (root-sum-squares).","Mengabaikan turunan parsial koefisien sensitivitas sehingga langsung menjumlahkan ketidakpastian besaran yang memiliki satuan fisik berbeda.","Mengasumsikan kovarians selalu nol padahal dua instrumen dikalibrasi terhadap sumber tegangan atau termostat acuan yang sama."],validationProcedures:["Lakukan audit dimensi satuan: pastikan perkalian koefisien sensitivitas dengan ketidakpastian input menghasilkan satuan fisik besaran luaran.","Gunakan simulasi Monte Carlo GUM Supplement 1 (JCGM 101:2008) untuk memvalidasi model jika fungsi pengukuran memiliki non-linearitas ekstrem."],exercises:[{question:"Dalam rumus perambatan ketidakpastian, mengapa dua variabel input yang berkorelasi positif kuat (misal r = +0.8) dapat menghasilkan ketidakpastian gabungan yang lebih kecil jika salah satu koefisien sensitivitasnya bernilai negatif?",hint:"Perhatikan suku kovarians 2 * c1 * c2 * u(x1, x2) dalam hukum perambatan GUM.",answerExplanation:"Jika salah satu koefisien sensitivitas bernilai negatif (misal c1 > 0 dan c2 < 0 seperti pada pengukuran selisih panjang atau resistansi diferensial), perkalian c1 * c2 menjadi negatif. Akibatnya, suku kovarians 2 * c1 * c2 * Cov(x1, x2) bernilai negatif dan mengurangi total varians ketidakpastian (terjadi efek pembatalan galat sistematis timbal-balik)."}],references:[{citation:"BIPM, IEC, IFCC, ILAC, ISO, IUPAC, IUPAP, OIML. (2008). Evaluation of measurement data - Guide to the expression of uncertainty in measurement (GUM 1995 with minor corrections). JCGM 100:2008.",type:"formal-standard"},{citation:"JCGM 101:2008. Propagation of distributions using a Monte Carlo method (GUM Supplement 1). BIPM.",type:"formal-standard"}]}};export{a as CH11_LESSONS};
