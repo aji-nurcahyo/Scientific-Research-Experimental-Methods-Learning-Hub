@@ -252,6 +252,7 @@ async function run() {
     { id: 'CH-01', title: 'Epistemology, Scientific Reasoning & Demarcation', subtitle: 'Logika penalaran ilmiah, falsifikasi Popperian, dan demarkasi sains.', file: 'ch01.ts', name: 'CH-01_Scientific_Foundations.pptx' },
     { id: 'CH-16', title: 'Exploratory Data Analysis & Descriptive Statistics', subtitle: 'Filosofi Tukey EDA, ukuran dispersi tahan outlier, dan diagnostik data.', file: 'ch16.ts', name: 'CH-16_Statistical_Analysis.pptx' },
     { id: 'CH-24', title: 'Linear Regression & General Linear Models', subtitle: 'Estimasi OLS, asumsi Gauss-Markov, diagnostik residual, dan multikolinearitas.', file: 'ch24.ts', name: 'CH-24_Regression_Modeling.pptx' },
+    { id: 'CH-29', title: 'Two-Level Full Factorial Designs (2^k)', subtitle: 'Arsitektur desain 2^k, notasi baku Yates, ortogonalitas matriks, dan dekomposisi efek.', file: 'ch29.ts', name: 'CH-29_Factorial_Design.pptx' },
     { id: 'CH-38', title: 'Generalized Additive Models (GAM) & Splines', subtitle: 'Basis splines, penalized likelihood smoothing, interpretasi efek parsial.', file: 'ch38.ts', name: 'CH-38_Advanced_Computational_Methods.pptx' },
     { id: 'CH-51', title: 'Research Capstone: End-to-End Methodological Defense', subtitle: 'Audit replikasi independen, defense simulasi, dan integritas riset kanonikal.', file: 'ch51.ts', name: 'CH-51_Research_Capstone.pptx' },
   ];

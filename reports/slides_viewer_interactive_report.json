@@ -2,13 +2,16 @@
   {
     "chapter": "CH-01",
     "lesson": "1.1.1",
+    "target_slide": 4,
     "status": "PASSED",
     "checks": {
-      "katexCount": 0,
+      "title": "Formulasi Matematis & Notasi Formal",
+      "katexCount": 11,
       "katexErrorsCount": 0,
-      "semanticPillsCount": 0,
+      "semanticPillsCount": 3,
       "bulletsCount": 3,
-      "title": "Fondasi Konseptual: Logika Penalaran Ilmiah: Deduksi, Induksi, dan Abduksi dalam Rekayasa",
+      "hasCallout": true,
+      "hasNotesDrawer": true,
       "rawMarkdownDetected": false
     },
     "console_errors": []
@@ -16,13 +19,16 @@
   {
     "chapter": "CH-16",
     "lesson": "3.1.1",
+    "target_slide": 2,
     "status": "PASSED",
     "checks": {
+      "title": "Fondasi Konseptual: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum Pemodelan Statistik",
       "katexCount": 0,
       "katexErrorsCount": 0,
       "semanticPillsCount": 0,
       "bulletsCount": 2,
-      "title": "Fondasi Konseptual: Filosofi Tukey EDA: Visualisasi Struktur Data Sebelum Pemodelan Statistik",
+      "hasCallout": false,
+      "hasNotesDrawer": true,
       "rawMarkdownDetected": false
     },
     "console_errors": []
@@ -30,13 +36,33 @@
   {
     "chapter": "CH-24",
     "lesson": "4.1.1",
+    "target_slide": 2,
     "status": "PASSED",
     "checks": {
+      "title": "Fondasi Konseptual: Model Regresi Linier Sederhana dan Berganda: Penurunan Matriks OLS",
       "katexCount": 0,
       "katexErrorsCount": 0,
       "semanticPillsCount": 0,
       "bulletsCount": 3,
-      "title": "Fondasi Konseptual: Model Regresi Linier Sederhana dan Berganda: Penurunan Matriks OLS",
+      "hasCallout": false,
+      "hasNotesDrawer": true,
+      "rawMarkdownDetected": false
+    },
+    "console_errors": []
+  },
+  {
+    "chapter": "CH-29",
+    "lesson": "4.6.1",
+    "target_slide": 2,
+    "status": "PASSED",
+    "checks": {
+      "title": "Fondasi Konseptual: Arsitektur Desain Faktorial Penuh 2^k: Level Tinggi (+) dan Level Rendah (-)",
+      "katexCount": 1,
+      "katexErrorsCount": 0,
+      "semanticPillsCount": 0,
+      "bulletsCount": 2,
+      "hasCallout": true,
+      "hasNotesDrawer": true,
       "rawMarkdownDetected": false
     },
     "console_errors": []
@@ -44,13 +70,16 @@
   {
     "chapter": "CH-38",
     "lesson": "6.1.1",
+    "target_slide": 2,
     "status": "PASSED",
     "checks": {
+      "title": "Fondasi Konseptual: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Empiris sebagai Pengganti Populasi",
       "katexCount": 6,
       "katexErrorsCount": 0,
       "semanticPillsCount": 0,
       "bulletsCount": 2,
-      "title": "Fondasi Konseptual: Prinsip Plug-In Efron: Menggunakan Distribusi Sampel Empiris sebagai Pengganti Populasi",
+      "hasCallout": true,
+      "hasNotesDrawer": true,
       "rawMarkdownDetected": false
     },
     "console_errors": []
@@ -58,13 +87,16 @@
   {
     "chapter": "CH-51",
     "lesson": "7.7.1",
+    "target_slide": 2,
     "status": "PASSED",
     "checks": {
+      "title": "Fondasi Konseptual: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanyaan hingga Desain Uji",
       "katexCount": 0,
       "katexErrorsCount": 0,
       "semanticPillsCount": 0,
       "bulletsCount": 4,
-      "title": "Fondasi Konseptual: Perancangan Proyek Riset Lengkap: Dari Rumusan Pertanyaan hingga Desain Uji",
+      "hasCallout": false,
+      "hasNotesDrawer": true,
       "rawMarkdownDetected": false
     },
     "console_errors": []

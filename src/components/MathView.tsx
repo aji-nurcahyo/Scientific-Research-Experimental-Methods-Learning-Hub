@@ -27,12 +27,16 @@ export const MathView: React.FC<MathViewProps> = ({ math, displayMode = false, c
       const html = katex.renderToString(cleanMath, {
         displayMode,
         throwOnError: false,
-        errorColor: '#94a3b8', // Subtle muted slate instead of harsh red #cc0000
-        strict: false,
+        errorColor: '#ef4444',
+        strict: 'warn',
       });
-      return { html, isError: false };
+      if (html.includes('katex-error')) {
+        console.error(`[MathView KaTeX Error]: Malformed LaTeX detected: "${cleanMath}"`);
+      }
+      return { html, isError: html.includes('katex-error') };
     } catch (err) {
-      return { html: `<code class="math-fallback">${cleanMath}</code>`, isError: true };
+      console.error(`[MathView Fatal Error]: Failed to parse "${cleanMath}":`, err);
+      return { html: `<code class="math-fallback" style="color:#ef4444; border:1px solid #f87171; padding:2px 4px; border-radius:3px;">${cleanMath}</code>`, isError: true };
     }
   }, [math, displayMode]);
 

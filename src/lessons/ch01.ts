@@ -110,12 +110,12 @@ export const CH01_LESSONS: Record<string, Partial<Lesson>> = {
         "title": "Formulasi Matematis & Notasi Formal",
         "lead": "Struktur formal ketiga logika penalaran dinyatakan dalam kalkulus proposisional:",
         "bulletPoints": [
-          "1. **Deduksi (Modus Ponens):**",
-          "Karakteristik: Bersifat analitis, mengawetkan kebenaran (*truth-preserving*), derajat kepastian mutlak ($P(Q | P, P \\implies Q) = 1$).",
-          "2. **Induksi (Generalisasi Statistik):**"
+          "[definition: Deduksi (Modus Ponens)] Struktur analitis mengawetkan kebenaran (*truth-preserving*): Premis Mayor $P \\implies Q$, Premis Minor $P$, menghasilkan kesimpulan pasti $\\therefore Q$ dengan derajat kepastian mutlak $P(Q \\mid P, P \\implies Q) = 1$.",
+          "[concept: Induksi (Generalisasi Statistik)] Struktur sintetis memperluas informasi (*ampliative*): Observasi berulang $P(a_i) \\land Q(a_i)$ menghasilkan generalisasi probabilistik $\\forall x (P(x) \\implies Q(x))$ dengan kepastian empiris $P < 1$.",
+          "[result: Abduksi (Inference to Best Explanation)] Inferensi anomali: Fakta mengejutkan $Q$ dan hipotesis plausibel $H_k \\implies Q$ menghasilkan kesimpulan bahwa $H_k$ optimal di antara kandidat penjelasan."
         ],
-        "keyFormulaOrDiagram": "$$\\text{Premis Mayor: } P \\implies Q$$",
-        "notes": "Uraikan setiap simbol dalam persamaan, termasuk konstanta dan parameter kendali."
+        "keyFormulaOrDiagram": "$$\\text{Modus Ponens: } \\frac{P \\implies Q, \\quad P}{\\therefore Q} \\qquad [P(Q \\mid P, P \\implies Q) = 1]$$",
+        "notes": "Jelaskan struktur silogisme Modus Ponens sebagai fondasi penarikan deduktif hukum fisis, lalu kontraskan dengan sifat probabilistik induksi dan plausibilitas abduksi."
       },
       {
         "slideNumber": 5,

@@ -1,7 +1,7 @@
 [
   {
     "file": "CH-01_Scientific_Foundations.pptx",
-    "size_bytes": 469017,
+    "size_bytes": 469644,
     "slide_count": 42,
     "is_16_9": true,
     "editable_text_runs": 278,
@@ -28,6 +28,17 @@
     "is_16_9": true,
     "editable_text_runs": 328,
     "shapes_count": 261,
+    "raw_markdown_count": 0,
+    "broken_latex_count": 0,
+    "text_overflow_count": 0
+  },
+  {
+    "file": "CH-29_Factorial_Design.pptx",
+    "size_bytes": 526396,
+    "slide_count": 45,
+    "is_16_9": true,
+    "editable_text_runs": 352,
+    "shapes_count": 264,
     "raw_markdown_count": 0,
     "broken_latex_count": 0,
     "text_overflow_count": 0

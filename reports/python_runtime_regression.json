@@ -17,7 +17,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 1.721,
+      "elapsed_sec": 1.9208,
       "actual_output": "Log-Likelihood H1: -73.81\nLog-Likelihood H2: -56.96\nBayes Factor (H2 / H1): 2.07e+07\nKesimpulan Abduktif: Bukti empiris sangat kuat mendukung H2 (Kerusakan Bantalan)."
     },
     {
@@ -28,7 +28,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.001,
       "actual_output": "=== AUDIT FALSIFIKASI KLAIM ILMIAH ===\nRata-rata Resistansi Termal: 0.424 K/W (Max: 0.501)\nRata-rata Konsumsi Daya: 7.74 W (Max: 8.38)\nSTATUS: KLAIM TERFALSIFIKASI pada 1 run resistansi dan 3 run daya."
     },
     {
@@ -49,7 +49,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "=== EVALUASI ATENUASI SINYAL KANOPI VEGETASI ===\nLoss pada kedalaman 10 meter (2.4 GHz): 46.97 dB\nLoss pada kedalaman 10 meter (5.8 GHz): 60.35 dB\nSelisih atenuasi frekuensi tinggi: 13.38 dB"
     },
     {
@@ -75,7 +75,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.001,
       "actual_output": "Jumlah artikel unik gabungan: 180\nIndeks Overlap Jaccard: 0.333"
     },
     {
@@ -86,7 +86,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "Total judul cocok: 2\n- Deep Convolutional Networks for X-ray Weld Defect Classification\n- Radiographic Defect Detection in Steel Welds via Vision Transformers"
     },
     {
@@ -97,7 +97,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.001,
       "actual_output": "Total Identified: 950\nScreened: 770\nFull-text Assessed: 250\nExcluded (Eligibility): 70\nFinal Included: 180"
     },
     {
@@ -119,7 +119,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 1.2797,
+      "elapsed_sec": 0.4227,
       "actual_output": "Persentase Kejenuhan Dimensi Metodologi:\n- Dataset Lapangan    : 80.0%\n- Kondisi Ekstrem     : 20.0%\n- Ablasi Model        : 40.0%\n- Kode Terbuka        : 40.0%"
     },
     {
@@ -130,7 +130,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.002,
+      "elapsed_sec": 0.0005,
       "actual_output": "Perbendaharaan Istilah: ['Deep Learning', 'Kalman Filter', 'LiDAR', 'Odometry', 'SLAM', 'Sensor Fusion', 'Transformer']\n\nMatriks Ko-okurensi:\n[[3 0 1 0 3 1 1]\n [0 1 0 1 0 1 0]\n [1 0 2 1 2 0 0]\n [0 1 1 2 1 1 0]\n [3 0 2 1 4 1 1]\n [1 1 0 1 1 2 0]\n [1 0 0 0 1 0 1]]\n\nPasangan terkuat: Deep Learning <-> SLAM (Frekuensi: 3)"
     },
     {
@@ -141,7 +141,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "Korelasi Presisi vs Besaran Efek: -0.920\nPeringatan Kritis: Korelasi negatif sangat kuat mengindikasikan keberadaan bias publikasi (studi kecil melaporkan performa lebih tinggi secara sistematis)."
     },
     {
@@ -163,8 +163,8 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
-      "actual_output": "Kapabilitas SOTA yang telah tercapai: {'R3', 'R2', 'R1', 'R4'}\nCelah yang belum dipenuhi studi tunggal: R3 + R4 terintegrasi\n- R2 (Akurasi Deteksi > 95%): Dilaporkan oleh 2 studi ['Studi A (2022)', 'Studi B (2023)']\n- R4 (Ketahanan Terhadap Kabut Tebal): Dilaporkan oleh 1 studi ['Studi B (2023)']\n- R1 (Latensi < 10 ms): Dilaporkan oleh 2 studi ['Studi A (2022)', 'Studi C (2024)']\n- R3 (Operasi Tanpa GPU Khusus): Dilaporkan oleh 1 studi ['Studi C (2024)']"
+      "elapsed_sec": 0.0,
+      "actual_output": "Kapabilitas SOTA yang telah tercapai: {'R2', 'R3', 'R4', 'R1'}\nCelah yang belum dipenuhi studi tunggal: R3 + R4 terintegrasi\n- R1 (Latensi < 10 ms): Dilaporkan oleh 2 studi ['Studi A (2022)', 'Studi C (2024)']\n- R2 (Akurasi Deteksi > 95%): Dilaporkan oleh 2 studi ['Studi A (2022)', 'Studi B (2023)']\n- R3 (Operasi Tanpa GPU Khusus): Dilaporkan oleh 1 studi ['Studi C (2024)']\n- R4 (Ketahanan Terhadap Kabut Tebal): Dilaporkan oleh 1 studi ['Studi B (2023)']"
     },
     {
       "lesson_id": "1.5.2",
@@ -185,7 +185,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0041,
+      "elapsed_sec": 0.0032,
       "actual_output": "Tabel Verifikasi Kontribusi Delta (Studi Ablasi):\n                      Model  RMSE  Peningkatan Efisiensi (%)\n           Baseline Standar  18.4                       -0.0\n     + Modul Spatial Filter  16.1                       12.5\n + Modul Temporal Attention  14.8                       19.5\nMetode Lengkap Terintegrasi  12.6                       31.5"
     },
     {
@@ -196,8 +196,8 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
-      "actual_output": "Total indikasi overclaiming ditemukan: 4\n- Peringatan Overclaim: Frasa 'tanpa cela' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'revolusioner' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'paling canggih' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'sempurna' harus diganti dengan bukti kuantitatif spesifik."
+      "elapsed_sec": 0.0006,
+      "actual_output": "Total indikasi overclaiming ditemukan: 4\n- Peringatan Overclaim: Frasa 'revolusioner' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'tanpa cela' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'sempurna' harus diganti dengan bukti kuantitatif spesifik.\n- Peringatan Overclaim: Frasa 'paling canggih' harus diganti dengan bukti kuantitatif spesifik."
     },
     {
       "lesson_id": "1.6.1",
@@ -218,7 +218,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Derajat Kebebasan (df) : 30\nAlpha                     : 0.05\nNilai Kritis Satu Arah (Right): 1.6973\nNilai Kritis Dua Arah (Symmetric): +/- 2.0423\nSelisih Ambang Penolakan  : 0.3450"
     },
     {
@@ -251,7 +251,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0023,
+      "elapsed_sec": 0.001,
       "actual_output": "Kuartil 1: 31.77, Kuartil 3: 32.73, IQR: 0.95\nAmbang Batas Wajar: [30.35, 34.15]\nData Pencilan Teridentifikasi: [18.2 17.9]\nProtokol Etik: Titik pencilan wajib diinvestigasi penyebab fisiknya dan dilaporkan secara transparan."
     },
     {
@@ -273,7 +273,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0011,
+      "elapsed_sec": 0.0006,
       "actual_output": "Audit Kredensial DOI Referensi:\n- Karakterisasi Akustik     | DOI: 10.1109/tgrs.2021.3051234      -> FORMAT CACAT / INDIKASI HALUSINASI\n- Halusinasi AI Model       | DOI: 10.9999/bukan-doi-asli-hanya-teks -> FORMAT CACAT / INDIKASI HALUSINASI\n- Jaringan Syaraf Tiruan    | DOI: invalid_doi_format             -> FORMAT CACAT / INDIKASI HALUSINASI\n- Sensor IoT Perkebunan     | DOI: 10.1016/j.compag.2022.106890   -> FORMAT CACAT / INDIKASI HALUSINASI"
     },
     {
@@ -284,7 +284,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0004,
+      "elapsed_sec": 0.0,
       "actual_output": "Hash Data Asli : 107fe832909773ea0403e0ac0982f5b95aecd048b8db094b8ef37bfc0c6021d0\nHash Data Rusak: 46522b574bbed3add7769d54ef309a1af0677eb8942d2c45d94a9f42a3fc2912\nApakah Data Identik Sempurna? False"
     },
     {
@@ -317,7 +317,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.002,
+      "elapsed_sec": 0.0011,
       "actual_output": "Rata-rata Intensitas Cahaya Lab     : 500.1 lux\nRata-rata Intensitas Cahaya Lapangan : 6016.9 lux\nStatistik Kolmogorov-Smirnov (KS)   : 1.0000\nNilai p-value                       : 7.3995e-300\nPeringatan Kritis: Terjadi pergeseran distribusi ekstrem (Covariate Shift). Validitas eksternal terancam runtuh."
     },
     {
@@ -328,7 +328,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0012,
+      "elapsed_sec": 0.0,
       "actual_output": "Analisis Trade-off Desain Riset:\nIsolasi Lab  | Val. Internal  | Val. Eksternal | Skor Keseimbangan \n-----------------------------------------------------------------\n        0.05 |          0.161 |          0.882 |              0.272\n        0.15 |          0.408 |          0.687 |              0.512\n        0.25 |          0.583 |          0.535 |              0.558\n        0.35 |          0.706 |          0.417 |              0.524\n        0.45 |          0.793 |          0.325 |              0.461\n        0.55 |          0.854 |          0.253 |              0.390\n        0.65 |          0.897 |          0.197 |              0.323\n        0.75 |          0.928 |          0.153 |              0.263\n        0.85 |          0.949 |          0.119 |              0.212\n        0.95 |          0.964 |          0.093 |              0.170\n\nTitik Kompromi Optimal: Isolasi = 0.25 (Skor = 0.558)"
     },
     {
@@ -361,7 +361,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0005,
       "actual_output": "SEBELUM TRANSFORMASI:\nMean A: 2.67 | Mean B: 2.67 -> Sama\nMed A : 2.00 | Med B : 3.00 -> B lebih tinggi\n\nSETELAH TRANSFORMASI MONOTONIK f(x) = x^3:\nMean A: 44.67 | Mean B: 20.67 -> A JAUH lebih tinggi (Inversi Kesimpulan!)\nMed A : 8.00 | Med B : 27.00 -> B tetap lebih tinggi (Invarian/Stabil)"
     },
     {
@@ -372,7 +372,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.002,
+      "elapsed_sec": 0.0005,
       "actual_output": "Proporsi Varians Terjelaskan Komponen 1: 91.0%\nKorelasi Estimasi PCA dengan Laten Sejati: 0.9764\nKesimpulan: Gabungan 3 sensor teramati berhasil merekonstruksi variabel laten dengan fidelitas tinggi."
     },
     {
@@ -383,7 +383,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "Total Target Sampel: 500\n--------------------------------------------------\n- Zona Kering     (Nh=6000, sh=0.2) -> Sampel nh: 154 (30.8%)\n- Zona Lembap     (Nh=3000, sh=0.5) -> Sampel nh: 192 (38.4%)\n- Zona Rawa Asam  (Nh=1000, sh=1.2) -> Sampel nh: 154 (30.8%)"
     },
     {
@@ -394,7 +394,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0021,
+      "elapsed_sec": 0.001,
       "actual_output": "Rata-rata Latency Populasi Sejati (Seluruh Pengguna): 101.99 ms\nJumlah Responden Sukarela Terkumpul                 : 3404 dari 10000\nRata-rata Latency Berdasarkan Sampel Sukarela      : 150.52 ms\nBesaran Bias Estimasi Non-Probabilistik             : +48.53 ms"
     },
     {
@@ -416,7 +416,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Skor Kepatuhan SOP: 80.0%\nSTATUS SISTEM: PRE-FLIGHT CHECKLIST LOLOS. Akuisisi data diizinkan."
     },
     {
@@ -427,7 +427,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "DMM A -> Rata-rata: 5.0810 V, Bias: +0.0810 V, Deviasi Std: 0.0007 V, RMSE: 0.0810 V\nDMM B -> Rata-rata: 5.0000 V, Bias: +0.0000 V, Deviasi Std: 0.0367 V, RMSE: 0.0367 V"
     },
     {
@@ -438,7 +438,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "Persamaan BFSL    : V = 0.9969 * Beban + (0.0357) mV\nSensitivitas (S)  : 0.9969 mV/kg\nDeviasi Maksimum  : 0.0606 mV\nNon-Linearitas    : 0.60% Full Scale"
     },
     {
@@ -449,7 +449,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Jumlah Cuplikan (n)            : 10\nRata-rata Pengukuran           : 100.2500 Ohm\nDeviasi Standar Sampel         : 0.0469 Ohm\nKetidakpastian Tipe A u_A      : 0.0148 Ohm\nKetidakpastian Tipe B u_B      : 0.0290 Ohm\nRasio Kontribusi (u_B / u_A)   : 1.96"
     },
     {
@@ -460,7 +460,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0027,
+      "elapsed_sec": 0.0016,
       "actual_output": "TABEL ANGGARAN KETIDAKPASTIAN (GUM UNCERTAINTY BUDGET):\nBesaran Input  Nilai Satuan  Kontribusi ui(y)  Bobot Varians (%)\n Tegangan (V)   24.0   Volt              0.25          21.338341\n     Arus (I)    2.5 Ampere              0.48          78.661659\n-----------------------------------------------------------------\nHasil Akhir Daya (P)            : 60.00 Watt\nKetidakpastian Gabungan uc(P)   : 0.541 Watt\nDerajat Kebebasan Efektif nu    : 31.4\nKetidakpastian Diperluas U (k=2): +/- 1.08 Watt\nPernyataan Pelaporan Resmi     : P = (60.0 +/- 1.1) W (k=2, 95% CI)"
     },
     {
@@ -526,7 +526,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Hasil Analisis Runtun Waktu Terinterupsi (ITS):\nTitik Intervensi                : Jam ke-12\nRugi Daya Sebelum Intervensi (t=12) : 105.77 kW\nRugi Daya Sesaat Pasca Uji (t=13)   : 97.82 kW\nRugi Daya Akhir Riil (t=24)         : 93.69 kW\nRugi Daya Counterfactual (t=24)     : 112.00 kW\nTotal Efek Bersih Intervensi        : -18.31 kW"
     },
     {
@@ -537,7 +537,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0005,
       "actual_output": "Jadwal Uji Balanced Latin Square (4x4):\nNode Sensor  | Uji 1  | Uji 2  | Uji 3  | Uji 4 \n---------------------------------------------\nNode # 1      | A      | D      | B      | C     \nNode # 2      | B      | A      | C      | D     \nNode # 3      | C      | B      | D      | A     \nNode # 4      | D      | C      | A      | B"
     },
     {
@@ -581,7 +581,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "BERKAS POINTER DVC (Ukuran Ringan Dilacak Git):\nPath Berkas : data/rail_cracks\nTercatat MD5: 3bec4daedb03a561370cff6a20cad067\nUkuran Data : 75 bytes\n-------------------------------------------------------\nApakah Dataset Lokal Sinkron Sempurna dengan Pointer? True"
     },
     {
@@ -614,7 +614,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0011,
       "actual_output": "MATRIKS KESELARASAN RISET (RESEARCH ALIGNMENT MATRIX):\n[RQ-1] Bagaimana pola fluktuasi beban dasar gedung?\n  -> Data   : Daya aktif kW interval 15 menit (3 bulan)\n  -> Metode : Clustering K-Means Deret Waktu\n  -> Metrik : Silhouette Score > 0.65\n  -> Luaran : Grafik Kurva Beban Tipikal\n\n[RQ-2] Bagaimana mereduksi beban puncak pengisian EV?\n  -> Data   : SoC baterai, waktu parkir, kapasitas trafo\n  -> Metode : Inferensi Fuzzy Mamdani di OpenDSS\n  -> Metrik : Reduksi Peak Load >= 20%\n  -> Luaran : Kurva Profil Tegangan Bus & Beban Trafo"
     },
     {
@@ -636,7 +636,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "Skor Tertimbang Reviewer 1 : 85.75\nSkor Tertimbang Reviewer 2 : 77.00\nSkor Agregat Gabungan      : 81.38 / 100\n--------------------------------------------------\nEvaluasi Rata-rata per Kriteria:\n- Signifikansi   : 87.5 (Aman)\n- Metodologi     : 75.0 (Aman)\n- Kelayakan      : 82.5 (Aman)\n- Dampak         : 82.5 (Aman)"
     },
     {
@@ -647,7 +647,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Metrik                 | Dataset I    | Dataset II  \n----------------------------------------------------\nRata-rata X            |         9.00 |         9.00\nRata-rata Y            |         7.50 |         7.50\nSlope Regresi OLS      |        0.500 |        0.500\nKorelasi Pearson (r)   |        0.816 |        0.816\n\nKesimpulan Tukey EDA: Statistik ringkasan identik tidak menjamin kesamaan bentuk struktur relasi data."
     },
     {
@@ -658,7 +658,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.001,
       "actual_output": "Data Pengamatan             : [12.0, 14.0, 15.0, 13.0, 16.0, 14.0, 450.0]\n-------------------------------------------------------\nRata-rata Klasik (Mean)     : 76.29 ms\nStandar Deviasi Klasik      : 164.80 ms\nMedian Robust               : 14.00 ms\nMAD Mentah                  : 1.00 ms\nNormalized MAD (NMAD)       : 1.48 ms\nTrimmed Mean (15% Pangkas)  : 14.40 ms"
     },
     {
@@ -669,7 +669,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Data Sensor            : [65.0, 66.0, 64.0, 65.0, 67.0, 66.0, 98.0]\nRentang Normal Tukey   : [62.8, 68.8] deg C\nOutlier Tukey Fences   : [98.0]\n--------------------------------------------------\nNilai Modified Z-Scores: [-0.67, 0.0, -1.35, -0.67, 0.67, 0.0, 21.58]\nOutlier Mod-Z (|M|>3.5): [98.0]"
     },
     {
@@ -680,7 +680,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "Rata-rata Efisiensi Populasi Sejati   : 16.020%\nJumlah Data Hilang Terjadi            : 210 dari 1000\nRata-rata dengan Listwise Deletion    : 16.191%\nBias Akibat Listwise Deletion pada MAR: +0.172% (Overestimasi Efisiensi!)"
     },
     {
@@ -691,7 +691,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0005,
       "actual_output": "Probabilitas via Integrasi Numerik PDF : 0.75013\nProbabilitas via Selisih CDF Teoritis  : 0.75013\nSelisih Mutlak Presisi                : 0.00e+00"
     },
     {
@@ -702,7 +702,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "Nilai Kritis Normal Baku Z (df=inf) : 1.9600\n\nDerajat Kebebasan (df)    | Nilai Kritis t   | Selisih thd Z \n------------------------------------------------------------\ndf =   2                      |           4.3027 | +        2.3427\ndf =   5                      |           2.5706 | +        0.6106\ndf =  15                      |           2.1314 | +        0.1715\ndf =  30                      |           2.0423 | +        0.0823\ndf = 100                      |           1.9840 | +        0.0240"
     },
     {
@@ -713,7 +713,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.001,
       "actual_output": "Parameter Bentuk (Beta)   : 2.5\nUmur Karakteristik (Eta)  : 50,000 jam\nKeandalan pada 30.000 jam : 75.66%\nB10 Life (90% Keandalan) : 20,325.5 jam"
     },
     {
@@ -724,7 +724,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0059,
+      "elapsed_sec": 0.0035,
       "actual_output": "UJI NORMALITAS SHAPIRO-WILK (Data Mentah):\nStatistik W     : 0.7949\nP-value         : 6.7055e-07\nStatus Normal?  : False (Data mentah TIDAK normal)\n\nUJI NORMALITAS PADA RATA-RATA SAMPEL (CLT n=40):\nStatistik W     : 0.9827\nP-value         : 0.6691\nStatus Normal?  : True (Rata-rata sampel TERBUKTI normal berkat CLT!)"
     },
     {
@@ -746,7 +746,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0225,
+      "elapsed_sec": 0.0163,
       "actual_output": "Varians Sejati Populasi (Sigma^2) : 4.0000\nRata-rata Estimasi Pembagi n      : 3.2062 (Teori: 3.2000)\nRata-rata Estimasi Pembagi (n-1)  : 4.0077 (Unbiased sempurna!)\nPersentase Bias Pembagi n         : -19.85%"
     },
     {
@@ -757,7 +757,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0011,
+      "elapsed_sec": 0.0,
       "actual_output": "Nilai Parameter Sejati (Lambda) : 0.2500\nEstimasi MLE Analitis           : 0.2489\nEstimasi MLE Optimasi Numerik   : 0.2489\nSelisih Konvergensi Numerik     : 4.80e-09"
     },
     {
@@ -768,7 +768,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0101,
+      "elapsed_sec": 0.0055,
       "actual_output": "Hasil Estimasi Mu    : 54.00 +/- 0.315 Mbps (Sejati: 54.20)\nHasil Estimasi Sigma : 4.46 +/- 0.223 Mbps (Sejati: 4.80)\nStatus Konvergensi   : True (Pesan: CONVERGENCE: RELATIVE REDUCTION OF F <= FACTR*EPSMCH)"
     },
     {
@@ -779,7 +779,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0011,
+      "elapsed_sec": 0.0,
       "actual_output": "Ambang c   | Galat Tipe I (Alpha)   | Daya Uji (1 - Beta)    | Galat Tipe II (Beta)  \n--------------------------------------------------------------------------------\nc = -1.00    |                 0.8413 |                 0.9998 |                 0.0002\nc =  0.00    |                 0.5000 |                 0.9938 |                 0.0062\nc =  1.00    |                 0.1587 |                 0.9332 |                 0.0668\nc =  2.00    |                 0.0228 |                 0.6915 |                 0.3085\nc =  3.00    |                 0.0013 |                 0.3085 |                 0.6915\nc =  4.00    |                 0.0000 |                 0.0668 |                 0.9332"
     },
     {
@@ -790,7 +790,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0,
       "actual_output": "KASUS 1: UJI-T BERPASANGAN (Pre vs Post Optimasi)\nRata-rata Selisih Penurunan : 3.44 mW (SD: 1.80)\nStatistik t_obs             : 6.614\nP-value (Satu Arah)         : 1.8951e-05\nKeputusan (alpha=0.01)      : TOLAK H0\n\nKASUS 2: UJI WELCH'S T-TEST (Dua Kelompok Varians Heterogen)\nStatistik t_Welch           : -3.671\nP-value (Dua Arah)          : 9.4770e-04\nKeputusan (alpha=0.05)      : TOLAK H0"
     },
     {
@@ -812,7 +812,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 38.0967,
+      "elapsed_sec": 29.1615,
       "actual_output": "Laju Galat Tipe I Uji Terkunci Standar : 4.65% (Tepat di target 5%)\nLaju Galat Tipe I dengan Data Peeking   : 13.95% (Terinflasi masif!)\nFaktor Pelipatgandaan False Positive    : 3.0x lipat"
     },
     {
@@ -823,7 +823,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0031,
+      "elapsed_sec": 0.0035,
       "actual_output": "Total Eksperimen Independen Dijalankan : 100\nJumlah Interval yang Mencakup Nilai Sejati Mu (100.0): 95\nPersentase Cakupan Empiris Jangka Panjang: 95.0% (Target: 95.0%)\nKesimpulan: CI merefleksikan keandalan prosedur sampling berulang, bukan probabilitas parameter tunggal."
     },
     {
@@ -834,7 +834,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.001,
       "actual_output": "Rata-rata Grup Baru : 520.00 MPa (s = 7.43)\nRata-rata Grup Lama : 490.00 MPa (s = 4.69)\nStandar Deviasi Pooled : 6.21 MPa\n--------------------------------------------------\nCohen's d (Bias Sampel Kecil) : 4.830\nHedges' g (Terkoreksi Tak Bias) : 4.567\n95% CI untuk Ukuran Efek d     : [2.891, 6.770]"
     },
     {
@@ -845,7 +845,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "Ambang Batas Praktis Minimum (MPID): 15.0 ms\n\n[Skenario A (Sampel Raksasa, Efek Kerdil)]\n  95% CI: [1.1, 1.3] ms | p = 0.00001\n  Status: TRIVIAL / TIDAK BERMAKNA PRAKTIS (Tolak Adopsi)\n\n[Skenario B (Efek Nyata Praktis)]\n  95% CI: [18.5, 24.2] ms | p = 0.00100\n  Status: SANGAT BERMAKNA PRAKTIS (Rekomendasi Adopsi)\n\n[Skenario C (Sampel Kecil, Tidak Konklusif)]\n  95% CI: [2.0, 28.0] ms | p = 0.03000\n  Status: TIDAK KONKLUSIF (Tambah Sampel Uji)\n\n[Skenario D (Ekuivalen Praktis Terbukti)]\n  95% CI: [-0.5, 1.2] ms | p = 0.45000\n  Status: EKUIVALEN SECARA PRAKTIS"
     },
     {
@@ -856,7 +856,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0027,
       "actual_output": "TABEL PELAPORAN BERBASIS ESTIMASI (THE NEW STATISTICS):\n-----------------------------------------------------------------\nKelompok Acuan (Kipas Biasa)  : Rata-rata = 41.67 deg C, SD = 1.87 (n=15)\nKelompok Usulan (Heat Pipe)   : Rata-rata = 38.22 deg C, SD = 2.09 (n=15)\nBesaran Efek Fisis (Delta)    : Penurunan 3.45 deg C\n95% Interval Kepercayaan (CI) : [1.97 deg C, 4.93 deg C]\nUkuran Efek Standar Hedges g  : 1.70 (Kategori Sangat Besar)\nUji Inferensi Klasik (Welch)  : t(27.7) = 4.77, p = 0.0001\n-----------------------------------------------------------------\nPernyataan Naskah: Sistem heat pipe menurunkan suhu sebesar 4.40 deg C [95% CI: 2.76, 6.04], g = 1.91, p < 0.001."
     },
     {
@@ -867,7 +867,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 1.3204,
+      "elapsed_sec": 0.9362,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Inflasi FWER pada Pengujian Jamak\nm (Uji)   FWER Teoretis     FWER Empiris      \n----------------------------------------------\n1         0.0500            0.0478            \n5         0.2262            0.2366            \n10        0.4013            0.3974            \n20        0.6415            0.6398            \n50        0.9231            0.9186"
     },
     {
@@ -878,7 +878,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.1202,
+      "elapsed_sec": 0.0629,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Koreksi FWER (Bonferroni vs Holm)\nNo  p-Mentah    p-Bonferroni   Tolak?    p-Holm      Tolak?    \n---------------------------------------------------------------\n1   0.0080      0.0400         True      0.0400      True      \n2   0.0120      0.0600         False     0.0480      True      \n3   0.0450      0.2250         False     0.0900      False     \n4   0.1500      0.7500         False     0.1500      False     \n5   0.0220      0.1100         False     0.0660      False"
     },
     {
@@ -889,7 +889,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0019,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Analisis Screening Sensor via FDR Control\nFitur   p-Mentah    p-Adj (BH)    Tolak BH?   p-Adj (BY)    Tolak BY? \n----------------------------------------------------------------------\nSensor 1  0.0010      0.0080        True        0.0217        True      \nSensor 2  0.0070      0.0280        True        0.0761        False     \nSensor 3  0.0150      0.0400        True        0.1087        False     \nSensor 4  0.0210      0.0420        True        0.1141        False     \nSensor 5  0.0400      0.0640        False       0.1739        False     \nSensor 6  0.0650      0.0867        False       0.2355        False     \nSensor 7  0.1100      0.1257        False       0.3417        False     \nSensor 8  0.2200      0.2200        False       0.5979        False"
     },
     {
@@ -900,7 +900,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0448,
+      "elapsed_sec": 0.0439,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Benchmark Pengujian Jamak 1000 Sensor\nMetode          True Pos (TP)   False Pos (FP)  False Neg (FN)  FDP Realisasi   \n--------------------------------------------------------------------------------\nRaw (p < 0.05)  41              52              9               0.5591          \nBonferroni      7               0               43              0.0000          \nHolm            7               0               43              0.0000          \nFDR (BH)        12              0               38              0.0000"
     },
     {
@@ -911,7 +911,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 5.588,
+      "elapsed_sec": 4.7414,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Uji Robustness pada Sampel Kecil Log-Normal Ekstrem\nJumlah Simulasi : 5000\nUkuran Sampel   : n1=15, n2=15\nTarget Alpha    : 0.05\nEmpirical Type I Error (Uji-t)         : 0.0186\nEmpirical Type I Error (Mann-Whitney)  : 0.0514"
     },
     {
@@ -922,7 +922,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0025,
+      "elapsed_sec": 0.0021,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Analisis Inferensi Non-Parametrik Dua Sampel\n--- Mann-Whitney U Test (Independen) ---\nStatistik U       : 24.0\np-value           : 0.0159\nRank-Biserial r   : -0.9200\n\n--- Wilcoxon Signed-Rank Test (Berpasangan) ---\nStatistik W       : 0.0\np-value           : 0.0625"
     },
     {
@@ -933,7 +933,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0045,
+      "elapsed_sec": 0.0032,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Multi-Sampel Non-Parametrik\nKruskal-Wallis H-Statistic : 9.8462, p-value : 0.0073\nFriedman Q-Statistic       : 8.0000, p-value : 0.0183\n\nAnalisis Post-Hoc Per Pasangan (Ambang Bonferroni: 0.0167):\n  A vs B     : p = 0.0286 -> Tidak Signifikan\n  A vs C     : p = 0.0286 -> Tidak Signifikan\n  B vs C     : p = 0.0286 -> Tidak Signifikan"
     },
     {
@@ -944,7 +944,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0025,
+      "elapsed_sec": 0.0016,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Uji Permutasi Eksak vs Monte Carlo\nStatistik Teramati (T_obs) : 12.0000\nNilai p-value Eksak        : 0.1000\nNilai p-value Monte Carlo  : 0.1000"
     },
     {
@@ -955,7 +955,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Audit Integritas Persepsi Visual\nEfek Data Sejati        : 100.0%\nEfek Grafik Skala Area  : 300.0% (Lie Factor: 3.00)\nEfek Grafik Skala Posisi: 100.0% (Lie Factor: 1.00)"
     },
     {
@@ -966,7 +966,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.002,
+      "elapsed_sec": 0.0016,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perbandingan Statistik Ringkasan vs Karakteristik Distribusi\nMetrik              Kelompok 1 (Unimodal)    Kelompok 2 (Bimodal)     \n----------------------------------------------------------------------\nMean                48.96                    50.07                    \nStd Dev             9.08                     10.63                    \nMedian              48.73                    51.42                    \nIQR                 10.07                    20.43                    \nUji Bimodal (Dip)   Unimodal (p > 0.1)       Bimodal Jelas (p < 0.01)"
     },
     {
@@ -977,7 +977,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0015,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Presisi Bilah Error\nKelompok 1 Mean: 100.0 | SE: [ 98.0, 102.0 ] | 95% CI: [ 95.94, 104.06 ]\nKelompok 2 Mean: 105.0 | SE: [ 103.0, 107.0 ] | 95% CI: [ 100.94, 109.06 ]\nTumpang tindih SE    : Tidak tumpang tindih (Celah: 1.0 MPa)\nTumpang tindih CI 95%: Tumpang tindih (3.12 MPa)\nUji t-Student formal : t(70) = 1.768, p-value = 0.0815\nKesimpulan Ilmiah    : TIDAK Signifikan (p >= 0.05)"
     },
     {
@@ -988,7 +988,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Konfigurasi Parameter Styling Publikasi\n  font.family          : sans-serif\n  font.sans-serif      : ['DejaVu Sans', 'Arial', 'Helvetica']\n  font.size            : 8\n  axes.labelsize       : 9\n  axes.titlesize       : 9\n  xtick.labelsize      : 8\n\nPalet Okabe-Ito Terverifikasi:\n  black           : #000000\n  orange          : #E69F00\n  sky_blue        : #56B4E9\n  bluish_green    : #009E73"
     },
     {
@@ -999,7 +999,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 1.9546,
+      "elapsed_sec": 0.6004,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Estimasi Matriks OLS\nKoefisien beta_hat : [-16.10204082   4.08163265   0.73469388]\nStandar Error SE   : [10.70903662  0.27380424  0.44149607]\n\nVerifikasi Statsmodels Summary:\nParams: [-16.10204082   4.08163265   0.73469388]\nbse   : [10.70903662  0.27380424  0.44149607]"
     },
     {
@@ -1010,7 +1010,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0665,
+      "elapsed_sec": 0.0692,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Verifikasi Sifat Unbiased Teorema Gauss-Markov\nJumlah Replikasi : 10000\nParameter Sejati : Intersep = 5.0000, Slope = 2.5000\nRata-rata OLS    : Intersep = 5.0047, Slope = 2.4987\nBias Empiris     : Intersep = 0.004749, Slope = -0.001288"
     },
     {
@@ -1021,7 +1021,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0039,
+      "elapsed_sec": 0.003,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Diagnostik Residu OLS\nR-squared Model            : 0.9266\nUji Breusch-Pagan LM Stat  : 5.8095, p-value: 1.5940e-02\nStatus Heteroskedastisitas : Terdeteksi Heteroskedastisitas (p < 0.05)\n\nObservasi Terakhir (Titik Outlier Terinjeksi):\n  Leverage (h_ii)          : 0.0963 (Ambang 2p/n: 0.1000)\n  Studentized Resid        : 4.8010\n  Cook's Distance          : 1.2287 (Ambang 4/n: 0.1000)"
     },
     {
@@ -1032,7 +1032,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0026,
+      "elapsed_sec": 0.0014,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Multikolinearitas via VIF\nVIF x1 (Variabel Asli)      : 90.87\nVIF x2 (Variabel Redundan)  : 90.79\nVIF x3 (Variabel Ortogonal) : 1.04\n\nModel Penuh (Ada Multikolinearitas):\n  beta_x1: 2.0410 (SE: 0.1864, p: 0.0000)\n  beta_x2: -0.0510 (SE: 0.1253, p: 0.6850)\n\nModel Bersih (x2 Dieliminasi):\n  beta_x1: 1.9656 (SE: 0.0198, p: 0.0000)"
     },
     {
@@ -1043,7 +1043,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0022,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Generalized Linear Model (GLM Poisson)\nKoefisien Estimasi : Intersep = 0.4082, Slope = 0.6246\nStandar Error SE   : Intersep = 0.1090, Slope = 0.0279\nDevians Residual   : 105.33 (df: 98)\nSkala Dispersi     : 1.0000"
     },
     {
@@ -1054,7 +1054,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.8135,
+      "elapsed_sec": 0.2422,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Regresi Logistik Biner\nKoefisien Intersep : -5.8224 (p: 0.0000)\nKoefisien Tegangan : 0.0492 (p: 0.0000)\nOdds Ratio (1 MPa) : 1.0504 [95% CI: 1.0361, 1.0648]\nOdds Ratio (20 MPa): 2.6733\nArea Under ROC(AUC): 0.8273 (Klasifikasi Sangat Unggul)"
     },
     {
@@ -1065,7 +1065,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0043,
+      "elapsed_sec": 0.0035,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perbandingan Model Poisson vs Negative Binomial\nPoisson Dispersi Pearson (phi) : 4.66 (Overdispersi Berat)\nPoisson Koefisien Getaran      : 0.5556 (SE: 0.0296)\n\nNegative Binomial Pearson (phi): 0.85 (Terkalibrasi Sempurna)\nNegative Binomial Koef Getaran : 0.5204 (SE: 0.0642)\nRasio Pembengkakan SE Realistis: 2.17x lipat"
     },
     {
@@ -1076,7 +1076,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0041,
+      "elapsed_sec": 0.0025,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Perbandingan Model GLM\nModel 0 (Hanya x1)   : Log-Lik = -278.18, AIC = 560.35, BIC = 565.93\nModel 1 (x1 + noise) : Log-Lik = -275.94, AIC = 559.88, BIC = 571.03\nStatistik LRT (Chi2) : 4.4748 (df: 2)\np-value LRT          : 0.1067\nModel Terpilih       : Model 0 (Lebih Parsimonious)"
     },
     {
@@ -1087,7 +1087,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.002,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Tabel One-Way ANOVA\nUji Homogenitas Levene   : W = 0.0000, p = 1.0000 (Varians Homogen)\n-----------------------------------------------------------------\nSumber Variasi    SS          df      MS            F-Stat    p-value   \n-----------------------------------------------------------------\nAntar Kelompok    344.00      2       172.0000      51.60     1.1725e-05\nDalam Kelompok    30.00       9       3.3333        \nTotal             374.00      11"
     },
     {
@@ -1098,7 +1098,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0121,
+      "elapsed_sec": 0.009,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Tabel Two-Way ANOVA\n                         sum_sq    df           F        PR(>F)\nC(Formulasi)         708.431046   1.0  185.386225  3.233968e-10\nC(pH)               3164.798761   1.0  828.182361  3.298059e-15\nC(Formulasi):C(pH)  2042.907839   1.0  534.599627  1.011708e-13\nResidual              61.142066  16.0         NaN           NaN"
     },
     {
@@ -1109,7 +1109,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.2572,
+      "elapsed_sec": 0.1948,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Analisis Post-Hoc Tukey HSD\n  Multiple Comparison of Means - Tukey HSD, FWER=0.05  \n=======================================================\n group1   group2  meandiff p-adj  lower   upper  reject\n-------------------------------------------------------\nPaduan_A Paduan_B      3.0 0.0001 1.4884  4.5116   True\nPaduan_A Paduan_C      7.5    0.0 5.9884  9.0116   True\nPaduan_A Paduan_D     11.0    0.0 9.4884 12.5116   True\nPaduan_B Paduan_C      4.5    0.0 2.9884  6.0116   True\nPaduan_B Paduan_D      8.0    0.0 6.4884  9.5116   True\nPaduan_C Paduan_D      3.5    0.0 1.9884  5.0116   True\n-------------------------------------------------------"
     },
     {
@@ -1120,7 +1120,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0217,
+      "elapsed_sec": 0.0158,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Pengujian MANOVA\n                     Multivariate linear model\n===================================================================\n                                                                   \n-------------------------------------------------------------------\n       Intercept          Value   Num DF  Den DF   F Value   Pr > F\n-------------------------------------------------------------------\n          Wilks' lambda    0.0001 2.0000 37.0000 128390.7618 0.0000\n         Pillai's trace    0.9999 2.0000 37.0000 128390.7618 0.0000\n Hotelling-Lawley trace 6940.0412 2.0000 37.0000 128390.7618 0.0000\n    Roy's greatest root 6940.0412 2.0000 37.0000 128390.7618 0.0000\n-------------------------------------------------------------------\n                                                                   \n--------------------------------------------------------------------\n           Metode          Value   Num DF   Den DF  F Value   Pr > F\n--------------------------------------------------------------------\n            Wilks' lambda  0.1495  2.0000  37.0000  105.2400  0.0000\n           Pillai's trace  0.8505  2.0000  37.0000  105.2400  0.0000\n   Hotelling-Lawley trace  5.6887  2.0000  37.0000  105.2400  0.0000\n      Roy's greatest root  5.6887  2.0000  37.0000  105.2400  0.0000\n==================================================================="
     },
     {
@@ -1131,7 +1131,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.021,
+      "elapsed_sec": 0.0149,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Estimasi Komponen Varians Hierarkis\nGrand Mean Estimasi          : 51.49 (Sejati: 50.00)\nVarians Antarklaster (sigma_u^2) : 6.34 (Sejati: 12.00)\nVarians Residual (sigma_e^2)     : 3.73 (Sejati: 4.00)\nIntraclass Correlation (ICC) : 0.6294 (Sejati: 0.7500)"
     },
     {
@@ -1142,7 +1142,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0199,
+      "elapsed_sec": 0.0197,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Penyusutan (Shrinkage) Efek Acak\nGrup    Ukuran n  Rata-rata Sampel  BLUP Estimasi (u)   Prediksi Final  \n------------------------------------------------------------------------\nG1      2         102.10            0.40                101.94          \nG2      3         98.76             -2.19               99.35           \nG3      4         98.68             -2.38               99.16           \nG4      15        105.50            3.76                105.30          \nG5      20        98.02             -3.38               98.16           \nG6      25        99.50             -1.98               99.56           \nG7      30        105.96            4.31                105.85          \nG8      40        103.02            1.46                102.99"
     },
     {
@@ -1153,7 +1153,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.031,
+      "elapsed_sec": 0.0264,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Pemodelan Longitudinal Repeated Measures LMM\nTotal Observasi Tersedia : 66 dari 75 (Ada Missing Data)\nEstimasi Intersep (beta0): 12.1843 (Sejati: 12.0000)\nEstimasi Slope (beta1)   : 3.4263 (Sejati: 3.5000)\nStandar Error Slope      : 0.0704 (p-value: 0.0000e+00)\nVarians Antar-Subjek     : 4.6569 (Sejati: 4.0000)"
     },
     {
@@ -1164,7 +1164,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0258,
+      "elapsed_sec": 0.0243,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perbandingan Estimasi REML vs ML\nParameter Varians        REML (Unbiased)     ML (Biased)         \n-----------------------------------------------------------------\nVarians Acak (sigma_u^2) 5.4424              4.4530              \nVarians Residual (sigma_e^2)3.0912              2.7540              \n\nLog-Likelihood REML : -51.40\nLog-Likelihood ML   : -52.24"
     },
     {
@@ -1175,7 +1175,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.2147,
+      "elapsed_sec": 0.1861,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perbandingan Kinerja DoE vs OFAT (8 Run)\nVarians Estimasi DoE  : 0.4961 (Teoretis: 0.5000)\nVarians Estimasi OFAT : 1.0146 (Teoretis: 1.0000)\nRasio Presisi (OFAT/DoE): 2.05x lipat lebih bervariasi"
     },
     {
@@ -1186,7 +1186,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.003,
+      "elapsed_sec": 0.002,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Uji Aksioma Randomisasi vs Drift Temporal\nTanpa Randomisasi  : Selisih Mean = 5.03, p-value = 1.3158e-13 (False Positive Fatal!)\nDengan Randomisasi : Selisih Mean = 2.22, p-value = 0.0203 (Valid / H0 Bertahan)"
     },
     {
@@ -1197,7 +1197,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0021,
+      "elapsed_sec": 0.0011,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Jadwal Eksekusi Eksperimen CRD Teracak\n Run_Order Unit_ID   Perlakuan\n         1 Unit_11 Formulasi_C\n         2 Unit_10 Formulasi_C\n         3 Unit_01 Formulasi_A\n         4 Unit_09 Formulasi_C\n         5 Unit_06 Formulasi_B\n         6 Unit_03 Formulasi_A\n         7 Unit_02 Formulasi_A\n         8 Unit_12 Formulasi_C\n         9 Unit_05 Formulasi_B\n        10 Unit_08 Formulasi_B\n        11 Unit_04 Formulasi_A\n        12 Unit_07 Formulasi_B"
     },
     {
@@ -1208,7 +1208,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0026,
+      "elapsed_sec": 0.002,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Analisis Power Apriori untuk One-Way ANOVA\nJumlah Kelompok (k)     : 3\nUkuran Efek Cohen's f   : 0.6124 (Kategori Efek Besar)\nTarget Power (1 - beta) : 0.80\nReplikasi Dihitung (n)  : 28.91\nReplikasi Dibulatkan    : 29 sampel per kelompok (Total N = 87)\nKekuatan Aktual Tercapai: 80.15%"
     },
     {
@@ -1219,7 +1219,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0025,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Matriks Desain Faktorial Penuh 2^3\n Intersep    A    B    C   AB   AC   BC  ABC\n      1.0 -1.0 -1.0 -1.0  1.0  1.0  1.0 -1.0\n      1.0  1.0 -1.0 -1.0 -1.0 -1.0  1.0  1.0\n      1.0 -1.0  1.0 -1.0 -1.0  1.0 -1.0  1.0\n      1.0  1.0  1.0 -1.0  1.0 -1.0 -1.0 -1.0\n      1.0 -1.0 -1.0  1.0  1.0 -1.0 -1.0  1.0\n      1.0  1.0 -1.0  1.0 -1.0  1.0 -1.0 -1.0\n      1.0 -1.0  1.0  1.0 -1.0 -1.0  1.0 -1.0\n      1.0  1.0  1.0  1.0  1.0  1.0  1.0  1.0\n\nVerifikasi Ortogonalitas (X^T X = 8 * I): True"
     },
     {
@@ -1230,7 +1230,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0012,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Analisis Efek Faktorial 2^2\n      Faktor  Kontras  Estimasi Efek  Koefisien Beta  Sum of Squares (SS)\n  Grand Mean    142.0           35.5            35.5               5041.0\n      Efek A     42.0           21.0            10.5                441.0\n      Efek B     22.0           11.0             5.5                121.0\nInteraksi AB      2.0            1.0             0.5                  1.0"
     },
     {
@@ -1241,7 +1241,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Analisis Interaksi Tiga Faktor (ABC)\nKontras ABC              : 20.00\nEstimasi Efek ABC        : 5.00\nInteraksi AB pada C Low  : 0.00 (Garis Paralel)\nInteraksi AB pada C High : 10.00 (Garis Divergen Kuat)\nVerifikasi: (AB_high - AB_low)/2 = 5.00 (Cocok dengan Efek ABC)"
     },
     {
@@ -1252,7 +1252,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Faktorial 2^3 (Pooled Error)\nSumber Efek   SS        df    MS          F-Stat    p-value   \n--------------------------------------------------------------\nA             160.0     1     160.00      26.67     0.0036    \nAB            60.0      1     60.00       10.00     0.0250    \nResidual (Pool)30.0      5     6.00        \nTotal         250.0     7"
     },
     {
@@ -1263,7 +1263,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0011,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perbandingan Kapasitas DoE Penuh vs Fraksional\n Jumlah Faktor (k)  Run Penuh (2^k)  Run Fraksional (2^(k-p))  Penghematan (%)\n                 3                8                         4            50.00\n                 4               16                        16             0.00\n                 5               32                        16            50.00\n                 6               64                        16            75.00\n                 7              128                        16            87.50\n                 8              256                        16            93.75"
     },
     {
@@ -1296,7 +1296,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Konstruksi Desain Full Foldover (4 -> 8 Runs)\n Faktor_A  Faktor_B  Faktor_C    Batch\n       -1        -1         1     Awal\n        1        -1        -1     Awal\n       -1         1        -1     Awal\n        1         1         1     Awal\n        1         1        -1 Foldover\n       -1         1         1 Foldover\n        1        -1         1 Foldover\n       -1        -1        -1 Foldover\n\nEfek Utama kini BERSIH MURNI dari Interaksi 2-Faktor (Resolusi III -> Resolusi IV)."
     },
     {
@@ -1307,7 +1307,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0091,
+      "elapsed_sec": 0.0081,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Randomized Complete Block Design (RCBD)\n                  sum_sq   df           F        PR(>F)\nC(Perlakuan)  843.337663  2.0  590.238325  1.293231e-07\nC(Blok)       183.996056  3.0   85.850566  2.558960e-05\nResidual        4.286426  6.0         NaN           NaN"
     },
     {
@@ -1318,7 +1318,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.01,
+      "elapsed_sec": 0.0091,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Tabel ANOVA Latin Square Design 4x4\n                sum_sq   df            F        PR(>F)\nC(Ban)     1423.414641  3.0  3237.637847  5.145743e-10\nC(Mobil)    125.332697  3.0   285.076374  7.377479e-07\nC(Posisi)    62.870919  3.0   143.003493  5.710107e-06\nResidual      0.879292  6.0          NaN           NaN"
     },
     {
@@ -1329,7 +1329,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0171,
+      "elapsed_sec": 0.017,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Model Split-Plot (MixedLM)\nVarians Error A (Whole-Plot) : 5.8475 (Sejati: 9.00)\nVarians Error B (Sub-Plot)   : 1.9062 (Sejati: 2.25)\nEfek Suhu (Hard-to-Change)   : -20.49 (SE: 1.97)\nEfek Media (Easy-to-Change)  : -9.26 (SE: 0.98)"
     },
     {
@@ -1351,7 +1351,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 1.7869,
+      "elapsed_sec": 0.9551,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Audit Kebocoran:\nAkurasi Random Split (Mengandung Device Leakage) : 0.8650\nAkurasi GroupKFold (Isolasi Fisik Perangkat Baku) : 0.8740"
     },
     {
@@ -1362,7 +1362,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.073,
+      "elapsed_sec": 0.0613,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Noise Murni:\nAkurasi Rata-rata Leaky Feature Selection : 0.8300 (Ilusi Prediktif!)\nAkurasi Rata-rata Enkapsulasi Pipeline    : 0.6300 (Sesuai Peluang 50%)"
     },
     {
@@ -1373,7 +1373,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0013,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perbandingan Partisi Indeks:\n--- Standard K-Fold (Shuffle=False) ---\nFold 1: Train=[4, 5, 6, 7, 8, 9] | Test=[0, 1, 2, 3]\nFold 2: Train=[0, 1, 2, 3, 7, 8, 9] | Test=[4, 5, 6]\nFold 3: Train=[0, 1, 2, 3, 4, 5, 6] | Test=[7, 8, 9]\n\n--- TimeSeriesSplit (Ekspansi Masa Lalu ke Masa Depan) ---\nFold 1: Train=[0, 1, 2, 3] | Test=[4, 5]\nFold 2: Train=[0, 1, 2, 3, 4, 5] | Test=[6, 7]\nFold 3: Train=[0, 1, 2, 3, 4, 5, 6, 7] | Test=[8, 9]"
     },
     {
@@ -1384,7 +1384,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.8022,
+      "elapsed_sec": 0.6478,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Komparasi Validasi:\nNon-Nested CV Score (Terbias Optimis)   : 0.8191\nNested CV Score (Estimasi Tak Bias Riil) : 0.8000 +/- 0.0447\nBesaran Bias Optimisme                  : 0.0191"
     },
     {
@@ -1406,7 +1406,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0043,
+      "elapsed_sec": 0.0056,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Forensik Adaptive Benchmark Overfitting:\nKualitas Sejati Model di Populasi         : 0.8000\nSkor Juara Leaderboard Publik             : 0.8800 (Optimisme Semu!)\nPerforma Juara pada Dataset Baru Mandiri  : 0.8000\nPenurunan Performa Absolut (Drop)         : 8.00%"
     },
     {
@@ -1417,7 +1417,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0048,
+      "elapsed_sec": 0.0049,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Metrik Terstandarisasi:\nAkurasi Sederhana       : 90.00% (Menyesatkan pada Imbalance)\nMicro-Averaged F1       : 90.00% (Didominasi Kelas Mayoritas)\nMacro-Averaged F1       : 31.58% (Mencerminkan Kinerja Sejati)\n--- Profil Latensi Komputasi (ms) ---\nMedian (P50)            : 12.05 ms\nPercentile 95 (P95)     : 16.35 ms\nWorst-Case Tail (P99)   : 17.64 ms"
     },
     {
@@ -1428,8 +1428,8 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 2.537,
-      "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Protokol Benchmark Interleaved:\nAlgo A (np.dot)    : Median=1.161 ms | P99=1.640 ms\nAlgo B (np.einsum) : Median=40.779 ms | P99=43.691 ms"
+      "elapsed_sec": 2.321,
+      "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Protokol Benchmark Interleaved:\nAlgo A (np.dot)    : Median=1.097 ms | P99=3.301 ms\nAlgo B (np.einsum) : Median=37.359 ms | P99=40.273 ms"
     },
     {
       "lesson_id": "5.3.1",
@@ -1439,7 +1439,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.002,
+      "elapsed_sec": 0.0021,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Forensik Metodologis Komparasi Multi-Dataset:\nRata-rata Selisih Performa        : 0.0000\nUji Normalitas Shapiro-Wilk (p)   : 9.8343e-08 (Asumsi Normalitas Ditolak!)\nPaired t-test P-value             : 1.0000 (Gagal membuktikan keunggulan A)\nWilcoxon Signed-Rank P-value      : 0.0047 (Signifikan: A unggul konsisten!)"
     },
     {
@@ -1461,7 +1461,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Analisis Post-Hoc Holm Step-Down (SE = 0.3651):\nOurs vs Algo 3 : p-raw = 7.1887e-10 | Target Alpha = 0.0167 | Signifikan: True\nOurs vs Algo 2 : p-raw = 3.2297e-06 | Target Alpha = 0.0250 | Signifikan: True\nOurs vs Algo 1 : p-raw = 4.0333e-03 | Target Alpha = 0.0500 | Signifikan: True"
     },
     {
@@ -1483,7 +1483,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.002,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Tabel Forensik Studi Ablasi Komponen:\n           Configuration  Attention  BoundaryLoss  Params (M)  mIoU (%)  Gain over Base (%)\n     Baseline (Backbone)      False         False        25.0      81.8                 0.0\n    + Boundary Loss only      False          True        25.0      82.1                 0.3\n        + Attention only       True         False        28.5      88.3                 6.5\nFull Architecture (Ours)       True          True        28.5      88.5                 6.7"
     },
     {
@@ -1494,7 +1494,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.003,
+      "elapsed_sec": 0.0031,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Matriks Ablasi Faktorial 2^3:\n Modul_1  Modul_2  Modul_3  Accuracy (%)\n       0        0        0          70.2\n       1        0        0          73.1\n       0        1        0          72.5\n       1        1        0          77.8\n       0        0        1          71.0\n       1        0        1          74.5\n       0        1        1          73.9\n       1        1        1          81.4\n\n--- Analisis Efek Utama Modul (Marginal Main Effects) ---\nEfek Rata-rata Modul 1 : +4.80%\nEfek Rata-rata Modul 2 : +4.20%\nEfek Rata-rata Modul 3 : +1.80%\nTotal Gain Model Utuh vs Baseline : 11.20%"
     },
     {
@@ -1505,7 +1505,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0034,
+      "elapsed_sec": 0.0035,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Efisiensi Batas Pareto:\n              Model  Accuracy (%)  Latency (ms)  Pareto Optimal\n   Variant A (Base)          80.0          10.0            True\n  Variant B (+Mod1)          84.5          14.0            True\n  Variant C (+Mod2)          83.0          16.0           False\nVariant D (+Mod1+2)          88.0          22.0            True\n Variant E (+Heavy)          88.2          45.0            True"
     },
     {
@@ -1516,7 +1516,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0015,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Forensik Partisi Kasus Kegagalan:\nTotal Sampel Evaluasi          : 500\nSukses Bersama (S_BO)           : 378 (75.6%)\nPerbaikan Modul Baru (F_O)      : 41 (8.2%) [Keberhasilan Hipotesis]\nKegagalan Baru Modul (I_O)      : 19 (3.8%) [Efek Samping Arsitektur]\nBatas Kegagalan Sistemik (E_sys): 62 (12.4%) [Limitasi Pendekatan]"
     },
     {
@@ -1538,7 +1538,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0061,
+      "elapsed_sec": 0.005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Stress Testing Gangguan Derau:\nSeverity (Sigma)   | Model Rapuh Acc  | Model Kokoh Acc \n--------------------------------------------------------\n0.0                | 100.00         % | 100.00         %\n0.5                | 82.60          % | 82.60          %\n1.0                | 73.80          % | 73.80          %\n1.5                | 65.20          % | 65.20          %\n2.0                | 67.40          % | 67.40          %\n2.5                | 61.40          % | 61.40          %"
     },
     {
@@ -1549,7 +1549,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0054,
+      "elapsed_sec": 0.0041,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Kemampuan Deteksi OOD:\nAUROC Deteksi OOD berbasis MSP (Softmax) : 0.9999\nAUROC Deteksi OOD berbasis Energy Score  : 1.0000 (Separasi Superior!)"
     },
     {
@@ -1560,7 +1560,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0077,
+      "elapsed_sec": 0.0073,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Pemetaan Batas Kegagalan Operasional (Corner Cases):\nJumlah Titik Uji Parameter Ruang   : 400\nProporsi Status Aman Operasional   : 44.8%\nProporsi Kasus Batas/Gagal         : 55.2%\nKeakuratan Estimasi Permukaan (SVM): 96.75%"
     },
     {
@@ -1571,7 +1571,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0006,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Expected Improvement (EI):\nPerforma Terbaik Saat Ini (y_best) : 0.8500\n----------------------------------------------------\nKandidat   | Pred Mean  | Pred Std   | EI Score  \n----------------------------------------------------\nKandidat 1  | 0.8200     | 0.0500     | 0.0060    \nKandidat 2  | 0.8600     | 0.0200     | 0.0080    \nKandidat 3  | 0.8800     | 0.0100     | 0.0201    \nKandidat 4  | 0.8400     | 0.0800     | 0.0229    \nKandidat 5  | 0.8500     | 0.0300     | 0.0076    \n\nRekomendasi Iterasi Berikutnya: Kandidat 4 (EI Tertinggi)"
     },
     {
@@ -1582,7 +1582,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Forensik Sensitivitas Random Seed:\nHasil 10 Seed Baseline (%) : [85.2, 84.94, 85.26, 85.61, 84.91, 84.91, 85.63, 85.31, 84.81, 85.22]\nHasil 10 Seed Proposed (%) : [83.97, 83.96, 85.24, 81.36, 81.7, 83.79, 82.98, 85.37, 83.17, 82.26]\n----------------------------------------------------\nKlaim Cherry-Picked Single Run: Proposed=85.37% vs Base=85.21% (Unggul Palsu!)\nRata-rata 10 Seed Sejati     : Proposed=83.38% +/- 1.29%\n                             : Baseline=85.18% +/- 0.27%"
     },
     {
@@ -1593,7 +1593,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0011,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Analisis Rigoritas Multi-Seed (S=10):\nModel Usulan : Mean=89.47% | 95% CI=[89.16%, 89.78%]\nModel Baseline: Mean=87.90% | 95% CI=[87.63%, 88.17%]\n----------------------------------------------------\nPooled Standard Deviation : 0.407%\nUkuran Efek (Cohen's d)   : 3.85 (Efek Sangat Kuat jika > 0.8)\nP-value Uji Hipotesis     : 8.6222e-08 (Signifikan)"
     },
     {
@@ -1604,7 +1604,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0025,
+      "elapsed_sec": 0.0015,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Laporan Anggaran Komputasi & Jejak Karbon Riset:\n                      Phase  GPU_Hours  Energy_kWh  Carbon_kg_CO2e\n        Initial Prototyping         40      20.000         16.4000\n      Hyperparameter Tuning        240     112.500         92.2500\nFinal Multi-Seed Evaluation         60      28.125         23.0625\n-------------------------------------------------------\nTotal GPU-Hours Akumulatif : 340.0 GPU-hours\nTotal Konsumsi Energi Listrik: 160.62 kWh\nTotal Jejak Emisi Karbon    : 131.71 kg CO2e"
     },
     {
@@ -1615,7 +1615,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0566,
+      "elapsed_sec": 0.0567,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Inferensi Prinsip Plug-In Bootstrap:\nMedian Sampel Teramati        : 12.76 mW\nStandard Error Bootstrap (SE) : 2.45 mW\n95% Percentile Confidence Int : [9.26, 18.58] mW"
     },
     {
@@ -1626,7 +1626,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.1075,
+      "elapsed_sec": 0.1066,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Komparasi Nonparametric vs Parametric Bootstrap:\nMean Sampel Teramati        : 122.73 MPa\nNonparametric Bootstrap SE  : 10.74 MPa\nParametric Bootstrap SE     : 10.71 MPa\nNonparametric 95% CI        : [101.81, 144.89]\nParametric 95% CI           : [102.51, 144.16]"
     },
     {
@@ -1637,7 +1637,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0468,
+      "elapsed_sec": 0.0458,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Komparasi Interval Kepercayaan Varians:\nEstimator Titik Teramati (Varians): 46.59\nParameter BCa: z0 = 0.1295 | a = 0.0959\nPersentil Biasa (2.5%, 97.5%)      : [10.61, 82.71]\nPersentil BCa (7.7%, 99.7%) : [14.63, 92.82]"
     },
     {
@@ -1648,7 +1648,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0371,
+      "elapsed_sec": 0.0375,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Rasio Parameter Non-Linier:\nEstimator Rasio Efisiensi Teramati: 0.4463\nDelta Method SE  : 0.0052 | 95% CI: [0.4360, 0.4565]\nBootstrap SE     : 0.0052 | 95% CI: [0.4358, 0.4561]"
     },
     {
@@ -1659,7 +1659,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Inferensi Paradigma Bayesian (Beta-Binomial):\nRata-rata Prior E[theta]          : 10.00% (Informasi Pabrik Historis)\nEstimasi Likelihood MLE (Data Baru): 4.00% (2 cacat dari 50 uji)\nRata-rata Posterior E[theta|Data] : 5.71% (Sintesis Rasional Terbarui)\n95% Posterior Credible Interval    : [1.60%, 12.18%]"
     },
     {
@@ -1681,7 +1681,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0796,
+      "elapsed_sec": 0.0763,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil MCMC Metropolis-Hastings:\nTotal Iterasi              : 10000 (Burn-in = 2000)\nLaju Penerimaan (Acc Rate) : 57.45% (Optimal 20%-50%)\nRata-rata Sampel Posterior : 0.7533\nStandar Deviasi Posterior  : 2.0003\n95% Posterior Credible Int : [-2.76, 3.40]"
     },
     {
@@ -1692,7 +1692,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0016,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Komparasi Interval Kredibel Bayesian:\nEqual-Tailed Interval (ETI 95%) : [0.725, 16.657] | Lebar = 15.933\nHighest Density Interval (HDI)  : [0.226, 14.447] | Lebar = 14.221 (Lebih Kompak!)"
     },
     {
@@ -1703,7 +1703,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Uji Kestabilan Numerik IEEE 754 FP64:\nNilai Varians Eksak Teoretis    : 0.01000000\nFormula Naif (Catastrophic Loss): -2.00000000 (Galat Relatif Masif!)\nFormula Stabil Dua-Tahap        : 0.01000000 (Presisi Sempurna)"
     },
     {
@@ -1725,7 +1725,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Verifikasi Orde Akurasi Numerik (Grid Refinement):\nOrde Teramati Euler (Teori p=1.0) : p_obs = 1.0060 (Lolos Verifikasi Orde-1)\nOrde Teramati RK-4  (Teori p=4.0) : p_obs = 4.0301 (Lolos Verifikasi Orde-4)"
     },
     {
@@ -1736,7 +1736,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0018,
+      "elapsed_sec": 0.0016,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Karakteristik Kunci Dolan-Mor\u00e9 Profiles:\n-------------------------------------------------------\nSolver_Newton_Krylov   | Speed rho(1):  85.0% | Robustness: 100.0%\nSolver_LBFGS           | Speed rho(1):  15.0% | Robustness:  85.0%\nSolver_AdamW           | Speed rho(1):   0.0% | Robustness:  70.0%"
     },
     {
@@ -1747,7 +1747,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Dekomposisi Ketidakpastian Prediktif:\nTitik Uji  | Var Epistemik  | Var Aleatorik  | Rasio Epistemik (%)\n--------------------------------------------------------------\nTitik 0     | 0.0130         | 1.5000         | 0.9               %\nTitik 1     | 0.0130         | 1.5000         | 0.9               %\nTitik 2     | 0.0370         | 1.5000         | 2.4               %\nTitik 3     | 0.2570         | 1.5000         | 14.6              %\nTitik 4     | 12.5230        | 1.5000         | 89.3              %"
     },
     {
@@ -1758,7 +1758,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0066,
+      "elapsed_sec": 0.0064,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Perambatan Ketidakpastian Monte Carlo (M=50.000):\nDefleksi Nominal Titik Kerja : 1.6001 mm\nRata-rata Defleksi Riil (MC) : 1.6070 mm (Terjadi pergeseran rata-rata!)\nKetidakpastian Baku (Std MC) : 0.1655 mm\n95% Interval Cakupan Riil    : [1.3066, 1.9544] mm"
     },
     {
@@ -1769,7 +1769,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0387,
+      "elapsed_sec": 0.022,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Gaussian Process Emulator:\nJumlah Titik Sampel Latih (Simulasi Asli) : 8\nRoot Mean Squared Error (RMSE) Emulator  : 0.0430\nKetidakpastian Terbesar (Max Std Dev)    : 0.1556\nKetidakpastian pada Titik Latih Pertama  : 0.00001000 (Interpolasi Eksak!)"
     },
     {
@@ -1780,7 +1780,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0449,
+      "elapsed_sec": 0.0414,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Validasi Split Conformal Prediction:\nTingkat Kepercayaan Target (1 - alpha) : 90.0%\nKuantil Kalibrasi Kritis (q_hat)       : 1.9912\nCakupan Empiris Teramati pada Test Set : 91.20% (Jaminan Terbukti!)"
     },
     {
@@ -1791,7 +1791,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Sensitivitas Lokal pada (0,0,0):\nGradien Lokal X1 : 1.00 (Tampak Sangat Dominan)\nGradien Lokal X2 : 0.00 (Tampak Sama Sekali Tidak Berpengaruh!)\nGradien Lokal X3 : 0.00 (Tampak Sama Sekali Tidak Berpengaruh!)\n\n[SIMULASI/SYNTHETIC DATA] Evaluasi Sensitivitas Global Riil:\nTotal Varians Respon Sistem : 13.6028\nFakta Fisik Global: X2 menyumbang >40% varians total akibat suku kuadratik sin^2(X2),\nnamun LSA menyimpulkan sensitivitas X2 bernilai NOL karena gradien di titik tengah adalah datar!"
     },
     {
@@ -1802,7 +1802,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0031,
+      "elapsed_sec": 0.0024,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Screening Efek Elementer Morris (r=20):\n     Parameter  mu*        sigma\n     X1_Linear 2.00 1.139065e-16\nX2_Interaction 0.75 1.175406e+00\nX3_Interaction 1.25 1.282473e+00\n      X4_Noise 0.01 1.044321e-16"
     },
     {
@@ -1813,7 +1813,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0023,
+      "elapsed_sec": 0.002,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Dekomposisi Indeks Sensitivitas Sobol:\nParameter X1 | S_i (Main) =  0.296 | S_Ti (Total) =  0.560 | Interaksi =  0.264\nParameter X2 | S_i (Main) =  0.400 | S_Ti (Total) =  0.436 | Interaksi =  0.037\nParameter X3 | S_i (Main) = -0.008 | S_Ti (Total) =  0.247 | Interaksi =  0.255"
     },
     {
@@ -1824,7 +1824,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0012,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Analisis Sensitivitas Protokol SALib:\nTotal Evaluasi Simulasi Dijalankan : 8192\nVarians Respon Total              : 8994638.16\n----------------------------------------------------\nParameter: Velocity        | Proksi Indeks Sobol S_i: 0.6647\nParameter: Viscosity       | Proksi Indeks Sobol S_i: 0.2022\nParameter: Temperature     | Proksi Indeks Sobol S_i: 0.0825"
     },
     {
@@ -1835,7 +1835,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.002,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Demonstrasi Paradoks Simpson:\nSlope Regresi Grup 1 (Baja Paduan)   : -0.5345 (Negatif: Suhu naik -> Aus turun)\nSlope Regresi Grup 2 (Baja Karbon)   : -0.4791 (Negatif: Suhu naik -> Aus turun)\n-----------------------------------------------------------------\nSlope Regresi Agregat Naif (Campuran): -1.0635 (POSITIF PALSU! p=4.0019e-138)\nKesimpulan Naif yang Salah: 'Menaikkan suhu akan menaikkan ketahanan aus',\npadahal pada setiap jenis baja menaikkan suhu terbukti merusak ketahanan aus!"
     },
     {
@@ -1846,7 +1846,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Kerangka Rubin Potential Outcomes:\nAverage Treatment Effect Sejati (ATE) : 14.8700\nPerbedaan Rata-rata Naif Teramati     : 30.5802 (Terdistorsi Bias!)\nBesaran Bias Seleksi Baseline         : 15.5533\nRekonstruksi Kausal (Naif - Bias)     : 15.0269 (Identik dengan ATT)"
     },
     {
@@ -1868,7 +1868,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0106,
+      "elapsed_sec": 0.0095,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Propensity Score Matching:\nEfek Kausal Sejati (Ground Truth)   : +10.0000\nEstimasi Naif (Sebelum Matching)     : +12.8409 (Terdistorsi Confounder!)\nEstimasi Kausal PSM (Pasca-Matching) : +10.1977 (Mendekati Ground Truth)"
     },
     {
@@ -1879,7 +1879,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0011,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Forensik Regresi Semu (Spurious Regression):\nKoefisien Determinasi R^2      : 0.0181 (Tampak Tinggi Palsu!)\nP-value Naif                   : 5.7480e-02 (Signifikan Palsu!)\nT-statistik Terhitung          : -1.91\nPenjelasan: Mengabaikan autokorelasi serial random walk memicu ilusi korelasi yang sangat kuat."
     },
     {
@@ -1901,7 +1901,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Estimasi Model ARMAX:\nKoefisien AR Estimasi (phi)   : 0.7104 (Sejati: 0.7000)\nKoefisien Input Eksogen (beta): 1.1602 (Sejati: 1.2000)\nLong-Run Static Gain          : 4.0061 (Kenaikan Tunak per Satuan Input)\nAutokorelasi Residual Lag-1   : 0.3243 (Mendekati 0: Model Bersih)"
     },
     {
@@ -1912,7 +1912,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Evaluasi Kinerja Estimasi Kalman Filter:\nRMSE Sensor Mentah (GPS Berisik) : 1.9028 meter\nRMSE Sinyal Terfilter (Kalman)   : 0.6044 meter\nReduksi Galat Pengukuran         : 68.2% Presisi Meningkat"
     },
     {
@@ -1923,7 +1923,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0024,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Eksekusi Arsitektur Modular RSE:\nJumlah Titik Sinyal Terproses : 200\nFrekuensi Dominan Terdeteksi  : 12.50 Hz (Eksak: 12.50 Hz)\nKarakteristik Kode: Bebas variabel global, fungsi murni tanpa efek samping."
     },
     {
@@ -1934,7 +1934,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0016,
+      "elapsed_sec": 0.0015,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Hasil Eksekusi Pemisahan Modular:\nHasil RMS Matematis          : 219.89 V\nHasil Crest Factor Matematis : 1.4636\nFormat Pelaporan LaTeX       : Jaringan Listrik ITERA & 219.888 \\text{ V} & 1.464 \\\\"
     },
     {
@@ -1945,7 +1945,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Menjalankan Unit Testing Matematis...\nHasil: SELURUH 4 UNIT TEST MATEMATIKA LOLOS 100% SECARA VALID!"
     },
     {
@@ -1956,7 +1956,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Verifikasi Dokumentasi Docstring Otomatis:\nHasil Kalkulasi Energi Kinetik : 25.00 Joule\nDocstring Tersemat (First line) : Menghitung energi kinetik translasi dari sebuah benda bermassa m."
     },
     {
@@ -1967,7 +1967,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0143,
+      "elapsed_sec": 0.0604,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Manifest Lingkungan Eksekusi Ilmiah:\nPython_Version          : 3.12.10\nOperating_System        : Windows 11 (64bit)\nProcessor_Architecture  : AMD64 Family 25 Model 97 Stepping 2, AuthenticAMD\nByte_Order              : little\nFloat_Epsilon           : 2.220446049250313e-16\nData Input SHA-256 Digest : d2b5c58e29917197... (Integritas Data Terkunci)"
     },
     {
@@ -1978,7 +1978,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.001,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Berkas Lockfile Terkunci Eksak (requirements.lock):\n-----------------------------------------------------------------\nnumpy==1.26.4 --hash=sha256:5a8eb8eef331515ccf7c1c80dcfa6471ab7b8c6a5253e7924c8625360026817d\nscipy==1.12.0 --hash=sha256:f1d7a4c4f2e866f772c258b4e6dca35e29cb90102c85aa2a52a229c57602a502\nscikit-learn==1.4.1 --hash=sha256:78943fcff67c02d2bf203dc477f4d766bae9994cbef368c3f3246b8da3998aeb\n-----------------------------------------------------------------\nVerifikasi: Seluruh sub-dependensi terkunci hingga level digest SHA-256."
     },
     {
@@ -1989,7 +1989,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0013,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Pemeriksaan Integritas Kontainerisasi Docker:\n-------------------------------------------------------\nRunning_Inside_Container  : False\nEnvironment_Isolation     : LOCAL_HOST\nPython_Version            : 3.12\nReproducibility_Readiness : LOCAL_UNISOLATED\n-------------------------------------------------------\nRekomendasi RSE: Jalankan build container sebelum merilis kode publikasi."
     },
     {
@@ -2000,7 +2000,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0312,
+      "elapsed_sec": 0.0323,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Eksekusi Pertama Pipeline 1-Klik:\n--> [EKSEKUSI] Menjalankan: Task 1: Preprocess Data...\n--> [EKSEKUSI] Menjalankan: Task 2: Train Deep Learning...\n--> [EKSEKUSI] Menjalankan: Task 3: Generate Figures...\n\n[SIMULASI/SYNTHETIC DATA] Eksekusi Kedua Tanpa Perubahan Berkas:\n--> [LEWATI] Task 1: Preprocess Data sudah mutakhir (Up-to-date).\n--> [LEWATI] Task 2: Train Deep Learning sudah mutakhir (Up-to-date).\n--> [LEWATI] Task 3: Generate Figures sudah mutakhir (Up-to-date)."
     },
     {
@@ -2011,8 +2011,8 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
-      "actual_output": "[SIMULASI/SYNTHETIC DATA] Jejak Audit Kriptografi ELN Berstandar Forensik:\nBlok 1 | Waktu: 2026-11-23T17:18:22.321450Z | Peneliti: AJI_PAMUNGKAS_ITERA\n       Aksi: Kalibrasi sensor getaran optik: Offset = 0.02 mV\n       Hash: 5f6f7d2912d53f5e64313a36434934bd... (Prev: 000000000000...)\nBlok 2 | Waktu: 2026-11-23T17:18:22.321450Z | Peneliti: AJI_PAMUNGKAS_ITERA\n       Aksi: Uji turbin 1.500 RPM: Respon getaran P99 = 2.45 mm/s\n       Hash: 862a7179797d38e3d079e1cc52deb7b7... (Prev: 5f6f7d2912d5...)"
+      "elapsed_sec": 0.0,
+      "actual_output": "[SIMULASI/SYNTHETIC DATA] Jejak Audit Kriptografi ELN Berstandar Forensik:\nBlok 1 | Waktu: 2026-11-28T03:50:14.419995Z | Peneliti: AJI_PAMUNGKAS_ITERA\n       Aksi: Kalibrasi sensor getaran optik: Offset = 0.02 mV\n       Hash: 860ebbc01eeff551dae6a875ee99d9a7... (Prev: 000000000000...)\nBlok 2 | Waktu: 2026-11-28T03:50:14.419995Z | Peneliti: AJI_PAMUNGKAS_ITERA\n       Aksi: Uji turbin 1.500 RPM: Respon getaran P99 = 2.45 mm/s\n       Hash: ba686f51e7342ad6523a422c3c35977c... (Prev: 860ebbc01eef...)"
     },
     {
       "lesson_id": "7.3.2",
@@ -2022,7 +2022,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Dokumen Silsilah W3C PROV-JSON:\n{\n  \"prefix\": {\n    \"itera\": \"https://www.itera.ac.id/research/\",\n    \"prov\": \"http://www.w3.org/ns/prov#\"\n  },\n  \"entity\": {\n    \"itera:raw_sensor_data\": {\n      \"prov:type\": \"prov:Entity\",\n      \"itera:sha256\": \"8f4b23c91a0e...b7\",\n      \"itera:format\": \"CSV\"\n    },\n    \"itera:calibrated_features\": {\n      \"prov:type\": \"prov:Entity\",\n      \"itera:sha256\": \"4c3d2e1f0a9b...c1\",\n      \"itera:format\n  ... [TRUNCATED] ...\n}\nVerifikasi: Model relasi Entity -> Activity -> Agent tervalidasi sesuai W3C."
     },
     {
@@ -2034,7 +2034,7 @@
       "numerical_ok": true,
       "error": null,
       "elapsed_sec": 0.0005,
-      "actual_output": "[SIMULASI/SYNTHETIC DATA] Berkas CITATION.cff Terstandarisasi:\n-------------------------------------------------------\ncff-version: 1.2.0\nmessage: \"If you use this research software or dataset, please cite it as below.\"\nauthors:\n  - family-names: \"Tri Nurcahyo\"\n    given-names: \"Aji Pamungkas\"\n    orcid: \"https://orcid.org/0009-0000-0000-0000\"\n    affiliation: \"Institut Teknologi Sumatera (ITERA)\"\ntitle: \"Scientific Research & Experimental Methods Hub: Reproducible Artifact Package\"\nversion: 1.0.0\ndoi: 10.5281/zenodo.9876543\ndate-released: 2026-11-24\nurl: \"https://github.com/itera-research/scientific-methods-hub\"\nkeywords:\n  - \"experimental methods\"\n  - \"reproducible research\"\n  - \"computer vision\"\n  - \"metrology\"\nlicense: MIT\n\n-------------------------------------------------------\nVerifikasi: Berkas CITATION.cff siap diintegrasikan otomatis dengan GitHub & Zenodo."
+      "actual_output": "[SIMULASI/SYNTHETIC DATA] Berkas CITATION.cff Terstandarisasi:\n-------------------------------------------------------\ncff-version: 1.2.0\nmessage: \"If you use this research software or dataset, please cite it as below.\"\nauthors:\n  - family-names: \"Tri Nurcahyo\"\n    given-names: \"Aji Pamungkas\"\n    orcid: \"https://orcid.org/0009-0000-0000-0000\"\n    affiliation: \"Institut Teknologi Sumatera (ITERA)\"\ntitle: \"Scientific Research & Experimental Methods Hub: Reproducible Artifact Package\"\nversion: 1.0.0\ndoi: 10.5281/zenodo.9876543\ndate-released: 2026-11-28\nurl: \"https://github.com/itera-research/scientific-methods-hub\"\nkeywords:\n  - \"experimental methods\"\n  - \"reproducible research\"\n  - \"computer vision\"\n  - \"metrology\"\nlicense: MIT\n\n-------------------------------------------------------\nVerifikasi: Berkas CITATION.cff siap diintegrasikan otomatis dengan GitHub & Zenodo."
     },
     {
       "lesson_id": "7.3.4",
@@ -2044,7 +2044,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0005,
+      "elapsed_sec": 0.0,
       "actual_output": "[SIMULASI/SYNTHETIC DATA] Audit Kepatuhan Hukum Lisensi Terbuka Proyek:\n-------------------------------------------------------\nCode_License_Present  : True\nData_License_Present  : True\nStatus                : COMPLIANT\nRecommendation        : Lengkap\n-------------------------------------------------------\nKepastian Hukum: Repositori memenuhi syarat adopsi akademik dan industri."
     },
     {
@@ -2055,7 +2055,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Total Kata Naskah: 5000\n-------------------------------------------------------\nBagian          | Aktual (Kata) | Aktual (%) | Status Evaluasi\n-------------------------------------------------------\nIntroduction    | 2200         |   44.0%    | TERLALU TINGGI (Ideal 15-20%)\nMethods         | 600          |   12.0%    | TERLALU RENDAH (Ideal 25-30%)\nResults         | 1400         |   28.0%    | SESUAI STANDAR\nDiscussion      | 800          |   16.0%    | TERLALU RENDAH (Ideal 25-30%)\n-------------------------------------------------------"
     },
     {
@@ -2066,8 +2066,8 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
-      "actual_output": "HASIL ANALISIS RETORIKA SWALES CARS:\n============================================================\n[*] Move 1 (Establishing Territory)  : TERDETEKSI\n    Frasa teridentifikasi: ['vital', 'Previous studies']\n[*] Move 2 (Establishing Niche)      : TERDETEKSI\n    Frasa teridentifikasi: ['fail to', 'However', 'unresolved']\n[*] Move 3 (Occupying Niche)         : TERDETEKSI\n    Frasa teridentifikasi: ['To address this', 'this study proposes']\n============================================================"
+      "elapsed_sec": 0.0011,
+      "actual_output": "HASIL ANALISIS RETORIKA SWALES CARS:\n============================================================\n[*] Move 1 (Establishing Territory)  : TERDETEKSI\n    Frasa teridentifikasi: ['Previous studies', 'vital']\n[*] Move 2 (Establishing Niche)      : TERDETEKSI\n    Frasa teridentifikasi: ['unresolved', 'fail to', 'However']\n[*] Move 3 (Occupying Niche)         : TERDETEKSI\n    Frasa teridentifikasi: ['To address this', 'this study proposes']\n============================================================"
     },
     {
       "lesson_id": "7.4.3",
@@ -2088,7 +2088,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "ANALISIS KONTEKSTUALISASI LITERATUR:\n--------------------------------------------------\nRata-rata Efek Literatur (d_lit) : 0.504\nStandar Deviasi Literatur        : 0.053\nEfek Temuan Baru (d_new)         : 0.820\nSkor Deviasi Z                   : 6.01\n\n[KESIMPULAN METODOLOGIS]:\nTemuan Anda berbeda secara signifikan (> 2 SD) dari konsensus literatur.\nWajib menyertakan analisis mekanistik mendalam di Discussion!\n--------------------------------------------------"
     },
     {
@@ -2099,7 +2099,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "HASIL PERANGKINGAN JURNAL TARGET:\n=================================================================\nNama Jurnal                      | Skor Komposit  | Status\n=================================================================\nIET Renewable Power (Q2)         |          0.777 | PRIORITAS UTAMA\nIEEE Trans. Smart Grid (Q1)      |          0.743 | OPSI CADANGAN\nJournal of Clean Energy (Q3)     |          0.700 | OPSI CADANGAN\n================================================================="
     },
     {
@@ -2110,7 +2110,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "HASIL SIMULASI KEPUTUSAN EDITORIAL:\n-------------------------------------------------------\nReviewer 1: Accept\nReviewer 2: Minor Revision\nReviewer 3: Reject [FATAL]\n-------------------------------------------------------\nKEPUTUSAN AKHIR EDITOR: REJECT / REJECT & RESUBMIT (Terdeteksi kelemahan metodologis fundamental)\n-------------------------------------------------------"
     },
     {
@@ -2121,7 +2121,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "POINT-BY-POINT REBUTTAL LETTER MATRIX:\n======================================================================\n[R1.C1] From Reviewer #1:\nCOMMENT: 'The computational runtime comparison is missing. Please provide FPS benchmarks.'\nRESPONSE:\n  We thank the reviewer for this constructive observation.\n  [Action Taken]: Measured inference time on NVIDIA RTX 3090 across 1000 runs.\n  [Manuscript Changes]: Updated in Section 4.4, Page 11, Table 4.\n----------------------------------------------------------------------\n[R2.C1] From Reviewer #2:\nCOMMENT: 'Equation 4 has a typo in the summation index (starts from 0 instead of 1).'\nRESPONSE:\n  We thank the reviewer for this constructive observation.\n  [Action Taken]: Corrected index in Equation 4 to k=1.\n  [Manuscript Changes]: Updated in Section 3.2, Page 6, Line 142.\n----------------------------------------------------------------------"
     },
     {
@@ -2165,7 +2165,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "DURASI TOTAL PROYEK RISET: 13 Bulan\n=================================================================\nAktivitas              | Dur  | Slack | Jalur Kritis\n=================================================================\nA1 (Kalibrasi)         | 4    | 0     | YA (CRITICAL)\nA2 (Inovasi Algo)      | 6    | 0     | YA (CRITICAL)\nA3 (Fabrikasi Casing)  | 2    | 4     | TIDAK\nA4 (Uji Terintegrasi)  | 3    | 0     | YA (CRITICAL)\n================================================================="
     },
     {
@@ -2176,7 +2176,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "MATRIKS KEPENGARANGAN STANDAR CRediT:\n======================================================================\nNama Peneliti              | Peran Kontribusi Utama\n======================================================================\nDr. Aji (Lead Researcher)  | Conceptualization, Methodology, Software, Formal Analysis, Investigation, Data Curation, Writing - Original Draft, Writing - Review & Editing\nBudi (M.Sc Student)        | Software, Investigation, Data Curation, Writing - Review & Editing\nProf. Handoko (Advisor)    | Conceptualization, Formal Analysis, Writing - Review & Editing, Supervision\n======================================================================"
     },
     {
@@ -2187,7 +2187,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0015,
+      "elapsed_sec": 0.0031,
       "actual_output": "PERANCANGAN UKURAN SAMPEL A PRIORI (CAPSTONE PROJECT):\n============================================================\nTarget Efek Ukuran (Cohen's d) : 0.8\nTingkat Signifikansi (Alpha)   : 0.05\nTarget Kekuatan Uji (Power)    : 0.80 (80%)\n------------------------------------------------------------\nUkuran Sampel Minimal per Grup : 26 Replikasi\nTotal Sampel (2 Kelompok)      : 52 Pengujian\nKekuatan Uji Aktual Tercapai   : 80.75%\n============================================================"
     },
     {
@@ -2198,7 +2198,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.0,
+      "elapsed_sec": 0.0005,
       "actual_output": "Original SHA-256 Digest : 123f370fddc5421c40d3f7592bc84e6a3b7dd157f196d4892a1d8c5f46bfee7d\nStatus Audit Data Asli  : TERVERIFIKASI SAH\n\nTampered SHA-256 Digest : 5b27ed25a6a9e31ec3a813b85bba8d69e8d8a6f2ab9c4401b0004d2d4e41e8f3\nStatus Audit Data Modif : PERINGATAN: DATA TELAH DIMANIPULASI!"
     },
     {
@@ -2209,7 +2209,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0016,
       "actual_output": "HASIL ANALISIS ABLASI CAPSTONE (10-FOLD CV):\n=================================================================\nFull Model mAP (Mean +/- SD)    : 91.49% +/- 0.46%\nWithout Attention (No-Attn)     : 88.11% +/- 0.56%\nWithout Custom Loss (No-Loss)   : 90.13% +/- 0.42%\n-----------------------------------------------------------------\nUJI SIGNIFIKANSI KONTRIBUSI MODUL ATTENTION:\nSelisih Penurunan Rata-rata     : 3.38%\nStatistik Wilcoxon W            : 55.0\np-value (Satu Sisi)             : 0.00098\nUkuran Efek (Hedges' g)         : 11.68 (Efek Sangat Besar)\n================================================================="
     },
     {
@@ -2220,7 +2220,7 @@
       "exec_ok": true,
       "numerical_ok": true,
       "error": null,
-      "elapsed_sec": 0.001,
+      "elapsed_sec": 0.0005,
       "actual_output": "AUDIT KEPATUHAN ACM ARTIFACT EVALUATION:\n=================================================================\n[LULUS] Data mentah dengan SHA-256 Checksums          (Bobot: 0.15)\n[LULUS] Kode sumber lengkap & lisensi terbuka         (Bobot: 0.15)\n[LULUS] Dockerfile mandiri teruji                     (Bobot: 0.20)\n[LULUS] Skrip otomasi replikasi (reproduce.sh)        (Bobot: 0.15)\n[LULUS] Deviasi replikasi vs naskah < epsilon         (Bobot: 0.20)\n[LULUS] Arsip permanen dengan DOI Zenodo              (Bobot: 0.15)\n=================================================================\nSkor Kelengkapan Total: 100.0 / 100.0\n\nPREDIKAT TERTINGGI: MEMENUHI SYARAT 'RESULTS REPLICATED BADGE'!\n================================================================="
     }
   ]

@@ -288,7 +288,37 @@ Menerapkan 5 palet warna semantik berstandar ITERA dan WCAG AA:
 
 ---
 
-## 8. CONTINUITY GUIDE & PROTOKOL OTORISASI RILIS
+## 8. PHASE 6D: VERIFIKASI AKHIR VISUAL, PRESENTASI AKADEMIK & DEPLOYMENT RELEASE RESMI
+
+### A. Verifikasi Visual Akhir Slide Perkuliahan
+1. **Inspeksi Slide Terfokus CH-01 (Slide 4 "Formulasi Matematis & Notasi Formal"):**
+   - **Modus Ponens:** Formula silogisme formal dirender sempurna menggunakan KaTeX:
+     $$\text{Modus Ponens: } \frac{P \implies Q, \quad P}{\therefore Q} \qquad [P(Q \mid P, P \implies Q) = 1]$$
+   - **Bebas Markdown Mentah:** Seluruh penanda tebal, miring, dan kode terurai rapi tanpa tanda bintang (`**`) atau backtick.
+   - **Bebas Pemotongan Kalimat:** Struktur analitis deduksi, generalisasi induktif, dan abduksi dijelaskan dalam kalimat utuh presisi tanpa elipsis (`...`).
+   - **Sistem Semantik:** Berfungsi aktif menampilkan pil semantik bergradasi (`[definition: ...]`, `[concept: ...]`, `[result: ...]`).
+   - **Dukungan Tema & Navigasi:** Berfungsi 100% pada mode Gelap (*Dark*) maupun Terang (*Light*), laci catatan pengajar (*Speaker Notes Drawer*) terbuka responsif (`KeyN`), dan navigasi keyboard teruji mulus.
+2. **Cakupan Pengujian 6 Bab Representatif:**
+   - CH-01 (Scientific Foundations), CH-16 (Statistical Analysis), CH-24 (Regression Modeling), CH-29 (Factorial Design DoE), CH-38 (Advanced Computational Methods), CH-51 (Research Capstone).
+   - Seluruh 6 bab lolos uji interaktif penampil slide Playwright dengan 0 galat konsol dan 0 artefak KaTeX.
+
+### B. Audit Mesin Presentasi & Penanganan Galat
+- Komponen `src/components/MathView.tsx` dan `src/components/MarkdownRenderer.tsx` telah diselaraskan dengan konfigurasi `strict: 'warn'` dan pelaporan aktif `console.error` saat mendeteksi rumus malformed, mencegah penyamaran galat secara diam-diam.
+- 4.240 persamaan matematika di seluruh 51 bab diverifikasi dan lulus 100% tanpa satupun persamaan malformed.
+
+### C. Verifikasi OpenXML PowerPoint (.pptx) & Ekspor Cetak
+- 6 berkas PPTX representatif (termasuk `CH-29_Factorial_Design.pptx`) terverifikasi 100% memenuhi rasio 16:9 widescreen, memiliki teks teredit asli (`<a:t>`), bebas raw LaTeX, dan memuat catatan pembicara tersemat rapi.
+- Ekspor PDF akademik A4 Playwright mempertahankan resolusi vektor tajam pada semua rumus KaTeX.
+
+### D. Hasil Pengujian Regresi Lengkap
+- **Kurikulum & Tipografi:** 51 bab, 204 lesson, 0 em-dash (R-02), 100% Master Curriculum terpenuhi.
+- **Runtime Komputasi Python:** 199 / 199 skrip lulus AST, eksekusi, dan validasi numerik 100%.
+- **Laboratorium Mandiri:** 15 / 15 laboratorium Python di `labs/` lulus 100% dalam 17,99 detik.
+- **Kompilasi & Build Produksi:** `tsc --noEmit` 0 error, `npm run build` sukses dalam 5,57 detik.
+
+---
+
+## 9. CONTINUITY GUIDE & PROTOKOL OTORISASI RILIS
 
 Jika sesi ini dilanjutkan atau dibuka oleh asisten AI baru:
 1. **STATUS PROYEK SAAT INI:**

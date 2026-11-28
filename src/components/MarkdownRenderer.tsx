@@ -16,8 +16,8 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, inl
       rehypePlugins={[
         [rehypeKatex as any, {
           throwOnError: false,
-          errorColor: '#94a3b8',
-          strict: false,
+          errorColor: '#ef4444',
+          strict: 'warn',
         }]
       ]}
       components={inline ? {
